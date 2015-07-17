@@ -6,10 +6,39 @@ output:
     theme: cerulean
 bibliography: PriceAnalysis.bib
 csl: american-journal-of-agricultural-economics.csl.txt
+comment: Copyright Mindy L. Mallory 2015
 ---
 
-This chapter serves as an introduction to the data sources, institutions, and market players we will study as we learn about commodity price analysis. 
 
-# Data Sources
+This chapter serves as an introduction to real-time and historical data sources, as well as an introduction to the analysts that conduct price analysis professionally and help us make sense of commodity prices. First, we will provide a very brief introduction to futures markets as the source of real-time price information for commodities. This section also covers where and how to obtain current futures price quotes. In the section that follows we cover sources for historical data such as the United States Department of Agriculture and others. These sources will be useful in developing fundamental price models in later chapters. Finally, we will introduce the reader to some entities that provide market commentary and price analysis professionally. The goal of this chapter is to get the reader up to speed on where to get commodity price data and reading the professional analysis daily. The more you follow commodity markets, the more you learn. Absorb the insights of the professionals who live and breath commodity markets every day, and you will begin to have a feel for what price analysis is all about and how it works.    
 
-We will use extensively both real-time and historical data in our analysis. Real-time (or near real-time) data comes from vendors like the 
+
+# Futures Contracts as Sources of Real-time Price Information
+
+Futures contracts (contracts to buy/sell a specific quantity of, say, corn at a specific price on a specific date in the future) can be distinguished from forward contracts in that quantity and quality are standardized. This facilitates the ability of futures contracts to be traded on an exchange. Whereas a forward contract has specific counterparties (buyers and sellers), with futures contracts the exchange becomes the seller to every buyer and the buyer to every seller. If enough market participants are present it is very easy to get into and out of these futures contracts because you do not have to come to an agreement with the original buyer/seller. You simply take an offsetting position (sell if you originally bought and buy if you originally sold) at the currently prevailing price. The exchange takes your contractual obligation off the books and you just pay (or receive) the difference in price between when you bought and when you sold. Fully understanding the function of futures markets is well beyond the scope of this book, but the interested reader is encouraged to refer to Kub [-@kub2012Mastering] for a practical introduction and Hull [@hull1991introduction] for a more technical approach. 
+
+## Futures Data Sources 
+
+For agricultural commodities in the United States, the [CME Group](http://www.cmegroup.com/) is the most important futures exchange for price discovery. Grain and oil-seed contracts traded at the CME Group include corn, soybeans, soybean oil, soybean meal, soft red winter wheat, hard red winter wheat. They also list futures contracts for livestock products such as live cattle, lean hogs, and feeder cattle. 'Soft' commodities that trade on the CME Group are cocoa, coffee, and sugar. The CME Group also lists energy commodity products for crude oil, natural gas, ethanol, and other products. This book will focus most intently on the grain and oil-seed contracts, with some topics related to the cattle and energy contracts considered. Many of these futures contracts are considered to be the main price setting function for the commodity in the world. Chicago Board of Trade (owned by the CME Group) futures prices of corn and soybeans are considered the 'World Price' of corn and soybeans. Meaning that all over the globe, prices for these commodities are set based on what the price of corn and soybeans are trading on the CME Group exchanges.     
+
+
+Real-time (10-min delay) data can be obtained directly from the CME Group's website. There you can view the most recent quotes, and some charting capability is provided as well. Typically, however, it is more convenient to obtain market quotes from third party vendors like [Yahoo Finance](http://finance.yahoo.com/), [barchart](http://www.barchart.com/futures/marketoverview), or others. Those sources offer a more flexible interface for viewing on the web, and provide utility to download recent price history. 
+
+## Futures Symbols and Looking up Data by Contract Expiration
+
+Contracts for several different expiry dates trade at the same time. There is a useful shorthand for finding contracts for a specific commodity and expiration month. The table below lists selected grain and oilseed, livestock, and energy contract symbols, expiration symbols, and common ticker formats used to search for price quotes. 
+
+|Commodity   | Symbol    |  Expiration Months and Symbol                            | General Ticker         | Yahoo Finance Ticker  |
+|:----------|:---------:|:--------------------------------------------------------|:----------------------|:---------------------|
+| Corn       | C         |March (H), May (K), July (N), September (U), December (Z) | CZ15, December 2015 Corn| [CZ15.cbt](http://finance.yahoo.com/q;_ylt=Aq08zZO8Y0A5GdeM2aZSNJJ.FJF4?uhb=uhb2&fr=uh3_finance_vert_gs&type=2button&s=cz15.cbt)|
+| Soybeans   | S         |January (F), March (H), May (K), July (N), August (Q), September (U), November (X) | SX15, November 2015 Soybean| [SX15.cbt](http://finance.yahoo.com/q;_ylt=Ajq44ku8k3rd1HzDOLpIozEnv7gF?uhb=uhb2&fr=uh3_finance_vert_gs&type=2button&s=sx15.cbt) |
+| SRW Wheat  | W         |March (H), May (K), July (N), September (U), December (Z) | WZ15, December 2015 SRW Wheat| [WZ15.cbt](http://finance.yahoo.com/q;_ylt=Ajq44ku8k3rd1HzDOLpIozEnv7gF?uhb=uhb2&fr=uh3_finance_vert_gs&type=2button&s=wz15.cbt) |
+| Lean Hogs | HE         | Feb (G), Apr (J), May (K), Jun (M), Jul (N), Aug (Q), Oct (V), Dec (Z) | HEZ15, December 2015 Lean Hogs| [HEZ15.cme](http://finance.yahoo.com/q;_ylt=Ajq44ku8k3rd1HzDOLpIozEnv7gF?uhb=uhb2&fr=uh3_finance_vert_gs&type=2button&s=HEZ15.CME%2C) |
+| Crude Oil | CL         | All months | CLU15, September 2015 Light Sweet Crude Oil| [CLU15.nym](http://finance.yahoo.com/q;_ylt=Ajq44ku8k3rd1HzDOLpIozEnv7gF?uhb=uhb2&fr=uh3_finance_vert_gs&type=2button&s=clu15.nym) |
+
+
+
+
+&copy; Mindy L. Mallory 2015
+
+# Refrences
