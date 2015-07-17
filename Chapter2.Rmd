@@ -1,0 +1,15 @@
+---
+title: 'Chapter 2: Getting Started'
+output: 
+  html_document:
+    toc: true
+    theme: cerulean
+bibliography: PriceAnalysis.bib
+csl: american-journal-of-agricultural-economics.csl.txt
+---
+
+This chapter serves as an introduction to the data sources, institutions, and market players we will study as we learn about commodity price analysis. 
+
+# Data Sources
+
+We will use extensively both real-time and historical data in our analysis. Real-time (or near real-time) data comes from vendors like the 
