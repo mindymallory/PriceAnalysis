@@ -22,11 +22,11 @@ Futures contracts (contracts to buy/sell a specific quantity of, say, corn at a 
 For agricultural commodities in the United States, the [CME Group](http://www.cmegroup.com/) is the most important futures exchange for price discovery. Grain and oil-seed contracts traded at the CME Group include corn, soybeans, soybean oil, soybean meal, soft red winter wheat, hard red winter wheat. They also list futures contracts for livestock products such as live cattle, lean hogs, and feeder cattle. 'Soft' commodities that trade on the CME Group are cocoa, coffee, and sugar. The CME Group also lists energy commodity products for crude oil, natural gas, ethanol, and other products. This book will focus most intently on the grain and oil-seed contracts, with some topics related to the cattle and energy contracts considered. Many of these futures contracts are considered to be the main price setting function for the commodity in the world. Chicago Board of Trade (owned by the CME Group) futures prices of corn and soybeans are considered the 'World Price' of corn and soybeans. Meaning that all over the globe, prices for these commodities are set based on what the price of corn and soybeans are trading on the CME Group exchanges.     
 
 
-Real-time (10-min delay) data can be obtained directly from the CME Group's website. There you can view the most recent quotes, and some charting capability is provided as well. Typically, however, it is more convenient to obtain market quotes from third party vendors like [Yahoo Finance](http://finance.yahoo.com/), [barchart](http://www.barchart.com/futures/marketoverview), or others. Those sources offer a more flexible interface for viewing on the web, and provide utility to download recent price history. 
+Real-time (10-min delay) data can be obtained directly from the CME Group's website. There you can view the most recent quotes, and some charting capability is provided as well. Typically, however, it is more convenient to obtain market quotes from third party vendors like [Yahoo Finance](http://finance.yahoo.com/), [Quandl](https://www.quandl.com/collections/futures), [barchart](http://www.barchart.com/futures/marketoverview) (subscription required), or others. Those sources offer a more flexible interface for viewing on the web, and provide utility to download recent price history. 
 
 ## Futures Symbols and Looking up Data by Contract Expiration
 
-Contracts for several different expiry dates trade at the same time. There is a useful shorthand for finding contracts for a specific commodity and expiration month. The table below lists selected grain and oilseed, livestock, and energy contract symbols, expiration symbols, and common ticker formats used to search for price quotes. 
+Contracts for several different expiry dates trade at the same time. There is a useful shorthand for finding contracts for a specific commodity and expiration month that varies only slightly among data vendors; all follow a general convention for building futures ticker symbols customizing only to meet the needs of their individual systems. The table below lists selected grain and oilseed, livestock, and energy contract symbols, expiration symbols, and common ticker formats used to search for price quotes. For example, the first row of the table illustrates that the general convention for representing the CBOT corn futures contract expiring in December of 2015 is CZ15. The first letter represents the commodity symbol, C for corn; the second letter represents the expiration month, Z for December; and the final two numerals represent the year of expiry, 15 for 2015. 
 
 |Commodity   | Symbol    |  Expiration Months and Symbol                            | General Ticker         | Yahoo Finance Ticker  |
 |:----------|:---------:|:--------------------------------------------------------|:----------------------|:---------------------|
@@ -36,7 +36,68 @@ Contracts for several different expiry dates trade at the same time. There is a 
 | Lean Hogs | HE         | Feb (G), Apr (J), May (K), Jun (M), Jul (N), Aug (Q), Oct (V), Dec (Z) | HEZ15, December 2015 Lean Hogs| [HEZ15.cme](http://finance.yahoo.com/q;_ylt=Ajq44ku8k3rd1HzDOLpIozEnv7gF?uhb=uhb2&fr=uh3_finance_vert_gs&type=2button&s=HEZ15.CME%2C) |
 | Crude Oil | CL         | All months | CLU15, September 2015 Light Sweet Crude Oil| [CLU15.nym](http://finance.yahoo.com/q;_ylt=Ajq44ku8k3rd1HzDOLpIozEnv7gF?uhb=uhb2&fr=uh3_finance_vert_gs&type=2button&s=clu15.nym) |
 
+: Table 1. Conventions for building futures contract ticker symbols for selected commodities
 
+While every market participant needs to know the current price, forecasting and decision making requires the study of historical prices and other important market variables. Historical futures price data is available for free and from subscription based services from [Quandl](https://quandl.com) and [Barchart](https://barchart.com) mentioned in the paragraph above. Historical [futures price data](http://farmdoc.agricharts.com/markets/historic.php) and [average price recieved](http://www.farmdoc.illinois.edu/manage/pricehistory/price_history.html) is also available from [farmdoc](http://www.farmdoc.illinois.edu), the online extension presence of the University of Illinois' [Agricultural and Consumer Economics](http://ace.illinois.edu/) department. 
+
+# Reports and Data from the USDA
+
+The United States Department of Agriculture has a long history of extensively surveying market conditions, reporting to the public and maintaining accessible databases.  Because of their efforts to provide consistent and accurate (as is possible) estimates of key variables like acres planted, yield, production, stocks, consumption, and exports, market participants follow USDA reports about market conditions very closely. Their impacts on prices can be seen immediately amd sometimes cause rapid, if not instantaneous price moves as the market digests the new information from the report. The most closely watched reports are summarized below. 
+
+## USDA Reports Influential in Commodity Markets
+
+**Prospective Plantings:** The Prospective Plantings report is an estimate of grower intentions for planted acres during the first two weeks of March. The report is released on the last day of March every year. Planted acres for each crop varies considerably from year-to-year and this report give the market important guidance about expected supply of the covered commodities. The most important reason prospective plantings change from year-to-year is the relative prices of crops that compete for acres. Growers look to the prices of futures with a expiry around the time of harvest for an estimate of expected profit from planting competing crops. For example, if the price of corn is relatively high compared to soybeans, and expected profitability from an acre of corn is higher than from an acre of soybeans, the farmer is likely to shift some of his planting intentions from soybeans to corn compared to the crop mix typically planted. In this case you might hear market commentary include language like, "... corn is bidding for acres." Meaning that price of corn is trying to entice growers to shift acres into corn production.
+
+**Acreage:** While the Prospective Plantings Report estimates growers' *intentions* to plant, Acreage is an estimate of the acres actually planted. This report is based on surveys conducted during the first two weeks of June and released on the last day of June. Weather and changes in the relative price of crops that compete for acres are the most important reason for differences between Prospective Plantings and Acreage reports. Weather can play a factor becasue crops that compete for acres are not nessessarily planted at the same time. Corn, for example, is typically planted a few months before soybeans. The Corn Belt, where the biggest production of corn and soybeans occur, can often be very wet in the Spring. In some years this makes is physically very difficult to get to plant the number of acres of corn they intended when surveyed during the first two weeks of March. The relative price of crops competing for acres can also change between March and June for any number of reasons and cause the Acreage report to be substantially different than Prospective Plantings.     
+
+**Grain Stocks** The Grain Stocks report is issued quarterly and contains information about how much of selected commodities are in storage in the United States, by state. Information in this report is pertinent to the price level, as well as the calendar spread between two futures maturities. When stocks are tight, naturally the price of the commodity will be high. Also, prices futures contracts soon to expire should exceed those with longer dated maturities for two reasons. 1) Low prices for distant futures contracts reflects the tendency for high prices to ration demand and for future harvests to resolve shortages. 2) Low prices for distant futures contracts should disincentivize storage and bring stocks onto the market to relieve current shortages. Thus, this report is important both for price level and spread analysis. 
+
+**World Agricultural Supply and Demand Estimates (WASDE)** The WASDE report is released monthly and provides the USDA's forecasts for U.S. and world supply and use balence sheets for grains, soybeans and its products, and cotton. It contains supply and use forecasts for U.S. sugar and livestock commodities. These reports are among the most important and eagerly anticipated by market participants. The report is currently released at 12pm EST and release of the report commonly results in limit price moves in futures markets. It is among the most involved to prepare. To quote the USDA's own documentation: 
+
+> #### How the WASDE is Prepared
+The World Agricultural Supply and Demand Estimates (WASDE) report is prepared monthly and includes forecasts for U.S. and world wheat, rice, and coarse grains (corn, barley, sorghum, and oats), oilseeds (soybeans, rapeseed, palm), and cotton. U.S. coverage is extended to sugar, meat, poultry, eggs, and milk. USDA World Agricultural Outlook Board analysts chair the Interagency Commodity Estimates Committees (ICECs) comprising representatives from several key USDA agencies. The nine ICECs- one for each commodity- compile and interpret information from USDA and other domestic and foreign official sources to produce the report.
+>
+> #### Diverse Sources
+The ICECs rely on Foreign Agricultural Service (FAS) attaché reports and analysis of foreign commodity developments, Economic Research Service (ERS) domestic and foreign regional assessments, and National Agricultural Statistics Service (NASS) U.S. crop and livestock estimates. For domestic policy and market information, the Board relies on the Farm Services Agency and the Agricultural Marketing Service. WAOB and FAS use weather analysis and satellite imagery to monitor crop conditions. Additional private and public information sources are considered.
+>
+> This broad information base is reviewed and analyzed by ICEC members who bring diverse expertise and perspectives to the report. To arrive at consensus forecasts, alternative assessments of domestic and foreign supply and use are vetted at the ICEC meetings. Throughout the growing season and afterwards, estimates are compared with new information on production and utilization, and historical revisions are made as necessary.
+>
+> #### Commodity Balance Sheets
+The WASDE reports a full balance sheet for each commodity. Separate estimates are made for components of supply (beginning stocks, imports, and production) and demand (domestic use, exports, and ending stocks). Domestic use is subdivided into major categories, for example corn for feed and corn for ethanol. Domestic use may be based on data from other Federal agencies: for example, U.S. wheat ground for flour, soybeans crushed for oil, and cotton mill use come from the Bureau of the Census. The demand side of the balance sheet may include a category for “residual” or “unaccounted” disappearance to balance known uses against total supplies.
+>
+> The WASDE also reports forecast season-average farm prices for most items. Prices tie together both sides of the balance sheet. Market prices aid in rationing available supplies among competing uses. Prices also indicate potential supply responses, for example potential planting decisions for the upcoming year. The process of forecasting price and balance sheet items is complex and involves the interaction of expert judgment, commodity models, and in-depth research by USDA analysts on key domestic and international issues. 
+>
+> #### Lock-up Conditions
+To assure the highly market-sensitive information is released simultaneously to all end-users, and not prematurely to any one, the WASDE report is prepared under tight security in a specially designed area of USDA’s South Building. The morning of release, doors in the “lockup” area are secured, window shades are sealed, and telephone and Internet communications are blocked. Once analysts present their credentials to a guard, they enter the secured area to finalize the WASDE report. Communications with the outside world are suspended until the report is released at 12:00 noon Eastern time.
+
+Source, [USDA Office of the Cheif Economist](http://www.usda.gov/oce/commodity/wasde/prepared.htm)
+
+Given the USDA reports' ability to move futures markets, the lock up condition described in the last paragraph is imperitive. The prospect that USDA reports could be leaked is the inpiration behind the final scene in [Trading Places](https://www.youtube.com/watch?v=1tmI867fAYU), probably the best and only popular movie made about commodity markets. In this scene, Eddie Murphey and Dan Ackroid's characters learn that the rich antagonists obtained advance access to the 'crop report' (they do not say which report) pertinent to orange juice futures that would certainly make the price go down. Eddie Murphey and Dan Ackroid intercept the information and feed the rich guys a bogus report that would cause the futures price to rise. Before the report is released the rich guys buy a bunch of orange juice futures, driving the price up. Then Eddie Murphey and Dan Ackroid start selling when the price is high. When the 'crop report' comes out the price crashes. The rich guys loose a ton of money and Eddie Murphey and Dan Ackroid retire wealthy to a tropical paradise. 
+
+**Crop Production** The Crop Production report includes estimates of yeild, acres harvested, and total production for covered commodities. This report is released in tandem with the WASDE report. 
+
+## USDA Data Sources
+
+All of the information contained in the reports described above are useful for in depth analysis over a long time horizon. As a service the USDA maintains databases of information contained in historical reports that are easy to query for analysis. Three important agencies maintaining databases within the USDA are the [National Agricultural Statistics Service](http://www.nass.usda.gov/) (NASS), the [Foreign Agricultural Service](http://apps.fas.usda.gov/psdonline/psdHome.aspx) (FAS), and the [Economics Research Service](http://www.ers.usda.gov/data-products.aspx) (ERS).
+
+
+## Summary of USDA Reports and Data Sources. 
+
+|Report                |Description| Link  |
+|:--------------------|:---------:|:--------:|
+|Prospective Plantings |           |         |
+|Acreage               |           |        |
+|WASDE                 |           |       |
+|Crop Production       |           |       |
+
+|Data Source          | Description| Link  |
+|:--------------------|:---------:|:--------:|
+|NASS |           |         |
+|FAS               |           |        |
+|ERS                 |           |       |
+
+
+# Resources for Market Commentary
 
 
 &copy; Mindy L. Mallory 2015
