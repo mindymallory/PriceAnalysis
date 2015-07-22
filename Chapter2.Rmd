@@ -3,15 +3,27 @@ title: 'Chapter 2: Getting Started'
 output: 
   html_document:
     toc: true
-    theme: cerulean
+    theme: readable
 bibliography: PriceAnalysis.bib
 csl: american-journal-of-agricultural-economics.csl.txt
 comment: Copyright Mindy L. Mallory 2015
 ---
 
 
-This chapter serves as an introduction to real-time and historical data sources, as well as an introduction to the analysts that conduct price analysis professionally and help us make sense of commodity prices. First, we will provide a very brief introduction to futures markets as the source of real-time price information for commodities. This section also covers where and how to obtain current futures price quotes. In the section that follows we cover sources for historical data such as the United States Department of Agriculture and others. These sources will be useful in developing fundamental price models in later chapters. Finally, we will introduce the reader to some entities that provide market commentary and price analysis professionally. The goal of this chapter is to get the reader up to speed on where to get commodity price data and reading the professional analysis daily. The more you follow commodity markets, the more you learn. Absorb the insights of the professionals who live and breath commodity markets every day, and you will begin to have a feel for what price analysis is all about and how it works.    
+This chapter serves as an introduction to real-time and historical data sources, as well as an introduction to the analysts that conduct price analysis professionally and help us make sense of commodity prices. First, we will introduce the reader to some entities that provide market commentary and price analysis. Next, we will provide a very brief introduction to futures markets as the source of real-time price information for commodities. This section also covers where and how to obtain current futures price quotes. In the section that follows we cover sources for historical data such as the United States Department of Agriculture and others. These sources will be useful in developing fundamental price models in later chapters. The goal of this chapter is to get the reader up to speed on where to get commodity price data and reading the professional analysis daily. The more you follow commodity markets, the more you learn. Absorb the insights of the professionals who live and breath commodity markets every day, and you will begin to have a feel for what price analysis is all about and how it works.    
 
+
+# Resources for Market Commentary
+
+The best way to learn commodity price analysis is to listen to the professionals who provide commentary on the markets on a regular basis. Land grant universities located in major commodity producing states all have components of their outreach programs dedicated to market commentary. The University of Illinois' web extension program, FARMDOC, is particularly good. Also, public radio in major commodity producing areas has excellent coverage. Champaign-Urbana's WILL, and Iowa Public Televisions' Market to Market are very good. There are *many* other great sources providing regular commentary, but this will get the reader started. 
+
+|Outlet    |  Description      | Link   |
+|:---------|:------------------|:----------------|
+|Farmdoc Daily | Extension web presence by the department of ACE |  http://farmdocdaily.illinois.edu/ |
+|WILL Agriculture | WILL  and the University of Illinois Extension | http://will.illinois.edu/agriculture | 
+|Market to Market | Agricultural programming by Iowa Public Television | http://www.iptv.org/mtom/ | 
+
+: Table 1. Resources for commodity market commentary
 
 # Futures Contracts as Sources of Real-time Price Information
 
@@ -36,7 +48,7 @@ Contracts for several different expiry dates trade at the same time. There is a 
 | Lean Hogs | HE         | Feb (G), Apr (J), May (K), Jun (M), Jul (N), Aug (Q), Oct (V), Dec (Z) | HEZ15, December 2015 Lean Hogs| [HEZ15.cme](http://finance.yahoo.com/q;_ylt=Ajq44ku8k3rd1HzDOLpIozEnv7gF?uhb=uhb2&fr=uh3_finance_vert_gs&type=2button&s=HEZ15.CME%2C) |
 | Crude Oil | CL         | All months | CLU15, September 2015 Light Sweet Crude Oil| [CLU15.nym](http://finance.yahoo.com/q;_ylt=Ajq44ku8k3rd1HzDOLpIozEnv7gF?uhb=uhb2&fr=uh3_finance_vert_gs&type=2button&s=clu15.nym) |
 
-: Table 1. Conventions for building futures contract ticker symbols for selected commodities
+: Table 2. Conventions for building futures contract ticker symbols for selected commodities
 
 While every market participant needs to know the current price, forecasting and decision making requires the study of historical prices and other important market variables. Historical futures price data is available for free and from subscription based services from [Quandl](https://quandl.com) and [Barchart](https://barchart.com) mentioned in the paragraph above. Historical [futures price data](http://farmdoc.agricharts.com/markets/historic.php) and [average price recieved](http://www.farmdoc.illinois.edu/manage/pricehistory/price_history.html) is also available from [farmdoc](http://www.farmdoc.illinois.edu), the online extension presence of the University of Illinois' [Agricultural and Consumer Economics](http://ace.illinois.edu/) department. 
 
@@ -54,50 +66,39 @@ The United States Department of Agriculture has a long history of extensively su
 
 **World Agricultural Supply and Demand Estimates (WASDE)** The WASDE report is released monthly and provides the USDA's forecasts for U.S. and world supply and use balence sheets for grains, soybeans and its products, and cotton. It contains supply and use forecasts for U.S. sugar and livestock commodities. These reports are among the most important and eagerly anticipated by market participants. The report is currently released at 12pm EST and release of the report commonly results in limit price moves in futures markets. It is among the most involved to prepare. To quote the USDA's own documentation: 
 
-> #### How the WASDE is Prepared
-The World Agricultural Supply and Demand Estimates (WASDE) report is prepared monthly and includes forecasts for U.S. and world wheat, rice, and coarse grains (corn, barley, sorghum, and oats), oilseeds (soybeans, rapeseed, palm), and cotton. U.S. coverage is extended to sugar, meat, poultry, eggs, and milk. USDA World Agricultural Outlook Board analysts chair the Interagency Commodity Estimates Committees (ICECs) comprising representatives from several key USDA agencies. The nine ICECs- one for each commodity- compile and interpret information from USDA and other domestic and foreign official sources to produce the report.
->
-> #### Diverse Sources
-The ICECs rely on Foreign Agricultural Service (FAS) attaché reports and analysis of foreign commodity developments, Economic Research Service (ERS) domestic and foreign regional assessments, and National Agricultural Statistics Service (NASS) U.S. crop and livestock estimates. For domestic policy and market information, the Board relies on the Farm Services Agency and the Agricultural Marketing Service. WAOB and FAS use weather analysis and satellite imagery to monitor crop conditions. Additional private and public information sources are considered.
->
-> This broad information base is reviewed and analyzed by ICEC members who bring diverse expertise and perspectives to the report. To arrive at consensus forecasts, alternative assessments of domestic and foreign supply and use are vetted at the ICEC meetings. Throughout the growing season and afterwards, estimates are compared with new information on production and utilization, and historical revisions are made as necessary.
->
-> #### Commodity Balance Sheets
-The WASDE reports a full balance sheet for each commodity. Separate estimates are made for components of supply (beginning stocks, imports, and production) and demand (domestic use, exports, and ending stocks). Domestic use is subdivided into major categories, for example corn for feed and corn for ethanol. Domestic use may be based on data from other Federal agencies: for example, U.S. wheat ground for flour, soybeans crushed for oil, and cotton mill use come from the Bureau of the Census. The demand side of the balance sheet may include a category for “residual” or “unaccounted” disappearance to balance known uses against total supplies.
->
-> The WASDE also reports forecast season-average farm prices for most items. Prices tie together both sides of the balance sheet. Market prices aid in rationing available supplies among competing uses. Prices also indicate potential supply responses, for example potential planting decisions for the upcoming year. The process of forecasting price and balance sheet items is complex and involves the interaction of expert judgment, commodity models, and in-depth research by USDA analysts on key domestic and international issues. 
->
-> #### Lock-up Conditions
+> #### How the WASDE is Prepared - Lock-up Conditions
 To assure the highly market-sensitive information is released simultaneously to all end-users, and not prematurely to any one, the WASDE report is prepared under tight security in a specially designed area of USDA’s South Building. The morning of release, doors in the “lockup” area are secured, window shades are sealed, and telephone and Internet communications are blocked. Once analysts present their credentials to a guard, they enter the secured area to finalize the WASDE report. Communications with the outside world are suspended until the report is released at 12:00 noon Eastern time.
 
 Source, [USDA Office of the Cheif Economist](http://www.usda.gov/oce/commodity/wasde/prepared.htm)
 
-Given the USDA reports' ability to move futures markets, the lock up condition described in the last paragraph is imperitive. The prospect that USDA reports could be leaked is the inpiration behind the final scene in [Trading Places](https://www.youtube.com/watch?v=1tmI867fAYU), probably the best and only popular movie made about commodity markets. In this scene, Eddie Murphey and Dan Ackroid's characters learn that the rich antagonists obtained advance access to the 'crop report' (they do not say which report) pertinent to orange juice futures that would certainly make the price go down. Eddie Murphey and Dan Ackroid intercept the information and feed the rich guys a bogus report that would cause the futures price to rise. Before the report is released the rich guys buy a bunch of orange juice futures, driving the price up. Then Eddie Murphey and Dan Ackroid start selling when the price is high. When the 'crop report' comes out the price crashes. The rich guys loose a ton of money and Eddie Murphey and Dan Ackroid retire wealthy to a tropical paradise. 
+Given the USDA reports' ability to move futures markets, the lock up condition described in the last paragraph is imperitive. The prospect that USDA reports could be leaked is the inpiration behind the final scene in [Trading Places](https://www.youtube.com/watch?v=1tmI867fAYU), probably the best and only popular movie made about commodity markets. In this scene, Eddie Murphey and Dan Ackroid's characters learn that the rich antagonists obtained advance access to the 'crop report' (they do not say which report) pertinent to orange juice futures contianing information that would make the price go down. Eddie Murphey and Dan Ackroid intercept the information and feed the rich antagonists a false report with bogus information that would cause the futures price to rise. Before the report is released the rich antagonists buy A LOT of orange juice futures contracts, driving the price up. Then Eddie Murphey and Dan Ackroid start selling when the price is high. When the 'crop report' comes out the price crashes. The rich guys loose a ton of money and Eddie Murphey and Dan Ackroid become wealthy and retire wealthy to a tropical paradise. 
 
 **Crop Production** The Crop Production report includes estimates of yeild, acres harvested, and total production for covered commodities. This report is released in tandem with the WASDE report. 
 
 ## USDA Data Sources
 
-All of the information contained in the reports described above are useful for in depth analysis over a long time horizon. As a service the USDA maintains databases of information contained in historical reports that are easy to query for analysis. Three important agencies maintaining databases within the USDA are the [National Agricultural Statistics Service](http://www.nass.usda.gov/) (NASS), the [Foreign Agricultural Service](http://apps.fas.usda.gov/psdonline/psdHome.aspx) (FAS), and the [Economics Research Service](http://www.ers.usda.gov/data-products.aspx) (ERS).
+All of the information contained in the reports described above are useful for in depth analysis over a long time horizon. As a service the USDA maintains databases of information contained in historical reports that are easy to query for analysis. Three important agencies maintaining databases within the USDA are the [National Agricultural Statistics Service](http://www.nass.usda.gov/) (NASS), the [Foreign Agricultural Service](http://apps.fas.usda.gov/psdonline/psdHome.aspx) (FAS), and the [Economics Research Service](http://www.ers.usda.gov/data-products.aspx) (ERS). Each service mentioned here hosts a wide variety of data and analyses, so concise descriptions are difficult. However some of the data products commonly used for commodity price analysis are ACRES PLANTED, PRODUCTION, YIELD, and PRICE RECIEVED by NASS; the PRODUCTION SUPPLY AND DISTRIBUTION report from FAS (much of the WASDE report is archived here); and COST and RETURNS from ERS. 
 
 
-## Summary of USDA Reports and Data Sources. 
+ 
 
-|Report                |Description| Link  |
-|:--------------------|:---------:|:--------:|
-|Prospective Plantings |           |         |
-|Acreage               |           |        |
-|WASDE                 |           |       |
-|Crop Production       |           |       |
+|Report                | Link                                                                         |
+|:---------------------|:-----------------------------------------------------------------------------|
+|Prospective Plantings | http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1136 |
+|Acreage               | http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1000 |
+|WASDE                 | http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1194 |
+|Crop Production       | http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1046 |
 
-|Data Source          | Description| Link  |
-|:--------------------|:---------:|:--------:|
-|NASS |           |         |
-|FAS               |           |        |
-|ERS                 |           |       |
+: Table 3. Summary of USDA Reports and Data Sources.
+
+|Data Source        | Link                                       |
+|:------------------|:-------------------------------------------|
+|NASS               | http://www.nass.usda.gov/                  |
+|FAS                | http://www.fas.usda.gov/data               |
+|ERS                | http://www.ers.usda.gov/data-products.aspx |
 
 
-# Resources for Market Commentary
+
 
 
 &copy; Mindy L. Mallory 2015
