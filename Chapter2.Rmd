@@ -97,10 +97,12 @@ All of the information contained in the reports described above are useful for i
 |FAS                | http://www.fas.usda.gov/data               |
 |ERS                | http://www.ers.usda.gov/data-products.aspx |
 
+# Conclusion
 
+This concludes chapter 2. We learned resources for accessing commodity market data, USDA reports, and daily market commentary. Aimed with these resources one can begin to follow the ups and downs of commdodity prices and get a feel for how fundamental supply and demand factors cause fluctuations in prices. In the next section we will cover fundamental analysis in detail. Fundamental analysis is driven by building balence sheets for components of supply and demand. Using the balence sheet approach, the analyst attempts to forecast the price that will cause quantities supplied and quantities demanded to be equal. This market equilibrium, if the fundamental model is correctly specified, should be a reasonable forecast of price.  
 
 
 
 &copy; Mindy L. Mallory 2015
 
-# Refrences
+# References
