@@ -7,13 +7,14 @@ This chapter serves as an introduction to real-time and historical data sources,
 
 The best way to learn commodity price analysis is to listen to the professionals who provide commentary on the markets on a regular basis. Land grant universities located in major commodity producing states all have components of their outreach programs dedicated to market commentary. The University of Illinois' web extension program, FARMDOC, is particularly good. Also, public radio in major commodity producing areas has excellent coverage. Champaign-Urbana's WILL, and Iowa Public Televisions' Market to Market are very good. There are *many* other great sources providing regular commentary, but this will get the reader started. 
 
+{title="Table 1. Resources for Commodity Market Commentary"}
 |Outlet    |  Description      | Link   |
 |:---------|:------------------|:----------------|
 |Farmdoc Daily | Extension web presence by the department of ACE |  http://farmdocdaily.illinois.edu/ |
 |WILL Agriculture | WILL  and the University of Illinois Extension | http://will.illinois.edu/agriculture | 
 |Market to Market | Agricultural programming by Iowa Public Television | http://www.iptv.org/mtom/ | 
 
-: Table 1. Resources for commodity market commentary
+
 
 ## Futures Contracts as Sources of Real-time Price Information
 
@@ -30,6 +31,7 @@ Real-time (10-min delay) data can be obtained directly from the CME Group's webs
 
 Contracts for several different expiry dates trade at the same time. There is a useful shorthand for finding contracts for a specific commodity and expiration month that varies only slightly among data vendors; all follow a general convention for building futures ticker symbols customizing only to meet the needs of their individual systems. The table below lists selected grain and oilseed, livestock, and energy contract symbols, expiration symbols, and common ticker formats used to search for price quotes. For example, the first row of the table illustrates that the general convention for representing the CBOT corn futures contract expiring in December of 2015 is CZ15. The first letter represents the commodity symbol, C for corn; the second letter represents the expiration month, Z for December; and the final two numerals represent the year of expiry, 15 for 2015. 
 
+{title="Table 2. Conventions for Building Futures Contract Ticker Symbols for Selected Commodities"}
 |Commodity   | Symbol    |  Expiration Months and Symbol                            | General Ticker         | Yahoo Finance Ticker  |
 |:----------|:---------:|:--------------------------------------------------------|:----------------------|:---------------------|
 | Corn       | C         |March (H), May (K), July (N), September (U), December (Z) | CZ15, December 2015 Corn| [CZ15.cbt](http://finance.yahoo.com/q;_ylt=Aq08zZO8Y0A5GdeM2aZSNJJ.FJF4?uhb=uhb2&fr=uh3_finance_vert_gs&type=2button&s=cz15.cbt)|
@@ -38,7 +40,7 @@ Contracts for several different expiry dates trade at the same time. There is a 
 | Lean Hogs | HE         | Feb (G), Apr (J), May (K), Jun (M), Jul (N), Aug (Q), Oct (V), Dec (Z) | HEZ15, December 2015 Lean Hogs| [HEZ15.cme](http://finance.yahoo.com/q;_ylt=Ajq44ku8k3rd1HzDOLpIozEnv7gF?uhb=uhb2&fr=uh3_finance_vert_gs&type=2button&s=HEZ15.CME%2C) |
 | Crude Oil | CL         | All months | CLU15, September 2015 Light Sweet Crude Oil| [CLU15.nym](http://finance.yahoo.com/q;_ylt=Ajq44ku8k3rd1HzDOLpIozEnv7gF?uhb=uhb2&fr=uh3_finance_vert_gs&type=2button&s=clu15.nym) |
 
-: Table 2. Conventions for building futures contract ticker symbols for selected commodities
+
 
 While every market participant needs to know the current price, forecasting and decision making requires the study of historical prices and other important market variables. Historical futures price data is available for free and from subscription based services from [Quandl](https://quandl.com) and [Barchart](https://barchart.com) mentioned in the paragraph above. Historical [futures price data](http://farmdoc.agricharts.com/markets/historic.php) and [average price recieved](http://www.farmdoc.illinois.edu/manage/pricehistory/price_history.html) is also available from [farmdoc](http://www.farmdoc.illinois.edu), the online extension presence of the University of Illinois' [Agricultural and Consumer Economics](http://ace.illinois.edu/) department. 
 
@@ -57,6 +59,7 @@ Acreage
 : While the Prospective Plantings Report estimates growers' *intentions* to plant, Acreage is an estimate of the acres actually planted. This report is based on surveys conducted during the first two weeks of June and released on the last day of June. Weather and changes in the relative price of crops that compete for acres are the most important reason for differences between Prospective Plantings and Acreage reports. Weather can play a factor becasue crops that compete for acres are not nessessarily planted at the same time. Corn, for example, is typically planted a few months before soybeans. The Corn Belt, where the biggest production of corn and soybeans occur, can often be very wet in the Spring. In some years this makes is physically very difficult to get to plant the number of acres of corn they intended when surveyed during the first two weeks of March. The relative price of crops competing for acres can also change between March and June for any number of reasons and cause the Acreage report to be substantially different than Prospective Plantings.     
 
 Grain Stocks
+
 :The Grain Stocks report is issued quarterly and contains information about how much of selected commodities are in storage in the United States, by state. Information in this report is pertinent to the price level, as well as the calendar spread between two futures maturities. When stocks are tight, naturally the price of the commodity will be high. Also, prices futures contracts soon to expire should exceed those with longer dated maturities for two reasons. 1) Low prices for distant futures contracts reflects the tendency for high prices to ration demand and for future harvests to resolve shortages. 2) Low prices for distant futures contracts should disincentivize storage and bring stocks onto the market to relieve current shortages. Thus, this report is important both for price level and spread analysis. 
 
 World Agricultural Supply and Demand Estimates (WASDE)
@@ -80,15 +83,13 @@ All of the information contained in the reports described above are useful for i
 
 
  
-
+{title="Table 3. Summary of USDA Reports and Data Sources"
 |Report                | Link                                                                         |
 |:---------------------|:-----------------------------------------------------------------------------|
-|Prospective Plantings | http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1136 |
-|Acreage               | http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1000 |
-|WASDE                 | http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1194 |
-|Crop Production       | http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1046 |
-
-: Table 3. Summary of USDA Reports and Data Sources.
+|Prospective Plantings | [Farmers' planting intentions ](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1136) |
+|Acreage               | [Planted Acres](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1000) |
+|WASDE                 | [World Supply and Demand Estimates](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1194) |
+|Crop Production       | [Crop Production - Acres and Yield](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1046) |
 
 |Data Source        | Link                                       |
 |:------------------|:-------------------------------------------|
