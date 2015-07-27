@@ -10,9 +10,9 @@ The best way to learn commodity price analysis is to listen to the professionals
 {title="Table 1. Resources for Commodity Market Commentary"}
 |Outlet    |  Description      | Link   |
 |:---------|:------------------|:----------------|
-|Farmdoc Daily | Extension web presence by the department of ACE |  http://farmdocdaily.illinois.edu/ |
-|WILL Agriculture | WILL  and the University of Illinois Extension | http://will.illinois.edu/agriculture | 
-|Market to Market | Agricultural programming by Iowa Public Television | http://www.iptv.org/mtom/ | 
+|Farmdoc Daily | Extension web presence by the department of ACE |  [http://farmdocdaily.illinois.edu/](http://farmdocdaily.illinois.edu/) |
+|WILL Agriculture | WILL  and the University of Illinois Extension | [http://will.illinois.edu/agriculture](http://will.illinois.edu/agriculture) | 
+|Market to Market | Agricultural programming by Iowa Public Television | [http://www.iptv.org/mtom/](http://www.iptv.org/mtom/) | 
 
 
 
