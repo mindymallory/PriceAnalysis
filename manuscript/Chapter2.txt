@@ -83,7 +83,7 @@ All of the information contained in the reports described above are useful for i
 
 
  
-{title="Table 3. Summary of USDA Reports and Data Sources"
+{title="Table 3. Summary of USDA Reports and Data Sources"}
 |Report                | Link                                                                         |
 |:---------------------|:-----------------------------------------------------------------------------|
 |Prospective Plantings | [Farmers' planting intentions ](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1136) |
@@ -93,9 +93,9 @@ All of the information contained in the reports described above are useful for i
 
 |Data Source        | Link                                       |
 |:------------------|:-------------------------------------------|
-|NASS               | http://www.nass.usda.gov/                  |
-|FAS                | http://www.fas.usda.gov/data               |
-|ERS                | http://www.ers.usda.gov/data-products.aspx |
+|NASS               | [http://www.nass.usda.gov/](http://www.nass.usda.gov/)                  |
+|FAS                | [http://www.fas.usda.gov/data](http://www.fas.usda.gov/data )              |
+|ERS                | [http://www.ers.usda.gov/data-products.aspx](http://www.ers.usda.gov/data-products.aspx) |
 
 ## Conclusion
 
