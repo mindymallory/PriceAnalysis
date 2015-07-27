@@ -1,8 +1,11 @@
 # Chapter 6: Forecasting Prices with Time-Series Econometric Techniques
 
 ## Time Series Basics
+
 ### Unit Roots and Spurious Regression
 
 ## Singe Market Models - ARIMA
+
 ## Multiple Market Models - VAR
+
 ## Multiple Market Models - VECM
