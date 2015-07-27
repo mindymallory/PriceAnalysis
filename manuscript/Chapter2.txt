@@ -60,7 +60,7 @@ Acreage
 
 Grain Stocks
 
-:The Grain Stocks report is issued quarterly and contains information about how much of selected commodities are in storage in the United States, by state. Information in this report is pertinent to the price level, as well as the calendar spread between two futures maturities. When stocks are tight, naturally the price of the commodity will be high. Also, prices futures contracts soon to expire should exceed those with longer dated maturities for two reasons. 1) Low prices for distant futures contracts reflects the tendency for high prices to ration demand and for future harvests to resolve shortages. 2) Low prices for distant futures contracts should disincentivize storage and bring stocks onto the market to relieve current shortages. Thus, this report is important both for price level and spread analysis. 
+: The Grain Stocks report is issued quarterly and contains information about how much of selected commodities are in storage in the United States, by state. Information in this report is pertinent to the price level, as well as the calendar spread between two futures maturities. When stocks are tight, naturally the price of the commodity will be high. Also, prices futures contracts soon to expire should exceed those with longer dated maturities for two reasons. 1) Low prices for distant futures contracts reflects the tendency for high prices to ration demand and for future harvests to resolve shortages. 2) Low prices for distant futures contracts should disincentivize storage and bring stocks onto the market to relieve current shortages. Thus, this report is important both for price level and spread analysis. 
 
 World Agricultural Supply and Demand Estimates (WASDE)
 
