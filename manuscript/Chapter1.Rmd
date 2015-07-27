@@ -2,10 +2,8 @@
 title: "Chapter 1"
 author: "Mindy Mallory"
 date: "July 17, 2015"
-output: 
-  html_document:
-    toc: true
-    theme: cerulean
+output:  md_document
+    
 bibliography: PriceAnalysis.bib
 csl: american-journal-of-agricultural-economics.csl.txt
 ---

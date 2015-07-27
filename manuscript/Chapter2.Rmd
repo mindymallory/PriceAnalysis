@@ -1,15 +1,17 @@
 ---
 title: 'Chapter 2: Getting Started'
-output: 
-  html_document:
-    toc: true
-    theme: readable
+output: md_document
+ 
 bibliography: PriceAnalysis.bib
 csl: american-journal-of-agricultural-economics.csl.txt
 comment: Copyright Mindy L. Mallory 2015
 ---
 
-
+ html_document:
+    toc: true
+    theme: readable
+    
+    
 This chapter serves as an introduction to real-time and historical data sources, as well as an introduction to the analysts that conduct price analysis professionally and help us make sense of commodity prices. First, we will introduce the reader to some entities that provide market commentary and price analysis. Next, we will provide a very brief introduction to futures markets as the source of real-time price information for commodities. This section also covers where and how to obtain current futures price quotes. In the section that follows we cover sources for historical data such as the United States Department of Agriculture and others. These sources will be useful in developing fundamental price models in later chapters. The goal of this chapter is to get the reader up to speed on where to get commodity price data and reading the professional analysis daily. The more you follow commodity markets, the more you learn. Absorb the insights of the professionals who live and breath commodity markets every day, and you will begin to have a feel for what price analysis is all about and how it works.    
 
 
