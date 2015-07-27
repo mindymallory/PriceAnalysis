@@ -1,0 +1,19 @@
+---
+title: 'Chapter 3: Fundamental Analysis and the Balence Sheet'
+output: 
+  html_document:
+    toc: true
+    theme: readable
+bibliography: PriceAnalysis.bib
+csl: american-journal-of-agricultural-economics.csl.txt
+comment: Copyright Mindy L. Mallory 2015
+---
+
+
+
+
+
+
+&copy; Mindy L. Mallory 2015
+
+# References
