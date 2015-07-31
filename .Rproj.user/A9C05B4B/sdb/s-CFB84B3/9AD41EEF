@@ -1,0 +1,17 @@
+{
+    "contents" : "Preface.md\n\nChapter2.txt",
+    "created" : 1438351349599.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3753351360",
+    "id" : "9AD41EEF",
+    "lastKnownWriteTime" : 1438351330,
+    "path" : "~/GitHub/PriceAnalysis/manuscript/Sample.txt",
+    "project_path" : "manuscript/Sample.txt",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "type" : "text"
+}

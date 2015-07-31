@@ -1,12 +1,11 @@
 I am writing *Commodity Price Analysis: Understand and Produce Market
 Commentary and Forecasts* and *R Companion to Commodity Price Analysis*
 while teaching ACE 427, an upper level course on Price Analysis at the
-University of Illinois. The books are inteded to be read together, but
+University of Illinois. The books are intended to be read together, but
 one could read *Commodity Price Analysis* without reading the *R
 Companion*. I am writing them as separate books because I can imagine
-professors teaching Price Analysis may not want to use R for analysis.
-In this case they could use *Commodity Price Analysis* in their course
-and do analysis in the software package of their choice.
+some will prefer to read the general coverage of *Commodity Price
+Analysis* and may not be interested in learning R for analysis.
 
 I am releasing these books while they are very early in development.
 Partly because the Lean Publishing model of 'Publish Early, Publish

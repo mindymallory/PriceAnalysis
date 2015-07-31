@@ -1,0 +1,9 @@
+{
+    "path" : "~/GitHub/PriceAnalysis",
+    "sortOrder" : [
+        {
+            "ascending" : true,
+            "columnIndex" : 2
+        }
+    ]
+}

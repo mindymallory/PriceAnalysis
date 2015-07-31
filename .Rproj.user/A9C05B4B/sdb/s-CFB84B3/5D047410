@@ -1,0 +1,17 @@
+{
+    "contents" : "I am writing *Commodity Price Analysis: Understand and Produce Market\nCommentary and Forecasts* and *R Companion to Commodity Price Analysis*\nwhile teaching ACE 427, an upper level course on Price Analysis at the\nUniversity of Illinois. The books are intended to be read together, but\none could read *Commodity Price Analysis* without reading the *R\nCompanion*. I am writing them as separate books because I can imagine\nsome will prefer to read the general coverage of *Commodity Price\nAnalysis* and may not be interested in learning R for analysis.\n\nI am releasing these books while they are very early in development.\nPartly because the Lean Publishing model of 'Publish Early, Publish\nOften' (with reader feedback) appeals to me. Another concern is purely\npractical. I want to use this book for classes in Fall 2015 and chapters\nwill be finished only shortly before I assign readings and exercises.\nBecause the book is in its early development stage, expect typos and\nother errors in the books. Knowing this, I am releasing the book for\nfree, at least through December. During this time I will be rapidly\nreleasing updates to keep up with my course.\n\nI am eager to hear reader feedback about the structure and scope of the\nbooks; I will appreciate any feedback you have. If you find errors,\nplease alert me via the [Leanpub](http://leanpub.com).\n\nMindy Mallory\n",
+    "created" : 1438351353356.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2067374690",
+    "id" : "5D047410",
+    "lastKnownWriteTime" : 1438351457,
+    "path" : "~/GitHub/PriceAnalysis/manuscript/Preface.md",
+    "project_path" : "manuscript/Preface.md",
+    "properties" : {
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "type" : "markdown"
+}
