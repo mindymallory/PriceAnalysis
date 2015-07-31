@@ -1,7 +1,7 @@
 I am writing *Commodity Price Analysis: Understand and Produce Market
 Commentary and Forecasts* and *R Companion to Commodity Price Analysis*
 while teaching ACE 427, an upper level course on Price Analysis at the
-University of Illinois. The books are inteded to be ready together, but
+University of Illinois. The books are inteded to be read together, but
 one could read *Commodity Price Analysis* without reading the *R
 Companion*. I am writing them as separate books because I can imagine
 professors teaching Price Analysis may not want to use R for analysis.
@@ -21,3 +21,5 @@ releasing updates to keep up with my course.
 I am eager to hear reader feedback about the structure and scope of the
 books; I will appreciate any feedback you have. If you find errors,
 please alert me via the [Leanpub](http://leanpub.com).
+
+Mindy Mallory
