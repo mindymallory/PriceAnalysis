@@ -7,7 +7,7 @@ Preface.md
 
 Chapter1.md
 
-Chapter2.txt
+Chapter2.md
 
 Chapter3.txt
 
