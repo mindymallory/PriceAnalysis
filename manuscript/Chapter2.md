@@ -32,17 +32,14 @@ Televisions' Market to Market are very good. There are *many* other
 great sources providing regular commentary, but this will get the reader
 started.
 
+{title="Table 1. Resources for Commodity Market Commentary"}
 |Outlet | Description | Link |  
 |:---------|:------------------|:----------------|  
-|Farmdoc Daily | Extension web presence by the department of ACE |
-[farmdocdaily.illinois.edu](http://farmdocdaily.illinois.edu) |  
-|WILL Agriculture | WILL and the University of Illinois Extension |
-[will.illinois.edu/agriculture](http://will.illinois.edu/agriculture)
-|  
-|Market to Market | Agricultural programming by Iowa Public Television |
-[www.iptv.org/mtom/](http://www.iptv.org/mtom/) |  
+|Farmdoc Daily | Extension web presence by the department of ACE |[farmdocdaily.illinois.edu](http://farmdocdaily.illinois.edu) |  
+|WILL Agriculture | WILL and the University of Illinois Extension |[will.illinois.edu/agriculture](http://will.illinois.edu/agriculture)|  
+|Market to Market | Agricultural programming by Iowa Public Television |[www.iptv.org/mtom/](http://www.iptv.org/mtom/) |  
   
-: Table 1. Resources for Commodity Market Commentary
+
 
 Futures Contracts as Sources of Real-time Price Information
 -----------------------------------------------------------
@@ -113,30 +110,14 @@ represents the commodity symbol, C for corn; the second letter
 represents the expiration month, Z for December; and the final two
 numerals represent the year of expiry, 15 for 2015.
 
-{title="Table 2. Conventions for Building Futures Contract Ticker
-Symbols for Selected Commodities"}  
- |Commodity | Symbol | Expiration Months and Symbol | General Ticker |
-Yahoo Finance Ticker |  
+{title="Table 2. Conventions for Building Futures Contract Ticker Symbols for Selected Commodities"}  
+|Commodity | Symbol | Expiration Months and Symbol | General Ticker |Yahoo Finance Ticker |  
 |:----------|:---------:|:--------------------------------------------------------|:----------------------|:---------------------|  
-| Corn | C |March (H), May (K), July (N), September (U), December (Z) |
-CZ15, December 2015 Corn|
- [CZ15.cbt](http://finance.yahoo.com/q;_ylt=Aq08zZO8Y0A5GdeM2aZSNJJ.FJF4?uhb=uhb2&fr=uh3_finance_vert_gs&type=2button&s=cz15.cbt)|  
-| Soybeans | S |January (F), March (H), May (K), July (N), August (Q),
-September (U), November (X) | SX15, November 2015 Soybean|
- [SX15.cbt](http://finance.yahoo.com/q;_ylt=Ajq44ku8k3rd1HzDOLpIozEnv7gF?uhb=uhb2&fr=uh3_finance_vert_gs&type=2button&s=sx15.cbt)
-|  
-| SRW Wheat | W |March (H), May (K), July (N), September (U), December
-(Z) | WZ15, December 2015 SRW Wheat|
- [WZ15.cbt](http://finance.yahoo.com/q;_ylt=Ajq44ku8k3rd1HzDOLpIozEnv7gF?uhb=uhb2&fr=uh3_finance_vert_gs&type=2button&s=wz15.cbt)
-|  
-| Lean Hogs | HE | Feb (G), Apr (J), May (K), Jun (M), Jul (N), Aug (Q),
-Oct (V), Dec (Z) | HEZ15, December 2015 Lean Hogs|
- [HEZ15.cme](http://finance.yahoo.com/q;_ylt=Ajq44ku8k3rd1HzDOLpIozEnv7gF?uhb=uhb2&fr=uh3_finance_vert_gs&type=2button&s=HEZ15.CME%2C)
-|  
-| Crude Oil | CL | All months | CLU15, September 2015 Light Sweet Crude
-Oil|
- [CLU15.nym](http://finance.yahoo.com/q;_ylt=Ajq44ku8k3rd1HzDOLpIozEnv7gF?uhb=uhb2&fr=uh3_finance_vert_gs&type=2button&s=clu15.nym)
-|  
+| Corn | C |March (H), May (K), July (N), September (U), December (Z) |CZ15, December 2015 Corn| [CZ15.cbt](http://finance.yahoo.com/q;_ylt=Aq08zZO8Y0A5GdeM2aZSNJJ.FJF4?uhb=uhb2&fr=uh3_finance_vert_gs&type=2button&s=cz15.cbt)|  
+| Soybeans | S |January (F), March (H), May (K), July (N), August (Q), September (U), November (X) | SX15, November 2015 Soybean| [SX15.cbt](http://finance.yahoo.com/q;_ylt=Ajq44ku8k3rd1HzDOLpIozEnv7gF?uhb=uhb2&fr=uh3_finance_vert_gs&type=2button&s=sx15.cbt)|  
+| SRW Wheat | W |March (H), May (K), July (N), September (U), December (Z) | WZ15, December 2015 SRW Wheat| [WZ15.cbt](http://finance.yahoo.com/q;_ylt=Ajq44ku8k3rd1HzDOLpIozEnv7gF?uhb=uhb2&fr=uh3_finance_vert_gs&type=2button&s=wz15.cbt)|  
+| Lean Hogs | HE | Feb (G), Apr (J), May (K), Jun (M), Jul (N), Aug (Q), Oct (V), Dec (Z) | HEZ15, December 2015 Lean Hogs| [HEZ15.cme](http://finance.yahoo.com/q;_ylt=Ajq44ku8k3rd1HzDOLpIozEnv7gF?uhb=uhb2&fr=uh3_finance_vert_gs&type=2button&s=HEZ15.CME%2C)|  
+| Crude Oil | CL | All months | CLU15, September 2015 Light Sweet Crude Oil| [CLU15.nym](http://finance.yahoo.com/q;_ylt=Ajq44ku8k3rd1HzDOLpIozEnv7gF?uhb=uhb2&fr=uh3_finance_vert_gs&type=2button&s=clu15.nym)|  
 
 While every market participant needs to know the current price,
 forecasting and decision making requires the study of historical prices
@@ -288,25 +269,17 @@ report from FAS (much of the WASDE report is archived here); and COST
 and RETURNS from ERS.
 
 {title="Table 3. Summary of USDA Reports and Data Sources"}  
- |Report | Link |  
+|Report | Link |  
 |:---------------------|:-----------------------------------------------------------------------------------------------------------------|  
-|Prospective Plantings | [Farmers' planting
-intentions](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1136)
-|  
-|Acreage | [Planted
-Acres](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1000)
-|  
-|WASDE | [World Supply and Demand
-Estimates](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1194)|  
-|Crop Production | [Crop Production - Acres and
-Yield](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1046)|  
-|NASS | [<http://www.nass.usda.gov/>](http://www.nass.usda.gov/) |  
-|FAS | [<http://www.fas.usda.gov/data>](http://www.fas.usda.gov/data)
-|  
-|ERS |
-[<http://www.ers.usda.gov/data-products.aspx>](http://www.ers.usda.gov/data-products.aspx)
-|  
- \#\# Conclusion
+|Prospective Plantings | [Farmers' planting intentions](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1136)|  
+|Acreage | [Planted Acres](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1000)|  
+|WASDE | [World Supply and Demand Estimates](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1194)|  
+|Crop Production | [Crop Production - Acres and Yield](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1046)|  
+|NASS | [www.nass.usda.gov/](http://www.nass.usda.gov/) |  
+|FAS | [www.fas.usda.gov/data](http://www.fas.usda.gov/data)|  
+|ERS | [www.ers.usda.gov/data-products.aspx](http://www.ers.usda.gov/data-products.aspx)|  
+
+## Conclusion
 
 This concludes chapter 2. We learned resources for accessing commodity
 market data, USDA reports, and daily market commentary. Aimed with these
@@ -318,15 +291,10 @@ sheets for components of supply and demand. Using the balence sheet
 approach, the analyst attempts to forecast the price that will cause
 quantities supplied and quantities demanded to be equal. This market
 equilibrium, if the fundamental model is correctly specified, should be
-a reasonable forecast of price. [@hull1991introduction]
+a reasonable forecast of price. 
 
 
-@book{hull1991introduction,
-  title={Introduction to futures and options markets},
-  author={Hull, John},
-  year={1991},
-  publisher={Englewood Cliffs, NJ: Prentice Hall}
-}
+
 
 References
 ----------
