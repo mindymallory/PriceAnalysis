@@ -32,12 +32,13 @@ Televisions' Market to Market are very good. There are *many* other
 great sources providing regular commentary, but this will get the reader
 started.
 
-|Outlet | Description | Link |
+|Outlet | Description | Link |  
 |:---------|:------------------|:----------------|  
 |Farmdoc Daily | Extension web presence by the department of ACE |
-[farmdocdaily.illinois.edu](http://farmdocdaily.illinois.edu) | |WILL
-Agriculture | WILL and the University of Illinois Extension |
-[will.illinois.edu/agriculture](http://will.illinois.edu/agriculture) |
+[farmdocdaily.illinois.edu](http://farmdocdaily.illinois.edu) |  
+|WILL Agriculture | WILL and the University of Illinois Extension |
+[will.illinois.edu/agriculture](http://will.illinois.edu/agriculture)
+|  
 |Market to Market | Agricultural programming by Iowa Public Television |
 [www.iptv.org/mtom/](http://www.iptv.org/mtom/) |  
   
@@ -317,7 +318,15 @@ sheets for components of supply and demand. Using the balence sheet
 approach, the analyst attempts to forecast the price that will cause
 quantities supplied and quantities demanded to be equal. This market
 equilibrium, if the fundamental model is correctly specified, should be
-a reasonable forecast of price.
+a reasonable forecast of price. [@hull1991introduction]
+
+
+@book{hull1991introduction,
+  title={Introduction to futures and options markets},
+  author={Hull, John},
+  year={1991},
+  publisher={Englewood Cliffs, NJ: Prentice Hall}
+}
 
 References
 ----------
