@@ -19,6 +19,6 @@ releasing updates to keep up with my course.
 
 I am eager to hear reader feedback about the structure and scope of the
 books; I will appreciate any feedback you have. If you find errors,
-please alert me via the [Leanpub](http://leanpub.com).
+please alert me via the [Leanpub](http://leanpub.com) website.
 
 Mindy Mallory
