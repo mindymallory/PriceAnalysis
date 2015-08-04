@@ -33,7 +33,7 @@ great sources providing regular commentary, but this will get the reader
 started.
 
 {title="Table 1. Resources for Commodity Market Commentary"}  
-|Outlet | Description | Link |  
+ |Outlet | Description | Link |  
 |:---------|:------------------|:----------------|  
 |Farmdoc Daily | Extension web presence by the department of ACE |
 <http://farmdocdaily.illinois.edu/> |  
@@ -113,7 +113,7 @@ numerals represent the year of expiry, 15 for 2015.
 
 {title="Table 2. Conventions for Building Futures Contract Ticker
 Symbols for Selected Commodities"}  
-|Commodity | Symbol | Expiration Months and Symbol | General Ticker |
+ |Commodity | Symbol | Expiration Months and Symbol | General Ticker |
 Yahoo Finance Ticker |  
 |:----------|:---------:|:--------------------------------------------------------|:----------------------|:---------------------|  
 | Corn | C |March (H), May (K), July (N), September (U), December (Z) |
@@ -286,7 +286,7 @@ report from FAS (much of the WASDE report is archived here); and COST
 and RETURNS from ERS.
 
 {title="Table 3. Summary of USDA Reports and Data Sources"}  
-|Report | Link |  
+ |Report | Link |  
 |:---------------------|:-----------------------------------------------------------------------------------------------------------------|  
 |Prospective Plantings | [Farmers' planting
 intentions](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1136)
