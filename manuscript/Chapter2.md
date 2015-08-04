@@ -32,15 +32,16 @@ Televisions' Market to Market are very good. There are *many* other
 great sources providing regular commentary, but this will get the reader
 started.
 
-{title="Table 1. Resources for Commodity Market Commentary"}  
- |Outlet | Description | Link |  
+|Outlet | Description | Link |
 |:---------|:------------------|:----------------|  
 |Farmdoc Daily | Extension web presence by the department of ACE |
-<http://farmdocdaily.illinois.edu/> |  
-|WILL Agriculture | WILL and the University of Illinois Extension |
-<http://will.illinois.edu/agriculture> |  
+[farmdocdaily.illinois.edu](http://farmdocdaily.illinois.edu) | |WILL
+Agriculture | WILL and the University of Illinois Extension |
+[will.illinois.edu/agriculture](http://will.illinois.edu/agriculture) |
 |Market to Market | Agricultural programming by Iowa Public Television |
-<http://www.iptv.org/mtom/> |  
+[www.iptv.org/mtom/](http://www.iptv.org/mtom/) |  
+  
+: Table 1. Resources for Commodity Market Commentary
 
 Futures Contracts as Sources of Real-time Price Information
 -----------------------------------------------------------
