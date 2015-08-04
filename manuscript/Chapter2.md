@@ -224,23 +224,19 @@ currently released at 12pm EST and release of the report commonly
 results in limit price moves in futures markets. It is among the most
 involved to prepare. To quote the USDA's own documentation:
 
-~~~~~~~~
-
-How the WASDE is Prepared - Lock-up Conditions: To assure the highly
-market-sensitive information is released simultaneously to all
-end-users, and not prematurely to any one, the WASDE report is prepared
-under tight security in a specially designed area of USDA’s South
-Building. The morning of release, doors in the “lockup” area are
-secured, window shades are sealed, and telephone and Internet
-communications are blocked. Once analysts present their credentials to a
-guard, they enter the secured area to finalize the WASDE report.
-Communications with the outside world are suspended until the report is
-released at 12:00 noon Eastern time.
-
-Source, [USDA Office of the Cheif
-Economist](http://www.usda.gov/oce/commodity/wasde/prepared.htm)
-
-~~~~~~~~
+> How the WASDE is Prepared - Lock-up Conditions: To assure the highly
+> market-sensitive information is released simultaneously to all
+> end-users, and not prematurely to any one, the WASDE report is
+> prepared under tight security in a specially designed area of USDA’s
+> South Building. The morning of release, doors in the “lockup” area are
+> secured, window shades are sealed, and telephone and Internet
+> communications are blocked. Once analysts present their credentials to
+> a guard, they enter the secured area to finalize the WASDE report.
+> Communications with the outside world are suspended until the report
+> is released at 12:00 noon Eastern time.
+>
+> Source, [USDA Office of the Cheif
+> Economist](http://www.usda.gov/oce/commodity/wasde/prepared.htm)
 
 Given the USDA reports' ability to move futures markets, the lock up
 condition described in the last paragraph is imperitive. The prospect
@@ -286,39 +282,21 @@ and RETURNS from ERS.
 
 {title="Table 3. Summary of USDA Reports and Data Sources"} |Report |
 Link |
-|:---------------------|:-----------------------------------------------------------------------------|
+|:---------------------|:-----------------------------------------------------------------------------------------------------------------|
 |Prospective Plantings | [Farmers' planting
 intentions](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1136)
-| |Acreage | [Planted
+|  
+|Acreage | [Planted
 Acres](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1000)
 | |WASDE | [World Supply and Demand
-Estimates](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1194)
-| |Crop Production | [Crop Production - Acres and
-Yield](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1046)
+Estimates](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1194)|
+|Crop Production | [Crop Production - Acres and
+Yield](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1046)|
+|NASS | [<http://www.nass.usda.gov/>](http://www.nass.usda.gov/) | |FAS
+| [<http://www.fas.usda.gov/data>](http://www.fas.usda.gov/data) | |ERS
 |
-
-<table>
-<thead>
-<tr class="header">
-<th align="left">Data Source</th>
-<th align="left">Link</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">NASS</td>
-<td align="left"><a href="http://www.nass.usda.gov/"><a href="http://www.nass.usda.gov/" class="uri">http://www.nass.usda.gov/</a></a></td>
-</tr>
-<tr class="even">
-<td align="left">FAS</td>
-<td align="left"><a href="http://www.fas.usda.gov/data"><a href="http://www.fas.usda.gov/data" class="uri">http://www.fas.usda.gov/data</a></a></td>
-</tr>
-<tr class="odd">
-<td align="left">ERS</td>
-<td align="left"><a href="http://www.ers.usda.gov/data-products.aspx"><a href="http://www.ers.usda.gov/data-products.aspx" class="uri">http://www.ers.usda.gov/data-products.aspx</a></a></td>
-</tr>
-</tbody>
-</table>
+[<http://www.ers.usda.gov/data-products.aspx>](http://www.ers.usda.gov/data-products.aspx)
+|
 
 Conclusion
 ----------

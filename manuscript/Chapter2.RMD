@@ -73,19 +73,18 @@ World Agricultural Supply and Demand Estimates (WASDE)
 
 : The WASDE report is released monthly and provides the USDA's forecasts for U.S. and world supply and use balence sheets for grains, soybeans and its products, and cotton. It contains supply and use forecasts for U.S. sugar and livestock commodities. These reports are among the most important and eagerly anticipated by market participants. The report is currently released at 12pm EST and release of the report commonly results in limit price moves in futures markets. It is among the most involved to prepare. To quote the USDA's own documentation: 
 
-\~\~\~\~\~\~\~\~
 
- How the WASDE is Prepared - Lock-up Conditions:
- To assure the highly market-sensitive information is released simultaneously to all end-users, and not prematurely to 
- any one, the WASDE report is prepared under tight security in a specially designed area of USDA’s South Building. The 
- morning of release, doors in the “lockup” area are secured, window shades are sealed, and telephone and Internet 
- communications are blocked. Once analysts present their credentials to a guard, they enter the secured area to 
- finalize the WASDE report. Communications with the outside world are suspended until the report is released at 12:00 
- noon Eastern time.
 
- Source, [USDA Office of the Cheif Economist](http://www.usda.gov/oce/commodity/wasde/prepared.htm)
+> How the WASDE is Prepared - Lock-up Conditions:
+> To assure the highly market-sensitive information is released simultaneously to all end-users, and not prematurely to 
+> any one, the WASDE report is prepared under tight security in a specially designed area of USDA’s South Building. The 
+> morning of release, doors in the “lockup” area are secured, window shades are sealed, and telephone and Internet 
+> communications are blocked. Once analysts present their credentials to a guard, they enter the secured area to 
+> finalize the WASDE report. Communications with the outside world are suspended until the report is released at 12:00 
+> noon Eastern time.
+>
+> Source, [USDA Office of the Cheif Economist](http://www.usda.gov/oce/commodity/wasde/prepared.htm)
 
-\~\~\~\~\~\~\~\~
 
 Given the USDA reports' ability to move futures markets, the lock up condition described in the last paragraph is imperitive. The prospect that USDA reports could be leaked is the inpiration behind the final scene in [Trading Places](https://www.youtube.com/watch?v=1tmI867fAYU), probably the best and only popular movie made about commodity markets. In this scene, Eddie Murphey and Dan Ackroid's characters learn that the rich antagonists obtained advance access to the 'crop report' (they do not say which report) pertinent to orange juice futures contianing information that would make the price go down. Eddie Murphey and Dan Ackroid intercept the information and feed the rich antagonists a false report with bogus information that would cause the futures price to rise. Before the report is released the rich antagonists buy A LOT of orange juice futures contracts, driving the price up. Then Eddie Murphey and Dan Ackroid start selling when the price is high. When the 'crop report' comes out the price crashes. The rich guys loose a ton of money and Eddie Murphey and Dan Ackroid become wealthy and retire wealthy to a tropical paradise. 
 
@@ -100,17 +99,14 @@ All of the information contained in the reports described above are useful for i
 
  
 {title="Table 3. Summary of USDA Reports and Data Sources"}
-|Report                | Link                                                                         |
-|:---------------------|:-----------------------------------------------------------------------------|
-|Prospective Plantings | [Farmers' planting intentions ](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1136) |
-|Acreage               | [Planted Acres](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1000) |
-|WASDE                 | [World Supply and Demand Estimates](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1194) |
-|Crop Production       | [Crop Production - Acres and Yield](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1046) |
-
-|Data Source        | Link                                       |
-|:------------------|:-------------------------------------------|
-|NASS               | [http://www.nass.usda.gov/](http://www.nass.usda.gov/)                  |
-|FAS                | [http://www.fas.usda.gov/data](http://www.fas.usda.gov/data)              |
+|Report                | Link                                                                                                             |
+|:---------------------|:-----------------------------------------------------------------------------------------------------------------|
+|Prospective Plantings | [Farmers' planting intentions ](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1136)    |  
+|Acreage               | [Planted Acres](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1000)                    |
+|WASDE                 | [World Supply and Demand Estimates](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1194)|
+|Crop Production       | [Crop Production - Acres and Yield](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1046)|
+|NASS               | [http://www.nass.usda.gov/](http://www.nass.usda.gov/)                                   |
+|FAS                | [http://www.fas.usda.gov/data](http://www.fas.usda.gov/data)                             |
 |ERS                | [http://www.ers.usda.gov/data-products.aspx](http://www.ers.usda.gov/data-products.aspx) |
 
 ## Conclusion 
