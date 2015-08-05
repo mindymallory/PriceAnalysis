@@ -91,7 +91,11 @@ Given the USDA reports' ability to move futures markets, the lock up condition d
 
 Crop Production
 
-: The Crop Production report includes estimates of yeild, acres harvested, and total production for covered commodities. This report is released in tandem with the WASDE report. 
+: The Crop Production report includes estimates of yeild, acres harvested, and total production for covered commodities. This report is released in tandem with the WASDE report.
+
+Crop Progess and Condition
+
+: Crop Progress and Condition reports are issued every Monday during the planting, growing, and harvest season for major crops in the United States. The weekly updates provide market participants critical information about the status of the crop. Nass surveys approximately 4,000 individuals in major growing areas familar with the crops. Check out one of the weekly tables [August 3, 2015](http://usda.mannlib.cornell.edu/usda/current/CropProg/CropProg-08-03-2015_correction.pdf) and summary charts [US Progress and Condition](http://www.nass.usda.gov/Charts_and_Maps/Crop_Progress_&_Condition/2015/US_2015.pdf)
 
 ### USDA Data Sources
 
@@ -107,6 +111,7 @@ All of the information contained in the reports described above are useful for i
 |Acreage               | [Planted Acres](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1000)                    | \
 |WASDE                 | [World Supply and Demand Estimates](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1194)| \
 |Crop Production       | [Crop Production - Acres and Yield](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1046)| \
+|Crop Progress       | [Crop Progress](http://www.nass.usda.gov/Publications/National_Crop_Progress/)| \
 |NASS               | [http://www.nass.usda.gov/](http://www.nass.usda.gov/)                                   | \
 |FAS                | [http://www.fas.usda.gov/data](http://www.fas.usda.gov/data)                             | \
 |ERS                | [http://www.ers.usda.gov/data-products.aspx](http://www.ers.usda.gov/data-products.aspx) | \
