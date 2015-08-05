@@ -1,19 +1,98 @@
 ---
-title: 'Chapter 3: Fundamental Analysis and the Balence Sheet'
-output: md_document
-  
+title: 'Chapter 3: Fundamental Analysis and the Balance Sheet'
+output: 
+    html_document:
+        toc: true
 bibliography: PriceAnalysis.bib
 csl: american-journal-of-agricultural-economics.csl.txt
 comment: Copyright Mindy L. Mallory 2015
 ---
 
 
-html_document:
-    toc: true
-    theme: readable
+# Introduction
+
+Fundamental analysis is an assessment of price based on the underlying supply and demand factors. Focusing on changes in the relationship between supply and demand allows one to calibrate informed opinion of the value of the commodity. If one considers the theory of supply and demand, the main role of the market is to find the value at which supply equals demand - or in other words, the value that 'clears the market'. 
+
+At this point we may as well call the 'fundamental value' a forecast or expectation of the market clearing price. The goal of any forecasting exercise is to compare the forecast (estimated fundamental value) to the current market price and make decisions accordingly. 
+
+> Bullish:  `Forecast > Price` \
+> Bearish: `Forecast < Price` 
+
+<a title="By Thomas Richter/user:THOMAS (Own work) [GFDL (http://www.gnu.org/copyleft/fdl.html) or CC-BY-SA-3.0 (http://creativecommons.org/licenses/by-sa/3.0/)], via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File%3ABull_and_bear.jpg"><img width="512" alt="Bull and bear" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Bull_and_bear.jpg/512px-Bull_and_bear.jpg"/></a>
+
+# Supply and Demand
+
+When conducing a fundamental analysis it is key to keep in mind key factors that determine supply and demand and ultimately prices. Recall the basic supply and demand figures from chapter 1. They are the basic theoretical framework that will guild all of our modeling decisions. For grain markets we had two models: preplanting and post planting. 
+
+% Figures Here
+
+**Supply is Affected by:**
+
+- Acreage
+  - Prices of crops competing for acreage
+  - Pre-Plant Weather 
+- Yield
+  - Post-Plant Weather
+- Carryover Stocks
+  
+**Demand is Affected by:**
+
+- Consumer Income
+- Exchange Rates
+- Government Policies
+- Foreign Production
+
+Acreage 
+
+:    Prior to planting the quantity of planted acres is a huge determinant of production and baseline supply for the marketing year. Before planting, farmers must plan how much acreage to devote to each commodity. In the Corn Belt, the relative prices of corn and soybeans play a large role. If futures prices indicate planting soybeans will be more profitable than planting corn, farmers will plan to devote more acres than usual to soybeans, for example. Weather is a key factor as well. The most ardent planting intentions of a farmer can be derailed by weather. An unusually rainy planting season can reduce planted acres from intentions. Planting intentions can change rapidly based on price as well. If the relative prices of competing commodities change rapidly before planting is complete, acreage devoted to each commodity can be affected. This is all to say that before the crop is actually in the ground, the supply of grain is relatively elastic. 
+
+Yield
+
+:   After the crop is planted, there is still considerable uncertainty related to how much the crop will yield; this is largely determined by weather during the growing season.
+
+Carryover Stocks
+
+:    Some of the production from the previous year usually remains. Carryover stocks function as a buffer against current year yield uncertainty. If carryover stocks are high and current year yield is expected to be below trend, the market will respond but in a modest fashion. Essentially carryover stocks can subsitute for new crop production. If carryover stocks are low - resulting from several years of below trend production and strong demand, for example - then below trend yield can cause a volatile rise in prices.  
+
+
+# The Marketing Year
+ 
+Fundamental analysis is often organized by marketing year. The marketing year begins with the first month the commodity is harvested and ends with the following year's harvest. 
+
+| Crop                    |  Begining of Marketing Year - First Month of Harvest |
+|:------------------------|:-----------------------------------------------------|
+| Corn                    | September                                            |
+| Soybeans                | September                                            |
+| Spring Wheat (Chicago)  | August                                               |
+| Winter Wheat (KC)       | July                                                 |
+
+
+: Table 1. Beginning of Marketing Year by Crop. (Source [NASS Timetables](http://www.nass.usda.gov/Publications/National_Crop_Progress/))
+
+# Balance Sheet
 
 
 
-&copy; Mindy L. Mallory 2015
+
+Forecasting supply and demand for the marketing year begins well before harvest - nearly a year in advance, in fact. 
+
+| Timeline     | Forecasting Focus                                                                                               |
+|:------------------------|:-----------------------------------------------------------------------------------------------------|
+| Fall 2016    | The first forecasts of supply and use based on *trend forecasts*, *recent history*, *economic relationships*    |
+| Spring 2016  | Update supply forecasts based on USDA acreage surveys.                                                          |
+| Summer 2016  | Update supply forecasts based on weather and USDA crop and stocks reports                                       |
+| Fall 2016    | Update supply forecasts as yield uncertianty is resolved through harvest reports and USDA production reports    |
+| - Summer 2016| Continue to update supply forecasts based on USDA production revisions, stocks, and use reports.                |
+
+: Table 2: Forecasting Calendar for 2016/2017 Marketing Year 
+
+
+
+
+
+
+
+
+
 
 # References

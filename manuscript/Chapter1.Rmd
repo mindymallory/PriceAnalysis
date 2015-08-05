@@ -1,6 +1,8 @@
 ---
 title: "Chapter 1"
-output:  md_document
+output:  
+    html_document:
+        toc: true
 bibliography: PriceAnalysis.bib
 csl: american-journal-of-agricultural-economics.csl.txt
 ---
@@ -11,7 +13,11 @@ csl: american-journal-of-agricultural-economics.csl.txt
 
 ## Storable and Nonstorable Commodities
 
-## Commodity Prices
+## Commodity Prices, Supply, and Demand
+
+### Economic Model Before Planting
+
+### Economic Model After Planting
 
 ### Role in Determining Farm Income
 
