@@ -18,7 +18,7 @@ At this point we may as well call the 'fundamental value' a forecast or expectat
 > Bullish:  `Forecast > Price` \
 > Bearish: `Forecast < Price` 
 
-<a title="By Thomas Richter/user:THOMAS (Own work) [GFDL (http://www.gnu.org/copyleft/fdl.html) or CC-BY-SA-3.0 (http://creativecommons.org/licenses/by-sa/3.0/)], via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File%3ABull_and_bear.jpg"><img width="512" alt="Bull and bear" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Bull_and_bear.jpg/512px-Bull_and_bear.jpg"/></a>
+<a title="By Thomas Richter/user:THOMAS (Own work) [GFDL (http://www.gnu.org/copyleft/fdl.html) or CC-BY-SA-3.0 (http://creativecommons.org/licenses/by-sa/3.0/)], via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File%3ABull_and_bear.jpg"><img width="128" alt="Bull and bear" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Bull_and_bear.jpg/128px-Bull_and_bear.jpg"/></a>                
 
 # Supply and Demand
 
@@ -71,7 +71,7 @@ Fundamental analysis is often organized by marketing year. The marketing year be
 
 # Balance Sheet
 
-
+Balance Sheet definitions and description here. 
 
 
 Forecasting supply and demand for the marketing year begins well before harvest - nearly a year in advance, in fact. 
