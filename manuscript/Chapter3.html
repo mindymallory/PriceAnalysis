@@ -69,60 +69,74 @@ img {
 <li><a href="#supply-and-demand">Supply and Demand</a></li>
 <li><a href="#balance-sheet">Balance Sheet</a><ul>
 <li><a href="#the-marketing-year-and-balance-sheet-forecasting-schedule">The Marketing Year and Balance Sheet Forecasting Schedule</a></li>
+<li><a href="#uncertainty">Uncertainty</a></li>
 </ul></li>
 </ul>
 </div>
 
 <div id="introduction" class="section level1">
 <h1>Introduction</h1>
-<p>Fundamental analysis is an assessment of price based on underlying supply and demand factors. Focusing on changes in the relationship between supply and demand allows one to calibrate an informed opinion of the value of the commodity. If one considers the theory of supply and demand, the main role of the market is to find the value at which supply equals demand - or in other words, the value that ‘clears the market’.</p>
-<p>The estimated ‘fundamental value’ is simply a forecast, or expectation of, the market clearing price. The goal of any forecasting exercise is to compare the forecast (estimated fundamental value) to the current market price and make decisions accordingly.</p>
+<p>Fundamental analysis is an assessment of price based on underlying supply and demand factors. Focusing on changes in the relationship between supply and demand allows one to calibrate an informed opinion of the value of the commodity. The main role of the market is to find the value at which supply equals demand - or in other words, the value that ‘clears the market’. The estimated ‘fundamental value’ is simply a forecast, or expectation of, the market clearing price. The goal of any forecasting exercise is to compare the forecast (estimated fundamental value) to the current market price and make decisions accordingly.</p>
 <blockquote>
 <p>Bullish: <code>Forecast &gt; Price</code><br />Bearish: <code>Forecast &lt; Price</code></p>
 </blockquote>
 <p><a title="By Thomas Richter/user:THOMAS (Own work) [GFDL (http://www.gnu.org/copyleft/fdl.html) or CC-BY-SA-3.0 (http://creativecommons.org/licenses/by-sa/3.0/)], via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File%3ABull_and_bear.jpg"><img width="128" alt="Bull and bear" src="data:image/jpeg;base64,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" /></a></p>
-<p>If your forecast is above the current market price, that is bullish because your forecast says the market is undervalueing the commodity - an opportunity to buy low and sell high! If your forecast is below the current market price, that is bearish becasue your forecast says the market is overvalueing the commodity - an opportunity to sell high and buy low! This of course only works if your forecast is correct, that is, the market eventually agrees and moves into line with your forecast.</p>
+<p>If your forecast is above the current market price, that is bullish because your forecast implies the market is undervaluing the commodity - an opportunity to buy low and sell high! If your forecast is below the current market price, that is bearish because your forecast implies the market is overvaluing the commodity - an opportunity to sell high and buy low! This, of course, only works if your forecast is correct, that is, the market eventually agrees and moves into line with your forecast.</p>
 </div>
 <div id="supply-and-demand" class="section level1">
 <h1>Supply and Demand</h1>
-<p>When conducing a fundamental analysis one does their best to take into account all the factors that determine supply, demand, and ultimately prices. Recall the basic supply and demand figures from chapter 1. They are the basic theoretical framework that will guild all of our modeling decisions. For grain markets we had two models: preplanting and post planting.</p>
+<p>Conducing fundamental analyses involves taking into account all the factors that determine supply, demand, and ultimately, prices. Recall the supply and demand figures from chapter 1. They are the basic theoretical framework that will guild all of our modeling decisions. For grain markets we had two models: preplanting and post planting.</p>
 <p>% Figures Here</p>
 <p><strong>Supply is Affected by:</strong></p>
 <ul>
-<li>Acreage</li>
+<li>Acreage
+<ul>
 <li>Prices of crops competing for acreage</li>
 <li>Pre-Plant Weather</li>
-<li>Yield</li>
-<li>Post-Plant Weather</li>
-</ul>
-<p><strong>Demand is Affected by:</strong></p>
+</ul></li>
+<li>Yield
 <ul>
-<li>Consumer Income (this includes foreign income, since exports are a big compoent of demand)</li>
-<li>Exchange Rates</li>
+<li>Post-Plant Weather</li>
+</ul></li>
 <li>Government Policies</li>
-<li>Foreign Production</li>
 </ul>
 <dl>
 <dt>Acreage</dt>
-<dd><p>Before planting, farmers plan how much acreage to devote to each commodity, thus determining the baseline expected production level. Before summer weather is revealed, expected production is simply <code>Acreage X Trend Yield</code>. In the Corn Belt, the relative prices of corn and soybeans play a large role in the farmer’s decision. If futures prices indicate planting soybeans will be more profitable than planting corn, farmers will plan to devote more acres than usual to soybeans, for example. Weather can be an imporant determinant of acreage decisions as well. The most ardent planting intentions of a farmer can be derailed by persistent wet weather. An unusually rainy planting season can reduce planted acres from intentions. This is all to say that before the crop is actually in the ground, the supply of grain is relatively elastic.</p>
+<dd><p>Before planting, farmers plan how much acreage to devote to each commodity, thus determining the baseline expected production level. Before summer weather is revealed, expected production is simply <code>Acreage X Trend Yield</code>. In the Corn Belt, where planting decisions amount to deciding how to divide acres between corn and soybeans, their relative prices play a large role in the farmer’s decision. If futures prices indicate planting soybeans will be more profitable than planting corn, farmers will plan to devote more acres than usual to soybeans, for example. Weather can be an important determinant of acreage decisions as well. The most ardent planting intentions of a farmer can be derailed by persistent wet weather. An unusually rainy planting season can reduce planted acres from intentions. Before the crop is actually in the ground, the supply of grain is relatively elastic.</p>
 </dd>
 <dt>Yield</dt>
-<dd><p>After the crop is planted, there is still considerable uncertainty related to how much the crop will yield; this is largely determined by weather during the growing season.</p>
+<dd><p>After the crop is planted supply is quite inelastic, but there is still considerable uncertainty related to how much the crop will yield; this is largely determined by weather during the growing season.</p>
+</dd>
+<dt>Government Policies</dt>
+<dd><p>The government has been heavily involved in Agriculture in the United States since the great depression of the 1930’s. There have been programs that guarantee a minimum price, programs that guarantee minimum revenue, and various incarnations of crop insurance programs. Occasionally these favor the production of one type of crop over another. When this happens, farmers predictably respond by planting more of the crop treated more favorably by the program.</p>
+</dd>
+</dl>
+<p><strong>Demand is Affected by:</strong></p>
+<ul>
+<li>Consumer Income</li>
+<li>Exchange Rates</li>
+</ul>
+<dl>
+<dt>Consumer Income</dt>
+<dd><p>This one is straight from economics 101. When people have more money, they will spend it on goods. This means increased demand for commodities and their derived products. This includes foreign income, since exports are a big component of demand for commodities in the United States. Rising incomes usually means rising consumption of meat, which increases the demand for commodities like corn, soybeans, and even wheat that are used as animal feed.</p>
+</dd>
+<dt>Exchange Rates</dt>
+<dd><p>Exchange rates also affect demand through their influence on exports. For example, if the U.S. dollar is weak, then consumers in other countries can buy dollars cheaply - giving them more purchasing power for goods denominated in dollars.</p>
 </dd>
 </dl>
 </div>
 <div id="balance-sheet" class="section level1">
 <h1>Balance Sheet</h1>
-<p>Most fundamental analysis relies on maintianing balance sheets of a commodity for a country, region, or the world. The approach is to maintain a careful accounting of how much supply exists and how much of the commodity has been used. Then through various means, one arrives at a price that will ration remaining supplies accross competing uses.</p>
+<p>Most fundamental analyses rely on maintaining balance sheets of a commodity for a country, region, or the world. The approach is to maintain a careful accounting of how much supply exists and how much of the commodity has been used. Then through various means we will explore later, one arrives at a price that is expected to ration remaining supplies across competing uses.</p>
 <div id="the-marketing-year-and-balance-sheet-forecasting-schedule" class="section level2">
 <h2>The Marketing Year and Balance Sheet Forecasting Schedule</h2>
-<p>Balance sheet analysis is often organized by marketing year. Since production happens, The marketing year begins with the first month the commodity is harvested and ends with the following year’s harvest. The table below makes note the month on which marketing years begin for several crops.</p>
+<p>Balance sheet analysis is often organized by marketing year. Since production happens once per year, the marketing year is defined to begin in the first month the commodity is harvested and ends with the following year’s harvest. The table below makes note the month on which marketing years begin for several crops.</p>
 <table>
 <caption>Table 1. Beginning of Marketing Year by Crop. (Source <a href="http://www.nass.usda.gov/Publications/National_Crop_Progress/">NASS Timetables</a>)</caption>
 <thead>
 <tr class="header">
 <th align="left">Crop</th>
-<th align="left">Begining of Marketing Year - First Month of Harvest</th>
+<th align="left">Beginning of Marketing Year - First Month of Harvest</th>
 </tr>
 </thead>
 <tbody>
@@ -168,7 +182,7 @@ img {
 </tr>
 <tr class="even">
 <td align="left">Fall 2016</td>
-<td align="left">Update supply forecasts as yield uncertianty is resolved through harvest reports and USDA production reports</td>
+<td align="left">Update supply forecasts as yield uncertainty is resolved through harvest reports and USDA production reports</td>
 </tr>
 <tr class="odd">
 <td align="left">- Summer 2016</td>
@@ -177,16 +191,173 @@ img {
 </tbody>
 </table>
 <blockquote>
-<h1>Southern Hemisphere Production</h1>
+<h1 id="southern-hemisphere-production">Southern Hemisphere Production</h1>
 <p>Production of corn, soybeans, and other commodities in the southern hemisphere (most notably in Brazil and Argintina) has grown rapidly over the last ten to fifteen years, and has impacted global commdity markets tremendously. Since southern hemisphere production occurs in the middle of marketing years organized by northern hemisphere harvest, there is an uncertain additional supply that must be forecast and updated to keep an accurate global balance sheet.</p>
 </blockquote>
-<!-- 
-Carryover Stocks
-
-:    Some production from the previous year usually remains into the next crop season. Carryover stocks function as a buffer against current year yield uncertainty. For example, if carryover stocks are high and current year yield is expected to be below trend, the market price may fall in response but modestly. However, if carryover stocks are low - resulting from several years of below trend production and strong demand - then an expected yield below trend will likely cause a volatile rise in prices.  
--->
+</div>
+<div id="uncertainty" class="section level2">
+<h2>Uncertainty</h2>
+<p>Even careful accounting of supply and demand factors that make up the balance sheet leaves a tremendous amount of uncertainty in the market. Demand can be difficult to forecast, and can sometimes change dramatically. The USDA keeps careful track of stocks, but we only get stocks estimates once a quarter. Between <em>Grain Stocks</em> reports there is always a great deal of speculation as to the pace of consumption and whether we are eating into stocks at a faster or slower pace than expected. Analysts talk about whether the market is on pace to achieve the forecast level of ethanol crush, soybean crush, or exports. Surprises in any of these components can lead to rapid corrections in the commodity markets.</p>
+<p>In the next few tables below, we outline the typical format for balance sheet analysis.</p>
+<table>
+<caption>Table 3. Balance Sheet for a General Commodity</caption>
+<thead>
+<tr class="header">
+<th align="left">Stocks and Use</th>
+<th align="left"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Beginning Stocks</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">+ Production</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">+ Imports</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left"><strong>= Total Supply</strong></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Domestic Consumption</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">+ Exports</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">+ Residual</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left"><strong>= Total Consumption (Use)</strong></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left"><strong>Ending Stocks = Total Supply - Total Consumption</strong></td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<p>Since the USDA makes regular reports on the balance sheet for commodities (the WASDE reports described in Chapter 2), most conducing private analyses with balance sheets use the USDA categories so that the USDA estimates can be taken as a benchmark. The supply side (Stocks) is relatively straightforward. Total stocks for the marketing year will be beginning stocks, the portion of last year’s stocks that were not used up during the previous marketing year, plust this year’s production, plus any imports of the commodity. Summing these three reveals the total amount of the commodity available for use during the marketing year.</p>
+<ul>
+<li>Beginning Stocks: Some production from the previous year usually remains into the next crop season. Carryover stocks function as a buffer against current year yield uncertainty. For example, if carryover stocks are high and current year yield is expected to be below trend, the market price may fall in response but modestly. However, if carryover stocks are low - resulting from several years of below trend production and strong demand - then an expected yield below trend will likely cause a volatile rise in prices.</li>
+</ul>
+<table>
+<caption>Table 4. Balance Sheet for Corn</caption>
+<thead>
+<tr class="header">
+<th align="left">Stocks and Use</th>
+<th align="left"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Beginning Stocks</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">+ Production</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">+ Imports</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left"><strong>= Total Supply</strong></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Feed and Residual</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">+ Food, Seed, and Industrial</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">+ Ethanol</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">+ Exports</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left"><strong>= Total Consumption (Use)</strong></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left"><strong>Ending Stocks = Total Supply - Total Consumption</strong></td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<p>The balance sheet for corn follows the same generic patter, but we can be a bit more specific with the use categories since we know what the major use catagories are for any given commodity. The use components are as follows: <!-- Put percentages here? --></p>
+<ul>
+<li>Feed and Residual: A large portion of the corn crop is used as feed for livestock (cattle, pigs, poultry).</li>
+<li>Food, Seed, and Industrial: Corn is used to make tortilla chips, high fructose corn syrup, edible oil and other food items. A portion of the crop is grown specifically as seed for the next years crop. There are some industural uses for components of processed corn. Those are grouped in this category as well.</li>
+<li>Ethanol production also demands a significant amount of corn, so much that it gets its own category in the balance sheet.</li>
+<li>The final use category is export. Corn grown in the United States is consumed around the globe, and strength or weakness in the export market is a carefully component of demand.</li>
+</ul>
+<table>
+<caption>Table 5. Balance Sheet for Soybeans</caption>
+<thead>
+<tr class="header">
+<th align="left">Stocks and Use</th>
+<th align="left"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Beginning Stocks</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">+ Production</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">+ Imports</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left"><strong>= Total Supply</strong></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Crush</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">+ Food, Seed, and Industrial</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">+ Exports</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left"><strong>= Total Consumption (Use)</strong></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left"><strong>Ending Stocks = Total Supply - Total Consumption</strong></td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<p>Describe soybeans here.</p>
 <div class="references">
-<h1>References</h1>
+<h1 id="references" class="unnumbered">References</h1>
 </div>
 </div>
 </div>
