@@ -65,7 +65,6 @@ img {
 
 <div id="TOC">
 <ul>
-<li><a href="#chapter-2-getting-started">Chapter 2: Getting Started</a><ul>
 <li><a href="#resources-for-market-commentary">Resources for Market Commentary</a></li>
 <li><a href="#futures-contracts-as-sources-of-real-time-price-information">Futures Contracts as Sources of Real-time Price Information</a><ul>
 <li><a href="#futures-data-sources">Futures Data Sources</a></li>
@@ -76,15 +75,14 @@ img {
 <li><a href="#usda-data-sources">USDA Data Sources</a></li>
 </ul></li>
 <li><a href="#conclusion">Conclusion</a></li>
-</ul></li>
+<li><a href="#readings">Readings</a></li>
+<li><a href="#exercises">Exercises</a></li>
 </ul>
 </div>
 
-<div id="chapter-2-getting-started" class="section level1">
-<h1>Chapter 2: Getting Started</h1>
 <p>This chapter serves as an introduction to real-time and historical data sources, as well as an introduction to the analysts that conduct price analysis professionally and help us make sense of commodity prices. First, we will introduce the reader to some entities that provide market commentary and price analysis. Next, we will provide a very brief introduction to futures markets as the source of real-time price information for commodities. This section also covers where and how to obtain current futures price quotes. In the section that follows we cover sources for historical data such as the United States Department of Agriculture and others. These sources will be useful in developing fundamental price models in later chapters. The goal of this chapter is to get the reader up to speed on where to get commodity price data and reading the professional analysis daily. The more you follow commodity markets, the more you learn. Absorb the insights of the professionals who live and breath commodity markets every day, and you will begin to have a feel for what price analysis is all about and how it works.</p>
-<div id="resources-for-market-commentary" class="section level2">
-<h2>Resources for Market Commentary</h2>
+<div id="resources-for-market-commentary" class="section level1">
+<h1>Resources for Market Commentary</h1>
 <p>The best way to learn commodity price analysis is to listen to the professionals who provide commentary on the markets on a regular basis. Land grant universities located in major commodity producing states all have components of their outreach programs dedicated to market commentary. The University of Illinois’ web extension program, FARMDOC, is particularly good. Also, public radio in major commodity producing areas has excellent coverage. Champaign-Urbana’s WILL, and Iowa Public Televisions’ Market to Market are very good. There are <em>many</em> other great sources providing regular commentary, but this will get the reader started.</p>
 <table>
 <caption>Table 1. Resources for Commodity Market Commentary</caption>
@@ -114,16 +112,16 @@ img {
 </tbody>
 </table>
 </div>
-<div id="futures-contracts-as-sources-of-real-time-price-information" class="section level2">
-<h2>Futures Contracts as Sources of Real-time Price Information</h2>
+<div id="futures-contracts-as-sources-of-real-time-price-information" class="section level1">
+<h1>Futures Contracts as Sources of Real-time Price Information</h1>
 <p>Futures contracts (contracts to buy/sell a specific quantity of, say, corn at a specific price on a specific date in the future) can be distinguished from forward contracts in that quantity and quality are standardized. This facilitates the ability of futures contracts to be traded on an exchange. Whereas a forward contract has specific counterparties (buyers and sellers), with futures contracts the exchange becomes the seller to every buyer and the buyer to every seller. If enough market participants are present it is very easy to get into and out of these futures contracts because you do not have to come to an agreement with the original buyer/seller. You simply take an offsetting position (sell if you originally bought and buy if you originally sold) at the currently prevailing price. The exchange takes your contractual obligation off the books and you just pay (or receive) the difference in price between when you bought and when you sold. Fully understanding the function of futures markets is well beyond the scope of this book, but the interested reader is encouraged to refer to Kub <span class="citation">(2012)</span> for a practical introduction and Hull <span class="citation">(Hull 1991)</span> for a more technical approach.</p>
-<div id="futures-data-sources" class="section level3">
-<h3>Futures Data Sources</h3>
+<div id="futures-data-sources" class="section level2">
+<h2>Futures Data Sources</h2>
 <p>For agricultural commodities in the United States, the <a href="http://www.cmegroup.com/">CME Group</a> is the most important futures exchange for price discovery. Grain and oil-seed contracts traded at the CME Group include corn, soybeans, soybean oil, soybean meal, soft red winter wheat, hard red winter wheat. They also list futures contracts for livestock products such as live cattle, lean hogs, and feeder cattle. ‘Soft’ commodities that trade on the CME Group are cocoa, coffee, and sugar. The CME Group also lists energy commodity products for crude oil, natural gas, ethanol, and other products. This book will focus most intently on the grain and oil-seed contracts, with some topics related to the cattle and energy contracts considered. Many of these futures contracts are considered to be the main price setting function for the commodity in the world. Chicago Board of Trade (owned by the CME Group) futures prices of corn and soybeans are considered the ‘World Price’ of corn and soybeans. Meaning that all over the globe, prices for these commodities are set based on what the price of corn and soybeans are trading on the CME Group exchanges.</p>
 <p>Real-time (10-min delay) data can be obtained directly from the CME Group’s website. There you can view the most recent quotes, and some charting capability is provided as well. Typically, however, it is more convenient to obtain market quotes from third party vendors like <a href="http://finance.yahoo.com/">Yahoo Finance</a>, <a href="https://www.quandl.com/collections/futures">Quandl</a>, <a href="http://www.barchart.com/futures/marketoverview">barchart</a> (subscription required), or others. Those sources offer a more flexible interface for viewing on the web, and provide utility to download recent price history.</p>
 </div>
-<div id="futures-symbols-and-looking-up-data-by-contract-expiration" class="section level3">
-<h3>Futures Symbols and Looking up Data by Contract Expiration</h3>
+<div id="futures-symbols-and-looking-up-data-by-contract-expiration" class="section level2">
+<h2>Futures Symbols and Looking up Data by Contract Expiration</h2>
 <p>Contracts for several different expiry dates trade at the same time. There is a useful shorthand for finding contracts for a specific commodity and expiration month that varies only slightly among data vendors; all follow a general convention for building futures ticker symbols customizing only to meet the needs of their individual systems. The table below lists selected grain and oilseed, livestock, and energy contract symbols, expiration symbols, and common ticker formats used to search for price quotes. For example, the first row of the table illustrates that the general convention for representing the CBOT corn futures contract expiring in December of 2015 is CZ15. The first letter represents the commodity symbol, C for corn; the second letter represents the expiration month, Z for December; and the final two numerals represent the year of expiry, 15 for 2015.</p>
 <table>
 <caption>Table 2. Conventions for Building Futures Contract Ticker Symbols for Selected Commodities</caption>
@@ -183,11 +181,11 @@ img {
 <p>While every market participant needs to know the current price, forecasting and decision making requires the study of historical prices and other important market variables. Historical futures price data is available for free and from subscription based services from <a href="https://quandl.com">Quandl</a> and <a href="https://barchart.com">Barchart</a> mentioned in the paragraph above. Historical <a href="http://farmdoc.agricharts.com/markets/historic.php">futures price data</a> and <a href="http://www.farmdoc.illinois.edu/manage/pricehistory/price_history.html">average price recieved</a> is also available from <a href="http://www.farmdoc.illinois.edu">farmdoc</a>, the online extension presence of the University of Illinois’ <a href="http://ace.illinois.edu/">Agricultural and Consumer Economics</a> department.</p>
 </div>
 </div>
-<div id="reports-and-data-from-the-usda" class="section level2">
-<h2>Reports and Data from the USDA</h2>
+<div id="reports-and-data-from-the-usda" class="section level1">
+<h1>Reports and Data from the USDA</h1>
 <p>The United States Department of Agriculture has a long history of extensively surveying market conditions, reporting to the public and maintaining accessible databases. Because of their efforts to provide consistent and accurate (as is possible) estimates of key variables like acres planted, yield, production, stocks, consumption, and exports, market participants follow USDA reports about market conditions very closely. Their impacts on prices can be seen immediately amd sometimes cause rapid, if not instantaneous price moves as the market digests the new information from the report. The most closely watched reports are summarized below.</p>
-<div id="usda-reports-influential-in-commodity-markets" class="section level3">
-<h3>USDA Reports Influential in Commodity Markets</h3>
+<div id="usda-reports-influential-in-commodity-markets" class="section level2">
+<h2>USDA Reports Influential in Commodity Markets</h2>
 <dl>
 <dt>Prospective Plantings</dt>
 <dd><p>The Prospective Plantings report is an estimate of grower intentions for planted acres during the first two weeks of March. The report is released on the last day of March every year. Planted acres for each crop varies considerably from year-to-year and this report give the market important guidance about expected supply of the covered commodities. The most important reason prospective plantings change from year-to-year is the relative prices of crops that compete for acres. Growers look to the prices of futures with a expiry around the time of harvest for an estimate of expected profit from planting competing crops. For example, if the price of corn is relatively high compared to soybeans, and expected profitability from an acre of corn is higher than from an acre of soybeans, the farmer is likely to shift some of his planting intentions from soybeans to corn compared to the crop mix typically planted. In this case you might hear market commentary include language like, “… corn is bidding for acres.” Meaning that price of corn is trying to entice growers to shift acres into corn production.</p>
@@ -219,9 +217,9 @@ img {
 </dd>
 </dl>
 </div>
-<div id="usda-data-sources" class="section level3">
-<h3>USDA Data Sources</h3>
-<p>All of the information contained in the reports described above are useful for in depth analysis over a long time horizon. As a service the USDA maintains databases of information contained in historical reports that are easy to query for analysis. Four important agencies maintaining databases within the USDA are the <a href="http://www.nass.usda.gov/">National Agricultural Statistics Service</a> (NASS), the <a href="http://apps.fas.usda.gov/psdonline/psdHome.aspx">Foreign Agricultural Service</a> (FAS), the <a href="http://www.ers.usda.gov/data-products.aspx">Economics Research Service</a> (ERS), and the <a href="http://www.ams.usda.gov/market-news/livestock-poultry-grain#Grain">Agricultural Marketing Service</a>. Each service mentioned here hosts a wide variety of data and analyses, so concise descriptions are difficult. However some of the data products commonly used for commodity price analysis are ACRES PLANTED, PRODUCTION, YIELD, and PRICE RECIEVED by NASS; the PRODUCTION SUPPLY AND DISTRIBUTION report from FAS (much of the WASDE report is archived here); COST and RETURNS from ERS; and local prices from AMS.</p>
+<div id="usda-data-sources" class="section level2">
+<h2>USDA Data Sources</h2>
+<p>All of the information contained in the reports described above are useful for in depth analysis over a long time horizon. As a service the USDA maintains databases of information contained in historical reports that are easy to query for analysis. Four important agencies maintaining databases within the USDA are the <a href="http://www.nass.usda.gov/">National Agricultural Statistics Service</a> (NASS), the <a href="http://apps.fas.usda.gov/psdonline/psdHome.aspx">Foreign Agricultural Service</a> (FAS), the <a href="http://www.ers.usda.gov/data-products.aspx">Economics Research Service</a> (ERS), and the <a href="http://www.ams.usda.gov/market-news/livestock-poultry-grain#Grain">Agricultural Marketing Service</a>. Each service mentioned here hosts a wide variety of data and analyses, so concise descriptions are difficult. However some of the data products commonly used for commodity price analysis are ACRES PLANTED, PRODUCTION, YIELD, and PRICE RECIEVED by NASS; the PRODUCTION SUPPLY AND DISTRIBUTION report from FAS (much of the WASDE report is archived here); COST and RETURNS from ERS; and local prices from AMS .</p>
 <table>
 <caption>Table 3. Summary of USDA Reports and Data Sources</caption>
 <thead>
@@ -271,14 +269,39 @@ img {
 </table>
 </div>
 </div>
-<div id="conclusion" class="section level2">
-<h2>Conclusion</h2>
+<div id="conclusion" class="section level1">
+<h1>Conclusion</h1>
 <p>This concludes chapter 2. We learned resources for accessing commodity market data, USDA reports, and daily market commentary. Aimed with these resources one can begin to follow the ups and downs of commdodity prices and get a feel for how fundamental supply and demand factors cause fluctuations in prices. In the next section we will cover fundamental analysis in detail. Fundamental analysis is driven by building balence sheets for components of supply and demand. Using the balence sheet approach, the analyst attempts to forecast the price that will cause quantities supplied and quantities demanded to be equal. This market equilibrium, if the fundamental model is correctly specified, should be a reasonable forecast of price.</p>
+</div>
+<div id="readings" class="section level1">
+<h1>Readings</h1>
+<dl>
+<dt><a href="http://farmdocdaily.illinois.edu/2015/03/usda-stocks-and-acreage-estimates-for-soybeans-and-corn.html">USDA Stocks and Acreage Estimates Smaller than Expected for Soybeans and Larger than Expected for Corn</a></dt>
+<dd><p>Good discusses the release of the March 31st, 2015 <em>Grain Stocks</em> and <em>Prospective Plantings</em> reports. Notice the attention paid to the difference between the USDA report numbers and the “Trade’s Guess”. Why is this important?</p>
+<p>Good, D. “USDA Stocks and Acreage Estimates Smaller than Expected for Soybeans and Larger than Expected for Corn.” farmdoc daily (5):59, Department of Agricultural and Consumer Economics, University of Illinois at Urbana-Champaign, March 31, 2015.</p>
+</dd>
+</dl>
+</div>
+<div id="exercises" class="section level1">
+<h1>Exercises</h1>
+<ol style="list-style-type: decimal">
+<li>Find data on Quandl.com for the December 2015 CBOT corn futures contract (Note: linked above). Download the data in a .csv or Microsoft Excel file. Do the same for the March and May 2015 CBOT corn futures contract and put the price series together in one exel file (Be sure the dates line up.) Now, graph all three prices together.
+<ul>
+<li>Are the price equal?</li>
+<li>Why not if the represent the same thing?</li>
+<li>Conjecture what are the determinants of the price orderings of these contracts.</li>
+</ul></li>
+<li>Calculate the difference between the December price and the March price in excel. This difference is called the spread. Sometimes you will hear it referred to as the Dec/March spread or the z/h spread - only making reference to the contract month codes. Convention dictates that the nearest to expire contract is the first in the difference; i.e., <code>December - March</code> rather than <code>March - December</code>.
+<ul>
+<li>From a forecasting perspective, does it seem like price level is easier to predict, or the price spread?</li>
+<li>Can you think of any statisticts you could calculate to back up your intuition?</li>
+</ul></li>
+<li>From the readings for this chapter, what do you suppose is the significance of the USDA report compared to the “Trade’s Guess”?</li>
+</ol>
 <div class="references">
-<h2 id="references" class="unnumbered">References</h2>
+<h1 id="references" class="unnumbered">References</h1>
 <p>Hull, J. 1991. <em>Introduction to futures and options markets</em>. Englewood Cliffs, NJ: Prentice Hall.</p>
 <p>Kub, E. 2012. <em>Mastering the grain markets: How profits are really made</em>. CreateSpace Independent Publishing Platform.</p>
-</div>
 </div>
 </div>
 

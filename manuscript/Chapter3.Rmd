@@ -9,8 +9,6 @@ comment: Copyright Mindy L. Mallory 2015
 ---
 
 
-# Introduction
-
 Fundamental analysis is an assessment of price based on underlying supply and demand factors. Focusing on changes in the relationship between supply and demand allows one to calibrate an informed opinion of the value of the commodity. The main role of the market is to find the value at which supply equals demand - or in other words, the value that 'clears the market'. The estimated 'fundamental value' is simply a forecast, or expectation of, the market clearing price. The goal of any forecasting exercise is to compare the forecast (estimated fundamental value) to the current market price and make decisions accordingly. 
 
 > Bullish:  `Forecast > Price` \
@@ -168,13 +166,28 @@ For soybeans, stocks are comprised of beginning stocks, production, and imports,
 - Food, Seed, and Industrial: We saw this category in the corn balance sheet. The definition remains the same. 
 - Exports: The United States exports a large quantity of soybeans to global buyers. 
 
+# Coming up with a Price
+
+
+
 # Readings 
 
+[Balance Sheet Projections for the 2015-16 Corn Marketing Year](http://farmdocdaily.illinois.edu/2015/02/balance-sheet-projections-for-2015-16-corn-marketing-year.html)
 
-Good, D. "[Balance Sheet Projections for the 2015-16 Corn Marketing Year](http://farmdocdaily.illinois.edu/2015/02/balance-sheet-projections-for-2015-16-corn-marketing-year.html)." farmdoc daily (5):23, Department of Agricultural and Consumer Economics, University of Illinois at Urbana-Champaign, February 9, 2015.
+:    This *farmdoc daily* article was written in February of 2015. This is well before spring planting of corn and soybeans in the United States. However, farmers during this time are actively planning for planting season - prepping equipment, fertilizing and preparing ground, and buying seed. Good lays out the groundwork for early forecasts of the 2015/2016 marketing year balance sheet. This article is published two days before the February 2015 WASDE report, and Good provides context upon which market expectations for the WASDE report can be based upon.  
+
+    Good, D. "[Balance Sheet Projections for the 2015-16 Corn Marketing Year](http://farmdocdaily.illinois.edu/2015/02/balance-sheet-projections-for-2015-16-corn-marketing-year.html)." *farmdoc daily* (5):23, Department of Agricultural and Consumer Economics, University of Illinois at Urbana-Champaign, February 9, 2015.
+
+
+
+[Projecting the 2015-16 Corn Balance Sheet and Price Implications](http://farmdocdaily.illinois.edu/2015/04/projecting-2015-16-corn-balance-sheet.html)
+
+:    In this reading Good and Irwin break down the USDA's April 9th WASDE report and offer their own projections that differ slightly from the USDA's projection that came out a week earlier. Pay close attention to why their price estimate is higher than the USDA's. 
+
+    Good, D., and S. Irwin. "[Projecting the 2015-16 Corn Balance Sheet and Price Implications](http://farmdocdaily.illinois.edu/2015/04/projecting-2015-16-corn-balance-sheet.html)." *farmdoc daily* (5):70, Department of Agricultural and Consumer Economics, University of Illinois at Urbana-Champaign, April 16, 2015.
+
+# Exercises
 
 
 
 
-
-# References
