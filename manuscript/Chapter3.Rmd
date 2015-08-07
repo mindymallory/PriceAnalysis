@@ -102,7 +102,10 @@ Forecasting supply and demand for any given marketing year begins well before ha
 
 Even careful accounting of supply and demand factors that make up the balance sheet leaves a tremendous amount of uncertainty in the market.  Demand can be difficult to forecast, and can sometimes change dramatically. The USDA keeps careful track of stocks, but we only get stocks estimates once a quarter. Between *Grain Stocks* reports there is always a great deal of speculation as to the pace of consumption and whether we are eating into stocks at a faster or slower pace than expected. Analysts talk about whether the market is on pace to achieve the forecast level of ethanol crush, soybean crush, or exports. Surprises in any of these components can lead to rapid corrections in the commodity markets.  
 
-In the next few tables below, we outline the typical format for balance sheet analysis. 
+
+## Balance Sheet Format
+
+Here we discuss the common format balance sheets for any commodity have in common. Then we talk about the components of specific balance sheets for corn and soybeans. 
 
 | Stocks and Use   |   | 
 |:-------------------|:--|
@@ -159,8 +162,16 @@ The balance sheet for corn follows the same generic patter, but we can be a bit 
 
 : Table 5. Balance Sheet for Soybeans
 
-Describe soybeans here. 
+For soybeans, stocks are comprised of beginning stocks, production, and imports, just as they were for the general balance sheet and the corn balance sheet. The use side, contains items specific to soybeans:
 
+- Crush: The amount of raw soybeans that are processed into soybean oil and soybean meal. Soybean oil is used predominately as edible oil; it also is used to make bio-diesel in modest quantities.
+- Food, Seed, and Industrial: We saw this category in the corn balance sheet. The definition remains the same. 
+- Exports: The United States exports a large quantity of soybeans to global buyers. 
+
+# Readings 
+
+
+Good, D. "[Balance Sheet Projections for the 2015-16 Corn Marketing Year](http://farmdocdaily.illinois.edu/2015/02/balance-sheet-projections-for-2015-16-corn-marketing-year.html)." farmdoc daily (5):23, Department of Agricultural and Consumer Economics, University of Illinois at Urbana-Champaign, February 9, 2015.
 
 
 
