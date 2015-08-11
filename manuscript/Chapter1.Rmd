@@ -7,26 +7,84 @@ bibliography: PriceAnalysis.bib
 csl: american-journal-of-agricultural-economics.csl.txt
 ---
 
-# Chapter 1: Introduction
+# What is a Commodity
 
-## What is a Commodity
+A commodity is a good that can be supplied without qualitative differences. A bushel of wheat is regarded as a bushel of wheat everywhere. Commodities are fully or partially fungible so that the market treats a unit of good the same no matter who produced it or where it was produced. Think of grain elevators, for example. Farmers bring their grain to an elevator at harvest. Sometimes they sell it outright to the elevator, but sometimes they pay the elevator to store it for them. When the farmer decides to come get his grain out of storage do you think he gets the exact same kernels he brought in? Of course that would be impractical. The elevator just gives him back the same amount of grain he brought in of the same quality. The farmer is happy because the wheat is fungible. The grain he will be able to sell the grain he took out just as easily as the grain he put in. This is in start contrast to differentiated goods where branding and quality make important distinctions between goods, resulting in differentiated demands. Just try to find someone indifferent between iPhone and Android!
 
-## Storable and Nonstorable Commodities
+Since commodities are fungible, it also makes sense that prices of commodities are determined by the entire (often global) market for the good. They tend to be basic resources such as agricultural and food products, metals, energy, an fibers. The fungibility of commodities enables the commodity to be traded in centralized spot and futures markets. 
 
-## Commodity Prices, Supply, and Demand
+## Trasformation Over Space, Time, and Form
 
-### Economic Model Before Planting
+Commodities can undergo various transformations. Standard price analysis usually groups these into three broad categories: Space, Time, and Form. Studying a commodity's transformation over space comes about from the fact that the production of a commodity is often concentrated in a specific geographic location, while consumption of commodities is usually dispersed. In order for traders to have incentive to move a commodity from one location to another, a certain patter of prices must prevail. In short, traders must be able to make a profit, or at least break even in the business of moving a commodity from one location to another. 
 
-### Economic Model After Planting
+Studying a commodity's transformation through time considers the nature of prices required to provide incentive to store the commodity for use at a later date (if it is possible to store the commodity - more on that below), or incentive to bring the commodity to market. Using the example of grain again, grain is produced once per year (in the United States), but consumption of grains occurs all year long. In order for the market to coordinate just the right amount of grain to be stored through time, prices through time give incentive for those holding stocks of grain to bring them to market or hold on longer. 
 
-### Role in Determining Farm Income
+Commodities can be transformed into completely different goods. Sometimes this transformation creates new commodities; for example soybeans are crushed into soybean oil and soybean meal - both of which are considered commodities. Other times the transformation creates products that are no longer considered commodities, where quality and differentiation matters. Meat products are a good example of this. Feeder cattle and live cattle are commodities, but through the slaughter and processing process, the commodity becomes differentiated products - different cuts of meat at the grocery store. Another example is coffee. Green coffee beans are considered a commodity, but once they enter the supply chain companies start transforming it by roasting, grinding, and brewing the coffee. Starbucks, for example, does not sell a commodity. Their product is highly differentiated and they market the fact that their product is highly differentiated in the marketplace.  
 
-### Value of Exports
 
-### Consumer Expenditure on Food
+# Storable and Nonstorable Commodities
+
+A key difference among commodities is their degree of storability. Some can be stored for long periods of time: 
+
+- Corn
+- Soybeans
+- Wheat
+- Peanuts
+- Crude Oil
+- Natural Gas
+
+Others are highly perishable or otherwise nonstorable:
+
+- Hogs
+- Cattle
+- Milk
+- Potatoes
+- Apples
+- Tomatoes
+- Electricity
+
+The storability of a commodity has profound implications on market prices. With storable commodities, they can be stored from one period to the next. This means the prices in one period must be related to prices in another period because those holding stocks of the commodity will constantly calculating their expectation of when best to sell - now or later. With non-storable commodities, prices can only be affected by the current supply of the commodity, since past supply cannot be brought foreward. 
+
+# Commodity Prices
+
+Commodity prices are important both economically and politically in almost all countries. Commodity prices strongly influence farm income, and this can be quite volatile from year-to-year. The United States has a long history of policies aimed at smoothing out the price volatility and income volatility for farmers. 
+
+- Price supports
+- Revanue supports
+- Subsidised crop insurance programs
+
+Some countries' economies rely heavily on the export of various kinds of commodities. This leaves their economic growth and prosperity subject to volatility in commodity prices. In other countries, particularly in the developing world, a large share of the population for still engages in agricultural production for their livlihood. For these people, commodity prices determine the bulk of their income, and incomes of the poor is a primary concern in developing economies. 
+
+## Forecasting Commodity Prices in Business
+
+Some companies business model leaves them exposed to risk that comes from price volatility and spend considerable resources forecasting prices. These tend to be companies that deal directly in commodities and need to hedge risks. Some examples include: 
+
+- ADM
+- Cargill
+- Caterpiller
+- ConAgra
+- Kraft
+- Weyerhauser
+
+There are consistent employment opportunities for students trained in price analysis and forecasting, and a growing interest in expertise in risk management strategies. 
 
 ## Price Analysis versus Forecasting
 
-## Forecasting Principles
+Price analysis and price forecasting are not exactly the same thing. Price analysis tends to be backward looking, while price forecasting is foreward looking. 
 
-## Long Term Agricultural Price Trends
+Price Analysis:
+- Goal is to understand the complex array of foreces that influence the level and behavior of commodity prices
+- Aids in understanding performance of commodity markets
+- Aids in the development of policy, and is a key compoenent of the policy analysis that leads the a policy's promotion or demise
+
+Price Forecasting: 
+- Goal is to reliably and accurately forecast future price levels of commodities
+- The forecasts can be used in marketing and speculative strategies
+
+# Forecasting Principles
+
+
+
+# Long Term Agricultural Price Trends
+
+
