@@ -33,7 +33,7 @@ A key difference among commodities is their degree of storability. Some can be s
 - Crude Oil
 - Natural Gas
 
-Others are highly perishable or otherwise nonstorable:
+Others are highly perishable or otherwise non-storable:
 
 - Hogs
 - Cattle
@@ -43,17 +43,17 @@ Others are highly perishable or otherwise nonstorable:
 - Tomatoes
 - Electricity
 
-The storability of a commodity has profound implications on market prices. With storable commodities, they can be stored from one period to the next. This means the prices in one period must be related to prices in another period because those holding stocks of the commodity will constantly calculating their expectation of when best to sell - now or later. With non-storable commodities, prices can only be affected by the current supply of the commodity, since past supply cannot be brought foreward. 
+The storability of a commodity has profound implications on market prices. With storable commodities, they can be stored from one period to the next. This means the prices in one period must be related to prices in another period because those holding stocks of the commodity will constantly calculating their expectation of when best to sell - now or later. With non-storable commodities, prices can only be affected by the current supply of the commodity, since past supply cannot be brought forward. 
 
 # Commodity Prices
 
 Commodity prices are important both economically and politically in almost all countries. Commodity prices strongly influence farm income, and this can be quite volatile from year-to-year. The United States has a long history of policies aimed at smoothing out the price volatility and income volatility for farmers. 
 
 - Price supports
-- Revanue supports
-- Subsidised crop insurance programs
+- Revenue supports
+- Subsidized crop insurance programs
 
-Some countries' economies rely heavily on the export of various kinds of commodities. This leaves their economic growth and prosperity subject to volatility in commodity prices. In other countries, particularly in the developing world, a large share of the population for still engages in agricultural production for their livlihood. For these people, commodity prices determine the bulk of their income, and incomes of the poor is a primary concern in developing economies. 
+Some countries' economies rely heavily on the export of various kinds of commodities. This leaves their economic growth and prosperity subject to volatility in commodity prices. In other countries, particularly in the developing world, a large share of the population for still engages in agricultural production for their livelihood. For these people, commodity prices determine the bulk of their income, and incomes of the poor is a primary concern in developing economies. 
 
 ## Forecasting Commodity Prices in Business
 
@@ -61,7 +61,7 @@ Some companies business model leaves them exposed to risk that comes from price 
 
 - ADM
 - Cargill
-- Caterpiller
+- Caterpillar
 - ConAgra
 - Kraft
 - Weyerhauser
@@ -70,12 +70,12 @@ There are consistent employment opportunities for students trained in price anal
 
 ## Price Analysis versus Forecasting
 
-Price analysis and price forecasting are not exactly the same thing. Price analysis tends to be backward looking, while price forecasting is foreward looking. 
+Price analysis and price forecasting are not exactly the same thing. Price analysis tends to be backward looking, while price forecasting is forward looking. 
 
 Price Analysis:
-- Goal is to understand the complex array of foreces that influence the level and behavior of commodity prices
+- Goal is to understand the complex array of forces that influence the level and behavior of commodity prices
 - Aids in understanding performance of commodity markets
-- Aids in the development of policy, and is a key compoenent of the policy analysis that leads the a policy's promotion or demise
+- Aids in the development of policy, and is a key component of the policy analysis that leads the a policy's promotion or demise
 
 Price Forecasting: 
 - Goal is to reliably and accurately forecast future price levels of commodities
@@ -84,7 +84,7 @@ Price Forecasting:
 # Forecasting Basics
 
 1. All meaningful forecasts guide decisions
-    - An awarness of the nature of the decisions will impact the design, use, and evaluation of the forecasting process
+    - An awareness of the nature of the decisions will impact the design, use, and evaluation of the forecasting process
 
 2. Form of forecast statement
     
@@ -102,14 +102,14 @@ Price Forecasting:
     
     Confidence interval forecast
     
-    :    We are 80% confident that fed steer prices fore hte first quarter of 2016 will be between $140-$160/cwt
+    :    We are 80% confident that fed steer prices fore the first quarter of 2016 will be between $140-$160/cwt
     
     Density forecast
     
-    :    Provides entire probabilty distribution of forecast price.
+    :    Provides entire probability distribution of forecast price.
     
 3. Forecast horizon
-    - Forecast horizon is the number of periods between today and teh date of the forecast made.
+    - Forecast horizon is the number of periods between today and the date of the forecast made.
     
     - If dealing with monthly data: 
     
@@ -119,9 +119,9 @@ Price Forecasting:
         
     -  More complex situations are common in crop market forecasting
         - Typical unit of time is a 'marketing year'.[^More on the marketing year in Chapter 3]
-        - Forecasts are typically updated monthy.
+        - Forecasts are typically updated monthly.
     
-4. Parsimony priciple
+4. Parsimony principle
     - Other things equal, simple approaches are preferred
     - Also known as [Occam's Razor](https://en.wikipedia.org/wiki/Occam%27s_razor)
     
@@ -130,7 +130,7 @@ Price Forecasting:
     - Simple approaches tend to work best in real world applications
         - Based on decades of experience and research
         - Simpler models can be estimated more precisely
-        - Because simpler models can be more easily interpreted  and understood, unusual behavior and outcomes can be more easiliy spotted. 
+        - Because simpler models can be more easily interpreted  and understood, unusual behavior and outcomes can be more easily spotted. 
         
     - It is easier to communicate the basic behavior and design of simple approaches, so they are more likely to be used by decision-makers.
     
@@ -139,15 +139,15 @@ Price Forecasting:
         
 We focus on two types of "simple" forecasting methods. 
 
-1. Fundamental analysis: use of economic models and data on production, consumption, income, etc. to forecast prices. You will recognise this approach as balance sheet analysis in chapter 3. 
+1. Fundamental analysis: use of economic models and data on production, consumption, income, etc. to forecast prices. You will recognize this approach as balance sheet analysis in chapter 3. 
 
-2. Reduced form time-series exonometrics: use of statistical econometric models that features minimal inputs beyond a few recent prices to generate a forecasting model. 
+2. Reduced form time-series econometric: use of statistical econometric models that features minimal inputs beyond a few recent prices to generate a forecasting model. 
 
 Not covered here, but a method used widely by day-traders and other market participants is technical analysis, which is the use of past price patterns to predict future price movement. There are scores of books on the topic of technical analysis, if interested. 
 
 # Long Term Agricultural Price Trends
 
-It is useful to begin our exploration of agricultural prices from a long term historical perspective. The figure below is monthly prices recieved by farmers in the U.S. from 1908 to 2015. By simple visual inspection there seems to be three periods of stable prices, from 1908-1973, 1974-2006, and 2007-present. Although the most recent period seems to be the most volatile and provides less confidence that a similar pattern will persist going forward. 
+It is useful to begin our exploration of agricultural prices from a long term historical perspective. The figure below is monthly prices received by farmers in the U.S. from 1908 to 2015. By simple visual inspection there seems to be three periods of stable prices, from 1908-1973, 1974-2006, and 2007-present. Although the most recent period seems to be the most volatile and provides less confidence that a similar pattern will persist going forward. 
 
 ![Corn Prices Recieved](images\Ch1_PricesRecieved_files\image001.png)
 Source([http://www.nass.usda.gov/](http://www.nass.usda.gov/))
@@ -157,14 +157,14 @@ Now lets zoom in on the 1974-2015 periods.
 ![Corn Prices Recieved](images\Ch1_PricesRecieved_files\image003.png)
 Source([http://www.nass.usda.gov/](http://www.nass.usda.gov/))
 
-Looking at these two charts together, there is a clear runup in prices in the 1970's and again around 2006-2007. What caused these seeminly permanent price hikes?  
+Looking at these two charts together, there is a clear run-up in prices in the 1970's and again around 2006-2007. What caused these seemingly permanent price hikes?  
 
 
 # Readings
 
 [Agricultural Commodity Price Spikes in the 1970s and 1990s: Valuable Lessons for Today](http://www.ers.usda.gov/amber-waves/2009-march/agricultural-commodity-price-spikes-in-the-1970s-and-1990s-valuable-lessons-for-today.aspx#.VcpsS_lVhuA)
 
-:    This article was published by staff at the United States Department of Agriculure's Economic Research Service. They look at historical corn prices and provide some perspective about what caused the price increases in the 1970's and mid-2000's. 
+:    This article was published by staff at the United States Department of Agriculture's Economic Research Service. They look at historical corn prices and provide some perspective about what caused the price increases in the 1970's and mid-2000's. 
 
 
 [Market Instability in a New Era of Corn, Soybean, and Wheat Prices](http://www.choicesmagazine.org/magazine/pdf/article_56.pdf)
