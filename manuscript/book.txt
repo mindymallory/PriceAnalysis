@@ -1,18 +1,2 @@
 
 {frontmatter}
-
-Preface.md
-
-{backmatter}
-
-Chapter1.md
-
-Chapter2.md
-
-Chapter3.txt
-
-Chapter4.txt
-
-Chapter5.txt
-
-Chapter6.txt

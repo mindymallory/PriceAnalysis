@@ -81,10 +81,105 @@ Price Forecasting:
 - Goal is to reliably and accurately forecast future price levels of commodities
 - The forecasts can be used in marketing and speculative strategies
 
-# Forecasting Principles
+# Forecasting Basics
 
+1. All meaningful forecasts guide decisions
+    - An awarness of the nature of the decisions will impact the design, use, and evaluation of the forecasting process
 
+2. Form of forecast statement
+    
+    Directional forecast
+    
+    :    Fed steer prices for the first quarter of 2016 will be down compared to the same quarter last year. 
+    
+    Simple point forecast
+    
+    :    Fed steer prices for the fist quarter of 2016 = $150/cwt. 
+    
+    Interval forecast
+    
+    :    Fed steer prices for the first quarter of 2016 = $140-$160/cwt
+    
+    Confidence interval forecast
+    
+    :    We are 80% confident that fed steer prices fore hte first quarter of 2016 will be between $140-$160/cwt
+    
+    Density forecast
+    
+    :    Provides entire probabilty distribution of forecast price.
+    
+3. Forecast horizon
+    - Forecast horizon is the number of periods between today and teh date of the forecast made.
+    
+    - If dealing with monthly data: 
+    
+        - 1-step ahead = One month beyond the current month
+        - 2-step ahead = two months beyond the current month
+        - `h`-step ahead = `h` months beyond the current month
+        
+    -  More complex situations are common in crop market forecasting
+        - Typical unit of time is a 'marketing year'.[^More on the marketing year in Chapter 3]
+        - Forecasts are typically updated monthy.
+    
+4. Parsimony priciple
+    - Other things equal, simple approaches are preferred
+    - Also known as [Occam's Razor](https://en.wikipedia.org/wiki/Occam%27s_razor)
+    
+    > The Principle States that among competing hypotheses that predict equally well, the one with the fewest assumptions should be selected. Other, more complicated     solutions may ultimately prove to provide better predictions, but - in the absence of differences in predictive ability - the fewer assumptions that are made,       the better. (Source: [Wikipedia](https://en.wikipedia.org/wiki/Occam%27s_razor))
+
+    - Simple approaches tend to work best in real world applications
+        - Based on decades of experience and research
+        - Simpler models can be estimated more precisely
+        - Because simpler models can be more easily interpreted  and understood, unusual behavior and outcomes can be more easiliy spotted. 
+        
+    - It is easier to communicate the basic behavior and design of simple approaches, so they are more likely to be used by decision-makers.
+    
+    - Simple approaches lessen the chances of data mining problems. 
+        - If a complex model is tailored to fit historical data very well, but does not capture the true nature of the data process, forecasts will perform poorly. 
+        
+We focus on two types of "simple" forecasting methods. 
+
+1. Fundamental analysis: use of economic models and data on production, consumption, income, etc. to forecast prices. You will recognise this approach as balance sheet analysis in chapter 3. 
+
+2. Reduced form time-series exonometrics: use of statistical econometric models that features minimal inputs beyond a few recent prices to generate a forecasting model. 
+
+Not covered here, but a method used widely by day-traders and other market participants is technical analysis, which is the use of past price patterns to predict future price movement. There are scores of books on the topic of technical analysis, if interested. 
 
 # Long Term Agricultural Price Trends
+
+It is useful to begin our exploration of agricultural prices from a long term historical perspective. The figure below is monthly prices recieved by farmers in the U.S. from 1908 to 2015. By simple visual inspection there seems to be three periods of stable prices, from 1908-1973, 1974-2006, and 2007-present. Although the most recent period seems to be the most volatile and provides less confidence that a similar pattern will persist going forward. 
+
+![Corn Prices Recieved](images\Ch1_PricesRecieved_files\image001.png)
+Source([http://www.nass.usda.gov/](http://www.nass.usda.gov/))
+
+Now lets zoom in on the 1974-2015 periods. 
+
+![Corn Prices Recieved](images\Ch1_PricesRecieved_files\image003.png)
+Source([http://www.nass.usda.gov/](http://www.nass.usda.gov/))
+
+Looking at these two charts together, there is a clear runup in prices in the 1970's and again around 2006-2007. What caused these seeminly permanent price hikes?  
+
+
+# Readings
+
+[Agricultural Commodity Price Spikes in the 1970s and 1990s: Valuable Lessons for Today](http://www.ers.usda.gov/amber-waves/2009-march/agricultural-commodity-price-spikes-in-the-1970s-and-1990s-valuable-lessons-for-today.aspx#.VcpsS_lVhuA)
+
+:    This article was published by staff at the United States Department of Agriculure's Economic Research Service. They look at historical corn prices and provide some perspective about what caused the price increases in the 1970's and mid-2000's. 
+
+
+[Market Instability in a New Era of Corn, Soybean, and Wheat Prices](http://www.choicesmagazine.org/magazine/pdf/article_56.pdf)
+
+:    Scott Irwin and Darrel good had an article in Choices magazine, that examined the price 'eras' we described in this chapter. They also discuss the causes of the price paradigm shifts. They argued in 2009 that the new 'era' of crop prices were here to stay, and history has bore this out so far. 
+
+# Exercises
+
+1. From the readings, describe causes of the rapid and persistent increase in prices in the early 1970's.
+
+2. From the readings, describe the causes of the rapid and persistent increase in prices in 2006/2007. 
+
+3. In your opinion, is there evidence that price trends will hold at their current levels?
+
+<!--- With enough time add elements of hte argument for higher and more volatile prices. --->
+
 
 
