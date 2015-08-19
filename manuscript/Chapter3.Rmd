@@ -3,11 +3,16 @@ title: 'Chapter 3: Fundamental Analysis and the Balance Sheet'
 output: 
     html_document:
         toc: true
+        fig_caption: yes
 bibliography: PriceAnalysis.bib
 csl: american-journal-of-agricultural-economics.csl.txt
 comment: Copyright Mindy L. Mallory 2015
 ---
 
+%Notes before uploading. 
+
+1. replace balance sheet tables with actual usda forecast tables uploaded by .csv
+2. write a little something in the how to come up with a price section. 
 
 Fundamental analysis is an assessment of price based on underlying supply and demand factors. Focusing on changes in the relationship between supply and demand allows one to calibrate an informed opinion of the value of the commodity. The main role of the market is to find the value at which supply equals demand - or in other words, the value that 'clears the market'. The estimated 'fundamental value' is simply a forecast, or expectation of, the market clearing price. The goal of any forecasting exercise is to compare the forecast (estimated fundamental value) to the current market price and make decisions accordingly. 
 
@@ -20,9 +25,12 @@ If your forecast is above the current market price, that is bullish because your
 
 # Supply and Demand
 
-Conducing fundamental analyses involves taking into account all the factors that determine supply, demand, and ultimately, prices. Recall the supply and demand figures from chapter 1. They are the basic theoretical framework that will guild all of our modeling decisions. For grain markets we had two models: preplanting and post planting. 
+Conducing fundamental analyses involves taking into account all the factors that determine supply, demand, and ultimately, prices. For grain markets there are basically two supply models to keep in mind: preplanting and post planting. Below we display both.  
 
-% Figures Here
+
+![Figure 1. Supply and Demand Model of a Commodity Before and After Planting](images\Ch3.1.png)
+
+The intuition here is simply that before planting, the final supply for the crop can be afected by farmers changing their intentions about how many acres to plant. Once the crop has been planted, supply is essentially fixed, execpt for the uncertainty that remains due to realized yeilds. To summarize, things that affect the supply of a commodity are outlined below. 
 
 **Supply is Affected by:**
 
@@ -131,7 +139,7 @@ Since the USDA makes regular reports on the balance sheet for commodities (the W
 | **= Total Supply**     |   |
 |Feed and Residual |    |
 | + Food, Seed, and Industrial |    |
-| + Ethanol  |    |
+|     + Ethanol  |    |
 | + Exports          |   |
 | **= Total Consumption (Use)**     |   |
 | **Ending Stocks = Total Supply - Total Consumption**|    |
@@ -187,6 +195,15 @@ For soybeans, stocks are comprised of beginning stocks, production, and imports,
     Good, D., and S. Irwin. "[Projecting the 2015-16 Corn Balance Sheet and Price Implications](http://farmdocdaily.illinois.edu/2015/04/projecting-2015-16-corn-balance-sheet.html)." *farmdoc daily* (5):70, Department of Agricultural and Consumer Economics, University of Illinois at Urbana-Champaign, April 16, 2015.
 
 # Exercises
+
+1. Copy and paste the corn and soybeans balance sheets into a spreadsheet. 
+    + In the cell next to **= Total Supply**, manually add the cells needed to reproduce the **'=Total Supply'** number.
+    + in the cell next to **= Total Consumption**, manually add the cells needed to reproduce the **= Total Consumption** number. 
+    
+2. If you were making a forecast in July 2015 for the 2014/2015 marketing year balance sheet, which columns (if any) should remain fixed? I.e., they are already determined and do not need to be forecast. 
+
+3. If you were making a forecast in July 2015 for the 2015/2016 marketing year balance sheet, which columns (if any) should remain fixed?
+
 
 
 

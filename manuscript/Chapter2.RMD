@@ -1,8 +1,9 @@
 ---
-title: "Chapter 2"
+title: "Chapter 2: How to Find Information about Commodity Markets"
 output:  
     html_document:
         toc: true
+        fig_caption: yes
 bibliography: PriceAnalysis.bib
 csl: american-journal-of-agricultural-economics.csl.txt
 ---
