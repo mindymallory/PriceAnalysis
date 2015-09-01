@@ -9,10 +9,6 @@ csl: american-journal-of-agricultural-economics.csl.txt
 comment: Copyright Mindy L. Mallory 2015
 ---
 
-%Notes before uploading. 
-
-1. replace balance sheet tables with actual usda forecast tables uploaded by .csv
-2. write a little something in the how to come up with a price section. 
 
 Fundamental analysis is an assessment of price based on underlying supply and demand factors. Focusing on changes in the relationship between supply and demand allows one to calibrate an informed opinion of the value of the commodity. The main role of the market is to find the value at which supply equals demand - or in other words, the value that 'clears the market'. The estimated 'fundamental value' is simply a forecast, or expectation of, the market clearing price. The goal of any forecasting exercise is to compare the forecast (estimated fundamental value) to the current market price and make decisions accordingly. 
 
@@ -30,7 +26,7 @@ Conducing fundamental analyses involves taking into account all the factors that
 
 ![Figure 1. Supply and Demand Model of a Commodity Before and After Planting](images\Ch3.1.png)
 
-The intuition here is simply that before planting, the final supply for the crop can be afected by farmers changing their intentions about how many acres to plant. Once the crop has been planted, supply is essentially fixed, execpt for the uncertainty that remains due to realized yeilds. To summarize, things that affect the supply of a commodity are outlined below. 
+The intuition here is simply that before planting, the final supply for the crop can be affected by farmers changing their intentions about how many acres to plant. Once the crop has been planted, supply is essentially fixed, except for the uncertainty that remains due to realized yields. To summarize, things that affect the supply of a commodity are outlined below. 
 
 **Supply is Affected by:**
 
@@ -127,46 +123,43 @@ Here we discuss the common format balance sheets for any commodity have in commo
 
 : Table 3. Balance Sheet for a General Commodity
 
-Since the USDA makes regular reports on the balance sheet for commodities (the WASDE reports described in Chapter 2), most conducing private analyses with balance sheets use the USDA categories so that the USDA estimates can be taken as a benchmark. The supply side (Stocks) is relatively straightforward. Total stocks for the marketing year will be beginning stocks, the portion of last year's stocks that were not used up during the previous marketing year, plust this year's production, plus any imports of the commodity. Summing these three reveals the total amount of the commodity available for use during the marketing year. 
+Since the USDA makes regular reports on the balance sheet for commodities (the WASDE reports described in Chapter 2), most conducing private analyses with balance sheets use the USDA categories so that the USDA estimates can be taken as a benchmark. The supply side (Stocks) is relatively straightforward. Total stocks for the marketing year will be beginning stocks, the portion of last year's stocks that were not used up during the previous marketing year, plus this year's production, plus any imports of the commodity. Summing these three reveals the total amount of the commodity available for use during the marketing year. 
 
 - Beginning Stocks: Some production from the previous year usually remains into the next crop season. Carryover stocks function as a buffer against current year yield uncertainty. For example, if carryover stocks are high and current year yield is expected to be below trend, the market price may fall in response but modestly. However, if carryover stocks are low - resulting from several years of below trend production and strong demand - then an expected yield below trend will likely cause a volatile rise in prices.  
 
-| Stocks and Use   |   | 
-|:-------------------|:--|
-|Beginning Stocks    |   | 
-| + Production       |   |
-| + Imports          |   |
-| **= Total Supply**     |   |
-|Feed and Residual |    |
-| + Food, Seed, and Industrial |    |
-|     + Ethanol  |    |
-| + Exports          |   |
-| **= Total Consumption (Use)**     |   |
-| **Ending Stocks = Total Supply - Total Consumption**|    |
 
-: Table 4. Balance Sheet for Corn
+: Table 4. August 2015 USDA WASDE Balance Sheet for Corn
 
-The balance sheet for corn follows the same generic patter, but we can be a bit more specific with the use categories since we know what the major use catagories are for any given commodity. The use components are as follows: 
+```{r, echo=FALSE}
+library(Kmisc)
+library(knitr)
+aug15wasdec <- read.csv('aug15wasdec.csv')
+kable(aug15wasdec, align = 'l')
+
+```
+
+(source: August 2015 USDA [WASDE Report](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1194) )
+
+The balance sheet for corn follows the same generic patter, but we can be a bit more specific with the use categories since we know what the major use categories are for any given commodity. The use components are as follows: 
 <!-- Put percentages here? --> 
 
 - Feed and Residual: A large portion of the corn crop is used as feed for livestock (cattle, pigs, poultry).
-- Food, Seed, and Industrial: Corn is used to make tortilla chips, high fructose corn syrup, edible oil and other food items. A portion of the crop is grown specifically as seed for the next years crop. There are some industural uses for components of processed corn. Those are grouped in this category as well. 
-- Ethanol production also demands a significant amount of corn, so much that it gets its own category in the balance sheet. 
+- Food, Seed, and Industrial: Corn is used to make tortilla chips, high fructose corn syrup, edible oil and other food items. A portion of the crop is grown specifically as seed for the next years crop. There are some industrial uses for components of processed corn. Those are grouped in this category as well. 
+- Ethanol production also demands a significant amount of corn, so much that it gets its own line in the balance sheet. Note, however, that it is technically part of the Food, Seed, and Industrial category.
 - The final use category is export. Corn grown in the United States is consumed around the globe, and strength or weakness in the export market is a carefully component of demand. 
 
-| Stocks and Use   |   | 
-|:-------------------|:--|
-|Beginning Stocks    |   | 
-| + Production       |   |
-| + Imports          |   |
-| **= Total Supply**     |   |
-|Crush |    |
-| + Food, Seed, and Industrial |    |
-| + Exports          |   |
-| **= Total Consumption (Use)**     |   |
-| **Ending Stocks = Total Supply - Total Consumption**|    |
 
-: Table 5. Balance Sheet for Soybeans
+: Table 5. August 2015 USDA WASDE Balance Sheet for Soybeans
+
+```{r, echo=FALSE}
+library(Kmisc)
+library(knitr)
+aug15wasdes <- read.csv('aug15wasdes.csv')
+kable(aug15wasdes, align = 'l')
+
+```
+
+(source: August 2015 USDA [WASDE Report](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1194) )
 
 For soybeans, stocks are comprised of beginning stocks, production, and imports, just as they were for the general balance sheet and the corn balance sheet. The use side, contains items specific to soybeans:
 
@@ -176,7 +169,7 @@ For soybeans, stocks are comprised of beginning stocks, production, and imports,
 
 # Coming up with a Price
 
-
+Balance sheet forecasting is definitely as much art as it is science. It involves keeping track of the rate of use of commodities to see how much a need there will be to ration late in the marketing year while waiting on harvest and new supplies. One should intuitively see that the forecasted ending stocks is a measure of scarcity of the commodity and therefore should be negatively related to price (i.e., tight ending stocks go along with high prices). One needs to pin down the exact nature of this relationship in order to form a meaningful forecast of price from a commodity balance sheet. We will discuss this process in more detail in a later chapter. 
 
 # Readings 
 
