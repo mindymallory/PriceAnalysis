@@ -1,0 +1,35 @@
+---
+title: "ACE 427 Commodity Price Analysis and Forecasting"
+output: slidy_presentation
+theme: uulm
+---
+
+# September 11, 2015 WASDE Breakdown, Corn
+
+
+- U.S. corn usage for 2015/16 is lowered 20 million bushels, but usage is expected to be record high and just above the level projected for 2014/15.  
+- Feed and residual use for 2015/16 is expected 25 million bushels lower with the smaller crop.  
+- FSI use is projected 5 million bushels higher on an increase in expected use for sweeteners consistent with this month’s upward revision to that usage category for 2014/15.  
+- Despite higher projected global import demand, projected corn exports for 2015/16 are unchanged with tighter supplies.  
+- U.S. ending stocks for 2015/16 are projected 121 million bushels lower and 140 million bushels below this month’s lowered 2014/15 carryout projection.  
+- The 2015/16 season-average corn price received by producers is projected 10 cents higher on both ends to $3.45 to $4.05 per bushel.
+
+Source: [September 2015 WASDE](http://www.usda.gov/oce/commodity/wasde/)
+
+
+
+# September 11, 2015 WASDE Breakdown, Soybeans
+
+-   Soybean production is forecast at 3,935 million bushels, up 19 million due to a higher yield forecast.  
+- Soybean crush is raised 10 million bushels to 1,870 million on increased domestic disappearance of soybean meal, which is raised in line with an increase for 2014/15.  
+- With lower beginning stocks and higher use, soybean ending stocks are projected at 450 million bushels, down 20 million.
+
+- Changes for 2014/15 include higher exports and crush, resulting in reduced ending stocks.  
+- Exports are increased 10 million to a record 1,835 million bushels based on reported trade through July and indications from August export inspections.  
+- Crush is increased 25 million bushels to 1,870 million on increased soybean meal domestic disappearance and exports.  Ending stocks are projected at 210 million bushels, down 30 million.
+
+- The 2015/16 U.S. season-average soybean price is projected at $8.40 to $9.90 per bushel, unchanged from last month.  Soybean meal prices are also unchanged at $310 to $350 per short ton.  
+- Soybean oil prices are projected at 27.5 to 30.5 cents per pound, down 2 cents on both ends of the range.
+
+Source: [September 2015 WASDE](http://www.usda.gov/oce/commodity/wasde/)
+

@@ -101,7 +101,7 @@ The next example is December 9th, 2010, the release day of the December WASDE re
 
 On this day the market opened 10 cents higher, or 1.8%. On a non-report day, this would be a large price move. However, for a report day, it seems like a small price adjustment. 
 
-Figure 5, below, is the price action on the March 31st, 2011, the day the Prospective Plantings report was released. 
+Figure 5, below, is the price action on the March 31st, 2011, the day the Prospective Plantings and Grain Stocks reports were released. 
 
 ![Figure 5:  Price of May 2011 corn on March 31st, 2011 before and after the release of the Planted Acres Report.](images\110331.png)
 
