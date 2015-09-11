@@ -3,7 +3,6 @@ title: "ACE 427 Commodity Price Analysis and Forecasting"
 output: slidy_presentation
 theme: uulm
 ---
-
 # September 11, 2015 WASDE Breakdown, Corn
 
 
@@ -16,7 +15,13 @@ theme: uulm
 
 Source: [September 2015 WASDE](http://www.usda.gov/oce/commodity/wasde/)
 
+```{r, echo=FALSE}
+library(Kmisc)
+library(knitr)
+sep15wasdecorn <- read.csv('WASDE_sept15_corn.csv', header=TRUE, col.names = c("Corn", "Final_2013/2014", "Est_2014/2015", "Projected_2015/2016", "Projected_2015/2016"))
+kable(sep15wasdecorn, align = 'l')
 
+```
 
 # September 11, 2015 WASDE Breakdown, Soybeans
 
@@ -32,4 +37,13 @@ Source: [September 2015 WASDE](http://www.usda.gov/oce/commodity/wasde/)
 - Soybean oil prices are projected at 27.5 to 30.5 cents per pound, down 2 cents on both ends of the range.
 
 Source: [September 2015 WASDE](http://www.usda.gov/oce/commodity/wasde/)
+
+
+```{r, echo=FALSE}
+library(Kmisc)
+library(knitr)
+sep15wasdesoy <- read.csv('WASDE_sept15_soy.csv', header=TRUE, col.names = c("Soybean", "Final_2013/2014", "Est_2014/2015", "Projected_2015/2016", "Projected_2015/2016"))
+kable(sep15wasdesoy, align = 'l')
+
+```					
 
