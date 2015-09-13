@@ -12,7 +12,7 @@ bibliography: PriceAnalysis.bib
 
 # Introduction
 
-The preceding chapters have served as a background about agricultural markets, and important informational events that drive commodity prices. Going forward, we will focus our energy on the more data and technical questions of actually forecasting elements of the balance sheet - and later, short term price changes using time-series econometric techniques. 
+The preceding chapters have served as a background about agricultural markets, and important informational events that drive commodity prices. Going forward, we will focus our energy on the more data and technical questions of actually forecasting elements of the balance sheet - and later, short term price changes using time-series econometric techniques. In the remainder of this chapter, the discussion and figures are all for corn.  
 
 # Forecasting Production 
 
@@ -29,13 +29,13 @@ Historical acres planted and harvested can be found from USDA NASS.
 > 2. Click *Crops and Plants* in the menu on the left of the screen
 > 3. In the query, choose *Crops* and then *Field Crops*
 > 4. Hold down the control key and choose corn
-> 5. Click the check boxes for *ACRES PLANTED* and *ACRES HARVESTED* and click the *CONTINUE* button
+> 5. Click the check boxes for *ACRES PLANTED*, *ACRES HARVESTED*, *Price Recieved*, and *Yield* and click the *CONTINUE* button
 > 6. You will see a small table; in the bottom right-right hand corner there is a *more...* link. Click it
 > 7. Choose *Save::Spreadsheet*, and a Microsoft Excel file will download. 
 
 ![Figure 1: Historical Acreage Data](images\ACRES_historical.png)
 
-The following is a graph of historical corn *Planted Acres* along with the ratio of *Average Prices Received by Farmers* for corn and soybeans. Average prices received can be downloaded by adjusting step 5 above to download the price data instead. 
+The following is a graph of historical corn *Planted Acres* along with the ratio of *Average Prices Received by Farmers* for corn and soybeans.  
 
 ![Figure 2: Corn Planted Acres and Corn/Soybean Price Ratio](images\ACREAGE2.png)
 
@@ -59,5 +59,48 @@ Harvested acres tends to be a fairly stable number, averaging 7.6 million acres 
 
 # Forecasting Yield
 
+Just like in forecasting acreage, we have different procedures for forecasting yield prior to planting. Before the summer growing season gets underway, trend yield. The trouble is, where to start?
+
+![Figure 5: Historical Yields since 1866](images\trend.png)
+
+USDA has records on yield that go back to 1866. While one often thinks more information is better when forecasting, the old yield estimates are no longer useful for forecasting current yield. Technological progress caused yields to take of in the 1950's and they have been climbing ever since. In the forecasting world, this is called *structural change* or a *structural break*. If *structural change* has occurred, the world looks so different now than it did before the structural change that data from before the break just is not useful for forecasting going forward. 
+
+It turns out that if you estimate a trend-line beginning with 1952, with 1980, or with pretty much any date in between, you will get an estimate that is roughly similar. 
+
+![](images\trend1952.png) 
+![Figure 6: Historical Yields since 1952 and 1980](images\trend1980.png) 
+
+For example, using the trend-line beginning with 1952 to forecast yield we come up with $Yield^{2015} = 1.9066*2015 - 3677.9 = 163.899$. While, using the trend-line beginning with 1980 to forecast yield we come up with $Yield^{2015} = 1.8619*2015 - 3588.9 = 162.8285$.
+
+# Forecasting Yield during the Growing Season
+ 
+The USDA has an extensive methodology to estimate yield during the growing season. Prior to August, they conduct the **Agricultural Yield Survey** (AYS) which surveys a large number of farmers and ask them to estimate yield. Beginning in August, the USDA conducts what it calls the **Objective Yield Survey**. They take samples from a relatively large number of fields and estimates yield in those fields based on various factors such as counts of plants, ears, and pods (for soybeans) [@good2011yield].
+
+The job of the analyst who is not employed by the USDA is most likely to anticipate the yield forecast of the USDA, or possibly to make a forecast that does better than the USDA. Then the analyst can capitalize on superior private information by making a well advised business decision or earning speculative profits.
+
+An independent analyst will not have the same level of resources the USDA deploys to provide monthly yield estimates; he or she will have to rely on historical data and a basic understanding of how weather affects crop yields.  Figure 8 below plots each year's deviation from trend yield since 1980. The first plot is in levels (i.e., $Yield_t - Trend Yield_t$); whereas the second plot is in percent terms (i.e., $\ln{Yield_t} - \ln{Trend Yield_t}$. Notice that the shape looks roughly the same, but the 2012 drought looks worse expressed in level deviations than the short crops of 1983, 1988, and 1993. This is because yield is trending higher. In percentage terms we see that the 2012 drought was equally as bad as 1983 and not quite as bad as 1988.   
+
+![](images\deviations.png)
+![Figure 7: Deviations from Trend in both Level and Percent (using trend since 1980)](images\deviationspercent.png)
+
+Short of an advanced agronomic model that can take into account planting date, precipitation, [growing degree days](https://en.wikipedia.org/wiki/Growing_degree-day), or ability to estimate yield from remote sensing technology [@unganai1998drought], we will have to resort to the *similar year approach*.  
+
+Analysts often estimate deviations from trend yield by finding year similar to the current one in terms of weather. The assumption is that if the weather patterns were similar then the percent deviation from trend yield should be similar as well. Note here that percent deviation is preferable so you do not need to adjust for the increasing trend in yield as you look backward to a similar year. 
+
+An alternative approach would be to use the *Crop Condition Report* and find a year in recent history that had a similar percent of the crop rated *Good/Excellent*. Figure 6 below shows how *Good* + *Excellent* crop condition ratings relate to percent deviations in trend yield. They should be at least positively correlated, but in fact some of the worst years (1988 and 2012 jump out) have relatively high crop condition ratings the final week of reporting while yields were exceptionally low in those years.  
+
+
+![Figure 8: *Good* plus *Excellent* Crop Condition Ratings in Final Week of Reporting versus Percent Deviations in Yields](images\gpluse.png)
+
+# Forecasting Production
+
+Once you have an estimate for acreage and yield, you can multiply them to give you an estimate of production for your balance sheet forecast. 
+
+# Conclusion
+
+In this chapter we discussed the basics of forecasting production. First we discussed forecasting acreage, then we moved on to forecasting yield both before and during the growing season. We discovered that estimating yield percent deviations from trend better than the USDA is extremely difficult. Even anticipating whether the yield forecast will go up or down is not an easy task. The *similar year method* has its limitations when used to find similar years in terms of weather or crop conditions ratings. 
+
+
+# References
 
 
