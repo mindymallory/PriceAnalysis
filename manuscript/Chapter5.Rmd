@@ -100,6 +100,9 @@ Once you have an estimate for acreage and yield, you can multiply them to give y
 
 In this chapter we discussed the basics of forecasting production. First we discussed forecasting acreage, then we moved on to forecasting yield both before and during the growing season. We discovered that estimating yield percent deviations from trend better than the USDA is extremely difficult. Even anticipating whether the yield forecast will go up or down is not an easy task. The *similar year method* has its limitations when used to find similar years in terms of weather or crop conditions ratings. 
 
+# Exercises
+
+1. Use NASS data for soybeans for forecast production in a similar mannar we we did in class for corn. 
 
 # References
 
