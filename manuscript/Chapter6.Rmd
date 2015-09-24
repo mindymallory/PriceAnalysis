@@ -1,0 +1,77 @@
+---
+title: 'Chapter 6: Economic Data and Principles of Visualization'
+comment: Copyright Mindy L. Mallory 2015
+csl: american-journal-of-agricultural-economics.csl.txt
+output:
+  html_document:
+    fig_caption: yes
+    toc: yes
+  word_document: default
+bibliography: PriceAnalysis.bib
+---
+
+<!-- This chapter should probably come before the Introduction to Balence sheet chapter (current chapter 3).-->
+
+# Introduction
+
+This chapter reviews the basics of the presentation of economic data, descriptive statistics, visualizations based on charts, graphs, and tables, and the math and mechanics of estimating trend forecasting models. There are three main types of data sets one might encounter: cross section, time-series, and panel. 
+
+**Cross section data** contain many observations of one (or several) variables at a single point in time. The Motor Trend gas milage data set is an example. R. Hocking gathered road test results reported in the March, April, June, and July issues of Motor Trend Magazine  [@hocking1976biometrics]. The full dataset is reproduced here. 
+
+```{r, echo = FALSE}
+
+library(Kmisc)
+library(knitr)
+names <- c("MPG", "Cylinders", "Disp", "Horse Power", "Drat", "Weight", "Quarter Mile Time (secs)", "Engine Shape, verticle or straight", "Automatic/Manual", "Gears", "Carborators")
+colnames(mtcars) <- names
+kable(mtcars, align = 'l')
+
+```
+
+Source: [@hocking1976biometrics] Road test results as conducted by Motor Trend Magazine for 1973-1974 automobiles. 
+
+cross section
+time series
+panel
+
+# Data Cleaning
+
+check for errors
+graphing 
+get aquanted with the data so you can see if results pass the sniff test
+
+# Misinterpretation of Data
+
+price recieved by farmers. 
+
+# Graphics 
+<!-- motivation -->
+
+# Univariate
+
+levels vs percent change
+lines not bars
+
+# Multivariate Graphical Techniques
+
+two lines
+
+x-y scatterplot
+
+# Elements of Graphical Style
+
+## Keys to Good Graphics
+
+## Showing the Data
+
+## Avoiding Chart-Junk
+
+## Appealing to the Viewer
+
+## Stand-Alone Requirements
+
+# Examples of Improving the Graphical Presentation
+
+do a graph evolution here.
+
+
