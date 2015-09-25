@@ -1,6 +1,5 @@
 ---
 title: 'Chapter 5: Forecasting Production'
-comment: Copyright Mindy L. Mallory 2015
 csl: american-journal-of-agricultural-economics.csl.txt
 output:
   html_document:
