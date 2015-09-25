@@ -16,13 +16,17 @@ bibliography: PriceAnalysis.bib
 
 This chapter reviews the basics of the presentation of economic data, descriptive statistics, visualizations based on charts, graphs, and tables, and the math and mechanics of estimating trend forecasting models. There are three main types of data sets one might encounter: cross section, time-series, and panel. 
 
-**Cross section data** contain many observations of one (or several) variables at a single point in time. The Motor Trend gas milage data set is an example. R. Hocking gathered road test results reported in the March, April, June, and July issues of Motor Trend Magazine  [@hocking1976biometrics]. The full dataset is reproduced here. 
+Cross section 
+
+:    Cross section data contain many observations of one (or several) variables at the *same* point in time. The Motor Trend gas milage data set is an example. R. Hocking gathered road test results reported in the March, April, June, and July issues of Motor Trend Magazine  [@hocking1976biometrics]. The full dataset is reproduced in Table 1. 
+
+: Table 1: Motor Trend Cars Dataset - 1973/1974
 
 ```{r, echo = FALSE}
 
 library(Kmisc)
 library(knitr)
-names <- c("MPG", "Cylinders", "Disp", "Horse Power", "Drat", "Weight", "Quarter Mile Time (secs)", "Engine Shape, verticle or straight", "Automatic/Manual", "Gears", "Carborators")
+names <- c("MPG", "Cylinders", "Engine Size (cubic in)", "Horse Power", "Final Drive Ratio", "Weight", "Quarter Mile Time (secs)", "Engine Shape, Verticle/Straight", "Automatic/Manual", "Gears", "Carborators")
 colnames(mtcars) <- names
 kable(mtcars, align = 'l')
 
@@ -30,9 +34,70 @@ kable(mtcars, align = 'l')
 
 Source: [@hocking1976biometrics] Road test results as conducted by Motor Trend Magazine for 1973-1974 automobiles. 
 
-cross section
-time series
-panel
+Time Series
+
+:    Time series data record observations of the same variable in *different* points in time. Price analysis and forecasting tends to use time-series the most. Table 2 contains a familar time series data set taken from USDA NASS for corn acres planted, acres harvested, prices recieved by farmers, and yield. It is a multi-variate time-series data set becasue we see one observation for each variable once per time period. 
+
+: Table 2: Corn Acres Planted, Acres Harvested, Prices Recieved by Farmers, and Yield
+
+```{r, echo=FALSE}
+library(Kmisc)
+library(knitr)
+corn_tsch6 <- read.csv('corn_tsch6.csv')
+kable(corn_tsch6, align = 'l')
+
+```
+
+Source: [USDA NASS](http://www.nass.usda.gov/) 1980 - 2014
+
+Table 3 below is another example of a time series. These are daily corn futures open, high, low, last, change, settle, volume, and open interest data.  
+
+: Table 3: Daily Corn Open, High, Low, Last, Change, Settle, Volume, and Open Interest  
+
+```{r, echo=FALSE}
+library(Kmisc)
+library(knitr)
+CMECZ2015 <- read.csv('CMECZ2015.csv')
+kable(CMECZ2015, align = 'l')
+
+```
+
+Source: [Quandl.com](https://www.quandl.com/data/CME/CZ2015-Corn-Futures-December-2015-CZ2015)
+
+Futures price data are often delivered including open, high, low, and close prices because with those four one can create special graphs typical in displaying financial price information. 
+
+Figure 1: Corn Futures Prices - Bars
+
+```{r, echo = FALSE, message=FALSE}
+library(quantmod)
+library(xts)
+CMECZ2015 <- read.csv('CMECZ2015.csv')
+CZ2015_chart <- subset(CMECZ2015, select= -c(Date, Change, Last, Open.Interest))      
+CZ2015_chart <- xts(CZ2015_chart, order.by = as.Date(CMECZ2015$Date, format = "%m/%d/%Y"))    
+colnames(CZ2015_chart)[4] <- "Close"    
+
+chartSeries(CZ2015_chart, type = "bars", theme = chartTheme("white"))
+```
+
+Source: [Quandl.com](https://www.quandl.com/data/CME/CZ2015-Corn-Futures-December-2015-CZ2015) Figures created with the `quantmod` package in R. 
+
+Figure 2: Corn Futures Prices - Candlesticks
+
+```{r, echo = FALSE, message=FALSE}
+library(quantmod)
+library(xts)
+CMECZ2015 <- read.csv('CMECZ2015.csv')
+CZ2015_chart <- subset(CMECZ2015, select= -c(Date, Change, Last, Open.Interest))      
+CZ2015_chart <- xts(CZ2015_chart, order.by = as.Date(CMECZ2015$Date, format = "%m/%d/%Y"))    
+colnames(CZ2015_chart)[4] <- "Close"    
+
+chartSeries(CZ2015_chart, type = "candlesticks", theme = chartTheme("white"))
+```
+
+Source: [Quandl.com](https://www.quandl.com/data/CME/CZ2015-Corn-Futures-December-2015-CZ2015)
+
+
+Statistical analyses of time series data are often complicated by issues such as autocorrelation, heteroskedasticity, and non-stationarity. These statistical issues should be accounted for when conducting more advanced time-series based forecasting exercises. We will touch on these issues in later chapters when econometric forecasting is covered in more detail. 
 
 # Data Cleaning
 

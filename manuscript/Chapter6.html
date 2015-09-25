@@ -86,19 +86,24 @@ img {
 <div id="introduction" class="section level1">
 <h1>Introduction</h1>
 <p>This chapter reviews the basics of the presentation of economic data, descriptive statistics, visualizations based on charts, graphs, and tables, and the math and mechanics of estimating trend forecasting models. There are three main types of data sets one might encounter: cross section, time-series, and panel.</p>
-<p><strong>Cross section data</strong> contain many observations of one (or several) variables at a single point in time. The Motor Trend gas milage data set is an example. R. Hocking gathered road test results reported in the March, April, June, and July issues of Motor Trend Magazine <span class="citation">(Hocking 1976)</span>. The full dataset is reproduced here.</p>
+<dl>
+<dt>Cross section</dt>
+<dd><p>Cross section data contain many observations of one (or several) variables at the <em>same</em> point in time. The Motor Trend gas milage data set is an example. R. Hocking gathered road test results reported in the March, April, June, and July issues of Motor Trend Magazine <span class="citation">(Hocking 1976)</span>. The full dataset is reproduced in Table 1.</p>
+</dd>
+</dl>
 <table>
+<caption>Table 1: Motor Trend Cars Dataset - 1973/1974</caption>
 <thead>
 <tr class="header">
 <th align="left"></th>
 <th align="left">MPG</th>
 <th align="left">Cylinders</th>
-<th align="left">Disp</th>
+<th align="left">Engine Size (cubic in)</th>
 <th align="left">Horse Power</th>
-<th align="left">Drat</th>
+<th align="left">Final Drive Ratio</th>
 <th align="left">Weight</th>
 <th align="left">Quarter Mile Time (secs)</th>
-<th align="left">Engine Shape, verticle or straight</th>
+<th align="left">Engine Shape, Verticle/Straight</th>
 <th align="left">Automatic/Manual</th>
 <th align="left">Gears</th>
 <th align="left">Carborators</th>
@@ -556,7 +561,723 @@ img {
 </tbody>
 </table>
 <p>Source: <span class="citation">(Hocking 1976)</span> Road test results as conducted by Motor Trend Magazine for 1973-1974 automobiles.</p>
-<p>cross section time series panel</p>
+<dl>
+<dt>Time Series</dt>
+<dd><p>Time series data record observations of the same variable in <em>different</em> points in time. Price analysis and forecasting tends to use time-series the most. Table 2 contains a familar time series data set taken from USDA NASS for corn acres planted, acres harvested, prices recieved by farmers, and yield. It is a multi-variate time-series data set becasue we see one observation for each variable once per time period.</p>
+</dd>
+</dl>
+<table>
+<caption>Table 2: Corn Acres Planted, Acres Harvested, Prices Recieved by Farmers, and Yield</caption>
+<thead>
+<tr class="header">
+<th align="left">Year</th>
+<th align="left">US.CORN.ACRES.PLANTED</th>
+<th align="left">US.CORN.ACRES.HARVESTED</th>
+<th align="left">CORN.GRAIN..PRICE.RECEIVED</th>
+<th align="left">CORN.YIELD</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">2014</td>
+<td align="left">90,597,000</td>
+<td align="left">83,136,000</td>
+<td align="left">4.11</td>
+<td align="left">171.0</td>
+</tr>
+<tr class="even">
+<td align="left">2013</td>
+<td align="left">95,365,000</td>
+<td align="left">87,451,000</td>
+<td align="left">6.15</td>
+<td align="left">158.1</td>
+</tr>
+<tr class="odd">
+<td align="left">2012</td>
+<td align="left">97,291,000</td>
+<td align="left">87,365,000</td>
+<td align="left">6.67</td>
+<td align="left">123.1</td>
+</tr>
+<tr class="even">
+<td align="left">2011</td>
+<td align="left">91,936,000</td>
+<td align="left">83,879,000</td>
+<td align="left">6.02</td>
+<td align="left">146.8</td>
+</tr>
+<tr class="odd">
+<td align="left">2010</td>
+<td align="left">88,192,000</td>
+<td align="left">81,446,000</td>
+<td align="left">3.83</td>
+<td align="left">152.6</td>
+</tr>
+<tr class="even">
+<td align="left">2009</td>
+<td align="left">86,382,000</td>
+<td align="left">79,490,000</td>
+<td align="left">3.75</td>
+<td align="left">164.4</td>
+</tr>
+<tr class="odd">
+<td align="left">2008</td>
+<td align="left">85,982,000</td>
+<td align="left">78,570,000</td>
+<td align="left">4.78</td>
+<td align="left">153.3</td>
+</tr>
+<tr class="even">
+<td align="left">2007</td>
+<td align="left">93,527,000</td>
+<td align="left">86,520,000</td>
+<td align="left">3.39</td>
+<td align="left">150.7</td>
+</tr>
+<tr class="odd">
+<td align="left">2006</td>
+<td align="left">78,327,000</td>
+<td align="left">70,638,000</td>
+<td align="left">2.28</td>
+<td align="left">149.1</td>
+</tr>
+<tr class="even">
+<td align="left">2005</td>
+<td align="left">81,779,000</td>
+<td align="left">75,117,000</td>
+<td align="left">1.96</td>
+<td align="left">147.9</td>
+</tr>
+<tr class="odd">
+<td align="left">2004</td>
+<td align="left">80,929,000</td>
+<td align="left">73,631,000</td>
+<td align="left">2.47</td>
+<td align="left">160.3</td>
+</tr>
+<tr class="even">
+<td align="left">2003</td>
+<td align="left">78,603,000</td>
+<td align="left">70,944,000</td>
+<td align="left">2.27</td>
+<td align="left">142.2</td>
+</tr>
+<tr class="odd">
+<td align="left">2002</td>
+<td align="left">78,894,000</td>
+<td align="left">69,330,000</td>
+<td align="left">2.13</td>
+<td align="left">129.3</td>
+</tr>
+<tr class="even">
+<td align="left">2001</td>
+<td align="left">75,702,000</td>
+<td align="left">68,768,000</td>
+<td align="left">1.89</td>
+<td align="left">138.2</td>
+</tr>
+<tr class="odd">
+<td align="left">2000</td>
+<td align="left">79,551,000</td>
+<td align="left">72,440,000</td>
+<td align="left">1.86</td>
+<td align="left">136.9</td>
+</tr>
+<tr class="even">
+<td align="left">1999</td>
+<td align="left">77,386,000</td>
+<td align="left">70,487,000</td>
+<td align="left">1.89</td>
+<td align="left">133.8</td>
+</tr>
+<tr class="odd">
+<td align="left">1998</td>
+<td align="left">80,165,000</td>
+<td align="left">72,589,000</td>
+<td align="left">2.20</td>
+<td align="left">134.4</td>
+</tr>
+<tr class="even">
+<td align="left">1997</td>
+<td align="left">79,537,000</td>
+<td align="left">72,671,000</td>
+<td align="left">2.60</td>
+<td align="left">126.7</td>
+</tr>
+<tr class="odd">
+<td align="left">1996</td>
+<td align="left">79,229,000</td>
+<td align="left">72,644,000</td>
+<td align="left">3.55</td>
+<td align="left">127.1</td>
+</tr>
+<tr class="even">
+<td align="left">1995</td>
+<td align="left">71,479,000</td>
+<td align="left">65,210,000</td>
+<td align="left">NA</td>
+<td align="left">113.5</td>
+</tr>
+<tr class="odd">
+<td align="left">1994</td>
+<td align="left">78,921,000</td>
+<td align="left">72,514,000</td>
+<td align="left">NA</td>
+<td align="left">138.6</td>
+</tr>
+<tr class="even">
+<td align="left">1993</td>
+<td align="left">73,239,000</td>
+<td align="left">62,933,000</td>
+<td align="left">NA</td>
+<td align="left">100.7</td>
+</tr>
+<tr class="odd">
+<td align="left">1992</td>
+<td align="left">79,311,000</td>
+<td align="left">72,077,000</td>
+<td align="left">NA</td>
+<td align="left">131.5</td>
+</tr>
+<tr class="even">
+<td align="left">1991</td>
+<td align="left">75,957,000</td>
+<td align="left">68,822,000</td>
+<td align="left">NA</td>
+<td align="left">108.6</td>
+</tr>
+<tr class="odd">
+<td align="left">1990</td>
+<td align="left">74,166,000</td>
+<td align="left">66,952,000</td>
+<td align="left">NA</td>
+<td align="left">118.5</td>
+</tr>
+<tr class="even">
+<td align="left">1989</td>
+<td align="left">72,322,000</td>
+<td align="left">64,783,000</td>
+<td align="left">NA</td>
+<td align="left">116.3</td>
+</tr>
+<tr class="odd">
+<td align="left">1988</td>
+<td align="left">67,717,000</td>
+<td align="left">58,250,000</td>
+<td align="left">NA</td>
+<td align="left">84.6</td>
+</tr>
+<tr class="even">
+<td align="left">1987</td>
+<td align="left">66,200,000</td>
+<td align="left">59,505,000</td>
+<td align="left">NA</td>
+<td align="left">119.8</td>
+</tr>
+<tr class="odd">
+<td align="left">1986</td>
+<td align="left">76,580,000</td>
+<td align="left">68,907,000</td>
+<td align="left">NA</td>
+<td align="left">119.4</td>
+</tr>
+<tr class="even">
+<td align="left">1985</td>
+<td align="left">83,398,000</td>
+<td align="left">75,209,000</td>
+<td align="left">NA</td>
+<td align="left">118.0</td>
+</tr>
+<tr class="odd">
+<td align="left">1984</td>
+<td align="left">80,517,000</td>
+<td align="left">71,897,000</td>
+<td align="left">NA</td>
+<td align="left">106.7</td>
+</tr>
+<tr class="even">
+<td align="left">1983</td>
+<td align="left">60,207,000</td>
+<td align="left">51,479,000</td>
+<td align="left">NA</td>
+<td align="left">81.1</td>
+</tr>
+<tr class="odd">
+<td align="left">1982</td>
+<td align="left">81,857,000</td>
+<td align="left">72,719,000</td>
+<td align="left">NA</td>
+<td align="left">113.2</td>
+</tr>
+<tr class="even">
+<td align="left">1981</td>
+<td align="left">84,097,000</td>
+<td align="left">74,524,000</td>
+<td align="left">NA</td>
+<td align="left">108.9</td>
+</tr>
+<tr class="odd">
+<td align="left">1980</td>
+<td align="left">84,043,000</td>
+<td align="left">72,961,000</td>
+<td align="left">NA</td>
+<td align="left">91.0</td>
+</tr>
+</tbody>
+</table>
+<p>Source: <a href="http://www.nass.usda.gov/">USDA NASS</a> 1980 - 2014</p>
+<p>Table 3 below is another example of a time series. These are daily corn futures open, high, low, last, change, settle, volume, and open interest data.</p>
+<table>
+<caption>Table 3: Daily Corn Open, High, Low, Last, Change, Settle, Volume, and Open Interest</caption>
+<thead>
+<tr class="header">
+<th align="left">Date</th>
+<th align="left">Open</th>
+<th align="left">High</th>
+<th align="left">Low</th>
+<th align="left">Last</th>
+<th align="left">Change</th>
+<th align="left">Settle</th>
+<th align="left">Volume</th>
+<th align="left">Open.Interest</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">9/24/2015</td>
+<td align="left">382.75</td>
+<td align="left">384.00</td>
+<td align="left">379.25</td>
+<td align="left">382.00</td>
+<td align="left">1.75</td>
+<td align="left">381.50</td>
+<td align="left">93318</td>
+<td align="left">744856</td>
+</tr>
+<tr class="even">
+<td align="left">9/23/2015</td>
+<td align="left">379.50</td>
+<td align="left">384.50</td>
+<td align="left">379.00</td>
+<td align="left">383.00</td>
+<td align="left">2.75</td>
+<td align="left">383.25</td>
+<td align="left">88046</td>
+<td align="left">742718</td>
+</tr>
+<tr class="odd">
+<td align="left">9/22/2015</td>
+<td align="left">384.00</td>
+<td align="left">384.50</td>
+<td align="left">377.25</td>
+<td align="left">380.00</td>
+<td align="left">4.00</td>
+<td align="left">380.50</td>
+<td align="left">113398</td>
+<td align="left">741798</td>
+</tr>
+<tr class="even">
+<td align="left">9/21/2015</td>
+<td align="left">376.50</td>
+<td align="left">385.50</td>
+<td align="left">375.00</td>
+<td align="left">384.50</td>
+<td align="left">7.25</td>
+<td align="left">384.50</td>
+<td align="left">138157</td>
+<td align="left">734466</td>
+</tr>
+<tr class="odd">
+<td align="left">9/18/2015</td>
+<td align="left">380.00</td>
+<td align="left">382.50</td>
+<td align="left">376.50</td>
+<td align="left">377.25</td>
+<td align="left">2.50</td>
+<td align="left">377.25</td>
+<td align="left">113972</td>
+<td align="left">730920</td>
+</tr>
+<tr class="even">
+<td align="left">9/17/2015</td>
+<td align="left">385.25</td>
+<td align="left">385.50</td>
+<td align="left">379.25</td>
+<td align="left">380.50</td>
+<td align="left">6.25</td>
+<td align="left">379.75</td>
+<td align="left">89428</td>
+<td align="left">734898</td>
+</tr>
+<tr class="odd">
+<td align="left">9/16/2015</td>
+<td align="left">390.00</td>
+<td align="left">391.00</td>
+<td align="left">383.00</td>
+<td align="left">385.50</td>
+<td align="left">4.50</td>
+<td align="left">386.00</td>
+<td align="left">124073</td>
+<td align="left">744460</td>
+</tr>
+<tr class="even">
+<td align="left">9/15/2015</td>
+<td align="left">392.75</td>
+<td align="left">395.00</td>
+<td align="left">388.75</td>
+<td align="left">390.50</td>
+<td align="left">3.00</td>
+<td align="left">390.50</td>
+<td align="left">127023</td>
+<td align="left">744535</td>
+</tr>
+<tr class="odd">
+<td align="left">9/14/2015</td>
+<td align="left">387.00</td>
+<td align="left">394.00</td>
+<td align="left">386.25</td>
+<td align="left">393.00</td>
+<td align="left">6.50</td>
+<td align="left">393.50</td>
+<td align="left">179626</td>
+<td align="left">755065</td>
+</tr>
+<tr class="even">
+<td align="left">9/11/2015</td>
+<td align="left">374.00</td>
+<td align="left">387.50</td>
+<td align="left">364.50</td>
+<td align="left">387.00</td>
+<td align="left">12.75</td>
+<td align="left">387.00</td>
+<td align="left">291726</td>
+<td align="left">764709</td>
+</tr>
+<tr class="odd">
+<td align="left">9/10/2015</td>
+<td align="left">368.75</td>
+<td align="left">374.75</td>
+<td align="left">366.75</td>
+<td align="left">374.00</td>
+<td align="left">5.25</td>
+<td align="left">374.25</td>
+<td align="left">131271</td>
+<td align="left">759367</td>
+</tr>
+<tr class="even">
+<td align="left">9/9/2015</td>
+<td align="left">367.50</td>
+<td align="left">372.50</td>
+<td align="left">366.00</td>
+<td align="left">368.50</td>
+<td align="left">0.75</td>
+<td align="left">369.00</td>
+<td align="left">137640</td>
+<td align="left">758327</td>
+</tr>
+<tr class="odd">
+<td align="left">9/8/2015</td>
+<td align="left">364.75</td>
+<td align="left">368.50</td>
+<td align="left">364.00</td>
+<td align="left">368.25</td>
+<td align="left">5.25</td>
+<td align="left">368.25</td>
+<td align="left">119124</td>
+<td align="left">760629</td>
+</tr>
+<tr class="even">
+<td align="left">9/4/2015</td>
+<td align="left">361.75</td>
+<td align="left">364.75</td>
+<td align="left">360.50</td>
+<td align="left">362.50</td>
+<td align="left">1.50</td>
+<td align="left">363.00</td>
+<td align="left">101487</td>
+<td align="left">761295</td>
+</tr>
+<tr class="odd">
+<td align="left">9/3/2015</td>
+<td align="left">367.25</td>
+<td align="left">368.00</td>
+<td align="left">361.25</td>
+<td align="left">361.50</td>
+<td align="left">6.00</td>
+<td align="left">361.50</td>
+<td align="left">160695</td>
+<td align="left">763799</td>
+</tr>
+<tr class="even">
+<td align="left">9/2/2015</td>
+<td align="left">369.00</td>
+<td align="left">371.50</td>
+<td align="left">364.25</td>
+<td align="left">367.25</td>
+<td align="left">1.50</td>
+<td align="left">367.50</td>
+<td align="left">177613</td>
+<td align="left">763314</td>
+</tr>
+<tr class="odd">
+<td align="left">9/1/2015</td>
+<td align="left">374.50</td>
+<td align="left">374.50</td>
+<td align="left">367.50</td>
+<td align="left">368.25</td>
+<td align="left">6.25</td>
+<td align="left">369.00</td>
+<td align="left">148934</td>
+<td align="left">753344</td>
+</tr>
+<tr class="even">
+<td align="left">8/31/2015</td>
+<td align="left">373.50</td>
+<td align="left">377.00</td>
+<td align="left">370.50</td>
+<td align="left">375.25</td>
+<td align="left">0.25</td>
+<td align="left">375.25</td>
+<td align="left">145008</td>
+<td align="left">753722</td>
+</tr>
+<tr class="odd">
+<td align="left">8/28/2015</td>
+<td align="left">374.25</td>
+<td align="left">380.00</td>
+<td align="left">374.00</td>
+<td align="left">374.25</td>
+<td align="left">NA</td>
+<td align="left">375.00</td>
+<td align="left">179337</td>
+<td align="left">758192</td>
+</tr>
+<tr class="even">
+<td align="left">8/27/2015</td>
+<td align="left">374.00</td>
+<td align="left">378.75</td>
+<td align="left">371.50</td>
+<td align="left">374.50</td>
+<td align="left">1.75</td>
+<td align="left">375.00</td>
+<td align="left">210682</td>
+<td align="left">760048</td>
+</tr>
+<tr class="odd">
+<td align="left">8/26/2015</td>
+<td align="left">376.75</td>
+<td align="left">380.50</td>
+<td align="left">372.75</td>
+<td align="left">373.25</td>
+<td align="left">3.75</td>
+<td align="left">373.25</td>
+<td align="left">137052</td>
+<td align="left">758226</td>
+</tr>
+<tr class="even">
+<td align="left">8/25/2015</td>
+<td align="left">380.00</td>
+<td align="left">386.75</td>
+<td align="left">375.25</td>
+<td align="left">377.75</td>
+<td align="left">3.50</td>
+<td align="left">377.00</td>
+<td align="left">182215</td>
+<td align="left">761721</td>
+</tr>
+<tr class="odd">
+<td align="left">8/24/2015</td>
+<td align="left">376.75</td>
+<td align="left">381.75</td>
+<td align="left">365.50</td>
+<td align="left">381.50</td>
+<td align="left">3.25</td>
+<td align="left">380.50</td>
+<td align="left">258076</td>
+<td align="left">755009</td>
+</tr>
+<tr class="even">
+<td align="left">8/21/2015</td>
+<td align="left">382.00</td>
+<td align="left">384.25</td>
+<td align="left">375.75</td>
+<td align="left">377.00</td>
+<td align="left">5.25</td>
+<td align="left">377.25</td>
+<td align="left">181246</td>
+<td align="left">750472</td>
+</tr>
+<tr class="odd">
+<td align="left">8/20/2015</td>
+<td align="left">378.25</td>
+<td align="left">383.00</td>
+<td align="left">378.25</td>
+<td align="left">382.75</td>
+<td align="left">4.00</td>
+<td align="left">382.50</td>
+<td align="left">150931</td>
+<td align="left">744502</td>
+</tr>
+<tr class="even">
+<td align="left">8/19/2015</td>
+<td align="left">377.25</td>
+<td align="left">383.00</td>
+<td align="left">377.00</td>
+<td align="left">378.50</td>
+<td align="left">1.25</td>
+<td align="left">378.50</td>
+<td align="left">164492</td>
+<td align="left">746798</td>
+</tr>
+<tr class="odd">
+<td align="left">8/18/2015</td>
+<td align="left">374.50</td>
+<td align="left">379.25</td>
+<td align="left">373.00</td>
+<td align="left">377.00</td>
+<td align="left">2.75</td>
+<td align="left">377.25</td>
+<td align="left">150640</td>
+<td align="left">746400</td>
+</tr>
+<tr class="even">
+<td align="left">8/17/2015</td>
+<td align="left">374.50</td>
+<td align="left">379.50</td>
+<td align="left">372.50</td>
+<td align="left">375.00</td>
+<td align="left">1.00</td>
+<td align="left">374.50</td>
+<td align="left">143336</td>
+<td align="left">743379</td>
+</tr>
+<tr class="odd">
+<td align="left">8/14/2015</td>
+<td align="left">375.25</td>
+<td align="left">377.25</td>
+<td align="left">371.00</td>
+<td align="left">375.00</td>
+<td align="left">0.25</td>
+<td align="left">375.50</td>
+<td align="left">167134</td>
+<td align="left">732960</td>
+</tr>
+<tr class="even">
+<td align="left">8/13/2015</td>
+<td align="left">369.00</td>
+<td align="left">376.00</td>
+<td align="left">366.00</td>
+<td align="left">375.25</td>
+<td align="left">7.25</td>
+<td align="left">375.25</td>
+<td align="left">239077</td>
+<td align="left">707171</td>
+</tr>
+<tr class="odd">
+<td align="left">8/12/2015</td>
+<td align="left">387.75</td>
+<td align="left">393.50</td>
+<td align="left">357.50</td>
+<td align="left">369.75</td>
+<td align="left">19.50</td>
+<td align="left">368.00</td>
+<td align="left">418025</td>
+<td align="left">675503</td>
+</tr>
+<tr class="even">
+<td align="left">8/11/2015</td>
+<td align="left">399.25</td>
+<td align="left">399.25</td>
+<td align="left">387.00</td>
+<td align="left">388.25</td>
+<td align="left">13.50</td>
+<td align="left">387.50</td>
+<td align="left">205087</td>
+<td align="left">661298</td>
+</tr>
+<tr class="odd">
+<td align="left">8/10/2015</td>
+<td align="left">385.00</td>
+<td align="left">402.00</td>
+<td align="left">384.75</td>
+<td align="left">401.00</td>
+<td align="left">17.25</td>
+<td align="left">401.00</td>
+<td align="left">276157</td>
+<td align="left">641045</td>
+</tr>
+<tr class="even">
+<td align="left">8/7/2015</td>
+<td align="left">380.50</td>
+<td align="left">385.75</td>
+<td align="left">377.25</td>
+<td align="left">384.00</td>
+<td align="left">3.25</td>
+<td align="left">383.75</td>
+<td align="left">168547</td>
+<td align="left">623721</td>
+</tr>
+<tr class="odd">
+<td align="left">8/6/2015</td>
+<td align="left">382.75</td>
+<td align="left">385.25</td>
+<td align="left">380.00</td>
+<td align="left">380.00</td>
+<td align="left">2.75</td>
+<td align="left">380.50</td>
+<td align="left">141927</td>
+<td align="left">617120</td>
+</tr>
+<tr class="even">
+<td align="left">8/5/2015</td>
+<td align="left">378.75</td>
+<td align="left">384.00</td>
+<td align="left">377.50</td>
+<td align="left">383.25</td>
+<td align="left">4.50</td>
+<td align="left">383.25</td>
+<td align="left">166401</td>
+<td align="left">605977</td>
+</tr>
+<tr class="odd">
+<td align="left">8/4/2015</td>
+<td align="left">377.75</td>
+<td align="left">382.75</td>
+<td align="left">376.50</td>
+<td align="left">379.00</td>
+<td align="left">2.25</td>
+<td align="left">378.75</td>
+<td align="left">123244</td>
+<td align="left">607654</td>
+</tr>
+<tr class="even">
+<td align="left">8/3/2015</td>
+<td align="left">380.00</td>
+<td align="left">380.50</td>
+<td align="left">374.50</td>
+<td align="left">378.75</td>
+<td align="left">4.75</td>
+<td align="left">376.50</td>
+<td align="left">131415</td>
+<td align="left">602431</td>
+</tr>
+</tbody>
+</table>
+<p>Source: <a href="https://www.quandl.com/data/CME/CZ2015-Corn-Futures-December-2015-CZ2015">Quandl.com</a></p>
+<p>Futures price data are often delivered including open, high, low, and close prices because with those four one can create special graphs typical in displaying financial price information.</p>
+<p>Figure 1: Corn Futures Prices - Bars</p>
+<div class="figure">
+<img src="data:image/png;base64,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" />
+
+</div>
+<p>Source: <a href="https://www.quandl.com/data/CME/CZ2015-Corn-Futures-December-2015-CZ2015">Quandl.com</a> Figures created with the <code>quantmod</code> package in R.</p>
+<p>Figure 2: Corn Futures Prices - Candlesticks</p>
+<div class="figure">
+<img src="data:image/png;base64,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" />
+
+</div>
+<p>Source: <a href="https://www.quandl.com/data/CME/CZ2015-Corn-Futures-December-2015-CZ2015">Quandl.com</a></p>
+<p>Statistical analyses of time series data are often complicated by issues such as autocorrelation, heteroskedasticity, and non-stationarity. These statistical issues should be accounted for when conducting more advanced time-series based forecasting exercises. We will touch on these issues in later chapters when econometric forecasting is covered in more detail.</p>
 </div>
 <div id="data-cleaning" class="section level1">
 <h1>Data Cleaning</h1>
