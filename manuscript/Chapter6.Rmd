@@ -9,7 +9,7 @@ output:
 bibliography: PriceAnalysis.bib
 ---
 
-<!-- This chapter should probably come before the Introduction to Balence sheet chapter (current chapter 3).-->
+<!-- This chapter should probably come before the Introduction to Balence sheet chapter (current chapter 3).I messsed up and pressed ahead with forecasting-->
 
 # Introduction
 
