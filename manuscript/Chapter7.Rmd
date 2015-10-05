@@ -42,7 +42,7 @@ From figure 3 it is easier to see what share of the crop the large increase in c
 
 # Corn Exports 
 
-Quarterly corn exports are displayed in figure 4. Unlide Food, alcohol and industrial use, exports tend to have a very seasonal or cyclical pattern. 
+Quarterly corn exports are displayed in figure 4. Unlide Food, alcohol and industrial use, exports tend to have a very seasonal or cyclical pattern. Exports are large in the second quarter of the markeing year, December to February, right after we harvest the new crop. This is when stocks are most plentiful and prices are at season lows in years exhibiting an upward sloped forward curve. 
 
 ![Figure 4: Corn Exports, Quarterly 1990-2015](FeedGrains_Corn_files\image023.png)
 
@@ -50,7 +50,19 @@ Source: [Feed Grains database](http://www.ers.usda.gov/data-products/feed-grains
 
 Displaying the same data in Figure 5, but aggreateing to an annual frequency, we see the marketing seasonality smoothed away. 
 
-![Figure 5: Corn Exports, Quarterly 1990-2015](FeedGrains_Corn_files\image025.png)
+![Figure 5: Corn Exports, Annual 1990-2015](FeedGrains_Corn_files\image025.png)
 
 Source: [Feed Grains database](http://www.ers.usda.gov/data-products/feed-grains-database/feed-grains-yearbook-tables.aspx#26780) maintained by the USDA ERS.
+
+On average, it appears that exports follow a contstant trendline with variation around the mean produced by years of surplus or scarcity. The drought year 2012, for example is clearly visible as an exceedingly low export year. 
+
+In figure 6 we display annual corn exports as a percentage of corn production. 
+
+![Figure 5: Corn Exports, Annual 1990-2015 as a percentage of corn production](FeedGrains_Corn_files\image024.png)
+
+Source: [Feed Grains database](http://www.ers.usda.gov/data-products/feed-grains-database/feed-grains-yearbook-tables.aspx#26780) maintained by the USDA ERS.
+
+talk about shift of comp from export to ethanol 
+
+
 
