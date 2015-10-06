@@ -195,6 +195,23 @@ td
 .xl78
 	{mso-style-parent:style56;
 	color:black;
+	font-size:8.0pt;
+	font-family:Arial, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:"Short Date";
+	vertical-align:top;
+	mso-protection:unlocked visible;
+	white-space:normal;}
+.xl79
+	{mso-style-parent:style56;
+	color:windowtext;
+	font-size:10.0pt;
+	font-family:Arial, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:"Short Date";}
+.xl80
+	{mso-style-parent:style56;
+	color:black;
 	font-size:5.95pt;
 	font-style:italic;
 	font-family:Arial, sans-serif;
@@ -203,20 +220,3 @@ td
 	vertical-align:top;
 	mso-protection:unlocked visible;
 	white-space:normal;}
-.xl79
-	{mso-style-parent:style56;
-	color:black;
-	font-size:8.0pt;
-	font-family:Arial, sans-serif;
-	mso-font-charset:0;
-	mso-number-format:"Short Date";
-	vertical-align:top;
-	mso-protection:unlocked visible;
-	white-space:normal;}
-.xl80
-	{mso-style-parent:style56;
-	color:windowtext;
-	font-size:10.0pt;
-	font-family:Arial, sans-serif;
-	mso-font-charset:0;
-	mso-number-format:"Short Date";}

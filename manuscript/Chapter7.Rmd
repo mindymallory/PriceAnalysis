@@ -58,11 +58,73 @@ On average, it appears that exports follow a contstant trendline with variation 
 
 In figure 6 we display annual corn exports as a percentage of corn production. 
 
-![Figure 5: Corn Exports, Annual 1990-2015 as a percentage of corn production](FeedGrains_Corn_files\image024.png)
+![Figure 6: Corn Exports, Annual 1990-2015 as a percentage of corn production](FeedGrains_Corn_files\image024.png)
 
 Source: [Feed Grains database](http://www.ers.usda.gov/data-products/feed-grains-database/feed-grains-yearbook-tables.aspx#26780) maintained by the USDA ERS.
 
-talk about shift of comp from export to ethanol 
+
+When exports are viewed as a proportion of production, we see a pronounced downward trend. This is due to the increasing share of production allocated to the Food, seed, and Industrial category visible in figure 3. Recall that this category is comprised mainly of corn as feedstock for ethanol produciton.
+
+The year-to-year variation is caused by price fluctuations with low prices encouraging and high prices discouraging consumption. 
+
+# Feed, and Residual
+
+The final use category is the most difficult to forecast because its quantity is derived, not estimated. What I mean is the USDA makes estimates of every other row in the balance sheet. Then, to ensure the numbers add up, they infer the Feed and Residual category. 
+
+ $Feed\&Residual = Production + Imports + Beginning Stocks + Ending Stocks - FoodSeed\&Industrial - Exports$
+
+Since each category on the right hand side is itself estimated with some error, the error for the Feed and Residual category is the sum of the errors of the other categories. 
+
+$\begin{align}
+Feed\&Residual = (Production + \epsilon_{prod}) + (Imports + \epsilon_{import}) + (Beginning Stocks + \epsilon_{BStocks}) \\
++ (Ending Stocks + \epsilon_{EStocks}) - (FoodSeed\&Industrial + \epsilon_{Food}) - (Exports + \epsilon_{Export})
+\end{align}$
+
+Figure 7 below displays the Feed and Residual category since 1990. 
+
+![Figure 7: Feed and Residual Use, Quarterly 1990-2015](FeedGrains_Corn_files\image027.png)
+
+Source: [Feed Grains database](http://www.ers.usda.gov/data-products/feed-grains-database/feed-grains-yearbook-tables.aspx#26780) maintained by the USDA ERS.
+
+Unlike Exports which saw its biggest quarter of use in the second quarter of the marketing year (beginning in December), the biggest quarter of use in the Feed and Residual category is the first (beginning in September). This is because at the end of summer ranchers 'brign cattle home from grass' and they begin eating grain and hay instead of green grass on pasture. This is also when calves born in the spring begin to be 'fattened' for slaughter. 
+
+Figure 8: shows the Feed and Residual category annually and figure 9 shows the category annually as a percent of production. 
+
+![Figure 8: Feed and Residual Use, Annual 1990-2015](FeedGrains_Corn_files\image029.png)
+
+Source: [Feed Grains database](http://www.ers.usda.gov/data-products/feed-grains-database/feed-grains-yearbook-tables.aspx#26780) maintained by the USDA ERS.
+
+![Figure 9: Feed and Residual Use, Annual 1990-2015 as a percent of production](FeedGrains_Corn_files\image028.png)
+
+Source: [Feed Grains database](http://www.ers.usda.gov/data-products/feed-grains-database/feed-grains-yearbook-tables.aspx#26780) maintained by the USDA ERS.
+
+Figure 8 shows that the category has remained roughly constant over the time-period graphed, but as a percentage of production it has fallen since 2005. Like the export category, this reflects a proportional shift in use toward ethanol production. 
+
+# Ranking Use Categories by Price Sensitivity
+
+Examining annual figures as a percentage of production reveals some interesting facts about the price sensitivity of the three use categories. 
+
+The least price sensitive category seems to be Food, Seed, and Industrial. This should be intuitive because this category is composed primarily of corn for feedstock in ethanol production. Since ethanol consumption is effectively mandated at a certain level by the Renewable Fuels Standard, users (gasoline blenders) must purchase a certain amount of ethanol to blend into the retail gasoline supply. This implies a significant portion of the corn crop that will be used regardless of the price. 
+
+The second category is Feed and Residual. Although year-to-year variation can come about due to price responsiveness of the U.S. livestock industry, this variation tends to be overwhelmed by the variation due to the aggregate forecast errors in the other categories. 
+
+The most price sensitive category is Exports, which is readily visible in figure 5 and 6. Foreign buyers of corn can substitute to purchase their corn from other parts of the world like (Argentina comes first to mind). Also, consumers of meat (exported corn is primariliy used as animal feed in the foreign country) in the less developed world are more price sensitive and presumably reduce consumption when prices are high. 
+
+# Forecasting Use Categories During the Marketing Year - Pace of Use Approach
+
+One method for forecasting the use categories during the marketing year, is to keep track of how much corn has been used to date in each category. This pace of use can be compared to the pace of use in previous years
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
