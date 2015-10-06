@@ -112,6 +112,7 @@ The most price sensitive category is Exports, which is readily visible in figure
 
 # Forecasting Use Categories During the Marketing Year - Pace of Use Approach
 
+<<<<<<< HEAD
 One method for forecasting the use categories during the marketing year, is to keep track of how much corn has been used to date in each category. This pace of use can be compared to the pace of use in previous years.
 
 USDA GIPSA maintains annual totals of export sales brokend down by destination. 
@@ -128,6 +129,14 @@ FAS reports weekly export sales
 
 
 Newton, J. "Reviewing the Pace of Corn and Soybean Exports." farmdoc daily (5):14, Department of Agricultural and Consumer Economics, University of Illinois at Urbana-Champaign, January 26, 2015.
+=======
+One method for forecasting the use categories during the marketing year, is to keep track of how much corn has been used to date in each category. This pace of use can be compared to the pace of use in previous years
+
+
+
+
+
+>>>>>>> d67ce27219969d6403c6a9564fb1091c0997c28b
 
 
 
