@@ -184,7 +184,7 @@ While the Residual component tends to dominate the variation in the Feed and Res
 
 The USDA releases a monthly [Cattle on Feed](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1020) report. Tracking this report gives a sence of trends in beef cattle herd size and production. Similarly, the [Hogs and Pigs](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1086) report is released quarterly and provides inventory estimates. The [Poultry Slaughter](https://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1131) report contains the number of head and live weight of chickens, turkeys, ducks and other poultry slaughtered under Federal inspection.    
 
-# External Readings 
+# Readings 
 
 [Reviewing the Pace of Corn and Soybean Exports](http://farmdocdaily.illinois.edu/2015/01/reviewing-pace-of-corn-and-soybean-exports.html)
 
