@@ -62,7 +62,7 @@ The United States Department of Agriculture has a long history of extensively su
 
 Prospective Plantings
 
-:    The Prospective Plantings report is an estimate of grower intentions for planted acres during the first two weeks of March. The report is released on the last day of March every year. Planted acres for each crop varies considerably from year-to-year and this report give the market important guidance about expected supply of the covered commodities. The most important reason prospective plantings change from year-to-year is the relative prices of crops that compete for acres. Growers look to the prices of futures with a expiry around the time of harvest for an estimate of expected profit from planting competing crops. For example, if the price of corn is relatively high compared to soybeans, and expected profitability from an acre of corn is higher than from an acre of soybeans, the farmer is likely to shift some of his planting intentions from soybeans to corn compared to the crop mix typically planted. In this case you might hear market commentary include language like, "... corn is bidding for acres." Meaning that price of corn is trying to entice growers to shift acres into corn production.
+:    The Prospective Plantings report is an estimate of grower intentions for planted acres during the first two weeks of March. The report is released on the last day of March every year. Planted acres for each crop varies considerably from year-to-year and this report give the market important guidance about expected supply of the covered commodities. The most important reason prospective plantings change from year-to-year is the relative prices of crops that compete for acres. Growers look to the prices of futures with a expiry around the time of harvest for an estimate of expected profit from planting competing crops. For example, if the price of corn is relatively high compared to soybeans, and expected profitability from an acre of corn is higher than from an acre of soybeans, the farmer is likely to shift some of his planting intentions from soybeans to corn compared to the crop mix typically planted. In this case you might hear market commentary include language like, "... corn is bidding for acres." Meaning that price of corn is trying to entice growers to shift acres into corn production. 
 
 Acreage
 
@@ -133,6 +133,11 @@ This concludes chapter 2. We learned resources for accessing commodity market da
 
     Good, D. "USDA Stocks and Acreage Estimates Smaller than Expected for Soybeans and Larger than Expected for Corn." farmdoc daily (5):59, Department of Agricultural and Consumer Economics, University of Illinois at Urbana-Champaign, March 31, 2015.
     
+[Progression of USDA Corn and Soybean Acreage Estimates and Prospects for Final Estimates for 2015](http://farmdocdaily.illinois.edu/2015/10/progression-usda-corn-and-soybean-acreage-estimates.html)
+
+:    Irwin and Good provide a thorough description of the procedures used by the USDA to determine acreage estimates for the Prosepecive Plantings, Acreage, Crop Production, and Grain Stocks reports. 
+
+    Good, D., and S. Irwin. "Progression of USDA Corn and Soybean Acreage Estimates and Prospects for Final Estimates for 2015." farmdoc daily (5):191, Department of Agricultural and Consumer Economics, University of Illinois at Urbana-Champaign, October 15, 2015.
     
 # Exercises
 
