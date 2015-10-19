@@ -1,0 +1,52 @@
+---
+title: 'Chapter 9: Ending Stocks and Generating a Price Forecast from the Balance Sheet'
+csl: american-journal-of-agricultural-economics.csl.txt
+output:
+  html_document:
+    fig_caption: yes
+    toc: yes
+  word_document: default
+bibliography: PriceAnalysis.bib
+---
+
+# Introduction
+
+Over the course of the last several chapters we have covered each category of supply and use. In tables 1 and 2 below, that literally means we covered how to forecast the numbers in each row of the USDA WASDE balance sheet. Subtracting total use from total supply gives an estimate of marketing year ending stocks. For example, in table 1, 
+
+$$Supply, Total - Use, Total = 15,488 - 13,775 = 1,713 (Million bushels) = Ending Stocks;$$ 
+
+in table 2[^adding]
+
+$$Supply, Total - Use, Total = 4,186 - 3,717 = 469 (Million bushels) = Ending Stocks$$
+
+[^adding]: Recall that WASDE balance sheets do not always add perfectly due to rounding.  
+
+: Table 1. August 2015 USDA WASDE Balance Sheet for Corn
+
+```{r, echo=FALSE}
+library(Kmisc)
+library(knitr)
+aug15wasdec <- read.csv('aug15wasdec.csv')
+kable(aug15wasdec, align = 'l', col.names = c("Corn", "Marketing Year 2013/2014", "Marketing Year 2014/2015 Est.", "Marketing Year 2015/2016 July Projection", "Marketing Year 2015/2016 August Projection"))
+
+```
+
+and 
+
+: Table 2. August 2015 USDA WASDE Balance Sheet for Soybeans
+
+```{r, echo=FALSE}
+library(Kmisc)
+library(knitr)
+aug15wasdes <- read.csv('aug15wasdes.csv')
+kable(aug15wasdes, align = 'l', col.names = c("Soybeans", "Marketing Year 2013/2014", "Marketing Year 2014/2015 Est.", "Marketing Year 2015/2016 July Projection", "Marketing Year 2015/2016 August Projection"))
+
+```
+
+However, this still leaves a lot to be desired because the most compelling reason to keep a detailed balance sheet and forecast future supply and use is to come up with a reasonable expectation for price. After all our work on forecasting the components of the balance sheet, we have not made much headway in that regard. In this chapter, we cover some approaches for taking a forecast of ending stocks and translating that into a forecast of price. 
+
+# Using Forecast of Ending Stocks to Forecast Price
+
+
+
+
