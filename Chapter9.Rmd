@@ -1,0 +1,16 @@
+---
+title: 'Chapter 9: Ending Stocks and Generating a Price Forecast from the Balance Sheet'
+csl: american-journal-of-agricultural-economics.csl.txt
+output:
+  html_document:
+    fig_caption: yes
+    toc: yes
+  word_document: default
+bibliography: PriceAnalysis.bib
+---
+
+# Introduction
+
+Over the course of the last several chapters we have covered each category of supply and use. Subtracting total use from total supply gives an estimate of marketing year ending stocks. 
+
+
