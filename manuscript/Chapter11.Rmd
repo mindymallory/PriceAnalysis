@@ -1,0 +1,110 @@
+---
+title: 'Chapter 11: Basic Statistics and Linear Regression Review'
+csl: american-journal-of-agricultural-economics.csl.txt
+output:
+  html_document:
+    fig_caption: yes
+    toc: yes
+  word_document: default
+bibliography: PriceAnalysis.bib
+---
+
+```{r global_options, include=FALSE}
+knitr::opts_chunk$set(attach(mtcars), library(Kmisc), library(knitr),
+                      echo=FALSE, warning=FALSE, message=FALSE)
+```
+
+This chapter begins our foray into more a statistically oriented analysis of commodity prices. As a primer we will begin by reviewing a few statistical concepts to get ready for regression-based forecast analysis. 
+
+# Statistics
+
+A *statistic* is a measure that is calculated from a set of sample data. Statistics are useful ways of summarizing key characteristics of a dataset quickly and easily. The most familar are measures of central tendency and dispersion. Measures of central tendency identify where the 'middle' of the data is, while measures of dispersion measure how spread out the data are. 
+
+To illustrate we will use the Motor Trend Cars database [@hocking1976biometrics]. 
+
+: Table 1: Motor Trend Cars Data set - 1973/1974
+
+```{r, echo = FALSE, warning = FALSE}
+
+names <- c("MPG", "Cylinders", "Engine Size (cubic in)", "Horse Power", "Final Drive Ratio", "Weight", "Quarter Mile Time (secs)", "Engine Shape, Verticle/Straight", "Automatic/Manual", "Gears", "Carborators")
+colnames(mtcars) <- names
+newdata <- mtcars[order(mpg),]
+kable(newdata, align = 'l')
+
+
+```
+
+Note: Road test results as conducted by Motor Trend Magazine for 1973-1974 automobiles. 
+
+### Measures of Central Tendency
+
+The most common measures of central tendency are the mean (also commonly called average) and median.  
+
+**Mean**
+
+1. $$\bar{x} = \frac{1}{T}\sum_{t=1}^{T} x_t$$
+
+where the $x_t$ are realizations of the data, and $T$ is the number of observations. The mean of mpg is 20.09062. 
+
+**Median** 
+
+The median is the observation that appears at the 50th percentil of the sample distribution. Put more simply, it you lined up the data points from smallest to largest, the median is the observation that lies in the middle. 
+
+
+
+The value, 19.2 mpg is the median value. Both the Merc 280 and the Pontiac Firebird's mpg is at the median. 
+
+### Measures of Dispersion
+
+The most common measures of dispersion are range, variance, and standard deviation.
+
+**Range**
+
+The range of the data is simply the difference between the maximum and minimun value of the dataset. 
+
+2. $$Range = x_{max} - x_{min}$$
+
+**Variance**
+
+3. $$s_x^2 = \frac{1}{T-1}\sum_{t=1}^{T} (x_t - \bar{x})^2 $$
+
+where the $x_t$ are realizations of the data, and $T$ is the number of observations, and $\bar{x}$ is the mean as defined in equation 1. The variance of mpg is 36.3241. The trouble with the variance measure is that its expressed in square units. So that the variance of mpg of 36.3241 is in squared miles per gallon. Since squared units are not intuitive to interpret, standard deviation, is also used frequently. 
+
+**Standard Deviation**
+
+4. $$s_x = \sqrt{\frac{1}{T-1}\sum_{t=1}^{T} (x_t - \bar{x})^2}$$
+
+The standard deviation of mpg is 6.026948; since this measure is in the same units as the original data, it is more intuitive to interpret. If the data are normally distributed, then approximately 2/3 of the realizations will fall within one standard deviation of the mean. 
+
+### Statistics for the Relationship *between* Two Variables
+
+Oftentimes, the purpose of a statistical analysis is to detect what kind of relationship exhists between two variables. For that, covariance and the correlation coeficient provide simple measures.
+
+**Covariance**
+
+5. $$s_{xy} = \frac{1}{T-1}\sum_{t=1}^{T} (x_t - \bar{x})(y_t - \bar{y})$$
+
+where the $x_t$ and $y_t$ are realizations from two different datasets, $T$ is the number of observations of both variables, and $\bar{x}$ and $\bar{y}$ are the sample means.  This statistic works well if the relationship between $x$ and $y$ is linear. The units of the variable are hard to interpret, however since the units are $(units of x)(units of y)$. The correlation coeficient remidies this units problem by dividing by the standard deviation of both variables to obtain a unitless measure. The covariance between mpg and quarter mile time (qsec) is 4.509149.
+
+**Correlation Coefficient**
+
+6. $$r_{xy} = \frac{s_{xy}}{s_xs_y}$$
+
+By dividing by the standard deviations we ensure the correlation coeficient takes on values from $-1$ to $1$. Perfect correlation between $x$ and $y$ is reflected in the correlation coeficient when the value is $1$ and perfect negative correlation is reflected when the correlation coeficient is $-1$. The correlation coefficient of mpg and qsec is 0.418684.
+
+# Correlation Does *Not* Imply Causation
+
+Probably the most oft expressed admonition in statistics is that correlation does not imply causation. As an analyst in commodity markets, it is important to always have this in mind, though![^corr_cause] 
+
+[^corr_cause]: In case you are not convinced, visit the blog, [Spurious correlations](http://www.tylervigen.com/spurious-correlations).
+
+# Review of Linear Regression
+
+
+
+
+
+
+# Exercises
+
+# References
