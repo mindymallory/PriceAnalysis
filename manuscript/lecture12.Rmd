@@ -1,11 +1,7 @@
 ---
-title: 'Chapter 11: Basic Statistics and Linear Regression Review'
-csl: american-journal-of-agricultural-economics.csl.txt
-output:
-  html_document:
-    fig_caption: yes
-    toc: yes
-  word_document: default
+title: "ACE 427 Commodity Price Analysis and Forecasting"
+output: slidy_presentation
+theme: uulm
 bibliography: PriceAnalysis.bib
 ---
 
@@ -36,7 +32,7 @@ kable(newdata, align = 'l')
 
 Note: Road test results as conducted by Motor Trend Magazine for 1973-1974 automobiles. 
 
-### Measures of Central Tendency
+# Measures of Central Tendency
 
 The most common measures of central tendency are the mean (also commonly called average) and median.  
 
@@ -54,7 +50,7 @@ The median is the observation that appears at the 50th percentile of the sample 
 
 The value, 19.2 mpg is the median value. Both the Merc 280 and the Pontiac Firebird's mpg is at the median. 
 
-### Measures of Dispersion
+# Measures of Dispersion
 
 The most common measures of dispersion are range, variance, and standard deviation.
 
@@ -64,11 +60,15 @@ The range of the data is simply the difference between the maximum and minimum v
 
 2. $$Range = x_{max} - x_{min}$$
 
+# Measures of Dispersion
+
 **Variance**
 
 3. $$s_x^2 = \frac{1}{T-1}\sum_{t=1}^{T} (x_t - \bar{x})^2 $$
 
 where the $x_t$ are realizations of the data, and $T$ is the number of observations, and $\bar{x}$ is the mean as defined in equation 1. The variance of mpg is 36.3241. The trouble with the variance measure is that its expressed in square units. So that the variance of mpg of 36.3241 is in squared miles per gallon. Since squared units are not intuitive to interpret, standard deviation, is also used frequently. 
+
+# Measures of Dispersion
 
 **Standard Deviation**
 
@@ -76,7 +76,7 @@ where the $x_t$ are realizations of the data, and $T$ is the number of observati
 
 The standard deviation of mpg is 6.026948; since this measure is in the same units as the original data, it is more intuitive to interpret. If the data are normally distributed, then approximately 2/3 of the realizations will fall within one standard deviation of the mean. 
 
-### Statistics for the Relationship *between* Two Variables
+# Statistics for the Relationship *between* Two Variables
 
 Oftentimes, the purpose of a statistical analysis is to detect what kind of relationship exists between two variables. For that, covariance and the correlation coefficient provide simple measures.
 
@@ -85,6 +85,8 @@ Oftentimes, the purpose of a statistical analysis is to detect what kind of rela
 5. $$s_{xy} = \frac{1}{T-1}\sum_{t=1}^{T} (x_t - \bar{x})(y_t - \bar{y})$$
 
 where the $x_t$ and $y_t$ are realizations from two different datasets, $T$ is the number of observations of both variables, and $\bar{x}$ and $\bar{y}$ are the sample means.  This statistic works well if the relationship between $x$ and $y$ is linear. The units of the variable are hard to interpret, however since the units are $(units of x)(units of y)$. The correlation coefficient remedies this units problem by dividing by the standard deviation of both variables to obtain a unit-less measure. The covariance between mpg and quarter mile time (qsec) is 4.509149.
+
+# Statistics for the Relationship *between* Two Variables
 
 **Correlation Coefficient**
 
@@ -117,11 +119,13 @@ Linear regression is a way to measure if two variables are linearly related to o
 
 : Table 2: 'Made up' Data for Hours Exercising and Hours Doing Homework per Week
 
+# Review of Linear Regression
+
 In figure 1, these data are plotted in Excel and the linear trend-line was added. 
 
 ![Figure 1: Regressing Hours Doing Homework on Hours Exercising](MT_Cars_Regression_files/image005.png)
 
-## How are Regression Coefficients Calculated?
+# How are Regression Coefficients Calculated?
 
 Excel found the linear trend-line by performing a linear regression of Hours Doing Homework on Hours Exercising. Formally, a linear regression is estimated by choosing $\beta_0$ and $\beta_1$ so that the sum of the squared errors, $\epsilon_i$, are minimized. 
 
@@ -129,13 +133,13 @@ Excel found the linear trend-line by performing a linear regression of Hours Doi
 
 The predicted values of $Y$ are denoted by $\hat{Y}$, so stating the linear regression problem formally, 
 
-$$\underset{\beta_0, \beta_1}{Min} \sum_{i=1}^{T} Y_i - \hat{Y}$$ 
+$$\underset{\beta_0, \beta_1}{Min} \sum_{i=1}^{T} (Y_i - \hat{Y})^2$$ 
 
 or equivalently, 
 
-$$\underset{\beta_0, \beta_1}{Min} \sum_{i=1}^{T} Y_i - (\beta_0 + \beta_1X_i)$$ 
+$$\underset{\beta_0, \beta_1}{Min} \sum_{i=1}^{T} [Y_i - (\beta_0 + \beta_1X_i)]^2$$ 
 
-## Evaluating Regression Model 'Fit' with $R^2$
+# Evaluating Regression Model 'Fit' with $R^2$
 
 After one finds regression coefficients, it is helpful to consider how well the regression model 'fits' the data. This can be evaluated by visual inspection, but a statistic often used is $R^2$. $R^2$ is the percent of the variation in the data that can be 'explained' by the regression relationship. It can be calculated in two ways, 
 
@@ -143,7 +147,7 @@ After one finds regression coefficients, it is helpful to consider how well the 
 
 or
 
-9. $$R^2 = 1- \frac{\sum_{i=1}^{T} (Y_i - \hat{Y})^2}{\sum_{i=1}^{T} (Y_i - \bar{Y})^2} = 1 - \frac{SumofSquaresResiduals}{SumofSquaresTotal}$$
+9. $$R^2 = 1- \frac{\sum_{i=1}^{T} (Y_i - \hat{Y})^2}{\sum_{i=1}^{T} (Y_i - \bar{Y})^2} = 1- \frac{SumofSquaresResiduals}{SumofSquaresTotal}$$
 
 # Hypothesis Testing Review
 
@@ -152,6 +156,8 @@ Hypothesis testing in the context of linear regression is a process by which we 
 To illustrate, we use the Motor Trend Cars data displayed in table 1. Suppose we are interested in determining if there is a statistically significant linear relationship between miles per gallon and quarter mile time. To investigate we regress mpg on qsec in Excel. That is, we estimate $\beta_0$ and $\beta_1$ in the equation,
 
 10. $$mpg_i = \beta_0 + \beta_1qsec_i + \epsilon_i$$
+
+# Hypothesis Testing Review
 
 Figure 10 displays the output. The coefficient on $qsec$ is 1.412124835 and is the estimate of $\beta_1$. 
 
@@ -167,13 +173,19 @@ $H0$ is called the Null hypothesis, and $H1$ is called the alternative hypothesi
 $H0$: $\beta_1 = 0$  
 $H1$: $\beta_1 \neq 0$
 
+# Hypothesis Testing Review
+
 To formally test this we calculate the *t*-statistic, which found by dividing the estimate of the coefficient by its standard error. 
+
+![Figure 3: Output in Excel from Regressing mpg on qsec](images/mpg_on_qsec.png)
 
 11. $$t_{\beta_1} = \frac{\hat{\beta_1}}{SE_{\hat{\beta_1}}} = \frac{1.412124835}{0.55921013} = 2.525213259$$
 
 The way hypothesis testing works is that if $H0$ is true, then $t_{\beta_1}$ has a $t$ distribution with mean zero. Recall that the $t$ distribution basically looks like a normal distribution, but with 'fatter tails'. The degree to which the $t$ differs from normal depends on degrees of freedom, which in turn is determined by sample size and the number of coefficients that must be estimated.[^tdist] In practice, the price series we use will almost always have enough observations so that the *t*-distribution is indistinguishable from the standard normal distribution. 
 
 [^tdist]: The Wikipedia page for the [Student's *t* distribution](https://en.wikipedia.org/wiki/Student%27s_t-distribution) is helpful for visualizing how the degrees of freedom change the shape of the distribution. 
+
+# Hypothesis Testing Review
 
 We compare our calculated $t$-statistic with the $t$ distribution with mean equal to zero and compute how likely it is that we got our value of the statistic if $\beta_1 = 0$. Figure 4 illustrates. 
 
@@ -185,9 +197,13 @@ This means that if $H0$ is true, there is only a 1.7% chance we would get a *t*-
 
 # Stationarity and Spurious Regression
 
-In chapter 10 we argued, in general terms, why it is important to have variables that are stationary in order to try to fit a forecasting (regression model). Now we will illustrate this in greater detail. 
+- In chapter 10 we argued, in general terms, why it is important to have variables that are stationary in order to try to fit a forecasting (regression model). Now we will illustrate this in greater detail. 
 
-It turns out that if you regress a non-stationary variable on another non-stationary variable and conduct a *t*-test (similar to the one we performed in equation 10 for the Motor Trend Cars regression), the distribution of the $\beta$ coefficient is no longer *t*, and in fact, the *t*-statistic diverges (gets larger and larger as sample size grows) even when the two variables are not related to one another [@granger1974spurious]. This phenomenon is called a **Spurious Regression**. This means that if you unknowingly regress a non-stationary variable on another non-stationary variable and perform a *t*-test to see if they are related, you will almost always conclude that they are because the *t*-statistic will be very large compared to the *t* distribution. 
+- It turns out that if you regress a non-stationary variable on another non-stationary variable and conduct a *t*-test (similar to the one we performed in equation 10 for the Motor Trend Cars regression), the distribution of the $\beta$ coefficient is no longer *t*, and in fact, the *t*-statistic diverges (gets larger and larger as sample size grows) even when the two variables are not related to one another [@granger1974spurious]. 
+- This phenomenon is called a **Spurious Regression**. 
+- This means that if you unknowingly regress a non-stationary variable on another non-stationary variable and perform a *t*-test to see if they are related, you will almost always conclude that they are because the *t*-statistic will be very large compared to the *t* distribution. 
+
+# Stationarity and Spurious Regression
 
 To illustrate, we will simulate two series of unrelated 'prices' using the log-normal model introduced in Chapter 10. Then we will regress one 'price' on the other and show that the regression coefficient is very large relative to the 1% critical value of the *t*-distribution. 
 
@@ -201,17 +217,30 @@ where $\epsilon_{x,t} \sim N(0, 0.10)$, $\epsilon_{y,t} \sim N(0, 0.15)$, and th
 
 We generate 51 simulated prices by making 50 draws for $\epsilon_{x,t}$ and $\epsilon_{y,t}$. The prices are shown in figure 5. 
 
+# Stationarity and Spurious Regression
+
 ![Figure 5: Simulated Uncorrelated Log-normal Prices](MT_Cars_Regression_files/image017.png)
 
 The regression output from Excel is shown in figure 6. 
 
 ![Figure 6: Regression Output from Regressing $P_y$ on $P_x$](images/spurious_res.png)
 
+# Stationarity and Spurious Regression
+
 The p-value on the $P_{x,t+1}$ term is 0 to three decimal places. If we were interpreting the model unknowingly, we would conclude that $P_x$ and $P_y$ are linearly related. The statistical 'significance' comes about because the *t*-statistic is not really distributed as *t* when the prices are not stationary. 
 
-In general, we will not know for sure if our price series is stationary or not. However, in most cases using the log-difference of price instead of price levels will transform the non-stationary series into a stationary one, so regression-based forecasting methods can safely be done by regressing log-differences of price in various forms. If it turns out that your price series *is* in fact stationary there is no harm in specifying your forecasting model with log-differences because the log-difference of a stationary series will also be stationary. 
+# Stationarity and Spurious Regression
 
-There are statistical tests to detect if a series is stationary or not, and a more advanced analysis would test for stationarity as an initial exploration to help determine what kind of forecasting model to specify. Some examples of stationarity tests are the Augmented Dickey-Fuller test [@dickey1979distribution], the Phillips-Perron test [@phillips1988testing], and the Kwiatkowski–Phillips–Schmidt–Shin (KPSS) test [@kwiatkowski1992testing]. These are not convenient to implement in Excel, so we will just use a standard practice of using log-differences of the price series we try to forecast. 
+- In general, we will not know for sure if our price series is stationary or not. 
+- However, in most cases using the log-difference of price instead of price levels will transform the non-stationary series into a stationary one, so regression-based forecasting methods can safely be done by regressing log-differences of price in various forms. 
+- If it turns out that your price series *is* in fact stationary there is no harm in specifying your forecasting model with log-differences because the log-difference of a stationary series will also be stationary. 
+
+# Stationarity and Spurious Regression
+## Unit Root Tests
+
+- There are statistical tests to detect if a series is stationary or not, and a more advanced analysis would test for stationarity as an initial exploration to help determine what kind of forecasting model to specify. 
+- Some examples of stationarity tests are the Augmented Dickey-Fuller test [@dickey1979distribution], the Phillips-Perron test [@phillips1988testing], and the Kwiatkowski–Phillips–Schmidt–Shin (KPSS) test [@kwiatkowski1992testing]. 
+- These are not convenient to implement in Excel, so we will just use a standard practice of using log-differences of the price series we try to forecast. 
 
 # Exercises
 
