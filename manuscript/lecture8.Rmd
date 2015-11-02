@@ -72,7 +72,7 @@ The year-to-year variation is caused by price fluctuations with low prices encou
 
 The final use category is the most difficult to forecast because its quantity is derived, not estimated. What I mean is the USDA makes estimates of every other row in the balance sheet. Then, to ensure the numbers add up, they infer the Feed and Residual category. 
 
- $Feed\&Residual = Production + Imports + Beginning Stocks + Ending Stocks \\
+ $Feed\&Residual = Production + Imports + Beginning Stocks - Ending Stocks \\
  - FoodSeed\&Industrial - Exports$
 
 # Feed, and Residual
@@ -81,7 +81,7 @@ Since each category on the right hand side is itself estimated with some error, 
 
 $\begin{align}
 Feed\&Residual = (Production + \epsilon_{prod}) + (Imports + \epsilon_{import}) + (Beginning Stocks + \epsilon_{BStocks}) \\
-+ (Ending Stocks + \epsilon_{EStocks}) - (FoodSeed\&Industrial + \epsilon_{Food}) - (Exports + \epsilon_{Export})
+- (Ending Stocks + \epsilon_{EStocks}) - (FoodSeed\&Industrial + \epsilon_{Food}) - (Exports + \epsilon_{Export})
 \end{align}$
 
 # Feed, and Residual

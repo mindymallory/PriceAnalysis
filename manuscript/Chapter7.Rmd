@@ -27,7 +27,7 @@ Source: [Feed Grains database](http://www.ers.usda.gov/data-products/feed-grains
 
 Figure 1 shows a dramatic uptrend in the Food, Alcohol and Industrial use category. This is due to the dramatic increase in the production of ethanol starting around 2005/2006 and plateauing around 2010 when U.S. ethanol consumption roughly hit the 'blend-wall' where ethanol makes up 10% of the retail gasoline supply. 
 
-![Figure 2: Corn Food, Alchohol, and Industrial Use, Annual 1990-2015 as a percentage of production](FeedGrains_Corn_files\image013.png)
+![Figure 2: Corn Food, Alchohol, and Industrial Use, Annual 1990-2015](FeedGrains_Corn_files\image013.png)
 
 Source: [Feed Grains database](http://www.ers.usda.gov/data-products/feed-grains-database/feed-grains-yearbook-tables.aspx#26780) maintained by the USDA ERS.
 
@@ -88,13 +88,13 @@ Table 1 shows the top 10 importers of U.S. corn  for the 2014/2015 marketing yea
 
 The final use category is the most difficult to forecast because its quantity is derived, not estimated. What I mean is the USDA makes estimates of every other row in the balance sheet. Then, to ensure the numbers add up, they infer the Feed and Residual category. 
 
- $Feed\&Residual = Production + Imports + Beginning Stocks + Ending Stocks - FoodSeed\&Industrial - Exports$
+ $Feed\&Residual = Production + Imports + Beginning Stocks - Ending Stocks - FoodSeed\&Industrial - Exports$
 
 Since each category on the right hand side is itself estimated with some error, the error for the Feed and Residual category is the sum of the errors of the other categories. This means that forecast errors from each of the categories get added together, creating a category with larger forecast error than all the others. For this reason the Feed and Residual category is the most difficult to forecast. It should correlate roughly to livestock feeding units, but does not prove to be that effective in practice. 
 
 $\begin{align}
 Feed\&Residual = (Production + \epsilon_{prod}) + (Imports + \epsilon_{import}) + (Beginning Stocks + \epsilon_{BStocks}) \\
-+ (Ending Stocks + \epsilon_{EStocks}) - (FoodSeed\&Industrial + \epsilon_{Food}) - (Exports + \epsilon_{Export})
+- (Ending Stocks + \epsilon_{EStocks}) - (FoodSeed\&Industrial + \epsilon_{Food}) - (Exports + \epsilon_{Export})
 \end{align}$
 
 Figure 7 below displays the Feed and Residual category since 1990. 
@@ -210,7 +210,7 @@ Newton, J. "Reviewing the Pace of Corn and Soybean Exports." farmdoc daily (5):1
     | 52    |                    |      |      |      |      |      |      |
 
 
-
+<!-- Do this for a complete marketing year. -->
 
 
 

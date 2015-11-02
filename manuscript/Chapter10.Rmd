@@ -164,7 +164,7 @@ In figure 10 the log-differences of the nearby corn futures price series (shown 
 
 # Efficient Market Hypothesis
 
-The Efficient Market Hypothesis (EMH) states that all the information available regarding an asset is incorporated into its price. If the EMH were true, forecasting would be a hopeless endeavor because one could never use current and past information to predict future prices - as in the Log-normal price model. There is a large debate about the whether or not this hypothesis is true, or how and when it deviates from being true. 
+The Efficient Market Hypothesis (EMH) states that all the information available regarding an asset is incorporated into its price [@fama1970efficient]. If the EMH were true, forecasting would be a hopeless endeavor because one could never use current and past information to predict future prices - as in the Log-normal price model. There is a large debate about the whether or not this hypothesis is true, or how and when it deviates from being true. 
 
 While a large literature in finance argues that it is not strictly true, markets are 'close to efficient' most of the time. I say this because making a forecast that one can actually profitably trade with is difficult. We will explore several forecasting models in the subsequent chapters, and we will find it difficult to find a forecasting model were our 95% confidence interval around our forecast of percent return does not contain 0.0%. If one cannot produce a forecasting model that does that, your model is not giving a clear 'buy' or 'sell' signal. 
 

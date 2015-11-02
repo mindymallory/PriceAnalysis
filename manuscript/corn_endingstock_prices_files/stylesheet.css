@@ -4,6 +4,10 @@ col
 	{mso-width-source:auto;}
 br
 	{mso-data-placement:same-cell;}
+.style57
+	{mso-number-format:"_\(\0022$\0022* \#\,\#\#0\.00_\)\;_\(\0022$\0022* \\\(\#\,\#\#0\.00\\\)\;_\(\0022$\0022* \0022-\0022??_\)\;_\(\@_\)";
+	mso-style-name:Currency;
+	mso-style-id:4;}
 .style0
 	{mso-number-format:General;
 	text-align:general;
@@ -52,3 +56,40 @@ td
 .xl66
 	{mso-style-parent:style0;
 	white-space:normal;}
+.xl67
+	{mso-style-parent:style0;
+	border-top:none;
+	border-right:none;
+	border-bottom:1.0pt solid windowtext;
+	border-left:none;}
+.xl68
+	{mso-style-parent:style0;
+	font-style:italic;
+	text-align:center;
+	border-top:1.0pt solid windowtext;
+	border-right:none;
+	border-bottom:.5pt solid windowtext;
+	border-left:none;}
+.xl69
+	{mso-style-parent:style0;
+	font-style:italic;
+	text-align:center-across;
+	border-top:1.0pt solid windowtext;
+	border-right:none;
+	border-bottom:.5pt solid windowtext;
+	border-left:none;}
+.xl70
+	{mso-style-parent:style57;
+	font-size:16.0pt;
+	font-weight:700;
+	mso-number-format:"_\(\0022$\0022* \#\,\#\#0\.00_\)\;_\(\0022$\0022* \\\(\#\,\#\#0\.00\\\)\;_\(\0022$\0022* \0022-\0022??_\)\;_\(\@_\)";}
+.xl71
+	{mso-style-parent:style0;
+	font-weight:700;}
+.xl72
+	{mso-style-parent:style0;
+	font-weight:700;
+	white-space:normal;}
+.xl73
+	{mso-style-parent:style0;
+	font-size:14.0pt;}
