@@ -1,0 +1,11 @@
+---
+title: 'Chapter 15: Hog Markets'
+csl: american-journal-of-agricultural-economics.csl.txt
+output:
+  html_document:
+    fig_caption: yes
+    toc: yes
+  word_document: default
+bibliography: PriceAnalysis.bib
+---
+
