@@ -9,7 +9,7 @@ output:
 bibliography: PriceAnalysis.bib
 ---
 
-This chapter covers the basic production cycle and ownership structures in beef cattle markets. We cover cow-calf, backgrounder, and finisher/feedlot operations. We discuss the basic geography of beef cattle production, and varoious biological constraints that impact market prices. 
+This chapter covers the basic production cycle and ownership structures in beef cattle markets. We cover cow-calf, backgrounder, and finisher/feedlot operations. We discuss the basic geography of beef cattle production, and various biological constraints that impact market prices. 
 
 # Beef Cattle Production
 
@@ -21,17 +21,17 @@ In a typical cow-calf operation, the producer maintains a herd of breeding cows 
 
 ## Calandar of Production for the Cow-calf Producer
 
-This outline is borrowed heaviliy from the [Beef Production Calendar](http://beef.unl.edu/beefprodcal.shtml) published by the Beef Cattle Extention effort of the University of Nebraska Extention system. 
+This outline borrows heavily from the [Beef Production Calendar](http://beef.unl.edu/beefprodcal.shtml) published by the Beef Cattle Extension effort of the University of Nebraska Extension system. 
 
 Most cow-calf producers operate under a spring calving production system. In this system, calves are born in the months of February, March, and April, and can be weaned and marketed in the fall of the same calendar year. 
 
 ### February, March, April
 
-Calves are born during the months of February, March, and April. Boy calves are called bull calves and girl calves are called heifers. Newborn calves weight on average between 50-80lbs. At this time the producer makes descisions about any older cows that need to be culled from the herd and chooses heifer calves to replace culled breeding heifers. During these months the cows and newborn calves are on winter pasture, and usually being fed supplemental forage of hay.
+Calves are born during the months of February, March, and April. Males are called bull calves and females are called heifers. Newborn calves weight on average between 50-80lbs. At this time the producer makes decisions about any older cows that need to be culled from the herd and chooses heifer calves to replace culled breeding heifers. During these months the cows and newborn calves are on winter pasture, and usually being fed supplemental forage of hay.
 
 ### May
 
-The cows and calves usually go to summer pasture during the month of May or early June. The exact date depends on when the grass in the summer pasture has grown to a sufficient amount to sustain the herd. 
+The cows and calves usually go to summer pasture during the month of May or early June. The exact date depends on when the grass in the summer pasture has grown to a sufficient amount to sustain the herd. Bull calves are castrated before going to summer pasture. Once castrated, male calves are called steers. 
 
 ### June, July, August
 
@@ -62,7 +62,7 @@ Continue rotating winter pasture and feeding hay for forage.
 
 # The Backgrounder/Stocker Operation
 
-A backgrounder is in the business of buying light calves (weighing approximately 500 lbs) and feeding them grain-based rations until they have gained 100lbs or more. As noted above, the cow-calf producer may decide to background his own calves or an entitiy strictly in the business of backgrounding may buy light calves at auction or directly from a cow-calf producer. 
+A backgrounder is in the business of buying light calves (weighing approximately 500 lbs) and feeding them grain-based rations until they have gained 100lbs or more. As noted above, the cow-calf producer may decide to background his own calves or an entity strictly in the business of backgrounding may buy light calves at auction or directly from a cow-calf producer. 
 
 A backgrounder who purchases calves at auction or from a cow-calf producer must consider weight and gender of the calf. 
 
@@ -96,9 +96,9 @@ The large feedlots sell fattened calves to beef packing plants. Many packing pla
 
 # Cattle Auction at 'The Sale Barn'
 
-Most calves are sold from the cow-calf operation to a backgrounder or feedlot at auction. In beef cattle intensive areas, there will be a livestock auction houses, also called 'sale barns' at least every 30-60 miles. Similar to the coverage grain elevators have in grain intensive areas. Cow-calf producers bring their calves to the auction market the day before the sale and they are kept and cared for in separate pens arranged by ownership. The producer pays the sale barn a commission for selling their calves and fees for the feed, water, and shelter the calves recieve from their arrival at the sale barn until the new owner transports them elsewhere. 
+Most calves are sold from the cow-calf operation to a backgrounder or feedlot at auction. In beef cattle intensive areas, there will be a livestock auction houses, also called 'sale barns' at least every 30-60 miles. Similar to the coverage grain elevators have in grain intensive areas. Cow-calf producers bring their calves to the auction market the day before the sale and they are kept and cared for in separate pens arranged by ownership. The producer pays the sale barn a commission for selling their calves and fees for the feed, water, and shelter the calves receive from their arrival at the sale barn until the new owner transports them elsewhere. 
 
-Both buyers and sellers are often present at the auction. Large feedlots and backgrounders will have agents buying calves in the disperse local markets. Visual inspection in-person in crucial to the buyer because they have an interest to make sure the calves they buy are healthy and not injured. Also, temperment of the calves can be observed, which may be a concern for some operations. 
+Both buyers and sellers are often present at the auction. Large feedlots and backgrounders will have agents buying calves in the disperse local markets. Visual inspection in-person in crucial to the buyer because they have an interest to make sure the calves they buy are healthy and not injured. Also, temperament of the calves can be observed, which may be a concern for some operations. 
 
 Workers at the sale barn bring the pens of calves through the ring[^ring] and buyers examine the calves on the spot and place bids. The winning bidder pays the auction house and takes the calves to a new location usually the same day. 
 
@@ -117,7 +117,7 @@ The large feedlot operations are run by commercial firms with the resources and 
 
 The Feeder Cattle contract is financially settled, which means it is not physically settled. Futures settle to the [CME Feeder Cattle Index](http://www.cmegroup.com/market-data/reports/cash-settled-commodity-index-prices.html), based on cash sales reported to the USDA Ag Market News service in active cash cattle markets. 
 
-The Live Cattle contract is physically settled, so the small number of deliveries make the final trades in the futures contract grounded in real prices. Quality is adjusted using the Live Equivalant Choice-Select Spread. Details of a deliverable unit can be found in the [CME Rulebook](http://www.cmegroup.com/rulebook/CME/II/100/101/101.pdf)
+The Live Cattle contract is physically settled, so the small number of deliveries make the final trades in the futures contract grounded in real prices. Quality is adjusted using the Live Equivalent Choice-Select Spread. Details of a deliverable unit can be found in the [CME Rulebook](http://www.cmegroup.com/rulebook/CME/II/100/101/101.pdf)
 
 ## Details of the Spread[^cattlespread]
 
@@ -138,3 +138,13 @@ Since finishing cattle takes three to six months, timing of contract expiration 
 
 John Lawrence at Iowa State examines the historical profitability of backgrounding cattle. He considers backgrounding steers versus heifers and lighter calves (450 lbs) versus heavier calves (550 lbs).
 
+
+# Exercises
+
+Into an Excel spreadsheet, download futures prices for January 2015 Feeder Cattle futures prices ([CME/FCF2015](https://www.quandl.com/data/CME/FCF2015-Feeder-Cattle-Futures-January-2015-FCF2015)), March 2015 Corn futures prices ([CME/CH2015](https://www.quandl.com/data/CME/CH2015-Corn-Futures-March-2015-CH2015)), and June 2015 Live Cattle futures prices ([CME/LCM2015](https://www.quandl.com/data/CME/LCM2015-Live-Cattle-Futures-June-2015-LCM2015)) from Quandl.com.
+
+1. Suppose you perform risk management for a large feedlot in Western Kansas. You plan to buy 66 feeder cattle on December 20th, 2014 and feed them out to market weight when you will sell them to a packer on May 20, 2015. You need to hedge exposure to the price risk you face in feeding the steers to market weight. 
+
+    a. State the futures trades you will make to put on a cattle crush spread and hedge this price risk. Note the contracts bought/sold, and the dates on which you buy/sell to open and sell/buy to close your futures positions. 
+    b. Calculate the gain or loss in your futures position as of May 20, 2015.
+    c. Describe how this change in value 'hedges' your price exposure in feeding steers to market weight. 
