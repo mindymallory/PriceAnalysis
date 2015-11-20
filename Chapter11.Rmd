@@ -14,6 +14,10 @@ knitr::opts_chunk$set(attach(mtcars), library(Kmisc), library(knitr),
                       echo=FALSE, warning=FALSE, message=FALSE)
 ```
 
+# [Return to Book Homepage](http://mindymallory.github.io/PriceAnalysis/)
+
+# Introduction
+
 This chapter begins our foray into more a statistically oriented analysis of commodity prices. As a primer we will begin by reviewing a few statistical concepts to get ready for regression-based forecast analysis. 
 
 # Statistics

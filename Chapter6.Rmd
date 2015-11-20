@@ -11,6 +11,8 @@ bibliography: PriceAnalysis.bib
 
 <!-- This chapter should probably come before the Introduction to Balence sheet chapter (current chapter 3).I messsed up and pressed ahead with forecasting-->
 
+# [Return to Book Homepage](http://mindymallory.github.io/PriceAnalysis/)
+
 # Introduction
 
 This chapter reviews the basics of the presentation of economic data, descriptive statistics, visualizations based on charts, graphs, and tables, and the math and mechanics of estimating trend forecasting models. There are three main types of data sets one might encounter: cross section, time-series, and panel. 

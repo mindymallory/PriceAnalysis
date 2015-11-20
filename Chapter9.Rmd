@@ -9,6 +9,8 @@ output:
 bibliography: PriceAnalysis.bib
 ---
 
+# [Return to Book Homepage](http://mindymallory.github.io/PriceAnalysis/)
+
 # Introduction
 
 Over the course of the last several chapters we have covered each category of supply and use. In tables 1 and 2 below, that literally means we covered how to forecast the numbers in each row of the USDA WASDE balance sheet. Subtracting total use from total supply gives an estimate of marketing year ending stocks. For example, in table 1, 

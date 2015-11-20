@@ -9,6 +9,10 @@ output:
 bibliography: PriceAnalysis.bib
 ---
 
+# [Return to Book Homepage](http://mindymallory.github.io/PriceAnalysis/)
+
+# Introduction
+
 This chapter covers basic hog production, industry structure, and marketing practices, with an emphasis on how these affect hog prices. The hog market has undergone significant changes in industry organization in recent history. The industry used to be very unconcentrated with large numbers of independently owned and operated small and medium sized farms. Recently, the industry has trended toward more and more concentration in ownership, contracting and marketing agreements between owners and operators, and vertical integration in structure. This is in contrast to the beef cattle market, where ownership remains unconcentrated until the final finishing stage of produciton. 
 
 [Smithfield Videos of Production Stages](http://www.murphybrownllc.com/contract-growing/hog-production/)

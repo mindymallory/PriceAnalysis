@@ -10,6 +10,10 @@ bibliography: PriceAnalysis.bib
 ---
 <!-- Slightly more rigor and some econometric textbook citations are appropriate here.--> 
 
+# [Return to Book Homepage](http://mindymallory.github.io/PriceAnalysis/)
+
+# Introduction 
+
 This chapter marks a break in forecasting philosophy from the approach we have used in previous chapters. In previous chapters we were forecasting from a viewpoint that was very structural and focused on market fundamentals. We built tools and information sources to monitor supply and demand conditions in commodity markets in fairly great detail. We utilized publicly available information and research published by various branches of the USDA. 
 
 In this chapter, and going forward, we will take a reduced-form econometric approach. The focus will be the utilization of basic time-series econometric models to examine and forecast commodity prices. In this chapter time-series-specific concepts are introduced: constructing a series of 'nearby' futures prices, periodicity of data realizations and forecast horizon, trends in data series, inflation and deflating data, seasonality, stationarity, and random walks. 

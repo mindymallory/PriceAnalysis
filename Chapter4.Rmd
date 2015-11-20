@@ -10,6 +10,8 @@ output:
 bibliography: PriceAnalysis.bib
 ---
 
+# [Return to Book Homepage](http://mindymallory.github.io/PriceAnalysis/)
+
 # Introduction
 
 Some of the USDA reports contain very sensitive market information causing market prices to adjust rapidly to new information about supply and demand. Access to the contents of a market sensitive report would result in the ability to perform 'insider trading' and obtain nearly risk-less profits. This activity is illegal, and the USDA's NASS prepares the reports under lock-down conditions where during the process of finalizing estimates of the report's content, officials are locked in a secure area and not allowed to leave until the report is made known to the public. 
