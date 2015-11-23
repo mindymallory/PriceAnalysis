@@ -9,6 +9,8 @@ bibliography: PriceAnalysis.bib
 csl: american-journal-of-agricultural-economics.csl.txt
 ---
 
+
+
 # [Return to Book Homepage](http://mindymallory.github.io/PriceAnalysis/)
 
 # Introduction 
