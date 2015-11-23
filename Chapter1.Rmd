@@ -4,7 +4,7 @@ output:
     html_document:
         toc: true
         fig_caption: yes
-        css: stylesheets/styles.css
+        css: stylesheets/github-light.css
 bibliography: PriceAnalysis.bib
 csl: american-journal-of-agricultural-economics.csl.txt
 ---
