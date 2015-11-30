@@ -9,20 +9,66 @@ output:
 bibliography: PriceAnalysis.bib
 ---
 
-<title>Price Analysis by Mindy L. Mallory</title>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-70689820-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
 
 # [Return to Book Homepage](http://mindymallory.github.io/PriceAnalysis/)
 
 # Introduction
+
+Crude oil is an extremely important commodity. Much of the world's economic activity is dependent on the energy products derived from this commodity. Crude oil was formed long ago when biological material fell to the bottom of ancient oceans. Over time the material was exposed to heat and pressure and transormed the material into crude oil.  Crude oil is composed of a mix of different hydrocarbons, moleculues that contain both hydrogen and carbon atoms. When these molecules are broken down and then recombined in different configurations, different materials like gasoline, diesel fuel, heating oil, jet fuel, and karosene can be made. Obviously, crude oil and its derivative products are valued for the energy stored in the hydrocarbon molecules. 
+
+[Introduction to Crude Oil by The Atlantic](https://www.youtube.com/watch?v=62LvVYYqUFA)
+
+# Classifying Crude Oil: Light versus Heavy and Sweet versus Sour
+
+Not all crude oil is created equal. The components that make up the material can vary greatly affecting what kinds of products crude oil can be refined into. For example, if the crude oil is composed of large hydrocarbon molecules, it is referred to as *heavy* crude oil. Crude oil that has mainly smaller molecules is called *light* crude oil. Light crude oil can be more easily turned into higher valued gasoline and distillates while heavy crude oil produces more lubricating oil and coke. 
+
+Light crude oil flows more freely, while heavy crude oil is more viscous. Specifically, the American Petroleium Institute gravity (API gravity) is a measure of how heavy crude oil is compared to water. If API gravity is greater than 10 the crude oil will float on water. If it is less than 10 the crude oil will sink. Crude oil is considered light if it has an API gravity higher than 31.1 degrees.      
+
+Crude oil is also classified as *sweet* or *sour*. This refers to the sulfer content of the crude oil. Sweet crude oil contains less than 0.5% sulfur. It is easier to refine because sulfer does not need to be removed. Sulfer content of diesel is regulated and diesel fuel in the US and Europe have limited the quantity of sulfer allowed, so sweet crude oil is valued more highly than sour crude oil. 
+
+Sulfer is also highly corrosive, increasing the cost of maintianing refineries, and exposure to hydrogen sulfide is dangrous, so it must be removed from sour crude oil before transporting. 
+
+## Light, Sweet: WTI and Brent Crude Oil
+
+Because of its desirable qualities, light sweet crude oil is the most valuable classifications of crude oil in the world. When you hear people talk about crude oil prices, they almost always are referring to the price of light sweet crude oil, because of its importance in producing the majority of the worlds liquid transportation fuel and a significant portion of heating fuel. 
+
+WTI Crude Oil Price
+
+: The West Texas Intermediate crude oil price is a benchmark price for light sweet crude oil produced in North America. The NYMEX futures contract for [*Light Sweet Crude Oil*](http://www.cmegroup.com/trading/energy/crude-oil/light-sweet-crude.html) is the WTI price delivered at [Cushing, OK](https://www.google.com/maps/place/Cushing,+OK+74023/@43.8498418,-87.2836175,5.17z/data=!4m2!3m1!1s0x87b169f80014c5c1:0xfe855f1914b195a).
+
+Brent Crude Oil
+
+: The Brent Crude Oil price is the benchmark for light sweet crude oil extracted from the North Sea. Since it is slightly more sour than WTI crude, it often trades at a discount to WTI crude, but the spread can be affected by local supply and demand factors. 
+
+![Brent Crude Oil Map](images/Brent_crude_oil_map (1).png)
+
+Source: [US Energy Information Administration](http://www.eia.gov/countries/cab.cfm?fips=UK) Public domain, via Wikimedia Commons
+
+
+# Refining Crude Oil
+
+![Products Made from a Barrel of Crude Oil](images/products_from_barrel_crude_oil-large.jpg)
+
+Source: [US Energy Information Administration](http://www.eia.gov/Energyexplained/index.cfm?page=oil_home) 
+
+## Gasoline
+
+## Distillates: Diesel, Heating Oil, Jet Fuel
+
+
+# Fundamental Factors Important for Price Analysis
+
+
+## Inventories of Crude, Gasoline, and Distillates
+
+
+## Geopolitical Events
+
+
+## Recent Increase in U.S. Extraction
+
+
+# The Crack Spread
 
 
 
