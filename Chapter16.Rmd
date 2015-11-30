@@ -34,11 +34,11 @@ Because of its desirable qualities, light sweet crude oil is the most valuable c
 
 WTI Crude Oil Price
 
-: The West Texas Intermediate crude oil price is a benchmark price for light sweet crude oil produced in North America. The NYMEX futures contract for [*Light Sweet Crude Oil*](http://www.cmegroup.com/trading/energy/crude-oil/light-sweet-crude.html) is the WTI price delivered at [Cushing, OK](https://www.google.com/maps/place/Cushing,+OK+74023/@43.8498418,-87.2836175,5.17z/data=!4m2!3m1!1s0x87b169f80014c5c1:0xfe855f1914b195a).
+:    The West Texas Intermediate crude oil price is a benchmark price for light sweet crude oil produced in North America. The NYMEX futures contract for [*Light Sweet Crude Oil*](http://www.cmegroup.com/trading/energy/crude-oil/light-sweet-crude.html) is the WTI price delivered at [Cushing, OK](https://www.google.com/maps/place/Cushing,+OK+74023/@43.8498418,-87.2836175,5.17z/data=!4m2!3m1!1s0x87b169f80014c5c1:0xfe855f1914b195a).
 
 Brent Crude Oil
 
-: The Brent Crude Oil price is the benchmark for light sweet crude oil extracted from the North Sea. Since it is slightly more sour than WTI crude, it often trades at a discount to WTI crude, but the spread can be affected by local supply and demand factors. 
+:    The Brent Crude Oil price is the benchmark for light sweet crude oil extracted from the North Sea. Since it is slightly more sour than WTI crude, it often trades at a discount to WTI crude, but the spread can be affected by local supply and demand factors. 
 
 ![Brent Crude Oil Map](images/Brent_crude_oil_map (1).png)
 
