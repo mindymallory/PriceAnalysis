@@ -36,6 +36,19 @@ WTI Crude Oil Price
 
 :    The West Texas Intermediate crude oil price is a benchmark price for light sweet crude oil produced in North America. The NYMEX futures contract for [*Light Sweet Crude Oil*](http://www.cmegroup.com/trading/energy/crude-oil/light-sweet-crude.html) is the WTI price delivered at [Cushing, OK](https://www.google.com/maps/place/Cushing,+OK+74023/@43.8498418,-87.2836175,5.17z/data=!4m2!3m1!1s0x87b169f80014c5c1:0xfe855f1914b195a).
 
+The EIA states that crude oil is produced in 31 U.S. states and in U.S. coastal waters. In 2014, about 65% of U.S. crude oil production came from five states:
+
+- Texas (37%)
+- North Dakota (13%)
+- California (6%)
+- Alaska (6%)
+- Oklahoma (4%)
+
+![Top Five Oil Producing States](images/top_5_petroleum_states-large.jpg)
+
+Source: [US Energy Information Administration](http://www.eia.gov/Energyexplained/index.cfm?page=oil_home) 
+
+
 Brent Crude Oil
 
 :    The Brent Crude Oil price is the benchmark for light sweet crude oil extracted from the North Sea. Since it is slightly more sour than WTI crude, it often trades at a discount to WTI crude, but the spread can be affected by local supply and demand factors. 
@@ -44,8 +57,17 @@ Brent Crude Oil
 
 Source: [US Energy Information Administration](http://www.eia.gov/countries/cab.cfm?fips=UK) Public domain, via Wikimedia Commons
 
+Globally, the top five oil producing countires are: Russia, the United States, Saudi Arabia, China, and Canada. 
+
+![Top Five Oil Producing Countries](images/top_petroleum_producing_countries-large.jpg)
+
+Source: [US Energy Information Administration](http://www.eia.gov/Energyexplained/index.cfm?page=oil_home) 
 
 # Refining Crude Oil
+
+The exact proportions of refined products that can be produced from a barrel of oil can be varied by changing to refining process if one product is preferred over another. However, higher valued products are more costly to produce, and the proportions can only be varied to an extent. Refiners could never produce 100% gasoline from a barrel of oil, for example. 
+
+The characteristics of the oil described above (light/heavy and sweet/sour) impact the proportion of products possible. The figure below shows the rough yield of various refined products from a 42 gallon barrel of oil. 
 
 ![Products Made from a Barrel of Crude Oil](images/products_from_barrel_crude_oil-large.jpg)
 
@@ -53,11 +75,19 @@ Source: [US Energy Information Administration](http://www.eia.gov/Energyexplaine
 
 ## Gasoline
 
-## Distillates: Diesel, Heating Oil, Jet Fuel
+Gasoline is the refined product that most people are familiar with because it is the dominant liquid fuel for the automobiles driven by the average American consumer.
 
+## Distillates: Diesel, Heating Oil, Jet Fuel, Kerosene
+
+Distillates are lesser known among the general public. However, Diesel, which is most familiar to consumers, is chemically very similar to heating oil, jet fuel, and kerosene. 
+
+Heating oil is used to heat homes in the Northeast U.S., wheras in other parts of the country natural gas, propane, and electricity are more prominant fuels for home heating.
 
 # Fundamental Factors Important for Price Analysis
 
+A number of supply and demand statistics are maintained by the Energy Information Administration. Information on prices, crude reserves and production, refining and processing, imports, and movements, and stocks can be found at the [EIA website](http://www.eia.gov/petroleum/data.cfm).
+
+## Production of Crude, Gasoline, and Distillates
 
 ## Inventories of Crude, Gasoline, and Distillates
 
@@ -65,7 +95,7 @@ Source: [US Energy Information Administration](http://www.eia.gov/Energyexplaine
 ## Geopolitical Events
 
 
-## Recent Increase in U.S. Extraction
+## Recent Increase in U.S. Production of Crude Oil
 
 
 # The Crack Spread
