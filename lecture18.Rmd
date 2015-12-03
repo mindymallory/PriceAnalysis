@@ -1,12 +1,7 @@
 ---
-title: 'Chapter 17: Ethanol Markets and the Corn Crush Spread'
-csl: american-journal-of-agricultural-economics.csl.txt
-output:
-  html_document:
-    fig_caption: yes
-    toc: yes
-  word_document: default
-bibliography: PriceAnalysis.bib
+title: "ACE 427 Commodity Price Analysis and Forecasting"
+output: slidy_presentation
+theme: uulm
 ---
 
 # [Return to Book Homepage](http://mindymallory.github.io/PriceAnalysis/)
@@ -14,6 +9,8 @@ bibliography: PriceAnalysis.bib
 # Introduction
 
 Ethanol production and consumption begin to increase rapidly around 2005, which is when the Energy Policy Act of 2005 and later the Energy Security and Independence Act of 2007 created the Renewable Fuels Standard (RFS). The RFS mandated quantities of ethanol that blenders of gasoline are required to blend into the retail gasoline supply. These annual mandates are revised every year, but they were designed to steadily increase year after year until 2015 when the mandate reached 15 billion gallons per year. This figure came about because gasoline consumption in the United States was forecast to reach 150 billion gallons per year by 2015. So the RFS mandates were designed to reach the point where the entire retail gasoline supply would include 10% ethanol. 
+
+# Introduction
 
 The EPA released [final rules](http://www2.epa.gov/renewable-fuel-standard-program/final-renewable-fuel-standards-2014-2015-and-2016-and-biomass-base-0) regarding RFS for volume requirements of biofuels for 2014, 2015, and 2016 on November 30, 2015. 
 
@@ -29,6 +26,7 @@ The EPA released [final rules](http://www2.epa.gov/renewable-fuel-standard-progr
 : Table 1: Renewable Fuel Mandated Volumes for 2014, 2015, 2016, and 2017 
 
 Note: Units for all volumes are ethanol-equivalent, except for biomass-based diesel volumes which are expressed as physical gallons.|
+
 
 Advanced biofuel is defined as fuel made from renewable sources that provides greater than 50% reduction in greenhouse gas emissions than the renewable fuel they replace. Cellulosic biofuel and biomass-based diesel are considered advanced biofuels, so the cellulosic and biomass-based diesel requirements comprise 2.13 billion gallons of the 3.61 billion gallon advanced biofuel requirement. This leaves 1.48 billion billion gallons in undifferentiated advanced biofuel in the mandate. This will most likely be fulfilled by importing sugarcane-based ethanol from Brazil, since the greenhouse gas emission reductions for sugarcane-based ethanol is accepted as an advanced biofuel and considered to have greater than 50% reduction in greenhouse gas emissions. 
 
@@ -49,7 +47,7 @@ Source: [Renewable Fuels Association](http://www.ethanolrfa.org/resources/bioref
 
 Corn-based ethanol can be produced via two methods. Dry grind, and wet grind. 
 
-## Dry Grind Ethanol Production
+# Dry Grind Ethanol Production
 
 In dry grind ethanol production, the entire kernel of corn is ground into a meal and mixed with water to create a slurry. Then enzymes are added to convert the starches in the slurry to simple sugar. Ammonia and yeast are added, and the yeast ferments the slurry and converts the slurry into ethanol and carbon dioxide. The ethanol is dehydrated to 200 proof and then a little gasoline is added to make the product undrinkable. 
 
@@ -62,7 +60,7 @@ What is left over after the sugars have been converted to ethanol is called stil
 Follow the link to a Google Maps satellite view of [Lincolnway Energy LLC, Ames, IA](https://www.google.com/maps/place/Lincolnway+Energy+LLC/@42.0259566,-93.5094383,1084m/data=!3m1!1e3!4m2!3m1!1s0x0000000000000000:0xe75269d9c81692ab!6m1!1e1). Note the location. The ethanol plant is located directly next to Key Cooperative, and both have access to a rail-head. 
 
 
-## Wet Grind Ethanol Production
+# Wet Grind Ethanol Production
 
 Unlike dry grind ethanol production, in the wet grind process whole corn kernels are steeped in a combination of sulfuric acid and water to separate the kernel into its components: pericarp (or skin), the endosperm (which contains the starch), and germ (which contains the oil). Pre-processing the corn in this way allows fermentation to be done on the starchy part alone, and corn oil and corn bran (from the pericarp) can be extracted separately. The wet-grind ethanol production involves three revenue streams, ethanol, corn oil, and corn bran. 
 
@@ -75,7 +73,7 @@ DDGs are a by product of the dry grind ethanol production process that is valuab
 
 [Images of DDGs](https://www.google.com/search?q=ddgs&source=lnms&tbm=isch&sa=X&ved=0ahUKEwj4udmomr7JAhWF2B4KHailApcQ_AUICCgC&biw=1920&bih=1031#)
 
-## DDG Prices
+# DDG Prices
 
 DDG prices tend to follow the trend of corn prices, although not perfectly because the two are not perfect substitutes. In figure 3, DDG and corn prices are compared using monthly U.S. average price received by farmers for corn (cents per bushel) and the average wholesale bulk price for Central IL ($/ton). We put corn prices in cents per bushel so the units are comparable on one axis. 
 
