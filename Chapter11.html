@@ -93,7 +93,7 @@ img {
 <div id="statistics" class="section level1">
 <h1>Statistics</h1>
 <p>A <em>statistic</em> is a measure that is calculated from a set of sample data. Statistics are useful ways of summarizing key characteristics of a dataset quickly and easily. The most familiar are measures of central tendency and dispersion. Measures of central tendency identify where the ‘middle’ of the data is, while measures of dispersion measure how spread out the data are.</p>
-<p>To illustrate we will use the Motor Trend Cars database <span class="citation">(<span class="citeproc-not-found" data-reference-id="hocking1976biometrics"><strong>???</strong></span>)</span>.</p>
+<p>To illustrate we will use the Motor Trend Cars database <span class="citation">(Hocking 1976)</span>.</p>
 <table>
 <caption>Table 1: Motor Trend Cars Data set - 1973/1974</caption>
 <thead>
@@ -717,7 +717,7 @@ img {
 <div id="stationarity-and-spurious-regression" class="section level1">
 <h1>Stationarity and Spurious Regression</h1>
 <p>In chapter 10 we argued, in general terms, why it is important to have variables that are stationary in order to try to fit a forecasting (regression model). Now we will illustrate this in greater detail.</p>
-<p>It turns out that if you regress a non-stationary variable on another non-stationary variable and conduct a <em>t</em>-test (similar to the one we performed in equation 10 for the Motor Trend Cars regression), the distribution of the <span class="math">\(\beta\)</span> coefficient is no longer <em>t</em>, and in fact, the <em>t</em>-statistic diverges (gets larger and larger as sample size grows) even when the two variables are not related to one another <span class="citation">(<span class="citeproc-not-found" data-reference-id="granger1974spurious"><strong>???</strong></span>)</span>. This phenomenon is called a <strong>Spurious Regression</strong>. This means that if you unknowingly regress a non-stationary variable on another non-stationary variable and perform a <em>t</em>-test to see if they are related, you will almost always conclude that they are because the <em>t</em>-statistic will be very large compared to the <em>t</em> distribution.</p>
+<p>It turns out that if you regress a non-stationary variable on another non-stationary variable and conduct a <em>t</em>-test (similar to the one we performed in equation 10 for the Motor Trend Cars regression), the distribution of the <span class="math">\(\beta\)</span> coefficient is no longer <em>t</em>, and in fact, the <em>t</em>-statistic diverges (gets larger and larger as sample size grows) even when the two variables are not related to one another <span class="citation">(Granger and Newbold 1974)</span>. This phenomenon is called a <strong>Spurious Regression</strong>. This means that if you unknowingly regress a non-stationary variable on another non-stationary variable and perform a <em>t</em>-test to see if they are related, you will almost always conclude that they are because the <em>t</em>-statistic will be very large compared to the <em>t</em> distribution.</p>
 <p>To illustrate, we will simulate two series of unrelated ‘prices’ using the log-normal model introduced in Chapter 10. Then we will regress one ‘price’ on the other and show that the regression coefficient is very large relative to the 1% critical value of the <em>t</em>-distribution.</p>
 <ol start="12" style="list-style-type: decimal">
 <li><span class="math">\[P_{x,t+1} = e^{(P_{x,t} + \epsilon_{x,t})}\]</span></li>
@@ -739,7 +739,7 @@ img {
 </div>
 <p>The p-value on the <span class="math">\(P_{x,t+1}\)</span> term is 0 to three decimal places. If we were interpreting the model unknowingly, we would conclude that <span class="math">\(P_x\)</span> and <span class="math">\(P_y\)</span> are linearly related. The statistical ‘significance’ comes about because the <em>t</em>-statistic is not really distributed as <em>t</em> when the prices are not stationary.</p>
 <p>In general, we will not know for sure if our price series is stationary or not. However, in most cases using the log-difference of price instead of price levels will transform the non-stationary series into a stationary one, so regression-based forecasting methods can safely be done by regressing log-differences of price in various forms. If it turns out that your price series <em>is</em> in fact stationary there is no harm in specifying your forecasting model with log-differences because the log-difference of a stationary series will also be stationary.</p>
-<p>There are statistical tests to detect if a series is stationary or not, and a more advanced analysis would test for stationarity as an initial exploration to help determine what kind of forecasting model to specify. Some examples of stationarity tests are the Augmented Dickey-Fuller test <span class="citation">(<span class="citeproc-not-found" data-reference-id="dickey1979distribution"><strong>???</strong></span>)</span>, the Phillips-Perron test <span class="citation">(<span class="citeproc-not-found" data-reference-id="phillips1988testing"><strong>???</strong></span>)</span>, and the Kwiatkowski–Phillips–Schmidt–Shin (KPSS) test <span class="citation">(<span class="citeproc-not-found" data-reference-id="kwiatkowski1992testing"><strong>???</strong></span>)</span>. These are not convenient to implement in Excel, so we will just use a standard practice of using log-differences of the price series we try to forecast.</p>
+<p>There are statistical tests to detect if a series is stationary or not, and a more advanced analysis would test for stationarity as an initial exploration to help determine what kind of forecasting model to specify. Some examples of stationarity tests are the Augmented Dickey-Fuller test <span class="citation">(Dickey and Fuller 1979)</span>, the Phillips-Perron test <span class="citation">(Phillips and Perron 1988)</span>, and the Kwiatkowski–Phillips–Schmidt–Shin (KPSS) test <span class="citation">(Kwiatkowski et al. 1992)</span>. These are not convenient to implement in Excel, so we will just use a standard practice of using log-differences of the price series we try to forecast.</p>
 </div>
 <div id="exercises" class="section level1">
 <h1>Exercises</h1>
@@ -748,6 +748,11 @@ img {
 </ol>
 <div class="references">
 <h1 id="references" class="unnumbered">References</h1>
+<p>Dickey, D.A., and W.A. Fuller. 1979. “Distribution of the estimators for autoregressive time series with a unit root.” <em>Journal of the American statistical association</em> 74(366a):427–431.</p>
+<p>Granger, C.W., and P. Newbold. 1974. “Spurious regressions in econometrics.” <em>Journal of econometrics</em> 2(2):111–120.</p>
+<p>Hocking, R.R. 1976. “A biometrics invited paper. the analysis and selection of variables in linear regression.” <em>Biometrics</em>:1–49.</p>
+<p>Kwiatkowski, D., P.C. Phillips, P. Schmidt, and Y. Shin. 1992. “Testing the null hypothesis of stationarity against the alternative of a unit root: How sure are we that economic time series have a unit root?” <em>Journal of econometrics</em> 54(1):159–178.</p>
+<p>Phillips, P.C., and P. Perron. 1988. “Testing for a unit root in time series regression.” <em>Biometrika</em> 75(2):335–346.</p>
 </div>
 </div>
 <div class="footnotes">
