@@ -1,5 +1,5 @@
 ---
-title: "Chapter 1: Introduction to Commodity Price Analysis and Forecasting"
+title: "Introduction to Commodity Price Analysis and Forecasting"
 output:  
     html_document:
         toc: true
