@@ -1,5 +1,5 @@
 ---
-title: 'Chapter 3: Fundamental Analysis and the Balance Sheet'
+title: 'Fundamental Analysis and the Balance Sheet'
 output: 
     html_document:
         toc: true
