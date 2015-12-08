@@ -1,5 +1,5 @@
 ---
-title: 'Chapter 10: Introduction to Commodity Price Analysis and Forecasting with Time-series Econometric Models'
+title: 'Introduction to Commodity Price Analysis and Forecasting with Time-series Econometric Models'
 csl: american-journal-of-agricultural-economics.csl.txt
 output:
   html_document:

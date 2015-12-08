@@ -1,5 +1,5 @@
 ---
-title: 'Chapter 16: Crude Oil and the Crack Spread'
+title: 'Crude Oil and the Crack Spread'
 csl: american-journal-of-agricultural-economics.csl.txt
 output:
   html_document:

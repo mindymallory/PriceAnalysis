@@ -1,5 +1,5 @@
 ---
-title: 'Chapter 12: Introduction to Single Market Models: ARIMA '
+title: 'Introduction to Single Market Models: ARIMA '
 csl: american-journal-of-agricultural-economics.csl.txt
 output:
   html_document:

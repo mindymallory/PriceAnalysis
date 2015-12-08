@@ -1,5 +1,5 @@
 ---
-title: 'Chapter 15: Hog Markets'
+title: 'Hog Markets'
 csl: american-journal-of-agricultural-economics.csl.txt
 output:
   html_document:

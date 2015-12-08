@@ -1,5 +1,5 @@
 ---
-title: 'Chapter 14: Beef Cattle Markets and the Livestock Crush'
+title: 'Beef Cattle Markets and the Livestock Crush'
 csl: american-journal-of-agricultural-economics.csl.txt
 output:
   html_document:

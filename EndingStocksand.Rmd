@@ -1,5 +1,5 @@
 ---
-title: 'Chapter 9: Ending Stocks and Generating a Price Forecast from the Balance Sheet'
+title: 'Ending Stocks and Generating a Price Forecast from the Balance Sheet'
 csl: american-journal-of-agricultural-economics.csl.txt
 output:
   html_document:

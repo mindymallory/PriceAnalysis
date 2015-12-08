@@ -1,5 +1,5 @@
 ---
-title: 'Chapter 11: Basic Statistics and Linear Regression Review'
+title: 'Basic Statistics and Linear Regression Review'
 csl: american-journal-of-agricultural-economics.csl.txt
 output:
   html_document:
