@@ -1,5 +1,5 @@
 ---
-title: 'Chapter 6: Economic Data and Principles of Visualization'
+title: 'Economic Data and Principles of Visualization'
 csl: american-journal-of-agricultural-economics.csl.txt
 output:
   html_document:

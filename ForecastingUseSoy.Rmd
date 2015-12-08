@@ -1,5 +1,5 @@
 ---
-title: 'Chapter 8: Forecasting Use of Soybeans in the WASDE Balance Sheet'
+title: 'Forecasting Use of Soybeans in the WASDE Balance Sheet'
 csl: american-journal-of-agricultural-economics.csl.txt
 output:
   html_document:

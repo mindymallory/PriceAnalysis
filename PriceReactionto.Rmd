@@ -1,5 +1,5 @@
 ---
-title: 'Chapter 4: Price Reaction to USDA Reports'
+title: 'Price Reaction to USDA Reports'
 comment: Copyright Mindy L. Mallory 2015
 csl: american-journal-of-agricultural-economics.csl.txt
 output:

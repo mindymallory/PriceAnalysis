@@ -1,5 +1,5 @@
 ---
-title: 'Chapter 5: Forecasting Production'
+title: 'Forecasting Production'
 csl: american-journal-of-agricultural-economics.csl.txt
 output:
   html_document:

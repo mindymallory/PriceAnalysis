@@ -1,5 +1,5 @@
 ---
-title: 'Chapter 7: Forecasting Use of Corn in the WASDE Balance Sheet'
+title: 'Forecasting Use of Corn in the WASDE Balance Sheet'
 csl: american-journal-of-agricultural-economics.csl.txt
 output:
   html_document:
