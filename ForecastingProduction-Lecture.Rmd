@@ -8,9 +8,9 @@ bibliography: PriceAnalysis.bib
 ---
 
 
-#Forecasting Production
+# Forecasting Production
 
-# Introduction
+
 
 - The preceding chapters have served as a background about agricultural markets, and important informational events that drive commodity prices. 
 - Going forward, we will focus our energy on the more data and technical questions of actually forecasting elements of the balance sheet - and later, short term price changes using time-series econometric techniques. 

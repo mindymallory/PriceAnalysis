@@ -8,7 +8,7 @@ output:
 
 # Fundamental Analysis and Balance Sheets
 
-# Introduction to Balance Sheets
+
 
 - Fundamental analysis is an assessment of price based on underlying supply and demand factors. 
 - Focusing on changes in the relationship between supply and demand allows one to calibrate an informed opinion of the value of the commodity. 
