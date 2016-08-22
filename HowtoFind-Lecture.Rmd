@@ -1,8 +1,9 @@
 ---
 title: "ACE 427 Commodity Price Analysis and Forecasting"
-output: slidy_presentation
-theme: uulm
-date: '`r format(Sys.time(), "%d %B, %Y")`'
+author: "Mindy L. Mallory"
+output:
+  slidy_presentation:
+    css: stylesheets/slide-style.css
 ---
 
 # Introduction
