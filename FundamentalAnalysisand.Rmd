@@ -135,10 +135,10 @@ Since the USDA makes regular reports on the balance sheet for commodities (the W
 
 : Table 4. August 2015 USDA WASDE Balance Sheet for Corn
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, warning=FALSE}
 library(Kmisc)
 library(knitr)
-aug15wasdec <- read.csv('aug15wasdec.csv')
+aug15wasdec <- read.csv('Excel-files/FundamentalAnalysisand-aug15wasdec.csv')
 kable(aug15wasdec, align = 'l', col.names = c("Corn", "Marketing Year 2013/2014", "Marketing Year 2014/2015 Est.", "Marketing Year 2015/2016 July Projection", "Marketing Year 2015/2016 August Projection"))
 
 ```
@@ -156,10 +156,10 @@ The balance sheet for corn follows the same generic patter, but we can be a bit 
 
 : Table 5. August 2015 USDA WASDE Balance Sheet for Soybeans
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, warning=FALSE}
 library(Kmisc)
 library(knitr)
-aug15wasdes <- read.csv('aug15wasdes.csv')
+aug15wasdes <- read.csv('Excel-files/FundamentalAnalysisand-aug15wasdes.csv')
 kable(aug15wasdes, align = 'l', col.names = c("Soybeans", "Marketing Year 2013/2014", "Marketing Year 2014/2015 Est.", "Marketing Year 2015/2016 July Projection", "Marketing Year 2015/2016 August Projection"))
 
 ```
