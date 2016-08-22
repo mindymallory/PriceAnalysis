@@ -38,7 +38,7 @@ Historical acres planted and harvested can be found from USDA NASS.
 
 The following is a graph of historical corn *Planted Acres* along with the ratio of *Average Prices Received by Farmers* for corn and soybeans.  
 
-![Figure 2: Corn Planted Acres and Corn/Soybean Price Ratio](images\ACREAGE2.png)
+![Figure 2: Corn Planted Acres and Corn/Soybean Price Ratio](Excel-files\ForecastingProduction-HistoricalAcreage_files\image003.png)
 
 The following is a graph of historical corn *Planted Acres and Harvested Acres* generated from the data described above from 2000 to 2014. Since 2000, you can see that corn acreage has been increasing steadily from 80 million acres to just above 90 million acres. Given this, prior to planting season we might expect a simple trend-line to forecast corn acreage fairly well. However, notice that in a couple of instances there were fairly large deviations from the trend-line. 
 
@@ -54,7 +54,7 @@ For example, the following graph shows the December 2016 and November 2016 corn 
 
 After forecasting *Planted Acres* one still needs to provide a forecast for *Harvested Acres*. Figure 4 shows historical trends in *Harvested Acres* relative to *Planted Acres*. The difference between these two variables is provided in grey with units along the right axis for convenience. 
 
-![Figure 4: Corn Planted Acres and Harvested Acres](images\ACREAGE.png)
+![Figure 4: Corn Planted Acres and Harvested Acres](Excel-files\ForecastingProduction-HistoricalAcreage_files\image002.png)
 
 Harvested acres tends to be a fairly stable number, averaging 7.6 million acres between 2000 and 2014. Although, years when this variable deviates most from trend corresponds to years of exceptionally poor production. See 2012 and 2002 as examples. These years marginal reductions in production are explained by reduced yield and abandoned acres, so forecasting the harvested acres number accurately becomes very important to accurately forecasting production in shortfall years. 
 
@@ -62,14 +62,15 @@ Harvested acres tends to be a fairly stable number, averaging 7.6 million acres 
 
 Just like in forecasting acreage, we have different procedures for forecasting yield prior to planting. Before the summer growing season gets underway, trend yield. The trouble is, where to start?
 
-![Figure 5: Historical Yields since 1866](images\trend.png)
+![Figure 5: Historical Yields since 1866](Excel-files\ForecastingProduction-HistoricalAcreage_files\image007.png)
 
 USDA has records on yield that go back to 1866. While one often thinks more information is better when forecasting, the old yield estimates are no longer useful for forecasting current yield. Technological progress caused yields to take of in the 1950's and they have been climbing ever since. In the forecasting world, this is called *structural change* or a *structural break*. If *structural change* has occurred, the world looks so different now than it did before the structural change that data from before the break just is not useful for forecasting going forward. 
 
 It turns out that if you estimate a trend-line beginning with 1952, with 1980, or with pretty much any date in between, you will get an estimate that is roughly similar. 
 
-![](images\trend1952.png) 
-![Figure 6: Historical Yields since 1952 and 1980](images\trend1980.png) 
+![](Excel-files\ForecastingProduction-HistoricalAcreage_files\image009.png) 
+
+![Figure 6: Historical Yields since 1952 and 1980](Excel-files\ForecastingProduction-HistoricalAcreage_files\image017.png) 
 
 For example, using the trend-line beginning with 1952 to forecast yield we come up with $Yield^{2015} = 1.9066*2015 - 3677.9 = 163.899$. While, using the trend-line beginning with 1980 to forecast yield we come up with $Yield^{2015} = 1.8619*2015 - 3588.9 = 162.8285$.
 
@@ -81,17 +82,18 @@ The job of the analyst who is not employed by the USDA is most likely to anticip
 
 An independent analyst will not have the same level of resources the USDA deploys to provide monthly yield estimates; he or she will have to rely on historical data and a basic understanding of how weather affects crop yields.  Figure 8 below plots each year's deviation from trend yield since 1980. The first plot is in levels (i.e., $Yield_t - Trend Yield_t$); whereas the second plot is in percent terms (i.e., $\ln{Yield_t} - \ln{Trend Yield_t}$. Notice that the shape looks roughly the same, but the 2012 drought looks worse expressed in level deviations than the short crops of 1983, 1988, and 1993. This is because yield is trending higher. In percentage terms we see that the 2012 drought was equally as bad as 1983 and not quite as bad as 1988.   
 
-![](images\deviations.png)
-![Figure 7: Deviations from Trend in both Level and Percent (using trend since 1980)](images\deviationspercent.png)
+![](Excel-files\ForecastingProduction-HistoricalAcreage_files\image015.png)
+
+![Figure 7: Deviations from Trend in both Level and Percent (using trend since 1980)](Excel-files\ForecastingProduction-HistoricalAcreage_files\image019.png)
 
 Short of an advanced agronomic model that can take into account planting date, precipitation, [growing degree days](https://en.wikipedia.org/wiki/Growing_degree-day), or ability to estimate yield from remote sensing technology [@unganai1998drought], we will have to resort to the *similar year approach*.  
 
 Analysts often estimate deviations from trend yield by finding year similar to the current one in terms of weather. The assumption is that if the weather patterns were similar then the percent deviation from trend yield should be similar as well. Note here that percent deviation is preferable so you do not need to adjust for the increasing trend in yield as you look backward to a similar year. 
 
-An alternative approach would be to use the *Crop Condition Report* and find a year in recent history that had a similar percent of the crop rated *Good/Excellent*. Figure 6 below shows how *Good* + *Excellent* crop condition ratings relate to percent deviations in trend yield. They should be at least positively correlated, but in fact some of the worst years (1988 and 2012 jump out) have relatively high crop condition ratings the final week of reporting while yields were exceptionally low in those years.  
+An alternative approach would be to use the *Crop Condition Report* and find a year in recent history that had a similar percent of the crop rated *Good/Excellent*. Figure 8 below shows how *Good* + *Excellent* crop condition ratings relate to percent deviations in trend yield. They should be at least positively correlated, but in fact some of the worst years (1988 and 2012 jump out) have relatively high crop condition ratings the final week of reporting while yields were exceptionally low in those years.  
 
 
-![Figure 8: *Good* plus *Excellent* Crop Condition Ratings in Final Week of Reporting versus Percent Deviations in Yields](images\gpluse.png)
+![Figure 8: *Good* plus *Excellent* Crop Condition Ratings in Final Week of Reporting versus Percent Deviations in Yields](Excel-files\ForecastingProduction-HistoricalAcreage_files\image023.png)
 
 # Forecasting Production
 
@@ -104,6 +106,11 @@ In this chapter we discussed the basics of forecasting production. First we disc
 # Exercises
 
 1. Use NASS data for soybeans for forecast production in a similar mannar we we did in class for corn. 
+
+2. Read and Discuss: [Early Planting and 2015 Corn Yield Prospects: How Much of an Increase?](http://farmdocdaily.illinois.edu/2015/05/early-planting-and-2015-corn-yield-prospects.html)
+
+    - Irwin, S., D. Good, and J. Newton. "Early Planting and 2015 Corn Yield Prospects: How Much of an Increase?" farmdoc daily (5):93, Department of Agricultural and Consumer Economics, University of Illinois at Urbana-Champaign, May 20, 2015.
+ 
 
 # References
 

@@ -23,20 +23,20 @@ As we have noted before, historical use patterns are the first place to start wh
 
 Let us begin by looking at the Food, Alcohol and Industrial category. These data were queried from the [Feed Grains database](http://www.ers.usda.gov/data-products/feed-grains-database/feed-grains-yearbook-tables.aspx#26780) maintained by the USDA ERS. The categories here are a little more dissaggreagated than those presented in the USDA WASDE balance sheets, but they are roughly the same. For example, in figure 1 below we show the *Food, Alcohol, and Industrial* use category. This omits seed from the *Food, Seed, and Industrial* category in the WASDE balance sheet. The Feed Grains database actually breaks out the seed use as its own column, but corn used for seed is a very small proportion of production and it is largely predictable from year to year. 
 
-![Figure 1: Corn Food, Alcohol, and Industrial Use, Quarterly 1990-2015](FeedGrains_Corn_files\image010.png)
+![Figure 1: Corn Food, Alcohol, and Industrial Use, Quarterly 1990-2015](Excel-files\IntroductiontoCommodityTS-FeedGrains_Corn_files\image010.png)
 
 Source: [Feed Grains database](http://www.ers.usda.gov/data-products/feed-grains-database/feed-grains-yearbook-tables.aspx#26780) maintained by the USDA ERS.
 
 Figure 1 shows a dramatic uptrend in the Food, Alcohol and Industrial use category. This is due to the dramatic increase in the production of ethanol starting around 2005/2006 and plateauing around 2010 when U.S. ethanol consumption roughly hit the 'blend-wall' where ethanol makes up 10% of the retail gasoline supply. 
 
-![Figure 2: Corn Food, Alchohol, and Industrial Use, Annual 1990-2015](FeedGrains_Corn_files\image013.png)
+![Figure 2: Corn Food, Alchohol, and Industrial Use, Annual 1990-2015](Excel-files\IntroductiontoCommodityTS-FeedGrains_Corn_files\image013.png)
 
 Source: [Feed Grains database](http://www.ers.usda.gov/data-products/feed-grains-database/feed-grains-yearbook-tables.aspx#26780) maintained by the USDA ERS.
 
 Figure 2 shows the same data, but the quarterly figures are aggregated to the marketing year total. In both figures 1 and 2 the rationing effects of high prices that occurred as a result of the drought in 2012. 
 
 
-![Figure 3: Corn Food, Alchohol, and Industrial Use, Annual 1990-2015 as a percentage of production](FeedGrains_Corn_files\image014.png)
+![Figure 3: Corn Food, Alchohol, and Industrial Use, Annual 1990-2015 as a percentage of production](Excel-files\IntroductiontoCommodityTS-FeedGrains_Corn_files\image014.png)
 
 Source: [Feed Grains database](http://www.ers.usda.gov/data-products/feed-grains-database/feed-grains-yearbook-tables.aspx#26780) maintained by the USDA ERS.
 
@@ -46,13 +46,13 @@ From figure 3 it is easier to see what share of the crop the large increase in c
 
 Quarterly corn exports are displayed in figure 4. Unlike Food, alcohol and industrial use, exports tend to have a very seasonal or cyclical pattern. Exports are large in the second quarter of the marketing year, December to February, right after we harvest the new crop. This is when stocks are most plentiful and prices are at season lows in years exhibiting an upward sloped forward curve. 
 
-![Figure 4: Corn Exports, Quarterly 1990-2015](FeedGrains_Corn_files\image023.png)
+![Figure 4: Corn Exports, Quarterly 1990-2015](Excel-files\IntroductiontoCommodityTS-FeedGrains_Corn_files\image023.png)
 
 Source: [Feed Grains database](http://www.ers.usda.gov/data-products/feed-grains-database/feed-grains-yearbook-tables.aspx#26780) maintained by the USDA ERS.
 
 Displaying the same data in Figure 5, but aggregating to an annual frequency, we see the marketing seasonality smoothed away. 
 
-![Figure 5: Corn Exports, Annual 1990-2015](FeedGrains_Corn_files\image025.png)
+![Figure 5: Corn Exports, Annual 1990-2015](Excel-files\IntroductiontoCommodityTS-FeedGrains_Corn_files\image025.png)
 
 Source: [Feed Grains database](http://www.ers.usda.gov/data-products/feed-grains-database/feed-grains-yearbook-tables.aspx#26780) maintained by the USDA ERS.
 
@@ -60,7 +60,7 @@ On average, it appears that exports follow a constant trend-line with variation 
 
 In figure 6 we display annual corn exports as a percentage of corn production. 
 
-![Figure 6: Corn Exports, Annual 1990-2015 as a percentage of corn production](FeedGrains_Corn_files\image024.png)
+![Figure 6: Corn Exports, Annual 1990-2015 as a percentage of corn production](Excel-files\IntroductiontoCommodityTS-FeedGrains_Corn_files\image024.png)
 
 Source: [Feed Grains database](http://www.ers.usda.gov/data-products/feed-grains-database/feed-grains-yearbook-tables.aspx#26780) maintained by the USDA ERS.
 
@@ -73,10 +73,10 @@ The year-to-year variation is caused by price fluctuations with low prices encou
 
 : Table 1: Top 10 Importers of U.S. Corn 2010/2011 through 2014/2015 Marketing Years, Ranked in Descending Order for Marketing Year 2014/2015 (1,000 Metric Tons)
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, warning=FALSE}
 library(Kmisc)
 library(knitr)
-corn_importers <- read.csv('corn_importers.csv', header = TRUE)
+corn_importers <- read.csv('Excel-files/ForecastingUseof-corn_importers.csv', header = TRUE)
 kable(corn_importers, align = 'l',  col.names = c("COUNTRY", "EXPORTS 2014/2015", 	"RANK",	"EXPORTS 2013/2014",	"RANK",	
                                                               "EXPORTS 2012/2013",	"RANK",	"EXPORTS 2011/2012",	"RANK",	"EXPORTS 2010/2011",	"RANK"))
 
@@ -101,7 +101,7 @@ Feed\&Residual = (Production + \epsilon_{prod}) + (Imports + \epsilon_{import}) 
 
 Figure 7 below displays the Feed and Residual category since 1990. 
 
-![Figure 7: Feed and Residual Use, Quarterly 1990-2015](FeedGrains_Corn_files\image027.png)
+![Figure 7: Feed and Residual Use, Quarterly 1990-2015](Excel-files\IntroductiontoCommodityTS-FeedGrains_Corn_files\image027.png)
 
 Source: [Feed Grains database](http://www.ers.usda.gov/data-products/feed-grains-database/feed-grains-yearbook-tables.aspx#26780) maintained by the USDA ERS.
 
@@ -109,11 +109,11 @@ Unlike Exports which saw its biggest quarter of use in the second quarter of the
 
 Figure 8: shows the Feed and Residual category annually and figure 9 shows the category annually as a percent of production. 
 
-![Figure 8: Feed and Residual Use, Annual 1990-2015](FeedGrains_Corn_files\image029.png)
+![Figure 8: Feed and Residual Use, Annual 1990-2015](Excel-files\IntroductiontoCommodityTS-FeedGrains_Corn_files\image029.png)
 
 Source: [Feed Grains database](http://www.ers.usda.gov/data-products/feed-grains-database/feed-grains-yearbook-tables.aspx#26780) maintained by the USDA ERS.
 
-![Figure 9: Feed and Residual Use, Annual 1990-2015 as a percent of production](FeedGrains_Corn_files\image028.png)
+![Figure 9: Feed and Residual Use, Annual 1990-2015 as a percent of production](Excel-files\IntroductiontoCommodityTS-FeedGrains_Corn_files\image028.png)
 
 Source: [Feed Grains database](http://www.ers.usda.gov/data-products/feed-grains-database/feed-grains-yearbook-tables.aspx#26780) maintained by the USDA ERS.
 

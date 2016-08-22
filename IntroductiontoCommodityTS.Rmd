@@ -16,7 +16,7 @@ bibliography: PriceAnalysis.bib
 
 This chapter marks a break in forecasting philosophy from the approach we have used in previous chapters. In previous chapters we were forecasting from a viewpoint that was very structural and focused on market fundamentals. We built tools and information sources to monitor supply and demand conditions in commodity markets in fairly great detail. We utilized publicly available information and research published by various branches of the USDA. 
 
-In this chapter, and going forward, we will take a reduced-form econometric approach. The focus will be the utilization of basic time-series econometric models to examine and forecast commodity prices. In this chapter time-series-specific concepts are introduced: constructing a series of 'nearby' futures prices, periodicity of data realizations and forecast horizon, trends in data series, inflation and deflating data, seasonality, stationarity, and random walks. 
+In this chapter, we will take a reduced-form econometric approach. The focus will be the utilization of basic time-series econometric models to examine and forecast commodity prices. In this chapter time-series-specific concepts are introduced: constructing a series of 'nearby' futures prices, periodicity of data realizations and forecast horizon, trends in data series, inflation and deflating data, seasonality, stationarity, and random walks. 
 
 
 
@@ -32,7 +32,7 @@ There is considerable interest in the analysis of local or 'spot' prices, but th
 
 Futures contracts do not experience uniform trading volume over the lifetime of the contract. For example, corn futures are listed as available to trade two years before the maturity date, but the contract does not usually attract significant trading volume until it is has one year or less time to contract maturity. Figure 1 shows the December 2014 corn futures contract prices and volume from 10/3/2011 to the last day the contract traded, 12/12/2014. 
 
-![Figure 1: December 2014 Corn Futures Prices](Nearby_construct_files/image005.png)
+![Figure 1: December 2014 Corn Futures Prices](Excel-files/IntroductiontoCommodityTS-Nearby_construct_files/image005.png)
 
 Figure 1 shows that trading activity begins to ramp up in the months leading up to this contract's expiration. Until the contract is being actively traded, the quality of the information contained in these prices is suspect, since significant periods of time will pass with very few active transactions taking place. For this reason, a series of futures prices for one contract should not be used to conduct a forecasting analysis if the data used covers dates where the contract was not actively traded. 
 
@@ -60,7 +60,7 @@ Generally, contracts are rolled to the next to expire contract on the first day 
 
 For the purposes of generating a series of nearby prices that are meaningful, using contract prices that are within the delivery month may represent transactions in a thin market, so it is best to roll the series at the end of the previous month. Figure 2 below shows the series of nearby futures prices, rolled at the end of the month prior to the expiration month. 
 
-![Figure 2: Nearby Corn Futures Prices](Nearby_construct_files/image001.png)
+![Figure 2: Nearby Corn Futures Prices](Excel-files/IntroductiontoCommodityTS-Nearby_construct_files/image001.png)
 
 Notice in particular that the scale for volume is the same in figures 1 and 2, and in figure 2 volume is strong throughout the series. 
 
@@ -86,7 +86,7 @@ Some properties of commodity prices occur frequently: trends, seasonality, and s
 
 A lot of time series data will exhibit clear trends. The Food, Alcohol, and Industrial Use category from the corn balance sheet comes to mind. 
 
-![Figure 3: Food, Alcohol, and Industrial Use](FeedGrains_Corn_files/image010.png)
+![Figure 3: Food, Alcohol, and Industrial Use](Excel-files/IntroductiontoCommodityTS-FeedGrains_Corn_files/image010.png)
 
 This series is clearly not stationary, a clear upward trend guarantees that the conditional mean of a subsample from early in the time-series is lower than the conditional mean of a subsample from later in the series. The trend can be easily removed, or 'detrended' and therefore forecast fairly easily well with a simple linear trend, log trend, or exponential trend model. 
 
@@ -107,7 +107,7 @@ If your analysis involves any kind of comparison of prices or price changes acro
 
 Some variables have a natural pattern through time. Often data pertaining to production or consumption will exhibit predictable seasonal patterns. We saw this with quarterly exports of corn for example. 
 
-![Figure 5: Quarterly Exports of Corn as a Percent of Production](FeedGrains_Corn_files/image026.png)
+![Figure 5: Quarterly Exports of Corn as a Percent of Production](Excel-files/IntroductiontoCommodityTS-FeedGrains_Corn_files/image026.png)
 
 The seasonal pattern ensures that the conditional mean and variance of this variable is not constant through time. Seasonality is fairly easy to address in a regression model, and we will see some popular methods for removing the predictable seasonal component so that the resultant series is stationary. 
 
@@ -120,9 +120,9 @@ Price series often seem to follow a random walk. That is, the price at $t+1$ app
 
 Using Excel's random number generator I drew 1,000 draws from a Standard Normal distribution and simulated a series of prices with the equation above and assuming a $p_0$ of $20.00. The random draws and the simulated price path are shown in figure 6 and 7. 
 
-![Figure 6: Draws from a Standard Normal Distribution (n=1,000)](random_walk_files/image003.png)
+![Figure 6: Draws from a Standard Normal Distribution (n=1,000)](Excel-files/IntroductiontoCommodityTS-random_walk_files/image003.png)
 
-![Figure 7: Simulated Random Walk of Prices ($p_0 = \$20.00$)](random_walk_files/image001.png)
+![Figure 7: Simulated Random Walk of Prices ($p_0 = \$20.00$)](Excel-files/IntroductiontoCommodityTS-random_walk_files/image001.png)
 
 If this is a reasonable model for how prices evolve, it will be a problem to estimate a regression model where we regress current prices on past prices. The random walk equation clearly shows that the distribution of $\epsilon_t$ depends on the current price, which is not constant over time. The simulated price series in figure 6 is definitely not stationary. 
 
@@ -150,9 +150,9 @@ Since the exponential function cannot take on a negative value, this model canno
 
 The figure 8 and 9 show 1,000 random draws from a normal distribution $\epsilon_t ~ N(0, .02)$, and the simulated price distribution that results from the log-normal price model and those random draws. 
 
-![Figure 8: Random Draws from a Normal(0, 0.02), (n = 1,000)](random_walk_files/image007.png)
+![Figure 8: Random Draws from a Normal(0, 0.02), (n = 1,000)](Excel-files/IntroductiontoCommodityTS-random_walk_files/image007.png)
 
-![Figure 9: Simulated Log-Norma Prices, $P_0 = \$20.00$](random_walk_files/image005.png)
+![Figure 9: Simulated Log-Norma Prices, $P_0 = \$20.00$](Excel-files/IntroductiontoCommodityTS-random_walk_files/image005.png)
 
 As was the case with the random walk model, the first difference of the log of prices is stationary. This means that if we specify a regression forecasting model and we believe the prices we wish to forecast are log-normally distributed then we will use log differences of our prices. In the coming chapters we will discuss how to formally test whether prices are stationary in levels or differences. 
 
@@ -164,7 +164,7 @@ It turns out that the log-difference of price is approximately equal to the perc
 
 In figure 10 the log-differences of the nearby corn futures price series (shown in figure 2) are plotted. Just visually, it seems a difficult task to anticipate what the next day's return will be in the context of trying to decide whether to buy or sell, for example. 
 
-![Figure 10: Percent Change in Nearby Corn Futures Prices 9/2/2014-8/31/2015](Nearby_construct_files/image002.png)
+![Figure 10: Percent Change in Nearby Corn Futures Prices 9/2/2014-8/31/2015](Excel-files/IntroductiontoCommodityTS-Nearby_construct_files/image002.png)
 
 # Efficient Market Hypothesis
 

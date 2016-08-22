@@ -23,7 +23,7 @@ Since this book has taken a closer look at corn production than soybean producti
 
 Figure 1 displays annual soybean production in millions of bushels from 1980-2014. A steadily increasing trend can be observed; supply had roughly doubled since the early 1980s from about 2,300 million bushels to about 4,000 million bushels in 2014. 
 
-![Figure 1: Annual Soybean Supply, 1980-2014](OilCropsYearbook_files/image013.png)
+![Figure 1: Annual Soybean Supply, 1980-2014](Excel-files\ForecastingUseSoy-OilCropsYearbook_files/image013.png)
 
 Source: [USDA ERS Oil Crops Yearbook](http://www.ers.usda.gov/data-products/oil-crops-yearbook.aspx)
 
@@ -33,13 +33,13 @@ Since soybeans are not consumed whole as food by humans or feed for animals in t
 
 Figure 2 displays the annual crush of soybeans from 1980-2014. A pronounced upward trend, similar to the trend in soybean supply is observed. 
 
-![Figure 2: Annual Soybean Crush, 1980-2014](OilCropsYearbook_files/image005.png)
+![Figure 2: Annual Soybean Crush, 1980-2014](Excel-files\ForecastingUseSoy-OilCropsYearbook_files/image005.png)
 
 Source: [USDA ERS Oil Crops Yearbook](http://www.ers.usda.gov/data-products/oil-crops-yearbook.aspx)
 
 When examining corn use, we saw that the proportion of supply shifted dramatically from other use categories to Food, Seed, and Industrial use due to the increase in ethanol production since 2005. In figure 3, we show soybean crush as a percent of the concurrent year's total supply. While the bushels of soybeans devoted to the crush is steadily increasing, figure 3 shows that the crush is increasing roughly proportionally. There does not seem to be a shift into or out of the crush category. 
 
-![Figure 3: Annual Soybean Crush as a Percent of Supply, 1980-2014](OilCropsYearbook_files/image007.png)
+![Figure 3: Annual Soybean Crush as a Percent of Supply, 1980-2014](Excel-files\ForecastingUseSoy-OilCropsYearbook_files/image007.png)
 
 Source: [USDA ERS Oil Crops Yearbook](http://www.ers.usda.gov/data-products/oil-crops-yearbook.aspx)
 
@@ -48,13 +48,13 @@ Source: [USDA ERS Oil Crops Yearbook](http://www.ers.usda.gov/data-products/oil-
 
 Figure 4 displays annual soybean exports. Similar to the crush category, exports are obseverved to steadily increase over the period from 1980-2014. 
 
-![Figure 4: Annual Soybean Exports, 1980-2014](OilCropsYearbook_files/image001.png)
+![Figure 4: Annual Soybean Exports, 1980-2014](Excel-files\ForecastingUseSoy-OilCropsYearbook_files/image001.png)
 
 Source: [USDA ERS Oil Crops Yearbook](http://www.ers.usda.gov/data-products/oil-crops-yearbook.aspx)
 
 Figure 5 shows soybean exports as a percent of total supply from 1980-2014. Similar to the crush category, the percentage of supply has remained constant. 
 
-![Figure 2: Annual Soybean Exports as a Percent of Supply, 1980-2014](OilCropsYearbook_files/image009.png)
+![Figure 2: Annual Soybean Exports as a Percent of Supply, 1980-2014](Excel-files\ForecastingUseSoy-OilCropsYearbook_files/image009.png)
 
 Source: [USDA ERS Oil Crops Yearbook](http://www.ers.usda.gov/data-products/oil-crops-yearbook.aspx)
 
@@ -63,12 +63,12 @@ Source: [USDA ERS Oil Crops Yearbook](http://www.ers.usda.gov/data-products/oil-
 # Soybean, Feed, Seed, and Residual
 
  
-![Figure 6: Annual Soybean Feed, Seed, and Residual, 1980-2014](OilCropsYearbook_files/image003.png)
+![Figure 6: Annual Soybean Feed, Seed, and Residual, 1980-2014](Excel-files\ForecastingUseSoy-OilCropsYearbook_files/image003.png)
 
 Source: [USDA ERS Oil Crops Yearbook](http://www.ers.usda.gov/data-products/oil-crops-yearbook.aspx)
 
 
-![Figure 7: Annual Soybean Feed, Seed, and Residual as a Percent of Supply, 1980-2014](OilCropsYearbook_files/image012.png)
+![Figure 7: Annual Soybean Feed, Seed, and Residual as a Percent of Supply, 1980-2014](Excel-files\ForecastingUseSoy-OilCropsYearbook_files/image012.png)
 
 Source: [USDA ERS Oil Crops Yearbook](http://www.ers.usda.gov/data-products/oil-crops-yearbook.aspx)
 
