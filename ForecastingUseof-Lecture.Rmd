@@ -6,7 +6,7 @@ output:
     css: stylesheets/slide-style.css
 bibliography: PriceAnalysis.bib
 ---
-# Introduction 
+# Forecasting Use of Corn in the WASDE Balance Sheet 
 
 In the WASDE balance sheet for corn there are three use categories. Two account for domestic consumption - Food, Seed and Industrial, and Feed and Residual - while exports make up the third category. Ethanol makes up a large portion of the Food, Seed, and Industrial category, so it is given its own line in the balance sheet. 
 

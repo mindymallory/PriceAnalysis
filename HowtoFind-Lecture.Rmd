@@ -9,7 +9,7 @@ bibliography: PriceAnalysis.bib
 
 # How to Find Information about Commodity Markets
 
-# Introduction
+
 - This chapter serves as an introduction to real-time and historical data sources, and 
 - An introduction to the analysts that conduct price analysis professionally and help us make sense of commodity prices. 
 
