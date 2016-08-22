@@ -1,9 +1,11 @@
 ---
 title: "ACE 427 Commodity Price Analysis and Forecasting"
-output: slidy_presentation
-theme: uulm
-date: '`r format(Sys.time(), "%d %B, %Y")`'
+author: "Mindy L. Mallory"
+output:
+  slidy_presentation:
+    css: stylesheets/slide-style.css
 ---
+
 
 # Introduction to Balance Sheets
 
@@ -205,10 +207,10 @@ Here we discuss the common format balance sheets for any commodity have in commo
 
 : Table 4. August 2015 USDA WASDE Balance Sheet for Corn
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, warning=FALSE}
 library(Kmisc)
 library(knitr)
-aug15wasdec <- read.csv('aug15wasdec.csv')
+aug15wasdec <- read.csv('Excel-files/FundamentalAnalysisand-aug15wasdec.csv')
 kable(aug15wasdec, align = 'l')
 
 ```
@@ -227,10 +229,10 @@ The balance sheet for corn follows the same generic patter, but we can be a bit 
 
 : Table 4. August 2015 USDA WASDE Balance Sheet for Corn
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, warning=FALSE}
 library(Kmisc)
 library(knitr)
-aug15wasdec <- read.csv('aug15wasdec.csv')
+aug15wasdec <- read.csv('Excel-files/FundamentalAnalysisand-aug15wasdec.csv')
 kable(aug15wasdec, align = 'l')
 
 ```
@@ -244,10 +246,10 @@ kable(aug15wasdec, align = 'l')
 
 : Table 5. August 2015 USDA WASDE Balance Sheet for Soybeans
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, warning=FALSE}
 library(Kmisc)
 library(knitr)
-aug15wasdes <- read.csv('aug15wasdes.csv')
+aug15wasdes <- read.csv('Excel-files/FundamentalAnalysisand-aug15wasdes.csv')
 kable(aug15wasdes, align = 'l')
 
 ```
