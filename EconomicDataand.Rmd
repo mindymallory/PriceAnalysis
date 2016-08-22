@@ -23,7 +23,7 @@ Cross section
 
 : Table 1: Motor Trend Cars Data set - 1973/1974
 
-```{r, echo = FALSE}
+```{r, echo = FALSE, warning=FALSE}
 
 library(Kmisc)
 library(knitr)
@@ -41,10 +41,10 @@ Time Series
 
 : Table 2: Corn Acres Planted, Acres Harvested, Prices Received by Farmers, and Yield
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, warning=FALSE}
 library(Kmisc)
 library(knitr)
-corn_tsch6 <- read.csv('corn_tsch6.csv')
+corn_tsch6 <- read.csv('Excel-files/EconomicDataand-corn_tsch6.csv')
 kable(corn_tsch6, align = 'l')
 
 ```
@@ -55,10 +55,10 @@ Table 3 below is another example of a time series. These are daily corn futures 
 
 : Table 3: Daily Corn Open, High, Low, Last, Change, Settle, Volume, and Open Interest  
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, warning=FALSE}
 library(Kmisc)
 library(knitr)
-CMECZ2015 <- read.csv('CMECZ2015.csv')
+CMECZ2015 <- read.csv('Excel-files/EconomicDataand-CMECZ2015.csv')
 kable(CMECZ2015, align = 'l')
 
 ```
@@ -69,10 +69,10 @@ Futures price data are often delivered including open, high, low, and close pric
 
 Figure 1: December Corn Futures Prices - Bars
 
-```{r, echo = FALSE, message=FALSE}
+```{r, echo = FALSE, message=FALSE, warning=FALSE}
 library(quantmod)
 library(xts)
-CMECZ2015 <- read.csv('CMECZ2015.csv')
+CMECZ2015 <- read.csv('Excel-files/EconomicDataand-CMECZ2015.csv')
 CZ2015_chart <- subset(CMECZ2015, select= -c(Date, Change, Last, Open.Interest))      
 CZ2015_chart <- xts(CZ2015_chart, order.by = as.Date(CMECZ2015$Date, format = "%m/%d/%Y"))    
 colnames(CZ2015_chart)[4] <- "Close"    
@@ -84,10 +84,10 @@ Source: [Quandl.com](https://www.quandl.com/data/CME/CZ2015-Corn-Futures-Decembe
 
 Figure 2: December Corn Futures Prices - Candlesticks
 
-```{r, echo = FALSE, message=FALSE}
+```{r, echo = FALSE, message=FALSE, warning=FALSE}
 library(quantmod)
 library(xts)
-CMECZ2015 <- read.csv('CMECZ2015.csv')
+CMECZ2015 <- read.csv('Excel-files/EconomicDataand-CMECZ2015.csv')
 CZ2015_chart <- subset(CMECZ2015, select= -c(Date, Change, Last, Open.Interest))      
 CZ2015_chart <- xts(CZ2015_chart, order.by = as.Date(CMECZ2015$Date, format = "%m/%d/%Y"))    
 colnames(CZ2015_chart)[4] <- "Close"    
@@ -107,7 +107,7 @@ Microsoft Excel can produce financial prices using with open, high, low, close, 
 > 5. Choose the Volume, Open, High, Low, Close chart type. 
 
 Figure 3: December Corn Futures Prices in Microsoft Excel
-![](images\cz2015.png)
+![](Excel-files\EconomicDataand-CMECZ2015-candlesticks_files\image001.png)
 
 
 Statistical analyses of time series data are often complicated by issues such as auto-correlation, heteroskedasticity, and non-stationarity. These statistical issues should be accounted for when conducting more advanced time-series based forecasting exercises. We will touch on these issues in later chapters when econometric forecasting is covered in more detail. 
@@ -124,10 +124,10 @@ The most useful technique to quickly spot data encoding errors is to plot the da
 
 : Table 4: ENCODING ERROR - Daily December Corn Open, High, Low, Last, Change, Settle, Volume, and Open Interest   
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, warning=FALSE}
 library(Kmisc)
 library(knitr)
-CMECZ2015 <- read.csv('CMECZ2015_ERROR.csv')
+CMECZ2015 <- read.csv('Excel-files/EconomicDataand-CMECZ2015_ERROR.csv')
 kable(CMECZ2015, align = 'l')
 
 ```
@@ -138,10 +138,10 @@ I presume it would take some time to spot the error in tabular format. Now spot 
 
 Figure 4: ENCODING ERROR - Corn Futures Prices - Candlesticks
 
-```{r, echo = FALSE, message=FALSE}
+```{r, echo = FALSE, message=FALSE, warning=FALSE}
 library(quantmod)
 library(xts)
-CMECZ2015_ERROR<- read.csv('CMECZ2015_ERROR.csv')
+CMECZ2015_ERROR<- read.csv('Excel-files/EconomicDataand-CMECZ2015_ERROR.csv')
 CZ2015_chart <- subset(CMECZ2015_ERROR, select= -c(Date, Change, Last, Open.Interest))      
 CZ2015_chart <- xts(CZ2015_chart, order.by = as.Date(CMECZ2015_ERROR$Date, format = "%m/%d/%Y"))    
 colnames(CZ2015_chart)[4] <- "Close"    
@@ -155,9 +155,9 @@ It is pretty easy to see that there is a problem with the data file around the b
 
 Figure 5: ENCODING ERROR - Corn Futures Prices - Another look
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, warning=FALSE}
 library(xts)
-CMECZ2015_ERROR<- read.csv('CMECZ2015_ERROR.csv')
+CMECZ2015_ERROR<- read.csv('Excel-files/EconomicDataand-CMECZ2015_ERROR.csv')
 CZ2015_chart <- subset(CMECZ2015_ERROR, select= -c(Date, Change, Last, Open.Interest))      
 CZ2015_chart <- xts(CZ2015_chart, order.by = as.Date(CMECZ2015_ERROR$Date, format = "%m/%d/%Y"))    
 colnames(CZ2015_chart)[4] <- "Close"    
@@ -201,7 +201,7 @@ The most basic multivariate technique is to simply graph all the variables on on
 The second common multivariate graphical technique is to produce an x-y scatter plot. In an x-y scatter-plot time is either stripped away, or perhaps it was not there to begin with (if one is considering a cross-sectional data set).  The x-y scatter-plot focuses on how one variable changes as another changes, regardless of time. 
 
 Figure 6: Corn Planted Acres versus Prices Received by Farmers
-![](images\acresvsprices.png)
+![](Excel-files\ForecastingProduction-HistoricalAcreage_files\image005.png)
 
 
 # Elements of Graphical Style

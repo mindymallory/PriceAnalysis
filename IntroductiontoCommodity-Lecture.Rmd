@@ -4,9 +4,10 @@ author: "Mindy L. Mallory"
 output:
   slidy_presentation:
     css: stylesheets/slide-style.css
+bibliography: PriceAnalysis.bib
 ---
 
-
+# Introduction to Commodity Price Analysis and Forecasting
 
 # Long Term Agricultural Price Trends
 

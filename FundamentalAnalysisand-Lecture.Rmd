@@ -6,6 +6,7 @@ output:
     css: stylesheets/slide-style.css
 ---
 
+# Fundamental Analysis and Balance Sheets
 
 # Introduction to Balance Sheets
 
