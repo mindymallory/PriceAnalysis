@@ -9,25 +9,6 @@ bibliography: PriceAnalysis.bib
 
 # Introduction to Commodity Price Analysis and Forecasting
 
-# Long Term Agricultural Price Trends
-
-
-It is useful to begin our exploration of agricultural prices from a long term historical perspective. The figure below is monthly prices received by farmers in the U.S. from 1908 to 2015. By simple visual inspection there seems to be three periods of stable prices, from 1908-1973, 1974-2006, and 2007-present. Although the most recent period seems to be the most volatile and provides less confidence that a similar pattern will persist going forward. 
-
-![Corn Prices Recieved](Excel-files\IntroductiontoCommodity_files\image001.png)
-Source([http://www.nass.usda.gov/](http://www.nass.usda.gov/))
-
-# Long Term Agricultural Price Trends
-Now lets zoom in on the 1974-2015 periods. 
-
-![Corn Prices Recieved](Excel-files\IntroductiontoCommodity_files\image003.png)
-Source([http://www.nass.usda.gov/](http://www.nass.usda.gov/))
-
-
-Looking at these two charts together, there is a clear run-up in prices in the 1970's and again around 2006-2007. What caused these seemingly permanent price hikes?  
-
-# Current Agricultural Price Trends
-
 
 # What is a Commodity
 
@@ -100,7 +81,7 @@ Some companies business model leaves them exposed to risk that comes from price 
 - Caterpillar
 - ConAgra
 - Kraft
-- Weyerhauser
+
 
 There are consistent employment opportunities for students trained in price analysis and forecasting, and a growing interest in expertise in risk management strategies.
 
@@ -185,6 +166,27 @@ We focus on two types of "simple" forecasting methods.
 2. Reduced form time-series econometric: use of statistical econometric models that features minimal inputs beyond a few recent prices to generate a forecasting model. 
 
 Not covered here, but a method used widely by day-traders and other market participants is technical analysis, which is the use of past price patterns to predict future price movement. There are scores of books on the topic of technical analysis, if interested. 
+
+
+# Long Term Agricultural Price Trends
+
+
+It is useful to begin our exploration of agricultural prices from a long term historical perspective. The figure below is monthly prices received by farmers in the U.S. from 1908 to 2015. By simple visual inspection there seems to be three periods of stable prices, from 1908-1973, 1974-2006, and 2007-present. Although the most recent period seems to be the most volatile and provides less confidence that a similar pattern will persist going forward. 
+
+![Corn Prices Recieved](Excel-files\IntroductiontoCommodity_files\image001.png)
+Source([http://www.nass.usda.gov/](http://www.nass.usda.gov/))
+
+# Long Term Agricultural Price Trends
+Now lets zoom in on the 1974-2015 periods. 
+
+![Corn Prices Recieved](Excel-files\IntroductiontoCommodity_files\image003.png)
+Source([http://www.nass.usda.gov/](http://www.nass.usda.gov/))
+
+
+Looking at these two charts together, there is a clear run-up in prices in the 1970's and again around 2006-2007. What caused these seemingly permanent price hikes?  
+
+# Current Agricultural Price Trends
+
 
 
 
