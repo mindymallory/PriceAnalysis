@@ -145,7 +145,7 @@ Price Forecasting:
     - Other things equal, simple approaches are preferred
     - Also known as [Occam's Razor](https://en.wikipedia.org/wiki/Occam%27s_razor)
     
-    > The Principle States that among competing hypotheses that predict equally well, the one with the fewest assumptions should be selected. Other, more complicated     solutions may ultimately prove to provide better predictions, but - in the absence of differences in predictive ability - the fewer assumptions that are made,       the better. (Source: [Wikipedia](https://en.wikipedia.org/wiki/Occam%27s_razor))
+The Principle States that among competing hypotheses that predict equally well, the one with the fewest assumptions should be selected. Other, more complicated     solutions may ultimately prove to provide better predictions, but - in the absence of differences in predictive ability - the fewer assumptions that are made,       the better. (Source: [Wikipedia](https://en.wikipedia.org/wiki/Occam%27s_razor))
 
 # Forecasting Basics
     - Simple approaches tend to work best in real world applications
