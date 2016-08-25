@@ -10,7 +10,10 @@ bibliography: PriceAnalysis.bib
 # Primer for Grain and Oilseed Markets
 
 
-Since commodities are natural things that are subject to biological processes, you must first understand the basic biological processes involved in the commodity's production in order to understand and anticipate what happens to it's price. This chapter introduces the basic production processes and timeline for major grains and oilseeds: Corn, Soybeans, Hard Red Winter Wheat (KC wheat), Hard Red Spring Wheat (Minneapolis wheat), and Soft Red Winter Wheat. 
+Since commodities are natural things that are subject to biological processes, you must first understand the basic biological processes involved in the commodity's production in order to understand and anticipate what happens to it's price. This chapter introduces the basic production processes and timeline for major grains and oilseeds: Corn, Soybeans, Hard Red Winter Wheat (KC wheat), Hard Red Spring Wheat (Minneapolis wheat), and Soft Red Winter Wheat.
+
+[Return to Book Homepage](http://mindymallory.github.io/PriceAnalysis/)
+
 
 # Corn
 
