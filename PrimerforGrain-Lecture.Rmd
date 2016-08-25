@@ -14,9 +14,18 @@ Since commodities are natural things that are subject to biological processes, y
 
 # Corn
 
+What's the difference between Sweet Corn I get from the grocery store and field corn (the focus of much of this course)?
+
+[Sweet Corn Harvest](https://www.youtube.com/watch?v=4WEYDx82fG8)
+
+[Field Corn Harvest](https://www.youtube.com/watch?v=zuGVeXqTIaM)
+
+[Soybean Harvest](https://www.youtube.com/watch?v=Ap4XzHOH1VQ)
+
+# Field Corn
+
 In the Corn Belt corn is planted from about March to May, and harvested from September to October. Pollination usually occurs in July. Since pollination is key to production and yield, new crop futures prices tend to be highly variable in the months of June and July as weather patterns and realizations of heat and rainfall mean the difference between a high yielding year and low yielding year. 
 
-# Corn
 
 Of lesser concern, but still followed by market participants is the weather during planting and harvest. Sometimes it is too wet, making it difficult to get acreage planted in a timely manner. If corn is planted too late it may suffer a yield penalty. Also, weather during harvest can impact prices. If harvest time is very wet, it can make it difficult to get the crop out and dry before it is damaged. 
 
@@ -25,8 +34,6 @@ Of lesser concern, but still followed by market participants is the weather duri
 # Recent Trends in Acreage, Yields, Production, and Use
 
 Corn planted acres in the U.S. has varied from just under to just over 90 million acres in recent years. Farmers in the corn belt decide how much of their land to plant to corn and how much to plant to soybeans. So sometimes it is said in the spring that corn and soybeans are 'competing for acres' based on the relative new crop futures prices of corn and soybeans. If corn is more profitable, farmers will shift some acres toward corn, and if soybeans are more profitable farmers will shift some acres toward soybeans. Because of this, years with high corn planted acres tend to have lower soybeans planted acres and vice versa.
-
-# Recent Trends in Acreage, Yields, Production, and Use
 
 Seed hybrids and genetic modification have lead to dramatic increases in yield over the last 100 years. Although, corn planted acres have been relatively flat for a very long time, production has skyrocketed. 
 
@@ -62,9 +69,6 @@ Corn is a global commodity, and the U.S. is the worlds largest producer and expo
 Soybeans are planted later than corn, from about April to June. Weather affects soybean production prospects and generates similar price responses as it does for corn. Soybean prices, therefore are highly dependent on what happens during the summer months. The following figures [come from](http://www.ers.usda.gov/topics/crops/soybeans-oil-crops/background.aspx) the USDS ERS.
 
 
-
-# Recent Trends in Acreage, Yield, Production, and Use
-
 Soybeans did not begin to be commercially grown in the U.S. until the mid 20th century, but once it was introduced, acreage expanded rapidly. Soybeans have also benefited from improved yields due to biotechnology. 
 
 ![Figure 6: Soybean Planted Acres and Yield](http://www.ers.usda.gov/ImageGen.ashx?image=/media/106959/topicpagecharts_3765_image001.png&width=480)
@@ -74,15 +78,19 @@ Soybeans did not begin to be commercially grown in the U.S. until the mid 20th c
 
 Soybeans consumed in the U.S. are almost exclusively processed into soybean meal and soybean oil, a process referred to as 'crushing'. Soybean meal is high in protein and used as an ingredient in livestock feed. Soybean oil is used for a variety of things, but the bulk of it is consumed as edible oil. 
 
-# Recent Trends in Acreage, Yield, Production, and Use
-
 About half of the soybeans produced in the U.S. are exported. 
 
 ![Figure 7: U.S. Soybean Exports](http://www.ers.usda.gov/ImageGen.ashx?image=/media/132209/topicpagecharts_vd_19612_image001.png&width=480)
 
 # Wheat 
 
-There are three main types of wheat grown in the U.S. Hard Red Winter Wheat (HRW/KC Wheat), Hard Red Spring Wheat (HRS/Minneapolis wheat), and Soft Red Winter Wheat (SRW/Chicago Wheat). Each of these types of wheat have its own futures contract, are grown in distinct regions of the country, and have different end uses. The main distinction between the types of wheat is how much protein is contained in the kernels. This variation in protein also determines what the variety of wheat is ultimately used for. 
+There are three main types of wheat grown in the U.S.:
+
++ Hard Red Winter Wheat (HRW/KC Wheat), 
++ Hard Red Spring Wheat (HRS/Minneapolis wheat), and 
++ Soft Red Winter Wheat (SRW/Chicago Wheat). 
+
+Each of these types of wheat have its own futures contract, are grown in distinct regions of the country, and have different end uses. The main distinction between the types of wheat is how much protein is contained in the kernels. This variation in protein also determines what the variety of wheat is ultimately used for. 
 
 ![Figure 8: Wheat Variety Growing Areas](https://wayback.archive-it.org/5923/20120310141658/http://ers.usda.gov/Briefing/Wheat/Gallery/allwheat.gif)
 
