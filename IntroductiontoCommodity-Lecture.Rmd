@@ -148,14 +148,16 @@ Price Forecasting:
 The Principle States that among competing hypotheses that predict equally well, the one with the fewest assumptions should be selected. Other, more complicated     solutions may ultimately prove to provide better predictions, but - in the absence of differences in predictive ability - the fewer assumptions that are made,       the better. (Source: [Wikipedia](https://en.wikipedia.org/wiki/Occam%27s_razor))
 
 # Forecasting Basics
-    - Simple approaches tend to work best in real world applications
-        - Based on decades of experience and research
-        - Simpler models can be estimated more precisely
-        - Because simpler models can be more easily interpreted  and understood, unusual behavior and outcomes can be more easily spotted. 
+
+Simple approaches tend to work best in real world applications
+
+  - Based on decades of experience and research
+  - Simpler models can be estimated more precisely
+  - Because simpler models can be more easily interpreted  and understood, unusual behavior and outcomes can be more easily spotted. 
         
-    - It is easier to communicate the basic behavior and design of simple approaches, so they are more likely to be used by decision-makers.
+  - It is easier to communicate the basic behavior and design of simple approaches, so they are more likely to be used by decision-makers.
     
-    - Simple approaches lessen the chances of data mining problems. 
+  - Simple approaches lessen the chances of data mining problems. 
         - If a complex model is tailored to fit historical data very well, but does not capture the true nature of the data process, forecasts will perform poorly. 
 
 # Forecasting Basics        
