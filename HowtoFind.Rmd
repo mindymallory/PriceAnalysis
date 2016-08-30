@@ -48,14 +48,33 @@ Contracts for several different expiry dates trade at the same time. There is a 
 |Commodity   | Symbol    |  Expiration Months and Symbol                            | General Ticker         | Yahoo Finance Ticker  | Quandl Ticker
 |:----------|:---------:|:--------------------------------------------------------|:----------------------|:---------------------|:---------------------| 
 | Corn       | C         |March (H), May (K), July (N), September (U), December (Z) | CZ16, December 2016 Corn|  [CZ16.cbt](http://finance.yahoo.com/q;_ylt=Aq08zZO8Y0A5GdeM2aZSNJJ.FJF4?uhb=uhb2&fr=uh3_finance_vert_gs&type=2button&s=cz16.cbt)| [CME/CZ2016](https://www.quandl.com/data/CME/CZ2016-Corn-Futures-December-2016-CZ2015) |
-| Soybeans   | S         |January (F), March (H), May (K), July (N), August (Q), September (U), November (X) | SX16, November 2016 Soybean|  [SX16.cbt](http://finance.yahoo.com/q;_ylt=Ajq44ku8k3rd1HzDOLpIozEnv7gF?uhb=uhb2&fr=uh3_finance_vert_gs&type=2button&s=sx16.cbt) | [CME/SX2016](https://www.quandl.com/data/CME/SX2016-Soybean-Futures-November-2016-SX2016) |
-| SRW Wheat  | W         |March (H), May (K), July (N), September (U), December (Z) | WZ16, December 2016 SRW Wheat|  [WZ16.cbt](http://finance.yahoo.com/q;_ylt=Ajq44ku8k3rd1HzDOLpIozEnv7gF?uhb=uhb2&fr=uh3_finance_vert_gs&type=2button&s=wz16.cbt) | [CME/WZ2016](https://www.quandl.com/data/CME/WZ2016-Wheat-Futures-December-2016-WZ2016) |
-| Lean Hogs | HE         | Feb (G), Apr (J), May (K), Jun (M), Jul (N), Aug (Q), Oct (V), Dec (Z) | HEZ16, December 2016 Lean Hogs|  [HEZ16.cme](http://finance.yahoo.com/q;_ylt=Ajq44ku8k3rd1HzDOLpIozEnv7gF?uhb=uhb2&fr=uh3_finance_vert_gs&type=2button&s=HEZ16.CME%2C) | [CME/LNZ2016](https://www.quandl.com/data/CME/LNZ2016-Lean-Hog-Futures-December-2016-LNZ2016) |
-| Crude Oil | CL         | All months | CLU16, September 2016 Light Sweet Crude Oil|  [CLU16.nym](http://finance.yahoo.com/q;_ylt=Ajq44ku8k3rd1HzDOLpIozEnv7gF?uhb=uhb2&fr=uh3_finance_vert_gs&type=2button&s=clu16.nym) | [CME/CLU2016](https://www.quandl.com/data/CME/CLU2016-Crude-Oil-Futures-September-2016-CLU2016)|
+| Soybeans   | S         |January (F), March (H), May (K), July (N), August (Q), September (U), November (X) | SX16, November 2016 Soybean|  [SX16.cbt](http://finance.yahoo.com/quote/SX16.CBT/?p=SX16.CBT) | [CME/SX2016](https://www.quandl.com/data/CME/SX2016-Soybean-Futures-November-2016-SX2016) |
+| Canola/Rapeseed|  RS  | January (F), March (H), May (K), July (N), November (X) | RSX16, November 2016 | [RSX16](http://www.barchart.com/quotes/futures/RSX16) (Barchart) | [ICE/RSX2016](https://www.quandl.com/data/ICE/RSX2016-Canola-Futures-November-2016-RSX2016)
+| HRW Wheat  | KW  | March (H), May (K), July (N), September (U), December (Z) | KWN17, July 2017 KC Wheat | [KWN17.cbt](https://finance.yahoo.com/quote/KWN17.CBT?p=KWN17.CBT) |[CME/KWN2017](https://www.quandl.com/data/CME/KWN2017-KC-HRW-Wheat-Futures-July-2017-KWN2017) |
+| SRW Wheat  | W         |March (H), May (K), July (N), September (U), December (Z) | WZ16, December 2016 SRW Wheat|  [WZ16.cbt](http://finance.yahoo.com/q;_ylt=Ajq44ku8k3rd1HzDOLpIozEnv7gF?uhb=uhb2&fr=uh3_finance_vert_gs&type=2button&s=wz16.cbt) |  [CME/WZ2016](https://www.quandl.com/data/CME/WZ2016-Wheat-Futures-December-2016-WZ2016) |
+| HRS Wheat  | MW  | March (H), May (K), July (N), September (U), December (Z) | MWZ16, Dec 2017 Minn Wheat | NA | [MGE/MWZ2016](https://www.quandl.com/data/MGEX/MWZ2016-Minneapolis-Hard-Red-Spring-Wheat-Futures-December-2016-MWZ2016) |
+| Live Cattle | LC | Feb (G), Apr (J), Jun (M), Aug (Q), Oct (V), Dec (Z) | LCZ16, December 2016 Live Cattle | [LCZ16.CME](http://finance.yahoo.com/quote/LCZ16.CME/?p=LCZ16.CME) | [CME/LCZ2016](https://www.quandl.com/data/CME/LCZ2016-Live-Cattle-Futures-December-2016-LCZ2016)
+| Lean Hogs | LH         | Feb (G), Apr (J), May (K), Jun (M), Jul (N), Aug (Q), Oct (V), Dec (Z) | LHZ16, December 2016 Lean Hogs|  [LHZ16.cme](http://finance.yahoo.com/quote/LHZ16.CME/?p=LHZ16.CME) | [CME/LNZ2016](https://www.quandl.com/data/CME/LNZ2016-Lean-Hog-Futures-December-2016-LNZ2016) |
+| Crude Oil | CL         | All months | CLZ16, Dec 2016 Light Sweet Crude Oil|  [CLZ16.nym](http://finance.yahoo.com/quote/CLZ16.NYM/?p=CLZ16.NYM) | [CME/CLZ2016](https://www.quandl.com/data/CME/CLZ2016-Crude-Oil-Futures-September-2016-CLZ2016)|
+| RBOB Gasoline | RB | All months | RBZ16, Dec 2016 RBOB Gas | [RBZ16.nym](https://finance.yahoo.com/quote/RBZ16-1.NYM?p=RBZ16-1.NYM)| [CME/RBZ2016](https://www.quandl.com/data/CME/RBZ2016-RBOB-Gasoline-Physical-Futures-December-2016-RBZ2016) |
+| Heating Oil | HO | All months | HOZ16, Dec 2016 HO (Ultra low sulfer deisel) | [HOZ16.NYM](https://finance.yahoo.com/quote/HOZ16.NYM/?p=HOZ16.NYM) | [CME/HOZ2016](https://www.quandl.com/data/CME/HOZ2016-NY-Harbor-ULSD-Futures-December-2016-HOZ2016) |
+| Ethanol | EH | All Months | EHZ16, Dec 2016 Ethanol Futures | [EHZ16.CBT](https://finance.yahoo.com/quote/EHZ16-2.CBT/futures?p=EHZ16-2.CBT) | [CME/EHZ2016](https://www.quandl.com/data/CME/EHZ2016-Ethanol-Futures-December-2016-EHZ2016) |
 
 : Table 2. Conventions for Building Futures Contract Ticker Symbols for Selected Commodities
 
 While every market participant needs to know the current price, forecasting and decision making requires the study of historical prices and other important market variables. Historical futures price data is available for free and from subscription based services from [Quandl](https://quandl.com) and [Barchart](https://barchart.com) mentioned in the paragraph above. Historical [futures price data](http://farmdoc.agricharts.com/markets/historic.php) and [average price recieved](http://www.farmdoc.illinois.edu/manage/pricehistory/price_history.html) is also available from [farmdoc](http://www.farmdoc.illinois.edu), the online extension presence of the University of Illinois' [Agricultural and Consumer Economics](http://ace.illinois.edu/) department. 
+
+
+Table 3 provides some links to spread charts for commodity spreads we will cover in this class. 
+
+| Spread | Link |
+|:------|:------|
+| Soybean Crush | [Barchart Spread Chart](http://www.barchart.com/chart.php?ss=1&spread=-ZS*1%2B2.2*ZM*1%2B11*ZL*1&p=DO&d=M&sd=&ed=&size=M&log=0&t=LINE&g=1&sh=100&indicators=&addindicator=#jump) |
+| Cattle Crush  | [ISU Spread Calculation](http://www2.econ.iastate.edu/estimated-returns/Finishing%20Steer%20Calves%20Chart.pdf) [ISU Livestock Returns](http://www2.econ.iastate.edu/estimated-returns/) |
+|Corn Crush | [ISU Ethanol Grind Margin](http://www.extension.iastate.edu/agdm/refirst.html) (Download Ethanol Profitability spreadsheet. Look at Grind Margin chart) |
+| Crude Oil Crack Spread | [Barchart Spread](http://www.barchart.com/chart.php?ss=1&spread=%28-3*CL*1+%2B+2*RB*1*42+%2B+HO*1*42%29+%2F+3&p=DO&d=M&sd=&ed=&size=M&log=0&t=LINE&g=1&sh=100&indicators=&addindicator=#jump)
+
+: Table 3. Commodity Spreads
 
 # Reports and Data from the USDA
 
@@ -100,7 +119,7 @@ Crop Production
 
 Crop Progress and Condition
 
-:    Crop Progress and Condition reports are issued every Monday during the planting, growing, and harvest season for major crops in the United States. The weekly updates provide market participants critical information about the status of the crop. Nass surveys approximately 4,000 individuals in major growing areas familiar with the crops. Check out one of the weekly tables [August 3, 2015](http://usda.mannlib.cornell.edu/usda/current/CropProg/CropProg-08-03-2015_correction.pdf) and summary charts [US Progress and Condition](http://www.nass.usda.gov/Charts_and_Maps/Crop_Progress_&_Condition/2015/US_2015.pdf)
+:    Crop Progress and Condition reports are issued every **Monday** during the planting, growing, and harvest season for major crops in the United States. The weekly updates provide market participants critical information about the status of the crop. Nass surveys approximately 4,000 individuals in major growing areas familiar with the crops. Check out one of the weekly tables [August 29, 2016](http://usda.mannlib.cornell.edu/usda/current/CropProg/CropProg-08-29-2016.txt) and summary charts [US Progress and Condition](https://www.nass.usda.gov/Charts_and_Maps/Crop_Progress_&_Condition/2016/US_2016.pdf)
 
 Agricultural Marketing Service
 
