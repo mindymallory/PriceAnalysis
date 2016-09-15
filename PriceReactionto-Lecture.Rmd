@@ -164,18 +164,4 @@ Figure 5, below, is the price action on the **March 31st, 2011**, the day the **
 
 This report indicated that corn acreage was to be higher than previously expected, but corn stocks were lower than expected. The stocks number dominated the price direction strongly and the market traded limit up on this day as well.  
 
-# Tomorrow, September 11 WASDE Report Released 
-
-[WASDE Report](http://www.usda.gov/oce/commodity/wasde/)
-
-**Assignment 2**
-
-Comment on the results from the September WASDE report for corn and soybeans. Note any categories that experienced unexpected changes. Note the following categories as particularly important: Yield, Harvested Acres (and thus production), and exports. 
-
-Obtain the WASDE in excel format from the USDA website above. Copy and paste the corn table and the soybean table into your assignment document (probably a Microsoft Word document). 
-
-**Due Monday Sept 14, at 11:30pm**
-
-Note that in your final group projects you are required to forecast the November WASDE report. This assignment will get you accustomed to obtaining the WASDE report, examining its contents, and digest its contents. The exercise will make your Group Final Projects go more smoothly. 
-
 
