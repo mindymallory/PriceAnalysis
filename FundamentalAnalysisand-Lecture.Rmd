@@ -206,19 +206,17 @@ Here we discuss the common format balance sheets for any commodity have in commo
 
 # Balance Sheet for Corn
 
-: Table 4. August 2015 USDA WASDE Balance Sheet for Corn
+: Table 4. August 2016 USDA WASDE Balance Sheet for Corn
 
 ```{r, echo=FALSE, warning=FALSE}
 library(Kmisc)
 library(knitr)
 aug15wasdec <- read.csv('Excel-files/FundamentalAnalysisand-aug15wasdec.csv')
-kable(aug15wasdec, align = 'l')
+kable(aug15wasdec, align = 'l', col.names = c("Corn", "Marketing Year 2014/2015", "Marketing Year 2015/2016 Est.", "Marketing Year 2016/2017 July Projection", "Marketing Year 2016/2017 August Projection"))
 
 ```
 
-(source: August 2015 USDA [WASDE Report](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1194) )
-
-# Balance Sheet for Corn
+(source: August 2016 USDA [WASDE Report](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1194) )
 
 The balance sheet for corn follows the same generic patter, but we can be a bit more specific with the use categories since we know what the major use categories are for any given commodity. The use components are as follows: 
 <!-- Put percentages here? --> 
@@ -228,17 +226,19 @@ The balance sheet for corn follows the same generic patter, but we can be a bit 
 - Ethanol production also demands a significant amount of corn, so much that it gets its own line in the balance sheet. Note, however, that it is technically part of the Food, Seed, and Industrial category.
 - The final use category is export. Corn grown in the United States is consumed around the globe, and strength or weakness in the export market is a carefully component of demand. 
 
-: Table 4. August 2015 USDA WASDE Balance Sheet for Corn
+# Balance Sheet for Soybeans
+
+: Table 5. August 2016 USDA WASDE Balance Sheet for Soybeans
 
 ```{r, echo=FALSE, warning=FALSE}
 library(Kmisc)
 library(knitr)
-aug15wasdec <- read.csv('Excel-files/FundamentalAnalysisand-aug15wasdec.csv')
-kable(aug15wasdec, align = 'l')
+aug15wasdes <- read.csv('Excel-files/FundamentalAnalysisand-aug15wasdes.csv')
+kable(aug15wasdes, align = 'l', col.names = c("Soybeans", "Marketing Year 2014/2015", "Marketing Year 2015/2016 Est.", "Marketing Year 2016/2017 July Projection", "Marketing Year 2016/2017 August Projection"))
 
 ```
 
-(source: August 2015 USDA [WASDE Report](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1194) )
+(source: August 2016 USDA [WASDE Report](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1194) )
 
 
 
