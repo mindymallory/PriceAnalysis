@@ -1,0 +1,34 @@
+---
+title: 'Beef Cattle Markets and the Livestock Crush'
+csl: american-journal-of-agricultural-economics.csl.txt
+output:
+  html_document:
+    fig_caption: yes
+    toc: yes
+  word_document: default
+bibliography: PriceAnalysis.bib
+---
+
+
+
+```{r }
+
+contracts <- list('H', 'K', 'N', 'U', 'Z')
+years <- list('2014', '2015', '2016')
+
+mydata <- list()
+ind <- list()
+Quandl.api_key("otkcuWHb5hYFTXTsiMds")
+
+for(j in 1:length(contracts)){
+ for(i in 1:length(years)){    
+ ind[[i*j]] <- paste0("CME/C", contracts[j], years[i])
+ mydata[[i*j]] <-Quandl(paste0("CME/C", contracts[j], years[i]), api_key="otkcuWHb5hYFTXTsiMds")
+}
+}
+
+
+
+
+```
+
