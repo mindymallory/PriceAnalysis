@@ -90,7 +90,7 @@ The prior discussion has viewed the forward curve and returns to storage from th
 Buy: Dec 2016, 
 Sell:  March 2017
 
-Then you are betting that prices in general will go up, but the nearby will go up more than the deferred contracts. Anything information event that suggests supplies will become tighter should make prices go up in general, and should reduce the incentive to store. Thus, making this a profitable calendar spread trade. 
+Then you are betting that prices in general will go up, but the nearby will go up more than the deferred contracts. Any information event that suggests supplies will become tighter should make prices go up in general, and should reduce the incentive to store. Thus, making this a profitable calendar spread trade. 
 
 
 ## Bearish
