@@ -1,17 +1,14 @@
 ---
-title: 'Prices Over Space and Time'
-csl: american-journal-of-agricultural-economics.csl.txt
+title: "Prices Over Space and Time"
+author: "Mindy L. Mallory"
 output:
-  html_document:
-    fig_caption: yes
-    toc: yes
-  word_document: default
+  slidy_presentation:
+    css: stylesheets/slide-style.css
 bibliography: PriceAnalysis.bib
 ---
 
 
-
-# Introduction 
+## Introduction 
 
 In this section we cover how commodity prices behave over time and space. We have discussed frequently that commodity futures contracts have an expiration, that there are always several contracts trading at any given time with maturities that are increasingly farther into the future, and that these contracts will eventually expire and no longer be traded. 
 
@@ -29,6 +26,7 @@ The reason that the forward curve represents return to storage is that it shows 
 
 In figure 2, the returns to storage per month are plotted. For example, the we said that the return to storage between December and March is 10 cents per bushel. Since there are 2 months between December and March, the per month return to storage is $10/2 = 5$ cents per bushel. The market is offering farmers and other holders of stocks 5 cents per month to store grain between December and March.
 
+# An Increasing Forward Curve
 
 ![Figure 2. Returns to Storage Per Month Implied by the Forward Curve](Excel-files/PricesSpaceTime/forward-curves_files/image003.png)
 
@@ -37,6 +35,8 @@ What kind of market environment would produce such a result?
 When stocks are plentiful the market offers a premium to those who are willing to keep grain off the market for awhile. This prevents prices from plunging too much right after a big harvest, since many choose to wait for better prices later in the marketing year. Also, since these price relationships are 'discovered' and change every day, if it turns out grain is coming onto the market too fast or too slowly, the return to storage changes to alter the incentives so that supply and demand can remain in equilibrium throughout the whole marketing year even though we only harvest once per year (in North America).
 
 This kind of market environment is sometimes called a *carry market* or sometimes it is said that the market is *in full carry*. This means that the market is offering returns to storage that covers the cost to rent warehouse space, insure, and finance storing grain in until a later date. The year of 2016 is certainly a full carry market. Record production and a high forecast of ending stocks make this the classic market environment where returns to storage would be positive. 
+
+# An Increasing Forward Curve 
 
 As another example, the forward curve and returns to storage are shown for 2015 in figures 3 and 4. 
 
@@ -54,16 +54,31 @@ This example illustrates a phenomenon that often occurs. Here we saw that the fo
 
 Next we will consider a year that was characterized by a decreasing forward curve. You will recall that 2012 was a significant drought year that resulted in poor yields, high prices, and low forecasted ending stocks for the marketing year. In this kind of market environment, where supplies are tight, the forward curve tends to be downward sloped. The implication of this is that anyone who decides to hold grain will lose money because it is worth more today than it is tomorrow. The market is incentivising everyone to bring grain onto the market.  
 
+
+# A Decreasing Forward Curve
+
 We will look at the forward curve and return to storage in steps for 2012. On 4-13-2-12 the forward curve and returns to storage per month are as shown in figure 5 and 6. This is in the spring, before the drought has happened. 
+
+
+
+![Figure 5. Forward Curve on 4-13-2012](Excel-files/PricesSpaceTime/forward-curves_files/image009.png)
+
+# A Decreasing Forward Curve
+
+![Figure 6. Returns to Storage Per Month Implied by the Forward Curve](Excel-files/PricesSpaceTime/forward-curves_files/image011.png)
+
+# A Decreasing Forward Curve
+
+In this case, supplies were already tight going into 2012. The forward curve is downward sloped, also called *inverted* or *backwardated*. So returns to storage are negative, as shown in Figure 6 through the summer of 2012, even before we had the drought realized. However, it is apparent from the forward curve that as of 4-13-2012, the market 'thought' that the 2012 harvest would be good, because price levels drop substantially in the September and December contract, and the return to storage between December 2012 and March 2013 is positive on 4-13-2012. 
 
 ![Figure 5. Forward Curve on 4-13-2012](Excel-files/PricesSpaceTime/forward-curves_files/image009.png)
 
 
-![Figure 6. Returns to Storage Per Month Implied by the Forward Curve](Excel-files/PricesSpaceTime/forward-curves_files/image011.png)
-
-In this case, supplies were already tight going into 2012. The forward curve is downward sloped, also called *inverted* or *backwardated*. So returns to storage are negative, as shown in Figure 6 through the summer of 2012, even before we had the drought realized. However, it is apparent from the forward curve that as of 4-13-2012, the market 'thought' that the 2012 harvest would be good, because price levels drop substantially in the September and December contract, and the return to storage between December 2012 and March 2013 is positive on 4-13-2012. 
+# A Decreasing Forward Curve
 
 Next, lets look at the forward curve and return to storage on 8-01-2012. By August 1, it is clear that we are in the midst of a major drought, yields will be low, and ending stocks for the coming marketing year will be low as well. 
+
+# A Decreasing Forward Curve
 
 Now, the forward curve is downward sloped and returns to storage are for the entire marketing year until the next harvest, in 2013, is expected. On 4-13-2012, the market was offering about 5 cents per month to store from December 2012 to March 2013, by 8-01-2012, the return to storage between the same time period was about -1 cent.
 
@@ -71,6 +86,9 @@ Now, the forward curve is downward sloped and returns to storage are for the ent
 
 
 ![Figure 8. Returns to Storage Per Month Implied by the Forward Curve](Excel-files/PricesSpaceTime/forward-curves_files/image015.png)
+
+
+# A Decreasing Forward Curve
 
 Now, just to illustrate how the forward curve changed between August and December 2012, the time in which harvest occurred and we learned exactly how bad yields turned out to be, we show the forward curve and returns to storage on 12-03-2012 in figures 9 and 10. 
 
@@ -99,11 +117,6 @@ Sell: Dec 2016,
 Buy: March 2017
 
 The opposite logic is at work here. You are betting that prices will go down in general, but that the nearby will go down more than the deferred contracts. Any information that suggests supplies will become more plentiful should make prices go down in general, and should increase incentives to store. Thus making the bearish calendar spread profitable. 
-
-
-
-
-
 
 
 
