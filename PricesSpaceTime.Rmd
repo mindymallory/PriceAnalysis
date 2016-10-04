@@ -100,6 +100,65 @@ Buy: March 2017
 
 The opposite logic is at work here. You are betting that prices will go down in general, but that the nearby will go down more than the deferred contracts. Any information that suggests supplies will become more plentiful should make prices go down in general, and should increase incentives to store. Thus making the bearish calendar spread profitable. 
 
+# Price Variation Over Space
+
+Most of our time in this course has focused on what impacts futures prices for commodities. However, a futures price represent the expected future price of the commodity in a very specific location - the locations that are 'regular' for delivery. A location that is regular for delivery is a location that is designated by the commodity exchange where stocks of a commodity represented by a futures contract may be delivered in fulfillment of the contract. This is where the spot, or cash, price must come together, or converge, with the futures price.   
+
+
+![Figure 11. Delivery Locations for Corn and Soybeans are Mostly Along the Illinois River Between Chicago and Peoria, IL](images/IL-River.png)
+
+(Source [Google Maps](https://www.google.com/maps))
+
+![Figure 12. Delvery Location at Burns Harbor, IN](images/Burns-Harbor.png)
+
+(Source [Google Maps](https://www.google.com/maps/place/Burns+Harbor,+IN/@41.740398,-87.7248706,10.5z/data=!4m5!3m4!1s0x8811bc3712ab828d:0x98301a46014d10b5!8m2!3d41.6258708!4d-87.1333676))
+
+Since the price of the futures contract is represents the expected future price only at these locations (technically whichever is cheapest to deliver) then the degree to which the futures price is indicitive of the expected future spot price at locations far from Northern Illinois can vary. 
+
+Throughout the rural U.S., grain elevators, ethanol plants, soybean crushers, feedyards and biodeisel manufacturers dot the landscape every few miles. These entities buy essentially all of the grain and oilseed crop that is not used on-farm for livestock feeding. They post bids to buy every day they are open. They offer to buy as a cash sale, or on forward contract for delivery one to three months ahead. In the case of the forward contract, the farmer will go in to the elevator and sign a contract to deliver a specific number of bushels within a specified window of time. Usually, the prices quoted by grain elevators and other prices is releative to the futures contract price, or basis. 
+
+In figure 13 the elevators around Champiagn, IL are shown.  
+
+![Figure 13. Elevators Around Champaign, IL](images/Champaign-Elevators.png)
+
+Depending on how far the location is from the Illinois river, this difference may be large, but still the futures price is the reference point. The basis is often quoted as 'over' or 'under' the futures price. For example, an elevator might post bids to buy for $-27$ cents. This means $27$ cents under the futures price. A bid of $31$ would be read as $31$ cents over the futures price.
+
+# Definition of Basis
+
+
+Basis is always defined as Spot Price minus Futures price.
+
+$$Basis = Spot - Futures$$
+
+
+Basis reflects the price differential over space relative to the futures price. Basis is influenced by 
+
++ Transportation Costs
++ Local Supply and Demand Conditions
++ Interst and Storage Charges (this reflects that there is also a small time component as well as spatial)
++ Other Handling, Shipping and other Costs
+
+Transportation costs are built into basis because large users of grain are not neccessarily located in large production region. E.g., cattle feedyards in Western Kansas and Nebraska; Chickens in the South; and Hogs in North Carolina. Grain is shipped by rail and/or truck to locations across the country. Areas of grain surplus generally have a negative basis, the spot price is less than the futures. Areas of grain deficit generally have a positive basis, the spot price is greater than the futures. 
+
+Local supply and demand conditions are also important. Occasionally, there will be localized production problems. The biggest recent example comes from the demand side, however. The expansion in ethanol production in the U.S. was felt greatest in Iowa. As literally billions of gallons of capcacity in ethanol production came online in Iowa, the corn basis was affected. With additional large consumers of corn located throughout Iowa, there was more localized demand for corn. The ethanol plants and grain elevators had increased localized competition, and local basis bids started to rise between 2005 and 2010. 
+
+# Terminology
+
+Farmers and grain handlers alike watch the basis closely, so discussion of changes in the basis is common. When the basis is increasing, in most cases that means becoming 'less negative', we say the basis is **stregthening**. When the basis is decreasing, or becoming 'more negative', we say the basis is **weakening**. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
