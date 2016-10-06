@@ -19,7 +19,7 @@ $$Supply, Total - Use, Total = 16,909 - 14,500 = 2,409 (Million bushels) = Endin
 
 in table 2[^adding]
 
-$$Supply, Total - Use, Total = 4,186 - 3,717 = 469 (Million bushels) = Ending Stocks$$
+$$Supply, Total - Use, Total = 4,426 - 4,061 = 365 (Million bushels) = Ending Stocks$$
 
 [^adding]: Recall that WASDE balance sheets do not always add perfectly due to rounding.  
 
