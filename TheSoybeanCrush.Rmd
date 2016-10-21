@@ -107,7 +107,7 @@ One version of the board spread is called the 1-1-1 spread and it requires placi
 - Buy 1 contract soybean meal
 - Sell 1 contract soybeans
 
-This position makes money when the spread widens, or oil and meal go up while soybeans goes down. This is called buying the spread. 
+This position makes money when the spread widens, or oil and meal go up while soybeans goes down. This is called buying the spread. So, to speculate that the soybean crushing industry will become more profitable, these are the trades that will profit if this comes to fruition. 
 
 Another version is to sell the spread.
 
@@ -115,7 +115,7 @@ Another version is to sell the spread.
 - Sell 1 contract soybean meal
 - Buy 1 contract soybeans
 
-This spread makes money when the spread narrows, or oil and meal go down while soybeans goes up. Soybean crushers can sell the spread (Sell oil and meal and buy soybean futures) to hedge their GPM. 
+This spread makes money when the spread narrows, or oil and meal go down while soybeans goes up. Soybean crushers can sell the spread (Sell oil and meal and buy soybean futures) to hedge their GPM, or speculators can sell the spread to speculate the the soybean crushing industry will become less profitable. 
 
 The 1-1-1 spread is a crude approximation of oil processing GPM but one needs to be careful about the quantities of each commodity represented. Futures contracts for soybean oil, soybean meal, and soybeans are for the following quantities: 
 
