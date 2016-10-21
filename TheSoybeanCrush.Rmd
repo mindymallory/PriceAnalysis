@@ -115,7 +115,7 @@ Another version is to sell the spread.
 - Sell 1 contract soybean meal
 - Buy 1 contract soybeans
 
-This spread makes money when the spread narrows, or oil and meal go down while soybeans goes up.
+This spread makes money when the spread narrows, or oil and meal go down while soybeans goes up. Soybean crushers can sell the spread (Sell oil and meal and buy soybean futures) to hedge their GPM. 
 
 The 1-1-1 spread is a crude approximation of oil processing GPM but one needs to be careful about the quantities of each commodity represented. Futures contracts for soybean oil, soybean meal, and soybeans are for the following quantities: 
 
@@ -132,7 +132,7 @@ So the 1-1-1 spread does not represent equivalent quantities of soybeans, oil, a
 
 ## The 9-11-10 Spread
 
-The commercial oil processers use a 9-11-10 spread of 9 contracts of soybean oil, 11 contracts of soybean meal, and 10 contracts of soybeans. 
+The commercial oil processers use a 9-11-10 spread of 9 contracts of soybean oil, 11 contracts of soybean meal, and 10 contracts of soybeans to hedge their GPM. 
 
 Then the quantities match more closely. Ten contracts of soybeans produces
 
