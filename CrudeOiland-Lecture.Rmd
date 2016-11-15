@@ -43,9 +43,12 @@ Crude oil is also classified as *sweet* or *sour*. This refers to the sulfur con
 
 
 
+
+
 # Light, Sweet: WTI and Brent Crude Oil
 
-Because of its desirable qualities, light sweet crude oil is the most valuable classifications of crude oil in the world. When you hear people talk about crude oil prices, they almost always are referring to the price of light sweet crude oil, because of its importance in producing the majority of the worlds liquid transportation fuel and a significant portion of heating fuel. 
+  + Because of its desirable qualities, light sweet crude oil is the most valuable classifications of crude oil in the world. 
+  + When you hear people talk about crude oil prices, they almost always are referring to the price of light sweet crude oil, because of its importance in producing the majority of the worlds liquid transportation fuel and a significant portion of heating fuel. 
 
 WTI Crude Oil Price
 
@@ -112,6 +115,7 @@ Distillates are lesser known among the general public. However, [Diesel](http://
 Heating oil is used to heat homes in the Northeast U.S., whereas in other parts of the country natural gas, propane, and electricity are more prominent fuels for home heating.
 
 ![Products Made from a Barrel of Crude Oil](images/products_from_barrel_crude_oil-large.jpg)
+
 
 Source: [US Energy Information Administration](http://www.eia.gov/Energyexplained/index.cfm?page=oil_home) 
 
