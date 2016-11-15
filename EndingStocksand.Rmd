@@ -15,33 +15,33 @@ bibliography: PriceAnalysis.bib
 
 Over the course of the last several chapters we have covered each category of supply and use. In tables 1 and 2 below, that literally means we covered how to forecast the numbers in each row of the USDA WASDE balance sheet. Subtracting total use from total supply gives an estimate of marketing year ending stocks. For example, in table 1, 
 
-$$Supply, Total - Use, Total = 15,488 - 13,775 = 1,713 (Million bushels) = Ending Stocks;$$ 
+$$Supply, Total - Use, Total = 16,909 - 14,500 = 2,409 (Million bushels) = Ending Stocks;$$ 
 
 in table 2[^adding]
 
-$$Supply, Total - Use, Total = 4,186 - 3,717 = 469 (Million bushels) = Ending Stocks$$
+$$Supply, Total - Use, Total = 4,426 - 4,061 = 365 (Million bushels) = Ending Stocks$$
 
 [^adding]: Recall that WASDE balance sheets do not always add perfectly due to rounding.  
 
-: Table 1. August 2015 USDA WASDE Balance Sheet for Corn
+: Table 1. September 2016 USDA WASDE Balance Sheet for Corn
 
 ```{r, echo=FALSE, warning=FALSE}
 library(Kmisc)
 library(knitr)
 aug15wasdec <- read.csv('Excel-files/FundamentalAnalysisand-aug15wasdec.csv')
-kable(aug15wasdec, align = 'l', col.names = c("Corn", "Marketing Year 2013/2014", "Marketing Year 2014/2015 Est.", "Marketing Year 2015/2016 July Projection", "Marketing Year 2015/2016 August Projection"))
+kable(aug15wasdec, align = 'l', col.names = c("Corn", "Marketing Year 2014/2015", "Marketing Year 2015/2016 Est.", "Marketing Year 2016/2017 July Projection", "Marketing Year 2016/2017 August Projection"))
 
 ```
 
 and 
 
-: Table 2. August 2015 USDA WASDE Balance Sheet for Soybeans
+: Table 2. September 2016 USDA WASDE Balance Sheet for Soybeans
 
 ```{r, echo=FALSE, warning=FALSE}
 library(Kmisc)
 library(knitr)
 aug15wasdes <- read.csv('Excel-files/FundamentalAnalysisand-aug15wasdes.csv')
-kable(aug15wasdes, align = 'l', col.names = c("Soybeans", "Marketing Year 2013/2014", "Marketing Year 2014/2015 Est.", "Marketing Year 2015/2016 July Projection", "Marketing Year 2015/2016 August Projection"))
+kable(aug15wasdes, align = 'l', col.names = c("Soybeans", "Marketing Year 2014/2015", "Marketing Year 2015/2016 Est.", "Marketing Year 2016/2017 July Projection", "Marketing Year 2016/2017 August Projection"))
 
 ```
 
@@ -61,7 +61,7 @@ Since the supply curve shifts from year-to-year and the demand curve shifts from
 
 # A Closer Look at the Data
 
-This section continues to draw heavily on the Good and Irwin fdd article referenced above. First let us take a look at the average price received for corn over time and the stocks-to-use of corn over time in figure 2. These data can both be obtained from the [USDA NASS Quick Stats](http://www.nass.usda.gov/Statistics_by_Subject/?sector=CROPS) database, although you have to download the *stocks* and *use* separately and create your own stocks-use-variable. 
+This section continues to draw heavily on the Good and Irwin fdd article referenced above. First let us take a look at the average price received for corn over time and the stocks-to-use of corn over time in figure 2. These data can both be obtained from the [USDA ERS Feed Grains Database](http://www.ers.usda.gov/data-products/feed-grains-database.aspx) database, although you have to download the *stocks* and *use* separately and create your own stocks-use-variable. 
 
 ![Figure 2: Corn Average Price Received and Stocks-to-Use](Excel-files/EndingStocksand-corn_endingstock_prices_files/image005.png)
 

@@ -10,39 +10,42 @@ bibliography: PriceAnalysis.bib
 
 Over the course of the last several chapters we have covered each category of supply and use. In tables 1 and 2 below, that literally means we covered how to forecast the numbers in each row of the USDA WASDE balance sheet. Subtracting total use from total supply gives an estimate of marketing year ending stocks. For example, in table 1, 
 
-# Introduction
+$Supply, Total - Use, Total = 16,909 - 14,500 = 2,409 (Million bushels) = Ending Stocks;$
 
-: Table 1. August 2015 USDA WASDE Balance Sheet for Corn
+
+
+
+
+: Table 1. September 2016 USDA WASDE Balance Sheet for Corn
 
 ```{r, echo=FALSE, warning=FALSE}
 library(Kmisc)
 library(knitr)
 aug15wasdec <- read.csv('Excel-files/FundamentalAnalysisand-aug15wasdec.csv')
-kable(aug15wasdec, align = 'l', col.names = c("Corn", "Marketing Year 2013/2014", "Marketing Year 2014/2015 Est.", "Marketing Year 2015/2016 July Projection", "Marketing Year 2015/2016 August Projection"))
+kable(aug15wasdec, align = 'l', col.names = c("Corn", "Marketing Year 2014/2015", "Marketing Year 2015/2016 Est.", "Marketing Year 2016/2017 July Projection", "Marketing Year 2016/2017 August Projection"))
 
 ```
 
+and 
 
-$$Supply, Total - Use, Total = 15,488 - 13,775 = 1,713 (Million bushels) = Ending Stocks;$$ 
+# Soybeans 
 
-in table 2[^adding]
-
-# Introduction
-
-: Table 2. August 2015 USDA WASDE Balance Sheet for Soybeans
+: Table 2. September 2016 USDA WASDE Balance Sheet for Soybeans
 
 ```{r, echo=FALSE, warning=FALSE}
 library(Kmisc)
 library(knitr)
 aug15wasdes <- read.csv('Excel-files/FundamentalAnalysisand-aug15wasdes.csv')
-kable(aug15wasdes, align = 'l', col.names = c("Soybeans", "Marketing Year 2013/2014", "Marketing Year 2014/2015 Est.", "Marketing Year 2015/2016 July Projection", "Marketing Year 2015/2016 August Projection"))
+kable(aug15wasdes, align = 'l', col.names = c("Soybeans", "Marketing Year 2014/2015", "Marketing Year 2015/2016 Est.", "Marketing Year 2016/2017 July Projection", "Marketing Year 2016/2017 August Projection"))
 
 ```
 
+in table 2[^adding]
 
-$$Supply, Total - Use, Total = 4,186 - 3,717 = 469 (Million bushels) = Ending Stocks$$
+$$Supply, Total - Use, Total = 4,426 - 4,061 = 365 (Million bushels) = Ending Stocks$$
 
 [^adding]: Recall that WASDE balance sheets do not always add perfectly due to rounding.  
+
 
 # Introduction
 
@@ -122,7 +125,6 @@ Source: [FarmDoc Daily](http://farmdocdaily.illinois.edu/2015/04/relationship-st
 - A clear negative relationship emerges, but the relationship when stocks are less than 20% of use is less clear. To help clarify, figure 4 highlights years before and after 2006. 
 
 ![Figure 3: Corn Prices vs. Stocks-to-Use](Excel-files/EndingStocksand-corn_endingstock_prices_files/image001.png)
-
 # A Closer Look at the Data
 
 ![Figure 4: Corn Prices vs Stocks-to-Use Pre- and Post-2006](Excel-files/EndingStocksand-corn_endingstock_prices_files/image002.png)
