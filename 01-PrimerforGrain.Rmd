@@ -10,7 +10,7 @@ Since commodities are natural things that are subject to biological processes, y
 
 What's the difference between Sweet Corn one buys from the grocery store and field corn (the focus of much of this course)?
 
-Sweet corn has been bred so that the kernals contain a high sugar content. It is harvested green (as you probably knew), and must be consumed quickly, or processed by canning or freezing within a few hours. After a few hours, the sugars in the kernals begin to turn to starch.
+Sweet corn has been bred so that the kernels contain a high sugar content. It is harvested green (as you probably knew), and must be consumed quickly, or processed by canning or freezing within a few hours. After a few hours, the sugars in the kernels begin to turn to starch.
 
 Since sweet corn is harvested green and deteriorates rapidly, harvest must take place quickly from start to finish.
 
@@ -117,11 +117,11 @@ SRW wheat is referred to as Chicago Wheat because the Chicago Board of Trade off
 (Source [USDA-GIPSA](https://www.gipsa.usda.gov/fgis/commgallery/gr_srw.aspx))
 
 
-## Protein Premiums and Wheat Spreads
+### Protein Premiums and Wheat Spreads
 
 If you follow wheat markets for long, you will hear discussion of 'protein premiums', that is because flour millers rarely use just one kind of wheat to make their flour. They blend different types of wheat together to make flours of varying protein and gluten levels. 
 
-Different varieties of wheat naturally have different protein levels, as mentioned above. However, there is also a link between yield and protein levels. When yields are high, wheat protein is lower. This means during years where lower protein winter wheat has good yields, there is plenty of wheat, but not neccessarily enough protein. This causes the price of higher protein wheat, like spring wheat, to rise against the price of winter wheat. If winter wheat crops are smaller around the world, the protein content is higher, and spring wheat may not enjoy a large premium agianst winter wheat. 
+Different varieties of wheat naturally have different protein levels, as mentioned above. However, there is also a link between yield and protein levels. When yields are high, wheat protein is lower. This means during years where lower protein winter wheat has good yields, there is plenty of wheat, but not necessarily enough protein. This causes the price of higher protein wheat, like spring wheat, to rise against the price of winter wheat. If winter wheat crops are smaller around the world, the protein content is higher, and spring wheat may not enjoy a large premium against winter wheat. 
 
 Because of this dynamic, the relative prices of Minneapolis, Kansas City, and Chicago wheat futures are closely followed by stakeholders in any of the wheat markets. 
 
