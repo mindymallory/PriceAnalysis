@@ -1,5 +1,5 @@
 [
-["index.html", "A Minimal Bookdown Book Preface", " A Minimal Bookdown Book Sean Kross 2017-06-20 Preface This is the very first part of the book. "],
+["index.html", "Price Analysis Preface", " Price Analysis Mindy L. Mallory 2017-06-20 Preface This is a book for beginners on commodity price analysis from a fundamental perspective. These chapters are derived from my lecture notes used to teach ACE 427: Commodity Price Analysis at the University of Illinois The course itself is based an the outline given to me by Scott Irwin, who has taught ACE 427 at the University of Illinois for years. This book is targeted at the upper level undergraduate student, or professional beginning a career related to commodity markets. The objective is to familiarize the reader with the sources of market information and research commonly used by practicing professionals working in the industry. "],
 ["introduction.html", "Chapter 1 Introduction", " Chapter 1 Introduction This is the first real chapter. "],
 ["diving-in.html", "Chapter 2 Diving In", " Chapter 2 Diving In Now let’s talk details. "],
 ["technical-details.html", "Chapter 3 Technical Details", " Chapter 3 Technical Details Now I’ll teach you some crazy math, but I need to work it out first… "]
