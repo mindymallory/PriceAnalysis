@@ -8,7 +8,7 @@ bibliography: [book.bib]
 biblio-style: apalike
 link-citations: yes
 github-repo: mindymallory/PriceAnalysis
-url: 'http\://http://mindymallory.github.io/PriceAnalysis/'
+url: 'http\:mindymallory.github.io/PriceAnalysis/'
 description: "A Fundamental Approach to the Study of Commodity Prices."
 ---
 
