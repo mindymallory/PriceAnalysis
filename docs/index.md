@@ -1,5 +1,5 @@
 --- 
-title: "Price Analysis"
+title: "Price Analysis: A Fundamental Approach to the Study of Commodity Prices"
 author: "Mindy L. Mallory"
 date: "2017-06-20"
 site: bookdown::bookdown_site
