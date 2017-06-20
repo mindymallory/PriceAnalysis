@@ -1,6 +1,5 @@
-# [Price Analysis](http://mindymallory.github.io/PriceAnalysis/)
-This is a work-in-progress book for beginners on commodity price analysis from a fundamental perspective.
+This is the absolute minimum you need to start a [bookdown](https://bookdown.org/home/about.html) book. You can find the
+preview of this book at http://seankross.com/bookdown-start/
 
-[Price Analysis](http://mindymallory.github.io/PriceAnalysis/)
-
-To see source files, please switch to the gh-pages branch for this project.
+All of the content of this repository is licensed 
+[CC0](https://creativecommons.org/publicdomain/zero/1.0/).
