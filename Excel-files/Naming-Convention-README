@@ -1,0 +1,19 @@
+The excel files in this folder support the excel-based figures in the chapter. 
+
+Naming: 
+
+'ChapterNameCopy-Descriptive'
+
+The excel files named with a two part naming convention. The first part is identical to the name of the chapter file to which it is supporting. For example, 'IntroductiontoCommodityTS.Rmd' is the name of file containing one chapter of the book; 'IntroductiontoCommodityTS-randomwalk.xlsx' is the excel file that produced some figures in the chapter. 
+
+After the figures are created in the basic excel file, the file is saved as a webpage that produces the folder
+
+'ChapterNameCopy-Descriptive_files'
+
+In the example above it is 'IntroductiontoCommodityTS-randomwalk_files'. In this folder are images produced by excel that are referenced in the chapter documents and the pictures are inserted in the chapter document that way. 
+
+To Update:
+
+1. Update the .xlsx file. 
+2. Save as webpage. 
+3. Recompile the .html chapter documents to ensure the figures were inserted correctly. 
