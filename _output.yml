@@ -7,7 +7,11 @@ bookdown::gitbook:
       before: |
         <li><a href="./">Price Analysis</a></li>
       after: |
-        <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+        <ul>
+        <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a> </li>
+        <li> &copy Mindy L. Mallory 2017</li>
+        </ul>
+      
 bookdown::pdf_book:
   includes:
     in_header: preamble.tex
