@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Price Analysis: A Fundamental Approach to the Study of Commodity Prices</title>
+  <meta name="description" content="A Fundamental Approach to the Study of Commodity Prices.">
+  <meta name="generator" content="bookdown 0.4 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Price Analysis: A Fundamental Approach to the Study of Commodity Prices" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="http:mindymallory.github.io/PriceAnalysis/" />
+  
+  <meta property="og:description" content="A Fundamental Approach to the Study of Commodity Prices." />
+  <meta name="github-repo" content="mindymallory/PriceAnalysis" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Price Analysis: A Fundamental Approach to the Study of Commodity Prices" />
+  
+  <meta name="twitter:description" content="A Fundamental Approach to the Study of Commodity Prices." />
+  
+
+<meta name="author" content="Mindy L. Mallory">
+
+
+<meta name="date" content="2017-06-22">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="properties-of-time-series-data.html">
+<link rel="next" href="basic-statistics-and-linear-regression-review.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Price Analysis</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-the-author"><i class="fa fa-check"></i>About the Author</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#contact"><i class="fa fa-check"></i>Contact</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="a-primer-for-grain-and-oilseed-markets.html"><a href="a-primer-for-grain-and-oilseed-markets.html"><i class="fa fa-check"></i><b>1</b> A Primer for Grain and Oilseed Markets</a><ul>
+<li class="chapter" data-level="1.1" data-path="a-primer-for-grain-and-oilseed-markets.html"><a href="a-primer-for-grain-and-oilseed-markets.html#introduction"><i class="fa fa-check"></i><b>1.1</b> Introduction</a></li>
+<li class="chapter" data-level="1.2" data-path="a-primer-for-grain-and-oilseed-markets.html"><a href="a-primer-for-grain-and-oilseed-markets.html#corn"><i class="fa fa-check"></i><b>1.2</b> Corn</a></li>
+<li class="chapter" data-level="1.3" data-path="a-primer-for-grain-and-oilseed-markets.html"><a href="a-primer-for-grain-and-oilseed-markets.html#field-corn"><i class="fa fa-check"></i><b>1.3</b> Field Corn</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="a-primer-for-grain-and-oilseed-markets.html"><a href="a-primer-for-grain-and-oilseed-markets.html#recent-trends-in-acreage-yields-production-and-use"><i class="fa fa-check"></i><b>1.3.1</b> Recent Trends in Acreage, Yields, Production, and Use</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="a-primer-for-grain-and-oilseed-markets.html"><a href="a-primer-for-grain-and-oilseed-markets.html#soybeans"><i class="fa fa-check"></i><b>1.4</b> Soybeans</a><ul>
+<li class="chapter" data-level="1.4.1" data-path="a-primer-for-grain-and-oilseed-markets.html"><a href="a-primer-for-grain-and-oilseed-markets.html#recent-trends-in-acreage-yield-production-and-use"><i class="fa fa-check"></i><b>1.4.1</b> Recent Trends in Acreage, Yield, Production, and Use</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="a-primer-for-grain-and-oilseed-markets.html"><a href="a-primer-for-grain-and-oilseed-markets.html#wheat"><i class="fa fa-check"></i><b>1.5</b> Wheat</a><ul>
+<li class="chapter" data-level="1.5.1" data-path="a-primer-for-grain-and-oilseed-markets.html"><a href="a-primer-for-grain-and-oilseed-markets.html#hard-red-winter-wheat"><i class="fa fa-check"></i><b>1.5.1</b> Hard Red Winter Wheat</a></li>
+<li class="chapter" data-level="1.5.2" data-path="a-primer-for-grain-and-oilseed-markets.html"><a href="a-primer-for-grain-and-oilseed-markets.html#hard-red-spring-wheat"><i class="fa fa-check"></i><b>1.5.2</b> Hard Red Spring Wheat</a></li>
+<li class="chapter" data-level="1.5.3" data-path="a-primer-for-grain-and-oilseed-markets.html"><a href="a-primer-for-grain-and-oilseed-markets.html#soft-red-winter-wheat"><i class="fa fa-check"></i><b>1.5.3</b> Soft Red Winter Wheat</a></li>
+<li class="chapter" data-level="1.5.4" data-path="a-primer-for-grain-and-oilseed-markets.html"><a href="a-primer-for-grain-and-oilseed-markets.html#protein-premiums-and-wheat-spreads"><i class="fa fa-check"></i><b>1.5.4</b> Protein Premiums and Wheat Spreads</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="introduction-to-commodity-price-analysis-and-forecasting.html"><a href="introduction-to-commodity-price-analysis-and-forecasting.html"><i class="fa fa-check"></i><b>2</b> Introduction to Commodity Price Analysis and Forecasting</a><ul>
+<li class="chapter" data-level="2.1" data-path="introduction-to-commodity-price-analysis-and-forecasting.html"><a href="introduction-to-commodity-price-analysis-and-forecasting.html#introduction-1"><i class="fa fa-check"></i><b>2.1</b> Introduction</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="introduction-to-commodity-price-analysis-and-forecasting.html"><a href="introduction-to-commodity-price-analysis-and-forecasting.html#trasformation-over-space-time-and-form"><i class="fa fa-check"></i><b>2.1.1</b> Trasformation Over Space, Time, and Form</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="introduction-to-commodity-price-analysis-and-forecasting.html"><a href="introduction-to-commodity-price-analysis-and-forecasting.html#storable-and-nonstorable-commodities"><i class="fa fa-check"></i><b>2.2</b> Storable and Nonstorable Commodities</a></li>
+<li class="chapter" data-level="2.3" data-path="introduction-to-commodity-price-analysis-and-forecasting.html"><a href="introduction-to-commodity-price-analysis-and-forecasting.html#commodity-prices"><i class="fa fa-check"></i><b>2.3</b> Commodity Prices</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="introduction-to-commodity-price-analysis-and-forecasting.html"><a href="introduction-to-commodity-price-analysis-and-forecasting.html#forecasting-commodity-prices-in-business"><i class="fa fa-check"></i><b>2.3.1</b> Forecasting Commodity Prices in Business</a></li>
+<li class="chapter" data-level="2.3.2" data-path="introduction-to-commodity-price-analysis-and-forecasting.html"><a href="introduction-to-commodity-price-analysis-and-forecasting.html#price-analysis-versus-forecasting"><i class="fa fa-check"></i><b>2.3.2</b> Price Analysis versus Forecasting</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="introduction-to-commodity-price-analysis-and-forecasting.html"><a href="introduction-to-commodity-price-analysis-and-forecasting.html#forecasting-basics"><i class="fa fa-check"></i><b>2.4</b> Forecasting Basics</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="introduction-to-commodity-price-analysis-and-forecasting.html"><a href="introduction-to-commodity-price-analysis-and-forecasting.html#commodity-production-cycles"><i class="fa fa-check"></i><b>2.4.1</b> Commodity Production Cycles</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="introduction-to-commodity-price-analysis-and-forecasting.html"><a href="introduction-to-commodity-price-analysis-and-forecasting.html#long-term-agricultural-price-trends"><i class="fa fa-check"></i><b>2.5</b> Long Term Agricultural Price Trends</a></li>
+<li class="chapter" data-level="2.6" data-path="introduction-to-commodity-price-analysis-and-forecasting.html"><a href="introduction-to-commodity-price-analysis-and-forecasting.html#readings"><i class="fa fa-check"></i><b>2.6</b> Readings</a></li>
+<li class="chapter" data-level="2.7" data-path="introduction-to-commodity-price-analysis-and-forecasting.html"><a href="introduction-to-commodity-price-analysis-and-forecasting.html#exercises"><i class="fa fa-check"></i><b>2.7</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="how-to-find-information-about-commodity-markets.html"><a href="how-to-find-information-about-commodity-markets.html"><i class="fa fa-check"></i><b>3</b> How to Find Information about Commodity Markets</a><ul>
+<li class="chapter" data-level="3.1" data-path="how-to-find-information-about-commodity-markets.html"><a href="how-to-find-information-about-commodity-markets.html#introduction-2"><i class="fa fa-check"></i><b>3.1</b> Introduction</a></li>
+<li class="chapter" data-level="3.2" data-path="how-to-find-information-about-commodity-markets.html"><a href="how-to-find-information-about-commodity-markets.html#resources-for-market-commentary"><i class="fa fa-check"></i><b>3.2</b> Resources for Market Commentary</a></li>
+<li class="chapter" data-level="3.3" data-path="how-to-find-information-about-commodity-markets.html"><a href="how-to-find-information-about-commodity-markets.html#futures-contracts-as-sources-of-real-time-price-information"><i class="fa fa-check"></i><b>3.3</b> Futures Contracts as Sources of Real-time Price Information</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="how-to-find-information-about-commodity-markets.html"><a href="how-to-find-information-about-commodity-markets.html#futures-data-sources"><i class="fa fa-check"></i><b>3.3.1</b> Futures Data Sources</a></li>
+<li class="chapter" data-level="3.3.2" data-path="how-to-find-information-about-commodity-markets.html"><a href="how-to-find-information-about-commodity-markets.html#futures-symbols-and-looking-up-data-by-contract-expiration"><i class="fa fa-check"></i><b>3.3.2</b> Futures Symbols and Looking up Data by Contract Expiration</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="how-to-find-information-about-commodity-markets.html"><a href="how-to-find-information-about-commodity-markets.html#reports-and-data-from-the-usda"><i class="fa fa-check"></i><b>3.4</b> Reports and Data from the USDA</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="how-to-find-information-about-commodity-markets.html"><a href="how-to-find-information-about-commodity-markets.html#usda-reports-influential-in-commodity-markets"><i class="fa fa-check"></i><b>3.4.1</b> USDA Reports Influential in Commodity Markets</a></li>
+<li class="chapter" data-level="3.4.2" data-path="how-to-find-information-about-commodity-markets.html"><a href="how-to-find-information-about-commodity-markets.html#usda-data-sources"><i class="fa fa-check"></i><b>3.4.2</b> USDA Data Sources</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="how-to-find-information-about-commodity-markets.html"><a href="how-to-find-information-about-commodity-markets.html#conclusion"><i class="fa fa-check"></i><b>3.5</b> Conclusion</a></li>
+<li class="chapter" data-level="3.6" data-path="how-to-find-information-about-commodity-markets.html"><a href="how-to-find-information-about-commodity-markets.html#readings-1"><i class="fa fa-check"></i><b>3.6</b> Readings</a></li>
+<li class="chapter" data-level="3.7" data-path="how-to-find-information-about-commodity-markets.html"><a href="how-to-find-information-about-commodity-markets.html#exercises-1"><i class="fa fa-check"></i><b>3.7</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="futures-contracts-and-hedging-basics.html"><a href="futures-contracts-and-hedging-basics.html"><i class="fa fa-check"></i><b>4</b> Futures Contracts and Hedging Basics</a></li>
+<li class="chapter" data-level="5" data-path="prices-over-space-and-time.html"><a href="prices-over-space-and-time.html"><i class="fa fa-check"></i><b>5</b> Prices Over Space and Time</a><ul>
+<li class="chapter" data-level="5.1" data-path="prices-over-space-and-time.html"><a href="prices-over-space-and-time.html#introduction-3"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
+<li class="chapter" data-level="5.2" data-path="prices-over-space-and-time.html"><a href="prices-over-space-and-time.html#an-increasing-forward-curve"><i class="fa fa-check"></i><b>5.2</b> An Increasing Forward Curve</a></li>
+<li class="chapter" data-level="5.3" data-path="prices-over-space-and-time.html"><a href="prices-over-space-and-time.html#a-decreasing-forward-curve"><i class="fa fa-check"></i><b>5.3</b> A Decreasing Forward Curve</a></li>
+<li class="chapter" data-level="5.4" data-path="prices-over-space-and-time.html"><a href="prices-over-space-and-time.html#calendar-spreads-and-the-forward-curve"><i class="fa fa-check"></i><b>5.4</b> Calendar Spreads and the Forward Curve</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="prices-over-space-and-time.html"><a href="prices-over-space-and-time.html#bullish"><i class="fa fa-check"></i><b>5.4.1</b> Bullish</a></li>
+<li class="chapter" data-level="5.4.2" data-path="prices-over-space-and-time.html"><a href="prices-over-space-and-time.html#bearish"><i class="fa fa-check"></i><b>5.4.2</b> Bearish</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="prices-over-space-and-time.html"><a href="prices-over-space-and-time.html#price-variation-over-space"><i class="fa fa-check"></i><b>5.5</b> Price Variation Over Space</a></li>
+<li class="chapter" data-level="5.6" data-path="prices-over-space-and-time.html"><a href="prices-over-space-and-time.html#definition-of-basis"><i class="fa fa-check"></i><b>5.6</b> Definition of Basis</a></li>
+<li class="chapter" data-level="5.7" data-path="prices-over-space-and-time.html"><a href="prices-over-space-and-time.html#terminology"><i class="fa fa-check"></i><b>5.7</b> Terminology</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="fundamental-analysis-and-the-balance-sheet.html"><a href="fundamental-analysis-and-the-balance-sheet.html"><i class="fa fa-check"></i><b>6</b> Fundamental Analysis and the Balance Sheet</a><ul>
+<li class="chapter" data-level="6.1" data-path="fundamental-analysis-and-the-balance-sheet.html"><a href="fundamental-analysis-and-the-balance-sheet.html#introduction-4"><i class="fa fa-check"></i><b>6.1</b> Introduction</a></li>
+<li class="chapter" data-level="6.2" data-path="fundamental-analysis-and-the-balance-sheet.html"><a href="fundamental-analysis-and-the-balance-sheet.html#supply-and-demand"><i class="fa fa-check"></i><b>6.2</b> Supply and Demand</a></li>
+<li class="chapter" data-level="6.3" data-path="fundamental-analysis-and-the-balance-sheet.html"><a href="fundamental-analysis-and-the-balance-sheet.html#balance-sheet"><i class="fa fa-check"></i><b>6.3</b> Balance Sheet</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="fundamental-analysis-and-the-balance-sheet.html"><a href="fundamental-analysis-and-the-balance-sheet.html#the-marketing-year-and-balance-sheet-forecasting-schedule"><i class="fa fa-check"></i><b>6.3.1</b> The Marketing Year and Balance Sheet Forecasting Schedule</a></li>
+<li class="chapter" data-level="6.3.2" data-path="fundamental-analysis-and-the-balance-sheet.html"><a href="fundamental-analysis-and-the-balance-sheet.html#uncertainty"><i class="fa fa-check"></i><b>6.3.2</b> Uncertainty</a></li>
+<li class="chapter" data-level="6.3.3" data-path="fundamental-analysis-and-the-balance-sheet.html"><a href="fundamental-analysis-and-the-balance-sheet.html#balance-sheet-format"><i class="fa fa-check"></i><b>6.3.3</b> Balance Sheet Format</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="fundamental-analysis-and-the-balance-sheet.html"><a href="fundamental-analysis-and-the-balance-sheet.html#coming-up-with-a-price"><i class="fa fa-check"></i><b>6.4</b> Coming up with a Price</a></li>
+<li class="chapter" data-level="6.5" data-path="fundamental-analysis-and-the-balance-sheet.html"><a href="fundamental-analysis-and-the-balance-sheet.html#readings-2"><i class="fa fa-check"></i><b>6.5</b> Readings</a></li>
+<li class="chapter" data-level="6.6" data-path="fundamental-analysis-and-the-balance-sheet.html"><a href="fundamental-analysis-and-the-balance-sheet.html#exercises-2"><i class="fa fa-check"></i><b>6.6</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="price-reaction-to-usda-reports.html"><a href="price-reaction-to-usda-reports.html"><i class="fa fa-check"></i><b>7</b> Price Reaction to USDA Reports</a><ul>
+<li class="chapter" data-level="7.1" data-path="price-reaction-to-usda-reports.html"><a href="price-reaction-to-usda-reports.html#introduction-5"><i class="fa fa-check"></i><b>7.1</b> Introduction</a></li>
+<li class="chapter" data-level="7.2" data-path="price-reaction-to-usda-reports.html"><a href="price-reaction-to-usda-reports.html#history---the-great-data-leak-of-1905"><i class="fa fa-check"></i><b>7.2</b> History - “The Great Data Leak of 1905”</a></li>
+<li class="chapter" data-level="7.3" data-path="price-reaction-to-usda-reports.html"><a href="price-reaction-to-usda-reports.html#hitorical-timeline-of-report-release-times"><i class="fa fa-check"></i><b>7.3</b> Hitorical Timeline of Report Release Times</a></li>
+<li class="chapter" data-level="7.4" data-path="price-reaction-to-usda-reports.html"><a href="price-reaction-to-usda-reports.html#market-reactions-to-usda-reports-in-recent-history"><i class="fa fa-check"></i><b>7.4</b> Market Reactions to USDA Reports in Recent History</a><ul>
+<li class="chapter" data-level="7.4.1" data-path="price-reaction-to-usda-reports.html"><a href="price-reaction-to-usda-reports.html#some-examples-of-recent-big-market-reactions"><i class="fa fa-check"></i><b>7.4.1</b> Some Examples of Recent Big Market Reactions</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="price-reaction-to-usda-reports.html"><a href="price-reaction-to-usda-reports.html#conclusions"><i class="fa fa-check"></i><b>7.5</b> Conclusions</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="forecasting-production.html"><a href="forecasting-production.html"><i class="fa fa-check"></i><b>8</b> Forecasting Production</a><ul>
+<li class="chapter" data-level="8.1" data-path="forecasting-production.html"><a href="forecasting-production.html#introduction-6"><i class="fa fa-check"></i><b>8.1</b> Introduction</a></li>
+<li class="chapter" data-level="8.2" data-path="forecasting-production.html"><a href="forecasting-production.html#forecasting-production-1"><i class="fa fa-check"></i><b>8.2</b> Forecasting Production</a></li>
+<li class="chapter" data-level="8.3" data-path="forecasting-production.html"><a href="forecasting-production.html#estimating-acreage"><i class="fa fa-check"></i><b>8.3</b> Estimating Acreage</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="forecasting-production.html"><a href="forecasting-production.html#forecasting-harvested-acres"><i class="fa fa-check"></i><b>8.3.1</b> Forecasting Harvested Acres</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="forecasting-production.html"><a href="forecasting-production.html#forecasting-yield"><i class="fa fa-check"></i><b>8.4</b> Forecasting Yield</a></li>
+<li class="chapter" data-level="8.5" data-path="forecasting-production.html"><a href="forecasting-production.html#forecasting-yield-during-the-growing-season"><i class="fa fa-check"></i><b>8.5</b> Forecasting Yield during the Growing Season</a></li>
+<li class="chapter" data-level="8.6" data-path="forecasting-production.html"><a href="forecasting-production.html#forecasting-production-2"><i class="fa fa-check"></i><b>8.6</b> Forecasting Production</a></li>
+<li class="chapter" data-level="8.7" data-path="forecasting-production.html"><a href="forecasting-production.html#conclusion-1"><i class="fa fa-check"></i><b>8.7</b> Conclusion</a></li>
+<li class="chapter" data-level="8.8" data-path="forecasting-production.html"><a href="forecasting-production.html#exercises-3"><i class="fa fa-check"></i><b>8.8</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="forecasting-use-of-corn-in-the-wasde-balance-sheet.html"><a href="forecasting-use-of-corn-in-the-wasde-balance-sheet.html"><i class="fa fa-check"></i><b>9</b> Forecasting Use of Corn in the WASDE Balance Sheet</a><ul>
+<li class="chapter" data-level="9.1" data-path="forecasting-use-of-corn-in-the-wasde-balance-sheet.html"><a href="forecasting-use-of-corn-in-the-wasde-balance-sheet.html#introduction-7"><i class="fa fa-check"></i><b>9.1</b> Introduction</a></li>
+<li class="chapter" data-level="9.2" data-path="forecasting-use-of-corn-in-the-wasde-balance-sheet.html"><a href="forecasting-use-of-corn-in-the-wasde-balance-sheet.html#examining-historical-use-trends"><i class="fa fa-check"></i><b>9.2</b> Examining Historical Use Trends</a></li>
+<li class="chapter" data-level="9.3" data-path="forecasting-use-of-corn-in-the-wasde-balance-sheet.html"><a href="forecasting-use-of-corn-in-the-wasde-balance-sheet.html#corn-food-alcohol-and-industrial-use"><i class="fa fa-check"></i><b>9.3</b> Corn Food, Alcohol, and Industrial Use</a></li>
+<li class="chapter" data-level="9.4" data-path="forecasting-use-of-corn-in-the-wasde-balance-sheet.html"><a href="forecasting-use-of-corn-in-the-wasde-balance-sheet.html#corn-exports"><i class="fa fa-check"></i><b>9.4</b> Corn Exports</a></li>
+<li class="chapter" data-level="9.5" data-path="forecasting-use-of-corn-in-the-wasde-balance-sheet.html"><a href="forecasting-use-of-corn-in-the-wasde-balance-sheet.html#feed-and-residual"><i class="fa fa-check"></i><b>9.5</b> Feed, and Residual</a></li>
+<li class="chapter" data-level="9.6" data-path="forecasting-use-of-corn-in-the-wasde-balance-sheet.html"><a href="forecasting-use-of-corn-in-the-wasde-balance-sheet.html#ranking-use-categories-by-price-sensitivity"><i class="fa fa-check"></i><b>9.6</b> Ranking Use Categories by Price Sensitivity</a></li>
+<li class="chapter" data-level="9.7" data-path="forecasting-use-of-corn-in-the-wasde-balance-sheet.html"><a href="forecasting-use-of-corn-in-the-wasde-balance-sheet.html#forecasting-use-categories-during-the-marketing-year---pace-of-use-approach"><i class="fa fa-check"></i><b>9.7</b> Forecasting Use Categories During the Marketing Year - Pace of Use Approach</a><ul>
+<li class="chapter" data-level="9.7.1" data-path="forecasting-use-of-corn-in-the-wasde-balance-sheet.html"><a href="forecasting-use-of-corn-in-the-wasde-balance-sheet.html#food-seed-and-industrial"><i class="fa fa-check"></i><b>9.7.1</b> Food, Seed, and Industrial</a></li>
+<li class="chapter" data-level="9.7.2" data-path="forecasting-use-of-corn-in-the-wasde-balance-sheet.html"><a href="forecasting-use-of-corn-in-the-wasde-balance-sheet.html#exports"><i class="fa fa-check"></i><b>9.7.2</b> Exports</a></li>
+<li class="chapter" data-level="9.7.3" data-path="forecasting-use-of-corn-in-the-wasde-balance-sheet.html"><a href="forecasting-use-of-corn-in-the-wasde-balance-sheet.html#feed-and-residual-1"><i class="fa fa-check"></i><b>9.7.3</b> Feed and Residual</a></li>
+</ul></li>
+<li class="chapter" data-level="9.8" data-path="forecasting-use-of-corn-in-the-wasde-balance-sheet.html"><a href="forecasting-use-of-corn-in-the-wasde-balance-sheet.html#readings-3"><i class="fa fa-check"></i><b>9.8</b> Readings</a></li>
+<li class="chapter" data-level="9.9" data-path="forecasting-use-of-corn-in-the-wasde-balance-sheet.html"><a href="forecasting-use-of-corn-in-the-wasde-balance-sheet.html#exercises-4"><i class="fa fa-check"></i><b>9.9</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="forecasting-use-of-soybeans-in-the-wasde-balance-sheet.html"><a href="forecasting-use-of-soybeans-in-the-wasde-balance-sheet.html"><i class="fa fa-check"></i><b>10</b> Forecasting Use of Soybeans in the WASDE Balance Sheet</a><ul>
+<li class="chapter" data-level="10.1" data-path="forecasting-use-of-soybeans-in-the-wasde-balance-sheet.html"><a href="forecasting-use-of-soybeans-in-the-wasde-balance-sheet.html#introduction-8"><i class="fa fa-check"></i><b>10.1</b> Introduction</a></li>
+<li class="chapter" data-level="10.2" data-path="forecasting-use-of-soybeans-in-the-wasde-balance-sheet.html"><a href="forecasting-use-of-soybeans-in-the-wasde-balance-sheet.html#examining-historical-trends"><i class="fa fa-check"></i><b>10.2</b> Examining Historical Trends</a></li>
+<li class="chapter" data-level="10.3" data-path="forecasting-use-of-soybeans-in-the-wasde-balance-sheet.html"><a href="forecasting-use-of-soybeans-in-the-wasde-balance-sheet.html#soybean-crush"><i class="fa fa-check"></i><b>10.3</b> Soybean Crush</a></li>
+<li class="chapter" data-level="10.4" data-path="forecasting-use-of-soybeans-in-the-wasde-balance-sheet.html"><a href="forecasting-use-of-soybeans-in-the-wasde-balance-sheet.html#soybean-exports"><i class="fa fa-check"></i><b>10.4</b> Soybean Exports</a></li>
+<li class="chapter" data-level="10.5" data-path="forecasting-use-of-soybeans-in-the-wasde-balance-sheet.html"><a href="forecasting-use-of-soybeans-in-the-wasde-balance-sheet.html#soybean-feed-seed-and-residual"><i class="fa fa-check"></i><b>10.5</b> Soybean, Feed, Seed, and Residual</a></li>
+<li class="chapter" data-level="10.6" data-path="forecasting-use-of-soybeans-in-the-wasde-balance-sheet.html"><a href="forecasting-use-of-soybeans-in-the-wasde-balance-sheet.html#ranking-use-categories-by-price-sensitivity-1"><i class="fa fa-check"></i><b>10.6</b> Ranking Use Categories by Price Sensitivity</a></li>
+<li class="chapter" data-level="10.7" data-path="forecasting-use-of-soybeans-in-the-wasde-balance-sheet.html"><a href="forecasting-use-of-soybeans-in-the-wasde-balance-sheet.html#forecasting-use-categories-during-the-marketing-year---pace-of-use-approach-1"><i class="fa fa-check"></i><b>10.7</b> Forecasting Use Categories During the Marketing Year - Pace of Use Approach</a></li>
+<li class="chapter" data-level="10.8" data-path="forecasting-use-of-soybeans-in-the-wasde-balance-sheet.html"><a href="forecasting-use-of-soybeans-in-the-wasde-balance-sheet.html#readings-4"><i class="fa fa-check"></i><b>10.8</b> Readings</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="ending-stocks-and-generating-a-price-forecast-from-the-balance-sheet.html"><a href="ending-stocks-and-generating-a-price-forecast-from-the-balance-sheet.html"><i class="fa fa-check"></i><b>11</b> Ending Stocks and Generating a Price Forecast from the Balance Sheet</a><ul>
+<li class="chapter" data-level="11.1" data-path="ending-stocks-and-generating-a-price-forecast-from-the-balance-sheet.html"><a href="ending-stocks-and-generating-a-price-forecast-from-the-balance-sheet.html#introduction-9"><i class="fa fa-check"></i><b>11.1</b> Introduction</a></li>
+<li class="chapter" data-level="11.2" data-path="ending-stocks-and-generating-a-price-forecast-from-the-balance-sheet.html"><a href="ending-stocks-and-generating-a-price-forecast-from-the-balance-sheet.html#using-forecast-of-ending-stocks-to-forecast-price"><i class="fa fa-check"></i><b>11.2</b> Using Forecast of Ending Stocks to Forecast Price</a></li>
+<li class="chapter" data-level="11.3" data-path="ending-stocks-and-generating-a-price-forecast-from-the-balance-sheet.html"><a href="ending-stocks-and-generating-a-price-forecast-from-the-balance-sheet.html#a-closer-look-at-the-data"><i class="fa fa-check"></i><b>11.3</b> A Closer Look at the Data</a></li>
+<li class="chapter" data-level="11.4" data-path="ending-stocks-and-generating-a-price-forecast-from-the-balance-sheet.html"><a href="ending-stocks-and-generating-a-price-forecast-from-the-balance-sheet.html#references"><i class="fa fa-check"></i><b>11.4</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="the-soybean-crush.html"><a href="the-soybean-crush.html"><i class="fa fa-check"></i><b>12</b> The Soybean Crush</a><ul>
+<li class="chapter" data-level="12.1" data-path="the-soybean-crush.html"><a href="the-soybean-crush.html#introduction-10"><i class="fa fa-check"></i><b>12.1</b> Introduction</a></li>
+<li class="chapter" data-level="12.2" data-path="the-soybean-crush.html"><a href="the-soybean-crush.html#oilseed-processing"><i class="fa fa-check"></i><b>12.2</b> Oilseed Processing</a></li>
+<li class="chapter" data-level="12.3" data-path="the-soybean-crush.html"><a href="the-soybean-crush.html#soybean-oil-uses"><i class="fa fa-check"></i><b>12.3</b> Soybean Oil Uses</a></li>
+<li class="chapter" data-level="12.4" data-path="the-soybean-crush.html"><a href="the-soybean-crush.html#soybean-meal-uses"><i class="fa fa-check"></i><b>12.4</b> Soybean Meal Uses</a></li>
+<li class="chapter" data-level="12.5" data-path="the-soybean-crush.html"><a href="the-soybean-crush.html#price-relationships"><i class="fa fa-check"></i><b>12.5</b> Price Relationships</a></li>
+<li class="chapter" data-level="12.6" data-path="the-soybean-crush.html"><a href="the-soybean-crush.html#the-board-crush"><i class="fa fa-check"></i><b>12.6</b> The Board Crush</a><ul>
+<li class="chapter" data-level="12.6.1" data-path="the-soybean-crush.html"><a href="the-soybean-crush.html#the-1-1-1-spread"><i class="fa fa-check"></i><b>12.6.1</b> The 1-1-1 Spread</a></li>
+<li class="chapter" data-level="12.6.2" data-path="the-soybean-crush.html"><a href="the-soybean-crush.html#the-9-11-10-spread"><i class="fa fa-check"></i><b>12.6.2</b> The 9-11-10 Spread</a></li>
+</ul></li>
+<li class="chapter" data-level="12.7" data-path="the-soybean-crush.html"><a href="the-soybean-crush.html#readings-5"><i class="fa fa-check"></i><b>12.7</b> Readings</a></li>
+<li class="chapter" data-level="12.8" data-path="the-soybean-crush.html"><a href="the-soybean-crush.html#references-1"><i class="fa fa-check"></i><b>12.8</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="ethanol-markets-and-the-corn-crush-spread.html"><a href="ethanol-markets-and-the-corn-crush-spread.html"><i class="fa fa-check"></i><b>13</b> Ethanol Markets and the Corn Crush Spread</a><ul>
+<li class="chapter" data-level="13.1" data-path="ethanol-markets-and-the-corn-crush-spread.html"><a href="ethanol-markets-and-the-corn-crush-spread.html#introduction-11"><i class="fa fa-check"></i><b>13.1</b> Introduction</a></li>
+<li class="chapter" data-level="13.2" data-path="ethanol-markets-and-the-corn-crush-spread.html"><a href="ethanol-markets-and-the-corn-crush-spread.html#ethanol-productionwikiinfo"><i class="fa fa-check"></i><b>13.2</b> Ethanol Production</a><ul>
+<li class="chapter" data-level="13.2.1" data-path="ethanol-markets-and-the-corn-crush-spread.html"><a href="ethanol-markets-and-the-corn-crush-spread.html#dry-grind-ethanol-production"><i class="fa fa-check"></i><b>13.2.1</b> Dry Grind Ethanol Production</a></li>
+<li class="chapter" data-level="13.2.2" data-path="ethanol-markets-and-the-corn-crush-spread.html"><a href="ethanol-markets-and-the-corn-crush-spread.html#wet-grind-ethanol-production"><i class="fa fa-check"></i><b>13.2.2</b> Wet Grind Ethanol Production</a></li>
+</ul></li>
+<li class="chapter" data-level="13.3" data-path="ethanol-markets-and-the-corn-crush-spread.html"><a href="ethanol-markets-and-the-corn-crush-spread.html#distillers-grains-a-by-product-used-for-livestock-feed"><i class="fa fa-check"></i><b>13.3</b> Distiller’s Grains: A by Product Used for Livestock Feed</a><ul>
+<li class="chapter" data-level="13.3.1" data-path="ethanol-markets-and-the-corn-crush-spread.html"><a href="ethanol-markets-and-the-corn-crush-spread.html#ddg-prices"><i class="fa fa-check"></i><b>13.3.1</b> DDG Prices</a></li>
+</ul></li>
+<li class="chapter" data-level="13.4" data-path="ethanol-markets-and-the-corn-crush-spread.html"><a href="ethanol-markets-and-the-corn-crush-spread.html#ethanol-prices"><i class="fa fa-check"></i><b>13.4</b> Ethanol Prices</a></li>
+<li class="chapter" data-level="13.5" data-path="ethanol-markets-and-the-corn-crush-spread.html"><a href="ethanol-markets-and-the-corn-crush-spread.html#ethanol-and-gasoline-price-relationship"><i class="fa fa-check"></i><b>13.5</b> Ethanol and Gasoline Price Relationship</a></li>
+<li class="chapter" data-level="13.6" data-path="ethanol-markets-and-the-corn-crush-spread.html"><a href="ethanol-markets-and-the-corn-crush-spread.html#ethanol-corn-ddgs-and-natural-gas-price-relationship"><i class="fa fa-check"></i><b>13.6</b> Ethanol, Corn, DDGS, and Natural Gas Price Relationship</a></li>
+<li class="chapter" data-level="13.7" data-path="ethanol-markets-and-the-corn-crush-spread.html"><a href="ethanol-markets-and-the-corn-crush-spread.html#price-relationships-1"><i class="fa fa-check"></i><b>13.7</b> Price Relationships</a></li>
+<li class="chapter" data-level="13.8" data-path="ethanol-markets-and-the-corn-crush-spread.html"><a href="ethanol-markets-and-the-corn-crush-spread.html#hedging-the-ethanol-crush-spread"><i class="fa fa-check"></i><b>13.8</b> Hedging the Ethanol Crush Spread</a></li>
+<li class="chapter" data-level="13.9" data-path="ethanol-markets-and-the-corn-crush-spread.html"><a href="ethanol-markets-and-the-corn-crush-spread.html#cross-hedging"><i class="fa fa-check"></i><b>13.9</b> Cross Hedging</a></li>
+<li class="chapter" data-level="13.10" data-path="ethanol-markets-and-the-corn-crush-spread.html"><a href="ethanol-markets-and-the-corn-crush-spread.html#minimize-the-variance-of-cash-flow-with-optimal-hedge-ratio-for-ddgs-and-corn-futures"><i class="fa fa-check"></i><b>13.10</b> Minimize the Variance of Cash Flow with Optimal Hedge Ratio for DDGs and Corn Futures</a></li>
+<li class="chapter" data-level="13.11" data-path="ethanol-markets-and-the-corn-crush-spread.html"><a href="ethanol-markets-and-the-corn-crush-spread.html#using-corn-futures-to-cross-hedge-ddg-sales"><i class="fa fa-check"></i><b>13.11</b> Using Corn Futures to Cross Hedge DDG Sales</a></li>
+<li class="chapter" data-level="13.12" data-path="ethanol-markets-and-the-corn-crush-spread.html"><a href="ethanol-markets-and-the-corn-crush-spread.html#readings-6"><i class="fa fa-check"></i><b>13.12</b> Readings</a></li>
+<li class="chapter" data-level="13.13" data-path="ethanol-markets-and-the-corn-crush-spread.html"><a href="ethanol-markets-and-the-corn-crush-spread.html#exercises-5"><i class="fa fa-check"></i><b>13.13</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="beef-cattle-markets-and-the-livestock-crush.html"><a href="beef-cattle-markets-and-the-livestock-crush.html"><i class="fa fa-check"></i><b>14</b> Beef Cattle Markets and the Livestock Crush</a><ul>
+<li class="chapter" data-level="14.1" data-path="beef-cattle-markets-and-the-livestock-crush.html"><a href="beef-cattle-markets-and-the-livestock-crush.html#introduction-12"><i class="fa fa-check"></i><b>14.1</b> Introduction</a></li>
+<li class="chapter" data-level="14.2" data-path="beef-cattle-markets-and-the-livestock-crush.html"><a href="beef-cattle-markets-and-the-livestock-crush.html#beef-cattle-production"><i class="fa fa-check"></i><b>14.2</b> Beef Cattle Production</a></li>
+<li class="chapter" data-level="14.3" data-path="beef-cattle-markets-and-the-livestock-crush.html"><a href="beef-cattle-markets-and-the-livestock-crush.html#the-cow-calf-operation"><i class="fa fa-check"></i><b>14.3</b> The Cow-Calf Operation</a><ul>
+<li class="chapter" data-level="14.3.1" data-path="beef-cattle-markets-and-the-livestock-crush.html"><a href="beef-cattle-markets-and-the-livestock-crush.html#calandar-of-production-for-the-cow-calf-producer"><i class="fa fa-check"></i><b>14.3.1</b> Calandar of Production for the Cow-calf Producer</a></li>
+</ul></li>
+<li class="chapter" data-level="14.4" data-path="beef-cattle-markets-and-the-livestock-crush.html"><a href="beef-cattle-markets-and-the-livestock-crush.html#the-backgrounderstocker-operation"><i class="fa fa-check"></i><b>14.4</b> The Backgrounder/Stocker Operation</a><ul>
+<li class="chapter" data-level="14.4.1" data-path="beef-cattle-markets-and-the-livestock-crush.html"><a href="beef-cattle-markets-and-the-livestock-crush.html#bull-or-heifer-calf"><i class="fa fa-check"></i><b>14.4.1</b> Bull or Heifer Calf?</a></li>
+<li class="chapter" data-level="14.4.2" data-path="beef-cattle-markets-and-the-livestock-crush.html"><a href="beef-cattle-markets-and-the-livestock-crush.html#weight-of-calves"><i class="fa fa-check"></i><b>14.4.2</b> Weight of Calves</a></li>
+</ul></li>
+<li class="chapter" data-level="14.5" data-path="beef-cattle-markets-and-the-livestock-crush.html"><a href="beef-cattle-markets-and-the-livestock-crush.html#the-large-feedlot-operation-beefcheckoff"><i class="fa fa-check"></i><b>14.5</b> The Large Feedlot Operation</a></li>
+<li class="chapter" data-level="14.6" data-path="beef-cattle-markets-and-the-livestock-crush.html"><a href="beef-cattle-markets-and-the-livestock-crush.html#beef-packing-plants"><i class="fa fa-check"></i><b>14.6</b> Beef Packing Plants</a></li>
+<li class="chapter" data-level="14.7" data-path="beef-cattle-markets-and-the-livestock-crush.html"><a href="beef-cattle-markets-and-the-livestock-crush.html#cattle-auction-at-the-sale-barn"><i class="fa fa-check"></i><b>14.7</b> Cattle Auction at ‘The Sale Barn’</a></li>
+<li class="chapter" data-level="14.8" data-path="beef-cattle-markets-and-the-livestock-crush.html"><a href="beef-cattle-markets-and-the-livestock-crush.html#the-cattle-crush-futures-spread"><i class="fa fa-check"></i><b>14.8</b> The Cattle Crush Futures Spread</a><ul>
+<li class="chapter" data-level="14.8.1" data-path="beef-cattle-markets-and-the-livestock-crush.html"><a href="beef-cattle-markets-and-the-livestock-crush.html#details-of-the-spreadcattlespread"><i class="fa fa-check"></i><b>14.8.1</b> Details of the Spread</a></li>
+</ul></li>
+<li class="chapter" data-level="14.9" data-path="beef-cattle-markets-and-the-livestock-crush.html"><a href="beef-cattle-markets-and-the-livestock-crush.html#external-readings"><i class="fa fa-check"></i><b>14.9</b> External Readings</a></li>
+<li class="chapter" data-level="14.10" data-path="beef-cattle-markets-and-the-livestock-crush.html"><a href="beef-cattle-markets-and-the-livestock-crush.html#exercise"><i class="fa fa-check"></i><b>14.10</b> Exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="hog-markets.html"><a href="hog-markets.html"><i class="fa fa-check"></i><b>15</b> Hog Markets</a><ul>
+<li class="chapter" data-level="15.1" data-path="hog-markets.html"><a href="hog-markets.html#introduction-13"><i class="fa fa-check"></i><b>15.1</b> Introduction</a></li>
+<li class="chapter" data-level="15.2" data-path="hog-markets.html"><a href="hog-markets.html#definitions"><i class="fa fa-check"></i><b>15.2</b> Definitions</a></li>
+<li class="chapter" data-level="15.3" data-path="hog-markets.html"><a href="hog-markets.html#gestation-and-farrowing"><i class="fa fa-check"></i><b>15.3</b> Gestation and Farrowing</a></li>
+<li class="chapter" data-level="15.4" data-path="hog-markets.html"><a href="hog-markets.html#feeding"><i class="fa fa-check"></i><b>15.4</b> Feeding</a></li>
+<li class="chapter" data-level="15.5" data-path="hog-markets.html"><a href="hog-markets.html#waste-management"><i class="fa fa-check"></i><b>15.5</b> Waste Management</a></li>
+<li class="chapter" data-level="15.6" data-path="hog-markets.html"><a href="hog-markets.html#geography-of-hog-production"><i class="fa fa-check"></i><b>15.6</b> Geography of Hog Production</a></li>
+<li class="chapter" data-level="15.7" data-path="hog-markets.html"><a href="hog-markets.html#industry-structure"><i class="fa fa-check"></i><b>15.7</b> Industry Structure</a></li>
+<li class="chapter" data-level="15.8" data-path="hog-markets.html"><a href="hog-markets.html#price-determination"><i class="fa fa-check"></i><b>15.8</b> Price Determination</a></li>
+<li class="chapter" data-level="15.9" data-path="hog-markets.html"><a href="hog-markets.html#lean-hogs-futures"><i class="fa fa-check"></i><b>15.9</b> Lean Hogs Futures</a></li>
+<li class="chapter" data-level="15.10" data-path="hog-markets.html"><a href="hog-markets.html#why-only-one-contract-instead-of-two-like-feeder-and-live-cattle"><i class="fa fa-check"></i><b>15.10</b> Why only one Contract Instead of Two like Feeder and Live Cattle?</a><ul>
+<li class="chapter" data-level="15.10.1" data-path="hog-markets.html"><a href="hog-markets.html#demise-of-the-frozen-pork-belly-futures-contracts"><i class="fa fa-check"></i><b>15.10.1</b> Demise of the Frozen Pork Belly Futures Contracts</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="crude-oil-and-the-crack-spread.html"><a href="crude-oil-and-the-crack-spread.html"><i class="fa fa-check"></i><b>16</b> Crude Oil and the Crack Spread</a><ul>
+<li class="chapter" data-level="16.1" data-path="crude-oil-and-the-crack-spread.html"><a href="crude-oil-and-the-crack-spread.html#introduction-14"><i class="fa fa-check"></i><b>16.1</b> Introduction</a></li>
+<li class="chapter" data-level="16.2" data-path="crude-oil-and-the-crack-spread.html"><a href="crude-oil-and-the-crack-spread.html#classifying-crude-oil-light-versus-heavy-and-sweet-versus-sour"><i class="fa fa-check"></i><b>16.2</b> Classifying Crude Oil: Light versus Heavy and Sweet versus Sour</a><ul>
+<li class="chapter" data-level="16.2.1" data-path="crude-oil-and-the-crack-spread.html"><a href="crude-oil-and-the-crack-spread.html#light-sweet-wti-and-brent-crude-oil"><i class="fa fa-check"></i><b>16.2.1</b> Light, Sweet: WTI and Brent Crude Oil</a></li>
+</ul></li>
+<li class="chapter" data-level="16.3" data-path="crude-oil-and-the-crack-spread.html"><a href="crude-oil-and-the-crack-spread.html#refining-crude-oil"><i class="fa fa-check"></i><b>16.3</b> Refining Crude Oil</a><ul>
+<li class="chapter" data-level="16.3.1" data-path="crude-oil-and-the-crack-spread.html"><a href="crude-oil-and-the-crack-spread.html#gasoline"><i class="fa fa-check"></i><b>16.3.1</b> Gasoline</a></li>
+<li class="chapter" data-level="16.3.2" data-path="crude-oil-and-the-crack-spread.html"><a href="crude-oil-and-the-crack-spread.html#distillates-diesel-heating-oil-jet-fuel-kerosene"><i class="fa fa-check"></i><b>16.3.2</b> Distillates: Diesel, Heating Oil, Jet Fuel, Kerosene</a></li>
+</ul></li>
+<li class="chapter" data-level="16.4" data-path="crude-oil-and-the-crack-spread.html"><a href="crude-oil-and-the-crack-spread.html#historical-price-trends"><i class="fa fa-check"></i><b>16.4</b> Historical Price Trends</a></li>
+<li class="chapter" data-level="16.5" data-path="crude-oil-and-the-crack-spread.html"><a href="crude-oil-and-the-crack-spread.html#fundamental-factors-important-for-price-analysis"><i class="fa fa-check"></i><b>16.5</b> Fundamental Factors Important for Price Analysis</a><ul>
+<li class="chapter" data-level="16.5.1" data-path="crude-oil-and-the-crack-spread.html"><a href="crude-oil-and-the-crack-spread.html#production-of-crude-gasoline-and-distillates"><i class="fa fa-check"></i><b>16.5.1</b> Production of Crude, Gasoline, and Distillates</a></li>
+<li class="chapter" data-level="16.5.2" data-path="crude-oil-and-the-crack-spread.html"><a href="crude-oil-and-the-crack-spread.html#inventories-of-crude-gasoline-and-distillates"><i class="fa fa-check"></i><b>16.5.2</b> Inventories of Crude, Gasoline, and Distillates</a></li>
+<li class="chapter" data-level="16.5.3" data-path="crude-oil-and-the-crack-spread.html"><a href="crude-oil-and-the-crack-spread.html#geopolitical-events"><i class="fa fa-check"></i><b>16.5.3</b> Geopolitical Events</a></li>
+</ul></li>
+<li class="chapter" data-level="16.6" data-path="crude-oil-and-the-crack-spread.html"><a href="crude-oil-and-the-crack-spread.html#the-crack-spread"><i class="fa fa-check"></i><b>16.6</b> The Crack Spread</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="economic-data-and-principles-of-visualization.html"><a href="economic-data-and-principles-of-visualization.html"><i class="fa fa-check"></i><b>17</b> Economic Data and Principles of Visualization</a><ul>
+<li class="chapter" data-level="17.1" data-path="economic-data-and-principles-of-visualization.html"><a href="economic-data-and-principles-of-visualization.html#introduction-15"><i class="fa fa-check"></i><b>17.1</b> Introduction</a></li>
+<li class="chapter" data-level="17.2" data-path="economic-data-and-principles-of-visualization.html"><a href="economic-data-and-principles-of-visualization.html#data-preparation"><i class="fa fa-check"></i><b>17.2</b> Data Preparation</a><ul>
+<li class="chapter" data-level="17.2.1" data-path="economic-data-and-principles-of-visualization.html"><a href="economic-data-and-principles-of-visualization.html#data-cleaning"><i class="fa fa-check"></i><b>17.2.1</b> Data Cleaning</a></li>
+<li class="chapter" data-level="17.2.2" data-path="economic-data-and-principles-of-visualization.html"><a href="economic-data-and-principles-of-visualization.html#misinterpretation-of-data"><i class="fa fa-check"></i><b>17.2.2</b> Misinterpretation of Data</a></li>
+</ul></li>
+<li class="chapter" data-level="17.3" data-path="economic-data-and-principles-of-visualization.html"><a href="economic-data-and-principles-of-visualization.html#graphics"><i class="fa fa-check"></i><b>17.3</b> Graphics</a></li>
+<li class="chapter" data-level="17.4" data-path="economic-data-and-principles-of-visualization.html"><a href="economic-data-and-principles-of-visualization.html#univariate-graphical-techniques"><i class="fa fa-check"></i><b>17.4</b> Univariate Graphical Techniques</a></li>
+<li class="chapter" data-level="17.5" data-path="economic-data-and-principles-of-visualization.html"><a href="economic-data-and-principles-of-visualization.html#multivariate-graphical-techniques"><i class="fa fa-check"></i><b>17.5</b> Multivariate Graphical Techniques</a></li>
+<li class="chapter" data-level="17.6" data-path="economic-data-and-principles-of-visualization.html"><a href="economic-data-and-principles-of-visualization.html#elements-of-graphical-style"><i class="fa fa-check"></i><b>17.6</b> Elements of Graphical Style</a><ul>
+<li class="chapter" data-level="17.6.1" data-path="economic-data-and-principles-of-visualization.html"><a href="economic-data-and-principles-of-visualization.html#keys-to-good-graphics"><i class="fa fa-check"></i><b>17.6.1</b> Keys to Good Graphics</a></li>
+<li class="chapter" data-level="17.6.2" data-path="economic-data-and-principles-of-visualization.html"><a href="economic-data-and-principles-of-visualization.html#stand-alone-requirements"><i class="fa fa-check"></i><b>17.6.2</b> Stand-Alone Requirements</a></li>
+</ul></li>
+<li class="chapter" data-level="17.7" data-path="economic-data-and-principles-of-visualization.html"><a href="economic-data-and-principles-of-visualization.html#examples-of-improving-the-graphical-presentation"><i class="fa fa-check"></i><b>17.7</b> Examples of Improving the Graphical Presentation</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="introduction-to-commodity-price-analysis-and-forecasting-with-time-series-econometric-models.html"><a href="introduction-to-commodity-price-analysis-and-forecasting-with-time-series-econometric-models.html"><i class="fa fa-check"></i><b>18</b> Introduction to Commodity Price Analysis and Forecasting with Time-series Econometric Models</a><ul>
+<li class="chapter" data-level="18.1" data-path="introduction-to-commodity-price-analysis-and-forecasting-with-time-series-econometric-models.html"><a href="introduction-to-commodity-price-analysis-and-forecasting-with-time-series-econometric-models.html#introduction-16"><i class="fa fa-check"></i><b>18.1</b> Introduction</a></li>
+<li class="chapter" data-level="18.2" data-path="introduction-to-commodity-price-analysis-and-forecasting-with-time-series-econometric-models.html"><a href="introduction-to-commodity-price-analysis-and-forecasting-with-time-series-econometric-models.html#constructing-a-series-of-nearby-futures-prices"><i class="fa fa-check"></i><b>18.2</b> Constructing a Series of ‘Nearby’ Futures Prices</a><ul>
+<li class="chapter" data-level="18.2.1" data-path="introduction-to-commodity-price-analysis-and-forecasting-with-time-series-econometric-models.html"><a href="introduction-to-commodity-price-analysis-and-forecasting-with-time-series-econometric-models.html#trading-volume-as-contract-maturity-approaches"><i class="fa fa-check"></i><b>18.2.1</b> Trading Volume as Contract Maturity Approaches</a></li>
+<li class="chapter" data-level="18.2.2" data-path="introduction-to-commodity-price-analysis-and-forecasting-with-time-series-econometric-models.html"><a href="introduction-to-commodity-price-analysis-and-forecasting-with-time-series-econometric-models.html#when-to-roll-to-the-next-to-expire"><i class="fa fa-check"></i><b>18.2.2</b> When to Roll to the Next-to-Expire?</a></li>
+</ul></li>
+<li class="chapter" data-level="18.3" data-path="introduction-to-commodity-price-analysis-and-forecasting-with-time-series-econometric-models.html"><a href="introduction-to-commodity-price-analysis-and-forecasting-with-time-series-econometric-models.html#basics-of-time-series-forecasting"><i class="fa fa-check"></i><b>18.3</b> Basics of Time-Series Forecasting</a></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="properties-of-time-series-data.html"><a href="properties-of-time-series-data.html"><i class="fa fa-check"></i><b>19</b> Properties of Time-Series Data</a><ul>
+<li class="chapter" data-level="19.1" data-path="properties-of-time-series-data.html"><a href="properties-of-time-series-data.html#trends"><i class="fa fa-check"></i><b>19.1</b> Trends</a></li>
+<li class="chapter" data-level="19.2" data-path="properties-of-time-series-data.html"><a href="properties-of-time-series-data.html#inflation"><i class="fa fa-check"></i><b>19.2</b> Inflation</a></li>
+<li class="chapter" data-level="19.3" data-path="properties-of-time-series-data.html"><a href="properties-of-time-series-data.html#seasonality"><i class="fa fa-check"></i><b>19.3</b> Seasonality</a></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="random-walk-model-and-stationarity.html"><a href="random-walk-model-and-stationarity.html"><i class="fa fa-check"></i><b>20</b> Random Walk Model and Stationarity</a><ul>
+<li class="chapter" data-level="20.0.1" data-path="random-walk-model-and-stationarity.html"><a href="random-walk-model-and-stationarity.html#the-log-normal-price-model."><i class="fa fa-check"></i><b>20.0.1</b> The Log-normal Price Model.</a></li>
+<li class="chapter" data-level="20.0.2" data-path="random-walk-model-and-stationarity.html"><a href="random-walk-model-and-stationarity.html#efficient-market-hypothesis"><i class="fa fa-check"></i><b>20.0.2</b> Efficient Market Hypothesis</a></li>
+<li class="chapter" data-level="20.0.3" data-path="random-walk-model-and-stationarity.html"><a href="random-walk-model-and-stationarity.html#exercises-6"><i class="fa fa-check"></i><b>20.0.3</b> Exercises</a></li>
+<li class="chapter" data-level="20.0.4" data-path="random-walk-model-and-stationarity.html"><a href="random-walk-model-and-stationarity.html#references-2"><i class="fa fa-check"></i><b>20.0.4</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="basic-statistics-and-linear-regression-review.html"><a href="basic-statistics-and-linear-regression-review.html"><i class="fa fa-check"></i><b>21</b> Basic Statistics and Linear Regression Review</a><ul>
+<li class="chapter" data-level="21.1" data-path="basic-statistics-and-linear-regression-review.html"><a href="basic-statistics-and-linear-regression-review.html#introduction-17"><i class="fa fa-check"></i><b>21.1</b> Introduction</a></li>
+<li class="chapter" data-level="21.2" data-path="basic-statistics-and-linear-regression-review.html"><a href="basic-statistics-and-linear-regression-review.html#statistics"><i class="fa fa-check"></i><b>21.2</b> Statistics</a><ul>
+<li class="chapter" data-level="21.2.1" data-path="basic-statistics-and-linear-regression-review.html"><a href="basic-statistics-and-linear-regression-review.html#measures-of-central-tendency"><i class="fa fa-check"></i><b>21.2.1</b> Measures of Central Tendency</a></li>
+<li class="chapter" data-level="21.2.2" data-path="basic-statistics-and-linear-regression-review.html"><a href="basic-statistics-and-linear-regression-review.html#measures-of-dispersion"><i class="fa fa-check"></i><b>21.2.2</b> Measures of Dispersion</a></li>
+<li class="chapter" data-level="21.2.3" data-path="basic-statistics-and-linear-regression-review.html"><a href="basic-statistics-and-linear-regression-review.html#statistics-for-the-relationship-between-two-variables"><i class="fa fa-check"></i><b>21.2.3</b> Statistics for the Relationship <em>between</em> Two Variables</a></li>
+</ul></li>
+<li class="chapter" data-level="21.3" data-path="basic-statistics-and-linear-regression-review.html"><a href="basic-statistics-and-linear-regression-review.html#correlation-does-not-imply-causation"><i class="fa fa-check"></i><b>21.3</b> Correlation Does <em>Not</em> Imply Causation</a></li>
+<li class="chapter" data-level="21.4" data-path="basic-statistics-and-linear-regression-review.html"><a href="basic-statistics-and-linear-regression-review.html#review-of-linear-regression"><i class="fa fa-check"></i><b>21.4</b> Review of Linear Regression</a><ul>
+<li class="chapter" data-level="21.4.1" data-path="basic-statistics-and-linear-regression-review.html"><a href="basic-statistics-and-linear-regression-review.html#how-are-regression-coefficients-calculated"><i class="fa fa-check"></i><b>21.4.1</b> How are Regression Coefficients Calculated?</a></li>
+<li class="chapter" data-level="21.4.2" data-path="basic-statistics-and-linear-regression-review.html"><a href="basic-statistics-and-linear-regression-review.html#evaluating-regression-model-fit-with-r2"><i class="fa fa-check"></i><b>21.4.2</b> Evaluating Regression Model ‘Fit’ with <span class="math inline">\(R^2\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="21.5" data-path="basic-statistics-and-linear-regression-review.html"><a href="basic-statistics-and-linear-regression-review.html#hypothesis-testing-review"><i class="fa fa-check"></i><b>21.5</b> Hypothesis Testing Review</a></li>
+<li class="chapter" data-level="21.6" data-path="basic-statistics-and-linear-regression-review.html"><a href="basic-statistics-and-linear-regression-review.html#stationarity-and-spurious-regression"><i class="fa fa-check"></i><b>21.6</b> Stationarity and Spurious Regression</a></li>
+<li class="chapter" data-level="21.7" data-path="basic-statistics-and-linear-regression-review.html"><a href="basic-statistics-and-linear-regression-review.html#exercises-7"><i class="fa fa-check"></i><b>21.7</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="22" data-path="introduction-to-single-market-models-arima.html"><a href="introduction-to-single-market-models-arima.html"><i class="fa fa-check"></i><b>22</b> Introduction to Single Market Models: ARIMA</a><ul>
+<li class="chapter" data-level="22.1" data-path="introduction-to-single-market-models-arima.html"><a href="introduction-to-single-market-models-arima.html#introduction-18"><i class="fa fa-check"></i><b>22.1</b> Introduction</a></li>
+<li class="chapter" data-level="22.2" data-path="introduction-to-single-market-models-arima.html"><a href="introduction-to-single-market-models-arima.html#integrated-or-not"><i class="fa fa-check"></i><b>22.2</b> Integrated or Not?</a></li>
+<li class="chapter" data-level="22.3" data-path="introduction-to-single-market-models-arima.html"><a href="introduction-to-single-market-models-arima.html#autoregressive-of-order-p-arp-models"><i class="fa fa-check"></i><b>22.3</b> Autoregressive of Order <span class="math inline">\(p\)</span>, <span class="math inline">\(AR(p)\)</span>, Models</a><ul>
+<li class="chapter" data-level="22.3.1" data-path="introduction-to-single-market-models-arima.html"><a href="introduction-to-single-market-models-arima.html#the-arp-model"><i class="fa fa-check"></i><b>22.3.1</b> The <span class="math inline">\(AR(p)\)</span> Model</a></li>
+</ul></li>
+<li class="chapter" data-level="22.4" data-path="introduction-to-single-market-models-arima.html"><a href="introduction-to-single-market-models-arima.html#moving-average-of-order-q-maq-models"><i class="fa fa-check"></i><b>22.4</b> Moving Average of Order <span class="math inline">\(q\)</span>, <span class="math inline">\(MA(q)\)</span>, Models</a><ul>
+<li class="chapter" data-level="22.4.1" data-path="introduction-to-single-market-models-arima.html"><a href="introduction-to-single-market-models-arima.html#guesing-the-theta_i-and-minimising-the-sum-of-squared-residuals"><i class="fa fa-check"></i><b>22.4.1</b> Guesing the <span class="math inline">\(\theta_i\)</span> and Minimising the Sum of Squared Residuals</a></li>
+</ul></li>
+<li class="chapter" data-level="22.5" data-path="introduction-to-single-market-models-arima.html"><a href="introduction-to-single-market-models-arima.html#how-to-determine-the-number-of-lags"><i class="fa fa-check"></i><b>22.5</b> How to Determine the Number of Lags</a></li>
+<li class="chapter" data-level="22.6" data-path="introduction-to-single-market-models-arima.html"><a href="introduction-to-single-market-models-arima.html#dealing-with-seasonality"><i class="fa fa-check"></i><b>22.6</b> Dealing with Seasonality</a></li>
+<li class="chapter" data-level="22.7" data-path="introduction-to-single-market-models-arima.html"><a href="introduction-to-single-market-models-arima.html#caculating-forecast-values"><i class="fa fa-check"></i><b>22.7</b> Caculating Forecast Values</a></li>
+</ul></li>
+<li class="divider"></li>
+<ul>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a> </li>
+<li> &copy Mindy L. Mallory 2017</li>
+</ul>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Price Analysis: A Fundamental Approach to the Study of Commodity Prices</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="random-walk-model-and-stationarity" class="section level1">
+<h1><span class="header-section-number">Chapter 20</span> Random Walk Model and Stationarity</h1>
+<p>Price series often seem to follow a random walk. That is, the price at <span class="math inline">\(t+1\)</span> appears to be a random deviation from the price at time <span class="math inline">\(t\)</span>. More formally,</p>
+<ol start="3" style="list-style-type: decimal">
+<li><span class="math inline">\(p_{t+1} = p_{t} + \epsilon_t\)</span></li>
+</ol>
+<p>Using Excel’s random number generator I drew 1,000 draws from a Standard Normal distribution and simulated a series of prices with the equation above and assuming a <span class="math inline">\(p_0\)</span> of $20.00. The random draws and the simulated price path are shown in figure 6 and 7.</p>
+<div class="figure">
+<img src="Excel-files/IntroductiontoCommodityTS-random_walk_files/image003.png" alt="Figure 6: Draws from a Standard Normal Distribution (n=1,000)" />
+<p class="caption">Figure 6: Draws from a Standard Normal Distribution (n=1,000)</p>
+</div>
+<div class="figure">
+<img src="Excel-files/IntroductiontoCommodityTS-random_walk_files/image001.png" alt="Figure 7: Simulated Random Walk of Prices (p_0 = \$20.00)" />
+<p class="caption">Figure 7: Simulated Random Walk of Prices (<span class="math inline">\(p_0 = \$20.00\)</span>)</p>
+</div>
+<p>If this is a reasonable model for how prices evolve, it will be a problem to estimate a regression model where we regress current prices on past prices. The random walk equation clearly shows that the distribution of <span class="math inline">\(\epsilon_t\)</span> depends on the current price, which is not constant over time. The simulated price series in figure 6 is definitely not stationary.</p>
+<p>However, it is clear that the first difference of prices from the random walk equation above is stationary. The error term is just draws from the standard normal distribution in this case (Shown in figure 7).</p>
+<ol start="4" style="list-style-type: decimal">
+<li><span class="math inline">\(p_{t+1} - p_{t} = \epsilon_t\)</span></li>
+</ol>
+<p>Figure 7 motivates the most common ‘fix’ when price data appear to be non-stationary. Taking the first difference of prices often will yield a series that is stationary.</p>
+<p>The only problem with the random walk model in terms of understanding stationarity of prices is that there is nothing preventing the random walk model from producing negative prices. Since negative prices are, generally, impossible, the standard random walk model does not work very well for prices. A simple modification will solve this problem, however.</p>
+<div id="the-log-normal-price-model." class="section level3">
+<h3><span class="header-section-number">20.0.1</span> The Log-normal Price Model.</h3>
+<p>If we modify the random walk model as follows, we guarantee a model that will produce non-negative prices.</p>
+<ol start="5" style="list-style-type: decimal">
+<li><span class="math inline">\(\ln{p_{t+1}} = \ln{p_{t}} + \epsilon_t\)</span></li>
+</ol>
+<p>This is true because, if we wanted to recover the price level from this model we need to exponentiate both sides.</p>
+<ol start="6" style="list-style-type: decimal">
+<li><span class="math inline">\(e^{(\ln{p_{t+1}})} = e^{(\ln{p_{t}} + \epsilon_t)}\)</span></li>
+</ol>
+<p>             <span class="math inline">\(p_{t+1} = e^{(\ln{p_{t}} + \epsilon_t)}\)</span></p>
+<p>Since the exponential function cannot take on a negative value, this model cannot produce negative prices.</p>
+<p>The figure 8 and 9 show 1,000 random draws from a normal distribution <span class="math inline">\(\epsilon_t ~ N(0, .02)\)</span>, and the simulated price distribution that results from the log-normal price model and those random draws.</p>
+<div class="figure">
+<img src="Excel-files/IntroductiontoCommodityTS-random_walk_files/image007.png" alt="Figure 8: Random Draws from a Normal(0, 0.02), (n = 1,000)" />
+<p class="caption">Figure 8: Random Draws from a Normal(0, 0.02), (n = 1,000)</p>
+</div>
+<div class="figure">
+<img src="Excel-files/IntroductiontoCommodityTS-random_walk_files/image005.png" alt="Figure 9: Simulated Log-Norma Prices, P_0 = \$20.00" />
+<p class="caption">Figure 9: Simulated Log-Norma Prices, <span class="math inline">\(P_0 = \$20.00\)</span></p>
+</div>
+<p>As was the case with the random walk model, the first difference of the log of prices is stationary. This means that if we specify a regression forecasting model and we believe the prices we wish to forecast are log-normally distributed then we will use log differences of our prices. In the coming chapters we will discuss how to formally test whether prices are stationary in levels or differences.</p>
+<p>The log-normal price model can be expressed in difference form as</p>
+<ol start="7" style="list-style-type: decimal">
+<li><span class="math inline">\(\ln{p_{t+1}} - \ln{p_{t}} = \epsilon_t\)</span></li>
+</ol>
+<p>It turns out that the log-difference of price is approximately equal to the percent change in price, especially for small changes. Percent changes of <span class="math inline">\(p_{t+1}\)</span> versus <span class="math inline">\(p_t\)</span> are also the returns one would get from holding a long position in the asset or commodity from time <span class="math inline">\(t\)</span> to time <span class="math inline">\(t+1\)</span>, and the log-normal price model says that returns are normally distributed. If this is true, forecasting is an impossible job; price returns are an unpredictable random draw from a normal distribution.</p>
+<p>In figure 10 the log-differences of the nearby corn futures price series (shown in figure 2) are plotted. Just visually, it seems a difficult task to anticipate what the next day’s return will be in the context of trying to decide whether to buy or sell, for example.</p>
+<div class="figure">
+<img src="Excel-files/IntroductiontoCommodityTS-Nearby_construct_files/image002.png" alt="Figure 10: Percent Change in Nearby Corn Futures Prices 9/2/2014-8/31/2015" />
+<p class="caption">Figure 10: Percent Change in Nearby Corn Futures Prices 9/2/2014-8/31/2015</p>
+</div>
+</div>
+<div id="efficient-market-hypothesis" class="section level3">
+<h3><span class="header-section-number">20.0.2</span> Efficient Market Hypothesis</h3>
+<p>The Efficient Market Hypothesis (EMH) states that all the information available regarding an asset is incorporated into its price <span class="citation">(Fama <a href="#ref-fama1970efficient">1970</a>)</span>. If the EMH were true, forecasting would be a hopeless endeavor because one could never use current and past information to predict future prices - as in the Log-normal price model. There is a large debate about the whether or not this hypothesis is true, or how and when it deviates from being true.</p>
+<p>While a large literature in finance argues that it is not strictly true, markets are ‘close to efficient’ most of the time. I say this because making a forecast that one can actually profitably trade with is difficult. We will explore several forecasting models in the subsequent chapters, and we will find it difficult to find a forecasting model were our 95% confidence interval around our forecast of percent return does not contain 0.0%. If one cannot produce a forecasting model that does that, your model is not giving a clear ‘buy’ or ‘sell’ signal.</p>
+</div>
+<div id="exercises-6" class="section level3">
+<h3><span class="header-section-number">20.0.3</span> Exercises</h3>
+<ol style="list-style-type: decimal">
+<li>Download the corn futures contracts CZ2014, CH2015, CK2015, CN2015, and CU2015. Replicate the series of nearby contracts depicted in figure 2 by concatenating prices of the appropriate dates for each contract. As a Check, replicate figure 2.</li>
+</ol>
+</div>
+<div id="references-2" class="section level3">
+<h3><span class="header-section-number">20.0.4</span> References</h3>
+<p>“Deflating Nominal Values to Real Values” Federal Reserve Bank of Dallas. <a href="http://www.dallasfed.org/research/basics/nominal.cfm" class="uri">http://www.dallasfed.org/research/basics/nominal.cfm</a></p>
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-fama1970efficient">
+<p>Fama, Eugene F. 1970. “Efficient Capital Markets: A Review of Theory and Empirical Work*.” <em>The Journal of Finance</em> 25 (2). Wiley Online Library: 383–417.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="properties-of-time-series-data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="basic-statistics-and-linear-regression-review.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
