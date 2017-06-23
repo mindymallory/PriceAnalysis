@@ -88,8 +88,9 @@ Forecasting supply and demand for any given marketing year begins well before ha
 
 : Table 2: Forecasting Calendar for 2016/2017 Marketing Year 
 
-> # Southern Hemisphere Production
-> Production of corn, soybeans, and other commodities in the southern hemisphere (most notably in Brazil and Argintina) has grown rapidly over the last ten to fifteen years, and has impacted global commodity markets tremendously. Since southern hemisphere production occurs in the middle of marketing years organized by northern hemisphere harvest, there is an uncertain additional supply that must be forecast and updated to keep an accurate global balance sheet.  
+# Southern Hemisphere Production
+
+Production of corn, soybeans, and other commodities in the southern hemisphere (most notably in Brazil and Argintina) has grown rapidly over the last ten to fifteen years, and has impacted global commodity markets tremendously. Since southern hemisphere production occurs in the middle of marketing years organized by northern hemisphere harvest, there is an uncertain additional supply that must be forecast and updated to keep an accurate global balance sheet.  
 
 
 ### Uncertainty 
