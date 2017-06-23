@@ -1,11 +1,11 @@
-# Introduction to Single Market Models: ARIMA 
+# Appendix: Single Market Models: ARIMA 
 
 
 <!-- Add a bit about 'Box-Jenkins' model identification -->
 
 
 
-## Introduction
+
 
 In this chapter we introduce the first category of time-series econometric forecasting models we will learn: Auto-regressive Integrated Moving Average (ARIMA) models. This class of models is only capable of forecasting one market at a time, and we will see in later chapters how to econometrically consider (forecast) more than one market at a time when there is reason to believe two or markets are related. 
 
@@ -17,7 +17,7 @@ We spent considerable effort in Chapters 10 and 11 on the importance of stationa
 
 With all that said, the 'I' in ARIMA stands for *integrated*, and simply signifies the functional forms that follow can be implemented with price levels (no differencing) if the data are stationary and in differences if the data are non-stationary. We will always use first differenced data for the examples in this class.
 
-## Autoregressive of Order $p$, $AR(p)$, Models
+## $AR(p)$, Models
 
 In Chapter 10 we introduced the Efficient Market Hypothesis (EMH) that states all information about an asset should be reflected in its current price, and therefore is unpredictable. In Chapter 11, we argued that if the EMH is true than prices should follow a log-normal price model fairly well. Indeed, it is true that a log-normal price model is difficult to beat, or that coming up with an informative forecast is difficult, but there are some common properties of data that can inform a forecasting model. 
 
@@ -49,7 +49,7 @@ where $R_i$ represents the percentage return on period $i$. The $p$ in $AR(p)$ i
 
 All of the p-values for our regressors are large, certainly much bigger than 0.05. We fail to reject the null hypothesis that one and two lags of corn price returns are unrelated to the next price return realization. Therefore, the $AR(2)$ model does not seem to provide much forecasting power. 
 
-## Moving Average of Order $q$, $MA(q)$, Models
+## MA(q)$, Models
 
 The Moving Average Model incorporates lagged random shocks into the forecast model. Commonly denoted by $MA(q)$, the $q$ stands for the number of lags of shocks to be included. Formally, 
 
@@ -93,7 +93,7 @@ The $MA(2)$ model does not seem to explain the March 2016 corn returns very well
 Keep in mind, this process in uneccessarily complicated. If you get seriously involved in generating forecasts, you will invest the time to learn a common statistical package; however, hopefully this process helps to build some intuition about how these models are estimated by the more powerful statistical software packages. 
 
 
-## How to Determine the Number of Lags
+## Lag Length
  
 You may be wondering at this point if it would be useful to try including more lags in the regression equation; perhaps we will find longer lag lengths that seem to matter in forecasting corn price returns. Usually, if lags have predictive power, the strongest effects are in the nearest lags. So adding lags to the $AR(.)$ model is unlikely to help. 
 

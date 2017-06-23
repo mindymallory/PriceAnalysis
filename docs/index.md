@@ -1,7 +1,7 @@
 --- 
 title: "Price Analysis: A Fundamental Approach to the Study of Commodity Prices"
 author: "Mindy L. Mallory"
-date: "2017-06-22"
+date: "2017-06-23"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib]

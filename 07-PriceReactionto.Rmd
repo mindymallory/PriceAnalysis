@@ -1,7 +1,6 @@
 # Price Reaction to USDA Reports
 
 
-## Introduction
 
 Some of the USDA reports contain very sensitive market information causing market prices to adjust rapidly to new information about supply and demand. Access to the contents of a market sensitive report would result in the ability to perform 'insider trading' and obtain nearly risk-less profits. This activity is illegal, and the USDA's NASS prepares the reports under lock-down conditions where during the process of finalizing estimates of the report's content, officials are locked in a secure area and not allowed to leave until the report is made known to the public. 
 
@@ -23,7 +22,7 @@ Source: [NASS: About Nass](pdf-readings/safegaurding-americas-agricultural-stati
 >The scheme came to light following the cotton acreage report issued on June 2, 1905. The three members met and adopted the state and national figures to be published. After Holmes had sent his signal, one of the other people who had worked on the report asked for reconsideration. After further review, the figures to be published were revised. At that point, the outside partner had already interpreted the original signal and proceeded to place trades. The scheme came to light when Van Riper charged in a telegram that a “fraudulent” report had been released. In explaining why he thought this was a false report, he unwittingly revealed that he had the information ahead of time. Evidently, Holmes’ outside partner had an overabundance of ego, but not a good balance of common sense in going public with his story. [@history2007Nass]
 
 
-## Hitorical Timeline of Report Release Times
+## Changing Report Release Times
 
 Timing of report releases has important implications for the market reaction as well. Figure 2 below provides a brief history of report release times of major market sensitive reports. 
 
@@ -36,7 +35,7 @@ In May of 1994, the USDA shifted the release time to 8:30am EST. This meant the 
 By 2011, presumably due to the ability to trade electronically with high speed, there was a desire for the futures market to be open and actively trading at the time USDA reports were released. In this case, the futures exchange acted first, expanding trading hours to an earlier market open. Eventually, since futures market participants wanted it, and because came with the added benefit of moving the beginning of the lockup period from late night to early morning, the USDA began releasing most reports at 12pm EST on January 11, 2013.  
 
 
-## Market Reactions to USDA Reports in Recent History
+## Price Reactions 
 
 Market prices react strongly to USDA reports when the reports inject significant and unanticipated information into the market. Some reports are more likely than others to produce fireworks in terms of market price. 
 

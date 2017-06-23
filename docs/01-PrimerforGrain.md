@@ -1,12 +1,9 @@
 
-# A Primer for Grain and Oilseed Markets
+# Grain and Oilseed Markets
 
 
-## Introduction 
 
 Since commodities are natural things that are subject to biological processes, you must first understand the basic biological processes involved in the commodity's production in order to understand and anticipate what happens to it's price. This chapter introduces the basic production processes and timeline for major grains and oilseeds: Corn, Soybeans, Hard Red Winter Wheat (KC wheat), Hard Red Spring Wheat (Minneapolis wheat), and Soft Red Winter Wheat. 
-
-## Corn
 
 What's the difference between Sweet Corn one buys from the grocery store and field corn (the focus of much of this course)?
 

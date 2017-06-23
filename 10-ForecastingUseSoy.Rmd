@@ -1,13 +1,11 @@
-# Forecasting Use of Soybeans in the WASDE Balance Sheet
+# Forecasting Use of Soybeans 
 
 
-## Introduction 
 
 In the WASDE balance sheet for soybeans there are three use categories. Two account for domestic consumption - Crush, and Feed, Seed, and Residual - while exports make up the third category. The main distinction between cereal grains, like corn, and oilseeds, like soybeans, is that cereal grains are generally ground whole for whatever the end use turns out to be. Most oilseeds, on the other hand, are crushed to extract oil and meal before their ultimate use. Soybean oil is food-grade and can be found on the shelves of any American grocery store. Soybean meal is protein rich and used as an ingredient in livestock feed rations.  
 
-In the next sections we will examine historical use patterns of soybeans in the three categories expressed nominally, and as a percent of the concurrent year's total supply, similar to the orginization of chapter 7.  
+In the next sections we will examine historical use patterns of soybeans in the three categories expressed nominally, and as a percent of the concurrent year's total supply, similar to the organization of chapter 7.  
 
-## Examining Historical Trends
 
 Since this book has taken a closer look at corn production than soybean production, we will ground our discussion of use by first noting the pattern of annual supply of soybeans in recent history. 
 
@@ -34,9 +32,9 @@ When examining corn use, we saw that the proportion of supply shifted dramatical
 Source: [USDA ERS Oil Crops Yearbook](http://www.ers.usda.gov/data-products/oil-crops-yearbook.aspx)
 
 
-## Soybean Exports 
+## Exports 
 
-Figure 4 displays annual soybean exports. Similar to the crush category, exports are obseverved to steadily increase over the period from 1980-2014. 
+Figure 4 displays annual soybean exports. Similar to the crush category, exports are observed to steadily increase over the period from 1980-2014. 
 
 ![Figure 4: Annual Soybean Exports, 1980-2014](Excel-files\ForecastingUseSoy-OilCropsYearbook_files/image001.png)
 
@@ -50,7 +48,7 @@ Source: [USDA ERS Oil Crops Yearbook](http://www.ers.usda.gov/data-products/oil-
 
 *Main Exporters table here.*  
 
-## Soybean, Feed, Seed, and Residual
+## Feed, Seed, and Residual
 
  
 ![Figure 6: Annual Soybean Feed, Seed, and Residual, 1980-2014](Excel-files\ForecastingUseSoy-OilCropsYearbook_files/image003.png)
@@ -64,22 +62,23 @@ Source: [USDA ERS Oil Crops Yearbook](http://www.ers.usda.gov/data-products/oil-
 
  
 
-## Ranking Use Categories by Price Sensitivity
+## Price Sensitivity of Use Categories
 
- 
+Soybeans are a bit different from corn because there are only two use categories that are important, crush and exports. The soybean use categories historically have been reliably 50% crush and 50% exports as a percent of supply. In recent years, exports have been increasing both nominally and as a percent of supply. So forecasting demand for soybeans has largely become a matter of forecasting soybean exports. 
 
-## Forecasting Use Categories During the Marketing Year - Pace of Use Approach
+Recently, with the rise of South American soybean (and corn) production forecasting exports is a matter of balancing the price of U.S soybeans compared with the price of South American soybeans and the raw demand from our trading partners. China has become the major player in this space, accounting for most of the recent increase in U.S. soybean exports. Exports of U.S. soybeans to China now make up roughly half of all U.S. soybeans exported. 
+
+## Forecasting Use of Soybeans
 
 As we mentioned in chapter 7, keeping track of how much soybeans have been used to date in each category is a useful exercise to determine a reasonable forecast for different use categories of soybeans. As was true for corn, information about the pace of use in each category must be obtained from different sources within the USDA. 
 
-Soybeans exports can be followed during the marketing year by following the [GIPSA]() and [FAS Export Reporting System]() as was identified for corn exports in Chapter 7. Also, as idenfied in Chapter 7 is is useful to tracking [Cattle on Feed](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1020), [Hogs and Pigs](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1086), and the [Poultry Slaughter](https://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1131), specifically because livestock numbers contribute to demand for soybean meal, which in turn contributes to crush demand. 
+Soybeans exports can be followed during the marketing year by following the [GIPSA]() and [FAS Export Reporting System]() as was identified for corn exports in Chapter 7. Also, as identified in Chapter 7 is is useful to tracking [Cattle on Feed](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1020), [Hogs and Pigs](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1086), and the [Poultry Slaughter](https://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1131), specifically because livestock numbers contribute to demand for soybean meal, which in turn contributes to crush demand. 
 
 
 
 
 
 
-
-## Readings 
+ 
 
 

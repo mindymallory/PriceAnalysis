@@ -1,13 +1,13 @@
 # Crude Oil and the Crack Spread
 
 
-## Introduction
+
 
 Crude oil is an extremely important commodity. Much of the world's economic activity is dependent on the energy products derived from this commodity. Crude oil was formed long ago when biological material fell to the bottom of ancient oceans. Over time the material was exposed to heat and pressure and transformed the material into crude oil.  Crude oil is composed of a mix of different hydrocarbons, molecules that contain both hydrogen and carbon atoms. When these molecules are broken down and then recombined in different configurations, different materials like gasoline, diesel fuel, heating oil, jet fuel, and kerosene can be made. Obviously, crude oil and its derivative products are valued for the energy stored in the hydrocarbon molecules. 
 
 [Introduction to Crude Oil by The Atlantic](https://www.youtube.com/watch?v=62LvVYYqUFA)
 
-## Classifying Crude Oil: Light versus Heavy and Sweet versus Sour
+## Light versus Heavy/Sweet versus Sour
 
 Not all crude oil is created equal. The components that make up the material can vary greatly affecting what kinds of products crude oil can be refined into. For example, if the crude oil is composed of large hydrocarbon molecules, it is referred to as *heavy* crude oil. Crude oil that has mainly smaller molecules is called *light* crude oil. Light crude oil can be more easily turned into higher valued gasoline and distillates while heavy crude oil produces more lubricating oil and coke. 
 
@@ -72,7 +72,7 @@ Distillates are lesser known among the general public. However, [Diesel](http://
 
 Heating oil is used to heat homes in the Northeast U.S., whereas in other parts of the country natural gas, propane, and electricity are more prominent fuels for home heating.
 
-## Historical Price Trends
+## Price Trends
 
 The following figure shows WTI and Brent monthly spot prices from May 1987 to September 2016. 
 
@@ -84,7 +84,7 @@ Prices experienced a dramatic uptrend then downtrend in 2008-2009 that was exper
 
 Recall that WTI is a North American benchmark for light sweet crude oil, while Brent is a European benchmark for light sweet crude oil. In the next section we will discuss how rapidly increasing production in the U.S. Bakkan formation of North Dakota has contributed to weak price levels and historically weak WTI price compared to the Brent price. 
 
-## Fundamental Factors Important for Price Analysis
+## Fundamental Factors 
 
 A number of supply and demand statistics are maintained by the Energy Information Administration. Information on prices, crude reserves and production, refining and processing, imports, and movements, and stocks can be found at the [EIA website](http://www.eia.gov/petroleum/data.cfm).
 

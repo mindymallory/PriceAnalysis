@@ -1,7 +1,7 @@
 # Hog Markets
 
 
-## Introduction
+
 
 This chapter covers basic hog production, industry structure, and marketing practices, with an emphasis on how these affect hog prices. The hog market has undergone significant changes in industry organization in recent history. The industry used to be very unconcentrated with large numbers of independently owned and operated small and medium sized farms. Recently, the industry has trended toward more and more concentration in ownership, contracting and marketing agreements between owners and operators, and vertical integration in structure. This is in contrast to the beef cattle market, where ownership remains unconcentrated until the final finishing stage of produciton. 
 
@@ -92,7 +92,7 @@ Although the number of cash sales has declined, forward contract prices and mark
 
 [Lean Hogs Futures Contracts on the CME](http://www.cmegroup.com/trading/agricultural/livestock/lean-hogs.html)
 
-## Why only one Contract Instead of Two like Feeder and Live Cattle?
+### Why only one Contract Instead of Two like Feeder and Live Cattle?
 
 Industry consolidation has left few firms needing to hedge risk. Futures contracts are usually successful when there are a large number of firms who have a hedging need. Only then does the futures market attract speculators who provide liquidity to the market and active trading. 
 

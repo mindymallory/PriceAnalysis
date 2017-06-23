@@ -1,15 +1,15 @@
-# Basic Statistics and Linear Regression Review
+# Appendix: Basic Statistics and Regression 
 
 
 
 
 
 
-## Introduction
+
 
 This chapter begins our foray into more a statistically oriented analysis of commodity prices. As a primer we will begin by reviewing a few statistical concepts to get ready for regression-based forecast analysis. 
 
-## Statistics
+
 
 A *statistic* is a measure that is calculated from a set of sample data. Statistics are useful ways of summarizing key characteristics of a dataset quickly and easily. The most familiar are measures of central tendency and dispersion. Measures of central tendency identify where the 'middle' of the data is, while measures of dispersion measure how spread out the data are. 
 
@@ -55,7 +55,7 @@ Toyota Corolla        33.9   4           71.1                     65            
 
 Note: Road test results as conducted by Motor Trend Magazine for 1973-1974 automobiles. 
 
-### Measures of Central Tendency
+## Measures of Central Tendency
 
 The most common measures of central tendency are the mean (also commonly called average) and median.  
 
@@ -73,7 +73,7 @@ The median is the observation that appears at the 50th percentile of the sample 
 
 The value, 19.2 mpg is the median value. Both the Merc 280 and the Pontiac Firebird's mpg is at the median. 
 
-### Measures of Dispersion
+## Measures of Dispersion
 
 The most common measures of dispersion are range, variance, and standard deviation.
 
@@ -95,7 +95,7 @@ where the $x_t$ are realizations of the data, and $T$ is the number of observati
 
 The standard deviation of mpg is 6.026948; since this measure is in the same units as the original data, it is more intuitive to interpret. If the data are normally distributed, then approximately 2/3 of the realizations will fall within one standard deviation of the mean. 
 
-### Statistics for the Relationship *between* Two Variables
+## Relationship between Two Variables
 
 Oftentimes, the purpose of a statistical analysis is to detect what kind of relationship exists between two variables. For that, covariance and the correlation coefficient provide simple measures.
 
@@ -202,7 +202,7 @@ Our calculated value of the *t*-statistic, $t_{\beta_1} =$ 2.53 lies pretty far 
 
 This means that if $H0$ is true, there is only a 1.7% chance we would get a *t*-statistic as big as 2.53, which seems like pretty strong evidence that the alternative hypothesis is true. Traditionally, decisions about whether or not to reject the Null hypothesis are framed in terms of levels of significance. This just means that if 5% is the level of significance selected, we reject the Null hypothesis if the p-value is less than 5%. Common significance levels are 1%, 5%, and to a lesser degree 10%. 
 
-## Stationarity and Spurious Regression
+## Spurious Regression
 
 In chapter 10 we argued, in general terms, why it is important to have variables that are stationary in order to try to fit a forecasting (regression model). Now we will illustrate this in greater detail. 
 

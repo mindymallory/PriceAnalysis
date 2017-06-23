@@ -1,7 +1,7 @@
 # The Soybean Crush
 
 
-## Introduction
+
 
 In this Chapter we describe the physical process of converting soybeans into meal and oil, as well as the price relationship that is maintained between these highly related commodities. We saw in the chapter, 'Forecasting Use of Soybeans in the WASDE Balance Sheet,' that approximately half of the supply of soybeans in the U.S. is crushed into soybean meal and oil. Nearly all of the remainder of soybean supply is exported where most of it will be crushed abroad.
 

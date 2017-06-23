@@ -1,11 +1,10 @@
-# Beef Cattle Markets and the Livestock Crush
+# Cattle Markets and the Livestock Crush
 
 
-## Introduction
+
 
 This chapter covers the basic production cycle and ownership structures in beef cattle markets. We cover cow-calf, backgrounder, and finisher/feedlot operations. We discuss the basic geography of beef cattle production, and various biological constraints that impact market prices. 
 
-## Beef Cattle Production
 
 In the United States, beef cattle production tends to be segmented between cow-calf operations that keep a breeding herd of cows for the purposes of having calves for sale every year; backgrounder operations that buy 'light' calves and feed them grain until they are big enough to go to a finisher or feedlot operation where the calves are fed a grain-based diet until they are big enough to slaughter. These three stages of the production process are usually managed by independent firms, so that the cow-calf operator is a different entity than the backgrounder, who is a different entity than the finisher. There are cases of more vertically integrated operations, but this is relatively rare. 
 
@@ -54,7 +53,7 @@ In October, the herd will have exhausted the summer forage, so they are brought 
 Continue rotating winter pasture and feeding hay for forage. 
 
 
-## The Backgrounder/Stocker Operation
+## The Backgrounder/Stocker 
 
 A backgrounder is in the business of buying light calves (weighing approximately 500 lbs) and feeding them grain-based rations until they have gained 100lbs or more. As noted above, the cow-calf producer may decide to background his own calves or an entity strictly in the business of backgrounding may buy light calves at auction or directly from a cow-calf producer. 
 
@@ -70,11 +69,13 @@ Smaller (younger) calves gain weight faster than heavier (older) calves so small
 
 Examine this USDA Market News report from the [Farmers & Ranchers Livestock Commission Co.](http://www.ams.usda.gov/mnreports/dc_ls143.txt) in Salina, KS.
 
-## The Large Feedlot Operation [^beefcheckoff]
+## The Large Feedlot 
+
+
+Feedlots[^beefcheckoff] with more than 1,000 head finish more than 80% of fed cattle. So the production of beef starts out with the very distributed cow-calf and backgrounder operations, but the stage of production is highly concentrated at the final stages. 
 
 [^beefcheckoff]: Most of the information in this section is taken from the [Feedlot Finishing Cattle Fact Sheet](http://www.beefusa.org/uDocs/Feedlot%20finishing%20fact%20sheet%20FINAL_4%2026%2006.pdf) published by the Beef Checkoff program. 
 
-Feedlots with more than 1,000 head finish more than 80% of fed cattle. So the production of beef starts out with the very distributed cow-calf and backgrounder operations, but the stage of production is highly concentrated at the final stages. 
 
 When calves come to the large feedlots for finishing, they are typically 12-18 months old and range from 700-900lbs when they arrive. The will spend three to six months in the feedlot eating a diet of grain (with corn being the largest component) and hay. Calves gain about 2.5 to 4 pounds per day, converting about 6 lbs of feed into 1 lbs of weight gain. 
 
@@ -88,7 +89,7 @@ The large feedlots sell fattened calves to beef packing plants. Many packing pla
 
 [See some feedlots via satellite](http://maps.google.com)
 
-## Cattle Auction at 'The Sale Barn'
+## Cattle Auctions 
 
 Most calves are sold from the cow-calf operation to a backgrounder or feedlot at auction. In beef cattle intensive areas, there will be a livestock auction houses, also called 'sale barns' at least every 30-60 miles. Similar to the coverage grain elevators have in grain intensive areas. Cow-calf producers bring their calves to the auction market the day before the sale and they are kept and cared for in separate pens arranged by ownership. The producer pays the sale barn a commission for selling their calves and fees for the feed, water, and shelter the calves receive from their arrival at the sale barn until the new owner transports them elsewhere. 
 
@@ -105,7 +106,7 @@ Workers at the sale barn bring the pens of calves through the ring[^ring] and bu
 [Cattle Auctioneer - 2012 Drought](https://www.youtube.com/watch?v=Ig514nyWQho)
 
 
-## The Cattle Crush Futures Spread
+## The Cattle Crush 
 
 The large feedlot operations are run by commercial firms with the resources and expertise to engage in sophisticated hedging strategies. This has led to the success of two cattle futures contracts: feeder cattle 50,000 lbs of 'light calves', live cattle 40,000 lbs of fed cattle (1,050 - 1,500 per animal). These two cattle contracts, along with corn futures tracks the profitability of finishing cattle and can be used for hedging purposes. 
 

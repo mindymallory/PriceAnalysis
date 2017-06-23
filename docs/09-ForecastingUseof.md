@@ -1,17 +1,14 @@
-# Forecasting Use of Corn in the WASDE Balance Sheet
+# Forecasting Use of Corn 
 
 
-## Introduction 
 
 In the WASDE balance sheet for corn there are three use categories. Two account for domestic consumption - Food, Seed and Industrial, and Feed and Residual - while exports make up the third category. Ethanol makes up a large portion of the Food, Seed, and Industrial category, so it is given its own line in the balance sheet. 
 
 As we have noted before, historical use patterns are the first place to start when trying to forecast use categories for the marketing year. Looking at quarterly gives you a sense of how use is distributed across the marketing year in different categories. The annual histories, however, are probably the most useful. 
 
-## Examining Historical Use Trends
+## Food, Alcohol, and Industrial Use
 
-## Corn Food, Alcohol, and Industrial Use
-
-Let us begin by looking at the Food, Alcohol and Industrial category. These data were queried from the [Feed Grains database](http://www.ers.usda.gov/data-products/feed-grains-database/feed-grains-yearbook-tables.aspx#26780) maintained by the USDA ERS. The categories here are a little more dissaggreagated than those presented in the USDA WASDE balance sheets, but they are roughly the same. For example, in figure 1 below we show the *Food, Alcohol, and Industrial* use category. This omits seed from the *Food, Seed, and Industrial* category in the WASDE balance sheet. The Feed Grains database actually breaks out the seed use as its own column, but corn used for seed is a very small proportion of production and it is largely predictable from year to year. 
+Let us begin by looking at the Food, Alcohol and Industrial category. These data were queried from the [Feed Grains database](http://www.ers.usda.gov/data-products/feed-grains-database/feed-grains-yearbook-tables.aspx#26780) maintained by the USDA ERS. The categories here are a little more disaggregated than those presented in the USDA WASDE balance sheets, but they are roughly the same. For example, in figure 1 below we show the *Food, Alcohol, and Industrial* use category. This omits seed from the *Food, Seed, and Industrial* category in the WASDE balance sheet. The Feed Grains database actually breaks out the seed use as its own column, but corn used for seed is a very small proportion of production and it is largely predictable from year to year. 
 
 ![Figure 1: Corn Food, Alcohol, and Industrial Use, Quarterly 1990-2015](Excel-files\IntroductiontoCommodityTS-FeedGrains_Corn_files\image013.png)
 
@@ -32,7 +29,7 @@ Source: [Feed Grains database](http://www.ers.usda.gov/data-products/feed-grains
 
 From figure 3 it is easier to see what share of the crop the large increase in corn use in the Food, Alcohol, and Industrial use category. In figure 3 this use category is presented as a percentage of that marketing year's production. In the early 1990's this use category accounted for over 50% since 2010. The drop in percentage of production in 2015 occurs because of the large crop in 2015, even though the use level is flat (shown in figure 2).
 
-## Corn Exports 
+## Exports 
 
 Quarterly corn exports are displayed in figure 4. Unlike Food, alcohol and industrial use, exports tend to have a very seasonal or cyclical pattern. Exports are large in the second quarter of the marketing year, December to February, right after we harvest the new crop. This is when stocks are most plentiful and prices are at season lows in years exhibiting an upward sloped forward curve. 
 
@@ -55,7 +52,7 @@ In figure 6 we display annual corn exports as a percentage of corn production.
 Source: [Feed Grains database](http://www.ers.usda.gov/data-products/feed-grains-database/feed-grains-yearbook-tables.aspx#26780) maintained by the USDA ERS.
 
 
-When exports are viewed as a proportion of production, we see a pronounced downward trend. This is due to the increasing share of production allocated to the Food, seed, and Industrial category visible in figure 3. Recall that this category is comprised mainly of corn as feedstock for ethanol production.
+When exports are viewed as a proportion of production, we see a pronounced downward trend. This is due to the increasing share of production allocated to the Food, seed, and Industrial category visible in figure 3. Recall that this category is comprised mainly of corn as feed-stock for ethanol production.
 
 The year-to-year variation is caused by price fluctuations with low prices encouraging and high prices discouraging consumption. 
 
@@ -82,9 +79,9 @@ Source: [USDA FAS](http://apps.fas.usda.gov/export-sales/myrk_rpt.htm) TOTAL is 
 
 Table 1 shows the top 10 importers of U.S. corn  for the 2014/2015 marketing year. Export totals are given in 1,000 metric ton units. Clearly Japan and Mexico are the dominant Importers of U.S. corn. The table shows that most countries rank has remained fairly stable across the marketing years shown. Columbia is an exception to this rule. It was ranked 17, 16, and 14 in 2012/2013, 2011/2012, and 2010/2011 marketing years respectively, but jumped to 3rd and 4th in the 2014/2015 and 2013/2014 marketing years.  
 
-## Feed, and Residual
+## Feed and Residual
 
-The final use category is the most difficult to forecast because its quantity is derived, not estimated. What I mean is the USDA makes estimates of every other row in the balance sheet. Then, to ensure the numbers add up, they infer the Feed and Residual category. 
+The final use category is the most difficult to forecast because its quantity is derived, not estimated. This means the USDA makes estimates of every other row in the balance sheet. Then, to ensure the numbers add up, they infer the Feed and Residual category by subtracting the other demand categories from supply. 
 
  $Feed\&Residual = Production + Imports + Beginning Stocks - Ending Stocks - FoodSeed\&Industrial - Exports$
 
@@ -115,7 +112,7 @@ Source: [Feed Grains database](http://www.ers.usda.gov/data-products/feed-grains
 
 Figure 8 shows that the category has remained roughly constant over the time-period graphed, but as a percentage of production it has fallen since 2005. Like the export category, this reflects a proportional shift in use toward ethanol production. 
 
-## Ranking Use Categories by Price Sensitivity
+## Price Sensitivity of Use Categories 
 
 Examining annual figures as a percentage of production reveals some interesting facts about the price sensitivity of the three use categories. 
 
@@ -125,7 +122,7 @@ The second category is Feed and Residual. Although year-to-year variation can co
 
 The most price sensitive category is Exports, which is readily visible in figure 5 and 6. Foreign buyers of corn can substitute to purchase their corn from other parts of the world like (Argentina comes first to mind). Also, consumers of meat (exported corn is primarily used as animal feed in the foreign country) in the less developed world are more price sensitive and presumably reduce consumption when prices are high. 
 
-## Forecasting Use Categories During the Marketing Year - Pace of Use Approach
+## Forecasting Use 
 
 One method for forecasting the use categories during the marketing year, is to keep track of how much corn has been used to date in each category. This pace of use can be compared to the pace of use in previous years. Alternatively, the pace of use can be expressed as a percent of the WASDE forecast use. Ideally this percent of WASDE forecast use would be compared to historical percent of WASDE forecast use. The idea behind such an exercise being the seasonality we saw in the historical graphs above is likely to repeat itself.  Information about the pace of use in each category must be obtained from different sources within the USDA. 
 
@@ -147,13 +144,17 @@ Two USDA agencies are involved in providing estimates of export sales. The [USDA
 
 #### USDA FAS Export Sales Reporting System
 
-The [USDA Foreign Agricultural Service](http://www.fas.usda.gov/) maintains the Export Sales Reporting System, which reports weekly export quantities and daily reports of large export sales. From the FAS website: 
+The [USDA Foreign Agricultural Service](http://www.fas.usda.gov/) maintains the Export Sales Reporting System, which reports weekly export quantities and daily reports of large export sales. From the FAS [website](https://apps.fas.usda.gov/export-sales/FACT%20SHEET.pdf): 
 
-> USDA's export sales reporting system has its roots in the unexpected purchase of large amounts of grain by the Soviet Union in 1972. The huge, unanticipated Soviet purchases of U.S. wheat and corn that year produced a sizable run-up in U.S. food prices and depleted U.S. reserve stocks. There was also concern over the advantage which large grain companies gained in this situation because they had more information than was available to the public on future prices and grain trade trends.
+<!--downloaded pdf incase usda takes the fact sheet down. -->
+
+> The Export Sales Reporting Program has its roots from the unexpected purchase of large amounts of grain by the Soviet Union in 1972, “The Great Russian Grain >Robbery”. The huge, unanticipated purchases of U.S. wheat and corn that year depleted U.S. reserve stocks which caused a sizable run-up in U.S. food prices.
 >
-> To make sure that all parties involved in the production and export of U.S. grain have access to up-to-date export information, the U.S. Congress mandated an export sales reporting requirement in 1973. Prior to the establishment of the export reporting system, it was impossible for the public to obtain information on exports until such exports were actually shipped. This frequently resulted in a considerable delay in obtaining information. 
+>Furthermore, there was growing concern that some companies might have an unfair advantage in situations like this because they had access to market-sensitive >information that was unavailable to the public. To ensure that all parties involved in the production and export of U.S. grain had access to up-to-date >export information, Congress mandated the Export Sales Reporting program in 1973.
 >
+>Before the program was established, it was difficult for the public to obtain information on exports until the products were actually shipped. The program >helps facilitate price stability by guaranteeing that everyone has access to the same information at the same time. 
 >
+
 ### Daily Reports
 Under the export sales reporting system, U.S. exporters are required to report all large sales of certain designated commodities by 3 p.m. (Eastern time) on the next business day after the sale is made. The designated commodities for these daily reports are wheat (by class), barley, corn, grain sorghum, oats, soybeans, soybean cake and meal, and soybean oil. Large sales for all reportable commodities except soybean oil are defined as 100,000 metric tons or more of one commodity in one day to a single destination or 200,000 tons or more of one commodity during the weekly reporting period. Large sales for soybean oil are 20,000 tons and 40,000 tons, respectively.
 >
@@ -180,7 +181,7 @@ Since the FAS and the GIPSA come about their export totals through different pro
 
 While the Residual component tends to dominate the variation in the Feed and Residual category, the USDA does publish statistics related to numbers of cattle, hogs, and poultry. Major changes in livestock numbers produce a detectable impact in the Feed and Residual use category, to it is worthwhile knowing where to find these estimates. 
 
-The USDA releases a monthly [Cattle on Feed](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1020) report. Tracking this report gives a sence of trends in beef cattle herd size and production. Similarly, the [Hogs and Pigs](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1086) report is released quarterly and provides inventory estimates. The [Poultry Slaughter](https://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1131) report contains the number of head and live weight of chickens, turkeys, ducks and other poultry slaughtered under Federal inspection.    
+The USDA releases a monthly [Cattle on Feed](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1020) report. Tracking this report gives a sense of trends in beef cattle herd size and production. Similarly, the [Hogs and Pigs](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1086) report is released quarterly and provides inventory estimates. The [Poultry Slaughter](https://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1131) report contains the number of head and live weight of chickens, turkeys, ducks and other poultry slaughtered under Federal inspection.    
 
 ## Readings 
 

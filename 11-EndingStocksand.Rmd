@@ -1,7 +1,7 @@
-# Ending Stocks and Generating a Price Forecast from the Balance Sheet
+# Ending Stocks and Price 
 
 
-## Introduction
+
 
 Over the course of the last several chapters we have covered each category of supply and use. In tables 1 and 2 below, that literally means we covered how to forecast the numbers in each row of the USDA WASDE balance sheet. Subtracting total use from total supply gives an estimate of marketing year ending stocks. For example, in table 1, 
 
@@ -37,7 +37,7 @@ kable(aug15wasdes, align = 'l', col.names = c("Soybeans", "Marketing Year 2014/2
 
 However, this still leaves a lot to be desired because the most compelling reason to keep a detailed balance sheet and forecast future supply and use is to come up with a reasonable expectation for price. After all our work on forecasting the components of the balance sheet, we have not made much headway in that regard. In this chapter, we cover some approaches for taking a forecast of ending stocks and translating that into a forecast of price. 
 
-## Using Forecast of Ending Stocks to Forecast Price
+## Forecasting Price
 
 Arriving at an estimate of ending stocks gives one a sense of the degree of scarcity (or lack-thereof) in the market. It is still difficult to infer the marketing year average price from that, because the prevailing price that should coincide with the forecasted ending stocks is a function of the elasticities of demand for different use categories. These can be difficult to estimate, and we are not guaranteed that elasticity is constant from one year to the next. 
 
@@ -49,7 +49,7 @@ Source: [FarmDoc Daily](http://farmdocdaily.illinois.edu/2015/04/relationship-st
 
 Since the supply curve shifts from year-to-year and the demand curve shifts from year-to-year due to a myriad of factors, one cannot count on estimating a single supply or demand curve from a series of price and quantity pairs. However, once we have entered a marketing year; i.e., we have harvested the domestic supply in the balance sheet, we can count of total supply being quite inelastic. We can be confident of this because imports are historically a very small part of domestic total supply for corn, and after the domestic harvest, imports would be the only way to shift the supply curve. Further, if one had some confidence that the demand curve was more or less constant through time, a time-series of prices and quantities would approximately trace out the demand curve. 
 
-## A Closer Look at the Data
+## Examining the Data
 
 This section continues to draw heavily on the Good and Irwin fdd article referenced above. First let us take a look at the average price received for corn over time and the stocks-to-use of corn over time in figure 2. These data can both be obtained from the [USDA ERS Feed Grains Database](http://www.ers.usda.gov/data-products/feed-grains-database.aspx) database, although you have to download the *stocks* and *use* separately and create your own stocks-use-variable. 
 

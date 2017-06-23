@@ -1,7 +1,6 @@
-# Fundamental Analysis and the Balance Sheet
+# Balance Sheet Analysis
 
 
-## Introduction 
 
 Fundamental analysis is an assessment of price based on underlying supply and demand factors. Focusing on changes in the relationship between supply and demand allows one to calibrate an informed opinion of the value of the commodity. The main role of the market is to find the value at which supply equals demand - or in other words, the value that 'clears the market'. The estimated 'fundamental value' is simply a forecast, or expectation of, the market clearing price. The goal of any forecasting exercise is to compare the forecast (estimated fundamental value) to the current market price and make decisions accordingly. 
 

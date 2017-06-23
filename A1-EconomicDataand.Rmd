@@ -1,11 +1,10 @@
-# Economic Data and Principles of Visualization
+# Appendix: Data and Visualization
 
 
 <!-- This chapter should probably come before the Introduction to Balence sheet chapter (current chapter 3).I messsed up and pressed ahead with forecasting-->
 
 
 
-## Introduction
 
 This chapter reviews the basics of the presentation of economic data, descriptive statistics, visualizations based on charts, graphs, and tables, and the math and mechanics of estimating trend forecasting models. There are three main types of data sets one might encounter: cross section, time-series, and panel. 
 
@@ -180,13 +179,13 @@ So the Prices Received by Farmers variable one gets from USDA NASS QuickStats sh
 
 Beyond detecting errors in your data, it is good practice to become familiar with the data you are analyzing to the degree that when you conduct your forecasting exercise you can subject your results to the sniff test. In other words, at first blush do your results seem plausible given your familiarity with the data you are working with. If you have become accustomed to the look and feel of your data graphically, you will be much more likely to detect problems or weaknesses in your own forecasting analysis. 
 
-## Univariate Graphical Techniques
+### Univariate Graphical Techniques
 
 Univariate means one variable. The simplest univariate technique is a regular time plot like we saw above. As a matter of style it is usually better to generate time plots using lines rather than charts.
 
 Another technique is to plot the change in the variable or the percent change in the variable. This is of particular interest because it is much harder to forecast changes or percent changes in a variable, than it is to forecast the level of a variable, but the changes and percent changes are much more useful in terms of making economic decisions based on the forecast. 
 
-## Multivariate Graphical Techniques
+### Multivariate Graphical Techniques
 
 The most basic multivariate technique is to simply graph all the variables on one time plot to gauge how they move together visually. This works best if all  the variables tend to be of the same scale. If you want to compare two variables of greatly differing scales you have two options. You can use major-minor axes. Or, you could focus on percent changes. Transform both variables into percent changes and then graph them on the same scale. 
 
@@ -222,7 +221,7 @@ The last key point deserves a bit more discussion. At the very minimum, your gra
 Clearly indicate the variables graphed on the horizontal and vertical axes and their respective units; provide a short but descriptive title; indicate the sources of the data displayed; use clear and modest type, avoid mnemonics and abbreviations.
 
 
-## Examples of Improving the Graphical Presentation
+
 
 
 

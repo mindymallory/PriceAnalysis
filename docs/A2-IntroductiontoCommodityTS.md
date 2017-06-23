@@ -1,8 +1,8 @@
-# Introduction to Commodity Price Analysis and Forecasting with Time-series Econometric Models
+# Appendix: Forecasting with TS Models
 
 <!-- Slightly more rigor and some econometric textbook citations are appropriate here.--> 
 
-## Introduction 
+
 
 This chapter marks a break in forecasting philosophy from the approach we have used in previous chapters. In previous chapters we were forecasting from a viewpoint that was very structural and focused on market fundamentals. We built tools and information sources to monitor supply and demand conditions in commodity markets in fairly great detail. We utilized publicly available information and research published by various branches of the USDA. 
 
@@ -10,7 +10,7 @@ In this chapter, we will take a reduced-form econometric approach. The focus wil
 
 
 
-## Constructing a Series of 'Nearby' Futures Prices
+## 'Nearby' Futures Prices
 
 There is considerable interest in the analysis of local or 'spot' prices, but the vast majority of forecasting exercises in commodity markets are focused on forecasting futures prices. Futures markets are much more 'liquid' than local spot markets. A market's liquidity simply refers to the level of trading activity and ease or difficulty with which it is to find a trading partner. Since futures markets are liquid[^active] and futures contracts are standardized, futures markets attract a diverse set of hedgers, speculators, and liquidity providers.[^liquid] Therefore, we will focus on forecasting futures prices, although the techniques covered could be applied to spot prices as well. 
 
@@ -54,7 +54,7 @@ For the purposes of generating a series of nearby prices that are meaningful, us
 
 Notice in particular that the scale for volume is the same in figures 1 and 2, and in figure 2 volume is strong throughout the series. 
 
-## Basics of Time-Series Forecasting
+## Time-Series Forecasting
 
 Given a time-series of prices that one would like to forecast, the analyst seeks to find a function, $f(.)$, that can take information known at date $t$ and predict the value of the price at date $t+1$. Various kinds of information is known at time $t$ and could be used in a forecasting function, but the most commonly used are time $t$ and earlier prices, time $t$ and earlier prices of substitute or complement commodities, variables directly relevant to the price of interest (like pace of production or consumption), interest rates, or other variables thought to be relevant. Of course, the analyst knows that even in the best case scenario, they will be producing forecasts with an error as shown in the equation below. 
 
@@ -68,11 +68,11 @@ In the equation, $z_t$ represents any variables the analyst believes might have 
 
 Using a regression approach requires that the future look somewhat like the past, in econometric terms, the error term must be stationary. This means $\epsilon_t$ must be represented well by a single probability distribution, for example normal with a constant mean and variance. The bulk of time-series analysis consists of verifying that your data is stationary so that this assumption holds, or performing transformations on your data so that the stationarity assumption holds for the transformed data. This concept may seem abstract now, but the coming chapters and exercises will reinforce this point over and over again. 
 
-# Properties of Time-Series Data
+## Properties of Time-Series Data
 
 Some properties of commodity prices occur frequently: trends, seasonality, and stationarity.  
 
-## Trends
+### Trends
 
 A lot of time series data will exhibit clear trends. The Food, Alcohol, and Industrial Use category from the corn balance sheet comes to mind. 
 
@@ -80,7 +80,7 @@ A lot of time series data will exhibit clear trends. The Food, Alcohol, and Indu
 
 This series is clearly not stationary, a clear upward trend guarantees that the conditional mean of a subsample from early in the time-series is lower than the conditional mean of a subsample from later in the series. The trend can be easily removed, or 'detrended' and therefore forecast fairly easily well with a simple linear trend, log trend, or exponential trend model. 
 
-## Inflation
+### Inflation
 
 In any long series of prices, inflation can be a concern. Inflation is the phenomenon that explains why $20 today will not buy as much as $20 thirty years ago. Inflation is a special kind of trend that is dealt with by 'deflating' the price series by an inflation index. Figure 4 from the Dallas Federal Reserve Bank shows three price indices growing over time. 
 
@@ -93,7 +93,7 @@ If your analysis involves any kind of comparison of prices or price changes acro
 (2) $Real Value = \frac{Nominal Value}{Price Index}$
 
 
-## Seasonality 
+### Seasonality 
 
 Some variables have a natural pattern through time. Often data pertaining to production or consumption will exhibit predictable seasonal patterns. We saw this with quarterly exports of corn for example. 
 
@@ -102,7 +102,7 @@ Some variables have a natural pattern through time. Often data pertaining to pro
 The seasonal pattern ensures that the conditional mean and variance of this variable is not constant through time. Seasonality is fairly easy to address in a regression model, and we will see some popular methods for removing the predictable seasonal component so that the resultant series is stationary. 
 
 
-# Random Walk Model and Stationarity 
+## Stationarity 
 
 Price series often seem to follow a random walk. That is, the price at $t+1$ appears to be a random deviation from the price at time $t$. More formally, 
 
@@ -156,7 +156,7 @@ In figure 10 the log-differences of the nearby corn futures price series (shown 
 
 ![Figure 10: Percent Change in Nearby Corn Futures Prices 9/2/2014-8/31/2015](Excel-files/IntroductiontoCommodityTS-Nearby_construct_files/image002.png)
 
-### Efficient Market Hypothesis
+## Efficient Market Hypothesis
 
 The Efficient Market Hypothesis (EMH) states that all the information available regarding an asset is incorporated into its price [@fama1970efficient]. If the EMH were true, forecasting would be a hopeless endeavor because one could never use current and past information to predict future prices - as in the Log-normal price model. There is a large debate about the whether or not this hypothesis is true, or how and when it deviates from being true. 
 
@@ -165,12 +165,12 @@ While a large literature in finance argues that it is not strictly true, markets
 
 
 
-### Exercises
+## Exercises
 
 1. Download the corn futures contracts CZ2014, CH2015, CK2015, CN2015, and CU2015. Replicate the series of nearby contracts depicted in figure 2 by concatenating prices of the appropriate dates for each contract. As a Check, replicate figure 2. 
 
 
-### References
+
 
 "Deflating Nominal Values to Real Values" Federal Reserve Bank of Dallas. [http://www.dallasfed.org/research/basics/nominal.cfm](http://www.dallasfed.org/research/basics/nominal.cfm) 
 

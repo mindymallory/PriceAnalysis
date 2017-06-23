@@ -1,8 +1,8 @@
 
-# Introduction to Commodity Price Analysis and Forecasting
+# Commodity Price Analysis and Forecasting
 
 
-## Introduction 
+
 
 A commodity is a good that can be supplied without qualitative differences. A bushel of wheat is regarded as a bushel of wheat everywhere. Commodities are fully or partially fungible so that the market treats a unit of good the same no matter who produced it or where it was produced. Think of grain elevators, for example. Farmers bring their grain to an elevator at harvest. Sometimes they sell it outright to the elevator, but sometimes they pay the elevator to store it for them. When the farmer decides to come get his grain out of storage do you think he gets the exact same kernels he brought in? Of course that would be impractical. The elevator just gives him back the same amount of grain he brought in of the same quality. The farmer is happy because the wheat is fungible. The grain he will be able to sell the grain he took out just as easily as the grain he put in. This is in stark contrast to differentiated goods where branding and quality make important distinctions between goods, resulting in differentiated demands. Just try to find someone indifferent between iPhone and Android!
 
@@ -17,7 +17,7 @@ Studying a commodity's transformation through time considers the nature of price
 Commodities can be transformed into completely different goods. Sometimes this transformation creates new commodities; for example soybeans are crushed into soybean oil and soybean meal - both of which are considered commodities. Other times the transformation creates products that are no longer considered commodities, where quality and differentiation matters. Meat products are a good example of this. Feeder cattle and live cattle are commodities, but through the slaughter and processing process, the commodity becomes differentiated products - different cuts of meat at the grocery store. Another example is coffee. Green coffee beans are considered a commodity, but once they enter the supply chain companies start transforming it by roasting, grinding, and brewing the coffee. Starbucks, for example, does not sell a commodity. Their product is highly differentiated and they market the fact that their product is highly differentiated in the marketplace.  
 
 
-## Storable and Nonstorable Commodities
+## Storable and Nonstorable 
 
 A key difference among commodities is their degree of storability. Some can be stored for long periods of time: 
 
@@ -144,7 +144,7 @@ Not covered here, but a method used widely by day-traders and other market parti
 
 The production of agricultural commodities is bound by the biological traits of the life cycle. Forecasting prices requires an awareness of key seasons, and problems that can arise during each phase of the life cycle.  
 
-## Long Term Agricultural Price Trends
+## Long Term Trends
 
 It is useful to begin our exploration of agricultural prices from a long term historical perspective. The figure below is monthly prices received by farmers in the U.S. from 1908 to 2015. By simple visual inspection there seems to be three periods of stable prices, from 1908-1973, 1974-2006, and 2007-present. Although the most recent period seems to be the most volatile and provides less confidence that a similar pattern will persist going forward. 
 

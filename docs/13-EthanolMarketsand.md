@@ -1,7 +1,7 @@
-# Ethanol Markets and the Corn Crush Spread
+# Ethanol 
 
 
-## Introduction
+
 
 Ethanol production and consumption begin to increase rapidly around 2005, which is when the Energy Policy Act of 2005 and later the Energy Security and Independence Act of 2007 created the Renewable Fuels Standard (RFS). The RFS mandated quantities of ethanol that blenders of gasoline are required to blend into the retail gasoline supply. These annual mandates are revised every year, but they were designed to steadily increase year after year until 2015 when the mandate reached 15 billion gallons per year. This figure came about because gasoline consumption in the United States was forecast to reach 150 billion gallons per year by 2015. So the RFS mandates were designed to reach the point where the entire retail gasoline supply would include 10% ethanol. 
 
@@ -29,11 +29,13 @@ Since ethanol production is a significant user of corn, and has important price 
 In the sections that follow the basic ethanol production process is presented. We discuss the by-product of ethanol production, distillers dried grains (DDGs), and its importance to the livestock industry. Then we will discuss some important price relationships involving ethanol, including the ethanol-RBOB gasoline price relationship, and the ethanol-corn-natural gas-DDGs price relationship. 
 
 
-## Ethanol Production[^wikiinfo]
+## Ethanol Production
+
+
+Ethanol production[^wikiinfo] takes place at biorefineries [all across the country](http://www.ethanolrfa.org/resources/biorefinery-locations/), but production is concentrated in the corn belt. Ethanol plants take advantage of the plentiful supplies of corn and the relatively favorable basis in the corn belt. Some plants are located close to major livestock feeding operations. If you click the source link for the map below and zoom in to look more closely at Kansas you will see a few ethanol plants located in the vicinity of the cattle feedlots we explored in an earlier chapter.  
 
 [^wikiinfo]: The information about ethanol production predominately comes from the [corn ethanol](https://en.wikipedia.org/wiki/Corn_ethanol) Wikipedia page. 
 
-Ethanol production takes place at biorefineries [all across the country](http://www.ethanolrfa.org/resources/biorefinery-locations/), but production is concentrated in the corn belt. Ethanol plants take advantage of the plentiful supplies of corn and the relatively favorable basis in the corn belt. Some plants are located close to major livestock feeding operations. If you click the source link for the map below and zoom in to look more closely at Kansas you will see a few ethanol plants located in the vicinity of the cattle feedlots we explored in an earlier chapter.  
 
 ![Figure 1: Ethanol Plant Locations in the U.S.](images/eth_locations.png)
 
@@ -61,7 +63,7 @@ Unlike dry grind ethanol production, in the wet grind process whole corn kernels
 Wet grind ethanol production is more costly than dry grind, so the majority of corn-based ethanol production capacity is of the dry grind type. 
 
 
-## Distiller's Grains: A by Product Used for Livestock Feed
+## Distiller's Grains
 
 DDGs are a by product of the dry grind ethanol production process that is valuable as a livestock feed. DDGs have about 26% protein, 8% fat, and significant metabolizable energy (kcals), so it can be used to replace both energy (typically corn) and protein (soybean meal or other) requirements in feed rations. 
 
@@ -86,7 +88,7 @@ Since ethanol is used as a liquid motor fuel, it makes sense that demand follows
 Ethanol is also a compliment with gasoline because it acts as an oxygenate. Oxygenates are added to retail gasoline to reduce carbon monoxide emissions and soot.  By blending ethanol into retail gasoline blenders do not have to add other costly oxygenates derived from fossil fuels, such as MTBE (which is outlawed in California and New York among others) or [others](https://en.wikipedia.org/wiki/Oxygenate).
 
 
-## Ethanol and Gasoline Price Relationship
+## Ethanol and Gas Prices
 
 That said, it is difficult to anticipate whether Ethanol prices will exhibit a relationship consistent with a substitute or consistent with a complement good. In figure 5, ethanol and RBOB gasoline prices are graphed together for comparison. 
 
@@ -94,7 +96,7 @@ That said, it is difficult to anticipate whether Ethanol prices will exhibit a r
 
 It appears that ethanol and Los Angelos spot RBOB have a positive relationship consistent with substitute goods, but ethanol prices are usually discounted relative to gasoline prices. Geographical differences in transport costs likely explain part of this, but also, a gallon of ethanol has about 75% of the energy content of a gallon of gasoline. So gasoline with ethanol blended into it will yield fewer miles per gallon. This is particularly true for E85. 
 
-## Ethanol, Corn, DDGS, and Natural Gas Price Relationship
+## Ethanol Crush Spread
 
 The price relationship between ethanol, its coproduct DDGs and its inputs, corn and natural gas, is also closely followed by the industry. Since we have recently ended a period of rapid expansion in the ethanol industry, 'blending margins' or the profitability of a typical ethanol plant were closely monitored to gauge how fast or slow we might expect future expansion. Although expansion has slowed, industry participants still follow the margin closely to determine the health of the industry and whether we can expect any idling of capacity or expansion. 
 
@@ -102,7 +104,6 @@ Iowa State University Extension maintains an excellent spreadsheet model of etha
 
 [Iowa State University Ethanol Plant Economic Model](https://www.extension.iastate.edu/agdm/articles/hof/HofJan08.html)
 
-## Price Relationships
 
 Similar to the soybean crush, cattle crush, and crack spread, there exists futures contracts for ethanol, corn. This means that much of the ethanol production margins can be hedged or speculated on as we saw in the spreads of previous chapters. There are some limitations to this crush spread. The ethanol futures contract does not attract high trading volumes, which increases trading costs through higher Bid-Ask spreads. Also, there is no ddg futures contract, which means to hedge this revanue stream you have to use a cross hedge with with corn futures.
 
@@ -118,7 +119,7 @@ Equation 2 gives the GPM per bushel of corn processed into ethanol. Dividing $17
 
 3. $P_{eth}*2.8 + P_{DDG}*0.0085 - P_{corn}$
 
-## Hedging the Ethanol Crush Spread
+## Hedging the Crush Spread
 
 Like soybean crushers, ethanol producers can use futures contracts to hedge their profitability. Ethanol producers buy corn and sell ethanol and DDGs, so the appropriate hedge trades would be to buy corn futures and sell (one month later) ethanol futures. An ethanol futures contract is for $29,000$ gallons of ethanol (the amount that will fill one typical train car).
 
@@ -134,7 +135,7 @@ In this case, however, the sale of DDGs would remain unhedged. Since one bushel 
 
 When there is no futures contract for exact product or commodity that one needs to hedge, another futures contract whose price is highly correlated with the commodity you need to hedge can be used. In our case, we already observed above that the prices of DDGs and corn futures are highly correlated, so it may be beneficial to use corn futures to hedge the sale of DDGs. 
 
-## Minimize the Variance of Cash Flow with Optimal Hedge Ratio for DDGs and Corn Futures
+### Minimize the Variance of Cash Flow with Optimal Hedge Ratio for DDGs and Corn Futures
 
 To develop the concept of a *cash flow variance minimizing* optimal hedge ratio, lets step back to the simpler example of a farmer hedging a crop of grain. We saw that the spot prices a farmer recieves is not exactly equal to the futures price for corn. Factors like transportation cost and local supply and demand conditions in the spot market make the basis, or the difference between spot and futures prices, variable. If this variability is too high, it may not be optimal to hedge with a 1-1 cash and futures position, even for the simple case of a farmer's short hedge. 
 
@@ -167,7 +168,7 @@ $\Delta S(t) = \beta_0 + b\Delta F(t) + \epsilon(t)$
 
 This means we can use historical prices to estimate the relationship between spot and futures prices, which yields the optimal hedge ratio for hedging the spot price with futures. 
 
-## Using Corn Futures to Cross Hedge DDG Sales
+### Using Corn Futures to Cross Hedge DDG Sales
 
 In a similar manner, we can determine the optimal hedge ratio for hedging DDG sales with corn futures by regressing changes in spot DDG prices on changes in corn futures prices. The excercises directs you to work through this example. 
 

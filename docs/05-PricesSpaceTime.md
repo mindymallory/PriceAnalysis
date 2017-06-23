@@ -2,7 +2,6 @@
 
 
 
-## Introduction 
 
 In this section we cover how commodity prices behave over time and space. We have discussed frequently that commodity futures contracts have an expiration, that there are always several contracts trading at any given time with maturities that are increasingly farther into the future, and that these contracts will eventually expire and no longer be traded. 
 
@@ -72,7 +71,7 @@ Now, just to illustrate how the forward curve changed between August and Decembe
 ![Figure 10. Returns to Storage Per Month Implied by the Forward Curve](Excel-files/PricesSpaceTime/forward-curves_files/image019.png)
 
 
-## Calendar Spreads and the Forward Curve 
+## Calendar Spreads  
 
 The prior discussion has viewed the forward curve and returns to storage from the perspective of a farmer or other who holds physical stocks of grain. Speculators watch the price spread between futures contracts and trade them to bet on whether or not returns to storage will increase or decrease. These kinds of spreads are called *Calendar Spreads* and they are done by performing the following type of trade. 
 

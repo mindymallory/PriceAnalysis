@@ -1,0 +1,2115 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Price Analysis: A Fundamental Approach to the Study of Commodity Prices</title>
+  <meta name="description" content="A Fundamental Approach to the Study of Commodity Prices.">
+  <meta name="generator" content="bookdown 0.4 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Price Analysis: A Fundamental Approach to the Study of Commodity Prices" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="http:mindymallory.github.io/PriceAnalysis/" />
+  
+  <meta property="og:description" content="A Fundamental Approach to the Study of Commodity Prices." />
+  <meta name="github-repo" content="mindymallory/PriceAnalysis" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Price Analysis: A Fundamental Approach to the Study of Commodity Prices" />
+  
+  <meta name="twitter:description" content="A Fundamental Approach to the Study of Commodity Prices." />
+  
+
+<meta name="author" content="Mindy L. Mallory">
+
+
+<meta name="date" content="2017-06-23">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="crude-oil-and-the-crack-spread.html">
+<link rel="next" href="appendix-forecasting-with-ts-models.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Price Analysis</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-the-author"><i class="fa fa-check"></i>About the Author</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#contact"><i class="fa fa-check"></i>Contact</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="grain-and-oilseed-markets.html"><a href="grain-and-oilseed-markets.html"><i class="fa fa-check"></i><b>1</b> Grain and Oilseed Markets</a><ul>
+<li class="chapter" data-level="1.1" data-path="grain-and-oilseed-markets.html"><a href="grain-and-oilseed-markets.html#field-corn"><i class="fa fa-check"></i><b>1.1</b> Field Corn</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="grain-and-oilseed-markets.html"><a href="grain-and-oilseed-markets.html#recent-trends-in-acreage-yields-production-and-use"><i class="fa fa-check"></i><b>1.1.1</b> Recent Trends in Acreage, Yields, Production, and Use</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="grain-and-oilseed-markets.html"><a href="grain-and-oilseed-markets.html#soybeans"><i class="fa fa-check"></i><b>1.2</b> Soybeans</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="grain-and-oilseed-markets.html"><a href="grain-and-oilseed-markets.html#recent-trends-in-acreage-yield-production-and-use"><i class="fa fa-check"></i><b>1.2.1</b> Recent Trends in Acreage, Yield, Production, and Use</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="grain-and-oilseed-markets.html"><a href="grain-and-oilseed-markets.html#wheat"><i class="fa fa-check"></i><b>1.3</b> Wheat</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="grain-and-oilseed-markets.html"><a href="grain-and-oilseed-markets.html#hard-red-winter-wheat"><i class="fa fa-check"></i><b>1.3.1</b> Hard Red Winter Wheat</a></li>
+<li class="chapter" data-level="1.3.2" data-path="grain-and-oilseed-markets.html"><a href="grain-and-oilseed-markets.html#hard-red-spring-wheat"><i class="fa fa-check"></i><b>1.3.2</b> Hard Red Spring Wheat</a></li>
+<li class="chapter" data-level="1.3.3" data-path="grain-and-oilseed-markets.html"><a href="grain-and-oilseed-markets.html#soft-red-winter-wheat"><i class="fa fa-check"></i><b>1.3.3</b> Soft Red Winter Wheat</a></li>
+<li class="chapter" data-level="1.3.4" data-path="grain-and-oilseed-markets.html"><a href="grain-and-oilseed-markets.html#protein-premiums-and-wheat-spreads"><i class="fa fa-check"></i><b>1.3.4</b> Protein Premiums and Wheat Spreads</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="commodity-price-analysis-and-forecasting.html"><a href="commodity-price-analysis-and-forecasting.html"><i class="fa fa-check"></i><b>2</b> Commodity Price Analysis and Forecasting</a><ul>
+<li class="chapter" data-level="2.0.1" data-path="commodity-price-analysis-and-forecasting.html"><a href="commodity-price-analysis-and-forecasting.html#trasformation-over-space-time-and-form"><i class="fa fa-check"></i><b>2.0.1</b> Trasformation Over Space, Time, and Form</a></li>
+<li class="chapter" data-level="2.1" data-path="commodity-price-analysis-and-forecasting.html"><a href="commodity-price-analysis-and-forecasting.html#storable-and-nonstorable"><i class="fa fa-check"></i><b>2.1</b> Storable and Nonstorable</a></li>
+<li class="chapter" data-level="2.2" data-path="commodity-price-analysis-and-forecasting.html"><a href="commodity-price-analysis-and-forecasting.html#commodity-prices"><i class="fa fa-check"></i><b>2.2</b> Commodity Prices</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="commodity-price-analysis-and-forecasting.html"><a href="commodity-price-analysis-and-forecasting.html#forecasting-commodity-prices-in-business"><i class="fa fa-check"></i><b>2.2.1</b> Forecasting Commodity Prices in Business</a></li>
+<li class="chapter" data-level="2.2.2" data-path="commodity-price-analysis-and-forecasting.html"><a href="commodity-price-analysis-and-forecasting.html#price-analysis-versus-forecasting"><i class="fa fa-check"></i><b>2.2.2</b> Price Analysis versus Forecasting</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="commodity-price-analysis-and-forecasting.html"><a href="commodity-price-analysis-and-forecasting.html#forecasting-basics"><i class="fa fa-check"></i><b>2.3</b> Forecasting Basics</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="commodity-price-analysis-and-forecasting.html"><a href="commodity-price-analysis-and-forecasting.html#commodity-production-cycles"><i class="fa fa-check"></i><b>2.3.1</b> Commodity Production Cycles</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="commodity-price-analysis-and-forecasting.html"><a href="commodity-price-analysis-and-forecasting.html#long-term-trends"><i class="fa fa-check"></i><b>2.4</b> Long Term Trends</a></li>
+<li class="chapter" data-level="2.5" data-path="commodity-price-analysis-and-forecasting.html"><a href="commodity-price-analysis-and-forecasting.html#readings"><i class="fa fa-check"></i><b>2.5</b> Readings</a></li>
+<li class="chapter" data-level="2.6" data-path="commodity-price-analysis-and-forecasting.html"><a href="commodity-price-analysis-and-forecasting.html#exercises"><i class="fa fa-check"></i><b>2.6</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="how-to-find-information.html"><a href="how-to-find-information.html"><i class="fa fa-check"></i><b>3</b> How to Find Information</a><ul>
+<li class="chapter" data-level="3.1" data-path="how-to-find-information.html"><a href="how-to-find-information.html#market-commentary"><i class="fa fa-check"></i><b>3.1</b> Market Commentary</a></li>
+<li class="chapter" data-level="3.2" data-path="how-to-find-information.html"><a href="how-to-find-information.html#futures-price-quotes"><i class="fa fa-check"></i><b>3.2</b> Futures Price Quotes</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="how-to-find-information.html"><a href="how-to-find-information.html#futures-data-sources"><i class="fa fa-check"></i><b>3.2.1</b> Futures Data Sources</a></li>
+<li class="chapter" data-level="3.2.2" data-path="how-to-find-information.html"><a href="how-to-find-information.html#futures-symbols-and-looking-up-data-by-contract-expiration"><i class="fa fa-check"></i><b>3.2.2</b> Futures Symbols and Looking up Data by Contract Expiration</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="how-to-find-information.html"><a href="how-to-find-information.html#usda-reports"><i class="fa fa-check"></i><b>3.3</b> USDA Reports</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="how-to-find-information.html"><a href="how-to-find-information.html#usda-reports-influential-in-commodity-markets"><i class="fa fa-check"></i><b>3.3.1</b> USDA Reports Influential in Commodity Markets</a></li>
+<li class="chapter" data-level="3.3.2" data-path="how-to-find-information.html"><a href="how-to-find-information.html#usda-data-sources"><i class="fa fa-check"></i><b>3.3.2</b> USDA Data Sources</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="how-to-find-information.html"><a href="how-to-find-information.html#conclusion"><i class="fa fa-check"></i><b>3.4</b> Conclusion</a></li>
+<li class="chapter" data-level="3.5" data-path="how-to-find-information.html"><a href="how-to-find-information.html#readings-1"><i class="fa fa-check"></i><b>3.5</b> Readings</a></li>
+<li class="chapter" data-level="3.6" data-path="how-to-find-information.html"><a href="how-to-find-information.html#exercises-1"><i class="fa fa-check"></i><b>3.6</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="hedging-basics.html"><a href="hedging-basics.html"><i class="fa fa-check"></i><b>4</b> Hedging Basics</a></li>
+<li class="chapter" data-level="5" data-path="prices-over-space-and-time.html"><a href="prices-over-space-and-time.html"><i class="fa fa-check"></i><b>5</b> Prices Over Space and Time</a><ul>
+<li class="chapter" data-level="5.1" data-path="prices-over-space-and-time.html"><a href="prices-over-space-and-time.html#an-increasing-forward-curve"><i class="fa fa-check"></i><b>5.1</b> An Increasing Forward Curve</a></li>
+<li class="chapter" data-level="5.2" data-path="prices-over-space-and-time.html"><a href="prices-over-space-and-time.html#a-decreasing-forward-curve"><i class="fa fa-check"></i><b>5.2</b> A Decreasing Forward Curve</a></li>
+<li class="chapter" data-level="5.3" data-path="prices-over-space-and-time.html"><a href="prices-over-space-and-time.html#calendar-spreads"><i class="fa fa-check"></i><b>5.3</b> Calendar Spreads</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="prices-over-space-and-time.html"><a href="prices-over-space-and-time.html#bullish"><i class="fa fa-check"></i><b>5.3.1</b> Bullish</a></li>
+<li class="chapter" data-level="5.3.2" data-path="prices-over-space-and-time.html"><a href="prices-over-space-and-time.html#bearish"><i class="fa fa-check"></i><b>5.3.2</b> Bearish</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="prices-over-space-and-time.html"><a href="prices-over-space-and-time.html#price-variation-over-space"><i class="fa fa-check"></i><b>5.4</b> Price Variation Over Space</a></li>
+<li class="chapter" data-level="5.5" data-path="prices-over-space-and-time.html"><a href="prices-over-space-and-time.html#definition-of-basis"><i class="fa fa-check"></i><b>5.5</b> Definition of Basis</a></li>
+<li class="chapter" data-level="5.6" data-path="prices-over-space-and-time.html"><a href="prices-over-space-and-time.html#terminology"><i class="fa fa-check"></i><b>5.6</b> Terminology</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="balance-sheet-analysis.html"><a href="balance-sheet-analysis.html"><i class="fa fa-check"></i><b>6</b> Balance Sheet Analysis</a><ul>
+<li class="chapter" data-level="6.1" data-path="balance-sheet-analysis.html"><a href="balance-sheet-analysis.html#supply-and-demand"><i class="fa fa-check"></i><b>6.1</b> Supply and Demand</a></li>
+<li class="chapter" data-level="6.2" data-path="balance-sheet-analysis.html"><a href="balance-sheet-analysis.html#balance-sheet"><i class="fa fa-check"></i><b>6.2</b> Balance Sheet</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="balance-sheet-analysis.html"><a href="balance-sheet-analysis.html#the-marketing-year-and-balance-sheet-forecasting-schedule"><i class="fa fa-check"></i><b>6.2.1</b> The Marketing Year and Balance Sheet Forecasting Schedule</a></li>
+<li class="chapter" data-level="6.2.2" data-path="balance-sheet-analysis.html"><a href="balance-sheet-analysis.html#uncertainty"><i class="fa fa-check"></i><b>6.2.2</b> Uncertainty</a></li>
+<li class="chapter" data-level="6.2.3" data-path="balance-sheet-analysis.html"><a href="balance-sheet-analysis.html#balance-sheet-format"><i class="fa fa-check"></i><b>6.2.3</b> Balance Sheet Format</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="balance-sheet-analysis.html"><a href="balance-sheet-analysis.html#coming-up-with-a-price"><i class="fa fa-check"></i><b>6.3</b> Coming up with a Price</a></li>
+<li class="chapter" data-level="6.4" data-path="balance-sheet-analysis.html"><a href="balance-sheet-analysis.html#readings-2"><i class="fa fa-check"></i><b>6.4</b> Readings</a></li>
+<li class="chapter" data-level="6.5" data-path="balance-sheet-analysis.html"><a href="balance-sheet-analysis.html#exercises-2"><i class="fa fa-check"></i><b>6.5</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="price-reaction-to-usda-reports.html"><a href="price-reaction-to-usda-reports.html"><i class="fa fa-check"></i><b>7</b> Price Reaction to USDA Reports</a><ul>
+<li class="chapter" data-level="7.1" data-path="price-reaction-to-usda-reports.html"><a href="price-reaction-to-usda-reports.html#history---the-great-data-leak-of-1905"><i class="fa fa-check"></i><b>7.1</b> History - “The Great Data Leak of 1905”</a></li>
+<li class="chapter" data-level="7.2" data-path="price-reaction-to-usda-reports.html"><a href="price-reaction-to-usda-reports.html#changing-report-release-times"><i class="fa fa-check"></i><b>7.2</b> Changing Report Release Times</a></li>
+<li class="chapter" data-level="7.3" data-path="price-reaction-to-usda-reports.html"><a href="price-reaction-to-usda-reports.html#price-reactions"><i class="fa fa-check"></i><b>7.3</b> Price Reactions</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="price-reaction-to-usda-reports.html"><a href="price-reaction-to-usda-reports.html#some-examples-of-recent-big-market-reactions"><i class="fa fa-check"></i><b>7.3.1</b> Some Examples of Recent Big Market Reactions</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="price-reaction-to-usda-reports.html"><a href="price-reaction-to-usda-reports.html#conclusions"><i class="fa fa-check"></i><b>7.4</b> Conclusions</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="forecasting-production.html"><a href="forecasting-production.html"><i class="fa fa-check"></i><b>8</b> Forecasting Production</a><ul>
+<li class="chapter" data-level="8.1" data-path="forecasting-production.html"><a href="forecasting-production.html#estimating-acreage"><i class="fa fa-check"></i><b>8.1</b> Estimating Acreage</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="forecasting-production.html"><a href="forecasting-production.html#forecasting-harvested-acres"><i class="fa fa-check"></i><b>8.1.1</b> Forecasting Harvested Acres</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="forecasting-production.html"><a href="forecasting-production.html#forecasting-yield"><i class="fa fa-check"></i><b>8.2</b> Forecasting Yield</a></li>
+<li class="chapter" data-level="8.3" data-path="forecasting-production.html"><a href="forecasting-production.html#growing-season-yield-forecasts"><i class="fa fa-check"></i><b>8.3</b> Growing Season Yield Forecasts</a></li>
+<li class="chapter" data-level="8.4" data-path="forecasting-production.html"><a href="forecasting-production.html#forecasting-production-1"><i class="fa fa-check"></i><b>8.4</b> Forecasting Production</a></li>
+<li class="chapter" data-level="8.5" data-path="forecasting-production.html"><a href="forecasting-production.html#conclusion-1"><i class="fa fa-check"></i><b>8.5</b> Conclusion</a></li>
+<li class="chapter" data-level="8.6" data-path="forecasting-production.html"><a href="forecasting-production.html#exercises-3"><i class="fa fa-check"></i><b>8.6</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="forecasting-use-of-corn.html"><a href="forecasting-use-of-corn.html"><i class="fa fa-check"></i><b>9</b> Forecasting Use of Corn</a><ul>
+<li class="chapter" data-level="9.1" data-path="forecasting-use-of-corn.html"><a href="forecasting-use-of-corn.html#food-alcohol-and-industrial-use"><i class="fa fa-check"></i><b>9.1</b> Food, Alcohol, and Industrial Use</a></li>
+<li class="chapter" data-level="9.2" data-path="forecasting-use-of-corn.html"><a href="forecasting-use-of-corn.html#exports"><i class="fa fa-check"></i><b>9.2</b> Exports</a></li>
+<li class="chapter" data-level="9.3" data-path="forecasting-use-of-corn.html"><a href="forecasting-use-of-corn.html#feed-and-residual"><i class="fa fa-check"></i><b>9.3</b> Feed and Residual</a></li>
+<li class="chapter" data-level="9.4" data-path="forecasting-use-of-corn.html"><a href="forecasting-use-of-corn.html#price-sensitivity-of-use-categories"><i class="fa fa-check"></i><b>9.4</b> Price Sensitivity of Use Categories</a></li>
+<li class="chapter" data-level="9.5" data-path="forecasting-use-of-corn.html"><a href="forecasting-use-of-corn.html#forecasting-use"><i class="fa fa-check"></i><b>9.5</b> Forecasting Use</a><ul>
+<li class="chapter" data-level="9.5.1" data-path="forecasting-use-of-corn.html"><a href="forecasting-use-of-corn.html#food-seed-and-industrial"><i class="fa fa-check"></i><b>9.5.1</b> Food, Seed, and Industrial</a></li>
+<li class="chapter" data-level="9.5.2" data-path="forecasting-use-of-corn.html"><a href="forecasting-use-of-corn.html#exports-1"><i class="fa fa-check"></i><b>9.5.2</b> Exports</a></li>
+<li class="chapter" data-level="9.5.3" data-path="forecasting-use-of-corn.html"><a href="forecasting-use-of-corn.html#daily-reports"><i class="fa fa-check"></i><b>9.5.3</b> Daily Reports</a></li>
+<li class="chapter" data-level="9.5.4" data-path="forecasting-use-of-corn.html"><a href="forecasting-use-of-corn.html#feed-and-residual-1"><i class="fa fa-check"></i><b>9.5.4</b> Feed and Residual</a></li>
+</ul></li>
+<li class="chapter" data-level="9.6" data-path="forecasting-use-of-corn.html"><a href="forecasting-use-of-corn.html#readings-3"><i class="fa fa-check"></i><b>9.6</b> Readings</a></li>
+<li class="chapter" data-level="9.7" data-path="forecasting-use-of-corn.html"><a href="forecasting-use-of-corn.html#exercises-4"><i class="fa fa-check"></i><b>9.7</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="forecasting-use-of-soybeans.html"><a href="forecasting-use-of-soybeans.html"><i class="fa fa-check"></i><b>10</b> Forecasting Use of Soybeans</a><ul>
+<li class="chapter" data-level="10.1" data-path="forecasting-use-of-soybeans.html"><a href="forecasting-use-of-soybeans.html#soybean-crush"><i class="fa fa-check"></i><b>10.1</b> Soybean Crush</a></li>
+<li class="chapter" data-level="10.2" data-path="forecasting-use-of-soybeans.html"><a href="forecasting-use-of-soybeans.html#exports-2"><i class="fa fa-check"></i><b>10.2</b> Exports</a></li>
+<li class="chapter" data-level="10.3" data-path="forecasting-use-of-soybeans.html"><a href="forecasting-use-of-soybeans.html#feed-seed-and-residual"><i class="fa fa-check"></i><b>10.3</b> Feed, Seed, and Residual</a></li>
+<li class="chapter" data-level="10.4" data-path="forecasting-use-of-soybeans.html"><a href="forecasting-use-of-soybeans.html#price-sensitivity-of-use-categories-1"><i class="fa fa-check"></i><b>10.4</b> Price Sensitivity of Use Categories</a></li>
+<li class="chapter" data-level="10.5" data-path="forecasting-use-of-soybeans.html"><a href="forecasting-use-of-soybeans.html#forecasting-use-of-soybeans-1"><i class="fa fa-check"></i><b>10.5</b> Forecasting Use of Soybeans</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="ending-stocks-and-price.html"><a href="ending-stocks-and-price.html"><i class="fa fa-check"></i><b>11</b> Ending Stocks and Price</a><ul>
+<li class="chapter" data-level="11.1" data-path="ending-stocks-and-price.html"><a href="ending-stocks-and-price.html#forecasting-price"><i class="fa fa-check"></i><b>11.1</b> Forecasting Price</a></li>
+<li class="chapter" data-level="11.2" data-path="ending-stocks-and-price.html"><a href="ending-stocks-and-price.html#examining-the-data"><i class="fa fa-check"></i><b>11.2</b> Examining the Data</a></li>
+<li class="chapter" data-level="11.3" data-path="ending-stocks-and-price.html"><a href="ending-stocks-and-price.html#references"><i class="fa fa-check"></i><b>11.3</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="south-american-production.html"><a href="south-american-production.html"><i class="fa fa-check"></i><b>12</b> South American Production</a></li>
+<li class="chapter" data-level="13" data-path="the-soybean-crush.html"><a href="the-soybean-crush.html"><i class="fa fa-check"></i><b>13</b> The Soybean Crush</a><ul>
+<li class="chapter" data-level="13.1" data-path="the-soybean-crush.html"><a href="the-soybean-crush.html#oilseed-processing"><i class="fa fa-check"></i><b>13.1</b> Oilseed Processing</a></li>
+<li class="chapter" data-level="13.2" data-path="the-soybean-crush.html"><a href="the-soybean-crush.html#soybean-oil-uses"><i class="fa fa-check"></i><b>13.2</b> Soybean Oil Uses</a></li>
+<li class="chapter" data-level="13.3" data-path="the-soybean-crush.html"><a href="the-soybean-crush.html#soybean-meal-uses"><i class="fa fa-check"></i><b>13.3</b> Soybean Meal Uses</a></li>
+<li class="chapter" data-level="13.4" data-path="the-soybean-crush.html"><a href="the-soybean-crush.html#price-relationships"><i class="fa fa-check"></i><b>13.4</b> Price Relationships</a></li>
+<li class="chapter" data-level="13.5" data-path="the-soybean-crush.html"><a href="the-soybean-crush.html#the-board-crush"><i class="fa fa-check"></i><b>13.5</b> The Board Crush</a><ul>
+<li class="chapter" data-level="13.5.1" data-path="the-soybean-crush.html"><a href="the-soybean-crush.html#the-1-1-1-spread"><i class="fa fa-check"></i><b>13.5.1</b> The 1-1-1 Spread</a></li>
+<li class="chapter" data-level="13.5.2" data-path="the-soybean-crush.html"><a href="the-soybean-crush.html#the-9-11-10-spread"><i class="fa fa-check"></i><b>13.5.2</b> The 9-11-10 Spread</a></li>
+</ul></li>
+<li class="chapter" data-level="13.6" data-path="the-soybean-crush.html"><a href="the-soybean-crush.html#readings-4"><i class="fa fa-check"></i><b>13.6</b> Readings</a></li>
+<li class="chapter" data-level="13.7" data-path="the-soybean-crush.html"><a href="the-soybean-crush.html#references-1"><i class="fa fa-check"></i><b>13.7</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="ethanol.html"><a href="ethanol.html"><i class="fa fa-check"></i><b>14</b> Ethanol</a><ul>
+<li class="chapter" data-level="14.1" data-path="ethanol.html"><a href="ethanol.html#ethanol-production"><i class="fa fa-check"></i><b>14.1</b> Ethanol Production</a><ul>
+<li class="chapter" data-level="14.1.1" data-path="ethanol.html"><a href="ethanol.html#dry-grind-ethanol-production"><i class="fa fa-check"></i><b>14.1.1</b> Dry Grind Ethanol Production</a></li>
+<li class="chapter" data-level="14.1.2" data-path="ethanol.html"><a href="ethanol.html#wet-grind-ethanol-production"><i class="fa fa-check"></i><b>14.1.2</b> Wet Grind Ethanol Production</a></li>
+</ul></li>
+<li class="chapter" data-level="14.2" data-path="ethanol.html"><a href="ethanol.html#distillers-grains"><i class="fa fa-check"></i><b>14.2</b> Distiller’s Grains</a><ul>
+<li class="chapter" data-level="14.2.1" data-path="ethanol.html"><a href="ethanol.html#ddg-prices"><i class="fa fa-check"></i><b>14.2.1</b> DDG Prices</a></li>
+</ul></li>
+<li class="chapter" data-level="14.3" data-path="ethanol.html"><a href="ethanol.html#ethanol-prices"><i class="fa fa-check"></i><b>14.3</b> Ethanol Prices</a></li>
+<li class="chapter" data-level="14.4" data-path="ethanol.html"><a href="ethanol.html#ethanol-and-gas-prices"><i class="fa fa-check"></i><b>14.4</b> Ethanol and Gas Prices</a></li>
+<li class="chapter" data-level="14.5" data-path="ethanol.html"><a href="ethanol.html#ethanol-crush-spread"><i class="fa fa-check"></i><b>14.5</b> Ethanol Crush Spread</a></li>
+<li class="chapter" data-level="14.6" data-path="ethanol.html"><a href="ethanol.html#hedging-the-crush-spread"><i class="fa fa-check"></i><b>14.6</b> Hedging the Crush Spread</a></li>
+<li class="chapter" data-level="14.7" data-path="ethanol.html"><a href="ethanol.html#cross-hedging"><i class="fa fa-check"></i><b>14.7</b> Cross Hedging</a><ul>
+<li class="chapter" data-level="14.7.1" data-path="ethanol.html"><a href="ethanol.html#minimize-the-variance-of-cash-flow-with-optimal-hedge-ratio-for-ddgs-and-corn-futures"><i class="fa fa-check"></i><b>14.7.1</b> Minimize the Variance of Cash Flow with Optimal Hedge Ratio for DDGs and Corn Futures</a></li>
+<li class="chapter" data-level="14.7.2" data-path="ethanol.html"><a href="ethanol.html#using-corn-futures-to-cross-hedge-ddg-sales"><i class="fa fa-check"></i><b>14.7.2</b> Using Corn Futures to Cross Hedge DDG Sales</a></li>
+</ul></li>
+<li class="chapter" data-level="14.8" data-path="ethanol.html"><a href="ethanol.html#readings-5"><i class="fa fa-check"></i><b>14.8</b> Readings</a></li>
+<li class="chapter" data-level="14.9" data-path="ethanol.html"><a href="ethanol.html#exercises-5"><i class="fa fa-check"></i><b>14.9</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="cattle-markets-and-the-livestock-crush.html"><a href="cattle-markets-and-the-livestock-crush.html"><i class="fa fa-check"></i><b>15</b> Cattle Markets and the Livestock Crush</a><ul>
+<li class="chapter" data-level="15.1" data-path="cattle-markets-and-the-livestock-crush.html"><a href="cattle-markets-and-the-livestock-crush.html#the-cow-calf-operation"><i class="fa fa-check"></i><b>15.1</b> The Cow-Calf Operation</a><ul>
+<li class="chapter" data-level="15.1.1" data-path="cattle-markets-and-the-livestock-crush.html"><a href="cattle-markets-and-the-livestock-crush.html#calandar-of-production-for-the-cow-calf-producer"><i class="fa fa-check"></i><b>15.1.1</b> Calandar of Production for the Cow-calf Producer</a></li>
+</ul></li>
+<li class="chapter" data-level="15.2" data-path="cattle-markets-and-the-livestock-crush.html"><a href="cattle-markets-and-the-livestock-crush.html#the-backgrounderstocker"><i class="fa fa-check"></i><b>15.2</b> The Backgrounder/Stocker</a><ul>
+<li class="chapter" data-level="15.2.1" data-path="cattle-markets-and-the-livestock-crush.html"><a href="cattle-markets-and-the-livestock-crush.html#bull-or-heifer-calf"><i class="fa fa-check"></i><b>15.2.1</b> Bull or Heifer Calf?</a></li>
+<li class="chapter" data-level="15.2.2" data-path="cattle-markets-and-the-livestock-crush.html"><a href="cattle-markets-and-the-livestock-crush.html#weight-of-calves"><i class="fa fa-check"></i><b>15.2.2</b> Weight of Calves</a></li>
+</ul></li>
+<li class="chapter" data-level="15.3" data-path="cattle-markets-and-the-livestock-crush.html"><a href="cattle-markets-and-the-livestock-crush.html#the-large-feedlot"><i class="fa fa-check"></i><b>15.3</b> The Large Feedlot</a></li>
+<li class="chapter" data-level="15.4" data-path="cattle-markets-and-the-livestock-crush.html"><a href="cattle-markets-and-the-livestock-crush.html#beef-packing-plants"><i class="fa fa-check"></i><b>15.4</b> Beef Packing Plants</a></li>
+<li class="chapter" data-level="15.5" data-path="cattle-markets-and-the-livestock-crush.html"><a href="cattle-markets-and-the-livestock-crush.html#cattle-auctions"><i class="fa fa-check"></i><b>15.5</b> Cattle Auctions</a></li>
+<li class="chapter" data-level="15.6" data-path="cattle-markets-and-the-livestock-crush.html"><a href="cattle-markets-and-the-livestock-crush.html#the-cattle-crush"><i class="fa fa-check"></i><b>15.6</b> The Cattle Crush</a><ul>
+<li class="chapter" data-level="15.6.1" data-path="cattle-markets-and-the-livestock-crush.html"><a href="cattle-markets-and-the-livestock-crush.html#details-of-the-spreadcattlespread"><i class="fa fa-check"></i><b>15.6.1</b> Details of the Spread</a></li>
+</ul></li>
+<li class="chapter" data-level="15.7" data-path="cattle-markets-and-the-livestock-crush.html"><a href="cattle-markets-and-the-livestock-crush.html#external-readings"><i class="fa fa-check"></i><b>15.7</b> External Readings</a></li>
+<li class="chapter" data-level="15.8" data-path="cattle-markets-and-the-livestock-crush.html"><a href="cattle-markets-and-the-livestock-crush.html#exercise"><i class="fa fa-check"></i><b>15.8</b> Exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="hog-markets.html"><a href="hog-markets.html"><i class="fa fa-check"></i><b>16</b> Hog Markets</a><ul>
+<li class="chapter" data-level="16.1" data-path="hog-markets.html"><a href="hog-markets.html#definitions"><i class="fa fa-check"></i><b>16.1</b> Definitions</a></li>
+<li class="chapter" data-level="16.2" data-path="hog-markets.html"><a href="hog-markets.html#gestation-and-farrowing"><i class="fa fa-check"></i><b>16.2</b> Gestation and Farrowing</a></li>
+<li class="chapter" data-level="16.3" data-path="hog-markets.html"><a href="hog-markets.html#feeding"><i class="fa fa-check"></i><b>16.3</b> Feeding</a></li>
+<li class="chapter" data-level="16.4" data-path="hog-markets.html"><a href="hog-markets.html#waste-management"><i class="fa fa-check"></i><b>16.4</b> Waste Management</a></li>
+<li class="chapter" data-level="16.5" data-path="hog-markets.html"><a href="hog-markets.html#geography-of-hog-production"><i class="fa fa-check"></i><b>16.5</b> Geography of Hog Production</a></li>
+<li class="chapter" data-level="16.6" data-path="hog-markets.html"><a href="hog-markets.html#industry-structure"><i class="fa fa-check"></i><b>16.6</b> Industry Structure</a></li>
+<li class="chapter" data-level="16.7" data-path="hog-markets.html"><a href="hog-markets.html#price-determination"><i class="fa fa-check"></i><b>16.7</b> Price Determination</a></li>
+<li class="chapter" data-level="16.8" data-path="hog-markets.html"><a href="hog-markets.html#lean-hogs-futures"><i class="fa fa-check"></i><b>16.8</b> Lean Hogs Futures</a><ul>
+<li class="chapter" data-level="16.8.1" data-path="hog-markets.html"><a href="hog-markets.html#why-only-one-contract-instead-of-two-like-feeder-and-live-cattle"><i class="fa fa-check"></i><b>16.8.1</b> Why only one Contract Instead of Two like Feeder and Live Cattle?</a></li>
+<li class="chapter" data-level="16.8.2" data-path="hog-markets.html"><a href="hog-markets.html#demise-of-the-frozen-pork-belly-futures-contracts"><i class="fa fa-check"></i><b>16.8.2</b> Demise of the Frozen Pork Belly Futures Contracts</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="crude-oil-and-the-crack-spread.html"><a href="crude-oil-and-the-crack-spread.html"><i class="fa fa-check"></i><b>17</b> Crude Oil and the Crack Spread</a><ul>
+<li class="chapter" data-level="17.1" data-path="crude-oil-and-the-crack-spread.html"><a href="crude-oil-and-the-crack-spread.html#light-versus-heavysweet-versus-sour"><i class="fa fa-check"></i><b>17.1</b> Light versus Heavy/Sweet versus Sour</a><ul>
+<li class="chapter" data-level="17.1.1" data-path="crude-oil-and-the-crack-spread.html"><a href="crude-oil-and-the-crack-spread.html#light-sweet-wti-and-brent-crude-oil"><i class="fa fa-check"></i><b>17.1.1</b> Light, Sweet: WTI and Brent Crude Oil</a></li>
+</ul></li>
+<li class="chapter" data-level="17.2" data-path="crude-oil-and-the-crack-spread.html"><a href="crude-oil-and-the-crack-spread.html#refining-crude-oil"><i class="fa fa-check"></i><b>17.2</b> Refining Crude Oil</a><ul>
+<li class="chapter" data-level="17.2.1" data-path="crude-oil-and-the-crack-spread.html"><a href="crude-oil-and-the-crack-spread.html#gasoline"><i class="fa fa-check"></i><b>17.2.1</b> Gasoline</a></li>
+<li class="chapter" data-level="17.2.2" data-path="crude-oil-and-the-crack-spread.html"><a href="crude-oil-and-the-crack-spread.html#distillates-diesel-heating-oil-jet-fuel-kerosene"><i class="fa fa-check"></i><b>17.2.2</b> Distillates: Diesel, Heating Oil, Jet Fuel, Kerosene</a></li>
+</ul></li>
+<li class="chapter" data-level="17.3" data-path="crude-oil-and-the-crack-spread.html"><a href="crude-oil-and-the-crack-spread.html#price-trends"><i class="fa fa-check"></i><b>17.3</b> Price Trends</a></li>
+<li class="chapter" data-level="17.4" data-path="crude-oil-and-the-crack-spread.html"><a href="crude-oil-and-the-crack-spread.html#fundamental-factors"><i class="fa fa-check"></i><b>17.4</b> Fundamental Factors</a><ul>
+<li class="chapter" data-level="17.4.1" data-path="crude-oil-and-the-crack-spread.html"><a href="crude-oil-and-the-crack-spread.html#production-of-crude-gasoline-and-distillates"><i class="fa fa-check"></i><b>17.4.1</b> Production of Crude, Gasoline, and Distillates</a></li>
+<li class="chapter" data-level="17.4.2" data-path="crude-oil-and-the-crack-spread.html"><a href="crude-oil-and-the-crack-spread.html#inventories-of-crude-gasoline-and-distillates"><i class="fa fa-check"></i><b>17.4.2</b> Inventories of Crude, Gasoline, and Distillates</a></li>
+<li class="chapter" data-level="17.4.3" data-path="crude-oil-and-the-crack-spread.html"><a href="crude-oil-and-the-crack-spread.html#geopolitical-events"><i class="fa fa-check"></i><b>17.4.3</b> Geopolitical Events</a></li>
+</ul></li>
+<li class="chapter" data-level="17.5" data-path="crude-oil-and-the-crack-spread.html"><a href="crude-oil-and-the-crack-spread.html#the-crack-spread"><i class="fa fa-check"></i><b>17.5</b> The Crack Spread</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="appendix-data-and-visualization.html"><a href="appendix-data-and-visualization.html"><i class="fa fa-check"></i><b>18</b> Appendix: Data and Visualization</a><ul>
+<li class="chapter" data-level="18.1" data-path="appendix-data-and-visualization.html"><a href="appendix-data-and-visualization.html#data-preparation"><i class="fa fa-check"></i><b>18.1</b> Data Preparation</a><ul>
+<li class="chapter" data-level="18.1.1" data-path="appendix-data-and-visualization.html"><a href="appendix-data-and-visualization.html#data-cleaning"><i class="fa fa-check"></i><b>18.1.1</b> Data Cleaning</a></li>
+<li class="chapter" data-level="18.1.2" data-path="appendix-data-and-visualization.html"><a href="appendix-data-and-visualization.html#misinterpretation-of-data"><i class="fa fa-check"></i><b>18.1.2</b> Misinterpretation of Data</a></li>
+</ul></li>
+<li class="chapter" data-level="18.2" data-path="appendix-data-and-visualization.html"><a href="appendix-data-and-visualization.html#graphics"><i class="fa fa-check"></i><b>18.2</b> Graphics</a><ul>
+<li class="chapter" data-level="18.2.1" data-path="appendix-data-and-visualization.html"><a href="appendix-data-and-visualization.html#univariate-graphical-techniques"><i class="fa fa-check"></i><b>18.2.1</b> Univariate Graphical Techniques</a></li>
+<li class="chapter" data-level="18.2.2" data-path="appendix-data-and-visualization.html"><a href="appendix-data-and-visualization.html#multivariate-graphical-techniques"><i class="fa fa-check"></i><b>18.2.2</b> Multivariate Graphical Techniques</a></li>
+</ul></li>
+<li class="chapter" data-level="18.3" data-path="appendix-data-and-visualization.html"><a href="appendix-data-and-visualization.html#elements-of-graphical-style"><i class="fa fa-check"></i><b>18.3</b> Elements of Graphical Style</a><ul>
+<li class="chapter" data-level="18.3.1" data-path="appendix-data-and-visualization.html"><a href="appendix-data-and-visualization.html#keys-to-good-graphics"><i class="fa fa-check"></i><b>18.3.1</b> Keys to Good Graphics</a></li>
+<li class="chapter" data-level="18.3.2" data-path="appendix-data-and-visualization.html"><a href="appendix-data-and-visualization.html#stand-alone-requirements"><i class="fa fa-check"></i><b>18.3.2</b> Stand-Alone Requirements</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="appendix-forecasting-with-ts-models.html"><a href="appendix-forecasting-with-ts-models.html"><i class="fa fa-check"></i><b>19</b> Appendix: Forecasting with TS Models</a><ul>
+<li class="chapter" data-level="19.1" data-path="appendix-forecasting-with-ts-models.html"><a href="appendix-forecasting-with-ts-models.html#nearby-futures-prices"><i class="fa fa-check"></i><b>19.1</b> ‘Nearby’ Futures Prices</a><ul>
+<li class="chapter" data-level="19.1.1" data-path="appendix-forecasting-with-ts-models.html"><a href="appendix-forecasting-with-ts-models.html#trading-volume-as-contract-maturity-approaches"><i class="fa fa-check"></i><b>19.1.1</b> Trading Volume as Contract Maturity Approaches</a></li>
+<li class="chapter" data-level="19.1.2" data-path="appendix-forecasting-with-ts-models.html"><a href="appendix-forecasting-with-ts-models.html#when-to-roll-to-the-next-to-expire"><i class="fa fa-check"></i><b>19.1.2</b> When to Roll to the Next-to-Expire?</a></li>
+</ul></li>
+<li class="chapter" data-level="19.2" data-path="appendix-forecasting-with-ts-models.html"><a href="appendix-forecasting-with-ts-models.html#time-series-forecasting"><i class="fa fa-check"></i><b>19.2</b> Time-Series Forecasting</a></li>
+<li class="chapter" data-level="19.3" data-path="appendix-forecasting-with-ts-models.html"><a href="appendix-forecasting-with-ts-models.html#properties-of-time-series-data"><i class="fa fa-check"></i><b>19.3</b> Properties of Time-Series Data</a><ul>
+<li class="chapter" data-level="19.3.1" data-path="appendix-forecasting-with-ts-models.html"><a href="appendix-forecasting-with-ts-models.html#trends"><i class="fa fa-check"></i><b>19.3.1</b> Trends</a></li>
+<li class="chapter" data-level="19.3.2" data-path="appendix-forecasting-with-ts-models.html"><a href="appendix-forecasting-with-ts-models.html#inflation"><i class="fa fa-check"></i><b>19.3.2</b> Inflation</a></li>
+<li class="chapter" data-level="19.3.3" data-path="appendix-forecasting-with-ts-models.html"><a href="appendix-forecasting-with-ts-models.html#seasonality"><i class="fa fa-check"></i><b>19.3.3</b> Seasonality</a></li>
+</ul></li>
+<li class="chapter" data-level="19.4" data-path="appendix-forecasting-with-ts-models.html"><a href="appendix-forecasting-with-ts-models.html#stationarity"><i class="fa fa-check"></i><b>19.4</b> Stationarity</a><ul>
+<li class="chapter" data-level="19.4.1" data-path="appendix-forecasting-with-ts-models.html"><a href="appendix-forecasting-with-ts-models.html#the-log-normal-price-model."><i class="fa fa-check"></i><b>19.4.1</b> The Log-normal Price Model.</a></li>
+</ul></li>
+<li class="chapter" data-level="19.5" data-path="appendix-forecasting-with-ts-models.html"><a href="appendix-forecasting-with-ts-models.html#efficient-market-hypothesis"><i class="fa fa-check"></i><b>19.5</b> Efficient Market Hypothesis</a></li>
+<li class="chapter" data-level="19.6" data-path="appendix-forecasting-with-ts-models.html"><a href="appendix-forecasting-with-ts-models.html#exercises-6"><i class="fa fa-check"></i><b>19.6</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="appendix-basic-statistics-and-regression.html"><a href="appendix-basic-statistics-and-regression.html"><i class="fa fa-check"></i><b>20</b> Appendix: Basic Statistics and Regression</a><ul>
+<li class="chapter" data-level="20.1" data-path="appendix-basic-statistics-and-regression.html"><a href="appendix-basic-statistics-and-regression.html#measures-of-central-tendency"><i class="fa fa-check"></i><b>20.1</b> Measures of Central Tendency</a></li>
+<li class="chapter" data-level="20.2" data-path="appendix-basic-statistics-and-regression.html"><a href="appendix-basic-statistics-and-regression.html#measures-of-dispersion"><i class="fa fa-check"></i><b>20.2</b> Measures of Dispersion</a></li>
+<li class="chapter" data-level="20.3" data-path="appendix-basic-statistics-and-regression.html"><a href="appendix-basic-statistics-and-regression.html#relationship-between-two-variables"><i class="fa fa-check"></i><b>20.3</b> Relationship between Two Variables</a></li>
+<li class="chapter" data-level="20.4" data-path="appendix-basic-statistics-and-regression.html"><a href="appendix-basic-statistics-and-regression.html#correlation-does-not-imply-causation"><i class="fa fa-check"></i><b>20.4</b> Correlation Does <em>Not</em> Imply Causation</a></li>
+<li class="chapter" data-level="20.5" data-path="appendix-basic-statistics-and-regression.html"><a href="appendix-basic-statistics-and-regression.html#review-of-linear-regression"><i class="fa fa-check"></i><b>20.5</b> Review of Linear Regression</a><ul>
+<li class="chapter" data-level="20.5.1" data-path="appendix-basic-statistics-and-regression.html"><a href="appendix-basic-statistics-and-regression.html#how-are-regression-coefficients-calculated"><i class="fa fa-check"></i><b>20.5.1</b> How are Regression Coefficients Calculated?</a></li>
+<li class="chapter" data-level="20.5.2" data-path="appendix-basic-statistics-and-regression.html"><a href="appendix-basic-statistics-and-regression.html#evaluating-regression-model-fit-with-r2"><i class="fa fa-check"></i><b>20.5.2</b> Evaluating Regression Model ‘Fit’ with <span class="math inline">\(R^2\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="20.6" data-path="appendix-basic-statistics-and-regression.html"><a href="appendix-basic-statistics-and-regression.html#hypothesis-testing-review"><i class="fa fa-check"></i><b>20.6</b> Hypothesis Testing Review</a></li>
+<li class="chapter" data-level="20.7" data-path="appendix-basic-statistics-and-regression.html"><a href="appendix-basic-statistics-and-regression.html#spurious-regression"><i class="fa fa-check"></i><b>20.7</b> Spurious Regression</a></li>
+<li class="chapter" data-level="20.8" data-path="appendix-basic-statistics-and-regression.html"><a href="appendix-basic-statistics-and-regression.html#exercises-7"><i class="fa fa-check"></i><b>20.8</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="appendix-single-market-models-arima.html"><a href="appendix-single-market-models-arima.html"><i class="fa fa-check"></i><b>21</b> Appendix: Single Market Models: ARIMA</a><ul>
+<li class="chapter" data-level="21.1" data-path="appendix-single-market-models-arima.html"><a href="appendix-single-market-models-arima.html#integrated-or-not"><i class="fa fa-check"></i><b>21.1</b> Integrated or Not?</a></li>
+<li class="chapter" data-level="21.2" data-path="appendix-single-market-models-arima.html"><a href="appendix-single-market-models-arima.html#arp-models"><i class="fa fa-check"></i><b>21.2</b> <span class="math inline">\(AR(p)\)</span>, Models</a><ul>
+<li class="chapter" data-level="21.2.1" data-path="appendix-single-market-models-arima.html"><a href="appendix-single-market-models-arima.html#the-arp-model"><i class="fa fa-check"></i><b>21.2.1</b> The <span class="math inline">\(AR(p)\)</span> Model</a></li>
+</ul></li>
+<li class="chapter" data-level="21.3" data-path="appendix-single-market-models-arima.html"><a href="appendix-single-market-models-arima.html#maq-models"><i class="fa fa-check"></i><b>21.3</b> MA(q)$, Models</a><ul>
+<li class="chapter" data-level="21.3.1" data-path="appendix-single-market-models-arima.html"><a href="appendix-single-market-models-arima.html#guesing-the-theta_i-and-minimising-the-sum-of-squared-residuals"><i class="fa fa-check"></i><b>21.3.1</b> Guesing the <span class="math inline">\(\theta_i\)</span> and Minimising the Sum of Squared Residuals</a></li>
+</ul></li>
+<li class="chapter" data-level="21.4" data-path="appendix-single-market-models-arima.html"><a href="appendix-single-market-models-arima.html#lag-length"><i class="fa fa-check"></i><b>21.4</b> Lag Length</a></li>
+<li class="chapter" data-level="21.5" data-path="appendix-single-market-models-arima.html"><a href="appendix-single-market-models-arima.html#dealing-with-seasonality"><i class="fa fa-check"></i><b>21.5</b> Dealing with Seasonality</a></li>
+<li class="chapter" data-level="21.6" data-path="appendix-single-market-models-arima.html"><a href="appendix-single-market-models-arima.html#caculating-forecast-values"><i class="fa fa-check"></i><b>21.6</b> Caculating Forecast Values</a></li>
+</ul></li>
+<li class="divider"></li>
+<ul>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a> </li>
+<li> &copy Mindy L. Mallory 2017</li>
+</ul>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Price Analysis: A Fundamental Approach to the Study of Commodity Prices</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="appendix-data-and-visualization" class="section level1">
+<h1><span class="header-section-number">Chapter 18</span> Appendix: Data and Visualization</h1>
+<!-- This chapter should probably come before the Introduction to Balence sheet chapter (current chapter 3).I messsed up and pressed ahead with forecasting-->
+<p>This chapter reviews the basics of the presentation of economic data, descriptive statistics, visualizations based on charts, graphs, and tables, and the math and mechanics of estimating trend forecasting models. There are three main types of data sets one might encounter: cross section, time-series, and panel.</p>
+<dl>
+<dt>Cross section</dt>
+<dd><p>Cross section data contain many observations of one (or several) variables at the <em>same</em> point in time. The Motor Trend gas mileage data set is an example. R. Hocking gathered road test results reported in the March, April, June, and July issues of Motor Trend Magazine <span class="citation">(Hocking <a href="#ref-hocking1976biometrics">1976</a>)</span>. The full data set is reproduced in Table 1.</p>
+</dd>
+<dd><p>Table 1: Motor Trend Cars Data set - 1973/1974</p>
+<table>
+<thead>
+<tr class="header">
+<th align="right">MPG</th>
+<th align="right">Cyli</th>
+<th>nders Engi</th>
+<th>ne Size (cubic in) Hors</th>
+<th>e Power Fina</th>
+<th>l Drive Ratio Weig</th>
+<th>ht Quar</th>
+<th>ter Mile Time (secs) Engi</th>
+<th>ne Shape, Verticle/Straight Auto</th>
+<th>matic/Manual Gear</th>
+<th>s Carb</th>
+<th align="left">orators</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">Mazda RX4</td>
+<td align="right">21.0</td>
+<td>6</td>
+<td>160.0</td>
+<td>110</td>
+<td>3.90</td>
+<td>2.620</td>
+<td>16.46</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td align="left">4</td>
+</tr>
+<tr class="even">
+<td align="right">Mazda RX4 Wag</td>
+<td align="right">21.0</td>
+<td>6</td>
+<td>160.0</td>
+<td>110</td>
+<td>3.90</td>
+<td>2.875</td>
+<td>17.02</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td align="left">4</td>
+</tr>
+<tr class="odd">
+<td align="right">Datsun 710</td>
+<td align="right">22.8</td>
+<td>4</td>
+<td>108.0</td>
+<td>93</td>
+<td>3.85</td>
+<td>2.320</td>
+<td>18.61</td>
+<td>1</td>
+<td>1</td>
+<td>4</td>
+<td align="left">1</td>
+</tr>
+<tr class="even">
+<td align="right">Hornet 4 Drive</td>
+<td align="right">21.4</td>
+<td>6</td>
+<td>258.0</td>
+<td>110</td>
+<td>3.08</td>
+<td>3.215</td>
+<td>19.44</td>
+<td>1</td>
+<td>0</td>
+<td>3</td>
+<td align="left">1</td>
+</tr>
+<tr class="odd">
+<td align="right">Hornet Sportabout</td>
+<td align="right">18.7</td>
+<td>8</td>
+<td>360.0</td>
+<td>175</td>
+<td>3.15</td>
+<td>3.440</td>
+<td>17.02</td>
+<td>0</td>
+<td>0</td>
+<td>3</td>
+<td align="left">2</td>
+</tr>
+<tr class="even">
+<td align="right">Valiant</td>
+<td align="right">18.1</td>
+<td>6</td>
+<td>225.0</td>
+<td>105</td>
+<td>2.76</td>
+<td>3.460</td>
+<td>20.22</td>
+<td>1</td>
+<td>0</td>
+<td>3</td>
+<td align="left">1</td>
+</tr>
+<tr class="odd">
+<td align="right">Duster 360</td>
+<td align="right">14.3</td>
+<td>8</td>
+<td>360.0</td>
+<td>245</td>
+<td>3.21</td>
+<td>3.570</td>
+<td>15.84</td>
+<td>0</td>
+<td>0</td>
+<td>3</td>
+<td align="left">4</td>
+</tr>
+<tr class="even">
+<td align="right">Merc 240D</td>
+<td align="right">24.4</td>
+<td>4</td>
+<td>146.7</td>
+<td>62</td>
+<td>3.69</td>
+<td>3.190</td>
+<td>20.00</td>
+<td>1</td>
+<td>0</td>
+<td>4</td>
+<td align="left">2</td>
+</tr>
+<tr class="odd">
+<td align="right">Merc 230</td>
+<td align="right">22.8</td>
+<td>4</td>
+<td>140.8</td>
+<td>95</td>
+<td>3.92</td>
+<td>3.150</td>
+<td>22.90</td>
+<td>1</td>
+<td>0</td>
+<td>4</td>
+<td align="left">2</td>
+</tr>
+<tr class="even">
+<td align="right">Merc 280</td>
+<td align="right">19.2</td>
+<td>6</td>
+<td>167.6</td>
+<td>123</td>
+<td>3.92</td>
+<td>3.440</td>
+<td>18.30</td>
+<td>1</td>
+<td>0</td>
+<td>4</td>
+<td align="left">4</td>
+</tr>
+<tr class="odd">
+<td align="right">Merc 280C</td>
+<td align="right">17.8</td>
+<td>6</td>
+<td>167.6</td>
+<td>123</td>
+<td>3.92</td>
+<td>3.440</td>
+<td>18.90</td>
+<td>1</td>
+<td>0</td>
+<td>4</td>
+<td align="left">4</td>
+</tr>
+<tr class="even">
+<td align="right">Merc 450SE</td>
+<td align="right">16.4</td>
+<td>8</td>
+<td>275.8</td>
+<td>180</td>
+<td>3.07</td>
+<td>4.070</td>
+<td>17.40</td>
+<td>0</td>
+<td>0</td>
+<td>3</td>
+<td align="left">3</td>
+</tr>
+<tr class="odd">
+<td align="right">Merc 450SL</td>
+<td align="right">17.3</td>
+<td>8</td>
+<td>275.8</td>
+<td>180</td>
+<td>3.07</td>
+<td>3.730</td>
+<td>17.60</td>
+<td>0</td>
+<td>0</td>
+<td>3</td>
+<td align="left">3</td>
+</tr>
+<tr class="even">
+<td align="right">Merc 450SLC</td>
+<td align="right">15.2</td>
+<td>8</td>
+<td>275.8</td>
+<td>180</td>
+<td>3.07</td>
+<td>3.780</td>
+<td>18.00</td>
+<td>0</td>
+<td>0</td>
+<td>3</td>
+<td align="left">3</td>
+</tr>
+<tr class="odd">
+<td align="right">Cadillac Fleetwood</td>
+<td align="right">10.4</td>
+<td>8</td>
+<td>472.0</td>
+<td>205</td>
+<td>2.93</td>
+<td>5.250</td>
+<td>17.98</td>
+<td>0</td>
+<td>0</td>
+<td>3</td>
+<td align="left">4</td>
+</tr>
+<tr class="even">
+<td align="right">Lincoln Continental</td>
+<td align="right">10.4</td>
+<td>8</td>
+<td>460.0</td>
+<td>215</td>
+<td>3.00</td>
+<td>5.424</td>
+<td>17.82</td>
+<td>0</td>
+<td>0</td>
+<td>3</td>
+<td align="left">4</td>
+</tr>
+<tr class="odd">
+<td align="right">Chrysler Imperial</td>
+<td align="right">14.7</td>
+<td>8</td>
+<td>440.0</td>
+<td>230</td>
+<td>3.23</td>
+<td>5.345</td>
+<td>17.42</td>
+<td>0</td>
+<td>0</td>
+<td>3</td>
+<td align="left">4</td>
+</tr>
+<tr class="even">
+<td align="right">Fiat 128</td>
+<td align="right">32.4</td>
+<td>4</td>
+<td>78.7</td>
+<td>66</td>
+<td>4.08</td>
+<td>2.200</td>
+<td>19.47</td>
+<td>1</td>
+<td>1</td>
+<td>4</td>
+<td align="left">1</td>
+</tr>
+<tr class="odd">
+<td align="right">Honda Civic</td>
+<td align="right">30.4</td>
+<td>4</td>
+<td>75.7</td>
+<td>52</td>
+<td>4.93</td>
+<td>1.615</td>
+<td>18.52</td>
+<td>1</td>
+<td>1</td>
+<td>4</td>
+<td align="left">2</td>
+</tr>
+<tr class="even">
+<td align="right">Toyota Corolla</td>
+<td align="right">33.9</td>
+<td>4</td>
+<td>71.1</td>
+<td>65</td>
+<td>4.22</td>
+<td>1.835</td>
+<td>19.90</td>
+<td>1</td>
+<td>1</td>
+<td>4</td>
+<td align="left">1</td>
+</tr>
+<tr class="odd">
+<td align="right">Toyota Corona</td>
+<td align="right">21.5</td>
+<td>4</td>
+<td>120.1</td>
+<td>97</td>
+<td>3.70</td>
+<td>2.465</td>
+<td>20.01</td>
+<td>1</td>
+<td>0</td>
+<td>3</td>
+<td align="left">1</td>
+</tr>
+<tr class="even">
+<td align="right">Dodge Challenger</td>
+<td align="right">15.5</td>
+<td>8</td>
+<td>318.0</td>
+<td>150</td>
+<td>2.76</td>
+<td>3.520</td>
+<td>16.87</td>
+<td>0</td>
+<td>0</td>
+<td>3</td>
+<td align="left">2</td>
+</tr>
+<tr class="odd">
+<td align="right">AMC Javelin</td>
+<td align="right">15.2</td>
+<td>8</td>
+<td>304.0</td>
+<td>150</td>
+<td>3.15</td>
+<td>3.435</td>
+<td>17.30</td>
+<td>0</td>
+<td>0</td>
+<td>3</td>
+<td align="left">2</td>
+</tr>
+<tr class="even">
+<td align="right">Camaro Z28</td>
+<td align="right">13.3</td>
+<td>8</td>
+<td>350.0</td>
+<td>245</td>
+<td>3.73</td>
+<td>3.840</td>
+<td>15.41</td>
+<td>0</td>
+<td>0</td>
+<td>3</td>
+<td align="left">4</td>
+</tr>
+<tr class="odd">
+<td align="right">Pontiac Firebird</td>
+<td align="right">19.2</td>
+<td>8</td>
+<td>400.0</td>
+<td>175</td>
+<td>3.08</td>
+<td>3.845</td>
+<td>17.05</td>
+<td>0</td>
+<td>0</td>
+<td>3</td>
+<td align="left">2</td>
+</tr>
+<tr class="even">
+<td align="right">Fiat X1-9</td>
+<td align="right">27.3</td>
+<td>4</td>
+<td>79.0</td>
+<td>66</td>
+<td>4.08</td>
+<td>1.935</td>
+<td>18.90</td>
+<td>1</td>
+<td>1</td>
+<td>4</td>
+<td align="left">1</td>
+</tr>
+<tr class="odd">
+<td align="right">Porsche 914-2</td>
+<td align="right">26.0</td>
+<td>4</td>
+<td>120.3</td>
+<td>91</td>
+<td>4.43</td>
+<td>2.140</td>
+<td>16.70</td>
+<td>0</td>
+<td>1</td>
+<td>5</td>
+<td align="left">2</td>
+</tr>
+<tr class="even">
+<td align="right">Lotus Europa</td>
+<td align="right">30.4</td>
+<td>4</td>
+<td>95.1</td>
+<td>113</td>
+<td>3.77</td>
+<td>1.513</td>
+<td>16.90</td>
+<td>1</td>
+<td>1</td>
+<td>5</td>
+<td align="left">2</td>
+</tr>
+<tr class="odd">
+<td align="right">Ford Pantera L</td>
+<td align="right">15.8</td>
+<td>8</td>
+<td>351.0</td>
+<td>264</td>
+<td>4.22</td>
+<td>3.170</td>
+<td>14.50</td>
+<td>0</td>
+<td>1</td>
+<td>5</td>
+<td align="left">4</td>
+</tr>
+<tr class="even">
+<td align="right">Ferrari Dino</td>
+<td align="right">19.7</td>
+<td>6</td>
+<td>145.0</td>
+<td>175</td>
+<td>3.62</td>
+<td>2.770</td>
+<td>15.50</td>
+<td>0</td>
+<td>1</td>
+<td>5</td>
+<td align="left">6</td>
+</tr>
+<tr class="odd">
+<td align="right">Maserati Bora</td>
+<td align="right">15.0</td>
+<td>8</td>
+<td>301.0</td>
+<td>335</td>
+<td>3.54</td>
+<td>3.570</td>
+<td>14.60</td>
+<td>0</td>
+<td>1</td>
+<td>5</td>
+<td align="left">8</td>
+</tr>
+<tr class="even">
+<td align="right">Volvo 142E</td>
+<td align="right">21.4</td>
+<td>4</td>
+<td>121.0</td>
+<td>109</td>
+<td>4.11</td>
+<td>2.780</td>
+<td>18.60</td>
+<td>1</td>
+<td>1</td>
+<td>4</td>
+<td align="left">2</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<p>Source: <span class="citation">(Hocking <a href="#ref-hocking1976biometrics">1976</a>)</span> Road test results as conducted by Motor Trend Magazine for 1973-1974 automobiles.</p>
+<dl>
+<dt>Time Series</dt>
+<dd><p>Time series data record observations of the same variable in <em>different</em> points in time. Price analysis and forecasting tends to use time-series the most. Table 2 contains a familiar time series data set taken from USDA NASS for corn acres planted, acres harvested, prices received by farmers, and yield. It is a multi-variate time-series data set because we see one observation for each variable once per time period.</p>
+</dd>
+<dd><p>Table 2: Corn Acres Planted, Acres Harvested, Prices Received by Farmers, and Yield</p>
+</dd>
+</dl>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Year</th>
+<th align="left">US.CORN.ACRES.PLANTED</th>
+<th align="left">US.CORN.ACRES.HARVESTED</th>
+<th align="left">CORN.GRAIN..PRICE.RECEIVED</th>
+<th align="left">CORN.YIELD</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">2014</td>
+<td align="left">90,597,000</td>
+<td align="left">83,136,000</td>
+<td align="left">4.11</td>
+<td align="left">171.0</td>
+</tr>
+<tr class="even">
+<td align="left">2013</td>
+<td align="left">95,365,000</td>
+<td align="left">87,451,000</td>
+<td align="left">6.15</td>
+<td align="left">158.1</td>
+</tr>
+<tr class="odd">
+<td align="left">2012</td>
+<td align="left">97,291,000</td>
+<td align="left">87,365,000</td>
+<td align="left">6.67</td>
+<td align="left">123.1</td>
+</tr>
+<tr class="even">
+<td align="left">2011</td>
+<td align="left">91,936,000</td>
+<td align="left">83,879,000</td>
+<td align="left">6.02</td>
+<td align="left">146.8</td>
+</tr>
+<tr class="odd">
+<td align="left">2010</td>
+<td align="left">88,192,000</td>
+<td align="left">81,446,000</td>
+<td align="left">3.83</td>
+<td align="left">152.6</td>
+</tr>
+<tr class="even">
+<td align="left">2009</td>
+<td align="left">86,382,000</td>
+<td align="left">79,490,000</td>
+<td align="left">3.75</td>
+<td align="left">164.4</td>
+</tr>
+<tr class="odd">
+<td align="left">2008</td>
+<td align="left">85,982,000</td>
+<td align="left">78,570,000</td>
+<td align="left">4.78</td>
+<td align="left">153.3</td>
+</tr>
+<tr class="even">
+<td align="left">2007</td>
+<td align="left">93,527,000</td>
+<td align="left">86,520,000</td>
+<td align="left">3.39</td>
+<td align="left">150.7</td>
+</tr>
+<tr class="odd">
+<td align="left">2006</td>
+<td align="left">78,327,000</td>
+<td align="left">70,638,000</td>
+<td align="left">2.28</td>
+<td align="left">149.1</td>
+</tr>
+<tr class="even">
+<td align="left">2005</td>
+<td align="left">81,779,000</td>
+<td align="left">75,117,000</td>
+<td align="left">1.96</td>
+<td align="left">147.9</td>
+</tr>
+<tr class="odd">
+<td align="left">2004</td>
+<td align="left">80,929,000</td>
+<td align="left">73,631,000</td>
+<td align="left">2.47</td>
+<td align="left">160.3</td>
+</tr>
+<tr class="even">
+<td align="left">2003</td>
+<td align="left">78,603,000</td>
+<td align="left">70,944,000</td>
+<td align="left">2.27</td>
+<td align="left">142.2</td>
+</tr>
+<tr class="odd">
+<td align="left">2002</td>
+<td align="left">78,894,000</td>
+<td align="left">69,330,000</td>
+<td align="left">2.13</td>
+<td align="left">129.3</td>
+</tr>
+<tr class="even">
+<td align="left">2001</td>
+<td align="left">75,702,000</td>
+<td align="left">68,768,000</td>
+<td align="left">1.89</td>
+<td align="left">138.2</td>
+</tr>
+<tr class="odd">
+<td align="left">2000</td>
+<td align="left">79,551,000</td>
+<td align="left">72,440,000</td>
+<td align="left">1.86</td>
+<td align="left">136.9</td>
+</tr>
+<tr class="even">
+<td align="left">1999</td>
+<td align="left">77,386,000</td>
+<td align="left">70,487,000</td>
+<td align="left">1.89</td>
+<td align="left">133.8</td>
+</tr>
+<tr class="odd">
+<td align="left">1998</td>
+<td align="left">80,165,000</td>
+<td align="left">72,589,000</td>
+<td align="left">2.20</td>
+<td align="left">134.4</td>
+</tr>
+<tr class="even">
+<td align="left">1997</td>
+<td align="left">79,537,000</td>
+<td align="left">72,671,000</td>
+<td align="left">2.60</td>
+<td align="left">126.7</td>
+</tr>
+<tr class="odd">
+<td align="left">1996</td>
+<td align="left">79,229,000</td>
+<td align="left">72,644,000</td>
+<td align="left">3.55</td>
+<td align="left">127.1</td>
+</tr>
+<tr class="even">
+<td align="left">1995</td>
+<td align="left">71,479,000</td>
+<td align="left">65,210,000</td>
+<td align="left">NA</td>
+<td align="left">113.5</td>
+</tr>
+<tr class="odd">
+<td align="left">1994</td>
+<td align="left">78,921,000</td>
+<td align="left">72,514,000</td>
+<td align="left">NA</td>
+<td align="left">138.6</td>
+</tr>
+<tr class="even">
+<td align="left">1993</td>
+<td align="left">73,239,000</td>
+<td align="left">62,933,000</td>
+<td align="left">NA</td>
+<td align="left">100.7</td>
+</tr>
+<tr class="odd">
+<td align="left">1992</td>
+<td align="left">79,311,000</td>
+<td align="left">72,077,000</td>
+<td align="left">NA</td>
+<td align="left">131.5</td>
+</tr>
+<tr class="even">
+<td align="left">1991</td>
+<td align="left">75,957,000</td>
+<td align="left">68,822,000</td>
+<td align="left">NA</td>
+<td align="left">108.6</td>
+</tr>
+<tr class="odd">
+<td align="left">1990</td>
+<td align="left">74,166,000</td>
+<td align="left">66,952,000</td>
+<td align="left">NA</td>
+<td align="left">118.5</td>
+</tr>
+<tr class="even">
+<td align="left">1989</td>
+<td align="left">72,322,000</td>
+<td align="left">64,783,000</td>
+<td align="left">NA</td>
+<td align="left">116.3</td>
+</tr>
+<tr class="odd">
+<td align="left">1988</td>
+<td align="left">67,717,000</td>
+<td align="left">58,250,000</td>
+<td align="left">NA</td>
+<td align="left">84.6</td>
+</tr>
+<tr class="even">
+<td align="left">1987</td>
+<td align="left">66,200,000</td>
+<td align="left">59,505,000</td>
+<td align="left">NA</td>
+<td align="left">119.8</td>
+</tr>
+<tr class="odd">
+<td align="left">1986</td>
+<td align="left">76,580,000</td>
+<td align="left">68,907,000</td>
+<td align="left">NA</td>
+<td align="left">119.4</td>
+</tr>
+<tr class="even">
+<td align="left">1985</td>
+<td align="left">83,398,000</td>
+<td align="left">75,209,000</td>
+<td align="left">NA</td>
+<td align="left">118.0</td>
+</tr>
+<tr class="odd">
+<td align="left">1984</td>
+<td align="left">80,517,000</td>
+<td align="left">71,897,000</td>
+<td align="left">NA</td>
+<td align="left">106.7</td>
+</tr>
+<tr class="even">
+<td align="left">1983</td>
+<td align="left">60,207,000</td>
+<td align="left">51,479,000</td>
+<td align="left">NA</td>
+<td align="left">81.1</td>
+</tr>
+<tr class="odd">
+<td align="left">1982</td>
+<td align="left">81,857,000</td>
+<td align="left">72,719,000</td>
+<td align="left">NA</td>
+<td align="left">113.2</td>
+</tr>
+<tr class="even">
+<td align="left">1981</td>
+<td align="left">84,097,000</td>
+<td align="left">74,524,000</td>
+<td align="left">NA</td>
+<td align="left">108.9</td>
+</tr>
+<tr class="odd">
+<td align="left">1980</td>
+<td align="left">84,043,000</td>
+<td align="left">72,961,000</td>
+<td align="left">NA</td>
+<td align="left">91.0</td>
+</tr>
+</tbody>
+</table>
+<p>Source: <a href="http://www.nass.usda.gov/">USDA NASS</a> 1980 - 2014</p>
+<p>Table 3 below is another example of a time series. These are daily corn futures open, high, low, last, change, settle, volume, and open interest data. Again, one observation of each variable per unit of time. In this case, time units are days.</p>
+<table>
+<caption>Table 3: Daily Corn Open, High, Low, Last, Change, Settle, Volume, and Open Interest</caption>
+<thead>
+<tr class="header">
+<th align="left">Date</th>
+<th align="left">Open</th>
+<th align="left">High</th>
+<th align="left">Low</th>
+<th align="left">Last</th>
+<th align="left">Change</th>
+<th align="left">Settle</th>
+<th align="left">Volume</th>
+<th align="left">Open.Interest</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">9/24/2015</td>
+<td align="left">382.75</td>
+<td align="left">384.00</td>
+<td align="left">379.25</td>
+<td align="left">382.00</td>
+<td align="left">1.75</td>
+<td align="left">381.50</td>
+<td align="left">93318</td>
+<td align="left">744856</td>
+</tr>
+<tr class="even">
+<td align="left">9/23/2015</td>
+<td align="left">379.50</td>
+<td align="left">384.50</td>
+<td align="left">379.00</td>
+<td align="left">383.00</td>
+<td align="left">2.75</td>
+<td align="left">383.25</td>
+<td align="left">88046</td>
+<td align="left">742718</td>
+</tr>
+<tr class="odd">
+<td align="left">9/22/2015</td>
+<td align="left">384.00</td>
+<td align="left">384.50</td>
+<td align="left">377.25</td>
+<td align="left">380.00</td>
+<td align="left">4.00</td>
+<td align="left">380.50</td>
+<td align="left">113398</td>
+<td align="left">741798</td>
+</tr>
+<tr class="even">
+<td align="left">9/21/2015</td>
+<td align="left">376.50</td>
+<td align="left">385.50</td>
+<td align="left">375.00</td>
+<td align="left">384.50</td>
+<td align="left">7.25</td>
+<td align="left">384.50</td>
+<td align="left">138157</td>
+<td align="left">734466</td>
+</tr>
+<tr class="odd">
+<td align="left">9/18/2015</td>
+<td align="left">380.00</td>
+<td align="left">382.50</td>
+<td align="left">376.50</td>
+<td align="left">377.25</td>
+<td align="left">2.50</td>
+<td align="left">377.25</td>
+<td align="left">113972</td>
+<td align="left">730920</td>
+</tr>
+<tr class="even">
+<td align="left">9/17/2015</td>
+<td align="left">385.25</td>
+<td align="left">385.50</td>
+<td align="left">379.25</td>
+<td align="left">380.50</td>
+<td align="left">6.25</td>
+<td align="left">379.75</td>
+<td align="left">89428</td>
+<td align="left">734898</td>
+</tr>
+<tr class="odd">
+<td align="left">9/16/2015</td>
+<td align="left">390.00</td>
+<td align="left">391.00</td>
+<td align="left">383.00</td>
+<td align="left">385.50</td>
+<td align="left">4.50</td>
+<td align="left">386.00</td>
+<td align="left">124073</td>
+<td align="left">744460</td>
+</tr>
+<tr class="even">
+<td align="left">9/15/2015</td>
+<td align="left">392.75</td>
+<td align="left">395.00</td>
+<td align="left">388.75</td>
+<td align="left">390.50</td>
+<td align="left">3.00</td>
+<td align="left">390.50</td>
+<td align="left">127023</td>
+<td align="left">744535</td>
+</tr>
+<tr class="odd">
+<td align="left">9/14/2015</td>
+<td align="left">387.00</td>
+<td align="left">394.00</td>
+<td align="left">386.25</td>
+<td align="left">393.00</td>
+<td align="left">6.50</td>
+<td align="left">393.50</td>
+<td align="left">179626</td>
+<td align="left">755065</td>
+</tr>
+<tr class="even">
+<td align="left">9/11/2015</td>
+<td align="left">374.00</td>
+<td align="left">387.50</td>
+<td align="left">364.50</td>
+<td align="left">387.00</td>
+<td align="left">12.75</td>
+<td align="left">387.00</td>
+<td align="left">291726</td>
+<td align="left">764709</td>
+</tr>
+<tr class="odd">
+<td align="left">9/10/2015</td>
+<td align="left">368.75</td>
+<td align="left">374.75</td>
+<td align="left">366.75</td>
+<td align="left">374.00</td>
+<td align="left">5.25</td>
+<td align="left">374.25</td>
+<td align="left">131271</td>
+<td align="left">759367</td>
+</tr>
+<tr class="even">
+<td align="left">9/9/2015</td>
+<td align="left">367.50</td>
+<td align="left">372.50</td>
+<td align="left">366.00</td>
+<td align="left">368.50</td>
+<td align="left">0.75</td>
+<td align="left">369.00</td>
+<td align="left">137640</td>
+<td align="left">758327</td>
+</tr>
+<tr class="odd">
+<td align="left">9/8/2015</td>
+<td align="left">364.75</td>
+<td align="left">368.50</td>
+<td align="left">364.00</td>
+<td align="left">368.25</td>
+<td align="left">5.25</td>
+<td align="left">368.25</td>
+<td align="left">119124</td>
+<td align="left">760629</td>
+</tr>
+<tr class="even">
+<td align="left">9/4/2015</td>
+<td align="left">361.75</td>
+<td align="left">364.75</td>
+<td align="left">360.50</td>
+<td align="left">362.50</td>
+<td align="left">1.50</td>
+<td align="left">363.00</td>
+<td align="left">101487</td>
+<td align="left">761295</td>
+</tr>
+<tr class="odd">
+<td align="left">9/3/2015</td>
+<td align="left">367.25</td>
+<td align="left">368.00</td>
+<td align="left">361.25</td>
+<td align="left">361.50</td>
+<td align="left">6.00</td>
+<td align="left">361.50</td>
+<td align="left">160695</td>
+<td align="left">763799</td>
+</tr>
+<tr class="even">
+<td align="left">9/2/2015</td>
+<td align="left">369.00</td>
+<td align="left">371.50</td>
+<td align="left">364.25</td>
+<td align="left">367.25</td>
+<td align="left">1.50</td>
+<td align="left">367.50</td>
+<td align="left">177613</td>
+<td align="left">763314</td>
+</tr>
+<tr class="odd">
+<td align="left">9/1/2015</td>
+<td align="left">374.50</td>
+<td align="left">374.50</td>
+<td align="left">367.50</td>
+<td align="left">368.25</td>
+<td align="left">6.25</td>
+<td align="left">369.00</td>
+<td align="left">148934</td>
+<td align="left">753344</td>
+</tr>
+<tr class="even">
+<td align="left">8/31/2015</td>
+<td align="left">373.50</td>
+<td align="left">377.00</td>
+<td align="left">370.50</td>
+<td align="left">375.25</td>
+<td align="left">0.25</td>
+<td align="left">375.25</td>
+<td align="left">145008</td>
+<td align="left">753722</td>
+</tr>
+<tr class="odd">
+<td align="left">8/28/2015</td>
+<td align="left">374.25</td>
+<td align="left">380.00</td>
+<td align="left">374.00</td>
+<td align="left">374.25</td>
+<td align="left">NA</td>
+<td align="left">375.00</td>
+<td align="left">179337</td>
+<td align="left">758192</td>
+</tr>
+<tr class="even">
+<td align="left">8/27/2015</td>
+<td align="left">374.00</td>
+<td align="left">378.75</td>
+<td align="left">371.50</td>
+<td align="left">374.50</td>
+<td align="left">1.75</td>
+<td align="left">375.00</td>
+<td align="left">210682</td>
+<td align="left">760048</td>
+</tr>
+<tr class="odd">
+<td align="left">8/26/2015</td>
+<td align="left">376.75</td>
+<td align="left">380.50</td>
+<td align="left">372.75</td>
+<td align="left">373.25</td>
+<td align="left">3.75</td>
+<td align="left">373.25</td>
+<td align="left">137052</td>
+<td align="left">758226</td>
+</tr>
+<tr class="even">
+<td align="left">8/25/2015</td>
+<td align="left">380.00</td>
+<td align="left">386.75</td>
+<td align="left">375.25</td>
+<td align="left">377.75</td>
+<td align="left">3.50</td>
+<td align="left">377.00</td>
+<td align="left">182215</td>
+<td align="left">761721</td>
+</tr>
+<tr class="odd">
+<td align="left">8/24/2015</td>
+<td align="left">376.75</td>
+<td align="left">381.75</td>
+<td align="left">365.50</td>
+<td align="left">381.50</td>
+<td align="left">3.25</td>
+<td align="left">380.50</td>
+<td align="left">258076</td>
+<td align="left">755009</td>
+</tr>
+<tr class="even">
+<td align="left">8/21/2015</td>
+<td align="left">382.00</td>
+<td align="left">384.25</td>
+<td align="left">375.75</td>
+<td align="left">377.00</td>
+<td align="left">5.25</td>
+<td align="left">377.25</td>
+<td align="left">181246</td>
+<td align="left">750472</td>
+</tr>
+<tr class="odd">
+<td align="left">8/20/2015</td>
+<td align="left">378.25</td>
+<td align="left">383.00</td>
+<td align="left">378.25</td>
+<td align="left">382.75</td>
+<td align="left">4.00</td>
+<td align="left">382.50</td>
+<td align="left">150931</td>
+<td align="left">744502</td>
+</tr>
+<tr class="even">
+<td align="left">8/19/2015</td>
+<td align="left">377.25</td>
+<td align="left">383.00</td>
+<td align="left">377.00</td>
+<td align="left">378.50</td>
+<td align="left">1.25</td>
+<td align="left">378.50</td>
+<td align="left">164492</td>
+<td align="left">746798</td>
+</tr>
+<tr class="odd">
+<td align="left">8/18/2015</td>
+<td align="left">374.50</td>
+<td align="left">379.25</td>
+<td align="left">373.00</td>
+<td align="left">377.00</td>
+<td align="left">2.75</td>
+<td align="left">377.25</td>
+<td align="left">150640</td>
+<td align="left">746400</td>
+</tr>
+<tr class="even">
+<td align="left">8/17/2015</td>
+<td align="left">374.50</td>
+<td align="left">379.50</td>
+<td align="left">372.50</td>
+<td align="left">375.00</td>
+<td align="left">1.00</td>
+<td align="left">374.50</td>
+<td align="left">143336</td>
+<td align="left">743379</td>
+</tr>
+<tr class="odd">
+<td align="left">8/14/2015</td>
+<td align="left">375.25</td>
+<td align="left">377.25</td>
+<td align="left">371.00</td>
+<td align="left">375.00</td>
+<td align="left">0.25</td>
+<td align="left">375.50</td>
+<td align="left">167134</td>
+<td align="left">732960</td>
+</tr>
+<tr class="even">
+<td align="left">8/13/2015</td>
+<td align="left">369.00</td>
+<td align="left">376.00</td>
+<td align="left">366.00</td>
+<td align="left">375.25</td>
+<td align="left">7.25</td>
+<td align="left">375.25</td>
+<td align="left">239077</td>
+<td align="left">707171</td>
+</tr>
+<tr class="odd">
+<td align="left">8/12/2015</td>
+<td align="left">387.75</td>
+<td align="left">393.50</td>
+<td align="left">357.50</td>
+<td align="left">369.75</td>
+<td align="left">19.50</td>
+<td align="left">368.00</td>
+<td align="left">418025</td>
+<td align="left">675503</td>
+</tr>
+<tr class="even">
+<td align="left">8/11/2015</td>
+<td align="left">399.25</td>
+<td align="left">399.25</td>
+<td align="left">387.00</td>
+<td align="left">388.25</td>
+<td align="left">13.50</td>
+<td align="left">387.50</td>
+<td align="left">205087</td>
+<td align="left">661298</td>
+</tr>
+<tr class="odd">
+<td align="left">8/10/2015</td>
+<td align="left">385.00</td>
+<td align="left">402.00</td>
+<td align="left">384.75</td>
+<td align="left">401.00</td>
+<td align="left">17.25</td>
+<td align="left">401.00</td>
+<td align="left">276157</td>
+<td align="left">641045</td>
+</tr>
+<tr class="even">
+<td align="left">8/7/2015</td>
+<td align="left">380.50</td>
+<td align="left">385.75</td>
+<td align="left">377.25</td>
+<td align="left">384.00</td>
+<td align="left">3.25</td>
+<td align="left">383.75</td>
+<td align="left">168547</td>
+<td align="left">623721</td>
+</tr>
+<tr class="odd">
+<td align="left">8/6/2015</td>
+<td align="left">382.75</td>
+<td align="left">385.25</td>
+<td align="left">380.00</td>
+<td align="left">380.00</td>
+<td align="left">2.75</td>
+<td align="left">380.50</td>
+<td align="left">141927</td>
+<td align="left">617120</td>
+</tr>
+<tr class="even">
+<td align="left">8/5/2015</td>
+<td align="left">378.75</td>
+<td align="left">384.00</td>
+<td align="left">377.50</td>
+<td align="left">383.25</td>
+<td align="left">4.50</td>
+<td align="left">383.25</td>
+<td align="left">166401</td>
+<td align="left">605977</td>
+</tr>
+<tr class="odd">
+<td align="left">8/4/2015</td>
+<td align="left">377.75</td>
+<td align="left">382.75</td>
+<td align="left">376.50</td>
+<td align="left">379.00</td>
+<td align="left">2.25</td>
+<td align="left">378.75</td>
+<td align="left">123244</td>
+<td align="left">607654</td>
+</tr>
+<tr class="even">
+<td align="left">8/3/2015</td>
+<td align="left">380.00</td>
+<td align="left">380.50</td>
+<td align="left">374.50</td>
+<td align="left">378.75</td>
+<td align="left">4.75</td>
+<td align="left">376.50</td>
+<td align="left">131415</td>
+<td align="left">602431</td>
+</tr>
+</tbody>
+</table>
+<p>Source: <a href="https://www.quandl.com/data/CME/CZ2015-Corn-Futures-December-2015-CZ2015">Quandl.com</a></p>
+<p>Futures price data are often delivered including open, high, low, and close prices because with those four one can create special graphs typical in displaying financial price information.</p>
+<p>Figure 1: December Corn Futures Prices - Bars</p>
+<p><img src="A1-EconomicDataand_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>Source: <a href="https://www.quandl.com/data/CME/CZ2015-Corn-Futures-December-2015-CZ2015">Quandl.com</a> Figures created with the <code>quantmod</code> package in R.</p>
+<p>Figure 2: December Corn Futures Prices - Candlesticks</p>
+<p><img src="A1-EconomicDataand_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>Source: <a href="https://www.quandl.com/data/CME/CZ2015-Corn-Futures-December-2015-CZ2015">Quandl.com</a> Figures created with the <code>quantmod</code> package in R.</p>
+<p>Microsoft Excel can produce financial prices using with open, high, low, close, and volume data as well.</p>
+<blockquote>
+<h2 id="steps-to-produce-candlestick-matchsticks-and-other-financial-charts-in-microsoft-excel"><span class="header-section-number">18</span> Steps to Produce Candlestick, Matchsticks, and other Financial Charts in Microsoft Excel</h2>
+<ol style="list-style-type: decimal">
+<li>Make sure the data is arranged with volume first, then open, high, low, and close prices</li>
+<li>Highlight the Volume, Open, High, Low, Close columns.</li>
+<li>Select the <em>Insert</em> tab and expand the <em>Charts</em> group.</li>
+<li>Under <em>All Charts</em> click the <em>Stock</em> grouping.</li>
+<li>Choose the Volume, Open, High, Low, Close chart type.</li>
+</ol>
+</blockquote>
+<p>Figure 3: December Corn Futures Prices in Microsoft Excel <img src="Excel-files/EconomicDataand-CMECZ2015-candlesticks_files/image001.png" /></p>
+<p>Statistical analyses of time series data are often complicated by issues such as auto-correlation, heteroskedasticity, and non-stationarity. These statistical issues should be accounted for when conducting more advanced time-series based forecasting exercises. We will touch on these issues in later chapters when econometric forecasting is covered in more detail.</p>
+<div id="data-preparation" class="section level2">
+<h2><span class="header-section-number">18.1</span> Data Preparation</h2>
+<p>Unlike previous statistics classes you may have had, where clean data sets are given to you to illustrate various statistical concepts. Data preparation is a key step in conducting price analysis or a forecasting exercise in real-world contexts. You may be gathering data from different sources, with different time units, different degrees of missing data, and different tendencies toward statistical problems. Each forecasting exercise requires an assessment of what needs to be done to clean the data and prepare it for your analysis.</p>
+<div id="data-cleaning" class="section level3">
+<h3><span class="header-section-number">18.1.1</span> Data Cleaning</h3>
+<p>Before using data for forecasting purposes, you must have a good understanding of how the data were collected and for what purpose. Errors during data recording can happen, and it is essential to catch them before you begin a forecasting exercise . Taking business decisions based on erroneous data will be a costly lesson. Since price forecasters rarely participate in the data collection process price data can be susceptible to errors.</p>
+<p>The most useful technique to quickly spot data encoding errors is to plot the data. Its a pretty low-tech technique, but when there is an error, this can be the most efficient way to spot it. Table 4 below reproduces table 3, but with on encoding error. Can you spot it?</p>
+<table>
+<caption>Table 4: ENCODING ERROR - Daily December Corn Open, High, Low, Last, Change, Settle, Volume, and Open Interest</caption>
+<thead>
+<tr class="header">
+<th align="left">Date</th>
+<th align="left">Open</th>
+<th align="left">High</th>
+<th align="left">Low</th>
+<th align="left">Last</th>
+<th align="left">Change</th>
+<th align="left">Settle</th>
+<th align="left">Volume</th>
+<th align="left">Open.Interest</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">9/24/2015</td>
+<td align="left">382.75</td>
+<td align="left">384.00</td>
+<td align="left">379.25</td>
+<td align="left">382.00</td>
+<td align="left">1.75</td>
+<td align="left">381.50</td>
+<td align="left">93318</td>
+<td align="left">744856</td>
+</tr>
+<tr class="even">
+<td align="left">9/23/2015</td>
+<td align="left">379.50</td>
+<td align="left">384.50</td>
+<td align="left">379.00</td>
+<td align="left">383.00</td>
+<td align="left">2.75</td>
+<td align="left">383.25</td>
+<td align="left">88046</td>
+<td align="left">742718</td>
+</tr>
+<tr class="odd">
+<td align="left">9/22/2015</td>
+<td align="left">384.00</td>
+<td align="left">384.50</td>
+<td align="left">377.25</td>
+<td align="left">380.00</td>
+<td align="left">4.00</td>
+<td align="left">380.50</td>
+<td align="left">113398</td>
+<td align="left">741798</td>
+</tr>
+<tr class="even">
+<td align="left">9/21/2015</td>
+<td align="left">376.50</td>
+<td align="left">385.50</td>
+<td align="left">375.00</td>
+<td align="left">384.50</td>
+<td align="left">7.25</td>
+<td align="left">384.50</td>
+<td align="left">138157</td>
+<td align="left">734466</td>
+</tr>
+<tr class="odd">
+<td align="left">9/18/2015</td>
+<td align="left">380.00</td>
+<td align="left">382.50</td>
+<td align="left">376.50</td>
+<td align="left">377.25</td>
+<td align="left">2.50</td>
+<td align="left">377.25</td>
+<td align="left">113972</td>
+<td align="left">730920</td>
+</tr>
+<tr class="even">
+<td align="left">9/17/2015</td>
+<td align="left">385.25</td>
+<td align="left">385.50</td>
+<td align="left">379.25</td>
+<td align="left">380.50</td>
+<td align="left">6.25</td>
+<td align="left">379.75</td>
+<td align="left">89428</td>
+<td align="left">734898</td>
+</tr>
+<tr class="odd">
+<td align="left">9/16/2015</td>
+<td align="left">390.00</td>
+<td align="left">391.00</td>
+<td align="left">383.00</td>
+<td align="left">385.50</td>
+<td align="left">4.50</td>
+<td align="left">386.00</td>
+<td align="left">124073</td>
+<td align="left">744460</td>
+</tr>
+<tr class="even">
+<td align="left">9/15/2015</td>
+<td align="left">392.75</td>
+<td align="left">395.00</td>
+<td align="left">388.75</td>
+<td align="left">390.50</td>
+<td align="left">3.00</td>
+<td align="left">390.50</td>
+<td align="left">127023</td>
+<td align="left">744535</td>
+</tr>
+<tr class="odd">
+<td align="left">9/14/2015</td>
+<td align="left">387.00</td>
+<td align="left">394.00</td>
+<td align="left">386.25</td>
+<td align="left">393.00</td>
+<td align="left">6.50</td>
+<td align="left">393.50</td>
+<td align="left">179626</td>
+<td align="left">755065</td>
+</tr>
+<tr class="even">
+<td align="left">9/11/2015</td>
+<td align="left">374.00</td>
+<td align="left">387.50</td>
+<td align="left">364.50</td>
+<td align="left">387.00</td>
+<td align="left">12.75</td>
+<td align="left">387.00</td>
+<td align="left">291726</td>
+<td align="left">764709</td>
+</tr>
+<tr class="odd">
+<td align="left">9/10/2015</td>
+<td align="left">368.75</td>
+<td align="left">374.75</td>
+<td align="left">366.75</td>
+<td align="left">374.00</td>
+<td align="left">5.25</td>
+<td align="left">374.25</td>
+<td align="left">131271</td>
+<td align="left">759367</td>
+</tr>
+<tr class="even">
+<td align="left">9/9/2015</td>
+<td align="left">367.50</td>
+<td align="left">372.50</td>
+<td align="left">366.00</td>
+<td align="left">368.50</td>
+<td align="left">0.75</td>
+<td align="left">369.00</td>
+<td align="left">137640</td>
+<td align="left">758327</td>
+</tr>
+<tr class="odd">
+<td align="left">9/8/2015</td>
+<td align="left">364.75</td>
+<td align="left">368.50</td>
+<td align="left">364.00</td>
+<td align="left">368.25</td>
+<td align="left">5.25</td>
+<td align="left">368.25</td>
+<td align="left">119124</td>
+<td align="left">760629</td>
+</tr>
+<tr class="even">
+<td align="left">9/4/2015</td>
+<td align="left">361.75</td>
+<td align="left">364.75</td>
+<td align="left">360.50</td>
+<td align="left">362.50</td>
+<td align="left">1.50</td>
+<td align="left">3630.00</td>
+<td align="left">101487</td>
+<td align="left">761295</td>
+</tr>
+<tr class="odd">
+<td align="left">9/3/2015</td>
+<td align="left">367.25</td>
+<td align="left">368.00</td>
+<td align="left">361.25</td>
+<td align="left">361.50</td>
+<td align="left">6.00</td>
+<td align="left">361.50</td>
+<td align="left">160695</td>
+<td align="left">763799</td>
+</tr>
+<tr class="even">
+<td align="left">9/2/2015</td>
+<td align="left">369.00</td>
+<td align="left">371.50</td>
+<td align="left">364.25</td>
+<td align="left">367.25</td>
+<td align="left">1.50</td>
+<td align="left">367.50</td>
+<td align="left">177613</td>
+<td align="left">763314</td>
+</tr>
+<tr class="odd">
+<td align="left">9/1/2015</td>
+<td align="left">374.50</td>
+<td align="left">374.50</td>
+<td align="left">367.50</td>
+<td align="left">368.25</td>
+<td align="left">6.25</td>
+<td align="left">369.00</td>
+<td align="left">148934</td>
+<td align="left">753344</td>
+</tr>
+<tr class="even">
+<td align="left">8/31/2015</td>
+<td align="left">373.50</td>
+<td align="left">377.00</td>
+<td align="left">370.50</td>
+<td align="left">375.25</td>
+<td align="left">0.25</td>
+<td align="left">375.25</td>
+<td align="left">145008</td>
+<td align="left">753722</td>
+</tr>
+<tr class="odd">
+<td align="left">8/28/2015</td>
+<td align="left">374.25</td>
+<td align="left">380.00</td>
+<td align="left">374.00</td>
+<td align="left">374.25</td>
+<td align="left">NA</td>
+<td align="left">375.00</td>
+<td align="left">179337</td>
+<td align="left">758192</td>
+</tr>
+<tr class="even">
+<td align="left">8/27/2015</td>
+<td align="left">374.00</td>
+<td align="left">378.75</td>
+<td align="left">371.50</td>
+<td align="left">374.50</td>
+<td align="left">1.75</td>
+<td align="left">375.00</td>
+<td align="left">210682</td>
+<td align="left">760048</td>
+</tr>
+<tr class="odd">
+<td align="left">8/26/2015</td>
+<td align="left">376.75</td>
+<td align="left">380.50</td>
+<td align="left">372.75</td>
+<td align="left">373.25</td>
+<td align="left">3.75</td>
+<td align="left">373.25</td>
+<td align="left">137052</td>
+<td align="left">758226</td>
+</tr>
+<tr class="even">
+<td align="left">8/25/2015</td>
+<td align="left">380.00</td>
+<td align="left">386.75</td>
+<td align="left">375.25</td>
+<td align="left">377.75</td>
+<td align="left">3.50</td>
+<td align="left">377.00</td>
+<td align="left">182215</td>
+<td align="left">761721</td>
+</tr>
+<tr class="odd">
+<td align="left">8/24/2015</td>
+<td align="left">376.75</td>
+<td align="left">381.75</td>
+<td align="left">365.50</td>
+<td align="left">381.50</td>
+<td align="left">3.25</td>
+<td align="left">380.50</td>
+<td align="left">258076</td>
+<td align="left">755009</td>
+</tr>
+<tr class="even">
+<td align="left">8/21/2015</td>
+<td align="left">382.00</td>
+<td align="left">384.25</td>
+<td align="left">375.75</td>
+<td align="left">377.00</td>
+<td align="left">5.25</td>
+<td align="left">377.25</td>
+<td align="left">181246</td>
+<td align="left">750472</td>
+</tr>
+<tr class="odd">
+<td align="left">8/20/2015</td>
+<td align="left">378.25</td>
+<td align="left">383.00</td>
+<td align="left">378.25</td>
+<td align="left">382.75</td>
+<td align="left">4.00</td>
+<td align="left">382.50</td>
+<td align="left">150931</td>
+<td align="left">744502</td>
+</tr>
+<tr class="even">
+<td align="left">8/19/2015</td>
+<td align="left">377.25</td>
+<td align="left">383.00</td>
+<td align="left">377.00</td>
+<td align="left">378.50</td>
+<td align="left">1.25</td>
+<td align="left">378.50</td>
+<td align="left">164492</td>
+<td align="left">746798</td>
+</tr>
+<tr class="odd">
+<td align="left">8/18/2015</td>
+<td align="left">374.50</td>
+<td align="left">379.25</td>
+<td align="left">373.00</td>
+<td align="left">377.00</td>
+<td align="left">2.75</td>
+<td align="left">377.25</td>
+<td align="left">150640</td>
+<td align="left">746400</td>
+</tr>
+<tr class="even">
+<td align="left">8/17/2015</td>
+<td align="left">374.50</td>
+<td align="left">379.50</td>
+<td align="left">372.50</td>
+<td align="left">375.00</td>
+<td align="left">1.00</td>
+<td align="left">374.50</td>
+<td align="left">143336</td>
+<td align="left">743379</td>
+</tr>
+<tr class="odd">
+<td align="left">8/14/2015</td>
+<td align="left">375.25</td>
+<td align="left">377.25</td>
+<td align="left">371.00</td>
+<td align="left">375.00</td>
+<td align="left">0.25</td>
+<td align="left">375.50</td>
+<td align="left">167134</td>
+<td align="left">732960</td>
+</tr>
+<tr class="even">
+<td align="left">8/13/2015</td>
+<td align="left">369.00</td>
+<td align="left">376.00</td>
+<td align="left">366.00</td>
+<td align="left">375.25</td>
+<td align="left">7.25</td>
+<td align="left">375.25</td>
+<td align="left">239077</td>
+<td align="left">707171</td>
+</tr>
+<tr class="odd">
+<td align="left">8/12/2015</td>
+<td align="left">387.75</td>
+<td align="left">393.50</td>
+<td align="left">357.50</td>
+<td align="left">369.75</td>
+<td align="left">19.50</td>
+<td align="left">368.00</td>
+<td align="left">418025</td>
+<td align="left">675503</td>
+</tr>
+<tr class="even">
+<td align="left">8/11/2015</td>
+<td align="left">399.25</td>
+<td align="left">399.25</td>
+<td align="left">387.00</td>
+<td align="left">388.25</td>
+<td align="left">13.50</td>
+<td align="left">387.50</td>
+<td align="left">205087</td>
+<td align="left">661298</td>
+</tr>
+<tr class="odd">
+<td align="left">8/10/2015</td>
+<td align="left">385.00</td>
+<td align="left">402.00</td>
+<td align="left">384.75</td>
+<td align="left">401.00</td>
+<td align="left">17.25</td>
+<td align="left">401.00</td>
+<td align="left">276157</td>
+<td align="left">641045</td>
+</tr>
+<tr class="even">
+<td align="left">8/7/2015</td>
+<td align="left">380.50</td>
+<td align="left">385.75</td>
+<td align="left">377.25</td>
+<td align="left">384.00</td>
+<td align="left">3.25</td>
+<td align="left">383.75</td>
+<td align="left">168547</td>
+<td align="left">623721</td>
+</tr>
+<tr class="odd">
+<td align="left">8/6/2015</td>
+<td align="left">382.75</td>
+<td align="left">385.25</td>
+<td align="left">380.00</td>
+<td align="left">380.00</td>
+<td align="left">2.75</td>
+<td align="left">380.50</td>
+<td align="left">141927</td>
+<td align="left">617120</td>
+</tr>
+<tr class="even">
+<td align="left">8/5/2015</td>
+<td align="left">378.75</td>
+<td align="left">384.00</td>
+<td align="left">377.50</td>
+<td align="left">383.25</td>
+<td align="left">4.50</td>
+<td align="left">383.25</td>
+<td align="left">166401</td>
+<td align="left">605977</td>
+</tr>
+<tr class="odd">
+<td align="left">8/4/2015</td>
+<td align="left">377.75</td>
+<td align="left">382.75</td>
+<td align="left">376.50</td>
+<td align="left">379.00</td>
+<td align="left">2.25</td>
+<td align="left">378.75</td>
+<td align="left">123244</td>
+<td align="left">607654</td>
+</tr>
+<tr class="even">
+<td align="left">8/3/2015</td>
+<td align="left">380.00</td>
+<td align="left">380.50</td>
+<td align="left">374.50</td>
+<td align="left">378.75</td>
+<td align="left">4.75</td>
+<td align="left">376.50</td>
+<td align="left">131415</td>
+<td align="left">602431</td>
+</tr>
+</tbody>
+</table>
+<p>Source: <a href="https://www.quandl.com/data/CME/CZ2015-Corn-Futures-December-2015-CZ2015">Quandl.com</a></p>
+<p>I presume it would take some time to spot the error in tabular format. Now spot the error in Figure 3 when we graph the data to reproduce Figure 2 except for the encoding error.</p>
+<p>Figure 4: ENCODING ERROR - Corn Futures Prices - Candlesticks</p>
+<p><img src="A1-EconomicDataand_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>Source: <a href="https://www.quandl.com/data/CME/CZ2015-Corn-Futures-December-2015-CZ2015">Quandl.com</a> Figures created with the <code>quantmod</code> package in R.</p>
+<p>It is pretty easy to see that there is a problem with the data file around the beginning of September. In Figure 4 below, we display the data with a more basic chart, and it becomes even more clear.</p>
+<p>Figure 5: ENCODING ERROR - Corn Futures Prices - Another look</p>
+<p><img src="A1-EconomicDataand_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p>Now that you know approximately where to look, you can probably easily see in the table that the settle price on 9/4 is ten times larger than it should be by mistakenly adding a zero to the end.</p>
+</div>
+<div id="misinterpretation-of-data" class="section level3">
+<h3><span class="header-section-number">18.1.2</span> Misinterpretation of Data</h3>
+<p>Misinterpretation of data is probably more common than discovering actual errors in your data set. Since most data is collected for administrative or journalistic reasons it may not match with economic concepts. Or its properties may not match what you would naturally expect it to if it were collected explicitly for the purpose you are using it for.</p>
+<p>The most prominent example of this is the “Prices Received by Farmers” variable in the USDA NASS database. price received by farmers. The USDA website is quoted below to describe how the Prices Received by Farmers variable is computed.</p>
+<blockquote>
+<p>For the major grains, oilseeds, and pulse crops, NASS surveys a select panel of approximately 2,000 mills, elevators, and buyers monthly in the top producing states, asking about total quantity purchased and total dollars received. For the major livestock species, the Agricultural Marketing Service (AMS) collects prices daily, weekly, and monthly from packing plants and livestock auctions on number of head sold, total live weight, and total dollars paid. For other commodities, NASS conducts surveys and uses administrative data as needed.</p>
+<p>Based on the data collected and the information received from AMS, NASS computes monthly average state and national prices that producers received including market year averages (MYA) for approximately 65 commodities. An additional 35 commodities are MYA only. NASS publishes the price estimates in the Agricultural Prices report on or near the last business day of each month. Data are also available through the NASS searchable database, QuickStats. Source: <a href="http://www.nass.usda.gov/Surveys/Guide_to_NASS_Surveys/Prices_Received_and_Prices_Received_Indexes/index.asp">USDA NASS</a></p>
+</blockquote>
+<p>So the Prices Received by Farmers variable one gets from USDA NASS QuickStats should be understood as an average across two dimensions. It is an average across a wide geography, and it is averaged across the entire marketing year. This averaging smooths out a lot of variation in the data. So it you were to interpret Prices Received by Farmers as being useful to understand the risk a typical farmer faces over the course of the marketing year, you would grossly underestimate the risk they face.</p>
+</div>
+</div>
+<div id="graphics" class="section level2">
+<h2><span class="header-section-number">18.2</span> Graphics</h2>
+<p>Beyond detecting errors in your data, it is good practice to become familiar with the data you are analyzing to the degree that when you conduct your forecasting exercise you can subject your results to the sniff test. In other words, at first blush do your results seem plausible given your familiarity with the data you are working with. If you have become accustomed to the look and feel of your data graphically, you will be much more likely to detect problems or weaknesses in your own forecasting analysis.</p>
+<div id="univariate-graphical-techniques" class="section level3">
+<h3><span class="header-section-number">18.2.1</span> Univariate Graphical Techniques</h3>
+<p>Univariate means one variable. The simplest univariate technique is a regular time plot like we saw above. As a matter of style it is usually better to generate time plots using lines rather than charts.</p>
+<p>Another technique is to plot the change in the variable or the percent change in the variable. This is of particular interest because it is much harder to forecast changes or percent changes in a variable, than it is to forecast the level of a variable, but the changes and percent changes are much more useful in terms of making economic decisions based on the forecast.</p>
+</div>
+<div id="multivariate-graphical-techniques" class="section level3">
+<h3><span class="header-section-number">18.2.2</span> Multivariate Graphical Techniques</h3>
+<p>The most basic multivariate technique is to simply graph all the variables on one time plot to gauge how they move together visually. This works best if all the variables tend to be of the same scale. If you want to compare two variables of greatly differing scales you have two options. You can use major-minor axes. Or, you could focus on percent changes. Transform both variables into percent changes and then graph them on the same scale.</p>
+<p>The second common multivariate graphical technique is to produce an x-y scatter plot. In an x-y scatter-plot time is either stripped away, or perhaps it was not there to begin with (if one is considering a cross-sectional data set). The x-y scatter-plot focuses on how one variable changes as another changes, regardless of time.</p>
+<p>Figure 6: Corn Planted Acres versus Prices Received by Farmers <img src="Excel-files/ForecastingProduction-HistoricalAcreage_files/image005.png" /></p>
+</div>
+</div>
+<div id="elements-of-graphical-style" class="section level2">
+<h2><span class="header-section-number">18.3</span> Elements of Graphical Style</h2>
+<p>Producing good graphics is like producing good writing. It is a craft that takes discipline and practice. It is probably even more important than good writing, however. In reports you produce, whether it is in a professional or academic setting, the graphics will be examined much more closely than will the entirety of the writing. Indeed, the text of your report may only get read if you have produced quality compelling graphics that draws the reader into to your prose. Likewise, poor graphics will ensure your reports are ineffective and cause your ideas to be dismissed.</p>
+<div id="keys-to-good-graphics" class="section level3">
+<h3><span class="header-section-number">18.3.1</span> Keys to Good Graphics</h3>
+<p>The keys to generating good graphics are simple to state, but hard to master in practice. If you let the data tell its own story you will not seek to distort the graphics or mislead the reader. Also, avoid adding non-necessary decorations or anything that is not useful in depicting data-points. You should view your graphic as both a tool to held your reader understand your analysis and findings, but it should also serve as a conduit to get the reader who would otherwise skim your report committed to reading it.</p>
+<blockquote>
+<h2 id="keys-to-good-graphics-summarized"><span class="header-section-number">18.3.1</span> Keys to Good Graphics Summarized</h2>
+<ol style="list-style-type: decimal">
+<li>Know your audience</li>
+<li>Show the data and allow the data to appeal to the viewer</li>
+<li>Revise and edit, again and again</li>
+<li>Avoid distortions</li>
+<li>Use common scales in multiple comparisons</li>
+<li>Avoid distractions like: Elaborate shadings, grids, decoration, unneccessary axes, three dimensional perspective</li>
+<li>Keep in mind weather your reader will be reading your graphics in color or black and white.</li>
+<li>Make your graphic understandable as a stand alone item</li>
+</ol>
+</blockquote>
+</div>
+<div id="stand-alone-requirements" class="section level3">
+<h3><span class="header-section-number">18.3.2</span> Stand-Alone Requirements</h3>
+<p>The last key point deserves a bit more discussion. At the very minimum, your graphic should be able to be read and understood in its own right. If someone needs to read your report to understand what is being displayed there is something missing, or a lot of things missing from your graphic. In almost all cases a clear legend and a footnote with details should be provided.</p>
+<p>Clearly indicate the variables graphed on the horizontal and vertical axes and their respective units; provide a short but descriptive title; indicate the sources of the data displayed; use clear and modest type, avoid mnemonics and abbreviations.</p>
+
+</div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-hocking1976biometrics">
+<p>Hocking, Ronald R. 1976. “A Biometrics Invited Paper. the Analysis and Selection of Variables in Linear Regression.” <em>Biometrics</em>. JSTOR, 1–49.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="crude-oil-and-the-crack-spread.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="appendix-forecasting-with-ts-models.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

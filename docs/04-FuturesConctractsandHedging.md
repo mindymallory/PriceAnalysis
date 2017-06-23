@@ -1,4 +1,4 @@
 
-# Futures Contracts and Hedging Basics
+# Hedging Basics
 
 More coming soon...
