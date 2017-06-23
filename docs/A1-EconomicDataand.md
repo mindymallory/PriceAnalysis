@@ -151,13 +151,13 @@ Futures price data are often delivered including open, high, low, and close pric
 
 Figure 1: December Corn Futures Prices - Bars
 
-![](A1-EconomicDataand_files/figure-epub3/unnamed-chunk-4-1.png)<!-- -->
+<img src="A1-EconomicDataand_files/figure-html/unnamed-chunk-4-1.png" width="672" />
 
 Source: [Quandl.com](https://www.quandl.com/data/CME/CZ2015-Corn-Futures-December-2015-CZ2015) Figures created with the `quantmod` package in R. 
 
 Figure 2: December Corn Futures Prices - Candlesticks
 
-![](A1-EconomicDataand_files/figure-epub3/unnamed-chunk-5-1.png)<!-- -->
+<img src="A1-EconomicDataand_files/figure-html/unnamed-chunk-5-1.png" width="672" />
 
 Source: [Quandl.com](https://www.quandl.com/data/CME/CZ2015-Corn-Futures-December-2015-CZ2015) Figures created with the `quantmod` package in R.
 
@@ -236,7 +236,7 @@ I presume it would take some time to spot the error in tabular format. Now spot 
 
 Figure 4: ENCODING ERROR - Corn Futures Prices - Candlesticks
 
-![](A1-EconomicDataand_files/figure-epub3/unnamed-chunk-7-1.png)<!-- -->
+<img src="A1-EconomicDataand_files/figure-html/unnamed-chunk-7-1.png" width="672" />
 
 Source: [Quandl.com](https://www.quandl.com/data/CME/CZ2015-Corn-Futures-December-2015-CZ2015) Figures created with the `quantmod` package in R.
 
@@ -244,7 +244,7 @@ It is pretty easy to see that there is a problem with the data file around the b
 
 Figure 5: ENCODING ERROR - Corn Futures Prices - Another look
 
-![](A1-EconomicDataand_files/figure-epub3/unnamed-chunk-8-1.png)<!-- -->
+<img src="A1-EconomicDataand_files/figure-html/unnamed-chunk-8-1.png" width="672" />
 
 
 Now that you know approximately where to look, you can probably easily see in the table that the settle price on 9/4 is ten times larger than it should be by mistakenly adding a zero to the end. 

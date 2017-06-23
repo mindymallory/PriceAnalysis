@@ -11,6 +11,9 @@ biblio-style: apalike
 link-citations: yes
 github-repo: mindymallory/PriceAnalysis
 url: 'http\:mindymallory.github.io/PriceAnalysis/'
+download:
+      - ["book.pdf", "PDF"]
+      - ["book.epub", "EPUB"]
 ---
 
 
@@ -26,7 +29,7 @@ This book is targeted at the upper level undergraduate student, or professional 
 
 This book is updated with current information in the tables and figures each time I teach the course. Previous versions of the book can be found [here](https://github.com/mindymallory/PriceAnalysis/releases).
 
-## About the Author {-}
+# About the Author {-}
 
 Mindy L. Mallory is an associate professor in the Department of Agricultural and Consumer Economics at the University of Illinois in the College of ACES.
 
