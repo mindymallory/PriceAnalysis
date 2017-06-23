@@ -49,7 +49,7 @@ where $R_i$ represents the percentage return on period $i$. The $p$ in $AR(p)$ i
 
 All of the p-values for our regressors are large, certainly much bigger than 0.05. We fail to reject the null hypothesis that one and two lags of corn price returns are unrelated to the next price return realization. Therefore, the $AR(2)$ model does not seem to provide much forecasting power. 
 
-## MA(q)$, Models
+## $MA(q)$, Models
 
 The Moving Average Model incorporates lagged random shocks into the forecast model. Commonly denoted by $MA(q)$, the $q$ stands for the number of lags of shocks to be included. Formally, 
 
