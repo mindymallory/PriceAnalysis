@@ -29,6 +29,8 @@ This book is targeted at the upper level undergraduate student, or professional 
 
 This book is updated with current information in the tables and figures each time I teach the course. Previous versions of the book can be found [here](https://github.com/mindymallory/PriceAnalysis/releases).
 
+For readers interested in more in-depth analysis of commodity prices from a statistical perspective, I am working on an [R Companion](http://mindymallory.github.io/R-Companion-Price-Analysis/index.html) to this book. 
+
 # About the Author {-}
 
 Mindy L. Mallory is an associate professor in the Department of Agricultural and Consumer Economics at the University of Illinois in the College of ACES.
