@@ -1,4 +1,73 @@
 
 # Hedging Basics
 
-More coming soon...
+This chapter is a review of the basics of hedging. What is its purpose? Who does it? And how do futures contracts facilitate a 'hedge'? 
+
+Merriam-Webster defines a 'hedge' as a means of protection or defense (as against a financial loss). Hedging in the sense of hedging with a futures contract, is exactly that a defense against a financial loss. In the present context, a hedge is the use of a derivative contract to reduce or eliminate risk in your business' profits.
+
+Understanding who is hedging and why is very helpful to understanding price relationships and what drives them to move up or down. 
+
+**Futures Contract Review**
+
+A futures contract is a contract between two parties to buy and sell at an agreed to price, a specific quantity and quality of something at a specific location. In the case of CBOT corn futures, it is 5,000 bushels of U.S. number 2 yellow corn, at specific elevators along the Illinois River, Lake Michigan, or associated canals. These contracts are traded on a centralized exchange, similar to the 'stock market', and the two counter-parties do not know each other. The difference between a futures contract, and say buying a stock, is that when the trade takes place, no ownership transfer occurs. It is simply a promise to buy or sell at a specific date in the future. That is why there are many different futures contract 'months' like 'December 2017' corn futures, and 'March 2018' corn futures. Traders on futures exchanges need to post 'margin' which is just an amount of money that acts as a performance bond so that everyone has confidence that both parties can make good on the contract if it is held until the futures contract expires. As the price moves up, the seller's position is losing (because selling 'low' is 'bad' business), and some money is taken from their margin account and put into the buyer's margin account (because buying 'low' is 'good' business). This daily transfer of money from the losers to the winners is called 'marking to market', and it makes sure everyone has the financial capital required to make good on the terms of the contract. 
+
+Very few contracts are held all the way to expiration when transfer of ownership would take place. The traders who originally bought, sometime before expiration will sell, eliminating their obligation in the market, or getting them to a 'flat' position. The traders who originally sold, will buy, getting them to a 'flat' position as well. The rest of the chapter will cover how exactly these futures contracts can facilitate a hedge for different types of businesses. 
+
+## Examples: Who Hedges and How Does a Futures Contract Facilitate a Hedge?
+
+
+**Farmer**
+
+Consider the corn farmer who plants her crop in April waits for it to grow and then mature through the summer and fall, then harvests it in November. If the farmer sells right after harvest in the cash market, she will very likely take her grain to a local grain elevator (similar to the one pictured below), where the elevator will purchase all she has at a price they publicly offer anyone interested in selling grain. 
+
+Figure 1. A Grain Elevator in Royal, IL
+<a title="By Daniel Schwen (Own work) [CC BY-SA 4.0 (http://creativecommons.org/licenses/by-sa/4.0)], via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File%3AGrain_elevators_in_Royal%2C_IL.jpg"><img width="512" alt="Grain elevators in Royal, IL" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Grain_elevators_in_Royal%2C_IL.jpg/512px-Grain_elevators_in_Royal%2C_IL.jpg"/></a>
+
+Source: [Daniel Schwen, CC-License](https://commons.wikimedia.org/wiki/File%3AGrain_elevators_in_Royal%2C_IL.jpg)  
+
+The farmer's entire income for the year will come from the sale of this grain, and a lot can happen to the price of corn between April and November, leaving the farmer exposed to tremendous income risk. Many farmers desire the ability to reduce this income risk by entering into a contractual relationship that reduces the uncertainty in the income they receive. Currently there are several ways they can achieve this. 
+
+  1. Crop Insurance. They can purchase a crop insurance policy that will pay them an indemnity if either price goes down, yield is low, or both depending on the exact specification of the contract. This activity does not directly interact with the futures market, so it does not have a large effect on price. 
+  
+  2. Forward Price Contract. Local grain elevators (sometimes called merchandisers) typically offer forward contracts to buy grain from farmers. Along with the cash price they post publicly on a daily basis, they will post forward 'bids'. The forward contract simply states that the farmer will deliver a certain quantity of grain to that elevator within a specific date range, usually a window of a few weeks. Upon delivery, the elevator will pay the farmer the price agreed to (the forward bid price) on the date they entered int the forward contract together. This eliminates price uncertainty for the farmer, as long as the elevator does not go bankrupt before the delivery date of the contract, they will have the forward bid price with certainty. The forward contract transfers price risk to the elevator. The elevator does not want to entertain price risk during this time either, but the elevator has a contract to buy the grain at a specific price, but the price at which they can turn around and sell it to someone else is uncertain. They will transfer the price risk to speculators in the futures market by selling futures. So farmers entering into forward contracts with local grain merchandisers ultimately results in selling of futures contracts by the grain merchandisers. We will see in an examples below how exactly selling futures eliminates price risk. 
+  
+  3. Futures Market. Alternatively, a farmer could go directly to the futures market themselves to sell futures contracts and reduce price uncertainty. This reduces, but not eliminates uncertainty because the farmer still faces basis risk in this case. A detailed example will help explain how this works. 
+  
+  Suppose on May 1st, the farmer's local elevator is offering to buy corn for \$3.50, and the May futures contract is trading at \$3.75. Since the May futures contract is about to expire, the cash price and Futures price are not separated by much time (we have discussed briefly how prices through time along the futures forward curve provide incentives to store) and thus should not be very different because of time. However, the local elevator's price can differ from the Futures price because they are at different locations. For example, the elevator in the photo at Royal, IL is about 116 miles from the 'regular for delivery' elevators in the Calmet-Sag Chanel near Orland Park, IL. The \$0.25 difference between the May futures price and the cash price on May 1st in Royal, IL is largely due to the geographic distance between the two locations. The price distance over space is called the basis. 
+  
+  $$Basis = Cash Price - Futures Price$$
+  
+Also on May 1st, the December futures contract price is \$3.80. If the farmer wants to reduce price uncertainty they will sell futures, sometimes referred to as 'selling forward' or 'selling ahead'. 
+
+**To Hedge - Take the same action in the futures market (buy or sell) that you will do in the cash market at a future date**
+
+The farmer will sell corn in the cash market in November, so to hedge she should sell (the December) futures to hedge. Consider two cases, one where the Dec futures price in November turned out to be \$4.00, and one where the Dec futures price in November turned out to be \$3.60.
+
+**Dec Futures Price went Up to \$4.00, Basis Unchanged**
+
+
+
+**Dec Futures Price went Down to \$3.60, Basis Unchanged**
+
+
+By selling Dec futures ahead of the cash sale, price risk was reduced. It was reduced, but not eliminated because by hedging with futures there is still basis risk. To see how this works, consider now that the futures price was unchanged in November, that is in November the Dec futures is still trading at \$3.80. Now however, consider two cases. The basis widens to -\$0.50, and the basis narrows to \$0.00. 
+
+**Dec Futures Price Unchanged, Basis now -\$0.50**
+
+
+
+**Dec Futures Price Unchanged, Basis now \$0.00**
+
+  
+  4. Options Market. They could also use options on futures contracts to reduce downside risk, but maintain upside potential profits. Specifically, a farmer could buy a put option for a premium paid upfront. The put option makes money if the price goes down, like a short (sold) futures position, but if the price goes up, it does not lose any more than the original premium paid. Therefore, if the price goes down, she is hedged, but if the price goes up, she will enjoy increased profits. 
+
+
+
+**Flour Mill**  
+
+
+**Soybean Crusher**  
+
+**Cattle Feeder**  
+
+**Ethanol Producer**    
