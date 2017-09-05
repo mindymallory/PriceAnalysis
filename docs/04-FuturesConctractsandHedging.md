@@ -1,5 +1,5 @@
 
-# Hedging Basics
+# Futures and Hedging Review
 
 This chapter is a review of the basics of hedging. What is its purpose? Who does it? And how do futures contracts facilitate a 'hedge'? 
 
@@ -33,7 +33,7 @@ The farmer's entire income for the year will come from the sale of this grain, a
   
   3. Futures Market. Alternatively, a farmer could go directly to the futures market themselves to sell futures contracts and reduce price uncertainty. This reduces, but not eliminates uncertainty because the farmer still faces basis risk in this case. A detailed example will help explain how this works. 
   
-  Suppose on May 1st, the farmer's local elevator is offering to buy corn for \$3.50, and the May futures contract is trading at \$3.75. Since the May futures contract is about to expire, the cash price and Futures price are not separated by much time (we have discussed briefly how prices through time along the futures forward curve provide incentives to store) and thus should not be very different because of time. However, the local elevator's price can differ from the Futures price because they are at different locations. For example, the elevator in the photo at Royal, IL is about 116 miles from the 'regular for delivery' elevators in the Calmet-Sag Chanel near Orland Park, IL. The \$0.25 difference between the May futures price and the cash price on May 1st in Royal, IL is largely due to the geographic distance between the two locations. The price distance over space is called the basis. 
+  Suppose on May 1st, the farmer's local elevator is offering to buy corn for \$3.50, and the May futures contract is trading at \$3.60. Since the May futures contract is about to expire, the cash price and Futures price are not separated by much time (we have discussed briefly how prices through time along the futures forward curve provide incentives to store) and thus should not be very different because of time. However, the local elevator's price can differ from the Futures price because they are at different locations. For example, the elevator in the photo at Royal, IL is about 116 miles from the 'regular for delivery' elevators in the Calmet-Sag Chanel near Orland Park, IL. The \$0.10 difference between the May futures price and the cash price on May 1st in Royal, IL is largely due to the geographic distance between the two locations. The price distance over space is called the basis. Basis can be computed compared to any of the futures contracts, but it makes sense to consider basis compared to the futures contract that corresponds to the planned cash sale. 
   
   $$Basis = Cash Price - Futures Price$$
   
@@ -45,29 +45,76 @@ The farmer will sell corn in the cash market in November, so to hedge she should
 
 **Dec Futures Price went Up to \$4.00, Basis Unchanged**
 
+| Date           | Action            | Cash Price in Royal, IL |  Dec Corn  Futures Price | Basis          | 
+|:--------------:|:-----------------:|:-----------------------:|:-----------------------:|:--------------:|
+| May 1st        | Sell Dec Futures  |   \$3.50                |   \$3.75                 | -\$0.25 (Dec)  |
+| Nov 1st        | Buy Dec Futures & Sell Cash Corn | \$3.75   | \$4.00                  | -\$0.25 (Dec)  |
+| Profit Calculation, | Cash and Futures | \$3.75                  |  \$3.75 - \$4.00 = -\$0.25|                |
+|                |Net per bushel revanue | \$3.75 - \$0.25 |   = \$3.50                     |                |                          
+With the basis unchanged, the farmer eliminated the uncertainty over the price at which she will sell her crop. By 'selling ahead' in the futures market, the price was locked in, except for the basis. Note that in this case, the farmer would have liked to be able to sell for \$3.75 instead of \$3.50 net, but by locking in the price with futures she gave up the potential for upside. In the next example, though, we show the advantage. In the next example, prices go down between May and November, and the futures hedge protects the farmer from these deteriorating prices. 
 
 
 **Dec Futures Price went Down to \$3.60, Basis Unchanged**
 
+| Date           | Action            | Cash Price in Royal, IL | Dec Corn  Futures Price | Basis          | 
+|:--------------:|:-----------------:|:-----------------------:|:-----------------------:|:--------------:|
+| May 1st        | Sell Dec Futures  |   \$3.50                |  \$3.75                 | -\$0.25 (Dec)  |
+| Nov 1st        | Buy Dec Futures & Sell Cash Corn | \$3.35   | \$3.60                  | -\$0.25 (Dec)  |
+| Profit Calculation, |Cash and Futures  | \$3.35              |  \$3.75 - \$3.60 = +\$0.15|                |
+|                |Net per bushel revanue | \$3.35 + \$0.15 |    = \$3.50                       |                |       
 
-By selling Dec futures ahead of the cash sale, price risk was reduced. It was reduced, but not eliminated because by hedging with futures there is still basis risk. To see how this works, consider now that the futures price was unchanged in November, that is in November the Dec futures is still trading at \$3.80. Now however, consider two cases. The basis widens to -\$0.50, and the basis narrows to \$0.00. 
+
+
+By selling Dec futures ahead of the cash sale, price risk was reduced. It was reduced, but not eliminated because by hedging with futures there is still basis risk. The next examples show what happens when the basis is uncertain. Consider now that the futures price was unchanged in November, that is in November the Dec futures is still trading at \$3.80. Now however, consider two cases. The basis widens to -\$0.50, and the basis narrows to \$0.00. 
 
 **Dec Futures Price Unchanged, Basis now -\$0.50**
 
+| Date           | Action            | Cash Price in Royal, IL | Dec Corn  Futures Price | Basis          | 
+|:--------------:|:-----------------:|:-----------------------:|:-----------------------:|:--------------:|
+| May 1st        | Sell Dec Futures  |   \$3.50                |  \$3.75                 | -\$0.25 (Dec)  |
+| Nov 1st        | Buy Dec Futures & Sell Cash Corn | \$3.25   | \$3.75                  | -\$0.50 (Dec)  |
+| Profit Calculation, |Cash and Futures  | \$3.25              |  \$3.75 - \$3.75 = +\$0.00|                |
+|                |Net per bushel revanue | \$3.25 + \$0.00 |    = \$3.25                       |                |       
 
+This time, the basis widening from -\$0.25 to -\$0.50 was a loss to the farmer, even though general price levels were unchanged (Dec price unchanged). The next example shows the farmer's revanue if the basis strengthens, or narrows. 
 
 **Dec Futures Price Unchanged, Basis now \$0.00**
 
+| Date           | Action            | Cash Price in Royal, IL | Dec Corn  Futures Price | Basis          | 
+|:--------------:|:-----------------:|:-----------------------:|:-----------------------:|:--------------:|
+| May 1st        | Sell Dec Futures  |   \$3.50                |  \$3.75                 | -\$0.25 (Dec)  |
+| Nov 1st        | Buy Dec Futures & Sell Cash Corn | \$3.75   | \$3.75                  | \$0.00 (Dec)  |
+| Profit Calculation, |Cash and Futures  | \$3.75              |  \$3.75 - \$3.75 = +\$0.00|                |
+|                |Net per bushel revanue | \$3.75 + \$0.00 |    = \$3.75                       |                |       
+
+The narrowing of the basis was an increase in profit to the farmer. 
+
+These examples show why it is said that when a farmer hedges with futures they are 'long in the basis'. a futures hedge eliminates price uncertainty that comes from general price levels:
+
+   + If prices go up, they recieve an increase in the cash price they recieve, but a loss on their futures position
+   + If prices go down, they recieve less in cash price when they sell corn in their local market, but a gain on their futures position. 
+    
+The futures hedge, however, does not protect against changes (good or bad) in the releative price in their local cash market and the futures price. 
   
   4. Options Market. They could also use options on futures contracts to reduce downside risk, but maintain upside potential profits. Specifically, a farmer could buy a put option for a premium paid upfront. The put option makes money if the price goes down, like a short (sold) futures position, but if the price goes up, it does not lose any more than the original premium paid. Therefore, if the price goes down, she is hedged, but if the price goes up, she will enjoy increased profits. 
 
 
 
-**Flour Mill**  
+**Flour Mill** 
 
+A flour mill buys large quantities of grain for making into flour. They can use futures to hedge price risk by 'buying ahead' futures contracts. Remember that a futures hedge always involves making a trade in the futures contract that is the same as what you will do in the cash market. In this case, the flour mill buys grain, so their futures hedge shoule buy futures. 
+
+
+The 'crush' hedges are a little more complicated because they involve buying a certain kind of commodity, transforming it, and selling another commodity. Some are lucky in that they can hedge both the buy and sell side of the crushing business. 
 
 **Soybean Crusher**  
 
+The soybean crusher buys soybeans and sells soybean meal and oil. Their futures hedge would involve buying soybean futures and selling meal and oil futures. 
+
+
+
 **Cattle Feeder**  
 
-**Ethanol Producer**    
+**Ethanol Producer** 
+
+**Importance of Having a Line of Credit in Futures Hedging**
