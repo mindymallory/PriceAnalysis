@@ -11,7 +11,7 @@ Understanding who is hedging and why is very helpful to understanding price rela
 
 A futures contract is a contract between two parties to buy and sell at an agreed to price, a specific quantity and quality of something at a specific location. In the case of CBOT corn futures, it is 5,000 bushels of U.S. number 2 yellow corn, at specific elevators along the Illinois River, Lake Michigan, or associated canals. These contracts are traded on a centralized exchange, similar to the 'stock market', and the two counter-parties do not know each other. The difference between a futures contract, and say buying a stock, is that when the trade takes place, no ownership transfer occurs. It is simply a promise to buy or sell at a specific date in the future. That is why there are many different futures contract 'months' like 'December 2017' corn futures, and 'March 2018' corn futures. Traders on futures exchanges need to post 'margin' which is just an amount of money that acts as a performance bond so that everyone has confidence that both parties can make good on the contract if it is held until the futures contract expires. As the price moves up, the seller's position is losing (because selling 'low' is 'bad' business), and some money is taken from their margin account and put into the buyer's margin account (because buying 'low' is 'good' business). This daily transfer of money from the losers to the winners is called 'marking to market', and it makes sure everyone has the financial capital required to make good on the terms of the contract. 
 
-Consider this example. At 10am the March corn futures contract is trading at \$4.50 per bushel. Trader A decides to buy one contract and Trader B decides to sell one contract. At 1pm both traders decide to close their postion and the price has moved up to \$4.75 per bushel. Since the price went up the by \$0.25 per bushel, the longs (buyers) gain $+0.25*5000 = \$1250$ and the shorts (sellers) lose $-0.25*5000 = \$1250$. 
+Consider this example. At 10am the March corn futures contract is trading at \$4.50 per bushel. Trader A decides to buy one contract and Trader B decides to sell one contract. At 1pm both traders decide to close their position and the price has moved up to \$4.75 per bushel. Since the price went up the by \$0.25 per bushel, the longs (buyers) gain $+0.25*5000 = \$1250$ and the shorts (sellers) lose $-0.25*5000 = \$1250$. 
 
 |Time   | Trader A | Trader B |
 |:------|:---------|:---------|
@@ -60,7 +60,7 @@ The farmer will sell corn in the cash market in November, so to hedge she should
 | May 1st        | Sell Dec Futures  |   \$3.50                |   \$3.75                 | -\$0.25 (Dec)  |
 | Nov 1st        | Buy Dec Futures & Sell Cash Corn | \$3.75   | \$4.00                  | -\$0.25 (Dec)  |
 | Profit Calculation, | Cash and Futures | \$3.75                  |  \$3.75 - \$4.00 = -\$0.25|                |
-|                |Net per bushel revanue | \$3.75 - \$0.25 |   = \$3.50                     |                |                          
+|                |Net per bushel revenue | \$3.75 - \$0.25 |   = \$3.50                     |                |                          
 With the basis unchanged, the farmer eliminated the uncertainty over the price at which she will sell her crop. By 'selling ahead' in the futures market, the price was locked in, except for the basis. Note that in this case, the farmer would have liked to be able to sell for \$3.75 instead of \$3.50 net, but by locking in the price with futures she gave up the potential for upside. In the next example, though, we show the advantage. In the next example, prices go down between May and November, and the futures hedge protects the farmer from these deteriorating prices. 
 
 
@@ -71,7 +71,7 @@ With the basis unchanged, the farmer eliminated the uncertainty over the price a
 | May 1st        | Sell Dec Futures  |   \$3.50                |  \$3.75                 | -\$0.25 (Dec)  |
 | Nov 1st        | Buy Dec Futures & Sell Cash Corn | \$3.35   | \$3.60                  | -\$0.25 (Dec)  |
 | Profit Calculation, |Cash and Futures  | \$3.35              |  \$3.75 - \$3.60 = +\$0.15|                |
-|                |Net per bushel revanue | \$3.35 + \$0.15 |    = \$3.50                       |                |       
+|                |Net per bushel revenue | \$3.35 + \$0.15 |    = \$3.50                       |                |       
 
 
 
@@ -84,9 +84,9 @@ By selling Dec futures ahead of the cash sale, price risk was reduced. It was re
 | May 1st        | Sell Dec Futures  |   \$3.50                |  \$3.75                 | -\$0.25 (Dec)  |
 | Nov 1st        | Buy Dec Futures & Sell Cash Corn | \$3.25   | \$3.75                  | -\$0.50 (Dec)  |
 | Profit Calculation, |Cash and Futures  | \$3.25              |  \$3.75 - \$3.75 = +\$0.00|                |
-|                |Net per bushel revanue | \$3.25 + \$0.00 |    = \$3.25                       |                |       
+|                |Net per bushel revenue | \$3.25 + \$0.00 |    = \$3.25                       |                |       
 
-This time, the basis widening from -\$0.25 to -\$0.50 was a loss to the farmer, even though general price levels were unchanged (Dec price unchanged). The next example shows the farmer's revanue if the basis strengthens, or narrows. 
+This time, the basis widening from -\$0.25 to -\$0.50 was a loss to the farmer, even though general price levels were unchanged (Dec price unchanged). The next example shows the farmer's revenue if the basis strengthens, or narrows. 
 
 **Dec Futures Price Unchanged, Basis now \$0.00**
 
@@ -95,16 +95,16 @@ This time, the basis widening from -\$0.25 to -\$0.50 was a loss to the farmer, 
 | May 1st        | Sell Dec Futures  |   \$3.50                |  \$3.75                 | -\$0.25 (Dec)  |
 | Nov 1st        | Buy Dec Futures & Sell Cash Corn | \$3.75   | \$3.75                  | \$0.00 (Dec)  |
 | Profit Calculation, |Cash and Futures  | \$3.75              |  \$3.75 - \$3.75 = +\$0.00|                |
-|                |Net per bushel revanue | \$3.75 + \$0.00 |    = \$3.75                       |                |       
+|                |Net per bushel revenue | \$3.75 + \$0.00 |    = \$3.75                       |                |       
 
 The narrowing of the basis was an increase in profit to the farmer. 
 
 These examples show why it is said that when a farmer hedges with futures they are 'long in the basis'. a futures hedge eliminates price uncertainty that comes from general price levels:
 
-   + If prices go up, they recieve an increase in the cash price they recieve, but a loss on their futures position
-   + If prices go down, they recieve less in cash price when they sell corn in their local market, but a gain on their futures position. 
+   + If prices go up, they receive an increase in the cash price they receive, but a loss on their futures position
+   + If prices go down, they receive less in cash price when they sell corn in their local market, but a gain on their futures position. 
     
-The futures hedge, however, does not protect against changes (good or bad) in the releative price in their local cash market and the futures price. 
+The futures hedge, however, does not protect against changes (good or bad) in the relative price in their local cash market and the futures price. 
   
   4. Options Market. They could also use options on futures contracts to reduce downside risk, but maintain upside potential profits. Specifically, a farmer could buy a put option for a premium paid upfront. The put option makes money if the price goes down, like a short (sold) futures position, but if the price goes up, it does not lose any more than the original premium paid. Therefore, if the price goes down, she is hedged, but if the price goes up, she will enjoy increased profits. 
 
@@ -112,16 +112,16 @@ The futures hedge, however, does not protect against changes (good or bad) in th
 
 ### Flour Mill
 
-A flour mill buys large quantities of grain for making into flour. They can use futures to hedge price risk by 'buying ahead' futures contracts. Remember that a futures hedge always involves making a trade in the futures contract that is the same as what you will do in the cash market. In this case, the flour mill buys grain, so their futures hedge should buy futures. Since the flour mill likely wants to process grain year round, they need to hedge price risk at multiple points in time to correspond to when they routinely purchase grain. For example, high capcity commercial wheat flour mills can process upwards of 50,000 bushels of wheat per month. With wheat futures contracts specified for 5,000 bushels they need 10 wheat futures contracts to hedge their wheat buying for one month. 
+A flour mill buys large quantities of grain for making into flour. They can use futures to hedge price risk by 'buying ahead' futures contracts. Remember that a futures hedge always involves making a trade in the futures contract that is the same as what you will do in the cash market. In this case, the flour mill buys grain, so their futures hedge should buy futures. Since the flour mill likely wants to process grain year round, they need to hedge price risk at multiple points in time to correspond to when they routinely purchase grain. For example, high  commercial wheat flour mills can process upwards of 50,000 bushels of wheat per month. With wheat futures contracts specified for 5,000 bushels they need 10 wheat futures contracts to hedge their wheat buying for one month. 
 
 There are five wheat futures contracts per year, March, May, July, September, and December
 
 | Wheat Futures Contracts | |  |  |  |  |
 |:------------------------|:-:|:-:|:-:|:-:|:-:|
-| Expirations             | March | May | July | September | December |
+| Expiration             | March | May | July | September | December |
 
 
-If the mill buys wheat at the first of every month, they will have to use the nearest contract month to hedge price. For example, to hedge a purchase of wheat on February 1st, the mill will have to use the March futures expiration, because there is no February contract and the March contract is the closest expiration. Then suppose on December 1st 2015 the mill wants to lock in its wheat purchase price (aside from basis risk) for the first six months of 2016. Then, for example, it will have to hedge January, February, and March wheat purchases with the March futures contract. Since they buy 50,000 bushels per month, which is equivalent to 10 contracts per month, they will need to buy 60 contracts of wheat on Dec 1, 2015 to hedge January through July purchases. Hedges should be lifted simultaneously with actvity in the cash market. For example, on January 1st, 2016 the mill will purchase 50,000 bushels to process for the month of January in the cash market. Then they should lift their hedge on 10 contracts, or sell 10 contracts also on January first. This means after January 1st, the mill is still holding 20 bought futures contracts (they are 'long' 20 contracts) which keeps February and March's purchases hedged. The table below details the mills activities in the spot market and futures market throughout the year. It takes real data from 2016, and assumes that the basis is fixed at -\$0.25 under the nearby futurse contract, meaning the spot price column is always \$0.25 cents less than the next to expire futures contract. 
+If the mill buys wheat at the first of every month, they will have to use the nearest contract month to hedge price. For example, to hedge a purchase of wheat on February 1st, the mill will have to use the March futures expiration, because there is no February contract and the March contract is the closest expiration. Then suppose on December 1st 2015 the mill wants to lock in its wheat purchase price (aside from basis risk) for the first six months of 2016. Then, for example, it will have to hedge January, February, and March wheat purchases with the March futures contract. Since they buy 50,000 bushels per month, which is equivalent to 10 contracts per month, they will need to buy 60 contracts of wheat on Dec 1, 2015 to hedge January through July purchases. Hedges should be lifted simultaneously with activity in the cash market. For example, on January 1st, 2016 the mill will purchase 50,000 bushels to process for the month of January in the cash market. Then they should lift their hedge on 10 contracts, or sell 10 contracts also on January first. This means after January 1st, the mill is still holding 20 bought futures contracts (they are 'long' 20 contracts) which keeps February and March's purchases hedged. The table below details the mills activities in the spot market and futures market throughout the year. It takes real data from 2016, and assumes that the basis is fixed at -\$0.25 under the nearby futures contract, meaning the spot price column is always \$0.25 cents less than the next to expire futures contract. 
 
 |Dates |Action|Long |Net Price Paid|Spot| Mar Fut| May Fut | Jul Futs |
 |:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|
