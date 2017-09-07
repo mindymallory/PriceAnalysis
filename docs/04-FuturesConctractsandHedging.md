@@ -11,12 +11,22 @@ Understanding who is hedging and why is very helpful to understanding price rela
 
 A futures contract is a contract between two parties to buy and sell at an agreed to price, a specific quantity and quality of something at a specific location. In the case of CBOT corn futures, it is 5,000 bushels of U.S. number 2 yellow corn, at specific elevators along the Illinois River, Lake Michigan, or associated canals. These contracts are traded on a centralized exchange, similar to the 'stock market', and the two counter-parties do not know each other. The difference between a futures contract, and say buying a stock, is that when the trade takes place, no ownership transfer occurs. It is simply a promise to buy or sell at a specific date in the future. That is why there are many different futures contract 'months' like 'December 2017' corn futures, and 'March 2018' corn futures. Traders on futures exchanges need to post 'margin' which is just an amount of money that acts as a performance bond so that everyone has confidence that both parties can make good on the contract if it is held until the futures contract expires. As the price moves up, the seller's position is losing (because selling 'low' is 'bad' business), and some money is taken from their margin account and put into the buyer's margin account (because buying 'low' is 'good' business). This daily transfer of money from the losers to the winners is called 'marking to market', and it makes sure everyone has the financial capital required to make good on the terms of the contract. 
 
+Consider this example. At 10am the March corn futures contract is trading at \$4.50 per bushel. Trader A decides to buy one contract and Trader B decides to sell one contract. At 1pm both traders decide to close their postion and the price has moved up to \$4.75 per bushel. Since the price went up the by \$0.25 per bushel, the longs (buyers) gain $+0.25*5000 = \$1250$ and the shorts (sellers) lose $-0.25*5000 = \$1250$. 
+
+|Time   | Trader A | Trader B |
+|:------|:---------|:---------|
+| 10am  | buy \$4.50 | sell \$4.50 |
+| 1pm   | sell \$4.75     | buy   \$4.75    |
+|profit per bu |  \$4.75 -  \$4.50 = +\$0.25  | \$4.50 -  \$4.75 = -\$0.25 |
+|profit one contract | +\$1250  | -\$1250 |
+
+
 Very few contracts are held all the way to expiration when transfer of ownership would take place. The traders who originally bought, sometime before expiration will sell, eliminating their obligation in the market, or getting them to a 'flat' position. The traders who originally sold, will buy, getting them to a 'flat' position as well. The rest of the chapter will cover how exactly these futures contracts can facilitate a hedge for different types of businesses. 
 
 ## Examples: Who Hedges and How Does a Futures Contract Facilitate a Hedge?
 
 
-**Farmer**
+### Farmer
 
 Consider the corn farmer who plants her crop in April waits for it to grow and then mature through the summer and fall, then harvests it in November. If the farmer sells right after harvest in the cash market, she will very likely take her grain to a local grain elevator (similar to the one pictured below), where the elevator will purchase all she has at a price they publicly offer anyone interested in selling grain. 
 
@@ -100,21 +110,41 @@ The futures hedge, however, does not protect against changes (good or bad) in th
 
 
 
-**Flour Mill** 
+### Flour Mill
 
-A flour mill buys large quantities of grain for making into flour. They can use futures to hedge price risk by 'buying ahead' futures contracts. Remember that a futures hedge always involves making a trade in the futures contract that is the same as what you will do in the cash market. In this case, the flour mill buys grain, so their futures hedge shoule buy futures. 
+A flour mill buys large quantities of grain for making into flour. They can use futures to hedge price risk by 'buying ahead' futures contracts. Remember that a futures hedge always involves making a trade in the futures contract that is the same as what you will do in the cash market. In this case, the flour mill buys grain, so their futures hedge should buy futures. Since the flour mill likely wants to process grain year round, they need to hedge price risk at multiple points in time to correspond to when they routinely purchase grain. For example, high capcity commercial wheat flour mills can process upwards of 50,000 bushels of wheat per month. With wheat futures contracts specified for 5,000 bushels they need 10 wheat futures contracts to hedge their wheat buying for one month. 
+
+There are five wheat futures contracts per year, March, May, July, September, and December
+
+| Wheat Futures Contracts | |  |  |  |  |
+|:------------------------|:-:|:-:|:-:|:-:|:-:|
+| Expirations             | March | May | July | September | December |
+
+
+If the mill buys wheat at the first of every month, they will have to use the nearest contract month to hedge price. For example, to hedge a purchase of wheat on February 1st, the mill will have to use the March futures expiration, because there is no February contract and the March contract is the closest expiration. Then suppose on December 1st 2015 the mill wants to lock in its wheat purchase price (aside from basis risk) for the first six months of 2016. Then, for example, it will have to hedge January, February, and March wheat purchases with the March futures contract. Since they buy 50,000 bushels per month, which is equivalent to 10 contracts per month, they will need to buy 60 contracts of wheat on Dec 1, 2015 to hedge January through July purchases. Hedges should be lifted simultaneously with actvity in the cash market. For example, on January 1st, 2016 the mill will purchase 50,000 bushels to process for the month of January in the cash market. Then they should lift their hedge on 10 contracts, or sell 10 contracts also on January first. This means after January 1st, the mill is still holding 20 bought futures contracts (they are 'long' 20 contracts) which keeps February and March's purchases hedged. The table below details the mills activities in the spot market and futures market throughout the year. It takes real data from 2016, and assumes that the basis is fixed at -\$0.25 under the nearby futurse contract, meaning the spot price column is always \$0.25 cents less than the next to expire futures contract. 
+
+|Dates |Action|Long |Net Price Paid|Spot| Mar Fut| May Fut | Jul Futs |
+|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|
+| Dec 1, 15 | Buy 30 Mar, 20 May, 10 Jul   |   |   |469.75   | 470 |	476.5|	483.25|
+| Jan 1, 16|Buy 50k spot, Sell 10 Mar  |20 Mar, 20 May, 10 Jul|-479 + (479.25-470) = -469.75   |479.00  |479.25|	485|	490.5	|
+| Feb 1 |Buy 50k spot, Sell 10 Mar | 10 Mar, 20 May, 10 Jul|-444.75 + (445 - 470) = -469.75 |444.75 | 445|	453.25|	460.25|
+| Mar 1 |Buy 50k spot, Sell 10 Mar |20 May, 10 Jul |-471.25 + (471.5-470) = -469.75 |471.25 | 471.5|	473.5|	480.75|
+|Apr 1 |Buy 50k spot, Sell 10 May |10 May, 10 Jul |-477.75 + (478-476.5) = -476.25| 477.75 | NA | 478	|488.5	|
+| May 1 |Buy 50k spot, Sell 10 May |10 Jul  |-464.75 + (465 - 476.5) = -476.25 | 464.75|NA | 465	|464.5|	
+| Jun 1 |Buy 50k spot, Sell 10 Jul |0 |-431 + (431.25-483.25) = -483 |431 |NA |NA | 431.25|
+
 
 
 The 'crush' hedges are a little more complicated because they involve buying a certain kind of commodity, transforming it, and selling another commodity. Some are lucky in that they can hedge both the buy and sell side of the crushing business. 
 
-**Soybean Crusher**  
+### Soybean Crusher  
 
 The soybean crusher buys soybeans and sells soybean meal and oil. Their futures hedge would involve buying soybean futures and selling meal and oil futures. 
 
 
 
-**Cattle Feeder**  
+### Cattle Feeder 
 
-**Ethanol Producer** 
+### Ethanol Producer
 
-**Importance of Having a Line of Credit in Futures Hedging**
+### Importance of Having a Line of Credit in Futures Hedging
