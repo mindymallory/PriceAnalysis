@@ -94,6 +94,8 @@ Buy Deferred: March 2018
 
 The opposite logic is at work here. You are betting that prices will go down in general, but that the nearby will go down more than the deferred contracts. Any information that suggests supplies will become more plentiful should make prices go down in general, and should increase incentives to store. Thus making the bearish calendar spread profitable. 
 
+To see today's forward curves in Corn and Soybeans visit [here](https://mindymallory.shinyapps.io/ForwardCurves/).
+
 ## Price Variation Over Space
 
 Most of our time in this course has focused on what impacts futures prices for commodities. However, a futures price represent the expected future price of the commodity in a very specific location - the locations that are 'regular' for delivery. A location that is regular for delivery is a location that is designated by the commodity exchange where stocks of a commodity represented by a futures contract may be delivered in fulfillment of the contract. This is where the spot, or cash, price must come together, or converge, with the futures price.   
