@@ -142,9 +142,4 @@ The 'crush' hedges are a little more complicated because they involve buying a c
 The soybean crusher buys soybeans and sells soybean meal and oil. Their futures hedge would involve buying soybean futures and selling meal and oil futures. 
 
 
-
-### Cattle Feeder 
-
-### Ethanol Producer
-
 ### Importance of Having a Line of Credit in Futures Hedging
