@@ -70,6 +70,48 @@ Now, just to illustrate how the forward curve changed between August and Decembe
 
 ![Figure 5. Forward Curve on 12-03-2012](Excel-files/PricesSpaceTime/forward-curves_files/image017.png)
 
+## Forward Curve Cases with Hypothetical Data
+
+When prices move up or down, the front end of the forward curve generally is more responsive than the back end of the forward curve. We will illustrate this with both increasing prices and decreasing prices. The examples below show the first five contracts on the forward curve plotted on four consecutive days of price changes in one direction. The price data in these examples are hypotheticul, but represent what usually happens to the forward curve when prices increase or decrease.
+
+**Prices Increasing**
+
+
+
+```{r, echo = FALSE, message = FALSE, warning=FALSE}
+library(tidyr)
+library(ggplot2)
+
+xaxis <- c('Dec', 'March', 'May', 'July', 'Sept')
+day1 <- c('day1', 'day1', 'day1', 'day1', 'day1')
+day2 <- c('day2', 'day2', 'day2', 'day2', 'day2')
+day3 <- c('day3', 'day3', 'day3', 'day3', 'day3')
+day4 <- c('day4', 'day4', 'day4', 'day4', 'day4')
+day1p <- as.numeric(c(350, 360, 369, 375, 378))
+day2p <- as.numeric(c(355, 364, 372, 377, 379))
+day3p <- as.numeric(c(360, 367, 374, 378, 380))
+day4p <- as.numeric(c(385, 383, 382, 381, 381))
+
+day1 <- cbind(xaxis, day1, day1p)
+day2 <- cbind(xaxis, day2, day2p)
+day3 <- cbind(xaxis, day3, day3p)
+day4 <- cbind(xaxis, day4, day4p)
+df <- rbind(day1, day2, day3, day4)
+df <- as.data.frame(df)
+colnames(df) <- c('xaxis', 'day', 'price')
+df$xaxis <- factor(df$xaxis, levels = df$xaxis[order(df$price)])
+df$price <- as.numeric(as.character(df$price))
+g <- ggplot(df, aes(xaxis, price, colour= day)) + ylim(300,425) + theme_bw() +
+        geom_point() + geom_line(aes(group = day)) +
+        scale_color_manual(values = c("darkblue", "darkblue", "darkblue", "darkblue")) +
+        labs(x = "", y = "Price cents per bushel") + 
+        geom_text(aes(label= ifelse(xaxis == "Dec", as.character(day), '')),hjust=1.5, vjust=0) + 
+        theme(legend.position = "none")
+       
+g
+```
+   
+Figure 6. Prices Increasing, Contango to backwardation
 
 ## Calendar Spreads  
 

@@ -70,6 +70,17 @@ Now, just to illustrate how the forward curve changed between August and Decembe
 
 ![Figure 5. Forward Curve on 12-03-2012](Excel-files/PricesSpaceTime/forward-curves_files/image017.png)
 
+## Forward Curve Cases with Hypothetical Data
+
+When prices move up or down, the front end of the forward curve generally is more responsive than the back end of the forward curve. We will illustrate this with both increasing prices and decreasing prices. The examples below show the first five contracts on the forward curve plotted on four consecutive days of price changes in one direction. The price data in these examples are hypotheticul, but represent what usually happens to the forward curve when prices increase or decrease.
+
+**Prices Increasing**
+
+
+
+<img src="05-PricesSpaceTime_files/figure-html/unnamed-chunk-1-1.png" width="672" />
+   
+Figure 6. Prices Increasing, Contango to backwardation
 
 ## Calendar Spreads  
 
