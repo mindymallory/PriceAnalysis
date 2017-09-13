@@ -72,7 +72,7 @@ Now, just to illustrate how the forward curve changed between August and Decembe
 
 ## Forward Curve Cases with Hypothetical Data
 
-When prices move up or down, the front end of the forward curve generally is more responsive than the back end of the forward curve. We will illustrate this with both increasing prices and decreasing prices. The examples below show the first five contracts on the forward curve plotted on four consecutive days of price changes in one direction. The price data in these examples are hypotheticul, but represent what usually happens to the forward curve when prices increase or decrease.
+When prices move up or down, the front end of the forward curve generally is more responsive than the back end of the forward curve. We will illustrate this with both increasing prices and decreasing prices. The examples below show the first five contracts on the forward curve plotted on four consecutive days of price changes in one direction. The price data in these examples are hypothetical, but represent what usually happens to the forward curve when prices increase or decrease.
 
 **Prices Increasing**
 
@@ -80,7 +80,25 @@ When prices move up or down, the front end of the forward curve generally is mor
 
 <img src="05-PricesSpaceTime_files/figure-html/unnamed-chunk-1-1.png" width="672" />
    
-Figure 6. Prices Increasing, Contango to backwardation
+Figure 6. Forward Curve with Prices Increasing, Contango to backwardation
+
+On day 1, the market is clearly in contango, as the forward curve is upward sloped. As time moves from day 1 through day 4 prices are rising each day, with the front end of the forward curve exhibiting the largest changes each day. On day 4, prices have risen enough that the market is now in backwardation with the front month higher than the first deferred. 
+
+
+**Prices Decreasing**
+
+
+
+<img src="05-PricesSpaceTime_files/figure-html/unnamed-chunk-2-1.png" width="672" />
+   
+Figure 7. Forward Curve with Prices Decreasing 
+
+On day 1 the market is in contango in this example as well. As time progresses from day 1 to day 4, prices are falling. From day 1 to day 3 the forward curve is getting steeper because price declines in Dec are larger than the price declines in March. In turn, the price declines in March are larger than the price declines in May, and do on. This indicates that from day 1 to day 3, the market is not yet at full carry; as prices are declining, the returns to storage keep increasing (reflected by the steeper forward curve). From day 3 to day 4, however, we can see that the market is at full carry because the price decline is constant all the way up the forward curve. Even though prices continue to fall, the market is already offering enough incentive to store to cover storage costs, so the price differences between contracts cannot widen any further. 
+
+**Some Caveats**
+
+The effect of price changes on the shape of the forward curve as described above is typically observed. However, there is nothing requiring the market to react exactly this way, and there can be fundamental changes in the market (perhaps a major demander of the commodity reduces or increases consumption during a specific time of the year) that affect parts of the forward curve more than others. This could cause a larger price change in the middle or back end of the forward curve. Usually though, the front end of the forward curve will be more volatile than the back end of the forward curve as depicted in figures 6 and 7. 
+
 
 ## Calendar Spreads  
 
