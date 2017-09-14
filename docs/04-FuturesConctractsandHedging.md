@@ -7,7 +7,7 @@ Merriam-Webster defines a 'hedge' as a means of protection or defense (as agains
 
 Understanding who is hedging and why is very helpful to understanding price relationships and what drives them to move up or down. 
 
-**Futures Contract Review**
+## Futures Contract Review
 
 A futures contract is a contract between two parties to buy and sell at an agreed to price, a specific quantity and quality of something at a specific location. In the case of CBOT corn futures, it is 5,000 bushels of U.S. number 2 yellow corn, at specific elevators along the Illinois River, Lake Michigan, or associated canals. These contracts are traded on a centralized exchange, similar to the 'stock market', and the two counter-parties do not know each other. The difference between a futures contract, and say buying a stock, is that when the trade takes place, no ownership transfer occurs. It is simply a promise to buy or sell at a specific date in the future. That is why there are many different futures contract 'months' like 'December 2017' corn futures, and 'March 2018' corn futures. Traders on futures exchanges need to post 'margin' which is just an amount of money that acts as a performance bond so that everyone has confidence that both parties can make good on the contract if it is held until the futures contract expires. As the price moves up, the seller's position is losing (because selling 'low' is 'bad' business), and some money is taken from their margin account and put into the buyer's margin account (because buying 'low' is 'good' business). This daily transfer of money from the losers to the winners is called 'marking to market', and it makes sure everyone has the financial capital required to make good on the terms of the contract. 
 
@@ -22,6 +22,42 @@ Consider this example. At 10am the March corn futures contract is trading at \$4
 
 
 Very few contracts are held all the way to expiration when transfer of ownership would take place. The traders who originally bought, sometime before expiration will sell, eliminating their obligation in the market, or getting them to a 'flat' position. The traders who originally sold, will buy, getting them to a 'flat' position as well. The rest of the chapter will cover how exactly these futures contracts can facilitate a hedge for different types of businesses. 
+
+### Delivery
+
+The CME Group grain and oilseed future are deliverable contracts, ensuring a link between the spot market and the futures market. Only a few of the futures contracts traded are actually delivered on, however. The purpose of the futures market is not to provide a mechanism for physical exchange, but rather a means for streamlined risk management in a liquid market. That said, there is always some contracts that end up being held by the long and the short side of the trade into delivery. We will discuss briefly the mechanism the CME Group grain and oilseed contracts for delivery. 
+
+The exchange has designated a few large commercial grain handlers and warehouses as *regular for delivery*. These grain handlers lie in one of the following territories specified in the [CME Group Rulebook](https://www.cmegroup.com/rulebook/CBOT/II/10/10.pdf)
+
+> Corn shipping certificates shall specify shipment from one of the warehouses or shipping
+stations currently regular for delivery and located in one of the following territories:
+>
+A. Chicago and Burns Harbor, Indiana Switching District - When used in these Rules, the
+Chicago Switching District will be that area geographically defined by Tariff ICC WTL
+8020-Series and that portion of the Illinois Waterway at or above river mile 304 which
+includes the Calumet Sag Channel and the Chicago Sanitary & Ship Canal. When used in
+these Rules, Burns Harbor, Indiana Switching District will be that area geographically
+defined by the boundaries of Burns Waterway Harbor at Burns Harbor, Indiana which is
+owned and operated by the Indiana Port Commission.
+>
+B. Lockport-Seneca Shipping District - When used in these Rules, the Lockport-Seneca
+Shipping District will be that portion of the Illinois Waterway below river mile 304 at the
+junction of the Calumet Sag Channel and the Chicago Sanitary & Ship Canal and above
+river mile 244.6 at the Marseilles Lock and Dam.
+>
+C. Ottawa-Chillicothe Shipping District - When used in these Rules, the Ottawa-Chillicothe
+Shipping District will be that portion of the Illinois Waterway below river mile 244.6 at the
+Marseilles Lock and Dam and at or above river mile 170 between Chillicothe and Peoria,
+IL.
+>
+D. Peoria – Pekin Shipping District - When used in these Rules, the Peoria-Pekin Shipping
+District will be that portion of the Illinois Waterway below river mile 170 between
+Chillicothe and Peoria, IL and at or above river mile 151 at Pekin, IL.
+
+If someone with a short futures position wants to deliver on their futures contract they cannot just show up at one of these locations with 5,000 bushels of grain in trucks. The actual thing that can be delivered is referred to as a *shipping certificate* for 5,000 bushels of grain from a regular for delivery warehouse. This is a certificate giving the holder the right to demand load-out of grain that meets certain quality standards. Since the shipping certificates represent physical bushels in storage at these regular for delivery warehouses, and warehouse space is not free, holders of shipping certificates are required to pay what are called *premium charges*. Premium charges are simply fees collected by the warehouse for the space provided to store the grain. The exchange specifies that premium charges for corn and soybeans shall not exceed 0.165 cents per bushel per day, or about 4.95 cents per bushel per month. We will need to use the premium charges on shipping certificates in Chapter 5 when we introduce the concept of *Financial Full Carry*. 
+
+Likewise, if the long party (the person who bought the futures contract) wants to take delivery, they must pay the full amount, $Futures Price X 5,000$ bushels, and must pay premium charges to the warehouse to hold the shipping certificate. 
+
 
 ## Examples: Who Hedges and How Does a Futures Contract Facilitate a Hedge?
 
@@ -143,3 +179,5 @@ The soybean crusher buys soybeans and sells soybean meal and oil. Their futures 
 
 
 ### Importance of Having a Line of Credit in Futures Hedging
+
+Anyone who is hedging with futures -- whether they be farmers, flour mills, or commercial grain handlers -- must have a line of credit in place to meet margin calls in the event that the market is moving against their hedge. For example, the farmer sells futures as a hedge against her cash sale at a later date. If the price starts moving up, the grain she will sell in the cash market is worth more, but the futures hedge is losing money. As the short hedge is losing money, margin needs to be maintained in their hedging account. If prices move against the hedge a lot, additional money will need to be deposited to keep sufficient margin in the account. Usually, this will need to come from a lender. The lender knows it is a safe loan because prices are going up, the cash sale will cover any losses in the futures account. Without the ability to access a line of credit and maintain margin, the short hedge position will be forced to liquidate, and then the farmer will no longer be hedged.  

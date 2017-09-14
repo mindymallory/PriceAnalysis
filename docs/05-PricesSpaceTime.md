@@ -11,6 +11,8 @@ We saw in Chapter 4 how a farmer can use the December futures contract to hedge 
 
 [^stock]: Stockholder here means an entity who is storing grain (or oilseed). In other-words, they are holding stocks of the grain. 
 
+## Storage Costs to the Farmer
+
 Storage costs include the following:[^storecost]
 
 [^storecost]: For more [see](https://www.extension.iastate.edu/agdm/crops/pdf/a2-33.pdf)
@@ -23,7 +25,11 @@ Storage costs include the following:[^storecost]
   6. Quality deterioration. If the grain is not stored under proper condition, quality can deteriorate, and result in dockage (a price discount) being applied by the buyer at the time of sale. 
   7. Cost of handling. Getting the grain into and out of storage results in some costs as well. 
   
-Iowa State University Extension estimated in 2015 that storing grain until March costs a farmer roughly \$0.45 per bushel, while storing until December cost roughly \$0.30 per bushel, \$.15 cents per bushel less than storing until March. Considering only this, the price of the March contract would need to be more than \$0.15 per bushel higher than the December contract to cause much grain to be stored until March.   
+Iowa State University Extension estimated in 2015 that storing grain until March costs a farmer roughly \$0.45 per bushel, while storing until December cost roughly \$0.30 per bushel, \$.15 cents per bushel less than storing until March. Considering only this, the price of the March contract would need to be more than \$0.15 per bushel higher than the December contract to cause much grain to be stored until March.[^Usset]
+
+[^Usset]: Ed Usset with the University of Minnesota Extension has a nice series of articles in Corn and Soybean Digest about *carrying charges*, [here](http://www.cornandsoybeandigest.com/marketing/understand-carrying-charges), [here](http://www.cornandsoybeandigest.com/carrying-charges-part-1 ), and [here](
+http://www.cornandsoybeandigest.com/carrying-charges-part-2).
+
   
 
 ## An Increasing Forward Curve
@@ -98,6 +104,25 @@ On day 1 the market is in contango in this example as well. As time progresses f
 **Some Caveats**
 
 The effect of price changes on the shape of the forward curve as described above is typically observed. However, there is nothing requiring the market to react exactly this way, and there can be fundamental changes in the market (perhaps a major demander of the commodity reduces or increases consumption during a specific time of the year) that affect parts of the forward curve more than others. This could cause a larger price change in the middle or back end of the forward curve. Usually though, the front end of the forward curve will be more volatile than the back end of the forward curve as depicted in figures 6 and 7. 
+
+
+## Financial Full Carry
+
+We discussed at the beginning of this chapter that one of the costs of storage to the farmer is the opportunity cost of money resulting from deferring a sale, and how this makes it impossible to predict with certainty any individual farmer's decision to store. However, there is a concept called **financial full carry** that simply includes interest costs and the premium charges on shipping certificates that we discussed in Chapter 4. 
+
+$$Financial \text{  } Full \text{  } Carry  = ndays(\frac{i}{360}*F + P)$$ 
+
+
+where $ndays =$ the number of days between the first delivery day in the nearby contract and the first delivery day in the deferred contract. $i =$ the three month LIBOR interest rate + 200 basis points,[^simpleinterest] $F =$ futures price, and $P =$ the current premium charge on shipping certificates. For example, there are 90 days between delivery period of the December contract and the delivery period of the March contract. If the LIBOR rate is 3%, the corn futures price is \$3.50 per bushel, and the premium charge on shipping certificates is 0.165 cents per bushel per day, then financial full carry is:
+
+[^simpleinterest]: The CME Group uses simple interest to calculate the financial full carry in other contexts, so we adopt it here for our definition of financial full carry. 
+
+$$Financial \text{  } Full \text{  } Carry = 90*(0.032/360*3.50 + 0.165 = 14.878 \text{ cents per bushel}) $$
+
+Then financial full carry between the December contract and the March contract would be 14.878 cents. It is called financial full carry because in theory, the spread between the December and March contracts cannot be wider than this amount. If it were wider, say 30 cents, then a storage arbitrage would be possible. You could buy a December futures contract and sell a March futures contract, take delivery of December contract, receive the shipping certificate and hold it until March 1st at a cost to you of 14.878 cents per bushel. Then use the shipping certificate to deliver on your short March futures position. Your futures trades just earned 30 cents, while holding the shipping certificate only cost 14.878 cents, leaving you with a profit of 15.123 cents per bushel.    
+
+Of course, the concept of financial full carry is really just a benchmark. Most importantly, any individual's ability to capitalize on the arbitrage in this example is predicated at the ability to borrow for 200 basis points over LIBOR. It is useful as a metric for how much of a carry market we are in. Percent of full financial carry is a metric that is widely followed ($\text{Percent of Full Carry } = 100*\frac{Futures \text{  } Calendar \text{  } Spread}{Full \text{  } Financial\text{  } Carry}$), because it gives similar information as the shape of the forward curve in an easier metric to compare across time. In our example, percent of full carry $=100*30/14.878 = 201.64\%$ (remember this was an extreme example to illustrate the potential for arbitrage). 
+
 
 
 ## Calendar Spreads  
