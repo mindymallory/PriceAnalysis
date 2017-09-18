@@ -12,7 +12,7 @@ This abundance of care can be traced to a particular event in history. The detai
 
 ![Figure 1: Safeguarding America's Agricultural Statistics: A century of Successful and Secure Procedures](images\NASS_History.png)
 
-Source: [NASS: About Nass](pdf-readings\safegaurding-americas-agricultural-statistics.pdf)
+Source: [NASS: About Nass](pdf-Readings\safegaurding-americas-agricultural-statistics.pdf)
 
 > ## Excerpt From Chapter 1 
 > The summary and release procedures for the USDA Bureau of Statistics’ reports in the early 1900s produced separate summary tabulations for each data source available (up to six sources, in some cases)... It is also relevant that the release time for cotton reports in those years was noon, Eastern Time, and that the commodity markets discontinued trading for an hour starting at noon on release days. The original procedures allowed the three people who had determined the final numbers to go about their business, or even leave the building if they wished, once a report’s contents had been set. 
