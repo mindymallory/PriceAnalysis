@@ -76,17 +76,17 @@ Balance sheet analysis is often organized by marketing year. Since production ha
 
 : Table 1. Beginning of Marketing Year by Crop. (Source [NASS Timetables](http://www.nass.usda.gov/Publications/National_Crop_Progress/))
 
-Forecasting supply and demand for any given marketing year begins well before harvest - nearly a year in advance, in fact. Table 2 below follows the typical forecasting schedule with the 2016/2017 marketing year. Note that is for the marketing year that begins with harvest in September of 2016. 
+Forecasting supply and demand for any given marketing year begins well before harvest - nearly a year in advance, in fact. Table 2 below follows the typical forecasting schedule with the 2017/2018 marketing year. Note that is for the marketing year that begins with harvest in September of 2016. 
 
 | Timeline     | Forecasting Focus                                                                                               |
 |:------------------------|:-----------------------------------------------------------------------------------------------------|
-| Fall 2015    | The first forecasts of supply and use based on , *trend forecasts*, *recent history*, *economic relationships*    |
-| Spring 2016  | Update supply forecasts based on USDA acreage surveys.                                                          |
-| Summer 2016  | Update supply forecasts based on weather and USDA crop and stocks reports                                       |
-| Fall 2016    | Update supply forecasts as yield uncertainty is resolved through harvest reports and USDA production reports    |
-| - Summer 2016| Continue to update supply forecasts based on USDA production revisions, southern hemisphere production, stocks, and use reports.  |
+| Fall 2016    | The first forecasts of supply and use based on , *trend forecasts*, *recent history*, *economic relationships*    |
+| Spring 2017  | Update supply forecasts based on USDA acreage surveys.                                                          |
+| Summer 2017  | Update supply forecasts based on weather and USDA crop and stocks reports                                       |
+| Fall 2017    | Update supply forecasts as yield uncertainty is resolved through harvest reports and USDA production reports    |
+| - Summer 2018| Continue to update supply forecasts based on USDA production revisions, southern hemisphere production, stocks, and use reports.  |
 
-: Table 2: Forecasting Calendar for 2016/2017 Marketing Year 
+: Table 2: Forecasting Calendar for 2017/2018 Marketing Year 
 
 ### Southern Hemisphere Production
 
