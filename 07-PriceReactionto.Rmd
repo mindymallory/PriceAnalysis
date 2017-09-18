@@ -40,7 +40,7 @@ By 2011, presumably due to the ability to trade electronically with high speed, 
 Market prices react strongly to USDA reports when the reports inject significant and unanticipated information into the market. Some reports are more likely than others to produce fireworks in terms of market price. 
 
 | Report | Dates | Reason |
-|--------|-------|--------|
+|--------------------------|-------------------|--------------------------------------------------------------------------------|
 | Grain Stocks| Quarterly | Information about scarcity or surplus of supplies |
 | Prospective Plantings | End of March | Acreage and therefore production estimates |
 | Planted Acres | End of June | Acreage and therefore production estimates |
