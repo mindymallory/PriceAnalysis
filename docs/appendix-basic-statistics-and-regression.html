@@ -872,7 +872,7 @@
 </div>
 <div id="correlation-does-not-imply-causation" class="section level2">
 <h2><span class="header-section-number">20.4</span> Correlation Does <em>Not</em> Imply Causation</h2>
-<p>Probably the most oft expressed admonition in statistics is that correlation does not imply causation. As an analyst in commodity markets, it is important to always have this in mind, though!<a href="#fn15" class="footnoteRef" id="fnref15"><sup>15</sup></a></p>
+<p>Probably the most oft expressed admonition in statistics is that correlation does not imply causation. As an analyst in commodity markets, it is important to always have this in mind, though!<a href="#fn16" class="footnoteRef" id="fnref16"><sup>16</sup></a></p>
 </div>
 <div id="review-of-linear-regression" class="section level2">
 <h2><span class="header-section-number">20.5</span> Review of Linear Regression</h2>
@@ -967,7 +967,7 @@
 <ol start="11" style="list-style-type: decimal">
 <li><span class="math display">\[t_{\beta_1} = \frac{\hat{\beta_1}}{SE_{\hat{\beta_1}}} = \frac{1.412124835}{0.55921013} = 2.525213259\]</span></li>
 </ol>
-<p>The way hypothesis testing works is that if <span class="math inline">\(H0\)</span> is true, then <span class="math inline">\(t_{\beta_1}\)</span> has a <span class="math inline">\(t\)</span> distribution with mean zero. Recall that the <span class="math inline">\(t\)</span> distribution basically looks like a normal distribution, but with ‘fatter tails’. The degree to which the <span class="math inline">\(t\)</span> differs from normal depends on degrees of freedom, which in turn is determined by sample size and the number of coefficients that must be estimated.<a href="#fn16" class="footnoteRef" id="fnref16"><sup>16</sup></a> In practice, the price series we use will almost always have enough observations so that the <em>t</em>-distribution is indistinguishable from the standard normal distribution.</p>
+<p>The way hypothesis testing works is that if <span class="math inline">\(H0\)</span> is true, then <span class="math inline">\(t_{\beta_1}\)</span> has a <span class="math inline">\(t\)</span> distribution with mean zero. Recall that the <span class="math inline">\(t\)</span> distribution basically looks like a normal distribution, but with ‘fatter tails’. The degree to which the <span class="math inline">\(t\)</span> differs from normal depends on degrees of freedom, which in turn is determined by sample size and the number of coefficients that must be estimated.<a href="#fn17" class="footnoteRef" id="fnref17"><sup>17</sup></a> In practice, the price series we use will almost always have enough observations so that the <em>t</em>-distribution is indistinguishable from the standard normal distribution.</p>
 <p>We compare our calculated <span class="math inline">\(t\)</span>-statistic with the <span class="math inline">\(t\)</span> distribution with mean equal to zero and compute how likely it is that we got our value of the statistic if <span class="math inline">\(\beta_1 = 0\)</span>. Figure 4 illustrates.</p>
 <div class="figure">
 <img src="Excel-files/BasicStatisticsand-MT_Cars_Regression_files/image027.png" alt="Figure 4: Illustrateing the t-test" />
@@ -1031,9 +1031,9 @@
 </div>
 <div class="footnotes">
 <hr />
-<ol start="15">
-<li id="fn15"><p>In case you are not convinced, visit the blog, <a href="http://www.tylervigen.com/spurious-correlations">Spurious correlations</a>.<a href="appendix-basic-statistics-and-regression.html#fnref15">↩</a></p></li>
-<li id="fn16"><p>The Wikipedia page for the <a href="https://en.wikipedia.org/wiki/Student%27s_t-distribution">Student’s <em>t</em> distribution</a> is helpful for visualizing how the degrees of freedom change the shape of the distribution.<a href="appendix-basic-statistics-and-regression.html#fnref16">↩</a></p></li>
+<ol start="16">
+<li id="fn16"><p>In case you are not convinced, visit the blog, <a href="http://www.tylervigen.com/spurious-correlations">Spurious correlations</a>.<a href="appendix-basic-statistics-and-regression.html#fnref16">↩</a></p></li>
+<li id="fn17"><p>The Wikipedia page for the <a href="https://en.wikipedia.org/wiki/Student%27s_t-distribution">Student’s <em>t</em> distribution</a> is helpful for visualizing how the degrees of freedom change the shape of the distribution.<a href="appendix-basic-statistics-and-regression.html#fnref17">↩</a></p></li>
 </ol>
 </div>
             </section>

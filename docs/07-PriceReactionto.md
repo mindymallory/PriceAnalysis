@@ -22,6 +22,16 @@ Source: [NASS: About Nass](pdf-readings/safegaurding-americas-agricultural-stati
 >The scheme came to light following the cotton acreage report issued on June 2, 1905. The three members met and adopted the state and national figures to be published. After Holmes had sent his signal, one of the other people who had worked on the report asked for reconsideration. After further review, the figures to be published were revised. At that point, the outside partner had already interpreted the original signal and proceeded to place trades. The scheme came to light when Van Riper charged in a telegram that a “fraudulent” report had been released. In explaining why he thought this was a false report, he unwittingly revealed that he had the information ahead of time. Evidently, Holmes’ outside partner had an overabundance of ego, but not a good balance of common sense in going public with his story. [@history2007Nass]
 
 
+This story is quite similar to the plot line of the 1980's movie, [Trading Places](http://www.imdb.com/title/tt0086465/).[^tradingplaces] Where the protagonists (Dan Aykroyd and Eddie Murphey) trick to antagonists, the Duke Brothers by replacing the 'Orange Juice Crop Report' that they obtained illegally with a forged one that would cause exactly the opposite price effect. They started buying before the report to profit and Dan Aykroyd and Eddie Murphey start selling based on the correct crop report information. The frenzy on the trading floor captures the feeling of what happens during crop reports that move the market, even if there is no longer trading on a physical floor as shown in the movie. 
+
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/1tmI867fAYU" frameborder="0" allowfullscreen></iframe>
+
+
+[^tradingplaces]: Anyone interested in a career in trading should watch this movie and then watch it again. You still hear references to the movie. 
+
+
 ## Changing Report Release Times
 
 Timing of report releases has important implications for the market reaction as well. Figure 2 below provides a brief history of report release times of major market sensitive reports. 

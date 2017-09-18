@@ -440,7 +440,7 @@
 <div id="lag-length" class="section level2">
 <h2><span class="header-section-number">21.4</span> Lag Length</h2>
 <p>You may be wondering at this point if it would be useful to try including more lags in the regression equation; perhaps we will find longer lag lengths that seem to matter in forecasting corn price returns. Usually, if lags have predictive power, the strongest effects are in the nearest lags. So adding lags to the <span class="math inline">\(AR(.)\)</span> model is unlikely to help.</p>
-<p>Still, as a practical matter, lag length must be selected before estimating an <span class="math inline">\(AR(p)\)</span> model. If we were using a more advanced statistical package, we could use Information Criterion<a href="#fn17" class="footnoteRef" id="fnref17"><sup>17</sup></a> to select the optimal lag length, but like unit root tests, it is not convenient to implement in Excel so we will not cover Information Criterion.</p>
+<p>Still, as a practical matter, lag length must be selected before estimating an <span class="math inline">\(AR(p)\)</span> model. If we were using a more advanced statistical package, we could use Information Criterion<a href="#fn18" class="footnoteRef" id="fnref18"><sup>18</sup></a> to select the optimal lag length, but like unit root tests, it is not convenient to implement in Excel so we will not cover Information Criterion.</p>
 <p>The intuition of selecting a lag length by Information Criterion is simple enough, though. Basically, a model with a large number of lags is estimated. The longest lags are then sequentially removed one by one, until explanatory power is detrimentally affected by removing a lag. That determines lag length.</p>
 <p>As a rough substitute, one could estimate an <span class="math inline">\(AR(p)\)</span> model for large <span class="math inline">\(p\)</span>. Then sequentially remove the longest lag until the likelihood decreases; or until the F-statistic is dramatically reduced by eliminating lagged variables. In practice, we will be lucky to find any statistically significant coefficients on the lags, and the nearest lags will be most likely to be significant, so a small number of lags will usually be sufficient.</p>
 </div>
@@ -540,10 +540,11 @@
 
 
 
+
 <div class="footnotes">
 <hr />
-<ol start="17">
-<li id="fn17"><p>Wikipedia has good articles for <a href="https://en.wikipedia.org/wiki/Akaike_information_criterion">AIC</a> and <a href="https://en.wikipedia.org/wiki/Bayesian_information_criterion">BIC</a><a href="appendix-single-market-models-arima.html#fnref17">↩</a></p></li>
+<ol start="18">
+<li id="fn18"><p>Wikipedia has good articles for <a href="https://en.wikipedia.org/wiki/Akaike_information_criterion">AIC</a> and <a href="https://en.wikipedia.org/wiki/Bayesian_information_criterion">BIC</a><a href="appendix-single-market-models-arima.html#fnref18">↩</a></p></li>
 </ol>
 </div>
             </section>
