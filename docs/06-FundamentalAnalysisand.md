@@ -1,6 +1,17 @@
 # Balance Sheet Analysis
 
 
+**Highlights**
+
+  + Balance sheet analysis is the most important tool for fundamentals-based price forecasting.
+  + This chapter covers the format all balance sheets take, and introduces the USDA WASDE balance sheet.
+  + This chapter shows what  affects each row of the balance sheet. 
+  + This chapter provides a timeline of when the rows of a balance sheet can be updated.
+  
+**Check Your Understanding**
+
+  + Do you know which cells in the balance sheet must be estimated by the USDA and which can be calculated from other cells in the table?
+
 
 Fundamental analysis is an assessment of price based on underlying supply and demand factors. Focusing on changes in the relationship between supply and demand allows one to calibrate an informed opinion of the value of the commodity. The main role of the market is to find the value at which supply equals demand - or in other words, the value that 'clears the market'. The estimated 'fundamental value' is simply a forecast, or expectation of, the market clearing price. The goal of any forecasting exercise is to compare the forecast (estimated fundamental value) to the current market price and make decisions accordingly. 
 
