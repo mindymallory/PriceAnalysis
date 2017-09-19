@@ -29,21 +29,20 @@ The following is a graph of historical corn *Planted Acres* along with the ratio
 
 The following is a graph of historical corn *Planted Acres and Harvested Acres* generated from the data described above from 2000 to 2014. The left axis shows planted and harvested acres while the right axis shows the difference between the two. Since 2000, you can see that corn acreage has been increasing steadily from 80 million acres to just above 90 million acres. Given this, prior to planting season we might expect a simple trend-line to forecast corn acreage fairly well. However, notice that in a couple of instances there were fairly large deviations from the trend-line.
 
-![Figure 3: Corn Planted Acres and Harvested Acres, 2000-2014](Excel-files\ForecastingProduction-HistoricalAcreage_files\image001.png)
-
 Aside from historical trends, if one considers the decision the average corn farmer makes, he or she considers the relative profitability of planting corn versus planting soybeans. In years where profitability favors corn, more corn-on-corn acres will be planted, thus increasing the total number of acres planted to corn. In years where profitability favors soybeans, less corn-on-corn acres will be planted, thus increasing soybean acres and reducing the total number of acres planted to soybeans. This pattern is demonstrated in 2008 and 2011 when an increase in the corn-to-soybean price ratio corresponded to an increase in planted acres. 
 
-Based on the information in Figure 2, one might predict a decline in corn planted acres in the spring of 2015. Although, at the time of planting, the November soybean and December corn futures prices will be the appropriate prices to use for this analysis, because they represent expected profit. 
+Figure 3 shows the December 2017 and November 2017 corn and soybean futures prices ratio from 10/1/2016 to 5/1/2017; this roughly corresponds to the timeframe when a farmer must make acreage decisions. The acreage decision begins in the fall of the prior year because fertilizer (which is costly) on corn ground is often applied in the fall. Assuming inputs costs were constant, forecasts of corn and soybean acreage for Spring 2017 should take into account the changing profitability profile of corn versus soybeans during this time. When the corn/soy ratio is 'high' corn becomes more profitable relative to soybeans and vice versa. 
+Figure 3 shows that during the fall of 2016, the corn/soy price ratio was falling, so acreage expectations should have been shifting slightly from corn toward soybeans. However, in late spring 2017, the corn price gained relative to the soybean price, so some corn acres may have been added back at the last minute that were originally planned for soybean acres. If we compare the 2017 prospective plantings report ([released on 3/21/2017](http://usda.mannlib.cornell.edu/usda/current/ProsPlan/ProsPlan-03-31-2017.pdf)) with the 2017 acreage report ([released on 6/30/2017](http://usda.mannlib.cornell.edu/usda/current/Acre/Acre-06-30-2017.pdf)) we see that this was indeed the case. In the prospective planing report the USDA estimated corn acres to be 90 million, but the acreage report showed plantings were nearly 1 million acres higher at 90.9 million. 
 
-For example, the following graph shows the December 2016 and November 2016 corn and soybean futures prices respectively for 8/1/2015 to 9/10/2015. The ratio is not graphed here, but since the price of corn is rising relative to the price of soybeans, the relative profitability has drifted toward corn over this time frame. Assuming inputs costs were constant, forecasts of corn and soybean acreage for Spring 2016 would take this into account. 
-
-![Figure 4: 2016 Corn (December) and Soybean (November) Futures Prices from 8/1/2016 to 9/15/2016](images\c-s2017.png)
+![Figure 3: 2016 Corn (December) and Soybean (November) Futures Price Ratio from 10/1/2016 to 5/1/2017](Excel-files\c-s2017_files\image001.png)
 
 ### Forecasting Harvested Acres
 
 After forecasting *Planted Acres* one still needs to provide a forecast for *Harvested Acres*. Figure 3 shows historical trends in *Harvested Acres* relative to *Planted Acres*. The difference between these two variables is provided in grey with units along the right axis for convenience. 
 
-Harvested acres tends to be a fairly stable number, averaging 7.6 million acres between 2000 and 2014. Although, years when this variable deviates most from trend corresponds to years of exceptionally poor production. See 2012 and 2002 as examples. These years marginal reductions in production are explained by reduced yield and abandoned acres, so forecasting the harvested acres number accurately becomes very important to accurately forecasting production in shortfall years. 
+Harvested acres tends to be a fairly stable number, averaging 7.6 million acres between 2000 and 2014. Although, years when this variable deviates most from trend corresponds to years of exceptionally poor production. In figure 4, see 2012 and 2002 as examples. These years marginal reductions in production are explained by reduced yield and abandoned acres, so forecasting the harvested acres number accurately becomes very important to accurately forecasting production in shortfall years. 
+
+![Figure 4: Corn Planted Acres and Harvested Acres, 2000-2014](Excel-files\ForecastingProduction-HistoricalAcreage_files\image001.png)
 
 ## Forecasting Yield
 
@@ -69,7 +68,7 @@ Since commodity futures markets respond to new information in the USDA reports, 
 
 This is difficult because an independent analyst will not have the same level of resources as the USDA does when it compiles its monthly yield estimates; he or she will have to rely on historical data and an understanding of how weather is affecting crop yields across the geographically dispersed growing region.  Figure 8 below plots each year's deviation from trend yield since 1980. The first plot is in levels (i.e., $Yield_t - Trend Yield_t$); whereas the second plot is in percent terms (i.e., $\ln{Yield_t} - \ln{Trend Yield_t}$. Notice that the shape looks roughly the same, but the 2012 drought looks worse expressed in level deviations than the short crops of 1983, 1988, and 1993. This is because yield is trending higher. In percentage terms we see that the 2012 drought was equally as bad as 1983 and not quite as bad as 1988.   
 
-![](Excel-files\ForecastingProduction-HistoricalAcreage_files\image016.png)
+![](Excel-files\ForecastingProduction-HistoricalAcreage_files\image015.png)
 
 ![Figure 7: Deviations from Trend in both Level and Percent (using trend since 1980)](Excel-files\ForecastingProduction-HistoricalAcreage_files\image017.png)
 
@@ -79,7 +78,7 @@ Analysts often estimate deviations from trend yield by finding year similar to t
 
 An alternative approach would be to use the *Crop Condition Report* and find a year in recent history that had a similar percent of the crop rated *Good/Excellent*. Figure 8 below shows how *Good* + *Excellent* crop condition ratings relate to percent deviations in trend yield. They should be at least positively correlated, and in fact starting in the late 90's this measure began to correlate strongly with the final yield. 
 
-![Figure 8: *Good* plus *Excellent* Crop Condition Ratings in Final Week of Reporting versus Percent Deviations in Yields](Excel-files\ForecastingProduction-HistoricalAcreage_files\image021.png)
+![Figure 8: *Good* plus *Excellent* Crop Condition Ratings in Final Week of Reporting versus Percent Deviations in Yields](Excel-files\ForecastingProduction-HistoricalAcreage_files\image033.png)
 
 ## Forecasting Production
 
