@@ -1,6 +1,18 @@
 
 # Futures and Hedging Review
 
+**Highlights**
+
+  + Review of futures contracts and how to calculate profit or loss on a trade. 
+  + Hedging examples from the sell side (farmer's hedge) and from the buy side (flour mill's hedge).
+  + Learn how basis risk impacts a hedge. 
+  
+**Check your Understanding**
+
+  + Can you calculate the profit or loss from a trade?
+  + Can you fill out a hedging net revanue table given prices on key dates?
+  
+
 This chapter is a review of the basics of hedging. What is its purpose? Who does it? And how do futures contracts facilitate a 'hedge'? 
 
 Merriam-Webster defines a 'hedge' as a means of protection or defense (as against a financial loss). Hedging in the sense of hedging with a futures contract, is exactly that a defense against a financial loss. In the present context, a hedge is the use of a derivative contract to reduce or eliminate risk in your business' profits.
@@ -83,7 +95,7 @@ The farmer's entire income for the year will come from the sale of this grain, a
   
   $$Basis = Cash Price - Futures Price$$
   
-Also on May 1st, the December futures contract price is \$3.80. If the farmer wants to reduce price uncertainty they will sell futures, sometimes referred to as 'selling forward' or 'selling ahead'. 
+Also on May 1st, the December futures contract price is \$3.75. If the farmer wants to reduce price uncertainty they will sell futures, sometimes referred to as 'selling forward' or 'selling ahead'. 
 
 **To Hedge - Take the same action in the futures market (buy or sell) that you will do in the cash market at a future date**
 
@@ -157,7 +169,7 @@ There are five wheat futures contracts per year, March, May, July, September, an
 | Expiration             | March | May | July | September | December |
 
 
-If the mill buys wheat at the first of every month, they will have to use the nearest contract month to hedge price. For example, to hedge a purchase of wheat on February 1st, the mill will have to use the March futures expiration, because there is no February contract and the March contract is the closest expiration. Then suppose on December 1st 2015 the mill wants to lock in its wheat purchase price (aside from basis risk) for the first six months of 2016. Then, for example, it will have to hedge January, February, and March wheat purchases with the March futures contract. Since they buy 50,000 bushels per month, which is equivalent to 10 contracts per month, they will need to buy 60 contracts of wheat on Dec 1, 2015 to hedge January through July purchases. Hedges should be lifted simultaneously with activity in the cash market. For example, on January 1st, 2016 the mill will purchase 50,000 bushels to process for the month of January in the cash market. Then they should lift their hedge on 10 contracts, or sell 10 contracts also on January first. This means after January 1st, the mill is still holding 20 bought futures contracts (they are 'long' 20 contracts) which keeps February and March's purchases hedged. The table below details the mills activities in the spot market and futures market throughout the year. It takes real data from 2016, and assumes that the basis is fixed at -\$0.25 under the nearby futures contract, meaning the spot price column is always \$0.25 cents less than the next to expire futures contract. 
+If the mill buys wheat at the first of every month, they will have to use the nearest contract month to hedge price. For example, to hedge a purchase of wheat on February 1st, the mill will have to use the March futures expiration, because there is no February contract and the March contract is the closest expiration. Then suppose on December 1st 2015 the mill wants to lock in its wheat purchase price (aside from basis risk) for the first six months of 2016. Then, for example, it will have to hedge January, February, and March wheat purchases with the March futures contract. Since they buy 50,000 bushels per month, which is equivalent to 10 contracts per month, they will need to buy 60 contracts of wheat on Dec 1, 2015 to hedge January through July purchases. Hedges should be lifted simultaneously with activity in the cash market. For example, on January 1st, 2016 the mill will purchase 50,000 bushels to process for the month of January in the cash market. Then they should lift their hedge on 10 contracts, or sell 10 contracts also on January first. This means after January 1st, the mill is still holding 20 bought futures contracts (they are 'long' 20 contracts) which keeps February and March's purchases hedged. The table below details the mills activities in the spot market and futures market throughout the year. It takes real data from 2016, and assumes that the basis is fixed at -\0.25 cents under the nearby futures contract, meaning the spot price column is always \0.25 cents less than the next to expire futures contract. 
 
 |Dates |Action|Long |Net Price Paid|Spot| Mar Fut| May Fut | Jul Futs |
 |:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|

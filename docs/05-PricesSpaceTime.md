@@ -1,5 +1,16 @@
 # Prices Over Space and Time
 
+**Highlights**
+
+  + Learn the costs of storage for farmers.
+  + Learn how the forward curve in the futures market provides incentive to store that can be 'locked in'.
+  + Learn how to calculate financial full carry and spread as a percent of full carry. 
+  + Learn how to interpret the percent of full carry as a measure of incentive to store. 
+  + Learn what drives variation in the basis.
+  
+**Check Your Understanding**
+
+  + Can you calculate the percent of full carry yourself, given only futures prices and financing costs?
 
 
 
