@@ -3,6 +3,8 @@
 
 
 
+
+
 Since commodities are natural things that are subject to biological processes, you must first understand the basic biological processes involved in the commodity's production in order to understand and anticipate what happens to it's price. This chapter introduces the basic production processes and timeline for major grains and oilseeds: Corn, Soybeans, Hard Red Winter Wheat (KC wheat), Hard Red Spring Wheat (Minneapolis wheat), and Soft Red Winter Wheat. 
 
 What's the difference between Sweet Corn one buys from the grocery store and field corn (the focus of much of this course)?
@@ -51,6 +53,10 @@ Corn is a global commodity, and the U.S. is the worlds largest producer and expo
 
 
 ## Soybeans
+
+
+
+
 
 Soybeans are planted later than corn, from about April to June. Weather affects soybean production prospects and generates similar price responses as it does for corn. Soybean prices, therefore are highly dependent on what happens during the summer months. The following figures [come from](http://www.ers.usda.gov/topics/crops/soybeans-oil-crops/background.aspx) the USDS ERS.
 

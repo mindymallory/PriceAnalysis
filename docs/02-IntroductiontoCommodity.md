@@ -3,7 +3,6 @@
 
 
 
-
 A commodity is a good that can be supplied without qualitative differences. A bushel of wheat is regarded as a bushel of wheat everywhere. Commodities are fully or partially fungible so that the market treats a unit of good the same no matter who produced it or where it was produced. Think of grain elevators, for example. Farmers bring their grain to an elevator at harvest. Sometimes they sell it outright to the elevator, but sometimes they pay the elevator to store it for them. When the farmer decides to come get his grain out of storage do you think he gets the exact same kernels he brought in? Of course that would be impractical. The elevator just gives him back the same amount of grain he brought in of the same quality. The farmer is happy because the wheat is fungible. The grain he will be able to sell the grain he took out just as easily as the grain he put in. This is in stark contrast to differentiated goods where branding and quality make important distinctions between goods, resulting in differentiated demands. Just try to find someone indifferent between iPhone and Android!
 
 Since commodities are fungible, it also makes sense that prices of commodities are determined by the entire (often global) market for the good. They tend to be basic resources such as agricultural and food products, metals, energy, an fibers. The fungibility of commodities enables the commodity to be traded in centralized spot and futures markets. 
@@ -146,17 +145,21 @@ The production of agricultural commodities is bound by the biological traits of 
 
 ## Long Term Trends
 
-It is useful to begin our exploration of agricultural prices from a long term historical perspective. The figure below is monthly prices received by farmers in the U.S. from 1908 to 2015. By simple visual inspection there seems to be three periods of stable prices, from 1908-1973, 1974-2006, and 2007-present. Although the most recent period seems to be the most volatile and provides less confidence that a similar pattern will persist going forward. 
+It is useful to begin our exploration of agricultural prices from a long term historical perspective. The figure below is monthly prices received by farmers in the U.S. from 1908 to 2015. Figure 1 presents a graph inspired by the [Farmdoc Daily article](http://farmdocdaily.illinois.edu/2016/04/new-era-of-corn-and-soybean-prices.html) by Scott Irwin and Darrel Good from April of 2016. In this article they identify three distint periods of price regimes in corn: pre-1973, 1973-2005, and 2005 to present. Indeed, by simple visual inspection there seems to be three periods of stable prices, from 1908-1973, 1974-2006, and 2007-present. Although the most recent period seems to be the most volatile and provides less confidence that a similar pattern will persist going forward. 
 
-![Corn Prices Recieved](Excel-files\IntroductiontoCommodity_files\image001.png)
+![Figure 1: Corn Prices Recieved, 1908-2015](Excel-files\IntroductiontoCommodity_files\image001.png)
+
+
 Source([http://www.nass.usda.gov/](http://www.nass.usda.gov/))
 
 Now lets zoom in on the 1974-2015 periods. 
 
-![Corn Prices Recieved](Excel-files\IntroductiontoCommodity_files\image003.png)
+![Figure 2: Corn Prices Recieved, 1974-2015](Excel-files\IntroductiontoCommodity_files\image003.png)
+
+
 Source([http://www.nass.usda.gov/](http://www.nass.usda.gov/))
 
-Looking at these two charts together, there is a clear run-up in prices in the 1970's and again around 2006-2007. What caused these seemingly permanent price hikes?  
+Looking at these two charts together, there is a clear run-up in prices in the 1970's and again around 2006-2007. What caused these seemingly permanent price hikes? Make sure you check out the readings to find out!  
 
 
 ## Readings
@@ -168,7 +171,11 @@ Looking at these two charts together, there is a clear run-up in prices in the 1
 
 [Market Instability in a New Era of Corn, Soybean, and Wheat Prices](http://www.choicesmagazine.org/magazine/pdf/article_56.pdf)
 
-:    Scott Irwin and Darrel good had an article in Choices magazine, that examined the price 'eras' we described in this chapter. They also discuss the causes of the price paradigm shifts. They argued in 2009 that the new 'era' of crop prices were here to stay, and history has bore this out so far. 
+:    Scott Irwin and Darrel Good had an article in Choices magazine, that examined the price 'eras' we described in this chapter. They also discuss the causes of the price paradigm shifts. They argued in 2009 that the new 'Era' of crop prices were here to stay, and history has bore this out so far. 
+
+[The New Era of Corn and Soybean Prices Is Still Alive and Kicking](http://farmdocdaily.illinois.edu/2016/04/new-era-of-corn-and-soybean-prices.html)
+
+:    Scott Irwin and Darrel Good revisit the price 'Era's' discussion again in April of 2016. 
 
 ## Exercises
 
