@@ -1,4 +1,11 @@
 
+
+
+
+
+
+
+
 # Grain and Oilseed Markets
 
 
@@ -13,7 +20,8 @@ Sweet corn has been bred so that the kernels contain a high sugar content. It is
 
 Since sweet corn is harvested green and deteriorates rapidly, harvest must take place quickly from start to finish.
 
-[Sweet Corn Harvest](https://www.youtube.com/watch?v=4WEYDx82fG8)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4WEYDx82fG8" frameborder="0" allowfullscreen></iframe> 
 
  
 ## Field Corn
@@ -22,7 +30,10 @@ In the Corn Belt corn is planted from about March to May, and harvested from Sep
 
 Of lesser concern, but still followed by market participants is the weather during planting and harvest. Sometimes it is too wet, making it difficult to get acreage planted in a timely manner. If corn is planted too late it may suffer a yield penalty. Also, weather during harvest can impact prices. If harvest time is very wet, it can make it difficult to get the crop out and dry before it is damaged. 
 
-[Field Corn Harvest](https://www.youtube.com/watch?v=zuGVeXqTIaM)
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Gjepn9e7K3s" frameborder="0" allowfullscreen></iframe> 
+
 
 ![Figure 1: Corn Planted Acres 2016](images/Corn-PA-2016.png)
 
