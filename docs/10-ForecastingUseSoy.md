@@ -46,7 +46,30 @@ Figure 5 shows soybean exports as a percent of total supply from 1980-2014. Simi
 
 Source: [USDA ERS Oil Crops Yearbook](http://www.ers.usda.gov/data-products/oil-crops-yearbook.aspx)
 
-*Main Exporters table here.*  
+
+: Table 1: Top 10 Importers of U.S. Soybeans 2012/2013 through 2016/2017 Marketing Years, Ranked in Descending Order for Marketing Year 2016/2017 (1,000 Metric Tons)
+
+
+COUNTRY    EXPORTS 2016/2017   RANK   EXPORTS 2015/2016   RANK   EXPORTS 2014/2015   RANK   EXPORTS 2013/2014   RANK 
+---------  ------------------  -----  ------------------  -----  ------------------  -----  ------------------  -----
+CHINA      36148.3             1      29855.0             1      29640.8             1      27602.2             1    
+MEXICO     3665.0              2      3252.6              2      3438.8              2      3194.5              2    
+INDNSIA    2296.9              3      2028.6              5      1875.9              5      2291.5              3    
+JAPAN      2137.2              4      2145.6              3      2011.4              3      1826.4              4    
+NETHLDS    2044.9              5      2037.7              4      1879.4              4      1015.6              7    
+TAIWAN     1292.7              6      1232.9              7      1310.8              6      1133.6              5    
+GERMANY    1287.7              7      1757.5              6      1005.9              7      676.1               8    
+BANGLADH   1050.0              8      551.0               10     545.7               13     160.5               21   
+THAILND    950.6               9      424.2               15     518.2               14     432.4               13   
+EGYPT      807.2               10     295.4               19     712.4               11     604.6               9    
+SPAIN      731.8               11     964.1               8      852.4               8      1099.5              6    
+KOR REP    653.4               12     480.3               13     548.1               12     599.2               10   
+
+Source: [USDA FAS](http://apps.fas.usda.gov/export-sales/myrk_rpt.htm)  
+
+Clearly China is the dominant importer of U.S. soybeans. They buy 10 times more than 2nd ranked Mexico. Examining the short history in table 1, you can see that increasing exports of soybeans to China accounts for nearly all of the uptrend in figure 4. In the 2016/2017 marketing year China was the destination of over 60% of U.S. soybean exports.  
+
+
 
 ## Feed, Seed, and Residual
 
@@ -66,7 +89,8 @@ Source: [USDA ERS Oil Crops Yearbook](http://www.ers.usda.gov/data-products/oil-
 
 Soybeans are a bit different from corn because there are only two use categories that are important, crush and exports. The soybean use categories historically have been reliably 50% crush and 50% exports as a percent of supply. In recent years, exports have been increasing both nominally and as a percent of supply. So forecasting demand for soybeans has largely become a matter of forecasting soybean exports. 
 
-Recently, with the rise of South American soybean (and corn) production forecasting exports is a matter of balancing the price of U.S soybeans compared with the price of South American soybeans and the raw demand from our trading partners. China has become the major player in this space, accounting for most of the recent increase in U.S. soybean exports. Exports of U.S. soybeans to China now make up roughly half of all U.S. soybeans exported. 
+Recently, with the rise of South American soybean (and corn) production, forecasting exports is a matter of balancing the price of U.S soybeans compared with the price of South American soybeans and the raw demand from our trading partners. China has become the major player in this space, as is evident in table 1.  
+
 
 ## Forecasting Use of Soybeans
 
