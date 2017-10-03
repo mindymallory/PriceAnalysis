@@ -91,7 +91,50 @@ As we mentioned in chapter 7, keeping track of how much soybeans have been used 
 
 Soybeans exports can be followed during the marketing year by following the [GIPSA]() and [FAS Export Reporting System]() as was identified for corn exports in Chapter 7. Also, as identified in Chapter 7 is is useful to tracking [Cattle on Feed](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1020), [Hogs and Pigs](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1086), and the [Poultry Slaughter](https://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1131), specifically because livestock numbers contribute to demand for soybean meal, which in turn contributes to crush demand. 
 
+## Exercises
 
+**Skills Learned**
+
+  + A common method for accounting strength of demand: pace of use.   
+  
+  + How to directly import data that is hosted on a website so that a .csv file has a url for download   
+  
+  + How to work with pivot tables in excel to summarize large data-sets with many factor variables  
+  
+Compare the pace of export sales in the first few weeks of marketing year 2017/2018 to the pace of export sales in the previous three marketing years. Make inferences about whether this marketing year seems to be getting off to a good start in export sales.  
+
+  1. Go to [https://www.gipsa.usda.gov/](https://www.gipsa.usda.gov/) 
+  
+    a. Choose FGIS Reports in the Federal Grain Inspection Menu  
+    
+    b. Scroll down and choose Export Grain Totals (Yearly) in the Data and Statistics section  
+    
+  2. Import the reports for 2014-2017 into excel so we can examine the following marketing years:  
+  
+    a. 2014/2015, 2015/2016, 2016/2017, and 2017/2018 (so far)  
+    
+  3. Create a pivot table that has weeks in the rows, marketing year in the columns, and sums the export sales in each week. Filter by Grain.   
+  
+  4. Copy and paste special this table into a new worksheet as plain text (so that is not a pivot table).   
+  
+  5. Delete the data in 2014 prior to September so that we start at the beginning of the marketing year.  
+  
+  6. Collapse all the marketing year into a single set of 53 rows (so we can compare by marketing year.)  
+  
+  7. Create a new column on the left side and fill it in with a sequence of 1 to 53, for weeks in the marketing year.   
+  
+  8. Insert two columns between each marketing year; label them Cumulative Sum and Pace of Export.  
+  
+  9. Calculate the cumulative sums.   
+  
+  10. Go find the historical export numbers from old WASDE reports for each marketing year. Enter these values in your spreadsheet somewhere, and convert the million bushel numbers into pounds using the fact that bushel of soybeans weighs about 60 lbs.   
+  
+  11.	Calculate the pace of use by dividing the cumulative sums by the export total for each marketing year.  
+  
+  12.	Plot the pace of use with the Week numbers on the x axis for each marketing year.   
+  
+  13.	Infer whether or not the 2017/2018 export sales are off to a strong start.  
+  
 
 
 

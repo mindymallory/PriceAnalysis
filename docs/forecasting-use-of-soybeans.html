@@ -25,7 +25,7 @@
 <meta name="author" content="Mindy L. Mallory">
 
 
-<meta name="date" content="2017-10-02">
+<meta name="date" content="2017-10-03">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -179,7 +179,6 @@
 <li class="chapter" data-level="9.5.4" data-path="forecasting-use-of-corn.html"><a href="forecasting-use-of-corn.html#feed-and-residual-1"><i class="fa fa-check"></i><b>9.5.4</b> Feed and Residual</a></li>
 </ul></li>
 <li class="chapter" data-level="9.6" data-path="forecasting-use-of-corn.html"><a href="forecasting-use-of-corn.html#readings-3"><i class="fa fa-check"></i><b>9.6</b> Readings</a></li>
-<li class="chapter" data-level="9.7" data-path="forecasting-use-of-corn.html"><a href="forecasting-use-of-corn.html#exercises-4"><i class="fa fa-check"></i><b>9.7</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="forecasting-use-of-soybeans.html"><a href="forecasting-use-of-soybeans.html"><i class="fa fa-check"></i><b>10</b> Forecasting Use of Soybeans</a><ul>
 <li class="chapter" data-level="10.1" data-path="forecasting-use-of-soybeans.html"><a href="forecasting-use-of-soybeans.html#soybean-crush"><i class="fa fa-check"></i><b>10.1</b> Soybean Crush</a></li>
@@ -187,6 +186,7 @@
 <li class="chapter" data-level="10.3" data-path="forecasting-use-of-soybeans.html"><a href="forecasting-use-of-soybeans.html#feed-seed-and-residual"><i class="fa fa-check"></i><b>10.3</b> Feed, Seed, and Residual</a></li>
 <li class="chapter" data-level="10.4" data-path="forecasting-use-of-soybeans.html"><a href="forecasting-use-of-soybeans.html#price-sensitivity-of-use-categories-1"><i class="fa fa-check"></i><b>10.4</b> Price Sensitivity of Use Categories</a></li>
 <li class="chapter" data-level="10.5" data-path="forecasting-use-of-soybeans.html"><a href="forecasting-use-of-soybeans.html#forecasting-use-of-soybeans-1"><i class="fa fa-check"></i><b>10.5</b> Forecasting Use of Soybeans</a></li>
+<li class="chapter" data-level="10.6" data-path="forecasting-use-of-soybeans.html"><a href="forecasting-use-of-soybeans.html#exercises-4"><i class="fa fa-check"></i><b>10.6</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="ending-stocks-and-price.html"><a href="ending-stocks-and-price.html"><i class="fa fa-check"></i><b>11</b> Ending Stocks and Price</a><ul>
 <li class="chapter" data-level="11.1" data-path="ending-stocks-and-price.html"><a href="ending-stocks-and-price.html#forecasting-price"><i class="fa fa-check"></i><b>11.1</b> Forecasting Price</a></li>
@@ -539,6 +539,38 @@
 <h2><span class="header-section-number">10.5</span> Forecasting Use of Soybeans</h2>
 <p>As we mentioned in chapter 7, keeping track of how much soybeans have been used to date in each category is a useful exercise to determine a reasonable forecast for different use categories of soybeans. As was true for corn, information about the pace of use in each category must be obtained from different sources within the USDA.</p>
 <p>Soybeans exports can be followed during the marketing year by following the <a href="">GIPSA</a> and <a href="">FAS Export Reporting System</a> as was identified for corn exports in Chapter 7. Also, as identified in Chapter 7 is is useful to tracking <a href="http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1020">Cattle on Feed</a>, <a href="http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1086">Hogs and Pigs</a>, and the <a href="https://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1131">Poultry Slaughter</a>, specifically because livestock numbers contribute to demand for soybean meal, which in turn contributes to crush demand.</p>
+</div>
+<div id="exercises-4" class="section level2">
+<h2><span class="header-section-number">10.6</span> Exercises</h2>
+<p><strong>Skills Learned</strong></p>
+<ul>
+<li><p>A common method for accounting strength of demand: pace of use.</p></li>
+<li><p>How to directly import data that is hosted on a website so that a .csv file has a url for download</p></li>
+<li><p>How to work with pivot tables in excel to summarize large data-sets with many factor variables</p></li>
+</ul>
+<p>Compare the pace of export sales in the first few weeks of marketing year 2017/2018 to the pace of export sales in the previous three marketing years. Make inferences about whether this marketing year seems to be getting off to a good start in export sales.</p>
+<ol style="list-style-type: decimal">
+<li><p>Go to <a href="https://www.gipsa.usda.gov/" class="uri">https://www.gipsa.usda.gov/</a></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Choose FGIS Reports in the Federal Grain Inspection Menu</p></li>
+<li><p>Scroll down and choose Export Grain Totals (Yearly) in the Data and Statistics section</p></li>
+</ol></li>
+<li><p>Import the reports for 2014-2017 into excel so we can examine the following marketing years:</p>
+<ol style="list-style-type: lower-alpha">
+<li>2014/2015, 2015/2016, 2016/2017, and 2017/2018 (so far)</li>
+</ol></li>
+<li><p>Create a pivot table that has weeks in the rows, marketing year in the columns, and sums the export sales in each week. Filter by Grain.</p></li>
+<li><p>Copy and paste special this table into a new worksheet as plain text (so that is not a pivot table).</p></li>
+<li><p>Delete the data in 2014 prior to September so that we start at the beginning of the marketing year.</p></li>
+<li><p>Collapse all the marketing year into a single set of 53 rows (so we can compare by marketing year.)</p></li>
+<li><p>Create a new column on the left side and fill it in with a sequence of 1 to 53, for weeks in the marketing year.</p></li>
+<li><p>Insert two columns between each marketing year; label them Cumulative Sum and Pace of Export.</p></li>
+<li><p>Calculate the cumulative sums.</p></li>
+<li><p>Go find the historical export numbers from old WASDE reports for each marketing year. Enter these values in your spreadsheet somewhere, and convert the million bushel numbers into pounds using the fact that bushel of soybeans weighs about 60 lbs.</p></li>
+<li><p>Calculate the pace of use by dividing the cumulative sums by the export total for each marketing year.</p></li>
+<li><p>Plot the pace of use with the Week numbers on the x axis for each marketing year.</p></li>
+<li><p>Infer whether or not the 2017/2018 export sales are off to a strong start.</p></li>
+</ol>
 
 </div>
 </div>

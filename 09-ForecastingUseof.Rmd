@@ -185,25 +185,7 @@ The USDA releases a monthly [Cattle on Feed](http://usda.mannlib.cornell.edu/Man
 Newton, J. "Reviewing the Pace of Corn and Soybean Exports." farmdoc daily (5):14, Department of Agricultural and Consumer Economics, University of Illinois at Urbana-Champaign, January 26, 2015.
 
 
-## Exercises
 
-1. Compare this corn's pace of use this year by week to the average of the last five year's pace of use by week. 
-    a. Download the last five years of the [Federal Grain Inspection Services Yearly Export Grain Totals](http://www.gipsa.usda.gov/fgis/exportgrain/default.aspx). 
-    b. Generate one pivot table per year to sum export totals by week. 
-    c. Use the pivot tables you generated in part (b) to make a table of weekly export totals per year for this year and the last five years.
-    d. Create a column in the table you produced from (c) that displays weekly percents of the five year average of export totals. 
-    e. Place or create the table from (d) according to the following format in a separate worksheet from your other pivot table calculations.
-    
-    | Weeks | 2016 % of 5 Yr Ave | 2016 | 2015 | 2014 | 2013 | 2012 | 2011 | 
-    |:------|:-------------------|:-----|:-----|:-----|:-----|:-----|:-----|
-    | 1     |                    |      |      |      |      |      |      |     
-    | 2     |                    |      |      |      |      |      |      | 
-    |       |                    |      |      |      |      |      |      |  
-    |       |                    |      |      |      |      |      |      |
-    | 52    |                    |      |      |      |      |      |      |
-
-
-<!-- Do this for a complete marketing year. -->
 
 
 
