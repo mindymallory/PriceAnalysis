@@ -114,7 +114,7 @@ Good, D., and S. Irwin. "[The Relationship between Stocks-to-Use and Corn Prices
   
     + Download the *Corn*, *Soybeans*, and *Wheat* WASDE tables. 
   
-    + This data is also available from various USDA websites (like [https://quickstats.nass.usda.gov/])(https://quickstats.nass.usda.gov/), but the [www.agmanager.info](agmanager.info) site is particularly thorough and well organized for historical WASDE data, so it is a good resource to know about. 
+    + This data is also available from various USDA websites (like [https://quickstats.nass.usda.gov/](https://quickstats.nass.usda.gov/)), but the [www.agmanager.info](agmanager.info) site is particularly thorough and well organized for historical WASDE data, so it is a good resource to know about. 
   
 2. Open all three Excel tables for corn, soybeans, and wheat. 
   
