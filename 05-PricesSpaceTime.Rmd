@@ -116,7 +116,9 @@ day4 <- cbind(xaxis, day4, day4p)
 df <- rbind(day1, day2, day3, day4)
 df <- as.data.frame(df)
 colnames(df) <- c('xaxis', 'day', 'price')
-df$xaxis <- factor(df$xaxis, levels = df$xaxis[order(df$price)])
+# df$xaxis <- factor(df$xaxis, levels = df$xaxis[order(df$price)])
+df$xaxis <- factor(df$xaxis, levels = unique(df$xaxis[order(df$price)]))
+
 df$price <- as.numeric(as.character(df$price))
 g <- ggplot(df, aes(xaxis, price, colour= day)) + ylim(300,425) + theme_bw() +
         geom_point() + geom_line(aes(group = day)) +
@@ -158,7 +160,8 @@ day4 <- cbind(xaxis, day4, day4p)
 df <- rbind(day1, day2, day3, day4)
 df <- as.data.frame(df)
 colnames(df) <- c('xaxis', 'day', 'price')
-df$xaxis <- factor(df$xaxis, levels = df$xaxis[order(df$price)])
+# df$xaxis <- factor(df$xaxis, levels = df$xaxis[order(df$price)])
+df$xaxis <- factor(df$xaxis, levels = unique(df$xaxis[order(df$price)]))
 df$price <- as.numeric(as.character(df$price))
 g <- ggplot(df, aes(xaxis, price, colour= day)) + ylim(300,425) + theme_bw() +
         geom_point() + geom_line(aes(group = day)) +

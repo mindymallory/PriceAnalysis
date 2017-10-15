@@ -1,4 +1,6 @@
 bookdown::gitbook:
+  includes:
+    in_header: [google_analytics.js]
   css: style.css
   split_by: chapter
   config:

@@ -58,20 +58,20 @@ The year-to-year variation is caused by price fluctuations with low prices encou
 
                    
 
-: Table 1: Top 10 Importers of U.S. Corn 2011/2012 through 2015/2016 Marketing Years, Ranked in Descending Order for Marketing Year 20152016 (1,000 Metric Tons)
+: Table 1: Top 12 Importers of U.S. Corn 2012/2013 through 2016/2017 Marketing Years, Ranked in Descending Order for Marketing Year 2015/2016 (1,000 Metric Tons)
 
 ```{r, echo=FALSE, warning=FALSE}
 library(Kmisc)
 library(knitr)
 corn_importers <- read.csv('Excel-files/ForecastingUseof-corn_importers.csv', header = TRUE)
-kable(corn_importers, align = 'l',  col.names = c("COUNTRY", "EXPORTS 2015/2016", 	"RANK",	"EXPORTS 2014/2015",	"RANK",	
-                                                              "EXPORTS 2013/2014",	"RANK",	"EXPORTS 2012/2013",	"RANK",	"EXPORTS 2010/2011",	"RANK"))
+kable(corn_importers, align = 'l',  col.names = c("COUNTRY", "EXPORTS 2016/2017", 	"RANK",	"EXPORTS 2015/2016",	"RANK",	
+                                                              "EXPORTS 2014/2015",	"RANK",	"EXPORTS 2013/2014", "RANK"))
 
 ```
 
-Source: [USDA FAS](http://apps.fas.usda.gov/export-sales/myrk_rpt.htm) TOTAL is total exports to all countries, so summing the rows of table 1 will not add up to the TOTAL row. 
+Source: [USDA FAS](http://apps.fas.usda.gov/export-sales/myrk_rpt.htm)  
 
-Table 1 shows the top 10 importers of U.S. corn  for the 2014/2015 marketing year. Export totals are given in 1,000 metric ton units. Clearly Japan and Mexico are the dominant Importers of U.S. corn. The table shows that most countries rank has remained fairly stable across the marketing years shown. Columbia is an exception to this rule. It was ranked 17, 16, and 14 in 2012/2013, 2011/2012, and 2010/2011 marketing years respectively, but jumped to 3rd and 4th in the 2014/2015 and 2013/2014 marketing years.  
+Table 1 shows the top 12 importers of U.S. corn  for the 2016/2017 marketing year. Export totals are given in 1,000 metric ton units. Clearly Japan and Mexico are the dominant Importers of U.S. corn, with South Korea being a distant third. The table shows that most countries rank has remained fairly stable across the marketing years shown.   
 
 ## Feed and Residual
 
@@ -185,25 +185,7 @@ The USDA releases a monthly [Cattle on Feed](http://usda.mannlib.cornell.edu/Man
 Newton, J. "Reviewing the Pace of Corn and Soybean Exports." farmdoc daily (5):14, Department of Agricultural and Consumer Economics, University of Illinois at Urbana-Champaign, January 26, 2015.
 
 
-## Exercises
 
-1. Compare this corn's pace of use this year by week to the average of the last five year's pace of use by week. 
-    a. Download the last five years of the [Federal Grain Inspection Services Yearly Export Grain Totals](http://www.gipsa.usda.gov/fgis/exportgrain/default.aspx). 
-    b. Generate one pivot table per year to sum export totals by week. 
-    c. Use the pivot tables you generated in part (b) to make a table of weekly export totals per year for this year and the last five years.
-    d. Create a column in the table you produced from (c) that displays weekly percents of the five year average of export totals. 
-    e. Place or create the table from (d) according to the following format in a separate worksheet from your other pivot table calculations.
-    
-    | Weeks | 2016 % of 5 Yr Ave | 2016 | 2015 | 2014 | 2013 | 2012 | 2011 | 
-    |:------|:-------------------|:-----|:-----|:-----|:-----|:-----|:-----|
-    | 1     |                    |      |      |      |      |      |      |     
-    | 2     |                    |      |      |      |      |      |      | 
-    |       |                    |      |      |      |      |      |      |  
-    |       |                    |      |      |      |      |      |      |
-    | 52    |                    |      |      |      |      |      |      |
-
-
-<!-- Do this for a complete marketing year. -->
 
 
 

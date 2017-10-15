@@ -15,11 +15,6 @@
 
 Fundamental analysis is an assessment of price based on underlying supply and demand factors. Focusing on changes in the relationship between supply and demand allows one to calibrate an informed opinion of the value of the commodity. The main role of the market is to find the value at which supply equals demand - or in other words, the value that 'clears the market'. The estimated 'fundamental value' is simply a forecast, or expectation of, the market clearing price. The goal of any forecasting exercise is to compare the forecast (estimated fundamental value) to the current market price and make decisions accordingly. 
 
-> Bullish:  `Forecast > Price` \
-> Bearish: `Forecast < Price` 
-
-<a title="By Thomas Richter/user:THOMAS (Own work) [GFDL (http://www.gnu.org/copyleft/fdl.html) or CC-BY-SA-3.0 (http://creativecommons.org/licenses/by-sa/3.0/)], via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File%3ABull_and_bear.jpg"><img width="128" alt="Bull and bear" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Bull_and_bear.jpg/128px-Bull_and_bear.jpg"/></a>                
-
 If your forecast is above the current market price, that is bullish because your forecast implies the market is undervaluing the commodity - an opportunity to buy low and sell high! If your forecast is below the current market price, that is bearish because your forecast implies the market is overvaluing the commodity - an opportunity to sell high and buy low! This, of course, only works if your forecast is correct, that is, the market eventually agrees and moves into line with your forecast. 
 
 ## Supply and Demand

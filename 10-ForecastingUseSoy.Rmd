@@ -46,7 +46,23 @@ Figure 5 shows soybean exports as a percent of total supply from 1980-2014. Simi
 
 Source: [USDA ERS Oil Crops Yearbook](http://www.ers.usda.gov/data-products/oil-crops-yearbook.aspx)
 
-*Main Exporters table here.*  
+
+: Table 1: Top 10 Importers of U.S. Soybeans 2012/2013 through 2016/2017 Marketing Years, Ranked in Descending Order for Marketing Year 2016/2017 (1,000 Metric Tons)
+
+```{r, echo=FALSE, warning=FALSE}
+library(Kmisc)
+library(knitr)
+corn_importers <- read.csv('Excel-files/ForecastingUseof-soy_importers.csv', header = TRUE)
+kable(corn_importers, align = 'l',  col.names = c("COUNTRY", "EXPORTS 2016/2017", 	"RANK",	"EXPORTS 2015/2016",	"RANK",	
+                                                              "EXPORTS 2014/2015",	"RANK",	"EXPORTS 2013/2014", "RANK"))
+
+```
+
+Source: [USDA FAS](http://apps.fas.usda.gov/export-sales/myrk_rpt.htm)  
+
+Clearly China is the dominant importer of U.S. soybeans. They buy 10 times more than 2nd ranked Mexico. Examining the short history in table 1, you can see that increasing exports of soybeans to China accounts for nearly all of the uptrend in figure 4. In the 2016/2017 marketing year China was the destination of over 60% of U.S. soybean exports.  
+
+
 
 ## Feed, Seed, and Residual
 
@@ -66,7 +82,8 @@ Source: [USDA ERS Oil Crops Yearbook](http://www.ers.usda.gov/data-products/oil-
 
 Soybeans are a bit different from corn because there are only two use categories that are important, crush and exports. The soybean use categories historically have been reliably 50% crush and 50% exports as a percent of supply. In recent years, exports have been increasing both nominally and as a percent of supply. So forecasting demand for soybeans has largely become a matter of forecasting soybean exports. 
 
-Recently, with the rise of South American soybean (and corn) production forecasting exports is a matter of balancing the price of U.S soybeans compared with the price of South American soybeans and the raw demand from our trading partners. China has become the major player in this space, accounting for most of the recent increase in U.S. soybean exports. Exports of U.S. soybeans to China now make up roughly half of all U.S. soybeans exported. 
+Recently, with the rise of South American soybean (and corn) production, forecasting exports is a matter of balancing the price of U.S soybeans compared with the price of South American soybeans and the raw demand from our trading partners. China has become the major player in this space, as is evident in table 1.  
+
 
 ## Forecasting Use of Soybeans
 
@@ -74,7 +91,50 @@ As we mentioned in chapter 7, keeping track of how much soybeans have been used 
 
 Soybeans exports can be followed during the marketing year by following the [GIPSA]() and [FAS Export Reporting System]() as was identified for corn exports in Chapter 7. Also, as identified in Chapter 7 is is useful to tracking [Cattle on Feed](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1020), [Hogs and Pigs](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1086), and the [Poultry Slaughter](https://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1131), specifically because livestock numbers contribute to demand for soybean meal, which in turn contributes to crush demand. 
 
+## Exercises
 
+**Skills Learned**
+
+  + A common method for accounting strength of demand: pace of use.   
+  
+  + How to directly import data that is hosted on a website so that a .csv file has a url for download   
+  
+  + How to work with pivot tables in excel to summarize large data-sets with many factor variables  
+  
+Compare the pace of export sales in the first few weeks of marketing year 2017/2018 to the pace of export sales in the previous three marketing years. Make inferences about whether this marketing year seems to be getting off to a good start in export sales.  
+
+  1. Go to [https://www.gipsa.usda.gov/](https://www.gipsa.usda.gov/) 
+  
+    a. Choose FGIS Reports in the Federal Grain Inspection Menu  
+    
+    b. Scroll down and choose Export Grain Totals (Yearly) in the Data and Statistics section  
+    
+  2. Import the reports for 2014-2017 into excel so we can examine the following marketing years:  
+  
+    a. 2014/2015, 2015/2016, 2016/2017, and 2017/2018 (so far)  
+    
+  3. Create a pivot table that has weeks in the rows, marketing year in the columns, and sums the export sales in each week. Filter by Grain.   
+  
+  4. Copy and paste special this table into a new worksheet as plain text (so that is not a pivot table).   
+  
+  5. Delete the data in 2014 prior to September so that we start at the beginning of the marketing year.  
+  
+  6. Collapse all the marketing year into a single set of 53 rows (so we can compare by marketing year.)  
+  
+  7. Create a new column on the left side and fill it in with a sequence of 1 to 53, for weeks in the marketing year.   
+  
+  8. Insert two columns between each marketing year; label them Cumulative Sum and Pace of Export.  
+  
+  9. Calculate the cumulative sums.   
+  
+  10. Go find the historical export numbers from old WASDE reports for each marketing year. Enter these values in your spreadsheet somewhere, and convert the million bushel numbers into pounds using the fact that bushel of soybeans weighs about 60 lbs.   
+  
+  11.	Calculate the pace of use by dividing the cumulative sums by the export total for each marketing year.  
+  
+  12.	Plot the pace of use with the Week numbers on the x axis for each marketing year.   
+  
+  13.	Infer whether or not the 2017/2018 export sales are off to a strong start.  
+  
 
 
 

@@ -77,5 +77,39 @@ Also in figure 4 trendlines are fitted for the two subsets of the data. Since bo
 Good, D., and S. Irwin. "[The Relationship between Stocks-to-Use and Corn Prices Revisited](http://farmdocdaily.illinois.edu/2015/04/relationship-stock-to-use-and-corn-prices.html)." farmdoc daily (5):65, Department of Agricultural and Consumer Economics, University of Illinois at Urbana-Champaign, April 9, 2015.
 
 
+## Exercises
 
+1. Go to [www.agmanager.info](www.agmanager.info), the extension website of Kansas State University's Agricultural Economics department. 
+  
+    + Navigate through the *Grain Marketing* menu to the *Grain Supply and Demand (WASDE)* page. 
+  
+    + Click on *Spreadsheets with WASDE data*, or scroll to the bottom of the page. 
+  
+    + Download the *Corn*, *Soybeans*, and *Wheat* WASDE tables. 
+  
+    + This data is also available from various USDA websites (like [https://quickstats.nass.usda.gov/](https://quickstats.nass.usda.gov/)), but the [www.agmanager.info](agmanager.info) site is particularly thorough and well organized for historical WASDE data, so it is a good resource to know about. 
+  
+2. Open all three Excel tables for corn, soybeans, and wheat. 
+  
+    + Also open a new Excel spreadsheet. 
+  
+    + For each of the commodities, corn, sobyeans, and wheat, go to the *Annual Sheet*, then copy and paste the *Year*, *Stock %*, and *Average Farm Price* columns into your new Excel Spreadsheet. Be sure to label the columns by commodity. 
+  
+3. For each commodity, Recreate figure 2 (a time-series chart of prices recieved by farmers and stocks/use %) and figure 3 (an x-y scatterplot of prices recieved by farmers and stocks/use %) from chapter 11.
+  
+    + Fit an appropriate trendline through each of the x-y scatterplots.
+  
+    + Make an educated forecast for average farm price recieved for each commodity. 
+  
+  
+  
 
+  
+  
+  
+  
+  
+  
+  
+  
+  

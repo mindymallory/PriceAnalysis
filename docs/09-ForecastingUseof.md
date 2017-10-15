@@ -58,26 +58,27 @@ The year-to-year variation is caused by price fluctuations with low prices encou
 
                    
 
-: Table 1: Top 10 Importers of U.S. Corn 2011/2012 through 2015/2016 Marketing Years, Ranked in Descending Order for Marketing Year 20152016 (1,000 Metric Tons)
+: Table 1: Top 12 Importers of U.S. Corn 2012/2013 through 2016/2017 Marketing Years, Ranked in Descending Order for Marketing Year 2015/2016 (1,000 Metric Tons)
 
 
-COUNTRY   EXPORTS 2015/2016   RANK   EXPORTS 2014/2015   RANK   EXPORTS 2013/2014   RANK   EXPORTS 2012/2013   RANK   EXPORTS 2010/2011   RANK 
---------  ------------------  -----  ------------------  -----  ------------------  -----  ------------------  -----  ------------------  -----
-MEXICO    12558.6             1      10793.8             2      10526.3             2      4370.0              2      9537.5              2    
-JAPAN     10506.6             2      11858.6             1      11487.0             1      7000.2              1      11748.6             1    
-COLOMB    4629.5              3      4413.3              3      3359.4              4      94.9                17     275.1               16   
-KOR REP   3021.6              4      3927.2              4      4844.2              3      416.2               6      3635.3              4    
-PERU      2490.9              5      2421.0              5      1414.5              8      0.0                 0      0.0                 0    
-TAIWAN    2045.2              6      1755.0              6      1936.4              7      511.8               5      1265.4              6    
-S ARAB    1516.4              7      1312.7              8      1021.0              9      344.6               7      294.8               15   
-EGYPT     969.2               8      1487.0              7      2559.5              6      0.0                 0      544.9               9    
-VENEZ     942.3               9      701.8               12     1017.2              10     1158.1              4      1280.1              5    
-GUATMAL   897.1               10     936.7               9      783.9               11     209.2               11     549.1               8    
-Total     39577.4             NA     39607.1             NA     38949.4             NA     14105.0             NA     29130.8             NA   
+COUNTRY   EXPORTS 2016/2017   RANK   EXPORTS 2015/2016   RANK   EXPORTS 2014/2015   RANK   EXPORTS 2013/2014   RANK 
+--------  ------------------  -----  ------------------  -----  ------------------  -----  ------------------  -----
+MEXICO    13539.7             1      12558.6             1      10793.8             2      10526.3             2    
+JAPAN     11983.4             2      10506.6             2      11858.6             1      11487.0             1    
+KOR REP   5588.5              3      3021.6              4      3927.2              4      4844.2              3    
+COLOMB    4438.9              4      4629.5              3      4413.3              3      3359.4              4    
+PERU      3166.7              5      2490.9              5      2421.0              5      1414.5              8    
+TAIWAN    2773.2              6      2045.2              6      1755.0              6      1936.4              7    
+S ARAB    2240.4              7      1516.4              7      1312.7              8      1021.0              9    
+GUATMAL   1008.9              8      897.1               10     936.7               9      783.9               11   
+MOROCCO   905.3               9      438.4               15     310.9               18     201.2               22   
+C RICA    840.2               10     520.1               13     784.1               11     593.6               13   
+DOM REP   814.9               11     252.1               22     599.3               13     637.6               12   
+CHINA     717.9               12     184.8               24     473.5               15     2759.4              5    
 
-Source: [USDA FAS](http://apps.fas.usda.gov/export-sales/myrk_rpt.htm) TOTAL is total exports to all countries, so summing the rows of table 1 will not add up to the TOTAL row. 
+Source: [USDA FAS](http://apps.fas.usda.gov/export-sales/myrk_rpt.htm)  
 
-Table 1 shows the top 10 importers of U.S. corn  for the 2014/2015 marketing year. Export totals are given in 1,000 metric ton units. Clearly Japan and Mexico are the dominant Importers of U.S. corn. The table shows that most countries rank has remained fairly stable across the marketing years shown. Columbia is an exception to this rule. It was ranked 17, 16, and 14 in 2012/2013, 2011/2012, and 2010/2011 marketing years respectively, but jumped to 3rd and 4th in the 2014/2015 and 2013/2014 marketing years.  
+Table 1 shows the top 12 importers of U.S. corn  for the 2016/2017 marketing year. Export totals are given in 1,000 metric ton units. Clearly Japan and Mexico are the dominant Importers of U.S. corn, with South Korea being a distant third. The table shows that most countries rank has remained fairly stable across the marketing years shown.   
 
 ## Feed and Residual
 
@@ -191,25 +192,7 @@ The USDA releases a monthly [Cattle on Feed](http://usda.mannlib.cornell.edu/Man
 Newton, J. "Reviewing the Pace of Corn and Soybean Exports." farmdoc daily (5):14, Department of Agricultural and Consumer Economics, University of Illinois at Urbana-Champaign, January 26, 2015.
 
 
-## Exercises
 
-1. Compare this corn's pace of use this year by week to the average of the last five year's pace of use by week. 
-    a. Download the last five years of the [Federal Grain Inspection Services Yearly Export Grain Totals](http://www.gipsa.usda.gov/fgis/exportgrain/default.aspx). 
-    b. Generate one pivot table per year to sum export totals by week. 
-    c. Use the pivot tables you generated in part (b) to make a table of weekly export totals per year for this year and the last five years.
-    d. Create a column in the table you produced from (c) that displays weekly percents of the five year average of export totals. 
-    e. Place or create the table from (d) according to the following format in a separate worksheet from your other pivot table calculations.
-    
-    | Weeks | 2016 % of 5 Yr Ave | 2016 | 2015 | 2014 | 2013 | 2012 | 2011 | 
-    |:------|:-------------------|:-----|:-----|:-----|:-----|:-----|:-----|
-    | 1     |                    |      |      |      |      |      |      |     
-    | 2     |                    |      |      |      |      |      |      | 
-    |       |                    |      |      |      |      |      |      |  
-    |       |                    |      |      |      |      |      |      |
-    | 52    |                    |      |      |      |      |      |      |
-
-
-<!-- Do this for a complete marketing year. -->
 
 
 
