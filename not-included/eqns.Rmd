@@ -1,0 +1,38 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+Equations for possible use.
+
+$\frac{\partial x^{*}}{\partial p_x} = \frac{\partial x^{c}}{\partial p_x} - \frac{\partial x^{*}}{\partial I}x^c$
+
+$MR=P(1+\frac{1}{e_{q,P}})$ 
+
+$\frac{dlnx}{dx}=\frac{1}{x}$
+
+$\frac{d(ax^b)}{dx}=bax^{b-1}$
+
+$E(U(x))=\pi_1U(w_1)+\pi_2U(w_2)$
+
+$Tax Revanue = t*x^*(p_x - t, p_y, I)$
+
+$\frac{-dK}{dL}|_{q_0}=\frac{MP_L}{MP_K}$
+
+$\frac{\partial e(p_x,p_y,I)}{\partial p_x}=x^c(p_x,p_y,I)$
+
+$x^*(p_x,p_y,I)=-\frac{\frac{\partial V(p_x,p_y,I)}{\partial p_x}}{\frac{\partial V(p_x,p_y,I)}{\partial I}}$
+
+$\frac{\partial C(q,w,v)}{\partial v}=k^c(q,w,v)$
+
+$- \frac{\partial \pi (q,w,v)}{\partial w}=l^*(P,w,v)$
+
+$- \frac{\partial \pi (q,w,v)}{\partial v}=k^*(P,w,v)$
+
+$\frac{\partial \pi (q,w,v)}{\partial P}=q(P,w,v)$
+
+$Q=nq$
+
+$E[x] = \sum_{i=1}^{n}\pi_ix_i$
+
+$\sigma = \frac{\% \Delta (k/l)}{\% \Delta RTS} = \frac{d(k/l)}{dRTS}*\frac{RTS}{k/l}$

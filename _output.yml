@@ -3,6 +3,7 @@ bookdown::gitbook:
     in_header: [google_analytics.js]
   css: style.css
   split_by: chapter
+  df_print: paged
   config:
     toc:
       collapse: subsection
