@@ -1,10 +1,10 @@
 # South American Production
 
-Over the last twenty years Brazil and Argentina have grown in prominance on the world stage and are currently among the most important growers of soybeans and corn, particularly so for soybeans. 
+Over the last twenty years Brazil and Argentina have grown in prominence on the world stage and are currently among the most important growers of soybeans and corn, particularly so for soybeans. 
 
-In figure 1 we have plotted the production since 1990 of the world's top five producers of corn. Argentina, Brazil, China, the European Union, and the United States round out this group. A clear pattern of increases over time is notable particularly for the U.S., China, and Brazil, generating a dramatic upward trend in the pruduction from this top group. 
+In figure 1 we have plotted the production since 1990 of the world's top five producers of corn. Argentina, Brazil, China, the European Union, and the United States round out this group. A clear pattern of increases over time is notable particularly for the U.S., China, and Brazil, generating a dramatic upward trend in the production from this top group. 
 
-Data for figures 1-4 come from the [USDA FAS World Production Supply and Demand](https://apps.fas.usda.gov/psdonline/app/index.html#/app/downloads) historical datasets for grains and oilseeds.
+Data for figures 1-4 come from the [USDA FAS World Production Supply and Demand](https://apps.fas.usda.gov/psdonline/app/index.html#/app/downloads) historical data-sets for grains and oilseeds.
 
 
 
@@ -193,7 +193,7 @@ s2
 ```
 
 
-Table 2 shows the top ten producers of soybeans in the World. Here we see that Paraguay and Boliva are present in the top ten as well. 
+Table 2 shows the top ten producers of soybeans in the World. Here we see that Paraguay and Bolivia are present in the top ten as well. 
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 library(tidyverse)
@@ -229,7 +229,7 @@ Table 2: Top 10 World Producers of Soybeans, 2017
 
 Since South America experiences summer when we in the North America experience winter and vice versa, North American and South American production is nicely complementary in providing corn and soybeans for the export market. We noted in Chapter 9 and 10 that U.S. corn and soybean exports are at their highest levels during the 2nd quarter of the marketing year - right after harvest. During this time, the planting and growing seasons are underway in South America, and the heavy export season from harvesting the previous crop is winding down. 
 
-Then, South American farmers are havesting during our planting and growing seasons (March through June). 
+Then, South American farmers are harvesting during our planting and growing seasons (March through June). 
 
 The seasonality is a boon for importers because they have the opportunity to buy for seasonally low harvest-time prices twice per year rather than just once per year. 
 
@@ -254,7 +254,7 @@ While figure 8 shows the regional production intensity of first crop corn. Notic
 
 ### Argentina
 
-Argentina is more similar to the U.S. in lattitude, so they are only able to plant a single crop. Planting of corn begins in September and harvest runs from March until May. 
+Argentina is more similar to the U.S. in latitude, so they are only able to plant a single crop. Planting of corn begins in September and harvest runs from March until May. 
 
 ![Figure 9: Regional Argentinian Corn Production Seasons](images\argentina-corn-1.png)
 
