@@ -283,7 +283,7 @@ This brings up a list of reports listed in reverse chronological order by releas
 
 on p 98, table 36 Estimates are given for Planted area. Taking from the October 2017 report. Decimals are marked with ',' and 1,000's are marked with '.' - just the opposite of the convention of most English-speaking traditions. 
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE, rows.print = 100}
+```{r, echo=FALSE, warning=FALSE, message=FALSE, rows.print = 100, cols.print = 6}
 
 name <- 	c("Regions", "Area-Safra-16/17",	"Area-Safra-17/18-Low", "Area-Safra-17/18-High",	
       "Perc-Change-from-16-Low", "Perc-Change-from-16-High", "Yield-Safra-16/17",	"Yield-Safra-17/18", 	
