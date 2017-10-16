@@ -255,21 +255,7 @@ While figure 8 shows the regional production intensity of first crop corn. Notic
 ![Figure 8: Regional Brazillian 1st Crop Corn Production Seasons](images\brazil-corn1-1.png)
 
 
-
-### Argentina
-
-Argentina is more similar to the U.S. in latitude, so they are only able to plant a single crop. Planting of corn begins in September and harvest runs from March until May. 
-
-![Figure 9: Regional Argentinian Corn Production Seasons](images\argentina-corn-1.png)
-
-
-
-Planting of soybeans begins in November and harvest runs from April to May. 
-
-
-![Figure 10: Regional Argentinian Soybean Production Seasons](images\argentina-soy-1.png)
-
-### Where to find information
+#### Where to find information
 
 For information about Brazillian production the [National Supply Company (Conab)](http://www.conab.gov.br/index.php) is the main resource. They publish crop reports monthly, just like the USDA's WASDE report. Typically, the Brazillian report is released a couple of days before the WASDE report, so if there is information from Brazil that will affect world stocks or production, these reports will move prices in the U.S. 
 
@@ -277,11 +263,11 @@ A calendar of release dates for 2016/2017 and 2017/2018 marketing years is found
 
 The monthly crop reports can be found on the [Conab website](http://www.conab.gov.br/index.php). Ask Google to automatically translate the page to English for you. Navigate through the *Produtos e Servicos* menu, through *Crops*, and choose *Harvesting Safra*. 
 
-This brings up a list of reports listed in reverse chronological order by release date. Look for a row of the form **1st Survey - Harvest 2017/2018-Grains**. In the product column will be **Food**. They three kinds of reports, Food (which contains grains and oilseeds like corn and soybeans), Coffee, and Sugar Cane. Since the food report is released once per month, the most recent report should always appear on the first page of the table. 
+This brings up a list of reports listed in reverse chronological order by release date. Look for a row of the form **1st Survey - Harvest 2017/2018-Grains**. In the product column will be **Food**. There are three kinds of reports, Food (which contains grains and oilseeds like corn and soybeans), Coffee, and Sugar Cane. Since the food report is released once per month, the most recent report should always appear on the first page of the table. 
 
-**Area Planted**
+**Area Planted, Yield, and Production**
 
-on p 98, table 36 Estimates are given for Planted area. Taking from the October 2017 report. Decimals are marked with ',' and 1,000's are marked with '.' - just the opposite of the convention of most English-speaking traditions. 
+On p 98, table 36 Estimates are given for area planted to soybeans. Below, we have reproduced table 36 from the October 2017 report. Decimals are marked with ',' and 1,000's are marked with '.' - just the opposite of the convention of most English-speaking traditions. 
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE, rows.print = 100, cols.print = 6}
 
@@ -298,7 +284,49 @@ latest
 
 ```
 
-From the table we learn that soybean plantings are up about 2.7% (1.6% - 3.8% low to high range), but yields are expected to decrease by 8.6%. This leaves productino estimates for the 2017/2018 crop in the range of  -7.1% to -5.1%. 
+From the table we learn that for the country as a whole (bottom row) soybean plantings are up about 2.7% (1.6% - 3.8% low to high range), but yields are expected to decrease by 8.6%. This leaves productino estimates for the 2017/2018 crop in the range of  -7.1% to -5.1%. 
+
+
+
+
+### Argentina
+
+Argentina is more similar to the U.S. in latitude, so they are only able to plant a single crop. Planting of corn begins in September and harvest runs from March until May. 
+
+![Figure 9: Regional Argentinian Corn Production Seasons](images\argentina-corn-1.png)
+
+
+
+Planting of soybeans begins in November and harvest runs from April to May. 
+
+
+![Figure 10: Regional Argentinian Soybean Production Seasons](images\argentina-soy-1.png)
+
+
+ 
+![Figure 11: Regional Argentinian Production of Major Crops](images\argentina-production.png)
+
+|Spanish - English Crop Names | |
+|:----------------------------|:-------------------|
+|Trigo | Wheat  |
+|Cebada | Barley  |
+|Girasol | Sunflower  |
+| Soja | Soybean  |
+| Maiz | Corn | 
+|Sorgo | Sorghum |
+
+
+
+
+ 
+#### Where to find information
+
+
+The Bolsa de Cereales is the grain exhcange in Argentina. They undertake the responsibility of producing crop reports. The reports most closely followed are the Weekly Agricultural Report, which tells the planting or harvest progress, and gives a general update about market conditions. The other report is the Esdtado Y Condition de Cultivos (ECC), which is released once per month. This has more detailed estimates about planting and growing conditions. 
+
+![Figure 12: Location of Reports on Bolsa de Cereales](images\bolsa.png)
+
+
 
 ## Exercises 
 
