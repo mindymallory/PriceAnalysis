@@ -147,4 +147,66 @@ The Bolsa de Cereales is the grain exhcange in Argentina. They undertake the res
 
 ## Exercises 
 
-1. Use Tabula to extract Conab report data from pdf. 
+The exercises for this chapter illustrate four main skills. 
+
+
++ How to use Google Translate to read crop reports in languages other than English.  
+
++ How to use Tabula to extract data from PDF files into CSV files. 
+
++ Do basic operations with the command line prompt.
+
++ How to use Excel's VLOOKUP function. 
+
+We will go to the [CONAB](http://www.conab.gov.br/index.php) website, find crop reports from December 2016, January 2017, and Feburary 2017 - the key months of the 2016 soybean crop in Brazil. Then we will use Tabula to extract the main soybean table (soja) from each report and download into a CSV file. Then we will use the command line to copy the CSV files with each month's soybean table into one file. From there we will use Excel's VLOOKUP function to make a clean time series of the monthly production projections. 
+
+There is a lot of data locked inside PDF files, and after these excercises you have the ability to unlock and analyse them. For example, CONAB does provide annual historical data for their final crop estimates, but they do not provide an archive of the monthly projections in a nice accessible format (CSV files). 
+
+Detailed Instructions:
+
+1. Go to [Tabula](http://tabula.technology/), download the software to your computer, and [open the web app](http://localhost:8080) if does not automatically open in your browser.   
+
+2. Create a new folder in your downloads folder named 'ace427-ch12' or similar.  
+
+3. Go to the [*Crop Surveys*](http://www.conab.gov.br/conteudos.php?a=1253&t=2) CONAB page and use the pagination to find the surveys relesed in December 2016, January 2017, and Feburary 2017 (Don't forget to turn on Google Translate).
+
+*For each report do steps 4, 5 and 6.*
+
+4. Open each survey's PDF file into a new tab, then copy the link and paste it into your Tabula import prompt. 
+
+5. Identify the table that gives expectations for soybeans (soja) area planted, yield, and production. It is usually somewhere betwen table 36-40 and usually found somewhere around p 100. 
+
+6. Drag a rectangle around the table, click *Preview and Export Extracted Data*, then click *Export*. This downloads the selected data into your downloads folder. 
+
+7. After downloading the tables from each of the three reports, open your downloads folder and copy and paste these files the 'ace427-ch12' folder you created earlier. 
+
+8. Follow the youtube tutorials provided below to combine the three CSV files into one (Note that when you use the cd command you will be changing your directory to the 'ace427-ch12' folder that contains our CSV files). 
+
+*Windows users*
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0Xj0qL4WkKk" frameborder="0" allowfullscreen></iframe>
+
+The same steps are found in example 1 of [this](https://www.rondebruin.nl/win/s3/win021.htm) website.
+
+*Mac Users*
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/vmE37e5jTJ0" frameborder="0" allowfullscreen></iframe>  
+
+
+3.  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
