@@ -8,6 +8,8 @@ Over[^thanks] the last twenty years Brazil and Argentina have grown in prominenc
 
 In figure 1 we have plotted the production since 1990 of the world's top five producers of corn. Argentina, Brazil, China, the European Union, and the United States round out this group. A clear pattern of increases over time is notable particularly for the U.S., China, and Brazil, generating a dramatic upward trend in the production from this top group. 
 
+## Production of Corn
+
 Data for figures 1-4 come from the [USDA FAS World Production Supply and Demand](https://apps.fas.usda.gov/psdonline/app/index.html#/app/downloads) historical data-sets for grains and oilseeds.
 
 
@@ -118,6 +120,8 @@ grains %>%
  
 ```
 Table 1: Top 10 World Producers of Corn, 2017
+
+## Production of Soybeans
 
 Now we turn our attention to the soybean market. In figure 3 we present production since 1990 from the top five countries. Here, the importance of Brazil and Argentina is much more obvious. While production in the U.S. has a visible upward trend, Brazil and Argentina are really increasing at a rapid rate. 
 
@@ -255,7 +259,7 @@ While figure 8 shows the regional production intensity of first crop corn. Notic
 ![Figure 8: Regional Brazillian 1st Crop Corn Production Seasons](images\brazil-corn1-1.png)
 
 
-#### Where to find information
+### Where to find information on Brazilian Crops 
 
 For information about Brazillian production the [National Supply Company (Conab)](http://www.conab.gov.br/index.php) is the main resource. They publish crop reports monthly, just like the USDA's WASDE report. Typically, the Brazillian report is released a couple of days before the WASDE report, so if there is information from Brazil that will affect world stocks or production, these reports will move prices in the U.S. 
 
@@ -319,7 +323,7 @@ Planting of soybeans begins in November and harvest runs from April to May.
 
 
  
-#### Where to find information
+### Where to find information on Argentinian Crops
 
 
 The Bolsa de Cereales is the grain exhcange in Argentina. They undertake the responsibility of producing crop reports. The reports most closely followed are the Weekly Agricultural Report, which tells the planting or harvest progress, and gives a general update about market conditions. The other report is the Esdtado Y Condition de Cultivos (ECC), which is released once per month. This has more detailed estimates about planting and growing conditions. 
@@ -376,7 +380,9 @@ The same steps are found in example 1 of [this](https://www.rondebruin.nl/win/s3
 <iframe width="560" height="315" src="https://www.youtube.com/embed/vmE37e5jTJ0" frameborder="0" allowfullscreen></iframe>  
 
 
-3.  
+9. Remove the intermediate column headers, and create a column that identifies the month of the report. 
+
+10. Use VLOOKUP to create a series of the low estimate of total Brazil final production. Do the same for the high estimate. 
 
 
 
