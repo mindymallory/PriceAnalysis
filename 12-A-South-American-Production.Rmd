@@ -382,8 +382,19 @@ The same steps are found in example 1 of [this](https://www.rondebruin.nl/win/s3
 
 9. Remove the intermediate column headers, and create a column that identifies the month of the report. 
 
-10. Use VLOOKUP to create a series of the low estimate of total Brazil final production. Do the same for the high estimate. 
+10. Use Index and functions on arrays to create a series of the low estimate of total Brazil final production. Do the same for the high estimate. 
+    
+![](images\brazil-index-excel.png)
 
+  + Set up a place to put the values we will look up. Put 'Brazil' in cell `N4`.
+    
+  + Use the following index formula to pull the min extimate of production for Brazil. Remember to do `CRTL + SHIFT + RETURN` to convert to an array formula. Drag across columns to fill in the other month estimates. 
+  
+`=INDEX($I$4:$I$75,SMALL(IF($N$4=$A$4:$A$75,ROW($A$4:$A$75)-MIN(ROW($A$4:$A$75))+1),COLUMNS($P4:P4)))`
+
+Note: To look up just one value we would have been able to use the VLOOKUP function, but since we wanted to return multiple values we needed the index function excecuted over an array. 
+
+  + Repeat for the selected states. 
 
 
 
