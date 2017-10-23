@@ -69,7 +69,7 @@ An soybean processer's profit is roughly,
 
 where $q_{oil}$ and $q_{meal}$ are the quantities of oil and meal produced from $q_{soybeans}$. Since the quantities in this profit expression are always in fixed proportion to the amount of soybeans processed, we can replace the quantities with $q_{oil} = 11$ and $q_{meal} = 44$ to get profit per bushel of soybeans processed. 
 
-2. $P_{oil}*11 + P_{meal}*44 - P_{soybean}$
+2. $P_{oil}*11 + P_{meal}*44 - P_{soybean}*1$
 
 Now we are only focused on the price relationship. One consideration we need to adjust for is the units of the prices. Soybean oil is quoted in $\$/lb$ so the $P_{oil}*11$ does not need further adjustment. Soybean meal, however, is quoted in $\$/ton$, so to put the price on a $lbs/bushel$ basis we need to divide by 2000lbs, $P_{meal}*44/2000$ or $P_{meal}*0.022$.
 
@@ -89,15 +89,21 @@ Source: [Barchart.com](www.Barchart.com)
 
 Since soybeans, soybean oil, and soybean meal all have actively traded futures contracts, the oil proccessing GPM calculated with futures prices is widely followed, along with the local crush spread oil processers would earn in their local cash markets. When the Crush Spread is calculated with futures prices instead of spot prices it is sometimes called the 'Board Crush' short-hand for the 'Board of Trade' Crush. Speculators trade this spread by selling (buying) oil and meal and buying (selling) soybeans. Oil processers use the Board Crush to hedge their positions in the cash markets for oil, meal, and soybeans and to 'lock in' processing margins. 
 
+Since in the cash market a soybean crusher buys soybeans and sells meal and oil, to hedge they will buy soybeans and sell meal and oil. 
+
+Notice that this futures spread will make money crushers are losing money in the cash market (as is the design of the hedge), in that the spread makes money if the cost of the business (buying soybeans) becomes higher - relatively speaking - and the revenaue of the business (selling meal and oil) becomes smaller - relatively speaking. 
+
+Now to get the spread right, you need to buy soybeans and sell oil and meal in the correct proportions to mimic the business of crushing soybeans. Recall, 1 bushel of soybeans equals 11 lbs of oil and 44 lbs of meal. There are two versions of the spread that are fairly widely followed, the 1-1-1 spread and the 9-11-10 spread. The 1-1-1 spread is not as accurate in getting the proportions right, but it is easier to remember and implement as a trade. It would be cheaper to implement with brokers who charge commission per contract. 
+
 ### The 1-1-1 Spread
 
-One version of the board spread is called the 1-1-1 spread and it requires placing the following trades: 
+The 1-1-1 spread and it requires placing the following trades: 
 
 - Buy 1 contract soybean oil 
 - Buy 1 contract soybean meal
 - Sell 1 contract soybeans
 
-This position makes money when the spread widens, or oil and meal go up while soybeans goes down. This is called buying the spread. So, to speculate that the soybean crushing industry will become more profitable, these are the trades that will profit if this comes to fruition. 
+This position makes money when the spread widens, or oil and meal go up while soybeans goes down. This is called buying the spread. These trades will profit if soybean crushers profit goes up. Note this is the opposite of what soybean crushers will use to hedge. 
 
 Another version is to sell the spread.
 
@@ -118,7 +124,7 @@ So that 1 contract of soybeans (5,000 bu) will produce
 - $5,000*11 = 55,000$ lbs of soybean oil
 - $5,000*44 = 220,000$ lbs of soybean meal
 
-So the 1-1-1 spread does not represent equivalent quantities of soybeans, oil, and meal. 
+So the 1-1-1 spread does not represent equivalent quantities of soybeans, oil, and meal. It over hedges oil by 5,000 lbs and under hedges meal by 20,000 lbs. 
 
 ### The 9-11-10 Spread
 
@@ -134,7 +140,7 @@ and the quantities of oil and meal represented by 9 and 11 contracts are as foll
 - $9*60,000 = 540,000$ lbs of soybean oil
 - $11*200,000 = 2,200,000$ lbs of soybean meal
 
-So the quantities match except for 10,000 lbs short on soybean oil coverage. 
+So the quantities match except for being under hedged by 10,000 lbs in soybean oil. 
 
 
 
