@@ -80,9 +80,9 @@ So, adjusting equation 2. we get the expression for the **Crush Spread**.
 and this represents the **Gross Processing Margin** (GPM) for the soybean crushing plant. This spread is followed by industry participants as a gauge of profitability in the industry and as a signal of whether to expect expansion or contraction in the crush business. 
 
 
-![Figure 1: Gross Processing Margin Using Nearby Contracts for Soybean Oil, Meal, and Soybeans as of 10/11/2016](images/barchart_crush_spread.png)
+<img src="12-TheSoybeanCrush_files/figure-html/unnamed-chunk-1-1.png" width="672" />
 
-Source: [Barchart.com](www.Barchart.com)
+Source: [Quandl.com](www.Quandl.com)
 
 
 ## The Board Crush
