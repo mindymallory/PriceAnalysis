@@ -183,3 +183,34 @@ A DTN article that has a nice graphic of historical crush margins.
 
 
 ## References
+
+
+
+## Exercises
+
+In this weeks exercises we will put ourselves in the role of risk manager for a commercial soybean crushing facility. Suppose our facility we crush 10,000 bushels of soybeans per month. 
+
+[CSV File with Prices](Excel-files/soy-crush-exercise.csv)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
