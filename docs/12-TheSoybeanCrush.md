@@ -80,7 +80,7 @@ So, adjusting equation 2. we get the expression for the **Crush Spread**.
 and this represents the **Gross Processing Margin** (GPM) for the soybean crushing plant. This spread is followed by industry participants as a gauge of profitability in the industry and as a signal of whether to expect expansion or contraction in the crush business. 
 
 
-<img src="12-TheSoybeanCrush_files/figure-html/unnamed-chunk-1-1.png" width="672" /><img src="12-TheSoybeanCrush_files/figure-html/unnamed-chunk-1-2.png" width="672" />
+<img src="12-TheSoybeanCrush_files/figure-html/unnamed-chunk-1-1.png" width="672" />
 
 Source: [Quandl.com](www.Quandl.com)
 
@@ -164,10 +164,44 @@ A DTN article that has a nice graphic of historical crush margins.
 
 ## Exercises
 
-In this weeks exercises we will put ourselves in the role of risk manager for a commercial soybean crushing facility. Suppose our facility we crush 10,000 bushels of soybeans per month. 
+In this weeks exercises we will put ourselves in the role of risk manager for a commercial soybean crushing facility. Suppose our facility we crush 50,000 bushels of soybeans per month. 
+
+The following file contains crush prices on the forward curve for the first of July, Aug, Sep and Oct of 2017. Also provided are the forward bases for each commodity in each date. 
 
 [CSV File with Prices](Excel-files/soy-crush-exercise.csv)
 
+Recall the product yeilds: 
+
+|Input/Output |   Yield |
+|:------------|:--------|
+|Soybeans     | 1 bu    |
+|Oil          | 11 lbs  |
+|Meal         | 44 lbs  |
+
+And recall a soybean crusher's gross product margin in $'s is 
+
+
+$GPM = P_{oil}/100*11 + P_{meal}*44/2000 - P_{soybean}/100$ 
+
+When oil and soybean prices are in cents, and meal prices are in $/ton.
+
+1.  Now suppose that on *July 3, 2017* you observe the prices (provided in the excel spreadsheet) on the crush forward curve. Create three new columns in N, O, and P for AugGPM, SepGPM, and OctGPM, respectively. Compute the forward gross processing margin on July 3 for Aug, Sep, and Oct expirations. Note that this is just like the flour mill hedging problem from Chapter 4, but there are three products to hedge. 
+
+This is akin to just observing the forward futures prices in the flour mill problem. But in this example we are really concered about the margins in soybean crushing so we have to compute that ourselves. 
+
+2.  Suppose we hedged the forward margins we see offered on the forward curve for Aug. What futures trades do we make?
+
+
+
+3.  In row 9 create headers for a new table similar to the one we used in Ch 4 for the flour mill hedging example. Except here create the following columns: 
+
+Dates, Action in Futures, Action in Cash, Remaining Futures Positions, Net Cost Soybeans (Cash and futures combined)	Net Revanue Oil (Cash and futures combined)	Net Revanue Meal (Cash and Futures Combined)	Hedged Processing Profit	Hedged GPM $/bu. There should be two rows with dates 7/3/2017 and 8/1/2017. 
+
+
+4.  Fill in each cell (except in the first row there is only the futures action cell to fill in).
+
+
+5. What are the things that cause our Hedged GPM to be different than the AugGPM we observed on the futures forward curve on 7/3/2017?
 
 
 
