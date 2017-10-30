@@ -181,7 +181,7 @@ In this chapter's exercises you compute the optimal hedge ratio for using corn c
 
 In a similar manner, we can determine the optimal hedge ratio for hedging DDG sales with corn futures by regressing changes in spot DDG prices on changes in corn futures prices. Open the .csv file provided. 
 
-[Cash Ethanol, DDG, and Corn Prices]("http://mindymallory.github.io/PriceAnalysis/Excel-files/Ethanol-Prices.csv")
+[Cash Ethanol, DDG, and Corn Prices](http://mindymallory.github.io/PriceAnalysis/Excel-files/Ethanol-Prices.csv)
 
 Source: [ISU's ethanol plant profitability model](https://www.extension.iastate.edu/agdm/articles/hof/HofJan08.html)
 
