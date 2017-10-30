@@ -25,7 +25,7 @@
 <meta name="author" content="Mindy L. Mallory">
 
 
-<meta name="date" content="2017-10-26">
+<meta name="date" content="2017-10-30">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -246,10 +246,9 @@ ga('send', 'pageview');
 <li class="chapter" data-level="14.6" data-path="ethanol.html"><a href="ethanol.html#hedging-the-crush-spread"><i class="fa fa-check"></i><b>14.6</b> Hedging the Crush Spread</a></li>
 <li class="chapter" data-level="14.7" data-path="ethanol.html"><a href="ethanol.html#cross-hedging"><i class="fa fa-check"></i><b>14.7</b> Cross Hedging</a><ul>
 <li class="chapter" data-level="14.7.1" data-path="ethanol.html"><a href="ethanol.html#minimize-the-variance-of-cash-flow-with-optimal-hedge-ratio-for-ddgs-and-corn-futures"><i class="fa fa-check"></i><b>14.7.1</b> Minimize the Variance of Cash Flow with Optimal Hedge Ratio for DDGs and Corn Futures</a></li>
-<li class="chapter" data-level="14.7.2" data-path="ethanol.html"><a href="ethanol.html#using-corn-futures-to-cross-hedge-ddg-sales"><i class="fa fa-check"></i><b>14.7.2</b> Using Corn Futures to Cross Hedge DDG Sales</a></li>
 </ul></li>
-<li class="chapter" data-level="14.8" data-path="ethanol.html"><a href="ethanol.html#readings-5"><i class="fa fa-check"></i><b>14.8</b> Readings</a></li>
-<li class="chapter" data-level="14.9" data-path="ethanol.html"><a href="ethanol.html#exercises-8"><i class="fa fa-check"></i><b>14.9</b> Exercises</a></li>
+<li class="chapter" data-level="14.8" data-path="ethanol.html"><a href="ethanol.html#exercises-8"><i class="fa fa-check"></i><b>14.8</b> Exercises</a></li>
+<li class="chapter" data-level="14.9" data-path="ethanol.html"><a href="ethanol.html#readings-5"><i class="fa fa-check"></i><b>14.9</b> Readings</a></li>
 </ul></li>
 <li class="chapter" data-level="15" data-path="cattle-markets-and-the-livestock-crush.html"><a href="cattle-markets-and-the-livestock-crush.html"><i class="fa fa-check"></i><b>15</b> Cattle Markets and the Livestock Crush</a><ul>
 <li class="chapter" data-level="15.1" data-path="cattle-markets-and-the-livestock-crush.html"><a href="cattle-markets-and-the-livestock-crush.html#the-cow-calf-operation"><i class="fa fa-check"></i><b>15.1</b> The Cow-Calf Operation</a><ul>
@@ -514,22 +513,28 @@ ga('send', 'pageview');
 <p><span class="math inline">\(\Delta S(t) = \beta_0 + b\Delta F(t) + \epsilon(t)\)</span></p>
 <p>This means we can use historical prices to estimate the relationship between spot and futures prices, which yields the optimal hedge ratio for hedging the spot price with futures.</p>
 </div>
-<div id="using-corn-futures-to-cross-hedge-ddg-sales" class="section level3">
-<h3><span class="header-section-number">14.7.2</span> Using Corn Futures to Cross Hedge DDG Sales</h3>
-<p>In a similar manner, we can determine the optimal hedge ratio for hedging DDG sales with corn futures by regressing changes in spot DDG prices on changes in corn futures prices. The excercises directs you to work through this example.</p>
-</div>
-</div>
-<div id="readings-5" class="section level2">
-<h2><span class="header-section-number">14.8</span> Readings</h2>
-<ol style="list-style-type: decimal">
-<li><a href="http://www.cmegroup.com/trading/agricultural/files/AC-406_DDG_CornCrush_042010.pdf">Corn for Ethanol Crush Spread by CMEGroup</a></li>
-</ol>
 </div>
 <div id="exercises-8" class="section level2">
-<h2><span class="header-section-number">14.9</span> Exercises</h2>
+<h2><span class="header-section-number">14.8</span> Exercises</h2>
+<p>In this chapter’s exercises you compute the optimal hedge ratio for using corn contracts to hedge DDG sales. Skills learned include:</p>
+<ul>
+<li><p>How to compute an optimal hedge ratio given price data.</p></li>
+<li><p>How to run a regression in Excel.</p></li>
+</ul>
 <ol style="list-style-type: decimal">
 <li>Compute the optimal hedge ratio for DDGs and corn futures.</li>
-<li>Hedge one month’s production of ethanol for a plant that produces 100 millon gallons per year, with constant production throughout the year. Use December 2015 as the purchase date of corn and the sale date of DDGs, and March 2016 for the sale date of ethanol.</li>
+</ol>
+<p>In a similar manner, we can determine the optimal hedge ratio for hedging DDG sales with corn futures by regressing changes in spot DDG prices on changes in corn futures prices. Open the .csv file provided.</p>
+<p><a href="%22http://mindymallory.github.io/PriceAnalysis/Excel-files/Ethanol-Prices.csv%22">Cash Ethanol, DDG, and Corn Prices</a></p>
+<p>Source: <a href="https://www.extension.iastate.edu/agdm/articles/hof/HofJan08.html">ISU’s ethanol plant profitability model</a></p>
+<ol start="2" style="list-style-type: decimal">
+<li>State the trades you should make to hedge one month’s production of ethanol for a plant that produces 100 millon gallons per year, with constant production throughout the year. Assuming we use the cross hedge determined in 1 to hedge the sale of DDGs.</li>
+</ol>
+</div>
+<div id="readings-5" class="section level2">
+<h2><span class="header-section-number">14.9</span> Readings</h2>
+<ol style="list-style-type: decimal">
+<li><a href="http://www.cmegroup.com/trading/agricultural/files/AC-406_DDG_CornCrush_042010.pdf">Corn for Ethanol Crush Spread by CMEGroup</a></li>
 </ol>
 
 </div>

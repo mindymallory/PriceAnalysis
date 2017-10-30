@@ -168,9 +168,28 @@ $\Delta S(t) = \beta_0 + b\Delta F(t) + \epsilon(t)$
 
 This means we can use historical prices to estimate the relationship between spot and futures prices, which yields the optimal hedge ratio for hedging the spot price with futures. 
 
-### Using Corn Futures to Cross Hedge DDG Sales
+## Exercises 
 
-In a similar manner, we can determine the optimal hedge ratio for hedging DDG sales with corn futures by regressing changes in spot DDG prices on changes in corn futures prices. The excercises directs you to work through this example. 
+In this chapter's exercises you compute the optimal hedge ratio for using corn contracts to hedge DDG sales. Skills learned include: 
+
++ How to compute an optimal hedge ratio given price data.  
+
++ How to run a regression in Excel. 
+
+
+1. Compute the optimal hedge ratio for DDGs and corn futures.
+
+In a similar manner, we can determine the optimal hedge ratio for hedging DDG sales with corn futures by regressing changes in spot DDG prices on changes in corn futures prices. Open the .csv file provided. 
+
+[Cash Ethanol, DDG, and Corn Prices]("http://mindymallory.github.io/PriceAnalysis/Excel-files/Ethanol-Prices.csv")
+
+Source: [ISU's ethanol plant profitability model](https://www.extension.iastate.edu/agdm/articles/hof/HofJan08.html)
+
+
+2. State the trades you should make to hedge one month's production of ethanol for a plant that produces 100 millon gallons per year, with constant production throughout the year. Assuming we use the cross hedge determined in 1 to hedge the sale of DDGs. 
+
+
+
 
 
 
@@ -179,8 +198,5 @@ In a similar manner, we can determine the optimal hedge ratio for hedging DDG sa
 
 1. [Corn for Ethanol Crush Spread by CMEGroup](http://www.cmegroup.com/trading/agricultural/files/AC-406_DDG_CornCrush_042010.pdf)
 
-## Exercises 
 
-1. Compute the optimal hedge ratio for DDGs and corn futures.
-2. Hedge one month's production of ethanol for a plant that produces 100 millon gallons per year, with constant production throughout the year. Use December 2015 as the purchase date of corn and the sale date of DDGs, and March 2016 for the sale date of ethanol. 
 
