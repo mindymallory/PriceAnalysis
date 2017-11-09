@@ -106,7 +106,7 @@ Workers at the sale barn bring the pens of calves through the ring[^ring] and bu
 [Cattle Auctioneer - 2012 Drought](https://www.youtube.com/watch?v=Ig514nyWQho)
 
 
-## The Cattle Crush 
+## The Cattle Crush 8-4-2
 
 The large feedlot operations are run by commercial firms with the resources and expertise to engage in sophisticated hedging strategies. This has led to the success of two cattle futures contracts: feeder cattle 50,000 lbs of 'light calves', live cattle 40,000 lbs of fed cattle (1,050 - 1,500 per animal). These two cattle contracts, along with corn futures tracks the profitability of finishing cattle and can be used for hedging purposes. 
 
@@ -136,10 +136,12 @@ John Lawrence at Iowa State examines the historical profitability of backgroundi
 
 ## Exercise
 
-Into an Excel spreadsheet, download futures prices for January 2015 Feeder Cattle futures prices ([CME/FCF2015](https://www.quandl.com/data/CME/FCF2015-Feeder-Cattle-Futures-January-2015-FCF2015)), March 2015 Corn futures prices ([CME/CH2015](https://www.quandl.com/data/CME/CH2015-Corn-Futures-March-2015-CH2015)), and June 2015 Live Cattle futures prices ([CME/LCM2015](https://www.quandl.com/data/CME/LCM2015-Live-Cattle-Futures-June-2015-LCM2015)) from Quandl.com.
+Into an Excel spreadsheet, download futures prices for January 2017 Feeder Cattle futures prices ([CME/FCF2017](https://www.quandl.com/data/CME/FCF2017)), March 2017 Corn futures prices ([CME/CH2017](https://www.quandl.com/data/CME/CH2017)), and June 2017 Live Cattle futures prices ([CME/LCM2017](https://www.quandl.com/data/CME/LCM2017)) from Quandl.com.
 
-1. Suppose you perform risk management for a large feedlot in Western Kansas. You decide on December 1st, 2014 that you will buy 266 feeder cattle on December 20th, 2014 and feed them out to market weight when you will sell them to a packer on May 20, 2015. You need to hedge exposure to the price risk you face in feeding the steers to market weight. 
+1. Suppose you perform risk management for a large feedlot in Western Kansas. You decide on December 1st, 2016 that you will buy 266 feeder cattle on December 20th, 2016 and feed them out to market weight when you will sell them to a packer on May 20, 2015. You need to hedge exposure to the price risk you face in feeding the steers to market weight. 
 
     a. State the futures trades you will make to put on a cattle crush spread and hedge this price risk. Note the contracts bought/sold, and the dates on which you buy/sell to open and sell/buy to close your futures positions. 
-    b. Calculate the gain or loss in your futures position as of May 20, 2015.
+    b. Calculate the gain or loss in your futures position as of May 20, 2015, include changes in the basis in your calculation.
+    c. Calculate the prices paid/recieved in the cash market.
+    d. What was your profit/loss per cwt (hundred weight)?
     c. Describe how this change in value 'hedges' your price exposure in feeding steers to market weight. 
