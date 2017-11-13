@@ -116,7 +116,7 @@ The Live Cattle contract is physically settled, so the small number of deliverie
 
 ### Details of the Spread[^cattlespread]
 
-[^cattlespread]: Much of the information in this section comes from the CMEGroup publication, [An Introduction to Cattle Feeding Spreads](http://www.cmegroup.com/trading/agricultural/files/AC-378_CattleFeedingWhitePaper_r2.pdf)
+[^cattle-spread]: Much of the information in this section comes from the CMEGroup publication, [An Introduction to Cattle Feeding Spreads](http://www.cmegroup.com/trading/agricultural/files/AC-378_CattleFeedingWhitePaper_r2.pdf)
 
 One feeder cattle contract covers about 66 animals (50,000 lbs divided by 750 lbs per animal), and one live cattle futures covers about 32 animals (40,000 lbs divided by 1,250 lbs per animal) so the number of live cattle futures used must double the number of feeder cattle contracts used. 
 
@@ -138,7 +138,7 @@ John Lawrence at Iowa State examines the historical profitability of backgroundi
 
 Into an Excel spreadsheet, download futures prices for January 2017 Feeder Cattle futures prices ([CME/FCF2017](https://www.quandl.com/data/CME/FCF2017)), March 2017 Corn futures prices ([CME/CH2017](https://www.quandl.com/data/CME/CH2017)), and June 2017 Live Cattle futures prices ([CME/LCM2017](https://www.quandl.com/data/CME/LCM2017)) from Quandl.com.
 
-1. Suppose you perform risk management for a large feedlot in Western Kansas. You decide on December 1st, 2016 that you will buy 266 feeder cattle on December 20th, 2016 and feed them out to market weight when you will sell them to a packer on May 20, 2015. You need to hedge exposure to the price risk you face in feeding the steers to market weight. 
+1. Suppose you perform risk management for a large feedlot in Western Kansas. You decide on December 1st, 2016 that you will buy 266 feeder cattle on December 20th, 2016 and feed them out to market weight when you will sell them to a packer on May 20, 2017. You need to hedge exposure to the price risk you face in feeding the steers to market weight. Assume you place the animals at 750 lbs and market them at 1250 lbs. 
 
     a. State the futures trades you will make to put on a cattle crush spread and hedge this price risk. Note the contracts bought/sold, and the dates on which you buy/sell to open and sell/buy to close your futures positions. 
     b. Calculate the gain or loss in your futures position as of May 20, 2015, include changes in the basis in your calculation.

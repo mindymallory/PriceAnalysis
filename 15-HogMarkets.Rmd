@@ -49,15 +49,15 @@ Commercial hog operations keep feeder pigs in barns or 'hog houses' that hold hu
 
 ## Waste Management
 
-Since a large number of hogs are housed together in close confinement, special systems to manage the waste are employed. Usually, the floors of the hog houses are slatted so the manure falls through the floor to a temporary chamber below. The waste is continually pumped to waste management lagoons located near the hog house(s). 
+Since a large number of hogs are housed together in close confinement, special systems to manage the waste are employed. Usually, the floors of the hog houses are slatted so the manure falls through the floor to a temporary chamber below. The waste is continually pumped to waste management lagoons located near (or under) the hog house(s). 
 
 ## Geography of Hog Production
 
-Hogs historically have been produced in locations close to corn and soybean production. Corn belt states historically have been the dominant producers. Recently, production in the southeast region of the United States has increased rapidly. Figure 1 show the top 8 producing states as of 2013, with figures for 2008-2013 displayed. North Caroline is the only top hog producing state not in the corn belt. 
+Hogs historically have been produced in locations close to corn and soybean production. Corn belt states historically have been the dominant producers. Recently, production in the southeast region of the United States has increased rapidly. Figure 1 show the top 8 producing states as of 2013, with figures for 2008-2013 displayed. North Carolina is the only top hog producing state not in the corn belt. 
 
 ![Figure 1: Top 8 Hog Producing States in 2013](images/hogstates.png)
 
-Source: Pork and Swine Industry and Trade Summary, USITC [@usitctrade] 
+Source: [Pork and Swine Industry and Trade Summary](pdf-Readings/pork_and_swine_summary.pdf), USITC [@usitctrade] 
 
 Figure 2 show hog and pig sales as a percent of agricultural sales. 
 

@@ -25,7 +25,7 @@
 <meta name="author" content="Mindy L. Mallory">
 
 
-<meta name="date" content="2017-11-09">
+<meta name="date" content="2017-11-13">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -262,7 +262,7 @@ ga('send', 'pageview');
 <li class="chapter" data-level="15.4" data-path="cattle-markets-and-the-livestock-crush.html"><a href="cattle-markets-and-the-livestock-crush.html#beef-packing-plants"><i class="fa fa-check"></i><b>15.4</b> Beef Packing Plants</a></li>
 <li class="chapter" data-level="15.5" data-path="cattle-markets-and-the-livestock-crush.html"><a href="cattle-markets-and-the-livestock-crush.html#cattle-auctions"><i class="fa fa-check"></i><b>15.5</b> Cattle Auctions</a></li>
 <li class="chapter" data-level="15.6" data-path="cattle-markets-and-the-livestock-crush.html"><a href="cattle-markets-and-the-livestock-crush.html#the-cattle-crush-8-4-2"><i class="fa fa-check"></i><b>15.6</b> The Cattle Crush 8-4-2</a><ul>
-<li class="chapter" data-level="15.6.1" data-path="cattle-markets-and-the-livestock-crush.html"><a href="cattle-markets-and-the-livestock-crush.html#details-of-the-spreadcattlespread"><i class="fa fa-check"></i><b>15.6.1</b> Details of the Spread</a></li>
+<li class="chapter" data-level="15.6.1" data-path="cattle-markets-and-the-livestock-crush.html"><a href="cattle-markets-and-the-livestock-crush.html#details-of-the-spreadcattlespread"><i class="fa fa-check"></i><b>15.6.1</b> Details of the Spread[^cattlespread]</a></li>
 </ul></li>
 <li class="chapter" data-level="15.7" data-path="cattle-markets-and-the-livestock-crush.html"><a href="cattle-markets-and-the-livestock-crush.html#external-readings"><i class="fa fa-check"></i><b>15.7</b> External Readings</a></li>
 <li class="chapter" data-level="15.8" data-path="cattle-markets-and-the-livestock-crush.html"><a href="cattle-markets-and-the-livestock-crush.html#exercise"><i class="fa fa-check"></i><b>15.8</b> Exercise</a></li>
@@ -430,7 +430,7 @@ ga('send', 'pageview');
 <p>The Feeder Cattle contract is financially settled, which means it is not physically settled. Futures settle to the <a href="http://www.cmegroup.com/market-data/reports/cash-settled-commodity-index-prices.html">CME Feeder Cattle Index</a>, based on cash sales reported to the USDA Ag Market News service in active cash cattle markets.</p>
 <p>The Live Cattle contract is physically settled, so the small number of deliveries make the final trades in the futures contract grounded in real prices. Quality is adjusted using the Live Equivalent Choice-Select Spread. Details of a deliverable unit can be found in the <a href="http://www.cmegroup.com/rulebook/CME/II/100/101/101.pdf">CME Rulebook</a></p>
 <div id="details-of-the-spreadcattlespread" class="section level3">
-<h3><span class="header-section-number">15.6.1</span> Details of the Spread<a href="#fn14" class="footnoteRef" id="fnref14"><sup>14</sup></a></h3>
+<h3><span class="header-section-number">15.6.1</span> Details of the Spread[^cattlespread]</h3>
 <p>One feeder cattle contract covers about 66 animals (50,000 lbs divided by 750 lbs per animal), and one live cattle futures covers about 32 animals (40,000 lbs divided by 1,250 lbs per animal) so the number of live cattle futures used must double the number of feeder cattle contracts used.</p>
 <p>Using the rule of thumb that 6 lbs of feed produces 1 lb of gain and beef cattle feed is about 75% corn, it will take 198,000 lbs of feed (148,000 lbs of corn) to grow 66 animals from 750 lbs to 1,250 lbs. This is about 2,651 bushels of corn. Since once futures contract is 5,000 bushels, an 8-4-2 spread is often used: 8 contracts Live Cattle, 4 contracts Feeder Cattle, and 2 contracts Corn futures. This spread hedges approximately 266 animals placed at 750 lbs, marketed at 1,250 lbs, and fed 10,678 bushels of corn.</p>
 <p>Since finishing cattle takes three to six months, timing of contract expiration must be considered carefully. In general one should buy feeder cattle contracts that mature 6 months prior to the maturity of live cattle contracts sold, and corn contracts should be sold in between these two dates. For example Sell 8 June live cattle contracts, buy 4 January feeder cattle contracts, and buy 2 March corn contracts. In general, the timing of the contracts should match the timing of transactions in the cash market as closely as possible.</p>
@@ -445,7 +445,7 @@ ga('send', 'pageview');
 <h2><span class="header-section-number">15.8</span> Exercise</h2>
 <p>Into an Excel spreadsheet, download futures prices for January 2017 Feeder Cattle futures prices (<a href="https://www.quandl.com/data/CME/FCF2017">CME/FCF2017</a>), March 2017 Corn futures prices (<a href="https://www.quandl.com/data/CME/CH2017">CME/CH2017</a>), and June 2017 Live Cattle futures prices (<a href="https://www.quandl.com/data/CME/LCM2017">CME/LCM2017</a>) from Quandl.com.</p>
 <ol style="list-style-type: decimal">
-<li><p>Suppose you perform risk management for a large feedlot in Western Kansas. You decide on December 1st, 2016 that you will buy 266 feeder cattle on December 20th, 2016 and feed them out to market weight when you will sell them to a packer on May 20, 2015. You need to hedge exposure to the price risk you face in feeding the steers to market weight.</p>
+<li><p>Suppose you perform risk management for a large feedlot in Western Kansas. You decide on December 1st, 2016 that you will buy 266 feeder cattle on December 20th, 2016 and feed them out to market weight when you will sell them to a packer on May 20, 2017. You need to hedge exposure to the price risk you face in feeding the steers to market weight. Assume you place the animals at 750 lbs and market them at 1250 lbs.</p>
 <ol style="list-style-type: lower-alpha">
 <li>State the futures trades you will make to put on a cattle crush spread and hedge this price risk. Note the contracts bought/sold, and the dates on which you buy/sell to open and sell/buy to close your futures positions.</li>
 <li>Calculate the gain or loss in your futures position as of May 20, 2015, include changes in the basis in your calculation.</li>
@@ -463,7 +463,6 @@ ga('send', 'pageview');
 <li id="fn11"><p>For example, <a href="http://www.juddranch.com/">Judd Ranch</a> in Pomona, KS, and <a href="http://www.pvfangus.com/">Prairie View Farms</a> in Gridley, IL.<a href="cattle-markets-and-the-livestock-crush.html#fnref11">↩</a></p></li>
 <li id="fn12"><p>Most of the information in this section is taken from the <a href="http://www.beefusa.org/uDocs/Feedlot%20finishing%20fact%20sheet%20FINAL_4%2026%2006.pdf">Feedlot Finishing Cattle Fact Sheet</a> published by the Beef Checkoff program.<a href="cattle-markets-and-the-livestock-crush.html#fnref12">↩</a></p></li>
 <li id="fn13"><p>The ring is the small pen into which the cattle are brought in front of the audience of buyers.<a href="cattle-markets-and-the-livestock-crush.html#fnref13">↩</a></p></li>
-<li id="fn14"><p>Much of the information in this section comes from the CMEGroup publication, <a href="http://www.cmegroup.com/trading/agricultural/files/AC-378_CattleFeedingWhitePaper_r2.pdf">An Introduction to Cattle Feeding Spreads</a><a href="cattle-markets-and-the-livestock-crush.html#fnref14">↩</a></p></li>
 </ol>
 </div>
             </section>

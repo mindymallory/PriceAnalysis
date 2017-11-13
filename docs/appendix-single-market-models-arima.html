@@ -25,7 +25,7 @@
 <meta name="author" content="Mindy L. Mallory">
 
 
-<meta name="date" content="2017-11-09">
+<meta name="date" content="2017-11-13">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -262,7 +262,7 @@ ga('send', 'pageview');
 <li class="chapter" data-level="15.4" data-path="cattle-markets-and-the-livestock-crush.html"><a href="cattle-markets-and-the-livestock-crush.html#beef-packing-plants"><i class="fa fa-check"></i><b>15.4</b> Beef Packing Plants</a></li>
 <li class="chapter" data-level="15.5" data-path="cattle-markets-and-the-livestock-crush.html"><a href="cattle-markets-and-the-livestock-crush.html#cattle-auctions"><i class="fa fa-check"></i><b>15.5</b> Cattle Auctions</a></li>
 <li class="chapter" data-level="15.6" data-path="cattle-markets-and-the-livestock-crush.html"><a href="cattle-markets-and-the-livestock-crush.html#the-cattle-crush-8-4-2"><i class="fa fa-check"></i><b>15.6</b> The Cattle Crush 8-4-2</a><ul>
-<li class="chapter" data-level="15.6.1" data-path="cattle-markets-and-the-livestock-crush.html"><a href="cattle-markets-and-the-livestock-crush.html#details-of-the-spreadcattlespread"><i class="fa fa-check"></i><b>15.6.1</b> Details of the Spread</a></li>
+<li class="chapter" data-level="15.6.1" data-path="cattle-markets-and-the-livestock-crush.html"><a href="cattle-markets-and-the-livestock-crush.html#details-of-the-spreadcattlespread"><i class="fa fa-check"></i><b>15.6.1</b> Details of the Spread[^cattlespread]</a></li>
 </ul></li>
 <li class="chapter" data-level="15.7" data-path="cattle-markets-and-the-livestock-crush.html"><a href="cattle-markets-and-the-livestock-crush.html#external-readings"><i class="fa fa-check"></i><b>15.7</b> External Readings</a></li>
 <li class="chapter" data-level="15.8" data-path="cattle-markets-and-the-livestock-crush.html"><a href="cattle-markets-and-the-livestock-crush.html#exercise"><i class="fa fa-check"></i><b>15.8</b> Exercise</a></li>
@@ -438,7 +438,7 @@ ga('send', 'pageview');
 <div id="lag-length" class="section level2">
 <h2><span class="header-section-number">19.4</span> Lag Length</h2>
 <p>You may be wondering at this point if it would be useful to try including more lags in the regression equation; perhaps we will find longer lag lengths that seem to matter in forecasting corn price returns. Usually, if lags have predictive power, the strongest effects are in the nearest lags. So adding lags to the <span class="math inline">\(AR(.)\)</span> model is unlikely to help.</p>
-<p>Still, as a practical matter, lag length must be selected before estimating an <span class="math inline">\(AR(p)\)</span> model. If we were using a more advanced statistical package, we could use Information Criterion<a href="#fn17" class="footnoteRef" id="fnref17"><sup>17</sup></a> to select the optimal lag length, but like unit root tests, it is not convenient to implement in Excel so we will not cover Information Criterion.</p>
+<p>Still, as a practical matter, lag length must be selected before estimating an <span class="math inline">\(AR(p)\)</span> model. If we were using a more advanced statistical package, we could use Information Criterion<a href="#fn16" class="footnoteRef" id="fnref16"><sup>16</sup></a> to select the optimal lag length, but like unit root tests, it is not convenient to implement in Excel so we will not cover Information Criterion.</p>
 <p>The intuition of selecting a lag length by Information Criterion is simple enough, though. Basically, a model with a large number of lags is estimated. The longest lags are then sequentially removed one by one, until explanatory power is detrimentally affected by removing a lag. That determines lag length.</p>
 <p>As a rough substitute, one could estimate an <span class="math inline">\(AR(p)\)</span> model for large <span class="math inline">\(p\)</span>. Then sequentially remove the longest lag until the likelihood decreases; or until the F-statistic is dramatically reduced by eliminating lagged variables. In practice, we will be lucky to find any statistically significant coefficients on the lags, and the nearest lags will be most likely to be significant, so a small number of lags will usually be sufficient.</p>
 </div>
@@ -484,6 +484,9 @@ ga('send', 'pageview');
 <p>Fama, Eugene F. 1970. “Efficient Capital Markets: A Review of Theory and Empirical Work*.” <em>The Journal of Finance</em> 25 (2). Wiley Online Library: 383–417.</p>
 </div>
 <div>
+<p>Giamalva, John. 2014. “Pork and Swine Industry and Trade Summary.” United States International Trade Commission.</p>
+</div>
+<div>
 <p>Good, Darrel, and Scott Irwin. 2011. <em>USDA Corn and Soybean Acreage Estimates and Yield Forecasts: Dispelling Myths and Misunderstandings</em>. Marketing and Outlook Briefs March MOBR 11-02. Department of Agricultural; Consumer Economics, University of Illinois.</p>
 </div>
 <div>
@@ -522,11 +525,10 @@ ga('send', 'pageview');
 
 
 
-
 <div class="footnotes">
 <hr />
-<ol start="17">
-<li id="fn17"><p>Wikipedia has good articles for <a href="https://en.wikipedia.org/wiki/Akaike_information_criterion">AIC</a> and <a href="https://en.wikipedia.org/wiki/Bayesian_information_criterion">BIC</a><a href="appendix-single-market-models-arima.html#fnref17">↩</a></p></li>
+<ol start="16">
+<li id="fn16"><p>Wikipedia has good articles for <a href="https://en.wikipedia.org/wiki/Akaike_information_criterion">AIC</a> and <a href="https://en.wikipedia.org/wiki/Bayesian_information_criterion">BIC</a><a href="appendix-single-market-models-arima.html#fnref16">↩</a></p></li>
 </ol>
 </div>
             </section>
