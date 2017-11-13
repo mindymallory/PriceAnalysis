@@ -5,7 +5,7 @@
 
 This chapter covers basic hog production, industry structure, and marketing practices, with an emphasis on how these affect hog prices. The hog market has undergone significant changes in industry organization in recent history. The industry used to be very unconcentrated with large numbers of independently owned and operated small and medium sized farms. Recently, the industry has trended toward more and more concentration in ownership, contracting and marketing agreements between owners and operators, and vertical integration in structure. This is in contrast to the beef cattle market, where ownership remains unconcentrated until the final finishing stage of produciton. 
 
-[Smithfield Videos of Production Stages](http://www.murphybrownllc.com/contract-growing/hog-production/)
+[Smithfield Videos of Production Stages](https://www.youtube.com/playlist?list=PL6B939D758396045B)
 
 ## Definitions 
 
@@ -45,7 +45,7 @@ Sows have 8-12 pigets per litter, and the piglets stay with their mothers for 2-
 
 Commercial hog operations keep feeder pigs in barns or 'hog houses' that hold hundreds of animals divided into smaller pens. Hogs are fed a ration of primarily corn and soybean meal. They require feed that contians a high quality protien and digestible amino acids, specifically lysine. Lysine is the amino acid that is most likely to be deficient in a corn-soybean diet, so it is usually supplemented. With the rise of ethanol production, distillers dried grains are utilized for both calories and protien, but not usually at higher than 30% of the ration. Utilizing higher proportions of distillers grains causes the carcass fat to be too soft.
 
-[Images of Hog Houses](https://www.google.com/search?q=hog+houses&espv=2&biw=1920&bih=1075&source=lnms&tbm=isch&sa=X&ved=0CAYQ_AUoAWoVChMIiLHMk_mayQIVBtgeCh3Jyweb)
+
 
 ## Waste Management
 
@@ -63,9 +63,9 @@ Figure 2 show hog and pig sales as a percent of agricultural sales.
 
 ![Figure 2: Hog and Pig Sales as a percent of Agricultural Sales](images/hogprodvaluecounty.png)
 
-Source: USDA NASS 2012 Census Highlights [@usdacensus]
+Source: [USDA NASS 2012 Census Highlights](pdf-Readings/12CensusHighlightsHogs.pdf) [@usdacensus]
 
-[See some Hog Production Operations](https://www.google.com/maps/place/Hardin+County,+IA/@42.3833668,-93.3907209,60627m/data=!3m2!1e3!4b1!4m2!3m1!1s0x87ee2ed39f2db5df:0x67a785cf003d5369!6m1!1e1)
+[See some Hog Production Operations](https://www.google.com/maps/place/Hardin+County,+IA/@42.3833668,-93.3907209,60627m/data=!3m2!1e3!4b1!4m2!3m1!1s0x87ee2ed39f2db5df:0x67a785cf003d5369!6m1!1e1) in Hardin County, Iowa's largest hog producing county. 
 
 ## Industry Structure
 
