@@ -5,7 +5,12 @@
 
 This chapter covers basic hog production, industry structure, and marketing practices, with an emphasis on how these affect hog prices. The hog market has undergone significant changes in industry organization in recent history. The industry used to be very unconcentrated with large numbers of independently owned and operated small and medium sized farms. Recently, the industry has trended toward more and more concentration in ownership, contracting and marketing agreements between owners and operators, and vertical integration in structure. This is in contrast to the beef cattle market, where ownership remains unconcentrated until the final finishing stage of produciton. 
 
+
+To get a sense of modern hog production practices, I recommend watching videos produced by Smithfield Foods subsidiary Muphey Brown, LLC. In the linked Youtube playlist, watch the 'Wean-to-finish' video, the 'Environmental Protection' video, and the 'Animal Care' video. 
+
 [Smithfield Videos of Production Stages](https://www.youtube.com/playlist?list=PL6B939D758396045B)
+
+
 
 ## Definitions 
 
@@ -35,9 +40,9 @@ First, we begin by introucing specialized nomenclature used in the industry.
 
 ## Gestation and Farrowing
 
-The gestation period for a sow is 114 days or 16 weeks. Sows are usually kept in a specialized barn for farrowing where special care can be given to the sow and the new piglets. This has usually meant keeping sows in individual stalls (often referred to as 'gestation crates'). There has been a movement among animal rights activists to end the practice of using individual stalls and moving toward group housing for sows preparring for farrowing. This movement has prompted several large producers to change production practices and large consumers of pork to seek pork suppliers who do not use individual sow stalls.  In the European Union, [individual stalls are not allowed after the fourth week of pregnancy](pdf-readings/EUGestBan13.pdf) [@eugestation], the practice is banned in Canada , and in the US several states have banned their use.  
+The gestation period for a sow is 114 days or 16 weeks. Sows are usually kept in a specialized barn for farrowing where special care can be given to the sow and the new piglets. This has historically meant keeping sows in individual stalls. There has been a movement among animal rights activists to end the practice of using individual stalls and moving toward group housing for sows preparring for farrowing. This movement has prompted several large producers to change production practices and large consumers of pork to seek pork suppliers who do not use individual sow stalls.  In the European Union, [individual stalls are not allowed after the fourth week of pregnancy](pdf-Readings/EUGestBan13.pdf) [@eugestation], the practice is banned in Canada, and in the US several states have banned their use. Smithfield Foods, one of the largest U.S. pork producers, has commited to converting all company owned farms to [group housing for pregnant sows by 2017](pdf-Readings/smithfield-2014report.pdf), and it is putting pressure on contract growers to convert as well, suggesting production contracts might not be renewed with growers who    
 
-The industry began using individual stalls because hogs are aggressive animals that will fight with, and often injure one another. If one animal recieved an injury that results in a bloody wound, the other hogs will become very aggressive and sometimes kill the wounded hog if the the wounded animal is not isolated. The individual stalls solve this problem, but they are quite cramped. Given the public pressure, the industry trend is to find alternative solutions to the aggression problem without relegating sows to tight quarters in the individual stalls. 
+The industry began using individual stalls because hogs are aggressive animals that will fight with, and often injure one another. If one animal recieved an injury that results in a bloody wound, the other hogs will become very aggressive and sometimes kill the wounded hog if the the wounded animal is not isolated. The individual stalls solve this problem, but they are quite cramped. Purdue University article about [gestation and farrowing crates](http://www.ansc.purdue.edu/faen/gest%20crates.html).
 
 Sows have 8-12 pigets per litter, and the piglets stay with their mothers for 2-3 weeks before they are weaned. Sows generally have approximately 2 litters per year and breeding sows are replaced on average after 3-4 litters. 
 
