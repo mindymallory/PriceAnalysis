@@ -120,7 +120,7 @@ In the exercises for this chapter we will use some of the time-series econometri
 
 Spoiler: They usually have very little predictive power. If returns were easy to predict based on several previous returns, we could all be rich. But alas, it is not easy to get rich forecasting prices. 
 
-1. Open up the excel file linked [here](Excel-files/LeanHogs.xlsx).  
+1. Open up the excel file linked [here](Excel-files/LeanHogs.xlsx) containing nearby lean hogs prices from the January 2010 to November 14, 2017.  
 
 2. Create colum of percent returns in column C using the formula $\ln{p_{t+1}} - \ln{p_{t}}$.
 

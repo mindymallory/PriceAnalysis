@@ -80,9 +80,8 @@ ga('send', 'pageview');
 <li><a href="./">Price Analysis</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
-<li class="chapter" data-level="" data-path="about-the-author.html"><a href="about-the-author.html"><i class="fa fa-check"></i>About the Author</a><ul>
-<li class="chapter" data-level="" data-path="about-the-author.html"><a href="about-the-author.html#contact"><i class="fa fa-check"></i>Contact</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#contact"><i class="fa fa-check"></i>Contact</a></li>
 </ul></li>
 <li class="chapter" data-level="1" data-path="grain-and-oilseed-markets.html"><a href="grain-and-oilseed-markets.html"><i class="fa fa-check"></i><b>1</b> Grain and Oilseed Markets</a><ul>
 <li class="chapter" data-level="1.1" data-path="grain-and-oilseed-markets.html"><a href="grain-and-oilseed-markets.html#field-corn"><i class="fa fa-check"></i><b>1.1</b> Field Corn</a><ul>
@@ -190,7 +189,8 @@ ga('send', 'pageview');
 <li class="chapter" data-level="9.5.1" data-path="forecasting-use-of-corn.html"><a href="forecasting-use-of-corn.html#food-seed-and-industrial"><i class="fa fa-check"></i><b>9.5.1</b> Food, Seed, and Industrial</a></li>
 <li class="chapter" data-level="9.5.2" data-path="forecasting-use-of-corn.html"><a href="forecasting-use-of-corn.html#exports-1"><i class="fa fa-check"></i><b>9.5.2</b> Exports</a></li>
 <li class="chapter" data-level="9.5.3" data-path="forecasting-use-of-corn.html"><a href="forecasting-use-of-corn.html#daily-reports"><i class="fa fa-check"></i><b>9.5.3</b> Daily Reports</a></li>
-<li class="chapter" data-level="9.5.4" data-path="forecasting-use-of-corn.html"><a href="forecasting-use-of-corn.html#feed-and-residual-1"><i class="fa fa-check"></i><b>9.5.4</b> Feed and Residual</a></li>
+<li class="chapter" data-level="9.5.4" data-path="forecasting-use-of-corn.html"><a href="forecasting-use-of-corn.html#weekly-reports"><i class="fa fa-check"></i><b>9.5.4</b> Weekly Reports</a></li>
+<li class="chapter" data-level="9.5.5" data-path="forecasting-use-of-corn.html"><a href="forecasting-use-of-corn.html#feed-and-residual-1"><i class="fa fa-check"></i><b>9.5.5</b> Feed and Residual</a></li>
 </ul></li>
 <li class="chapter" data-level="9.6" data-path="forecasting-use-of-corn.html"><a href="forecasting-use-of-corn.html#readings-3"><i class="fa fa-check"></i><b>9.6</b> Readings</a></li>
 </ul></li>
@@ -507,7 +507,7 @@ ga('send', 'pageview');
 <p>In the exercises for this chapter we will use some of the time-series econometric techniques discussed in Appendix 18 and 19. Appendix 18 discusses the log-normal price model and how first differences of logged prices are typically used when conducting a time series econometric analysis with non-statioanary price data (price data often, but not always, is non-stationary). Then Appendix 19 discusses the AR(p) regression model. This model will be successful if past returns have any significant predictive power for future returns.</p>
 <p>Spoiler: They usually have very little predictive power. If returns were easy to predict based on several previous returns, we could all be rich. But alas, it is not easy to get rich forecasting prices.</p>
 <ol style="list-style-type: decimal">
-<li><p>Open up the excel file linked <a href="Excel-files/LeanHogs.xlsx">here</a>.</p></li>
+<li><p>Open up the excel file linked <a href="Excel-files/LeanHogs.xlsx">here</a> containing nearby lean hogs prices from the January 2010 to November 14, 2017.</p></li>
 <li><p>Create colum of percent returns in column C using the formula <span class="math inline">\(\ln{p_{t+1}} - \ln{p_{t}}\)</span>.</p></li>
 <li><p>Create three lags of percent returns in columns D, E, and F. Notice that when we do the econometric estimation, we will have to start in row 6 where we have data for the return and all three lags. In econometric speak, we have lost four degrees of freedom by generating the returns, and the three lags of returns.</p></li>
 <li><p>Click <em>Data</em>, then <em>Data Analysis</em>, then <em>Regression</em>, then <em>OK</em>.</p></li>
