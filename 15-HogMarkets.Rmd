@@ -116,7 +116,45 @@ Concentration in the hog industry reduced the need for the pork belly contract i
 
 ## Exercises 
 
-In the exercises for this chapter we will use some of the time-series econometric techniques discussed in Appendix 18 and 19.
+In the exercises for this chapter we will use some of the time-series econometric techniques discussed in Appendix 18 and 19. Appendix 18 discusses the log-normal price model and how first differences of logged prices are typically used when conducting a time series econometric analysis with non-statioanary price data (price data often, but not always, is non-stationary). Then Appendix 19 discusses the AR(p) regression model. This model will be successful if past returns have any significant predictive power for future returns.  
+
+Spoiler: They usually have very little predictive power. If returns were easy to predict based on several previous returns, we could all be rich. But alas, it is not easy to get rich forecasting prices. 
+
+1. Open up the excel file linked [here](Excel-files/LeanHogs.xlsx).  
+
+2. Create colum of percent returns in column C using the formula $\ln{p_{t+1}} - \ln{p_{t}}$.
+
+3. Create three lags of percent returns in columns D, E, and F. Notice that when we do the econometric estimation, we will have to start in row 6 where we have data for the return and all three lags. In econometric speak, we have lost four degrees of freedom by generating the returns, and the three lags of returns.   
+
+4. Click *Data*, then *Data Analysis*, then *Regression*, then *OK*.  
+
+5. Select column C for the *Input Y Range*, and columns D through F for the *Input X Range* from row 6 to 1976. Select *Output Range* somewhere near the bottom of your data. Click *OK*. This regression is an AR(3) since we are using three lags of percent returns to forecast price returns.  
+
+Notice that the lagged returns are not statistically significant. We will go ahead with the forecasting exercise anyway, to illustrate how it is done. 
+
+6. Extend the Dates through 11/21/2017. We are going to make a 7 day ahead forecast using our AR(3) model of price returns.  
+
+7. Extend the lags down one row into row 1977. 
+
+Next we will use the regression coeficients and the last days returns (which we just brought down to row 1977) to generate a forecast for 11/15/1977 returns based on the AR(3) model. 
+
+8. In C1977 put in the following formula `= Intercept + XVariable1*Return.L1 + XVariable2*Return.L2 + XVariable3*Return.L3`. 
+
+9. Then extend the formula in C through F down through row 1983. Now we have our forecasts in column C.  
+
+In columns G and H, create lower and upper 95% Confidence intervals around the forecasts.  
+
+10. In column G the formula for lower bound of 95% confidence interval is `= forecast + T.INV(0.025, df)*StandardErrorRegression`. Which finds the 2.5 percentile of a t distribution with standard error equal to the standard error of the regression centered around the forecast value. This is the lower bound of the 95% confidence interval. 
+
+11. In column H the formula for upper bound of the 95% confidence interbal is `= forecast - T.INV(0.025, df)*StandardErrorRegression`. Which finds the 97.5 percentile ofa t distribuiton with standard error equal to the standard error of the regression centered around the forecast value. This is the upper bound of the 95% confidence interval. 
+
+12. Plot the **Actual Returns**, the **Forecast Returns**, the **Upper 95% CI**, and the **Lower 95% CI** as separate series. 
+
+Notice how the forecast values are very close to the unconditional mean (which is nearly 0), while the confidence interval is very wide. You could not make any money trading with this forecasting model. 
+
+
+
+
 
 
 

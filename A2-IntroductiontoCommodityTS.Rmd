@@ -171,7 +171,7 @@ If your time series data are non-stationary (have a unit root), then typically t
 
 In sum, the beginning of any time series data analysis consists of the following workflow. 
 
-![Single Price Series Time Series Workflow](images/ts-workflow.png)
+![Figure 11: Single Price Series Time Series Workflow](images/ts-workflow.png)
 
 ## Exercises
 
