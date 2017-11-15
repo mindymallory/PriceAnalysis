@@ -124,6 +124,8 @@ Figure 7 motivates the most common 'fix' when price data appear to be non-statio
 
 The only problem with the random walk model in terms of understanding stationarity of prices is that there is nothing preventing the random walk model from producing negative prices. Since negative prices are, generally, impossible, the standard random walk model does not work very well for prices. A simple modification will solve this problem, however.
 
+
+
 ### The Log-normal Price Model. 
 
 If we modify the random walk model as follows, we guarantee a model that will produce non-negative prices. 
@@ -156,14 +158,20 @@ In figure 10 the log-differences of the nearby corn futures price series (shown 
 
 ![Figure 10: Percent Change in Nearby Corn Futures Prices 9/2/2014-8/31/2015](Excel-files/IntroductiontoCommodityTS-Nearby_construct_files/image002.png)
 
-## Efficient Market Hypothesis
 
-The Efficient Market Hypothesis (EMH) states that all the information available regarding an asset is incorporated into its price [@fama1970efficient]. If the EMH were true, forecasting would be a hopeless endeavor because one could never use current and past information to predict future prices - as in the Log-normal price model. There is a large debate about the whether or not this hypothesis is true, or how and when it deviates from being true. 
+## Time Series Econometrics Technical Details
 
-While a large literature in finance argues that it is not strictly true, markets are 'close to efficient' most of the time. I say this because making a forecast that one can actually profitably trade with is difficult. We will explore several forecasting models in the subsequent chapters, and we will find it difficult to find a forecasting model were our 95% confidence interval around our forecast of percent return does not contain 0.0%. If one cannot produce a forecasting model that does that, your model is not giving a clear 'buy' or 'sell' signal. 
+It turns out that if data are non-stationary and you try to run a typical OLS regression with the data in levels, the regression will be what is call *Super Consistent*. Practically, this means no matter what you put on the left hand side and right hand side of the regression, everything will appear statistically significant with a regular t-test. The relationships however, may just be spurious and not meaningful. 
 
+In time series econometrics the first thing you have to do is understand whether or not your data are stationary or not. Data that are non-stationary are said to have a *unit root*. Data is typically tested for stationarity versus unit root with an Augmented Dickey Fuller test (or one of several other unit root tests).
 
+For a deeper discussion of how to implement these tests, please see [Primer for Time Series Econometrics in R](http://mindymallory.com/R-Companion-Price-Analysis/) chapter 4. 
 
+If your time series data are non-stationary (have a unit root), then typically taking the first difference of logged prices (as shown in equation 7) will result in a stationary time series. This means transforming your data to percent returns (thats the same thing as first difference of logged prices) usually produces a stationary time series on which you can safely run typical regressions. 
+
+In sum, the beginning of any time series data analysis consists of the following workflow. 
+
+![Single Price Series Time Series Workflow](images/ts-workflow.png)
 
 ## Exercises
 

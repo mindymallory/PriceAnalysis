@@ -114,6 +114,9 @@ Concentration in the hog industry reduced the need for the pork belly contract i
 
 
 
+## Exercises 
+
+In the exercises for this chapter we will use some of the time-series econometric techniques discussed in Appendix 18 and 19.
 
 
 

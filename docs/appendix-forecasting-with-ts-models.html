@@ -25,7 +25,7 @@
 <meta name="author" content="Mindy L. Mallory">
 
 
-<meta name="date" content="2017-11-14">
+<meta name="date" content="2017-11-15">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -279,6 +279,7 @@ ga('send', 'pageview');
 <li class="chapter" data-level="16.8.1" data-path="hog-markets.html"><a href="hog-markets.html#why-only-one-contract-instead-of-two-like-feeder-and-live-cattle"><i class="fa fa-check"></i><b>16.8.1</b> Why only one Contract Instead of Two like Feeder and Live Cattle?</a></li>
 <li class="chapter" data-level="16.8.2" data-path="hog-markets.html"><a href="hog-markets.html#demise-of-the-frozen-pork-belly-futures-contracts"><i class="fa fa-check"></i><b>16.8.2</b> Demise of the Frozen Pork Belly Futures Contracts</a></li>
 </ul></li>
+<li class="chapter" data-level="16.9" data-path="hog-markets.html"><a href="hog-markets.html#exercises-9"><i class="fa fa-check"></i><b>16.9</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="17" data-path="crude-oil-and-the-crack-spread.html"><a href="crude-oil-and-the-crack-spread.html"><i class="fa fa-check"></i><b>17</b> Crude Oil and the Crack Spread</a><ul>
 <li class="chapter" data-level="17.1" data-path="crude-oil-and-the-crack-spread.html"><a href="crude-oil-and-the-crack-spread.html#light-versus-heavysweet-versus-sour"><i class="fa fa-check"></i><b>17.1</b> Light versus Heavy/Sweet versus Sour</a><ul>
@@ -310,8 +311,8 @@ ga('send', 'pageview');
 <li class="chapter" data-level="18.4" data-path="appendix-forecasting-with-ts-models.html"><a href="appendix-forecasting-with-ts-models.html#stationarity"><i class="fa fa-check"></i><b>18.4</b> Stationarity</a><ul>
 <li class="chapter" data-level="18.4.1" data-path="appendix-forecasting-with-ts-models.html"><a href="appendix-forecasting-with-ts-models.html#the-log-normal-price-model."><i class="fa fa-check"></i><b>18.4.1</b> The Log-normal Price Model.</a></li>
 </ul></li>
-<li class="chapter" data-level="18.5" data-path="appendix-forecasting-with-ts-models.html"><a href="appendix-forecasting-with-ts-models.html#efficient-market-hypothesis"><i class="fa fa-check"></i><b>18.5</b> Efficient Market Hypothesis</a></li>
-<li class="chapter" data-level="18.6" data-path="appendix-forecasting-with-ts-models.html"><a href="appendix-forecasting-with-ts-models.html#exercises-9"><i class="fa fa-check"></i><b>18.6</b> Exercises</a></li>
+<li class="chapter" data-level="18.5" data-path="appendix-forecasting-with-ts-models.html"><a href="appendix-forecasting-with-ts-models.html#time-series-econometrics-technical-details"><i class="fa fa-check"></i><b>18.5</b> Time Series Econometrics Technical Details</a></li>
+<li class="chapter" data-level="18.6" data-path="appendix-forecasting-with-ts-models.html"><a href="appendix-forecasting-with-ts-models.html#exercises-10"><i class="fa fa-check"></i><b>18.6</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="19" data-path="appendix-single-market-models-arima.html"><a href="appendix-single-market-models-arima.html"><i class="fa fa-check"></i><b>19</b> Appendix: Single Market Models: ARIMA</a><ul>
 <li class="chapter" data-level="19.1" data-path="appendix-single-market-models-arima.html"><a href="appendix-single-market-models-arima.html#integrated-or-not"><i class="fa fa-check"></i><b>19.1</b> Integrated or Not?</a></li>
@@ -540,24 +541,25 @@ ga('send', 'pageview');
 </div>
 </div>
 </div>
-<div id="efficient-market-hypothesis" class="section level2">
-<h2><span class="header-section-number">18.5</span> Efficient Market Hypothesis</h2>
-<p>The Efficient Market Hypothesis (EMH) states that all the information available regarding an asset is incorporated into its price <span class="citation">(Fama <a href="#ref-fama1970efficient">1970</a>)</span>. If the EMH were true, forecasting would be a hopeless endeavor because one could never use current and past information to predict future prices - as in the Log-normal price model. There is a large debate about the whether or not this hypothesis is true, or how and when it deviates from being true.</p>
-<p>While a large literature in finance argues that it is not strictly true, markets are ‘close to efficient’ most of the time. I say this because making a forecast that one can actually profitably trade with is difficult. We will explore several forecasting models in the subsequent chapters, and we will find it difficult to find a forecasting model were our 95% confidence interval around our forecast of percent return does not contain 0.0%. If one cannot produce a forecasting model that does that, your model is not giving a clear ‘buy’ or ‘sell’ signal.</p>
+<div id="time-series-econometrics-technical-details" class="section level2">
+<h2><span class="header-section-number">18.5</span> Time Series Econometrics Technical Details</h2>
+<p>It turns out that if data are non-stationary and you try to run a typical OLS regression with the data in levels, the regression will be what is call <em>Super Consistent</em>. Practically, this means no matter what you put on the left hand side and right hand side of the regression, everything will appear statistically significant with a regular t-test. The relationships however, may just be spurious and not meaningful.</p>
+<p>In time series econometrics the first thing you have to do is understand whether or not your data are stationary or not. Data that are non-stationary are said to have a <em>unit root</em>. Data is typically tested for stationarity versus unit root with an Augmented Dickey Fuller test (or one of several other unit root tests).</p>
+<p>For a deeper discussion of how to implement these tests, please see <a href="http://mindymallory.com/R-Companion-Price-Analysis/">Primer for Time Series Econometrics in R</a> chapter 4.</p>
+<p>If your time series data are non-stationary (have a unit root), then typically taking the first difference of logged prices (as shown in equation 7) will result in a stationary time series. This means transforming your data to percent returns (thats the same thing as first difference of logged prices) usually produces a stationary time series on which you can safely run typical regressions.</p>
+<p>In sum, the beginning of any time series data analysis consists of the following workflow.</p>
+<div class="figure">
+<img src="images/ts-workflow.png" alt="Single Price Series Time Series Workflow" />
+<p class="caption">Single Price Series Time Series Workflow</p>
 </div>
-<div id="exercises-9" class="section level2">
+</div>
+<div id="exercises-10" class="section level2">
 <h2><span class="header-section-number">18.6</span> Exercises</h2>
 <ol style="list-style-type: decimal">
 <li>Download the corn futures contracts CZ2014, CH2015, CK2015, CN2015, and CU2015. Replicate the series of nearby contracts depicted in figure 2 by concatenating prices of the appropriate dates for each contract. As a Check, replicate figure 2.</li>
 </ol>
 <p>“Deflating Nominal Values to Real Values” Federal Reserve Bank of Dallas. <a href="http://www.dallasfed.org/research/basics/nominal.cfm" class="uri">http://www.dallasfed.org/research/basics/nominal.cfm</a></p>
 
-</div>
-</div>
-<h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-fama1970efficient">
-<p>Fama, Eugene F. 1970. “Efficient Capital Markets: A Review of Theory and Empirical Work*.” <em>The Journal of Finance</em> 25 (2). Wiley Online Library: 383–417.</p>
 </div>
 </div>
 <div class="footnotes">
