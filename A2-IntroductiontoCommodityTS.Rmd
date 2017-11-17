@@ -173,6 +173,15 @@ In sum, the beginning of any time series data analysis consists of the following
 
 ![Figure 11: Single Price Series Time Series Workflow](images/ts-workflow.png)
 
+
+## Efficient Market Hypothesis
+
+The Efficient Market Hypothesis (EMH) states that all the information available regarding an asset is incorporated into its price [@fama1970efficient]. If the EMH were true, forecasting would be a hopeless endeavor because one could never use current and past information to predict future prices - as in the Log-normal price model. There is a large debate about the whether or not this hypothesis is true, or how and when it deviates from being true.
+
+While a large literature in finance argues that it is not strictly true, markets are 'close to efficient' most of the time. I say this because making a forecast that one can actually profitably trade with is difficult. We will explore several forecasting models in the subsequent chapters, and we will find it difficult to find a forecasting model were our 95% confidence interval around our forecast of percent return does not contain 0.0%. If one cannot produce a forecasting model that does that, your model is not giving a clear 'buy' or 'sell' signal.
+
+The Efficient Market Hypothesis is related to the concept of stationarity because the Efficient Market Hypothesis states that futures returns are not predictable. Anything information useful for forecasting would have been discovered by someone, and arbitraged away. In other words, if you have information that makes you sure the price of an asset or commodity will go up, then you will buy it until the price goes up so that there is no discrepency between what the price 'should be' and what the price is. Because there is a strong financial incentive to arbitrage away any of these kind of discrepancies, even if markets are temporarily inefficient, traders will correct the inefficiency by pushing the price up or down. 
+
 ## Exercises
 
 1. Download the corn futures contracts CZ2014, CH2015, CK2015, CN2015, and CU2015. Replicate the series of nearby contracts depicted in figure 2 by concatenating prices of the appropriate dates for each contract. As a Check, replicate figure 2. 
