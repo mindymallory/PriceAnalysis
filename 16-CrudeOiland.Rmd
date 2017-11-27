@@ -119,7 +119,24 @@ Occasionally political unrest will occur in prominent crude oil producing region
 
 The **Crack Spread** is a spread trade in crude oil, gasoline, and ultra low sulfur diesel futures contracts that roughly mimics the refiners margin. Like the soybean crush and cattle crush, it can be used to hedge or speculate on these margins. The spread trade consists of a 3-2-1 ratio. Three contracts of crude oil, two contracts of RBOB gasoline, and one contract of Ultra low sulfur diesel. 
 
-![Historical Crack Spread](images/CrackSpreadChange.png)
+```{r, echo = FALSE, message=FALSE, warning=FALSE}
+library(xts)
+library(ggplot2)
+DATA <- read.csv('Excel-files/crackspread.csv')
 
-Source: EIA
+CrackSpread <- (2*DATA$RBOB*42 + DATA$ULSD*42 - 3*DATA$CrudeOil)/3
+CrackSpread <- as.xts(CrackSpread, order.by = as.Date(DATA$Index, format = "%m/%d/%Y"))
+q <- autoplot(CrackSpread) + theme_bw() + labs(title = "3:2:1 WTI, RBOB, ULSD Crack Spread, 2010-2017", x= "", y= "Crack Spread $/barrel of Crude Oil Refined")
+
+q
+
+```
+
+In the figure above we plot the historical 3:2:1 crack spread using the nearby WTI, RBOB, and Ultra low sulfer deisel futures contracts from the [NYMEX](www.NYMEX.com). To compute the 3:2:1 crack spread in $ per barrel use the following formula: 
+
+$$ Crack \text{ } Spread = (2*P_{RBOB}*42 + 1*P_{ULSD}*42 - 3*P_{CrudeOil})/3$$ 
+
+where $P_{RBOB}$, $P_{ULSD}$, and $P_{CrudeOil}$ are the futures prices for RBOB gasoline (\$/gallon), ultra low sulfer deisel (\$/gallon), and crude oil (\$/barrel). The 42's in the equation translate the price quotes, which are in \$/gallon, to \$/barrel. The 2, 1, and 3 reflect the fact that if you refine 3 barrels of crude oil you will get back roughly 2 barrels of gasoline and 1 barrel of ULSD. 
+
+
 
