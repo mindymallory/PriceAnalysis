@@ -92,7 +92,7 @@ A number of supply and demand statistics are maintained by the Energy Informatio
 
 The figure below shows U.S. field production of Crude oil in thousand barrels per day. Production was in a downward trend since the mid 1980's, but since about 2008 production has rapidly increased. This is due to extensive drilling in the Bakkan formation after hydrolic fracturing techniques were developed to enable cost effective extraction. 
 
-![U.S. Field Production of Crude Oil, Thousands of barrels per day](Excel-files/CrudeOiland-crudeoil_files/image004.png)
+![U.S. Field Production of Crude Oil, Thousands of barrels per month](Excel-files/CrudeOiland-crudeoil_files/image004.png)
 
 The figures below show the number of wells in 2008 and 2013 and demonstrates the rapid development of the crude oil extraction industry in the region. 
 
