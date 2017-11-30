@@ -157,6 +157,6 @@ In statistics, this kind of thing is called *cointegration*. It simply says that
 
 6. Calculate the 95% confidence interval around this forecast. 
 
-7. Plot the historical crack spread, your 5-step ahead forecasts, and the 95% confidence interval on a chart in Excel. 
+7. Plot the historical crack spread, your 1-step ahead forecasts, and the 95% confidence interval on a chart in Excel. 
 
 
