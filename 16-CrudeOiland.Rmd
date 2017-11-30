@@ -164,9 +164,9 @@ In statistics, this kind of thing is called *cointegration*. It simply says that
 
 4. Regress $CrackSpread_t$ on $CrackSpread_{t-1}$, $CrackSpread_{t-2}$, $\Delta Crude_{t-1}$, $\Delta RBOB_{t-1}$, and $\Delta ULSD_{t-1}$.
 
-5. Calculate the 5-step ahead forecast of the Crack Spread from this model. 
+5. Calculate the 1-step ahead forecast of the Crack Spread from this model. 
 
-6. Calculate the 95% confidence interval around these forecasts. 
+6. Calculate the 95% confidence interval around this forecast. 
 
 7. Plot the historical crack spread, your 5-step ahead forecasts, and the 95% confidence interval on a chart in Excel.
 
