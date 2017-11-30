@@ -25,7 +25,7 @@
 <meta name="author" content="Mindy L. Mallory">
 
 
-<meta name="date" content="2017-11-15">
+<meta name="date" content="2017-11-30">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -296,6 +296,7 @@ ga('send', 'pageview');
 <li class="chapter" data-level="17.4.3" data-path="crude-oil-and-the-crack-spread.html"><a href="crude-oil-and-the-crack-spread.html#geopolitical-events"><i class="fa fa-check"></i><b>17.4.3</b> Geopolitical Events</a></li>
 </ul></li>
 <li class="chapter" data-level="17.5" data-path="crude-oil-and-the-crack-spread.html"><a href="crude-oil-and-the-crack-spread.html#the-crack-spread"><i class="fa fa-check"></i><b>17.5</b> The Crack Spread</a></li>
+<li class="chapter" data-level="17.6" data-path="crude-oil-and-the-crack-spread.html"><a href="crude-oil-and-the-crack-spread.html#exercises-10"><i class="fa fa-check"></i><b>17.6</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="18" data-path="appendix-forecasting-with-ts-models.html"><a href="appendix-forecasting-with-ts-models.html"><i class="fa fa-check"></i><b>18</b> Appendix: Forecasting with TS Models</a><ul>
 <li class="chapter" data-level="18.1" data-path="appendix-forecasting-with-ts-models.html"><a href="appendix-forecasting-with-ts-models.html#nearby-futures-prices"><i class="fa fa-check"></i><b>18.1</b> ‘Nearby’ Futures Prices</a><ul>
@@ -312,7 +313,8 @@ ga('send', 'pageview');
 <li class="chapter" data-level="18.4.1" data-path="appendix-forecasting-with-ts-models.html"><a href="appendix-forecasting-with-ts-models.html#the-log-normal-price-model."><i class="fa fa-check"></i><b>18.4.1</b> The Log-normal Price Model.</a></li>
 </ul></li>
 <li class="chapter" data-level="18.5" data-path="appendix-forecasting-with-ts-models.html"><a href="appendix-forecasting-with-ts-models.html#time-series-econometrics-technical-details"><i class="fa fa-check"></i><b>18.5</b> Time Series Econometrics Technical Details</a></li>
-<li class="chapter" data-level="18.6" data-path="appendix-forecasting-with-ts-models.html"><a href="appendix-forecasting-with-ts-models.html#exercises-10"><i class="fa fa-check"></i><b>18.6</b> Exercises</a></li>
+<li class="chapter" data-level="18.6" data-path="appendix-forecasting-with-ts-models.html"><a href="appendix-forecasting-with-ts-models.html#efficient-market-hypothesis"><i class="fa fa-check"></i><b>18.6</b> Efficient Market Hypothesis</a></li>
+<li class="chapter" data-level="18.7" data-path="appendix-forecasting-with-ts-models.html"><a href="appendix-forecasting-with-ts-models.html#exercises-11"><i class="fa fa-check"></i><b>18.7</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="19" data-path="appendix-single-market-models-arima.html"><a href="appendix-single-market-models-arima.html"><i class="fa fa-check"></i><b>19</b> Appendix: Single Market Models: ARIMA</a><ul>
 <li class="chapter" data-level="19.1" data-path="appendix-single-market-models-arima.html"><a href="appendix-single-market-models-arima.html#integrated-or-not"><i class="fa fa-check"></i><b>19.1</b> Integrated or Not?</a></li>
@@ -553,13 +555,25 @@ ga('send', 'pageview');
 <p class="caption">Figure 11: Single Price Series Time Series Workflow</p>
 </div>
 </div>
-<div id="exercises-10" class="section level2">
-<h2><span class="header-section-number">18.6</span> Exercises</h2>
+<div id="efficient-market-hypothesis" class="section level2">
+<h2><span class="header-section-number">18.6</span> Efficient Market Hypothesis</h2>
+<p>The Efficient Market Hypothesis (EMH) states that all the information available regarding an asset is incorporated into its price <span class="citation">(Fama <a href="#ref-fama1970efficient">1970</a>)</span>. If the EMH were true, forecasting would be a hopeless endeavor because one could never use current and past information to predict future prices - as in the Log-normal price model. There is a large debate about the whether or not this hypothesis is true, or how and when it deviates from being true.</p>
+<p>While a large literature in finance argues that it is not strictly true, markets are ‘close to efficient’ most of the time. I say this because making a forecast that one can actually profitably trade with is difficult. We will explore several forecasting models in the subsequent chapters, and we will find it difficult to find a forecasting model were our 95% confidence interval around our forecast of percent return does not contain 0.0%. If one cannot produce a forecasting model that does that, your model is not giving a clear ‘buy’ or ‘sell’ signal.</p>
+<p>The Efficient Market Hypothesis is related to the concept of stationarity because the Efficient Market Hypothesis states that futures returns are not predictable. Anything information useful for forecasting would have been discovered by someone, and arbitraged away. In other words, if you have information that makes you sure the price of an asset or commodity will go up, then you will buy it until the price goes up so that there is no discrepency between what the price ‘should be’ and what the price is. Because there is a strong financial incentive to arbitrage away any of these kind of discrepancies, even if markets are temporarily inefficient, traders will correct the inefficiency by pushing the price up or down.</p>
+</div>
+<div id="exercises-11" class="section level2">
+<h2><span class="header-section-number">18.7</span> Exercises</h2>
 <ol style="list-style-type: decimal">
 <li>Download the corn futures contracts CZ2014, CH2015, CK2015, CN2015, and CU2015. Replicate the series of nearby contracts depicted in figure 2 by concatenating prices of the appropriate dates for each contract. As a Check, replicate figure 2.</li>
 </ol>
 <p>“Deflating Nominal Values to Real Values” Federal Reserve Bank of Dallas. <a href="http://www.dallasfed.org/research/basics/nominal.cfm" class="uri">http://www.dallasfed.org/research/basics/nominal.cfm</a></p>
 
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-fama1970efficient">
+<p>Fama, Eugene F. 1970. “Efficient Capital Markets: A Review of Theory and Empirical Work*.” <em>The Journal of Finance</em> 25 (2). Wiley Online Library: 383–417.</p>
 </div>
 </div>
 <div class="footnotes">

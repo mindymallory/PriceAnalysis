@@ -170,7 +170,7 @@ This means we can use historical prices to estimate the relationship between spo
 
 ## Exercises 
 
-In this chapter's exercises you compute the optimal hedge ratio for using corn contracts to hedge DDG sales. Skills learned include: 
+The exercises for this chapter have you compute the optimal hedge ratio for using corn contracts to hedge DDG sales. Skills learned include: 
 
 + How to compute an optimal hedge ratio given price data.  
 

@@ -123,9 +123,40 @@ The **Crack Spread** is a spread trade in crude oil, gasoline, and ultra low sul
 
 In the figure above we plot the historical 3:2:1 crack spread using the nearby WTI, RBOB, and Ultra low sulfer deisel futures contracts from the [NYMEX](www.NYMEX.com). To compute the 3:2:1 crack spread in $ per barrel use the following formula: 
 
-$$ Crack \text{ } Spread = (2*P_{RBOB}*42 + 1*P_{ULSD}*42 - 3*P_{CrudeOil})/3$$ 
+Equation 1: $Crack \text{ } Spread = (2*P_{RBOB}*42 + 1*P_{ULSD}*42 - 3*P_{CrudeOil})/3$
 
 where $P_{RBOB}$, $P_{ULSD}$, and $P_{CrudeOil}$ are the futures prices for RBOB gasoline (\$/gallon), ultra low sulfer deisel (\$/gallon), and crude oil (\$/barrel). The 42's in the equation translate the price quotes, which are in \$/gallon, to \$/barrel. The 2, 1, and 3 reflect the fact that if you refine 3 barrels of crude oil you will get back roughly 2 barrels of gasoline and 1 barrel of ULSD. 
 
+## Exercises
+
+The exercises for this chapter have us forecast the crude oil crack spread using time series econometric techniques on NYMEX futures prices for WTI crude oil, RBOB gasoline, and ultra low sulfer deisel (ULSD). We will utilize the following regression model: 
+
+Equation 2: 
+
+\begin{align}
+Crack Spread_t &= Crack Spread_{t-1} + Crack Spread_{t-2}    \\
+                  & + \Delta Crude_{t-1} + \Delta RBOB_{t-1} + \Delta ULSD_{t-1} + \epsilon_t
+\end{align}
+
+
+where $Crack Spread_t$ is defined as in equation 1, and the remaining variables are first differences of logged prices ($\Delta Crude_{t-1} = ln(Crude_t) - ln(Crude_{t-1})$). Recall from chapter 17 that in order for the statistical properties of the variables we are using to be appropriate for the linear regression we need all the variables to be stationary. That explains why we used the first differences of logged prices of the component prices in the crack spread, since futures prices are often found to be non-stationary and first differences of logged prices are usually stationary. 
+
+Additionally, the $Crack Spread_t$ variable is likely to be stationary, even thought it is a linear combination of prices that are not stationary. The reason for that is because the linear combination reflects the profit margin in a real business model. It simply cannot be that profits in such a competitive business as oil refining could wander higher without bound, as in a non-stationary random walk price model. 
+
+In statistics, this kind of thing is called *cointegration*. It simply says that sometimes the linear combination of non-statioanary variables turns out to be stationary, and that basically, they kind of move together. For us, it means that the regression specified in equation 2 is a stationary variable regressed on a bunch of other stationary variables, which makes it more or less fine to do OLS (We really should confirm this fact with an ADF test, but we will skip that).
+
+1. Download the [Excel file](Excel-files/CrackSpread.csv) containing the data for this exercise. 
+
+2. Create the $CrackSpread_t$, $CrackSpread_{t-1}$, and $CrackSpread_{t-2}$ variables following equation 1.
+
+3. Create the  $\Delta Crude_{t-1}$, $\Delta RBOB_{t-1}$, and $\Delta ULSD_{t-1}$ variables. 
+
+4. Regress $CrackSpread_t$ on $CrackSpread_{t-1}$, $CrackSpread_{t-2}$, $\Delta Crude_{t-1}$, $\Delta RBOB_{t-1}$, and $\Delta ULSD_{t-1}$.
+
+5. Calculate the 5-step ahead forecast of the Crack Spread from this model. 
+
+6. Calculate the 95% confidence interval around these forecasts. 
+
+7. Plot the historical crack spread, your 5-step ahead forecasts, and the 95% confidence interval on a chart in Excel.
 
 

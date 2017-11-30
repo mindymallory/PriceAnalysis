@@ -27,6 +27,10 @@ In figure 1 percent returns of the March 2016 corn futures contract are plotted.
 
 ![Figure 1: Corn March 2016 Contract 1-Day Price Returns](images/12_corn_h2016.png)
 
+
+
+
+
 To investigate if a price series exhibits auto-correlation, we need to generate time lags in the price series. Figure 2 shows a screenshot in Excel of how to generate time lags of returns. Basically, you just point the cell to the value in the previous period. Note that the value in `D7` simply takes the value in `C6`.
 
 ![Figure 2: Generating Time Lags in Excel](images/12.lags.png)
@@ -48,6 +52,8 @@ where $R_i$ represents the percentage return on period $i$. The $p$ in $AR(p)$ i
 ![Figure 4: Regression output for $AR(2)$ model of Corn Price Returns in the March 2016 Contract, 1/2/2015 - 10/20/2015](images/12_corn_ar2_output.png)
 
 All of the p-values for our regressors are large, certainly much bigger than 0.05. We fail to reject the null hypothesis that one and two lags of corn price returns are unrelated to the next price return realization. Therefore, the $AR(2)$ model does not seem to provide much forecasting power. 
+
+
 
 ## $MA(q)$, Models
 
