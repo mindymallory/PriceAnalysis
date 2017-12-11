@@ -50,6 +50,7 @@ Globally, the top five oil producing countries are: Russia, the United States, S
 
 ![Top Five Oil Producing Countries](images/top_petroleum_producing_countries-large.jpg)
 
+
 Source: [US Energy Information Administration](http://www.eia.gov/Energyexplained/index.cfm?page=oil_home) 
 
 ## Refining Crude Oil
