@@ -19,7 +19,7 @@ If your forecast is above the current market price, that is bullish because your
 
 ## Supply and Demand
 
-Conducing fundamental analyses involves taking into account all the factors that determine supply, demand, and ultimately, prices. For grain markets there are basically two supply models to keep in mind: preplanting and post planting. Below we display both.  
+Conducting fundamental analyses involves taking into account all the factors that determine supply, demand, and ultimately, prices. For grain markets there are basically two supply models to keep in mind: preplanting and post planting. Below we display both.  
 
 
 ![Figure 1. Supply and Demand Model of a Commodity Before and After Planting](images\Ch3.1.png)
