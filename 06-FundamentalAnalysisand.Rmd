@@ -19,7 +19,7 @@ If your forecast is above the current market price, that is bullish because your
 
 ## Supply and Demand
 
-Conducing fundamental analyses involves taking into account all the factors that determine supply, demand, and ultimately, prices. For grain markets there are basically two supply models to keep in mind: preplanting and post planting. Below we display both.  
+Conducting fundamental analyses involves taking into account all the factors that determine supply, demand, and ultimately, prices. For grain markets there are basically two supply models to keep in mind: preplanting and post planting. Below we display both.  
 
 
 ![Figure 1. Supply and Demand Model of a Commodity Before and After Planting](images\Ch3.1.png)
@@ -96,7 +96,7 @@ Forecasting supply and demand for any given marketing year begins well before ha
 
 ### Southern Hemisphere Production
 
-Production of corn, soybeans, and other commodities in the southern hemisphere (most notably in Brazil and Argintina) has grown rapidly over the last ten to fifteen years, and has impacted global commodity markets tremendously. Since southern hemisphere production occurs in the middle of marketing years organized by northern hemisphere harvest, there is an uncertain additional supply that must be forecast and updated to keep an accurate global balance sheet.  
+Production of corn, soybeans, and other commodities in the southern hemisphere (most notably in Brazil and Argentina) has grown rapidly over the last ten to fifteen years, and has impacted global commodity markets tremendously. Since southern hemisphere production occurs in the middle of marketing years organized by northern hemisphere harvest, there is an uncertain additional supply that must be forecast and updated to keep an accurate global balance sheet.  
 
 
 ### Uncertainty 

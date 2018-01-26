@@ -63,7 +63,7 @@ The following figures [come from](http://www.ers.usda.gov/topics/crops/corn/back
 
 Corn prices can be quite volatile, with prices and production highly inversely related to one another. 
 
-![Figure 2: Corn Price Recieved by Farmers and Production](images/Corn-PriceR-Production.png)
+![Figure 2: Corn Price Received by Farmers and Production](images/Corn-PriceR-Production.png)
 
 
 Corn is used in the U.S for a variety of purposes. Largest use categories are feed (for livestock), and alcohol for fuel use (ethanol blended with gasoline). 
@@ -117,7 +117,7 @@ HRW wheat is planted in the fall and lays dormant or grows very little during th
 
 HRW wheat is primarily used to make bread flour.
 
-Hard Red Winter Wheat is sometime called Kansas City Wheat because the Kansas City Board of Trade had a HRW wheat futures contract. The KCBOT was recently bought by the CME Group, but HRW continues to be known as KC wheat.  
+Hard Red Winter Wheat is sometimes called Kansas City Wheat because the Kansas City Board of Trade had a HRW wheat futures contract. The KCBOT was recently bought by the CME Group, but HRW continues to be known as KC wheat.  
 
 ![Figure 9: Hard Red Winter Wheat](images/HRW-Wheat.jpg)  
 
