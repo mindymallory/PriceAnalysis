@@ -32,7 +32,7 @@ Historical acres planted and harvested can be found from USDA NASS.
 > 2. Click *Crops* in the menu 
 > 3. In the query, choose *Field Crops*
 > 4. Choose corn
-> 5. Click *Acreage, Yeild, Production, and Price*
+> 5. Click *Acreage, Yield, Production, and Price*
 > 6. Select the years you want. Hold the Ctrl key to select multiple.
 > 7. Click *Get Data*. 
 
