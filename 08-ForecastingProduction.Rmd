@@ -95,6 +95,7 @@ Analysts often estimate deviations from trend yield by finding year similar to t
 An alternative approach would be to use the *Crop Condition Report* and find a year in recent history that had a similar percent of the crop rated *Good/Excellent*. Figure 9 below shows how *Good* + *Excellent* crop condition ratings relate to percent deviations in trend yield. They should be at least positively correlated, and in fact starting in the late 90's this measure began to correlate strongly with the final yield. 
 
 ![Figure 9: *Good* plus *Excellent* Crop Condition Ratings in Final Week of Reporting versus Percent Deviations in Yields](Excel-files\ForecastingProduction-HistoricalAcreage_files\image033.png)
+SHOULD THE Series be labeled as GOOD and EXCELLENT?
 
 ## Forecasting Production
 
