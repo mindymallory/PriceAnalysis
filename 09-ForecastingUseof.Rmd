@@ -16,7 +16,7 @@ Source: [Feed Grains database](http://www.ers.usda.gov/data-products/feed-grains
 
 Figure 1 shows a dramatic uptrend in the Food, Alcohol and Industrial use category. This is due to the dramatic increase in the production of ethanol starting around 2005/2006 and plateauing around 2010 when U.S. ethanol consumption roughly hit the 'blend-wall' where ethanol makes up 10% of the retail gasoline supply. 
 
-![Figure 2: Corn Food, Alchohol, and Industrial Use, Annual 1990-2015](Excel-files\IntroductiontoCommodityTS-FeedGrains_Corn_files\image001.png)
+![Figure 2: Corn Food, Alcohol, and Industrial Use, Annual 1990-2015](Excel-files\IntroductiontoCommodityTS-FeedGrains_Corn_files\image001.png)
 
 Source: [Feed Grains database](http://www.ers.usda.gov/data-products/feed-grains-database/feed-grains-yearbook-tables.aspx#26780) maintained by the USDA ERS.
 
