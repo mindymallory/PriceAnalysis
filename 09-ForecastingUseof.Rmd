@@ -130,7 +130,7 @@ Source: [EIA](http://www.eia.gov/totalenergy/data/monthly/#renewable) website. C
 
 Ethanol production and consumption begin to increase rapidly around 2005, which is when the Energy Policy Act of 2005 and later the Energy Security and Independence Act of 2007 created the Renewable Fuels Standard (RFS). The RFS mandated quantities of ethanol that blenders of gasoline are required to blend into the retail gasoline supply. These annual mandates are revised every year, but they were designed to steadily increase year after year until 2015 when the mandate reached 15 billion gallons per year. This figure came about because gasoline consumption in the United States was forecast to reach 150 billion gallons per year by 2015. So the RFS mandates were designed to reach the point where the entire retail gasoline supply would include 10% ethanol. Incidentally, 300,000,000 barrels indicated in Figure 10 corresponds to 15 billion gallons (300,000,000*50gallons/barrel = 15,000,000,000 gallons). The orange line shows that blenders of gasoline have been blending greater than 15 billion gallons of ethanol since 2010. 
 
-Going forward, without significant growth in the consumption of gasoline in the United States, this corn use category is likely to remain flat fore the foreseeable future. Even so, ethanol blenders sometimes experience an ethanol-to-gasoline price ratio that is favorable to blending ethanol even above the levels of the RFS mandate. So conducting a pace-of-use analysis for this corn use category makes sense as well. Data on monthly fuel ethanol production can be found at [EIA.GOV](http://www.eia.gov/totalenergy/data/monthly/#renewable). Examining the current marketing year's production of ethanol gives some indication of whether ethanol production is likely to exceed the 15 billion gallon per year mandated level. 
+Going forward, without significant growth in the consumption of gasoline in the United States, this corn use category is likely to remain flat for the foreseeable future. Even so, ethanol blenders sometimes experience an ethanol-to-gasoline price ratio that is favorable to blending ethanol even above the levels of the RFS mandate. So conducting a pace-of-use analysis for this corn use category makes sense as well. Data on monthly fuel ethanol production can be found at [EIA.GOV](http://www.eia.gov/totalenergy/data/monthly/#renewable). Examining the current marketing year's production of ethanol gives some indication of whether ethanol production is likely to exceed the 15 billion gallon per year mandated level. 
 
 ### Exports 
 
@@ -142,11 +142,11 @@ The [USDA Foreign Agricultural Service](http://www.fas.usda.gov/) maintains the 
 
 <!--downloaded pdf incase usda takes the fact sheet down. -->
 
-> The Export Sales Reporting Program has its roots from the unexpected purchase of large amounts of grain by the Soviet Union in 1972, “The Great Russian Grain >Robbery”. The huge, unanticipated purchases of U.S. wheat and corn that year depleted U.S. reserve stocks which caused a sizable run-up in U.S. food prices.
+> The Export Sales Reporting Program has its roots from the unexpected purchase of large amounts of grain by the Soviet Union in 1972, “The Great Russian Grain Robbery”. The huge, unanticipated purchases of U.S. wheat and corn that year depleted U.S. reserve stocks which caused a sizable run-up in U.S. food prices.
 >
->Furthermore, there was growing concern that some companies might have an unfair advantage in situations like this because they had access to market-sensitive >information that was unavailable to the public. To ensure that all parties involved in the production and export of U.S. grain had access to up-to-date >export information, Congress mandated the Export Sales Reporting program in 1973.
+>Furthermore, there was growing concern that some companies might have an unfair advantage in situations like this because they had access to market-sensitive information that was unavailable to the public. To ensure that all parties involved in the production and export of U.S. grain had access to up-to-date export information, Congress mandated the Export Sales Reporting program in 1973.
 >
->Before the program was established, it was difficult for the public to obtain information on exports until the products were actually shipped. The program >helps facilitate price stability by guaranteeing that everyone has access to the same information at the same time. 
+>Before the program was established, it was difficult for the public to obtain information on exports until the products were actually shipped. The program helps facilitate price stability by guaranteeing that everyone has access to the same information at the same time. 
 >
 
 ### Daily Reports
@@ -175,7 +175,7 @@ Since the FAS and the GIPSA come about their export totals through different pro
 
 While the Residual component tends to dominate the variation in the Feed and Residual category, the USDA does publish statistics related to numbers of cattle, hogs, and poultry. Major changes in livestock numbers produce a detectable impact in the Feed and Residual use category, to it is worthwhile knowing where to find these estimates. 
 
-The USDA releases a monthly [Cattle on Feed](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1020) report. Tracking this report gives a sense of trends in beef cattle herd size and production. Similarly, the [Hogs and Pigs](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1086) report is released quarterly and provides inventory estimates. The [Poultry Slaughter](https://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1131) report contains the number of head and live weight of chickens, turkeys, ducks and other poultry slaughtered under Federal inspection.    
+The USDA releases a monthly [Cattle on Feed](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1020) report. Tracking this report gives a sense of trends in beef cattle herd size and production. Similarly, the [Hogs and Pigs](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1086) report is released quarterly and provides inventory estimates. The monthly [Poultry Slaughter](https://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1131) report contains the number of head and live weight of chickens, turkeys, ducks and other poultry slaughtered under Federal inspection.    
 
 ## Readings 
 
