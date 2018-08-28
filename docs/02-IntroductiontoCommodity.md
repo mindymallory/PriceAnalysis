@@ -145,16 +145,16 @@ The production of agricultural commodities is bound by the biological traits of 
 
 ## Long Term Trends
 
-It is useful to begin our exploration of agricultural prices from a long term historical perspective. The figure below is monthly prices received by farmers in the U.S. from 1908 to 2015. Figure 1 presents a graph inspired by the [Farmdoc Daily article](http://farmdocdaily.illinois.edu/2016/04/new-era-of-corn-and-soybean-prices.html) by Scott Irwin and Darrel Good from April of 2016. In this article they identify three distint periods of price regimes in corn: pre-1973, 1973-2005, and 2005 to present. Indeed, by simple visual inspection there seems to be three periods of stable prices, from 1908-1973, 1974-2006, and 2007-present. Although the most recent period seems to be the most volatile and provides less confidence that a similar pattern will persist going forward. 
+It is useful to begin our exploration of agricultural prices from a long term historical perspective. The figure below is monthly prices received by farmers in the U.S. from 1908 to 2015. Figure 1 presents a graph inspired by the [Farmdoc Daily article](http://farmdocdaily.illinois.edu/2016/04/new-era-of-corn-and-soybean-prices.html) by Scott Irwin and Darrel Good from April of 2016. In this article they identify three distinct periods of price regimes in corn: pre-1973, 1973-2005, and 2005 to present. Indeed, by simple visual inspection there seems to be three periods of stable prices, from 1908-1973, 1974-2006, and 2007-present. Although the most recent period seems to be the most volatile and provides less confidence that a similar pattern will persist going forward. 
 
-![Figure 1: Corn Prices Recieved, 1908-2015](Excel-files\IntroductiontoCommodity_files\image001.png)
+![Figure 1: Corn Prices Received, 1908-2015](Excel-files\IntroductiontoCommodity_files\image001.png)
 
 
 Source([http://www.nass.usda.gov/](http://www.nass.usda.gov/))
 
 Now lets zoom in on the 1974-2015 periods. 
 
-![Figure 2: Corn Prices Recieved, 1974-2015](Excel-files\IntroductiontoCommodity_files\image003.png)
+![Figure 2: Corn Prices Received, 1974-2015](Excel-files\IntroductiontoCommodity_files\image003.png)
 
 
 Source([http://www.nass.usda.gov/](http://www.nass.usda.gov/))

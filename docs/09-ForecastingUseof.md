@@ -16,7 +16,7 @@ Source: [Feed Grains database](http://www.ers.usda.gov/data-products/feed-grains
 
 Figure 1 shows a dramatic uptrend in the Food, Alcohol and Industrial use category. This is due to the dramatic increase in the production of ethanol starting around 2005/2006 and plateauing around 2010 when U.S. ethanol consumption roughly hit the 'blend-wall' where ethanol makes up 10% of the retail gasoline supply. 
 
-![Figure 2: Corn Food, Alchohol, and Industrial Use, Annual 1990-2015](Excel-files\IntroductiontoCommodityTS-FeedGrains_Corn_files\image001.png)
+![Figure 2: Corn Food, Alcohol, and Industrial Use, Annual 1990-2015](Excel-files\IntroductiontoCommodityTS-FeedGrains_Corn_files\image001.png)
 
 Source: [Feed Grains database](http://www.ers.usda.gov/data-products/feed-grains-database/feed-grains-yearbook-tables.aspx#26780) maintained by the USDA ERS.
 
@@ -61,20 +61,35 @@ The year-to-year variation is caused by price fluctuations with low prices encou
 : Table 1: Top 12 Importers of U.S. Corn 2012/2013 through 2016/2017 Marketing Years, Ranked in Descending Order for Marketing Year 2015/2016 (1,000 Metric Tons)
 
 
-COUNTRY   EXPORTS 2016/2017   RANK   EXPORTS 2015/2016   RANK   EXPORTS 2014/2015   RANK   EXPORTS 2013/2014   RANK 
---------  ------------------  -----  ------------------  -----  ------------------  -----  ------------------  -----
-MEXICO    13539.7             1      12558.6             1      10793.8             2      10526.3             2    
-JAPAN     11983.4             2      10506.6             2      11858.6             1      11487.0             1    
-KOR REP   5588.5              3      3021.6              4      3927.2              4      4844.2              3    
-COLOMB    4438.9              4      4629.5              3      4413.3              3      3359.4              4    
-PERU      3166.7              5      2490.9              5      2421.0              5      1414.5              8    
-TAIWAN    2773.2              6      2045.2              6      1755.0              6      1936.4              7    
-S ARAB    2240.4              7      1516.4              7      1312.7              8      1021.0              9    
-GUATMAL   1008.9              8      897.1               10     936.7               9      783.9               11   
-MOROCCO   905.3               9      438.4               15     310.9               18     201.2               22   
-C RICA    840.2               10     520.1               13     784.1               11     593.6               13   
-DOM REP   814.9               11     252.1               22     599.3               13     637.6               12   
-CHINA     717.9               12     184.8               24     473.5               15     2759.4              5    
+\begin{tabular}{l|l|l|l|l|l|l|l|l}
+\hline
+COUNTRY & EXPORTS 2016/2017 & RANK & EXPORTS 2015/2016 & RANK & EXPORTS 2014/2015 & RANK & EXPORTS 2013/2014 & RANK\\
+\hline
+MEXICO & 13539.7 & 1 & 12558.6 & 1 & 10793.8 & 2 & 10526.3 & 2\\
+\hline
+JAPAN & 11983.4 & 2 & 10506.6 & 2 & 11858.6 & 1 & 11487.0 & 1\\
+\hline
+KOR REP & 5588.5 & 3 & 3021.6 & 4 & 3927.2 & 4 & 4844.2 & 3\\
+\hline
+COLOMB & 4438.9 & 4 & 4629.5 & 3 & 4413.3 & 3 & 3359.4 & 4\\
+\hline
+PERU & 3166.7 & 5 & 2490.9 & 5 & 2421.0 & 5 & 1414.5 & 8\\
+\hline
+TAIWAN & 2773.2 & 6 & 2045.2 & 6 & 1755.0 & 6 & 1936.4 & 7\\
+\hline
+S ARAB & 2240.4 & 7 & 1516.4 & 7 & 1312.7 & 8 & 1021.0 & 9\\
+\hline
+GUATMAL & 1008.9 & 8 & 897.1 & 10 & 936.7 & 9 & 783.9 & 11\\
+\hline
+MOROCCO & 905.3 & 9 & 438.4 & 15 & 310.9 & 18 & 201.2 & 22\\
+\hline
+C RICA & 840.2 & 10 & 520.1 & 13 & 784.1 & 11 & 593.6 & 13\\
+\hline
+DOM REP & 814.9 & 11 & 252.1 & 22 & 599.3 & 13 & 637.6 & 12\\
+\hline
+CHINA & 717.9 & 12 & 184.8 & 24 & 473.5 & 15 & 2759.4 & 5\\
+\hline
+\end{tabular}
 
 Source: [USDA FAS](http://apps.fas.usda.gov/export-sales/myrk_rpt.htm)  
 
@@ -137,7 +152,7 @@ Source: [EIA](http://www.eia.gov/totalenergy/data/monthly/#renewable) website. C
 
 Ethanol production and consumption begin to increase rapidly around 2005, which is when the Energy Policy Act of 2005 and later the Energy Security and Independence Act of 2007 created the Renewable Fuels Standard (RFS). The RFS mandated quantities of ethanol that blenders of gasoline are required to blend into the retail gasoline supply. These annual mandates are revised every year, but they were designed to steadily increase year after year until 2015 when the mandate reached 15 billion gallons per year. This figure came about because gasoline consumption in the United States was forecast to reach 150 billion gallons per year by 2015. So the RFS mandates were designed to reach the point where the entire retail gasoline supply would include 10% ethanol. Incidentally, 300,000,000 barrels indicated in Figure 10 corresponds to 15 billion gallons (300,000,000*50gallons/barrel = 15,000,000,000 gallons). The orange line shows that blenders of gasoline have been blending greater than 15 billion gallons of ethanol since 2010. 
 
-Going forward, without significant growth in the consumption of gasoline in the United States, this corn use category is likely to remain flat fore the foreseeable future. Even so, ethanol blenders sometimes experience an ethanol-to-gasoline price ratio that is favorable to blending ethanol even above the levels of the RFS mandate. So conducting a pace-of-use analysis for this corn use category makes sense as well. Data on monthly fuel ethanol production can be found at [EIA.GOV](http://www.eia.gov/totalenergy/data/monthly/#renewable). Examining the current marketing year's production of ethanol gives some indication of whether ethanol production is likely to exceed the 15 billion gallon per year mandated level. 
+Going forward, without significant growth in the consumption of gasoline in the United States, this corn use category is likely to remain flat for the foreseeable future. Even so, ethanol blenders sometimes experience an ethanol-to-gasoline price ratio that is favorable to blending ethanol even above the levels of the RFS mandate. So conducting a pace-of-use analysis for this corn use category makes sense as well. Data on monthly fuel ethanol production can be found at [EIA.GOV](http://www.eia.gov/totalenergy/data/monthly/#renewable). Examining the current marketing year's production of ethanol gives some indication of whether ethanol production is likely to exceed the 15 billion gallon per year mandated level. 
 
 ### Exports 
 
@@ -149,11 +164,11 @@ The [USDA Foreign Agricultural Service](http://www.fas.usda.gov/) maintains the 
 
 <!--downloaded pdf incase usda takes the fact sheet down. -->
 
-> The Export Sales Reporting Program has its roots from the unexpected purchase of large amounts of grain by the Soviet Union in 1972, “The Great Russian Grain >Robbery”. The huge, unanticipated purchases of U.S. wheat and corn that year depleted U.S. reserve stocks which caused a sizable run-up in U.S. food prices.
+> The Export Sales Reporting Program has its roots from the unexpected purchase of large amounts of grain by the Soviet Union in 1972, “The Great Russian Grain Robbery”. The huge, unanticipated purchases of U.S. wheat and corn that year depleted U.S. reserve stocks which caused a sizable run-up in U.S. food prices.
 >
->Furthermore, there was growing concern that some companies might have an unfair advantage in situations like this because they had access to market-sensitive >information that was unavailable to the public. To ensure that all parties involved in the production and export of U.S. grain had access to up-to-date >export information, Congress mandated the Export Sales Reporting program in 1973.
+>Furthermore, there was growing concern that some companies might have an unfair advantage in situations like this because they had access to market-sensitive information that was unavailable to the public. To ensure that all parties involved in the production and export of U.S. grain had access to up-to-date export information, Congress mandated the Export Sales Reporting program in 1973.
 >
->Before the program was established, it was difficult for the public to obtain information on exports until the products were actually shipped. The program >helps facilitate price stability by guaranteeing that everyone has access to the same information at the same time. 
+>Before the program was established, it was difficult for the public to obtain information on exports until the products were actually shipped. The program helps facilitate price stability by guaranteeing that everyone has access to the same information at the same time. 
 >
 
 ### Daily Reports
@@ -182,7 +197,7 @@ Since the FAS and the GIPSA come about their export totals through different pro
 
 While the Residual component tends to dominate the variation in the Feed and Residual category, the USDA does publish statistics related to numbers of cattle, hogs, and poultry. Major changes in livestock numbers produce a detectable impact in the Feed and Residual use category, to it is worthwhile knowing where to find these estimates. 
 
-The USDA releases a monthly [Cattle on Feed](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1020) report. Tracking this report gives a sense of trends in beef cattle herd size and production. Similarly, the [Hogs and Pigs](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1086) report is released quarterly and provides inventory estimates. The [Poultry Slaughter](https://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1131) report contains the number of head and live weight of chickens, turkeys, ducks and other poultry slaughtered under Federal inspection.    
+The USDA releases a monthly [Cattle on Feed](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1020) report. Tracking this report gives a sense of trends in beef cattle herd size and production. Similarly, the [Hogs and Pigs](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1086) report is released quarterly and provides inventory estimates. The monthly [Poultry Slaughter](https://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1131) report contains the number of head and live weight of chickens, turkeys, ducks and other poultry slaughtered under Federal inspection.    
 
 ## Readings 
 
