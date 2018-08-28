@@ -22,7 +22,19 @@ readr::write_lines(htmlhead, path = "header.html")
 
 # Grain and Oilseed Markets
 
+**Highlights**
 
+  +  Biological processes of corn, soybeans, and wheat from planting, to growing, to harvesting, to storage
+  +  How weather interacts with the biological processes to determine production
+  +  Recent trends in production, exports, and prices.
+  +  Varieties of wheat and determinants their differential prices. 
+  
+**Check your Understanding**
+
+  +  When are corn and soybeans planted?
+  +  When are corn and soybeans harvested?
+  +  When are the different varieties of wheat planted and harvested?
+  +  What is the main driver of differential prices in wheat varieties? 
 
 
 
