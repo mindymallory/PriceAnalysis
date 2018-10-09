@@ -135,7 +135,7 @@ oilseeds <- read.csv('Excel-files/WorldProduction-Oilseeds.csv')
 
 
 get_top_soy <- oilseeds %>% 
-                  filter(Market_Year == 2017) %>%
+                  filter(Market_Year == 2018) %>%
                   filter(Commodity_Code == 2222000) %>%
                   filter(Attribute_ID == 28) %>%
                   arrange(desc(Value))
