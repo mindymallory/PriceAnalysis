@@ -29,7 +29,7 @@ Moreover, it may be informative to use the other categories from the condition r
 Work through the steps in the exercises to see how well we can predict yields with the crop progress report survey. 
 
 
-# Exercises 
+## Exercises 
 
 The exercises for this chapter walk us through using the weekly crop progress and condition reports to create a forecast for yields that can be updated once per week during the growing season. 
 
