@@ -35,9 +35,9 @@ The exercises for this chapter walk us through using the weekly crop progress an
 
 Highlights include:
 
-    + One way to deal with the fact that yields are trending over time in our forecast.
-    + Forecasting a variable that is not price (prices are the hardest things in the world to forecast!)
-    + We need to hold out one of the condition categories in our regression. (Why?)
++ One way to deal with the fact that yields are trending over time in our forecast.
++ Forecasting a variable that is not price (prices are the hardest things in the world to forecast!)
++ We need to hold out one of the condition categories in our regression. (Why?)
     
     
 First, download [this](Excel-files\yied-forecast-advanced.xlsx) excel file. 
