@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="crude-oil-and-the-crack-spread.html">
-<link rel="next" href="exercises-11.html">
+<link rel="prev" href="forecasting-production-advanced.html">
+<link rel="next" href="appendix-forecasting-with-ts-models.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -353,39 +353,43 @@ ga('send', 'pageview');
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="forecasting-production---advanced" class="section level1">
-<h1><span class="header-section-number">Chapter 18</span> Forecasting Production - Advanced</h1>
-<p><strong>Highlights</strong></p>
-<ul>
-<li>Learn how to use crop progress and condition reports to create growing season forecasts of yield.</li>
-</ul>
-<p><strong>Check Your Understanding</strong></p>
-<ul>
-<li>Can you repeat the exercise for soybeans to forecast yield in a similar manner shown for corn?</li>
-</ul>
-<p>In chapter 8 we learned about the growing season timeline, how important the summer months are for forecasting production and yield of corn and soybeans, and how to follow USDA estimates to stay informed. Now that we have used regression models in a few previous contexts we can revisit the topic of forecasting yield during the growing season using the crop progress and condition reports.</p>
-<p>As we noted in chapter 8, there is a strong positive relationship between the condition ratings and realized yield. Since the crop progress and condition report is released once a week every Monday afternoon during the planting, growing, and harvest season, we can use a simple linear regression to translate this report into yield forecasts that we can update every week during the growing season.</p>
-<p>Here is what the crop progress and condition report looks like.</p>
-<div class="figure">
-<img src="images/cropprogress.png" alt="Figure 1. Crop Progress and Condition Report. 7/16/2018" />
-<p class="caption">Figure 1. Crop Progress and Condition Report. 7/16/2018</p>
-</div>
-<p>To create this report the USDA surveys farmers and other agribusiness professionals all over the major growing areas of the covered crops. Respondents are asked to rate the crop into one of five categories: Very Poor, Poor, Fair, Good, and Excellent.</p>
-<p>As one would hope, the percent of the crop rated good or excellent is positively correlated with yield outcomes.</p>
-<div class="figure">
-<img src="images\Excel-files\yied-forecast-advanced_files\image001.png" alt="Figure 2. Percent Deviations from Trend Yield against Percent of Crop Rated Good or Excellent" />
-<p class="caption">Figure 2. Percent Deviations from Trend Yield against Percent of Crop Rated Good or Excellent</p>
-</div>
-<p>Moreover, it may be informative to use the other categories from the condition reports to predict yields.</p>
-<p>Work through the steps in the exercises to see how well we can predict yields with the crop progress report survey.</p>
+<div id="exercises-11" class="section level1">
+<h1><span class="header-section-number">Chapter 19</span> Exercises</h1>
+<p>The exercises for this chapter walk us through using the weekly crop progress and condition reports to create a forecast for yields that can be updated once per week during the growing season.</p>
+<p>Highlights include:</p>
+<pre><code>+ One way to deal with the fact that yields are trending over time in our forecast.
++ Forecasting a variable that is not price (prices are the hardest things in the world to forecast!)
++ We need to hold out one of the condition categories in our regression. (Why?)</code></pre>
+<p>First, download <a href="Excel-files\yied-forecast-advanced.xlsx">this</a> excel file.</p>
+<p>In the first sheet you will see the crop condition ratings at the end of each year from 1986 to 2018, and the realized yields for each of those years. In the second sheet, you will see for every week in every year the crop condition ratings. We will use these at the end to simulate what it would be like to use this forecast in real-time during the years of 1994 (a 19% above trend yield year) and 2012 (a 25% above trend yield year).</p>
+<ol style="list-style-type: decimal">
+<li>Calculate the trend line of yields from 1986 to 2018.</li>
+<li>Calculate each year’s percent deviation from the trend.</li>
+<li>Plot the Yield per HA against ‘G+E’.</li>
+<li>What problems will arise if we try to use the Yield as the independent variable we want to forecast and use these condition categories to predict it? (Hint: There are two big ones.)</li>
+<li>Plot the ‘Percent Deviation from Trend Yield’ against ‘G+E’.</li>
+<li>Does the Percent Deviation from Trend Yield variable suffer from the same problem identified in (4)?</li>
+<li>Now, lets fit a regression model with the crop condition categories on the right hand side and percent deviations from trend yield on the left hand side.</li>
+</ol>
+<p>Note: We need to leave out one of the condition categories. Why? (Let’s leave out the Very Poor category.)</p>
+<ol start="8" style="list-style-type: decimal">
+<li>Use this regression model in the second sheet to generate a yield forecast for every week that a crop progress and condition report is generated.</li>
+</ol>
+<p>Note: <span class="math inline">\(\hat{Yield}=(1+\%Deviation\_From\_Trend/100)*Trend\_Yield\)</span></p>
+<ol start="9" style="list-style-type: decimal">
+<li><p>Create a scatterplot with the yield forecast on the y-axis and the week number variable on the x-axis.</p></li>
+<li><p>Now use the filter function to only show the year 1994. What happens to your forecasts as you move through the growing season?</p></li>
+<li><p>Next, select only 2012 and discuss what happens to your forecasts as you move through the growing season?</p></li>
+</ol>
+
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="crude-oil-and-the-crack-spread.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="exercises-11.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="forecasting-production-advanced.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="appendix-forecasting-with-ts-models.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
