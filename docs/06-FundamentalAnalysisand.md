@@ -19,7 +19,7 @@ If your forecast is above the current market price, that is bullish because your
 
 ## Supply and Demand
 
-Conducing fundamental analyses involves taking into account all the factors that determine supply, demand, and ultimately, prices. For grain markets there are basically two supply models to keep in mind: preplanting and post planting. Below we display both.  
+Conducting fundamental analyses involves taking into account all the factors that determine supply, demand, and ultimately, prices. For grain markets there are basically two supply models to keep in mind: preplanting and post planting. Below we display both.  
 
 
 ![Figure 1. Supply and Demand Model of a Commodity Before and After Planting](images\Ch3.1.png)
@@ -96,7 +96,7 @@ Forecasting supply and demand for any given marketing year begins well before ha
 
 ### Southern Hemisphere Production
 
-Production of corn, soybeans, and other commodities in the southern hemisphere (most notably in Brazil and Argintina) has grown rapidly over the last ten to fifteen years, and has impacted global commodity markets tremendously. Since southern hemisphere production occurs in the middle of marketing years organized by northern hemisphere harvest, there is an uncertain additional supply that must be forecast and updated to keep an accurate global balance sheet.  
+Production of corn, soybeans, and other commodities in the southern hemisphere (most notably in Brazil and Argentina) has grown rapidly over the last ten to fifteen years, and has impacted global commodity markets tremendously. Since southern hemisphere production occurs in the middle of marketing years organized by northern hemisphere harvest, there is an uncertain additional supply that must be forecast and updated to keep an accurate global balance sheet.  
 
 
 ### Uncertainty 
@@ -130,26 +130,47 @@ Since the USDA makes regular reports on the balance sheet for commodities (the W
 : Table 4. August 2016 USDA WASDE Balance Sheet for Corn
 
 
-Corn                         Marketing Year 2014/2015   Marketing Year 2015/2016 Est.   Marketing Year 2016/2017 July Projection   Marketing Year 2016/2017 August Projection 
----------------------------  -------------------------  ------------------------------  -----------------------------------------  -------------------------------------------
-**Million Acres**                                                                                                                                                             
-Area Planted                 90.6                       88                              94.1 *                                     94.1                                       
-Area Harvested               83.1                       80.7                            86.6 *                                     86.6                                       
-**Bushels**                                                                                                                                                                   
-Yield per Harvested Acre     171                        168.4                           168.0 *                                    175.1                                      
-**Million Bushels**                                                                                                                                                           
-Beginning Stocks             1232                       1731                            1701                                       1706                                       
-Production                   14216                      13601                           14540                                      15153                                      
-Imports                      32                         65                              40                                         50                                         
-**Supply, Total**            **15479**                  **15397**                       **16281**                                  **16909**                                  
-Feed and Residual            5314                       5200                            5500                                       5675                                       
-Food, Seed & Industrial      6567                       6567                            6650                                       6650                                       
-*Ethanol & by-products*      *5200*                     *5200*                          *5275*                                     *5275*                                     
-Domestic, Total              11881                      11767                           12150                                      12325                                      
-Exports                      1867                       1925                            2050                                       2175                                       
-**Use, Total**               **13748**                  **13692**                       **14200**                                  **14500**                                  
-Ending Stocks                1731                       1706                            2081                                       2409                                       
-**Avg. Farm Price ($/bu)**   **3.7**                    **3.55 - 3.65**                 **3.10 - 3.70**                            **2.85 - 3.45**                            
+\begin{tabular}{l|l|l|l|l}
+\hline
+Corn & Marketing Year 2014/2015 & Marketing Year 2015/2016 Est. & Marketing Year 2016/2017 July Projection & Marketing Year 2016/2017 August Projection\\
+\hline
+**Million Acres** &  &  &  & \\
+\hline
+Area Planted & 90.6 & 88 & 94.1 * & 94.1\\
+\hline
+Area Harvested & 83.1 & 80.7 & 86.6 * & 86.6\\
+\hline
+**Bushels** &  &  &  & \\
+\hline
+Yield per Harvested Acre & 171 & 168.4 & 168.0 * & 175.1\\
+\hline
+**Million Bushels** &  &  &  & \\
+\hline
+Beginning Stocks & 1232 & 1731 & 1701 & 1706\\
+\hline
+Production & 14216 & 13601 & 14540 & 15153\\
+\hline
+Imports & 32 & 65 & 40 & 50\\
+\hline
+**Supply, Total** & **15479** & **15397** & **16281** & **16909**\\
+\hline
+Feed and Residual & 5314 & 5200 & 5500 & 5675\\
+\hline
+Food, Seed \& Industrial & 6567 & 6567 & 6650 & 6650\\
+\hline
+*Ethanol \& by-products* & *5200* & *5200* & *5275* & *5275*\\
+\hline
+Domestic, Total & 11881 & 11767 & 12150 & 12325\\
+\hline
+Exports & 1867 & 1925 & 2050 & 2175\\
+\hline
+**Use, Total** & **13748** & **13692** & **14200** & **14500**\\
+\hline
+Ending Stocks & 1731 & 1706 & 2081 & 2409\\
+\hline
+**Avg. Farm Price (\$/bu)** & **3.7** & **3.55 - 3.65** & **3.10 - 3.70** & **2.85 - 3.45**\\
+\hline
+\end{tabular}
 
 (source: August 2016 USDA [WASDE Report](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1194) )
 
@@ -165,25 +186,45 @@ The balance sheet for corn follows the same generic patter, but we can be a bit 
 : Table 5. August 2016 USDA WASDE Balance Sheet for Soybeans
 
 
-Soybeans                     Marketing Year 2014/2015   Marketing Year 2015/2016 Est.   Marketing Year 2016/2017 July Projection   Marketing Year 2016/2017 August Projection 
----------------------------  -------------------------  ------------------------------  -----------------------------------------  -------------------------------------------
-**Million Acres**                                                                                                                                                             
-Area Planted                 83.3                       82.7                            83.7*                                      83.7                                       
-Area Harvested               82.6                       81.8                            83*                                        83                                         
-**Bushels**                                                                                                                                                                   
-Yield per Harvested Acre     47.5                       48                              48.9*                                      50.6                                       
-**Million Bushels**                                                                                                                                                           
-Beginning Stocks             92                         191                             255                                        195                                        
-Production                   3927                       3929                            4060                                       4201                                       
-Imports                      33                         25                              30                                         30                                         
-**Supply, Total**            **4052**                   **4145**                        **4346**                                   **4426**                                   
-Crushings                    1873                       1900                            1940                                       1950                                       
-Exports                      1842                       1880                            1950                                       1985                                       
-Seed                         96                         97                              95                                         95                                         
-Residual                     50                         12                              31                                         31                                         
-**Use, Total**               **3862**                   **3889**                        **4016**                                   **4061**                                   
-Ending Stocks                191                        255                             330                                        365                                        
-**Avg. Farm Price ($/bu)**   **10.1**                   **8.95**                        **8.35 - 9.85**                            **8.30 - 9.80**                            
+\begin{tabular}{l|l|l|l|l}
+\hline
+Soybeans & Marketing Year 2014/2015 & Marketing Year 2015/2016 Est. & Marketing Year 2016/2017 July Projection & Marketing Year 2016/2017 August Projection\\
+\hline
+**Million Acres** &  &  &  & \\
+\hline
+Area Planted & 83.3 & 82.7 & 83.7* & 83.7\\
+\hline
+Area Harvested & 82.6 & 81.8 & 83* & 83\\
+\hline
+**Bushels** &  &  &  & \\
+\hline
+Yield per Harvested Acre & 47.5 & 48 & 48.9* & 50.6\\
+\hline
+**Million Bushels** &  &  &  & \\
+\hline
+Beginning Stocks & 92 & 191 & 255 & 195\\
+\hline
+Production & 3927 & 3929 & 4060 & 4201\\
+\hline
+Imports & 33 & 25 & 30 & 30\\
+\hline
+**Supply, Total** & **4052** & **4145** & **4346** & **4426**\\
+\hline
+Crushings & 1873 & 1900 & 1940 & 1950\\
+\hline
+Exports & 1842 & 1880 & 1950 & 1985\\
+\hline
+Seed & 96 & 97 & 95 & 95\\
+\hline
+Residual & 50 & 12 & 31 & 31\\
+\hline
+**Use, Total** & **3862** & **3889** & **4016** & **4061**\\
+\hline
+Ending Stocks & 191 & 255 & 330 & 365\\
+\hline
+**Avg. Farm Price (\$/bu)** & **10.1** & **8.95** & **8.35 - 9.85** & **8.30 - 9.80**\\
+\hline
+\end{tabular}
 
 (source: August 2016 USDA [WASDE Report](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1194) )
 

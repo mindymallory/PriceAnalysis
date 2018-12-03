@@ -32,7 +32,7 @@ Historical acres planted and harvested can be found from USDA NASS.
 > 2. Click *Crops* in the menu 
 > 3. In the query, choose *Field Crops*
 > 4. Choose corn
-> 5. Click *Acreage, Yeild, Production, and Price*
+> 5. Click *Acreage, Yield, Production, and Price*
 > 6. Select the years you want. Hold the Ctrl key to select multiple.
 > 7. Click *Get Data*. 
 
@@ -54,7 +54,7 @@ Figure 4 shows that during the fall of 2016, the corn/soy price ratio was fallin
 
 ### Forecasting Harvested Acres
 
-After forecasting *Planted Acres* one still needs to provide a forecast for *Harvested Acres*. Figure 5 shows historical trends in *Harvested Acres* relative to *Planted Acres*. The difference between these two variables is provided in grey with units along the right axis for convenience. 
+After forecasting *Planted Acres* one still needs to provide a forecast for *Harvested Acres*. Figure 5 shows historical trends in *Harvested Acres* relative to *Planted Acres*. The difference between these two variables is provided in gray with units along the right axis for convenience. 
 
 Harvested acres tends to be a fairly stable number, averaging 7.6 million acres between 2000 and 2014. Although, years when this variable deviates most from trend corresponds to years of exceptionally poor production. In figure 5, see 2012 and 2002 as examples. These years marginal reductions in production are explained by reduced yield and abandoned acres, so forecasting the harvested acres number accurately becomes very important to accurately forecasting production in shortfall years. 
 

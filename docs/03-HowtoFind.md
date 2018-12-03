@@ -36,18 +36,18 @@ Contracts for several different expiry dates trade at the same time. There is a 
 
 |Commodity   | Symbol    |  Expiration Months and Symbol                            | General Ticker         | Yahoo Finance Ticker  | Quandl Ticker
 |:----------|:---------:|:--------------------------------------------------------|:----------------------|:---------------------|:---------------------| 
-| Corn       | C         |March (H), May (K), July (N), September (U), December (Z) | CZ17, December 2017 Corn|  [CZ17.cbt](https://finance.yahoo.com/quote/cz17.cbt)| [CME/CZ2017](https://www.quandl.com/data/CME/CZ2017-Corn-Futures-December-2017-CZ2017) |
-| Soybeans   | S         |January (F), March (H), May (K), July (N), August (Q), September (U), November (X) | SX17, November 2017 Soybean|  [SX17.cbt](http://finance.yahoo.com/quote/SX17.CBT/?p=SX17.CBT) | [CME/SX2017](https://www.quandl.com/data/CME/SX2017-Soybean-Futures-November-2017-SX2017) |
-| Canola/Rapeseed|  RS  | January (F), March (H), May (K), July (N), November (X) | RSX17, November 2017 | [RSX17](http://www.barchart.com/quotes/futures/RSX17) (Barchart) | [ICE/RSX2017](https://www.quandl.com/data/ICE/RSX2017-Canola-Futures-November-2017-RSX2017)
-| HRW Wheat  | KW  | March (H), May (K), July (N), September (U), December (Z) | KWN18, July 2018 KC Wheat | [KWN18.cbt](https://finance.yahoo.com/quote/KWN18.CBT?p=KWN18.CBT) |[CME/KWN2018](https://www.quandl.com/data/CME/KWN2018-KC-HRW-Wheat-Futures-July-2018-KWN2018) |
-| SRW Wheat  | W         |March (H), May (K), July (N), September (U), December (Z) | WZ17, December 2017 SRW Wheat|  [WZ17.cbt](https://finance.yahoo.com/quote/wz17.cbt) |  [CME/WZ2017](https://www.quandl.com/data/CME/WZ2017-Wheat-Futures-December-2017-WZ2017) |
-| HRS Wheat  | MW  | March (H), May (K), July (N), September (U), December (Z) | MWZ17, Dec 2017 Minn Wheat | NA | [MGE/MWZ2017](https://www.quandl.com/data/MGEX/MWZ2017-Minneapolis-Hard-Red-Spring-Wheat-Futures-December-2017-MWZ2017) |
-| Live Cattle | LC | Feb (G), Apr (J), Jun (M), Aug (Q), Oct (V), Dec (Z) | LCZ17, December 2017 Live Cattle | [LCZ17.CME](http://finance.yahoo.com/quote/LCZ17.CME/?p=LCZ17.CME) | [CME/LCZ2017](https://www.quandl.com/data/CME/LCZ2017-Live-Cattle-Futures-December-2017-LCZ2017)
-| Lean Hogs | LH         | Feb (G), Apr (J), May (K), Jun (M), Jul (N), Aug (Q), Oct (V), Dec (Z) | LHZ17, December 2017 Lean Hogs|  [LHZ17.cme](http://finance.yahoo.com/quote/LHZ17.CME/?p=LHZ17.CME) | [CME/LNZ2017](https://www.quandl.com/data/CME/LNZ2017-Lean-Hog-Futures-December-2017-LNZ2017) |
-| Crude Oil | CL         | All months | CLZ17 Dec 2017 Light Sweet Crude Oil|  [CLZ17.nym](http://finance.yahoo.com/quote/CLZ17.NYM/?p=CLZ17.NYM) | [CME/CLZ2017](https://www.quandl.com/data/CME/CLZ2017-Crude-Oil-Futures-September-2017-CLZ2017)|
-| RBOB Gasoline | RB | All months | RBZ17, Dec 2017 RBOB Gas | [RBZ17.nym](https://finance.yahoo.com/quote/RBZ17.NYM)| [CME/RBZ2017](https://www.quandl.com/data/CME/RBZ2017-RBOB-Gasoline-Physical-Futures-December-2017-RBZ2017) |
-| Heating Oil | HO | All months | HOZ17, Dec 2017 HO (Ultra low sulfur diesel) | [HOZ17.NYM](https://finance.yahoo.com/quote/HOZ17.NYM/?p=HOZ17.NYM) | [CME/HOZ2017](https://www.quandl.com/data/CME/HOZ2017-NY-Harbor-ULSD-Futures-December-2017-HOZ2017) |
-| Ethanol | EH | All Months | EHZ17, Dec 2017 Ethanol Futures | [EHZ17.CBT](https://finance.yahoo.com/quote/EHZ17-2.CBT/futures?p=EHZ17-2.CBT) | [CME/EHZ2017](https://www.quandl.com/data/CME/EHZ2017-Ethanol-Futures-December-2017-EHZ2017) |
+| Corn       | C         |March (H), May (K), July (N), September (U), December (Z) | CZ18, December 2018 Corn|  [CZ18.cbt](https://finance.yahoo.com/quote/CZ18.CBT)| [CME/CZ2018](https://www.quandl.com/data/CME/CZ2018-Corn-Futures-December-2018-CZ2018) |
+| Soybeans   | S         |January (F), March (H), May (K), July (N), August (Q), September (U), November (X) | SX18, November 2018 Soybean|  [SX18.cbt](http://finance.yahoo.com/quote/SX18.CBT/?p=SX18.CBT) | [CME/SX2018](https://www.quandl.com/data/CME/SX2018-Soybean-Futures-November-2018-SX2018) |
+| Canola/Rapeseed|  RS  | January (F), March (H), May (K), July (N), November (X) | RSX18, November 2018 | [RSX18](http://www.barchart.com/quotes/futures/RSX18) (Barchart) | [ICE/RSX2018](https://www.quandl.com/data/ICE/RSX2018-Canola-Futures-November-2018-RSX2018)
+| HRW Wheat  | KW  | March (H), May (K), July (N), September (U), December (Z) | KWN19, July 2019 KC Wheat | [KWN19.cbt](https://finance.yahoo.com/quote/KWN19.CBT?p=KWN19.CBT) |[CME/KWN2019](https://www.quandl.com/data/CME/KWN2019-KC-HRW-Wheat-Futures-July-2019-KWN2019) |
+| SRW Wheat  | W         |March (H), May (K), July (N), September (U), December (Z) | WZ18, December 2018 SRW Wheat|  [WZ18.cbt](https://finance.yahoo.com/quote/wz18.cbt) |  [CME/WZ2018](https://www.quandl.com/data/CME/WZ2018-Wheat-Futures-December-2018-WZ2018) |
+| HRS Wheat  | MW  | March (H), May (K), July (N), September (U), December (Z) | MWZ18, Dec 2018 Minn Wheat | NA | [MGE/MWZ2018](https://www.quandl.com/data/MGEX/MWZ2018-Minneapolis-Hard-Red-Spring-Wheat-Futures-December-2018-MWZ2018) |
+| Live Cattle | LC | Feb (G), Apr (J), Jun (M), Aug (Q), Oct (V), Dec (Z) | LCZ18, December 2018 Live Cattle | [LCZ18.CME](http://finance.yahoo.com/quote/LCZ18.CME/?p=LCZ18.CME) | [CME/LCZ2018](https://www.quandl.com/data/CME/LCZ2018-Live-Cattle-Futures-December-2018-LCZ2018)
+| Lean Hogs | LH         | Feb (G), Apr (J), May (K), Jun (M), Jul (N), Aug (Q), Oct (V), Dec (Z) | LHZ18, December 2018 Lean Hogs|  [LHZ18.cme](http://finance.yahoo.com/quote/LHZ18.CME/?p=LHZ18.CME) | [CME/LNZ2018](https://www.quandl.com/data/CME/LNZ2018-Lean-Hog-Futures-December-2018-LNZ2018) |
+| Crude Oil | CL         | All months | CLZ18 Dec 2018 Light Sweet Crude Oil|  [CLZ18.nym](http://finance.yahoo.com/quote/CLZ18.NYM/?p=CLZ18.NYM) | [CME/CLZ2018](https://www.quandl.com/data/CME/CLZ2018-Crude-Oil-Futures-September-2018-CLZ2018)|
+| RBOB Gasoline | RB | All months | RBZ18, Dec 2018 RBOB Gas | [RBZ18.nym](https://finance.yahoo.com/quote/RBZ18.NYM)| [CME/RBZ2018](https://www.quandl.com/data/CME/RBZ2018-RBOB-Gasoline-Physical-Futures-December-2018-RBZ2018) |
+| Heating Oil | HO | All months | HOZ18, Dec 2018 HO (Ultra low sulfur diesel) | [HOZ18.NYM](https://finance.yahoo.com/quote/HOZ18.NYM/?p=HOZ18.NYM) | [CME/HOZ2018](https://www.quandl.com/data/CME/HOZ2018-NY-Harbor-ULSD-Futures-December-2018-HOZ2018) |
+| Ethanol | EH | All Months | EHZ18, Dec 2018 Ethanol Futures | [EHZ18.CBT](https://finance.yahoo.com/quote/EHZ18-2.CBT/futures?p=EHZ18-2.CBT) | [CME/EHZ2018](https://www.quandl.com/data/CME/EHZ2018-Ethanol-Futures-December-2018-EHZ2018) |
 
 : Table 2. Conventions for Building Futures Contract Ticker Symbols for Selected Commodities
 
@@ -58,7 +58,7 @@ Table 3 provides some links to spread charts for commodity spreads we will cover
 
 | Spread | Link |
 |:------|:------|
-| Soybean Crush | [Barchart Spread Chart](https://www.barchart.com/futures/quotes/CSZ17/interactive-chart) |
+| Soybean Crush | [Barchart Spread Chart](https://www.barchart.com/futures/quotes/CSZ18/interactive-chart) |
 | Cattle Crush  | [ISU Spread Calculation](http://www2.econ.iastate.edu/estimated-returns/Finishing%20Steer%20Calves%20Chart.pdf) [ISU Livestock Returns](http://www2.econ.iastate.edu/estimated-returns/) |
 |Corn Crush | [ISU Ethanol Grind Margin](http://www.extension.iastate.edu/agdm/refirst.html) (Download Ethanol Profitability spreadsheet. Look at Grind Margin chart) |
 
@@ -133,7 +133,7 @@ All of the information contained in the reports described above are useful for i
 
 ## Conclusion 
 
-This concludes chapter 2. We learned resources for accessing commodity market data, USDA reports, and daily market commentary. Aimed with these resources one can begin to follow the ups and downs of commodity prices and get a feel for how fundamental supply and demand factors cause fluctuations in prices. In the next section we will cover fundamental analysis in detail. Fundamental analysis is driven by building balance sheets for components of supply and demand. Using the balance sheet approach, the analyst attempts to forecast the price that will cause quantities supplied and quantities demanded to be equal. This market equilibrium, if the fundamental model is correctly specified, should be a reasonable forecast of price.  
+This concludes chapter 3. We learned resources for accessing commodity market data, USDA reports, and daily market commentary. Aimed with these resources one can begin to follow the ups and downs of commodity prices and get a feel for how fundamental supply and demand factors cause fluctuations in prices. In the next section we will cover fundamental analysis in detail. Fundamental analysis is driven by building balance sheets for components of supply and demand. Using the balance sheet approach, the analyst attempts to forecast the price that will cause quantities supplied and quantities demanded to be equal. This market equilibrium, if the fundamental model is correctly specified, should be a reasonable forecast of price.  
 
 ## Readings 
 
