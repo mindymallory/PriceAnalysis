@@ -22,7 +22,7 @@ To create this report the USDA surveys farmers and other agribusiness profession
 
 As one would hope, the percent of the crop rated good or excellent is positively correlated with yield outcomes. 
 
-![Figure 2. Percent Deviations from Trend Yield against Percent of Crop Rated Good or Excellent](images\Excel-files\yied-forecast-advanced_files\image001.png)
+![Figure 2. Percent Deviations from Trend Yield against Percent of Crop Rated Good or Excellent](Excel-files\yied-forecast-advanced_files\image001.png)
 
 Moreover, it may be informative to use the other categories from the condition reports to predict yields. 
 
