@@ -127,6 +127,7 @@ DATA <- read.csv('Excel-files/crackspread.csv')
 
 CrackSpread <- (2*DATA$RBOB*42 + DATA$ULSD*42 - 3*DATA$CrudeOil)/3
 CrackSpread <- as.xts(CrackSpread, order.by = as.Date(DATA$Index, format = "%m/%d/%Y"))
+
 q <- autoplot(CrackSpread) + theme_bw() + labs(title = "3:2:1 WTI, RBOB, ULSD Crack Spread, 2010-2017", x= "", y= "Crack Spread $/barrel of Crude Oil Refined")
 
 q

@@ -120,7 +120,7 @@ Occasionally political unrest will occur in prominent crude oil producing region
 
 The **Crack Spread** is a spread trade in crude oil, gasoline, and ultra low sulfur diesel futures contracts that roughly mimics the refiners margin. Like the soybean crush and cattle crush, it can be used to hedge or speculate on these margins. The spread trade consists of a 3-2-1 ratio. Three contracts of crude oil, two contracts of RBOB gasoline, and one contract of Ultra low sulfur diesel. 
 
-![](16-CrudeOiland_files/figure-latex/unnamed-chunk-1-1.pdf)<!-- --> 
+<img src="16-CrudeOiland_files/figure-html/unnamed-chunk-1-1.png" width="672" />
 
 In the figure above we plot the historical 3:2:1 crack spread using the nearby WTI, RBOB, and Ultra low sulfer deisel futures contracts from the [NYMEX](www.NYMEX.com). To compute the 3:2:1 crack spread in $ per barrel use the following formula: 
 
