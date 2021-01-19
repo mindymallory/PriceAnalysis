@@ -42,12 +42,6 @@ Corn is used in the U.S for a variety of purposes. Largest use categories are fe
 
 ![Data from USDA ERS](assets/PrimerforGrain_CornUse.png "Data from USDA ERS")
 
-Corn is a global commodity, and the U.S. is the worlds largest producer and exporter of corn.
-
-![Figure 4: Largest Exporters of Corn](images/Corn-World-Exporters.png)
-
-![Figure 5: Largest Importers of Corn](images/Corn-World-Importers.png)
-
 ## Soybeans
 
 Soybeans are planted later than corn, from about April to June. Weather affects soybean production prospects and generates similar price responses as it does for corn. Soybean prices, therefore are highly dependent on what happens during the summer months.
@@ -62,7 +56,9 @@ Soybeans are planted later than corn, from about April to June. Weather affects 
 
 Soybeans did not begin to be commercially grown in the U.S. until the
 
-## Recent Trends in Acreage, Yield, Production, and Usemid 20th century, but once it was introduced, acreage expanded rapidly. Soybeans have also benefited from improved yields due to biotechnology.
+## Recent Trends in Acreage, Yield, Production, and Use
+
+Soybeans were not commonly planted in the U.S. until the mid 20th century, but once it was introduced, acreage expanded rapidly. Soybeans have also benefited from improved yields due to biotechnology.
 
 [![Soybean Acres and Yield](assets/PrimerforGrain_SoyAcandY.png)](Soybean%20Acres%20and%20Yield,%20Data%20from%20USDA%20NASS)
 
