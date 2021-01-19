@@ -50,7 +50,7 @@ Source: [USDA ERS Oil Crops Yearbook](http://www.ers.usda.gov/data-products/oil-
 : Table 1: Top 10 Importers of U.S. Soybeans 2012/2013 through 2016/2017 Marketing Years, Ranked in Descending Order for Marketing Year 2016/2017 (1,000 Metric Tons)
 
 ```{r, echo=FALSE, warning=FALSE}
-library(Kmisc)
+
 library(knitr)
 corn_importers <- read.csv('Excel-files/ForecastingUseof-soy_importers.csv', header = TRUE)
 kable(corn_importers, align = 'l',  col.names = c("COUNTRY", "EXPORTS 2016/2017", 	"RANK",	"EXPORTS 2015/2016",	"RANK",	

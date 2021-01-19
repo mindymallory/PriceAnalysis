@@ -61,7 +61,7 @@ The year-to-year variation is caused by price fluctuations with low prices encou
 : Table 1: Top 12 Importers of U.S. Corn 2012/2013 through 2016/2017 Marketing Years, Ranked in Descending Order for Marketing Year 2015/2016 (1,000 Metric Tons)
 
 ```{r, echo=FALSE, warning=FALSE}
-library(Kmisc)
+
 library(knitr)
 corn_importers <- read.csv('Excel-files/ForecastingUseof-corn_importers.csv', header = TRUE)
 kable(corn_importers, align = 'l',  col.names = c("COUNTRY", "EXPORTS 2016/2017", 	"RANK",	"EXPORTS 2015/2016",	"RANK",	

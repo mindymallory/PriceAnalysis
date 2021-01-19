@@ -16,7 +16,7 @@ $$Supply, Total - Use, Total = 4,426 - 4,061 = 365 (Million bushels) = Ending St
 : Table 1. September 2016 USDA WASDE Balance Sheet for Corn
 
 ```{r, echo=FALSE, warning=FALSE}
-library(Kmisc)
+
 library(knitr)
 aug15wasdec <- read.csv('Excel-files/FundamentalAnalysisand-aug15wasdec.csv')
 kable(aug15wasdec, align = 'l', col.names = c("Corn", "Marketing Year 2014/2015", "Marketing Year 2015/2016 Est.", "Marketing Year 2016/2017 July Projection", "Marketing Year 2016/2017 August Projection"))
@@ -28,7 +28,7 @@ and
 : Table 2. September 2016 USDA WASDE Balance Sheet for Soybeans
 
 ```{r, echo=FALSE, warning=FALSE}
-library(Kmisc)
+
 library(knitr)
 aug15wasdes <- read.csv('Excel-files/FundamentalAnalysisand-aug15wasdes.csv')
 kable(aug15wasdes, align = 'l', col.names = c("Soybeans", "Marketing Year 2014/2015", "Marketing Year 2015/2016 Est.", "Marketing Year 2016/2017 July Projection", "Marketing Year 2016/2017 August Projection"))
