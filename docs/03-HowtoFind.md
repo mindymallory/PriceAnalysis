@@ -6,15 +6,17 @@ This chapter serves as an introduction to real-time and historical data sources,
 
 The best way to learn commodity price analysis is to listen to the professionals who provide commentary on the markets on a regular basis. Land grant universities located in major commodity producing states all have components of their outreach programs dedicated to market commentary. The University of Illinois' web extension program, FARMDOC, is particularly good. Also, public radio in major commodity producing areas has excellent coverage. Champaign-Urbana's WILL, and Iowa Public Televisions' Market to Market are very good. There are *many* other great sources providing regular commentary, but this will get the reader started.
 
-+------------------+----------------------------------------------------+-----------------------------------------------------------------------+
-| Outlet           | Description                                        | Link                                                                  |
-+:=================+:===================================================+:======================================================================+
-| Farmdoc Daily    | Extension web presence by the department of ACE    | [farmdocdaily.illinois.edu](http://farmdocdaily.illinois.edu)         |
-+------------------+----------------------------------------------------+-----------------------------------------------------------------------+
-| WILL Agriculture | WILL and the University of Illinois Extension      | [will.illinois.edu/agriculture](http://will.illinois.edu/agriculture) |
-+------------------+----------------------------------------------------+-----------------------------------------------------------------------+
-| Market to Market | Agricultural programming by Iowa Public Television | [www.iptv.org/mtom/](http://www.iptv.org/mtom/)                       |
-+------------------+----------------------------------------------------+-----------------------------------------------------------------------+
++--------------------------+----------------------------------------------------+-----------------------------------------------------------------------+
+| Outlet                   | Description                                        | Link                                                                  |
++:=========================+:===================================================+:======================================================================+
+| Farmdoc Daily            | Extension web presence by the department of ACE    | [farmdocdaily.illinois.edu](http://farmdocdaily.illinois.edu)         |
++--------------------------+----------------------------------------------------+-----------------------------------------------------------------------+
+| WILL Agriculture         | WILL and the University of Illinois Extension      | [will.illinois.edu/agriculture](http://will.illinois.edu/agriculture) |
++--------------------------+----------------------------------------------------+-----------------------------------------------------------------------+
+| Market to Market         | Agricultural programming by Iowa Public Television | [www.iptv.org/mtom/](http://www.iptv.org/mtom/)                       |
++--------------------------+----------------------------------------------------+-----------------------------------------------------------------------+
+| Center for Commercial Ag | Purdue University Ag Econ                          | <https://ag.purdue.edu/commercialag/home/>                            |
++--------------------------+----------------------------------------------------+-----------------------------------------------------------------------+
 
 : Table 1. Resources for Commodity Market Commentary
 
@@ -31,7 +33,6 @@ Real-time (10-min delay) data can be obtained directly from the CME Group's webs
 ### Futures Symbols and Looking up Data by Contract Expiration
 
 Contracts for several different expiry dates trade at the same time. There is a useful shorthand for finding contracts for a specific commodity and expiration month that varies only slightly among data vendors; all follow a general convention for building futures ticker symbols customizing only to meet the needs of their individual systems. The table below lists selected grain and oilseed, livestock, and energy contract symbols, expiration symbols, and common ticker formats used to search for price quotes. For example, the first row of the table illustrates that the general convention for representing the CBOT corn futures contract expiring in December of 2021 is CZ21. The first letter represents the commodity symbol, C for corn; the second letter represents the expiration month, Z for December; and the final two numerals represent the year of expiry, 21for 2021.
-
 
 **Some Common Commodity Contract Tickers, with Barchart and TradingView Ticker Styles**
 

@@ -1,0 +1,40 @@
+---
+title: "Chapters 1, 2, and 3 of Price Analysis"
+subtitle: ""
+author: ""
+institute: ""
+date: ""
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+
+---
+
+# Please read chapters 1 and 2 on your own
+
+---
+
+# Chapter 3: How to find information
+
++ Market Commentary
++ Futures Price Quotes
+ + Futures Symbols
++ Futures Spreads
++ USDA Reports
+
+---
+
+# Market Commentary
+
