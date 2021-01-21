@@ -52,5 +52,9 @@ mlmallor at purdue dot edu
 knitr::include_url("https://www.youtube.com/embed/9bZkp7q19f0")
 ```
 
-<iframe src="https://www.youtube.com/embed/9bZkp7q19f0" width="672" height="400px"></iframe>
+```
+## PhantomJS not found. You can install it with webshot::install_phantomjs(). If it is installed, please make sure the phantomjs executable can be found via the PATH variable.
+```
+
+<iframe src="https://www.youtube.com/embed/9bZkp7q19f0" width="100%" height="400px"></iframe>
 -->

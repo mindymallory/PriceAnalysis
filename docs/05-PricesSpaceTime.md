@@ -95,7 +95,7 @@ When prices move up or down, the front end of the forward curve generally is mor
 
 
 
-<img src="05-PricesSpaceTime_files/figure-html/unnamed-chunk-1-1.png" width="672" />
+![](05-PricesSpaceTime_files/figure-latex/unnamed-chunk-1-1.pdf)<!-- --> 
    
 Figure 6. Forward Curve with Prices Increasing, Contango to backwardation
 
@@ -106,7 +106,7 @@ On day 1, the market is clearly in contango, as the forward curve is upward slop
 
 
 
-<img src="05-PricesSpaceTime_files/figure-html/unnamed-chunk-2-1.png" width="672" />
+![](05-PricesSpaceTime_files/figure-latex/unnamed-chunk-2-1.pdf)<!-- --> 
    
 Figure 7. Forward Curve with Prices Decreasing 
 
