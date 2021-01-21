@@ -1,0 +1,438 @@
+---
+title: "MakeBookAssets"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(ggpubr)
+
+
+# Color Schemes:
+
+purduegold <- '#CEB888'
+```
+
+## This file creates assets for my price analysis book. Code can be run to update figures and tables in the book. Assets are located in the `/assets` subdirectory. 
+
+```{r}
+prices <- data.frame(price = 400:500)
+strike = 450
+prem = 10
+
+prices <- prices %>% 
+  mutate(callpayoffs = pmax(price - strike, 0) - prem) %>% 
+  mutate(putpayoffs = pmax(strike - price, 0) - prem)
+
+longcall <- ggplot(prices, aes(x = price, y = callpayoffs)) + 
+  geom_line(size = 1.5, color = purduegold) +
+  theme_bw() + 
+  geom_hline(yintercept = 0) + 
+  lims(y = c(-40, 40)) +
+  labs(title = "Long Call", x = "", y = "Profit or Loss cents/contract") + 
+  theme(plot.title = element_text(hjust = 0.5))
+
+longput <- ggplot(prices, aes(x = price, y = putpayoffs)) + 
+  geom_line(size = 1.5, color = purduegold) +
+  theme_bw() + 
+  geom_hline(yintercept = 0) + 
+  lims(y = c(-40, 40)) +
+  labs(title = "Long Put", x = "", y = "") + 
+  theme(plot.title = element_text(hjust = 0.5))
+
+shortcall <- ggplot(prices, aes(x = price, y = -callpayoffs)) + 
+  geom_line(size = 1.5, color = purduegold) +
+  theme_bw() + 
+  geom_hline(yintercept = 0) + 
+  lims(y = c(-40, 40)) +
+  labs(title = "Short Call", x = "Price of Underlying cents/contract", y = "Profit or Loss cents/contract") + 
+  theme(plot.title = element_text(hjust = 0.5))
+
+shortput <- ggplot(prices, aes(x = price, y = -putpayoffs)) + 
+  geom_line(size = 1.5, color = purduegold) +
+  theme_bw() + 
+  geom_hline(yintercept = 0) + 
+  lims(y = c(-40, 40)) +
+  labs(title = "Short Put", x = "Price of Underlying cents/contract", y = "") + 
+  theme(plot.title = element_text(hjust = 0.5))
+
+figure <- ggarrange(longcall, longput, shortcall, shortput)
+
+figure <- annotate_figure(figure, 
+                top = text_grob("Option Profit Diagrams at Expiration", 
+                                face = "bold", 
+                                size = 14))
+ggsave(filename = "Options1-optionplot.png")
+
+
+```
+
+```{r, fig.width= 6, fig.hight = 4}
+prices <- data.frame(price = 1000:1400)
+strike = 1200
+premc = 47.875
+premp = 0.375
+
+prices <- prices %>% 
+  mutate(callpayoffs = pmax(price - strike, 0) - premc) %>% 
+  mutate(putpayoffs = pmax(strike - price, 0) - premp)
+
+longcall <- ggplot(prices, aes(x = price, y = callpayoffs)) + 
+  geom_line(size = 1.5, color = purduegold) +
+  theme_bw() + 
+  geom_hline(yintercept = 0) + 
+  geom_vline(xintercept = 1250) +
+  lims(y = c(-60, 60)) +
+  labs(title = "Long Call", x = "", y = "Profit or Loss cents/contract") + 
+  theme(plot.title = element_text(hjust = 0.5))
+
+longput <- ggplot(prices, aes(x = price, y = putpayoffs)) + 
+  geom_line(size = 1.5, color = purduegold) +
+  theme_bw() + 
+  geom_hline(yintercept = 0) + 
+  geom_vline(xintercept = 1250) +
+  lims(y = c(-60, 60)) +
+  labs(title = "Long Put", x = "", y = "") + 
+  theme(plot.title = element_text(hjust = 0.5))
+
+figure <- ggarrange(longcall, longput)
+
+figure <- annotate_figure(figure, 
+                top = text_grob("Option Profit Diagrams at Expiration, 1200 Strikes", 
+                                face = "bold", 
+                                size = 14))
+figure
+
+ggsave(filename = "Options1-optionmoneynessplot.png")
+
+```
+
+```{r, fig.width= 6, fig.hight = 4}
+prices <- data.frame(price = 400:500)
+strike = 450
+premc = 0
+premp = 0
+
+prices <- prices %>% 
+  mutate(callpayoffs = pmax(price - strike, 0) - premc) %>% 
+  mutate(putpayoffs = pmax(strike - price, 0) - premp)
+
+longcall <- ggplot(prices, aes(x = price, y = callpayoffs)) + 
+  geom_line(size = 1.5, color = purduegold) +
+  theme_bw() + 
+  geom_hline(yintercept = 0) + 
+  lims(y = c(-15, 60)) +
+  labs(title = "Long Call", x = "", y = "Profit or Loss cents/contract") + 
+  theme(plot.title = element_text(hjust = 0.5))
+
+longput <- ggplot(prices, aes(x = price, y = putpayoffs)) + 
+  geom_line(size = 1.5, color = purduegold) +
+  theme_bw() + 
+  geom_hline(yintercept = 0) + 
+  lims(y = c(-15, 60)) +
+  labs(title = "Long Put", x = "", y = "") + 
+  theme(plot.title = element_text(hjust = 0.5))
+
+figure <- ggarrange(longcall, longput)
+
+figure <- annotate_figure(figure, 
+                top = text_grob("Option Payoff Diagrams, 450 Strikes", 
+                                face = "bold", 
+                                size = 14))
+figure
+
+ggsave(filename = "Options1-optionintrinsic.png")
+
+```
+## The following code prepares figures for "PrimerforGrain.rmd"
+
+```{r}
+key = 'BD652A51-1B61-3442-B80A-9B4030E2F382'
+
+library(rnassqs)
+# apikey <- "YOUR API KEY"
+nassqs_auth(key)
+
+params1 <- list(commodity_desc = c("CORN", "SOYBEANS", "WHEAT"), 
+                year__GE = 1926, 
+                agg_level_desc = "NATIONAL", 
+                statisticcat_desc = c("YIELD", "Area Planted", "Production", "PRICE RECEIVED"),
+                prodn_practice_desc = "ALL PRODUCTION PRACTICES",
+                util_practice_desc = c("GRAIN", "ALL UTILIZATION PRACTICES"),
+                reference_period_desc = c("YEAR", "Marketing Year"),
+                freq_desc = "ANNUAL"
+                #prodn_practice_desc = "NON-IRRIGATED"
+                ) # GE means "greater than or equal to"
+data1   <- nassqs(params1)
+data1$Value <- as.numeric(gsub(",", "", as.character(data1$Value)))
+
+
+corn1 <- data1 %>% 
+  select(c(commodity_desc, statisticcat_desc, short_desc, year, Value )) %>%
+  filter( commodity_desc == "CORN") %>%
+  filter(statisticcat_desc == "AREA PLANTED") %>%
+  ggplot(aes(x = year, y = Value/1000000)) + 
+  geom_col(width = .7) +
+  geom_line(data = data1 %>% 
+  select(c(commodity_desc, statisticcat_desc, short_desc, year, Value )) %>%
+  filter( commodity_desc == "CORN") %>%
+  filter(statisticcat_desc == "YIELD"), aes(x = year, y = Value), color = purduegold, size = 1.5) +
+  theme_bw() +
+  lims(y = c(0, 200)) +
+  labs(title = "U.S. Corn Acreage and Yield", x = "", y = "Millions of Acres, and Bu/Acre, respectively") + 
+  scale_x_continuous(n.breaks = 25)
+
+corn1  
+ggsave(corn1, filename = "PrimerforGrain_CornAcandY.png")
+
+
+
+corn2 <- data1 %>% 
+  filter( commodity_desc == "CORN") %>%
+  filter(statisticcat_desc == "PRODUCTION") %>%
+  filter(short_desc == "CORN, GRAIN - PRODUCTION, MEASURED IN BU") %>%
+  filter( domaincat_desc == "NOT SPECIFIED") %>% 
+  filter(source_desc == "SURVEY") %>%
+  select(c(commodity_desc, statisticcat_desc, short_desc, domaincat_desc, source_desc, year, Value )) %>% 
+  ggplot(aes(x = year, y = Value/1000000000)) + 
+  geom_col(width = 1.0) +
+  geom_line(data = data1 %>% 
+  filter( commodity_desc == "CORN") %>%
+  filter(statisticcat_desc == "PRICE RECEIVED") %>%
+  filter(reference_period_desc == "MARKETING YEAR") %>% 
+  filter(short_desc == "CORN, GRAIN - PRICE RECEIVED, MEASURED IN $ / BU") %>% 
+ select(c(commodity_desc, statisticcat_desc, short_desc, year, Value )), aes(x = year, y = Value), color = purduegold, size = 1.5) +
+  theme_bw() +
+  lims(y = c(0, 16)) +
+  labs(title = "U.S. Corn Production and Prices", x = "", y = "Billions of Bushels, and $/bu, respectively") + 
+  scale_x_continuous(n.breaks = 25)
+  
+#+
+ # scale_y_continuous(
+#    name = "$/bu", 
+ #   sec.axis = sec_axis(~ . * 1.5  , name = "Billions of Bushels"), 
+  #  limits = c(0, 17)) 
+
+corn2
+ggsave(corn2, filename = "PrimerforGrain_CornProdand$.png")
+
+```
+
+
+```{r}
+soy1 <- data1 %>% 
+  select(c(commodity_desc, statisticcat_desc, short_desc, year, Value )) %>%
+  filter( commodity_desc == "SOYBEANS") %>%
+  filter(statisticcat_desc == "AREA PLANTED") %>%
+  ggplot(aes(x = year, y = Value/1000000)) + 
+  geom_col(width = 1) +
+  geom_line(data = data1 %>% 
+  select(c(commodity_desc, statisticcat_desc, short_desc, year, Value )) %>%
+  filter( commodity_desc == "SOYBEANS") %>%
+  filter(statisticcat_desc == "YIELD"), aes(x = year, y = Value), color = purduegold, size = 1.5) +
+  theme_bw() +
+  lims(y = c(0, 100)) +
+  labs(title = "U.S. Soybean Acreage and Yield", x = "", y = "Millions of Acres, and Bu/Acre, respectively") + 
+  scale_x_continuous(n.breaks = 25)
+
+soy1  
+ggsave(soy1, filename = "PrimerforGrain_SoyAcandY.png")
+
+
+
+soy2 <- data1 %>% 
+  filter( commodity_desc == "SOYBEANS") %>%
+  filter(statisticcat_desc == "PRODUCTION") %>%
+  filter(short_desc == "SOYBEANS - PRODUCTION, MEASURED IN BU") %>%
+  filter( domaincat_desc == "NOT SPECIFIED") %>% 
+  filter(source_desc == "SURVEY") %>%
+  select(c(commodity_desc, statisticcat_desc, short_desc, domaincat_desc, source_desc, year, Value )) %>% 
+  ggplot(aes(x = year, y = Value/1000000000)) + 
+  geom_col(width = 1.0) +
+  geom_line(data = data1 %>% 
+  filter( commodity_desc == "SOYBEANS") %>%
+  filter(statisticcat_desc == "PRICE RECEIVED") %>%
+  filter(reference_period_desc == "MARKETING YEAR") %>% 
+  filter(short_desc == "SOYBEANS - PRICE RECEIVED, MEASURED IN $ / BU") %>% 
+ select(c(commodity_desc, statisticcat_desc, short_desc, year, Value )), aes(x = year, y = Value), color = purduegold, size = 1.5) +
+  theme_bw() +
+  lims(y = c(0, 16)) +
+  labs(title = "U.S. Soybean Production and Prices", x = "", y = "Billions of Bushels, and $/bu, respectively") + 
+  scale_x_continuous(n.breaks = 25)
+  
+#+
+ # scale_y_continuous(
+#    name = "$/bu", 
+ #   sec.axis = sec_axis(~ . * 1.5  , name = "Billions of Bushels"), 
+  #  limits = c(0, 17)) 
+
+soy2
+ggsave(soy2, filename = "PrimerforGrain_SoyProdand$.png")
+
+
+```
+
+```{r}
+wheat1 <- data1 %>%  
+  select(c(commodity_desc, statisticcat_desc, short_desc, year, Value )) %>%
+  filter( commodity_desc == "WHEAT") %>%
+  filter(short_desc == "WHEAT - ACRES PLANTED") %>%  
+  filter(statisticcat_desc == "AREA PLANTED") %>%
+  ggplot(aes(x = year, y = Value/1000000)) + 
+  geom_col(width = 1) +
+  geom_line(data = data1 %>% 
+  select(c(commodity_desc, statisticcat_desc, short_desc, year, Value )) %>%
+  filter( commodity_desc == "WHEAT") %>%
+  filter(short_desc == "WHEAT - YIELD, MEASURED IN BU / ACRE") %>%
+  filter(statisticcat_desc == "YIELD"), aes(x = year, y = Value), color = purduegold, size = 1.5) +
+  theme_bw() +
+  lims(y = c(0, 100)) +
+  labs(title = "U.S. Wheat Acreage and Yield", x = "", y = "Millions of Acres, and Bu/Acre, respectively") + 
+  scale_x_continuous(n.breaks = 25)
+
+wheat1  
+ggsave(wheat1, filename = "PrimerforGrain_WheatAcandY.png")
+
+
+
+wheat2 <- data1 %>% 
+  filter( commodity_desc == "WHEAT") %>%
+  filter(statisticcat_desc == "PRODUCTION") %>%
+  filter(short_desc == "WHEAT - PRODUCTION, MEASURED IN BU") %>%
+  filter( domaincat_desc == "NOT SPECIFIED") %>% 
+  filter(source_desc == "SURVEY") %>%
+  select(c(commodity_desc, statisticcat_desc, short_desc, domaincat_desc, source_desc, year, Value )) %>% 
+  ggplot(aes(x = year, y = Value/1000000000)) + 
+  geom_col(width = 1.0) +
+  geom_line(data = data1 %>% 
+  filter( commodity_desc == "WHEAT") %>%
+  filter(statisticcat_desc == "PRICE RECEIVED") %>%
+  filter(reference_period_desc == "MARKETING YEAR") %>% 
+  filter(short_desc == "WHEAT - PRICE RECEIVED, MEASURED IN $ / BU") %>% 
+ select(c(commodity_desc, statisticcat_desc, short_desc, year, Value )), aes(x = year, y = Value), color = purduegold, size = 1.5) +
+  theme_bw() +
+  lims(y = c(0,9)) +
+  labs(title = "U.S. Wheat Production and Prices", x = "", y = "Billions of Bushels, and $/bu, respectively") + 
+  scale_x_continuous(n.breaks = 25)
+  
+#+
+ # scale_y_continuous(
+#    name = "$/bu", 
+ #   sec.axis = sec_axis(~ . * 1.5  , name = "Billions of Bushels"), 
+  #  limits = c(0, 17)) 
+
+wheat2
+ggsave(wheat2, filename = "PrimerforGrain_WheatProdand$.png")
+
+
+```
+
+Getting the USE graphs for `PrimerforGrain.Rmd`
+
+```{r}
+library(tidyverse)
+library(readxl)
+library(httr)
+library(tidyr)
+
+
+tmp <- tempfile(fileext = ".xls")
+
+httr::GET(url = "https://www.ers.usda.gov/webdocs/DataFiles/50048/Feed%20Grains%20Yearbook%20Tables-All%20Years.xls",
+          write_disk( tmp, overwrite = TRUE) )
+
+data_xl <- read_excel(tmp, sheet = "FGYearbookTable04-Full", 
+                      skip = 4, 
+                      col_names = c("MktYear", "Quarter", "BeginningStocks", "Production", "Imports", 
+                                    "TotalSupply", "FoodAlcoholInd", "Seed", "FeedandResidual", 
+                                    "TotalDomestic", "Exports", "TotalUse", "EndingStocks")) %>%
+  fill(MktYear) %>% 
+  # Make columns for more standard date handling
+  mutate(month = ifelse(Quarter =="Q1 Sep-Nov", "09-01", 
+                        ifelse(Quarter == "Q2 Dec-Feb", "12-01", 
+                               ifelse(Quarter == "Q3 Mar-May", "03-01", 
+                                      ifelse(Quarter == "Q4 Jun-Aug", "06-01",
+                                             ifelse(Quarter == "MY Sep-Aug", "09-01", NA)))))) %>%
+  mutate(year = ifelse(Quarter =="Q1 Sep-Nov" | Quarter == "Q2 Dec-Feb" | Quarter == "MY Sep-Aug", as.numeric(str_sub(MktYear, 1,4)), 
+                       as.numeric(str_sub(MktYear, 1,4)) +1 )) %>%
+  mutate(date = as.Date(paste0(as.character(year), "-", month))) # Now we have a proper date column.
+
+# Make tidy getting ready for ggplot
+data_tidy <- data_xl %>% 
+  select(c(-MktYear, -month, -year)) %>%
+  pivot_longer(c(-date, -Quarter), names_to = "UseCategory", values_to = "Value")
+
+data_tidy
+
+# Plot the Marketing Year Data
+CornUse <- data_tidy %>% filter(Quarter == "MY Sep-Aug") %>%
+  filter(UseCategory %in% c("FoodAlcoholInd", "Seed", "FeedandResidual", "Exports", "EndingStocks")) %>%
+  ggplot(aes(x = date, y = Value, fill = UseCategory)) + 
+  geom_area() + 
+  theme_bw() +
+  labs(x = "", y = "Millions of bushels", title = "Corn Use Categories Since 1975")
+
+
+CornUse
+ggsave(CornUse, filename = "PrimerforGrain_CornUse.png")
+
+```
+
+
+```{r}
+tmp1 <- tempfile(fileext = ".xlsx")
+
+httr::GET(url = "https://www.ers.usda.gov/webdocs/DataFiles/52218/OilCropsAllTables.xlsx?v=3685",
+          write_disk( tmp1) )
+
+
+
+data_xl <- read_excel(tmp1, sheet = "tab3", 
+                     skip = 6, 
+                      col_names = c("MktYear", "BeginningStocks", "Production", "Imports", 
+                                    "TotalSupply", "Crush", "Exports", "SeedFeedandResidual", 
+                                    "Total", "EndingStocks", "Prices")) 
+
+# Make tidy getting ready for ggplot
+data_xl$Prices <- as.numeric(data_xl$Prices)
+data_xl <- data_xl[1:39,]  # Increase this by one to update. Have to cut off junk at bottom
+data_xl$MktYear <- as.numeric(data_xl$MktYear)
+data_tidy <- data_xl %>% 
+  pivot_longer(c(-MktYear), names_to = "UseCategory", values_to = "Value")
+
+
+data_tidy
+
+# Plot the Marketing Year Data
+SoybeanUse <- data_tidy %>% 
+  filter(UseCategory %in% c("Crush", "Exports", "SeedFeedandResidual", "EndingStocks")) %>%
+  ggplot(aes(x = MktYear, y = Value, fill = UseCategory)) + 
+  geom_area() + 
+  theme_bw() +
+  labs(x = "", y = "Millions of bushels", title = "Soybean Use Categories Since 1980") +
+   scale_x_continuous(n.breaks = 10)
+
+SoybeanUse
+ggsave(SoybeanUse, filename = "PrimerforGrain_SoyUse.png")
+
+
+```
+
+```{r}
+CornPrices<- data1 %>% 
+  filter( commodity_desc == "CORN") %>%
+  filter(statisticcat_desc == "PRICE RECEIVED") %>%
+  filter(reference_period_desc == "MARKETING YEAR") %>% 
+  filter(short_desc == "CORN, GRAIN - PRICE RECEIVED, MEASURED IN $ / BU") %>% 
+ select(c(commodity_desc, statisticcat_desc, short_desc, year, Value )) %>% 
+  ggplot(aes(x = year, y = Value)) + 
+  geom_line(color = purduegold, size = 1.5) +
+  theme_bw() +
+  lims(y = c(0, 8)) +
+  labs(title = "U.S. Corn Prices", x = "", y = "$/bu") + 
+  scale_x_continuous(n.breaks = 25)
+
+CornPrices
+ggsave(CornPrices, filename = "PrimerforGrain_CornPrices.png")
+```
