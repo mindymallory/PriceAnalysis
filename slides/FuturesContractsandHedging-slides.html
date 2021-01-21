@@ -1,68 +1,265 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Futures and Hedging Review</title>
+    <meta charset="utf-8" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Futures and Hedging Review
+## Price Analysis: A Fundamental Approach to the Study of Commodity Prices
+
+---
+
+
+
+
+
+
+
+
+---
+
 # Futures and Hedging Review
 
 **Highlights**
 
--   Review of futures contracts and how to calculate profit or loss on a trade.
--   Hedging examples from the sell side (farmer's hedge) and from the buy side (flour mill's hedge).
+-   Review of futures contracts and how to calculate profit or loss on a trade. 
+
+-   Hedging examples from the sell side (farmer's hedge) and from the buy side (flour mill's hedge). 
+
 -   Learn how basis risk impacts a hedge.
 
 **Check your Understanding**
 
--   Can you calculate the profit or loss from a trade?
+-   Can you calculate the profit or loss from a trade? 
+
 -   Can you fill out a hedging net revenue table given prices on key dates?
 
-This chapter is a review of the basics of hedging. What is its purpose? Who does it? And how do futures contracts facilitate a 'hedge'?
+---
 
-Merriam-Webster defines a 'hedge' as a means of protection or defense (as against a financial loss). Hedging in the sense of hedging with a futures contract, is exactly that a defense against a financial loss. In the present context, a hedge is the use of a derivative contract to reduce or eliminate risk in your business' profits.
+# Futures and Hedging Review
 
-Understanding who is hedging and why is very helpful to understanding price relationships and what drives them to move up or down.
++ What is its purpose? 
 
-## Futures Contract Review
++ Who does it? 
 
-A futures contract is a contract between two parties to buy and sell at an agreed to price, a specific quantity and quality of something at a specific location. In the case of CBOT corn futures, it is 5,000 bushels of U.S. number 2 yellow corn, at specific elevators along the Illinois River, Lake Michigan, or associated canals. These contracts are traded on a centralized exchange, similar to the 'stock market', and the two counter-parties do not know each other. The difference between a futures contract, and say buying a stock, is that when the trade takes place, no ownership transfer occurs. It is simply a promise to buy or sell at a specific date in the future. That is why there are many different futures contract 'months' like 'December 2017' corn futures, and 'March 2018' corn futures. Traders on futures exchanges need to post 'margin' which is just an amount of money that acts as a performance bond so that everyone has confidence that both parties can make good on the contract if it is held until the futures contract expires. As the price moves up, the seller's position is losing (because selling 'low' is 'bad' business), and some money is taken from their margin account and put into the buyer's margin account (because buying 'low' is 'good' business). This daily transfer of money from the losers to the winners is called 'marking to market', and it makes sure everyone has the financial capital required to make good on the terms of the contract.
++ And how do futures contracts facilitate a 'hedge'?
 
-Consider this example. At 10am the March corn futures contract is trading at \$4.50 per bushel. Trader A decides to buy one contract and Trader B decides to sell one contract. At 1pm both traders decide to close their position and the price has moved up to \$4.75 per bushel. Since the price went up the by \$0.25 per bushel, the longs (buyers) gain $+0.25*5000 = \$1250$ and the shorts (sellers) lose $-0.25*5000 = \$1250$.
+
+---
+class: inverse, center, middle
+
+## Understanding who is hedging and why is very helpful to understanding price relationships and what drives them to move up or down
+
+
+---
+
+# Futures Contract Review
+
++ Contract to buy or sell 
+
+  + at an agreed to price
+  
+  + a specific quantity 
+  
+  + a specific quality 
+  
+  + at a specific location 
+  
+---
+
+# Example CBOT Corn Futures
+
++ 5,000 bushels 
+
++ U.S. number 2 yellow corn 
+
++ at specific elevators along the Illinois River, Lake Michigan, or associated canals. 
+
+---
+# Futures Contract Review
+
++ These contracts are traded on a centralized exchange, similar to the 'stock market' 
+
++ Two counter-parties do not know each other. 
+
+---
+class: center, middle
+
+## The difference between a futures contract, and say buying a stock, is that when the trade takes place, no ownership transfer occurs. 
+
+---
+class: center, middle
+
+## It is simply a promise to buy or sell at a specific date in the future. 
+
+---
+class: center, middle
+
+## That is why there are many different futures contract 'months' like 'December 2022' corn futures, and 'March 2023' corn futures. 
+
+---
+# Futures Contract Review
+
++ Traders on futures exchanges need to post 'margin' 
+
+  + money that acts as a performance bond so that everyone has confidence that both parties can make good on the contract 
+  
+  + As the price moves up, the seller's position is losing (because selling 'low' is 'bad' business) 
+  
+  + money is taken from short traders' margin accounts and put into the buyers' margin accounts (because buying 'low' is 'good' business). 
+  
+  + This daily transfer of money from the losers to the winners is called 'marking to market' 
+  
+    + makes sure everyone has the financial capital required to make good on the terms of the contract.
+
+---
+# Profit/Loss Calculation Review
+
+
+Consider this example. 
+
++ At 10am the March corn futures contract is trading at **$4.50** per bushel 
+
++ Trader A decides to **buy** one contract and Trader B decides to **sell** one contract  
+
++ At 1pm both traders decide to close their position and the price has moved up to **$4.75** per bushel
+
+
+## What is the gain or loss of both the long and short side? 
+
+---
+# Profit/Loss Calculation Review
+
+Since the price went up the by $0.25 per bushel, the longs (buyers) gain 
+
++0.25\*5000 = $1250 and the shorts (sellers) lose -0.25\*5000 = $1250
 
 | Time                | Trader A                  | Trader B                  |
 |:--------------------|:--------------------------|:--------------------------|
-| 10am                | buy \$4.50                | sell \$4.50               |
-| 1pm                 | sell \$4.75               | buy \$4.75                |
-| profit per bu       | \$4.75 - \$4.50 = +\$0.25 | \$4.50 - \$4.75 = -\$0.25 |
-| profit one contract | +\$1250                   | -\$1250                   |
+| 10am                | buy $4.50                 | sell  $4.50               |
+| 1pm                 | sell  $4.75               | buy  $4.75                |
+| profit per bu       | $4.75 - $4.50 = +$0.25    |  $4.50 -  $4.75 = -$0.25  |
+| profit one contract | +$1250                    | - $1250                   |
 
-Very few contracts are held all the way to expiration when transfer of ownership would take place. The traders who originally bought, sometime before expiration will sell, eliminating their obligation in the market, or getting them to a 'flat' position. The traders who originally sold, will buy, getting them to a 'flat' position as well. The rest of the chapter will cover how exactly these futures contracts can facilitate a hedge for different types of businesses.
+---
+# Position Exit Review 
 
-### Delivery
++ Very few contracts are held all the way to expiration when transfer of ownership would take place 
 
-The CME Group grain and oilseed future are deliverable contracts, ensuring a link between the spot market and the futures market. Only a few of the futures contracts traded are actually delivered on, however. The purpose of the futures market is not to provide a mechanism for physical exchange, but rather a means for streamlined risk management in a liquid market. That said, there is always some contracts that end up being held by the long and the short side of the trade into delivery. We will discuss briefly the mechanism the CME Group grain and oilseed contracts for delivery.
++ The traders who originally bought, sometime before expiration will sell 
 
-The exchange has designated a few large commercial grain handlers and warehouses as *regular for delivery*. These grain handlers lie in one of the following territories specified in the [CME Group Rulebook](https://www.cmegroup.com/rulebook/CBOT/II/10/10.pdf)
+  + eliminates their obligation in the market, or gets them to a 'flat' position 
+  
++ The traders who originally sold, will buy, getting them to a 'flat' position as well 
 
-> Corn shipping certificates shall specify shipment from one of the warehouses or shipping stations currently regular for delivery and located in one of the following territories:
->
-> A. Chicago and Burns Harbor, Indiana Switching District - When used in these Rules, the Chicago Switching District will be that area geographically defined by Tariff ICC WTL 8020-Series and that portion of the Illinois Waterway at or above river mile 304 which includes the Calumet Sag Channel and the Chicago Sanitary & Ship Canal. When used in these Rules, Burns Harbor, Indiana Switching District will be that area geographically defined by the boundaries of Burns Waterway Harbor at Burns Harbor, Indiana which is owned and operated by the Indiana Port Commission.
->
-> B. Lockport-Seneca Shipping District - When used in these Rules, the Lockport-Seneca Shipping District will be that portion of the Illinois Waterway below river mile 304 at the junction of the Calumet Sag Channel and the Chicago Sanitary & Ship Canal and above river mile 244.6 at the Marseilles Lock and Dam.
->
-> C. Ottawa-Chillicothe Shipping District - When used in these Rules, the Ottawa-Chillicothe Shipping District will be that portion of the Illinois Waterway below river mile 244.6 at the Marseilles Lock and Dam and at or above river mile 170 between Chillicothe and Peoria, IL.
->
-> D. Peoria -- Pekin Shipping District - When used in these Rules, the Peoria-Pekin Shipping District will be that portion of the Illinois Waterway below river mile 170 between Chillicothe and Peoria, IL and at or above river mile 151 at Pekin, IL.
+---
+# Delivery of Futures Contracts
 
-If someone with a short futures position wants to deliver on their futures contract they cannot just show up at one of these locations with 5,000 bushels of grain in trucks. The actual thing that can be delivered is referred to as a *shipping certificate* for 5,000 bushels of grain from a regular for delivery warehouse. This is a certificate giving the holder the right to demand load-out of grain that meets certain quality standards. Since the shipping certificates represent physical bushels in storage at these regular for delivery warehouses, and warehouse space is not free, holders of shipping certificates are required to pay what are called *premium charges*. Premium charges are simply fees collected by the warehouse for the space provided to store the grain. The exchange specifies that premium charges for corn and soybeans shall not exceed 0.165 cents per bushel per day, or about 4.95 cents per bushel per month. We will need to use the premium charges on shipping certificates in Chapter 5 when we introduce the concept of *Financial Full Carry*.
++ The CME Group grain and oilseed future are deliverable contracts, ensuring a link between the spot market and the futures market  
 
-Likewise, if the long party (the person who bought the futures contract) wants to take delivery, they must pay the full amount, $Futures Price X 5,000$ bushels, and must pay premium charges to the warehouse to hold the shipping certificate.
++ Only a few of the futures contracts traded are actually delivered on, however 
+
++ The purpose of the futures market is not to provide a mechanism for physical exchange, but rather a means for streamlined risk management in a liquid market
+
+---
+class: center, middle
+
+## Exchange designates a few large commercial grain handlers and warehouses as *regular for delivery*
+
+---
+# Location of 'Regular' Grain Warehouses
+
+These grain handlers lie in one of the following territories specified in the [CME Group Rulebook](https://www.cmegroup.com/rulebook/CBOT/II/10/10.pdf)
+
+&gt; Corn shipping certificates shall specify shipment from one of the warehouses or shipping stations currently regular for delivery and located in one of the following territories:
+&gt;
+&gt; A. Chicago and Burns Harbor, Indiana Switching District - When used in these Rules, the Chicago Switching District will be that area geographically defined by Tariff ICC WTL 8020-Series and that portion of the Illinois Waterway at or above river mile 304 which includes the Calumet Sag Channel and the Chicago Sanitary &amp; Ship Canal. When used in these Rules, Burns Harbor, Indiana Switching District will be that area geographically defined by the boundaries of Burns Waterway Harbor at Burns Harbor, Indiana which is owned and operated by the Indiana Port Commission.
+&gt;
+
+---
+# Location of 'Regular' Grain Warehouses
+
+These grain handlers lie in one of the following territories specified in the [CME Group Rulebook](https://www.cmegroup.com/rulebook/CBOT/II/10/10.pdf)
+
+&gt; Corn shipping certificates shall specify shipment from one of the warehouses or shipping stations currently regular for delivery and located in one of the following territories:
+&gt;
+&gt; B. Lockport-Seneca Shipping District - When used in these Rules, the Lockport-Seneca Shipping District will be that portion of the Illinois Waterway below river mile 304 at the junction of the Calumet Sag Channel and the Chicago Sanitary &amp; Ship Canal and above river mile 244.6 at the Marseilles Lock and Dam.
+&gt;
+
+---
+# Location of 'Regular' Grain Warehouses
+
+These grain handlers lie in one of the following territories specified in the [CME Group Rulebook](https://www.cmegroup.com/rulebook/CBOT/II/10/10.pdf)
+
+&gt; Corn shipping certificates shall specify shipment from one of the warehouses or shipping stations currently regular for delivery and located in one of the following territories:
+&gt;
+&gt; C. Ottawa-Chillicothe Shipping District - When used in these Rules, the Ottawa-Chillicothe Shipping District will be that portion of the Illinois Waterway below river mile 244.6 at the Marseilles Lock and Dam and at or above river mile 170 between Chillicothe and Peoria, IL.
+&gt;
+
+---
+# Location of 'Regular' Grain Warehouses
+
+These grain handlers lie in one of the following territories specified in the [CME Group Rulebook](https://www.cmegroup.com/rulebook/CBOT/II/10/10.pdf)
+
+&gt; Corn shipping certificates shall specify shipment from one of the warehouses or shipping stations currently regular for delivery and located in one of the following territories:
+&gt;
+&gt; D. Peoria -- Pekin Shipping District - When used in these Rules, the Peoria-Pekin Shipping District will be that portion of the Illinois Waterway below river mile 170 between Chillicothe and Peoria, IL and at or above river mile 151 at Pekin, IL.
+
+---
+# Delivery Process
+
++ Shorts cannot just show up at one of these locations with 5,000 bushels of grain in trucks. 
+
++ Deliverable instrument is a **shipping certificate** for 5,000 bushels of grain from a regular for delivery warehouse 
+
+---
+# Delivery Process
+
++ **Shipping certificate** gives the holder the right to demand load-out of grain that meets certain quality standards 
+
++ Holders of shipping certificates are required to pay what are called **premium charges** 
+
+  + Fees collected by the warehouse for the space provided to store the grain. 
+  
+---
+# Delivery Process 
+
+
+Likewise, if the long party (the person who bought the futures contract) wants to take delivery, they must pay the full amount, `\(Futures Price X 5,000\)` bushels, and must pay premium charges to the warehouse to hold the shipping certificate.
+
+---
+class: inverse, center, middle
+
+## Hedging 
+
+
+---
+class: center, middle
 
 ## Examples: Who Hedges and How Does a Futures Contract Facilitate a Hedge?
 
+---
+
 ### Farmer
 
-Consider the corn farmer who plants her crop in April waits for it to grow and then mature through the summer and fall, then harvests it in November. If the farmer sells right after harvest in the cash market, she will very likely take her grain to a local grain elevator (similar to the one pictured below), where the elevator will purchase all she has at a price they publicly offer anyone interested in selling grain.
++ Pants her crop in April waits for it to grow and then mature through the summer and fall
++ Harvests in November. 
++ Sell at harvest in the cash market -&gt; take grain to a local grain elevator
++ elevator will purchase all she has at a publicly posted price
 
-Figure 1. A Grain Elevator in Royal, IL
+A Grain Elevator in Royal, IL 
 
-`<a title="Daniel Schwen, CC BY-SA 4.0 &lt;https://creativecommons.org/licenses/by-sa/4.0&gt;, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Grain_elevators_in_Royal,_IL.jpg"><img width="512" alt="Grain elevators in Royal, IL" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Grain_elevators_in_Royal%2C_IL.jpg/512px-Grain_elevators_in_Royal%2C_IL.jpg"></a>`
+&lt;a title="Daniel Schwen, CC BY-SA 4.0 &amp;lt;https://creativecommons.org/licenses/by-sa/4.0&amp;gt;, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Grain_elevators_in_Royal,_IL.jpg"&gt;&lt;img width="512" alt="Grain elevators in Royal, IL" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Grain_elevators_in_Royal%2C_IL.jpg/512px-Grain_elevators_in_Royal%2C_IL.jpg"&gt;&lt;/a&gt;
 
 Source: [Daniel Schwen, CC-License](https://commons.wikimedia.org/wiki/File%3AGrain_elevators_in_Royal%2C_IL.jpg)
+
+---
 
 The farmer's entire income for the year will come from the sale of this grain, and a lot can happen to the price of corn between April and November, leaving the farmer exposed to tremendous income risk. Many farmers desire the ability to reduce this income risk by entering into a contractual relationship that reduces the uncertainty in the income they receive. Currently there are several ways they can achieve this.
 
@@ -74,7 +271,7 @@ The farmer's entire income for the year will come from the sale of this grain, a
 
 Suppose on May 1st, the farmer's local elevator is offering to buy corn for \$3.50, and the May futures contract is trading at \$3.60. Since the May futures contract is about to expire, the cash price and Futures price are not separated by much time (we have discussed briefly how prices through time along the futures forward curve provide incentives to store) and thus should not be very different because of time. However, the local elevator's price can differ from the Futures price because they are at different locations. For example, the elevator in the photo at Royal, IL is about 116 miles from the 'regular for delivery' elevators in the Calmet-Sag Chanel near Orland Park, IL. The \$0.10 difference between the May futures price and the cash price on May 1st in Royal, IL is largely due to the geographic distance between the two locations. The price distance over space is called the basis. Basis can be computed compared to any of the futures contracts, but it makes sense to consider basis compared to the futures contract that corresponds to the planned cash sale.
 
-$$Basis = Cash Price - Futures Price$$
+`$$Basis = Cash Price - Futures Price$$`
 
 Also on May 1st, the December futures contract price is \$3.75. If the farmer wants to reduce price uncertainty they will sell futures, sometimes referred to as 'selling forward' or 'selling ahead'.
 
@@ -87,7 +284,7 @@ The farmer will sell corn in the cash market in November, so to hedge she should
 |        Date         |              Action              | Cash Price in Royal, IL |  Dec Corn Futures Price   |     Basis     |
 |:-------------------:|:--------------------------------:|:-----------------------:|:-------------------------:|:-------------:|
 |       May 1st       |         Sell Dec Futures         |         \$3.50          |          \$3.75           | -\$0.25 (Dec) |
-|       Nov 1st       | Buy Dec Futures & Sell Cash Corn |         \$3.75          |          \$4.00           | -\$0.25 (Dec) |
+|       Nov 1st       | Buy Dec Futures &amp; Sell Cash Corn |         \$3.75          |          \$4.00           | -\$0.25 (Dec) |
 | Profit Calculation, |         Cash and Futures         |         \$3.75          | \$3.75 - \$4.00 = -\$0.25 |               |
 |                     |      Net per bushel revenue      |     \$3.75 - \$0.25     |         = \$3.50          |               |
 
@@ -98,7 +295,7 @@ With the basis unchanged, the farmer eliminated the uncertainty over the price a
 |        Date         |              Action              | Cash Price in Royal, IL |  Dec Corn Futures Price   |     Basis     |
 |:-------------------:|:--------------------------------:|:-----------------------:|:-------------------------:|:-------------:|
 |       May 1st       |         Sell Dec Futures         |         \$3.50          |          \$3.75           | -\$0.25 (Dec) |
-|       Nov 1st       | Buy Dec Futures & Sell Cash Corn |         \$3.35          |          \$3.60           | -\$0.25 (Dec) |
+|       Nov 1st       | Buy Dec Futures &amp; Sell Cash Corn |         \$3.35          |          \$3.60           | -\$0.25 (Dec) |
 | Profit Calculation, |         Cash and Futures         |         \$3.35          | \$3.75 - \$3.60 = +\$0.15 |               |
 |                     |      Net per bushel revenue      |     \$3.35 + \$0.15     |         = \$3.50          |               |
 
@@ -109,7 +306,7 @@ By selling Dec futures ahead of the cash sale, price risk was reduced. It was re
 |        Date         |              Action              | Cash Price in Royal, IL |  Dec Corn Futures Price   |     Basis     |
 |:-------------------:|:--------------------------------:|:-----------------------:|:-------------------------:|:-------------:|
 |       May 1st       |         Sell Dec Futures         |         \$3.50          |          \$3.75           | -\$0.25 (Dec) |
-|       Nov 1st       | Buy Dec Futures & Sell Cash Corn |         \$3.25          |          \$3.75           | -\$0.50 (Dec) |
+|       Nov 1st       | Buy Dec Futures &amp; Sell Cash Corn |         \$3.25          |          \$3.75           | -\$0.50 (Dec) |
 | Profit Calculation, |         Cash and Futures         |         \$3.25          | \$3.75 - \$3.75 = +\$0.00 |               |
 |                     |      Net per bushel revenue      |     \$3.25 + \$0.00     |         = \$3.25          |               |
 
@@ -120,7 +317,7 @@ This time, the basis widening from -\$0.25 to -\$0.50 was a loss to the farmer, 
 |        Date         |              Action              | Cash Price in Royal, IL |  Dec Corn Futures Price   |     Basis     |
 |:-------------------:|:--------------------------------:|:-----------------------:|:-------------------------:|:-------------:|
 |       May 1st       |         Sell Dec Futures         |         \$3.50          |          \$3.75           | -\$0.25 (Dec) |
-|       Nov 1st       | Buy Dec Futures & Sell Cash Corn |         \$3.75          |          \$3.75           | \$0.00 (Dec)  |
+|       Nov 1st       | Buy Dec Futures &amp; Sell Cash Corn |         \$3.75          |          \$3.75           | \$0.00 (Dec)  |
 | Profit Calculation, |         Cash and Futures         |         \$3.75          | \$3.75 - \$3.75 = +\$0.00 |               |
 |                     |      Net per bushel revenue      |     \$3.75 + \$0.00     |         = \$3.75          |               |
 
@@ -186,3 +383,128 @@ The soybean crusher buys soybeans and sells soybean meal and oil. Their futures 
 Anyone who is hedging with futures -- whether they be farmers, flour mills, or commercial grain handlers -- must have a line of credit in place to meet margin calls in the event that the market is moving against their hedge. For example, the farmer sells futures as a hedge against her cash sale at a later date. If the price starts moving up, the grain she will sell in the cash market is worth more, but the futures hedge is losing money. As the short hedge is losing money, margin needs to be maintained in their hedging account. If prices move against the hedge a lot, additional money will need to be deposited to keep sufficient margin in the account. Usually, this will need to come from a lender. The lender knows it is a safe loan because prices are going up, the cash sale will cover any losses in the futures account. Without the ability to access a line of credit and maintain margin, the short hedge position will be forced to liquidate, and then the farmer will no longer be hedged.
 
 ### How Crop Revanue Insurance Has Changed Commodity Marketing and Hedging Needs
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": true
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

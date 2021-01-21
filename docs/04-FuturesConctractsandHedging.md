@@ -58,7 +58,9 @@ Likewise, if the long party (the person who bought the futures contract) wants t
 
 Consider the corn farmer who plants her crop in April waits for it to grow and then mature through the summer and fall, then harvests it in November. If the farmer sells right after harvest in the cash market, she will very likely take her grain to a local grain elevator (similar to the one pictured below), where the elevator will purchase all she has at a price they publicly offer anyone interested in selling grain.
 
-Figure 1. A Grain Elevator in Royal, IL [![By Daniel Schwen (Own work) [CC BY-SA 4.0 (http://creativecommons.org/licenses/by-sa/4.0)], via Wikimedia Commons](https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Grain_elevators_in_Royal%252C_IL.jpg/512px-Grain_elevators_in_Royal%252C_IL.jpg "By Daniel Schwen (Own work) [CC BY-SA 4.0 (http://creativecommons.org/licenses/by-sa/4.0)], via Wikimedia Commons"){width="512"}](https://commons.wikimedia.org/wiki/File%3AGrain_elevators_in_Royal%2C_IL.jpg)
+Figure 1. A Grain Elevator in Royal, IL
+
+`<a title="Daniel Schwen, CC BY-SA 4.0 &lt;https://creativecommons.org/licenses/by-sa/4.0&gt;, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Grain_elevators_in_Royal,_IL.jpg"><img width="512" alt="Grain elevators in Royal, IL" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Grain_elevators_in_Royal%2C_IL.jpg/512px-Grain_elevators_in_Royal%2C_IL.jpg"></a>`
 
 Source: [Daniel Schwen, CC-License](https://commons.wikimedia.org/wiki/File%3AGrain_elevators_in_Royal%2C_IL.jpg)
 

@@ -6,17 +6,12 @@ This chapter serves as an introduction to real-time and historical data sources,
 
 The best way to learn commodity price analysis is to listen to the professionals who provide commentary on the markets on a regular basis. Land grant universities located in major commodity producing states all have components of their outreach programs dedicated to market commentary. The University of Illinois' web extension program, FARMDOC, is particularly good. Also, public radio in major commodity producing areas has excellent coverage. Champaign-Urbana's WILL, and Iowa Public Televisions' Market to Market are very good. There are *many* other great sources providing regular commentary, but this will get the reader started.
 
-+--------------------------+----------------------------------------------------+-----------------------------------------------------------------------+
 | Outlet                   | Description                                        | Link                                                                  |
-+:=========================+:===================================================+:======================================================================+
+|:-------------------------|:---------------------------------------------------|:----------------------------------------------------------------------|
 | Farmdoc Daily            | Extension web presence by the department of ACE    | [farmdocdaily.illinois.edu](http://farmdocdaily.illinois.edu)         |
-+--------------------------+----------------------------------------------------+-----------------------------------------------------------------------+
 | WILL Agriculture         | WILL and the University of Illinois Extension      | [will.illinois.edu/agriculture](http://will.illinois.edu/agriculture) |
-+--------------------------+----------------------------------------------------+-----------------------------------------------------------------------+
 | Market to Market         | Agricultural programming by Iowa Public Television | [www.iptv.org/mtom/](http://www.iptv.org/mtom/)                       |
-+--------------------------+----------------------------------------------------+-----------------------------------------------------------------------+
 | Center for Commercial Ag | Purdue University Ag Econ                          | <https://ag.purdue.edu/commercialag/home/>                            |
-+--------------------------+----------------------------------------------------+-----------------------------------------------------------------------+
 
 : Table 1. Resources for Commodity Market Commentary
 
@@ -52,15 +47,11 @@ Contracts for several different expiry dates trade at the same time. There is a 
 
 Table 3 provides some links to spread charts for commodity spreads we will cover in this class.
 
-+---------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Spread        | Link                                                                                                                                                                                     |
-+:==============+:=========================================================================================================================================================================================+
+|:--------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Soybean Crush | [Barchart Spread Chart](https://www.barchart.com/futures/quotes/CSZ18/interactive-chart)                                                                                                 |
-+---------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Cattle Crush  | [ISU Spread Calculation](http://www2.econ.iastate.edu/estimated-returns/Finishing%20Steer%20Calves%20Chart.pdf) [ISU Livestock Returns](http://www2.econ.iastate.edu/estimated-returns/) |
-+---------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Corn Crush    | [ISU Ethanol Grind Margin](https://www.extension.iastate.edu/agdm/energy/html/d1-10.html) (Download Ethanol Profitability spreadsheet. Look at Grind Margin chart)                       |
-+---------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 : Table 3. Commodity Spreads
 
