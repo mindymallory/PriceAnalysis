@@ -258,12 +258,10 @@ class: center, middle
 
 ### Farmer Hedge
 
-+ Pants her crop in April waits for it to grow and then mature through the summer and fall
++ Plants her crop in April waits for it to grow and then mature through the summer and fall
 + Harvests in November. 
 + Sell at harvest in the cash market -> take grain to a local grain elevator
 + elevator will purchase all she has at a publicly posted price
-
-A Grain Elevator in Royal, IL 
 
 [![](assets/Grain_elevator_royal_IL.jpg)](https://commons.wikimedia.org/wiki/File:Grain_elevators_in_Royal,_IL.)
 
@@ -302,12 +300,15 @@ $$Basis = Cash Price - Futures Price$$
 
 + Consider two cases, one where the Dec futures price in November turned out to be $4.00  
 
-+And one where the Dec futures price in November turned out to be $3.60.
++ And one where the Dec futures price in November turned out to be $3.60.
 
-**Dec Futures Price went Up to $4.00, Basis Unchanged**
 
 ---
 ## Example Farmer Hedge With Futures
+
+
+
+
 
 
 |        Date         |              Action              | Cash Price in Royal, IL |  Dec Corn Futures Price   |     Basis     |
@@ -319,6 +320,8 @@ $$Basis = Cash Price - Futures Price$$
 
 ---
 ## Example Farmer Hedge With Futures
+
+**Dec Futures Price went Up to $4.00, Basis Unchanged**
 
 
 |        Date         |              Action              | Cash Price in Royal, IL |  Dec Corn Futures Price   |     Basis     |
@@ -332,7 +335,7 @@ $$Basis = Cash Price - Futures Price$$
 ---
 ## Example Farmer Hedge With Futures
 
-**Dec Futures Price went Down to \$3.60, Basis Unchanged**
+**Dec Futures Price went Down to $3.60, Basis Unchanged**
 
 |        Date         |              Action              | Cash Price in Royal, IL |  Dec Corn Futures Price   |     Basis     |
 |:-------------------:|:--------------------------------:|:-----------------------:|:-------------------------:|:-------------:|
@@ -344,7 +347,7 @@ $$Basis = Cash Price - Futures Price$$
 ---
 ## Example Farmer Hedge With Futures
 
-**Dec Futures Price went Down to \$3.60, Basis Unchanged**
+**Dec Futures Price went Down to $3.60, Basis Unchanged**
 
 |        Date         |              Action              | Cash Price in Royal, IL |  Dec Corn Futures Price   |     Basis     |
 |:-------------------:|:--------------------------------:|:-----------------------:|:-------------------------:|:-------------:|
@@ -357,7 +360,7 @@ $$Basis = Cash Price - Futures Price$$
 ## Example Farmer Hedge With Futures
 
 
-**Dec Futures Price Unchanged, Basis now -\$0.50**
+**Dec Futures Price Unchanged, Basis now -$0.50**
 
 |        Date         |              Action              | Cash Price in Royal, IL |  Dec Corn Futures Price   |     Basis     |
 |:-------------------:|:--------------------------------:|:-----------------------:|:-------------------------:|:-------------:|
@@ -371,7 +374,7 @@ $$Basis = Cash Price - Futures Price$$
 ## Example Farmer Hedge With Futures
 
 
-**Dec Futures Price Unchanged, Basis now -\$0.50**
+**Dec Futures Price Unchanged, Basis now -$0.50**
 
 |        Date         |              Action              | Cash Price in Royal, IL |  Dec Corn Futures Price   |     Basis     |
 |:-------------------:|:--------------------------------:|:-----------------------:|:-------------------------:|:-------------:|
@@ -386,7 +389,22 @@ This time, the basis widening from -$0.25 to -$0.50 was a loss to the farmer, ev
 ## Example Farmer Hedge With Futures
 
 
-**Dec Futures Price Unchanged, Basis now \$0.00**
+**Dec Futures Price Unchanged, Basis now $0.00**
+
+|        Date         |              Action              | Cash Price in Royal, IL |  Dec Corn Futures Price   |     Basis     |
+|:-------------------:|:--------------------------------:|:-----------------------:|:-------------------------:|:-------------:|
+|       May 1st       |         Sell Dec Futures         |         $3.50           |          $3.75            | -$0.25        |
+|       Nov 1st       | Buy Dec Futures & Sell Cash Corn |                         |                           | $0.00         |
+| Profit Calculation, |         Cash and Futures         |                         |                           |               |
+|                     |      Net per bushel revenue      |                         |                           |               |
+
+
+
+---
+## Example Farmer Hedge With Futures
+
+
+**Dec Futures Price Unchanged, Basis now $0.00**
 
 |        Date         |              Action              | Cash Price in Royal, IL |  Dec Corn Futures Price   |     Basis     |
 |:-------------------:|:--------------------------------:|:-----------------------:|:-------------------------:|:-------------:|
@@ -397,20 +415,6 @@ This time, the basis widening from -$0.25 to -$0.50 was a loss to the farmer, ev
 
 The narrowing of the basis was an increase in profit to the farmer.
 
----
-## Example Farmer Hedge With Futures
-
-
-**Dec Futures Price Unchanged, Basis now \$0.00**
-
-|        Date         |              Action              | Cash Price in Royal, IL |  Dec Corn Futures Price   |     Basis     |
-|:-------------------:|:--------------------------------:|:-----------------------:|:-------------------------:|:-------------:|
-|       May 1st       |         Sell Dec Futures         |         $3.50           |          $3.75            | -$0.25        |
-|       Nov 1st       | Buy Dec Futures & Sell Cash Corn |                         |                           | $0.00         |
-| Profit Calculation, |         Cash and Futures         |                         |                           |               |
-|                     |      Net per bushel revenue      |                         |                           |               |
-
-The narrowing of the basis was an increase in profit to the farmer.
 
 
 
@@ -431,7 +435,26 @@ Covered in the next 4 chapters
 
 ## Flour Mill
 
-A flour mill buys large quantities of grain for making into flour. They can use futures to hedge price risk by 'buying ahead' futures contracts. Remember that a futures hedge always involves making a trade in the futures contract that is the same as what you will do in the cash market. In this case, the flour mill buys grain, so their futures hedge should buy futures. Since the flour mill likely wants to process grain year round, they need to hedge price risk at multiple points in time to correspond to when they routinely purchase grain. For example, high commercial wheat flour mills can process upwards of 50,000 bushels of wheat per month. With wheat futures contracts specified for 5,000 bushels they need 10 wheat futures contracts to hedge their wheat buying for one month.
++ A flour mill buys large quantities of grain for making into flour. 
+
++ They can use futures to hedge price risk by 'buying ahead' futures contracts. 
+
+---
+
+## Flour Mill
+
++ Flour mill processes grain year round 
+
++ Need to hedge price risk at multiple points in time for when they routinely purchase grain 
+ 
++ Commercial wheat flour mills -> 50,000 bushels of wheat per month 
+
++ Wheat futures contracts -> 5,000 bushels N
+  + Need 10 contracts to hedge one month
+
+---
+
+## Flour Mill
 
 There are five wheat futures contracts per year, March, May, July, September, and December
 
@@ -439,46 +462,69 @@ There are five wheat futures contracts per year, March, May, July, September, an
 |:------------------------|:-----:|:---:|:----:|:---------:|:--------:|
 | Expiration              | March | May | July | September | December |
 
-If the mill buys wheat at the first of every month, they will have to use the nearest contract month to hedge price. For example, to hedge a purchase of wheat on February 1st, the mill will have to use the March futures expiration, because there is no February contract and the March contract is the closest expiration. Then suppose on December 1st 2015 the mill wants to lock in its wheat purchase price (aside from basis risk) for the first six months of 2016. Then, for example, it will have to hedge January, February, and March wheat purchases with the March futures contract. Since they buy 50,000 bushels per month, which is equivalent to 10 contracts per month, they will need to buy 60 contracts of wheat on Dec 1, 2015 to hedge January through July purchases. Hedges should be lifted simultaneously with activity in the cash market. For example, on January 1st, 2016 the mill will purchase 50,000 bushels to process for the month of January in the cash market. Then they should lift their hedge on 10 contracts, or sell 10 contracts also on January first. This means after January 1st, the mill is still holding 20 bought futures contracts (they are 'long' 20 contracts) which keeps February and March's purchases hedged. The table below details the mills activities in the spot market and futures market throughout the year. It takes real data from 2016, and assumes that the basis is fixed at -\\0.25 cents under the nearby futures contract, meaning the spot price column is always \\0.25 cents less than the next to expire futures contract.
+---
 
-+-----------+----------------------------+------------------------+---------------------------------+--------+---------+---------+----------+
+## Flour Mill
+
++ Suppose on December 1st 2020 the mill wants to lock in its wheat purchase price (aside from basis risk) for the first six months of 2021 
+
++ Needs to hedge January, February, and March wheat purchases with the March futures contract 
+
++ April and May purchases with May contract 
+
++ June purchases with July contract 
+
++ Need to buy 60 contracts of wheat on Dec 1, 2020 to hedge January through July purchases. 
+
+---
+
+## Flour Mill
+
+Example below takes real data from 2016, and assumes that the basis is fixed at -0.25 cents under the nearby futures contract, meaning the spot price column is always 0.25 cents less than the next to expire futures contract.
+
+
+---
+
+## Flour Mill
+
+
 | Dates     | Action                     | Long                   | Net Price Paid                  | Spot   | Mar Fut | May Fut | Jul Futs |
-+:=========:+:==========================:+:======================:+:===============================:+:======:+:=======:+:=======:+:========:+
+|:---------:|:--------------------------:|:-----------------------|:-------------------------------:|:------:|:-------:|:-------:|:--------:|
 | Dec 1, 15 | Buy 30 Mar, 20 May, 10 Jul |                        |                                 | 469.75 | 470     | 476.5   | 483.25   |
-+-----------+----------------------------+------------------------+---------------------------------+--------+---------+---------+----------+
-| Jan 1, 16 | Buy 50k spot, Sell 10 Mar  | 20 Mar, 20 May, 10 Jul | -479 + (479.2 5-470) = - 469.75 | 479.00 | 479.25  | 485     | 490.5    |
-+-----------+----------------------------+------------------------+---------------------------------+--------+---------+---------+----------+
-| Feb 1     | Buy 50k spot, Sell 10 Mar  | 10 Mar, 20 May, 10 Jul | -444.75 - (445-470) - 469.75    | 444.75 | 445     | 453.25  | 460.25   |
-+-----------+----------------------------+------------------------+---------------------------------+--------+---------+---------+----------+
-| Mar 1     | Buy 50k spot, Sell 10 Mar  | 20 May, 10 Jul         | -   471.25                      | 471.25 | 471.5   | 473.5   | 480.75   |
-|           |                            |                        | -   (471. 5-470) =              |        |         |         |          |
-|           |                            |                        | -   469.75                      |        |         |         |          |
-+-----------+----------------------------+------------------------+---------------------------------+--------+---------+---------+----------+
-| Apr 1     | Buy 50k spot, Sell 10 May  | 10 May, 10 Jul         | -   477.75                      | 477.75 | NA      | 478     | 488.5    |
-|           |                            |                        | -   (478- 476.5) =              |        |         |         |          |
-|           |                            |                        | -   476.25                      |        |         |         |          |
-+-----------+----------------------------+------------------------+---------------------------------+--------+---------+---------+----------+
-| May 1     | Buy 50k spot, Sell 10 May  | 10 Jul                 | -   464.75                      | 464.75 | NA      | 465     | 464.5    |
-|           |                            |                        |                                 |        |         |         |          |
-|           |                            |                        | -   (465                        |        |         |         |          |
-|           |                            |                        |                                 |        |         |         |          |
-|           |                            |                        | -   \# 476.5)                   |        |         |         |          |
-|           |                            |                        |                                 |        |         |         |          |
-|           |                            |                        | -   476.25                      |        |         |         |          |
-+-----------+----------------------------+------------------------+---------------------------------+--------+---------+---------+----------+
-| Jun 1     | Buy 50k spot, Sell 10 Jul  | 0                      | -431 + (43 1.25-4 83.25) = -483 | 431    | NA      | NA      | 431.25   |
-+-----------+----------------------------+------------------------+---------------------------------+--------+---------+---------+----------+
+| Jan 1, 16 | Buy 50k spot, Sell 10 Mar  | 20 Mar, 20 May, 10 Jul | -479 + (479.25-470) = - 469.75  | 479.00 | 479.25  | 485     | 490.5    |
+| Feb 1     | Buy 50k spot, Sell 10 Mar  | 10 Mar, 20 May, 10 Jul | -444.75 + (445-470) = -469.75   | 444.75 | 445     | 453.25  | 460.25   |
+| Mar 1     | Buy 50k spot, Sell 10 Mar  | 20 May, 10 Jul         | -471.25 + (471.5-470) = -469.75 | 471.25 | 471.5   | 473.5   | 480.75   |
+| Apr 1     | Buy 50k spot, Sell 10 May  | 10 May, 10 Jul         | -477.75 + (478- 476.5) = -476.25| 477.75 | NA      | 478     | 488.5    |
+| May 1     | Buy 50k spot, Sell 10 May  | 10 Jul                 | -464.75 + (465 -476.5) = 476.25 | 464.75 | NA      | 465     | 464.5    |
+| Jun 1     | Buy 50k spot, Sell 10 Jul  | 0                      | -431 + (431.25- 483.25) = -483  | 431    | NA      | NA      | 431.25   |
+
+
+---
+
+## Hedging Crush Business
 
 The 'crush' hedges are a little more complicated because they involve buying a certain kind of commodity, transforming it, and selling another commodity. Some are lucky in that they can hedge both the buy and sell side of the crushing business.
+
+--- 
 
 ### Soybean Crusher
 
 The soybean crusher buys soybeans and sells soybean meal and oil. Their futures hedge would involve buying soybean futures and selling meal and oil futures.
 
+---
+
 ### Importance of Having a Line of Credit in Futures Hedging
 
-Anyone who is hedging with futures -- whether they be farmers, flour mills, or commercial grain handlers -- must have a line of credit in place to meet margin calls in the event that the market is moving against their hedge. For example, the farmer sells futures as a hedge against her cash sale at a later date. If the price starts moving up, the grain she will sell in the cash market is worth more, but the futures hedge is losing money. As the short hedge is losing money, margin needs to be maintained in their hedging account. If prices move against the hedge a lot, additional money will need to be deposited to keep sufficient margin in the account. Usually, this will need to come from a lender. The lender knows it is a safe loan because prices are going up, the cash sale will cover any losses in the futures account. Without the ability to access a line of credit and maintain margin, the short hedge position will be forced to liquidate, and then the farmer will no longer be hedged.
++ As the hedge is losing money, margin needs to be maintained in their hedging account 
 
-### How Crop Revanue Insurance Has Changed Commodity Marketing and Hedging Needs
++ If prices move against the hedge a lot, additional money will need to be deposited to keep sufficient margin in the account 
+
++ Usually, this will need to come from a lender. 
+
++ Without the ability to access a line of credit and maintain margin, the short hedge position will be forced to liquidate, and then the farmer will no longer be hedged.
+
+---
+
+### Discuss How Crop Revanue Insurance Has Changed Commodity Marketing and Hedging Needs
 
 

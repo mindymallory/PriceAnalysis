@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Introduction to Option Contracts</title>
+    <meta charset="utf-8" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Introduction to Option Contracts
+## Price Analysis: A Fundamental Approach to the Study of Commodity Prices
+
+---
+
+
+
+
+
+
+---
+
+# Introduction to Option Contracts
+
+**Highlights**
+
+-   Learn the basics of call and put options
+
+-   Learn what is moneyness and how it affects option prices
+
+-   Learn about intrinsic value of options
+
+**Check your Understanding**
+
+-   Which option has a 'high' premium, an in-the-money or an out-of-the-money option?
+
+-   Does a long put position have unlimited upside potential? What about a long call position?
+
+-   Suppose you are a farmer with unpriced grain that you will harvest in October. Why would why would a long put option be a hedge?
+
+---
+
+# What is an Option Contract?
+
+- An option contract gives the holder the right, but not the obligation to a position in the underlying contract by a certain date 
+
+- Every option contract is tied to another asset or financial instrument. 
+
+- The purchaser of an option contract will accept the position in the underlying only if it is advantageous to do so.
+
+---
+
+# Derivatives
+
+- Futures and Options are examples of derivatives
+
+---
+
+# Call Options Vs Put Options
+
+- Call options give the holder the *right to buy* the underlying 
+  - at the strike price 
+  - by the expiration date of the contract
+  
+- Put options give the holder the *right to sell* the underlying 
+  - at the strike price
+  - by the expiration date 
+  
+---
+  
+# Exercise of an Option Contract 
+
+- The holder of a **call** option contract may take a long position in the underlying asset at the strike price
+
+- The holder of a **put** option contract may take a short position in the underlying asset at the strike price
+
+---
+  
+# American vs European Option Contracts
+
+- American options **can be exercised at any time** prior to or at expiration
+
+- A European contract can only be **exercised at the option contract's expiration**
+
+
+---
+
+# Option Contract Components
+
+All option contracts must specify the following details.
+
+-   **Expiration Date**: The date at which the option contract either must be exercised or left to expire worthless. Sometimes call maturity.
+
+-   **Strike Price**: The strike price defines the price at which the holder may buy the underlying (in the case of a call option) or the price at which the holder may sell the underlying (in the case of a put option). Sometimes call exercise price.
+
+-   **Exercise**: To exercise the option is to elect to take the position in the underlying (buy at the strike for a call option or sell at the strike for a put option).
+
+-   **Underlying**: The asset or financial instrument on which the option is based. In the case of our class we will be talking about options on futures contracts.
+
+-   **Premium**: Price paid upfront to the seller. This is because the inherent right, but not obligation of an option contract means that they hold a position with no downside risk. An upfront payment, the price or premium of the option is required to entice sellers to trade these contracts.
+
+---
+
+# What are the Obligations of Option Sellers?
+
+- **Call Option Seller:** The call option seller must be ready to deliver a long position in the underlying to a call option buyer  
+
+  - That means that they must be ready to sell the underlying at the strike price 
+  
+  - The rational call buyer will only exercise if the price of the underlying is above the strike price of the option contract. 
+
+- **Put Option Seller:** The put option seller must be ready to deliver a short position in the underlying to a put option buyer 
+
+  - The put option seller must be ready to buy the underlying at the strike price  
+  
+  - The rational put option buyer will only exercise their option if the price of the underlying is below the strike price. 
+
+
+---
+
+### **Profit and Loss Diagrams for Option Positions**
+
+The specifics: Strike = 450.00 cents;  Premium = 10 cents
+
+
+
+&lt;style&gt;
+.aligncenter {
+    text-align: center;
+}
+&lt;/style&gt;
+&lt;p class="aligncenter"&gt;
+    &lt;img src="assets/Options1-optionplot.png" alt="drawing" width="65%" height="65%"/&gt;
+&lt;/p&gt;
+
+---
+
+&lt;style&gt;
+.aligncenter {
+    text-align: center;
+}
+&lt;/style&gt;
+&lt;p class="aligncenter"&gt;
+    &lt;img src="assets/Options1-optionplot.png" alt="drawing" width="75%" height="75%"/&gt;
+&lt;/p&gt;
+
+
+---
+
+# Moneyness of an Option
+
+- **Moneyness**: how near the price of the underlying is to the strike price 
+
+- **Out-of-the money**: The price of the underlying is far below the strike of a call option and far above the strike of a put option 
+
+  - When the price of the underlying is in the flat part of the option profit diagrams 
+  
+- **In-the-money**:  The price of the underlying is far above the strike of the call option and far below the strike of the put option
+
+  - The price of the underlying falls in the sloped part of the option profit diagram
+  
+- **At-the-money** or **Near-the-money**: when the price of the underlying is near the kink of the option profit diagram.
+
+---
+
+# Option Prices (Premium)
+
+- Option prices  are determined by buyers and sellers in options markets
+
+- Option contracts are like insurance policies. 
+
+  - Insurance for your car 
+  
+  - Pay a small amount at the beginning of the policy period  
+  
+  - Insurance company will pay damages in the (hopefully unlikely) event that you crash your car. 
+  
+  - You buy the insurance to protect yourself financially in the event you need to unexpectedly replace your car
+  
+  - Over your lifetime of car ownership you will probably pay more in car insurance than you collect in insurance claims 
+  
+  - But for most of us, the comfort of not having to worry about a surprise $20K expenditure is worth it. 
+  
+---
+
+# Intrinsic Value
+
+
+&lt;style&gt;
+.aligncenter {
+    text-align: center;
+}
+&lt;/style&gt;
+&lt;p class="aligncenter"&gt;
+    &lt;img src="assets/Options1-optionintrinsic.png" alt="drawing" width="75%" height="75%"/&gt;
+&lt;/p&gt;
+
+---
+
+# Margin Requirements
+
+- Long option position: does not require margin  
+
+  - Full downside risk paid upfront
+  
+- Short option position: does require margin
+
+ - Large downside exposure
+ 
+ - Ability to withstand losses must be proven by maintaining margin
+ 
+ - Amount set by exchange and broker based on recent volatility
+ 
+ - protects the exchange and broker, not you!
+
+
+---
+
+# Size of the Underlying
+
+- Option contracts specify how much of the underlying the contract is associated with 
+
+- Stock options: standard is 100 shares of the underlying 
+
+  - So if you buy 1 call option with a premium of $1.00 and a strike of $120 on company XYZ, for example, you have purchased the right to buy 100 shares of XYZ at a price of $120. Making the actual cost to buy the option 100*$1.00 = $100.
+
+
+- Futures Options: Standard is 1 futures contract
+ 
+  - So if you buy 1 call option on CBOT corn for 30 cents, the cost of the option is 30*1*5,000 = 150,000 cents = $1,500
+
+
+
+---
+
+## Reading Option Quotes
+
+Recall that soybeans are quoted to the eight of a cent, so the 1249'0 means `\(1249 + \frac{0}{8} = 1249.00\)` cents. While the PRIOR SETTLE price of 1243'6 means `\(1243 + \frac{6}{8} = 1243.75\)` cents.
+
+---
+- Read Prices
+- Notice Moneyness
+- Notice Volume
+
+![](assets/Options1-undelyingquote.PNG)
+
+[![Quotes on January 2021 Soybean Futures Options Contracts, January Expiration](assets/Options1-quotes.PNG "Quotes on January 2021 Soybean Futures Options Contracts, January Expiration")](https://www.cmegroup.com/trading/agricultural/grain-and-oilseed/soybean_contract_specifications.html)
+
+---
+- Draw hockey stick diagrams
+
+[![Quotes on January 2021 Soybean Futures Options Contracts, January Expiration](assets/Options1-quotes.PNG "Quotes on January 2021 Soybean Futures Options Contracts, January Expiration")](https://www.cmegroup.com/trading/agricultural/grain-and-oilseed/soybean_contract_specifications.html)
+
+---
+
+
+Hockey stick diagram; the call and put with 1200 cent strike and the option premium shown in the table above 
+
+
+![](assets/Options1-optionmoneynessplot.png)
+
+
+---
+
+# Closing an Option Position
+
+- Two ways to close or 'get out of' an option position: 
+ 
+  - take the opposite position 
+  
+  - or exercise (in the case of option longs) or get exercised upon (in the case of option shorts) 
+  
+---
+
+# Exercise and Assignment
+
+- Note that you only have control over this case when you are long the option  
+
+- If you are long the option and it is in-the-money you have the option to exercise at any time (in the case of American options which most options trading in the United States are American)
+
+---
+
+# Exercise and Assignment
+
+
+- Though you would only want to if the option is in the money  
+
+  - When you exercise, you receive the corresponding position in the underlying.  
+  
+  - For example, if you are long one call option on CME March corn futures that is in-the-money and you exercise it, you receive a long position of one contract in the March corn futures with your purchase price being the strike of the option  
+  
+  - Likewise, if you are long a put option that is in-the-money and you exercise it you receive a short position in the underlying at the strike price of the option. 
+  
+  - Note that if you are long an option and you decide to exercise, you will trade a position with zero margin requirements to having to post margin for the futures position, because you will no longer have a position with no downside risk.
+
+---
+
+# Exercise and Assignment
+
+- If you are short an option contract that is in-the-money you should be ready to be assigned (exercised upon) at any time.  
+ 
+  - If a long party indicates to the exchange that they want to exercise and you are matched with them then you must provide them with the position in the underlying at the strike price. 
+  
+  - For example, suppose you are short a March Corn put with a strike of 450 cents 
+  
+  - Price goes to 445 and you get assigned. That means you will have a long position in the March corn futures with a purchase price of 450 
+  
+  - This is because as the option seller you have to be the other side of the person who exercised their right to sell at 450.
+
+- If markets were perfect with no liquidity cost, no one should ever exercise an option position early, since they could sell the option for at least as much as the intrinsic value of the option. 
+
+- But, markets are not perfect 
+  - Wide bid-ask spread
+
+--- 
+
+# Option Expiration
+
+Options on futures usually expire a few weeks before the underlying futures contract expires. In most cases, the exchange will automatically exercise in-the-money options that are held to expiration
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": true
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
