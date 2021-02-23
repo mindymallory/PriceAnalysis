@@ -71,6 +71,69 @@ ga('send', 'pageview');
 <!-- End Google Analytics -->
 
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <style type="text/css">
 /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
@@ -503,7 +566,7 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="price-reaction-to-usda-reports" class="section level1" number="11">
 <h1><span class="header-section-number">Chapter 11</span> Price Reaction to USDA Reports</h1>
-<p>Some of the USDA reports contain very sensitive market information causing market prices to adjust rapidly to new information about supply and demand. Access to the contents of a market sensitive report would result in the ability to perform ‘insider trading’ and obtain nearly risk-less profits. This activity is illegal, and the USDA’s NASS prepares the reports under lock-down conditions where during the process of finalizing estimates of the report’s content, officials are locked in a secure area and not allowed to leave until the report is made known to the public.</p>
+<p>Some of the USDA reports contain very sensitive market information causing market prices to adjust rapidly to new information about supply and demand. Access to the contents of a market sensitive report would result in the ability to perform ‘insider trading’ and obtain nearly risk-less profits. This activity is illegal, and the USDA’s Interagency Commodity Estimates Committees prepares the reports under lock-down conditions where during the process of finalizing estimates of the report’s content, officials are locked in a secure area and not allowed to leave until the report is made known to the public.</p>
 <p>This chapter explores some history related to the compilation and release of USDA reports, discusses how release times have evolved over time, indicates some particular report releases that are more likely to cause large and rapid price adjustments, and demonstrates this with a few charts of transactions prices pre- and post-release of particularly interesting recent days.</p>
 <div id="history---the-great-data-leak-of-1905" class="section level2" number="11.1">
 <h2><span class="header-section-number">11.1</span> History - “The Great Data Leak of 1905”</h2>
@@ -607,12 +670,34 @@ div.csl-indent {
 <img src="images/100630.png" alt="" />
 <p class="caption">Figure 2: Price of July 2010 corn on June 30, 2010 before and after the release of Planted Acres Report.</p>
 </div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="price-reaction-to-usda-reports.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Until capable of charting body when open=close can&#39;t use</span></span>
+<span id="cb2-2"><a href="price-reaction-to-usda-reports.html#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="price-reaction-to-usda-reports.html#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="price-reaction-to-usda-reports.html#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># library(quantmod)</span></span>
+<span id="cb2-5"><a href="price-reaction-to-usda-reports.html#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># library(tidyverse)</span></span>
+<span id="cb2-6"><a href="price-reaction-to-usda-reports.html#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># library(tidyquant)</span></span>
+<span id="cb2-7"><a href="price-reaction-to-usda-reports.html#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># df &lt;- read.csv(&quot;assets/cn10-2010-06-30.txt&quot;)</span></span>
+<span id="cb2-8"><a href="price-reaction-to-usda-reports.html#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb2-9"><a href="price-reaction-to-usda-reports.html#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># df %&gt;%</span></span>
+<span id="cb2-10"><a href="price-reaction-to-usda-reports.html#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co">#     ggplot(aes(x = timestamp, y = close, colour_up = &quot;green&quot;, fill_up = &quot;green&quot;)) +</span></span>
+<span id="cb2-11"><a href="price-reaction-to-usda-reports.html#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co">#     geom_candlestick(aes(open = open, high = high, low = low, close = close)) +</span></span>
+<span id="cb2-12"><a href="price-reaction-to-usda-reports.html#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co">#     labs(title = &quot;15-Min Candles on 2020-06-30&quot;, y = &quot;Closing Price&quot;, x = &quot;&quot;) +</span></span>
+<span id="cb2-13"><a href="price-reaction-to-usda-reports.html#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co">#     theme_tq() +</span></span>
+<span id="cb2-14"><a href="price-reaction-to-usda-reports.html#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co">#     theme(axis.text.x = element_text(angle = 90))</span></span></code></pre></div>
 <p>In the top panel of Figure 2 you can see that the time stamps indicate those are transactions occurring in the overnight electronic market. There is a break in the morning prior to 9:30 CST when trading begins in the daytime session. It is in this period that the Planted Acres report is released. The bottom panel only displays the daytime session, so that you can see the trading action more clearly. Between 9:30am and about 10:15 the market trades in a 10 cent range.</p>
 <p>The Oct 8th WASDE report caused the market to open limit up. The exchange sets the maximum fluctuation a futures price can trade in a given day. The value of the limit can change at the discretion of the exchange with some advance notice. The report indicated a sharp drop in forecasted yield for corn. This resulted in the ending stocks number for the 2010/2011 marketing year forecast below 1 billion bushels with a very low stocks to use ratio as well. The market reaction is show below in Figure 3.</p>
 <div class="figure">
 <img src="images/101008.png" alt="" />
 <p class="caption">Figure 3: Price of December 2010 corn on October 8th, 2010 before and after the release of the WASDE Report.</p>
 </div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="price-reaction-to-usda-reports.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># df &lt;- read.csv(&quot;assets/cz10-2010-10-08.txt&quot;)</span></span>
+<span id="cb3-2"><a href="price-reaction-to-usda-reports.html#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb3-3"><a href="price-reaction-to-usda-reports.html#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># df %&gt;%</span></span>
+<span id="cb3-4"><a href="price-reaction-to-usda-reports.html#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">#     ggplot(aes(x = timestamp, y = close, colour_up = &quot;green&quot;, fill_up = &quot;green&quot;)) +</span></span>
+<span id="cb3-5"><a href="price-reaction-to-usda-reports.html#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">#     geom_candlestick(aes(open = open, high = high, low = low, close = close)) +</span></span>
+<span id="cb3-6"><a href="price-reaction-to-usda-reports.html#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">#     labs(title = &quot;15-Min Candles on 2020-10-08&quot;, y = &quot;Closing Price&quot;, x = &quot;&quot;) +</span></span>
+<span id="cb3-7"><a href="price-reaction-to-usda-reports.html#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">#     theme_tq() +</span></span>
+<span id="cb3-8"><a href="price-reaction-to-usda-reports.html#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">#     theme(axis.text.x = element_text(angle = 90))</span></span></code></pre></div>
 <p>The flat line during the daytime trading session is apparent, resulting from prices being locked at the limit during the entire trading day.</p>
 <p>The next example is December 9th, 2010, the release day of the December WASDE report.</p>
 <div class="figure">

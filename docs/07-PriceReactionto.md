@@ -2,7 +2,7 @@
 
 
 
-Some of the USDA reports contain very sensitive market information causing market prices to adjust rapidly to new information about supply and demand. Access to the contents of a market sensitive report would result in the ability to perform 'insider trading' and obtain nearly risk-less profits. This activity is illegal, and the USDA's NASS prepares the reports under lock-down conditions where during the process of finalizing estimates of the report's content, officials are locked in a secure area and not allowed to leave until the report is made known to the public. 
+Some of the USDA reports contain very sensitive market information causing market prices to adjust rapidly to new information about supply and demand. Access to the contents of a market sensitive report would result in the ability to perform 'insider trading' and obtain nearly risk-less profits. This activity is illegal, and the USDA's Interagency Commodity Estimates Committees prepares the reports under lock-down conditions where during the process of finalizing estimates of the report's content, officials are locked in a secure area and not allowed to leave until the report is made known to the public. 
 
 This chapter explores some history related to the compilation and release of USDA reports, discusses how release times have evolved over time, indicates some particular report releases that are more likely to cause large and rapid price adjustments, and demonstrates this with a few charts of transactions prices pre- and post-release of particularly interesting recent days. 
 
@@ -86,12 +86,42 @@ The June 30 Planted Acres report resulted in the market opening (at 8:30am EST) 
 
 ![Figure 2: Price of July 2010 corn on June 30, 2010 before and after the release of Planted Acres Report.](images\100630.png)
 
+
+```r
+# Until capable of charting body when open=close can't use
+
+
+# library(quantmod)
+# library(tidyverse)
+# library(tidyquant)
+# df <- read.csv("assets/cn10-2010-06-30.txt")
+# 
+# df %>%
+#     ggplot(aes(x = timestamp, y = close, colour_up = "green", fill_up = "green")) +
+#     geom_candlestick(aes(open = open, high = high, low = low, close = close)) +
+#     labs(title = "15-Min Candles on 2020-06-30", y = "Closing Price", x = "") +
+#     theme_tq() +
+#     theme(axis.text.x = element_text(angle = 90))
+```
+
 In the top panel of Figure 2 you can see that the time stamps indicate those are transactions occurring in the overnight electronic market. There is a break in the morning prior to 9:30 CST when trading begins in the daytime session. It is in this period that the Planted Acres report is released. The bottom panel only displays the daytime session, so that you can see the trading action more clearly. Between 9:30am and about 10:15 the market trades in a 10 cent range. 
 
 
 The Oct 8th WASDE report caused the market to open limit up. The exchange sets the maximum fluctuation a futures price can trade in a given day. The value of the limit can change at the discretion of the exchange with some advance notice. The report indicated a sharp drop in forecasted yield for corn. This resulted in the ending stocks number for the 2010/2011 marketing year forecast below 1 billion bushels with a very low stocks to use ratio as well. The market reaction is show below in Figure 3. 
 
 ![Figure 3: Price of December 2010 corn on October 8th, 2010 before and after the release of the WASDE Report.](images\101008.png)
+
+
+```r
+# df <- read.csv("assets/cz10-2010-10-08.txt")
+# 
+# df %>%
+#     ggplot(aes(x = timestamp, y = close, colour_up = "green", fill_up = "green")) +
+#     geom_candlestick(aes(open = open, high = high, low = low, close = close)) +
+#     labs(title = "15-Min Candles on 2020-10-08", y = "Closing Price", x = "") +
+#     theme_tq() +
+#     theme(axis.text.x = element_text(angle = 90))
+```
 
 The flat line during the daytime trading session is apparent, resulting from prices being locked at the limit during the entire trading day. 
 
