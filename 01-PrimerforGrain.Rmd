@@ -22,7 +22,8 @@ In the Corn Belt corn is planted from about March to May, and harvested from Sep
 
 Of lesser concern, but still followed by market participants is the weather during planting and harvest. Sometimes it is too wet, making it difficult to get acreage planted in a timely manner. If corn is planted too late it may suffer a yield penalty. Also, weather during harvest can impact prices. If harvest time is very wet, it can make it difficult to get the crop out and dry before it is damaged.
 
-[![Corn Acres Planted 2019, map from Aaron Smith's Ag Data](assets/map_CORN_AREA%20PLANTED.png "Corn Acres Planted 2019, map from Aaron Smith's Ag Data")](https://asmith.ucdavis.edu/data/us-crops)
+
+![Corn Acres Planted 2019, map from Aaron Smith's [Ag Data](https://asmith.ucdavis.edu/data/us-crops)](assets/map_CORN_AREA PLANTED.png "Corn Production and Prices")
 
 ### Recent Trends in Acreage, Yields, Production, and Use
 
@@ -46,11 +47,7 @@ Corn is used in the U.S for a variety of purposes. Largest use categories are fe
 
 Soybeans are planted later than corn, from about April to June. Weather affects soybean production prospects and generates similar price responses as it does for corn. Soybean prices, therefore are highly dependent on what happens during the summer months.
 
-[![Soybeans Acres Planted 2019, map from Aaron Smith's Ag Data](assets/map_SOYBEANS_AREA%20PLANTED.png "Soybeans Acres Planted 2019, map from Aaron Smith's Ag Data")](https://asmith.ucdavis.edu/data/us-crops)
-
-![](null)
-
-\
+![Soybean Acres Planted 2019, map from Aaron Smith's [Ag Data](https://asmith.ucdavis.edu/data/us-crops)](assets/map_SOYBEANS_AREA PLANTED.png "Corn Production and Prices")
 
 ### Recent Trends in Acreage, Yield, Production, and Use
 
