@@ -16,6 +16,7 @@ output:
 options(htmltools.dir.version = FALSE)
 purduegold <- '#CEB888'
 colorscheme <- purduegold
+library(tidyverse)
 ```
 
 ```{r xaringan-themer, include=FALSE, warning=FALSE}
@@ -303,18 +304,25 @@ The common format balance sheets for any commodity have in common. **Table 3.** 
 
 ```{r, echo=FALSE, warning=FALSE, message= FALSE}
 library(readxl)
+library(openxlsx)
 library(knitr)
 library(httr)
 library(kableExtra)
 options(knitr.kable.NA = '')
-# aug15wasdec <- read.csv('Excel-files/FundamentalAnalysisand-aug15wasdec.csv')
-# kable(aug15wasdec, align = 'l', col.names = c("Corn", "Marketing Year 2014/2015", "Marketing Year 2015/2016 Est.", "Marketing Year 2016/2017 July Projection", "Marketing Year 2016/2017 August Projection"))
 
+# Run these lines then comment to suppress the http response message. 
 
 
 url1 <- 'https://www.usda.gov/oce/commodity/wasde/wasde0221.xls'
-
 GET(url1, write_disk(tf <- tempfile(fileext = ".xls")))
+```
+ 
+ 
+---
+
+Corn WASDE Report Feb 2021
+
+```{r, echo=FALSE, warning=FALSE, message= FALSE}
 df <- read_excel(tf, 
                  n_max = 20,
                  sheet = "Page 12", 
@@ -322,7 +330,6 @@ df <- read_excel(tf,
                  col_types = c("text", "numeric", "numeric", "numeric", "numeric"),
                  .name_repair = "minimal" 
                  ) 
-
 colnames(df) <- c(colnames(df[,1]), colnames(df[,2]), colnames(df[,3]), paste0(colnames(df[,4]), " Prev"), colnames(df[,5]))
 
 df[2,1] <- "Million Acres"
@@ -332,13 +339,9 @@ df[7,1] <- "Million Bushels"
 df %>% kable() %>% 
   row_spec( c(11, 15, 17, 19), bold = TRUE) %>%
   row_spec( c(2, 5, 7), italic = TRUE) %>%
-  row_spec(1:dim(df)[1], font_size = "small")
-  
+  row_spec(1:dim(df)[1], font_size = "14")
 
-
-unlink(tf)
-
-
+#unlink(tf)
 ```
 ---
 
@@ -432,11 +435,9 @@ unlink(tf)
 **The use components are as follows:** 
 
 
-  + **Food, Seed, and Industrial:** 
+  + **Crush** 
   
-    + We saw this category in the corn balance sheet. 
-    
-    + The definition remains the same. 
+    + Soybeans used domestically almost exclusively get crushed into soybean oil and soybean meal 
     
   + **Exports:** 
   
@@ -444,7 +445,47 @@ unlink(tf)
     
   +  The final use category is export. 
   
-  + Corn grown in the United States is consumed around the globe, and strength or weakness in the export market is a carefully component of demand.
+  + Soybeans grown in the United States is consumed around the globe, and strength or weakness in the export market is a carefully component of demand.
+
+---
+
+Soybeans WASDE Report Feb 2021
+
+```{r, echo=FALSE, warning=FALSE, message= FALSE}
+library(readxl)
+library(openxlsx)
+library(knitr)
+library(httr)
+library(kableExtra)
+options(knitr.kable.NA = '')
+
+#url1 <- 'https://www.usda.gov/oce/commodity/wasde/wasde0221.xls'
+#GET(url1, write_disk(tf <- tempfile(fileext = ".xls")))
+df <- read_excel(tf, 
+                 n_max = 20,
+                 sheet = "Page 15", 
+                 skip = 8, 
+                 col_types = c("text", "numeric", "numeric", "numeric", "numeric"),
+                 .name_repair = "minimal" 
+                 ) 
+colnames(df) <- c(colnames(df[,1]), colnames(df[,2]), colnames(df[,3]), paste0(colnames(df[,4]), " Prev"), colnames(df[,5]))
+
+df <- df %>% add_row(SOYBEANS = "Million Bushels", .before = 8)
+
+df[2,1] <- "Million Acres"
+df[6,1] <- "Bushels"
+#df[7,1] <- "Million Bushels"
+
+
+
+df %>% kable() %>% 
+  #kable_styling() %>%
+  row_spec( c(1, 13, 18), bold = TRUE) %>%
+  row_spec( c(2,6, 8), italic = TRUE) %>%
+  row_spec(1:dim(df)[1], font_size = "14") 
+
+unlink(tf)
+```
 
 ---
 

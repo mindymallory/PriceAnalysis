@@ -127,17 +127,42 @@ Since the USDA makes regular reports on the balance sheet for commodities (the W
 - Beginning Stocks: Some production from the previous year usually remains into the next crop season. Carryover stocks function as a buffer against current year yield uncertainty. For example, if carryover stocks are high and current year yield is expected to be below trend, the market price may fall in response but modestly. However, if carryover stocks are low - resulting from several years of below trend production and strong demand - then an expected yield below trend will likely cause a volatile rise in prices.  
 
 
-: Table 4. August 2016 USDA WASDE Balance Sheet for Corn
+: Table 4. Recent USDA WASDE Balance Sheet for Corn
 
-```{r, echo=FALSE, warning=FALSE}
-
+```{r, echo=FALSE, warning=FALSE, message= FALSE}
+library(readxl)
+library(openxlsx)
 library(knitr)
-aug15wasdec <- read.csv('Excel-files/FundamentalAnalysisand-aug15wasdec.csv')
-kable(aug15wasdec, align = 'l', col.names = c("Corn", "Marketing Year 2014/2015", "Marketing Year 2015/2016 Est.", "Marketing Year 2016/2017 July Projection", "Marketing Year 2016/2017 August Projection"))
+library(httr)
+library(kableExtra)
+options(knitr.kable.NA = '')
+library(tidyverse)
 
+url1 <- 'https://www.usda.gov/oce/commodity/wasde/wasde0221.xls'
+GET(url1, write_disk(tf <- tempfile(fileext = ".xls")))
+df <- read_excel(tf, 
+                 n_max = 20,
+                 sheet = "Page 12", 
+                 skip = 29, 
+                 col_types = c("text", "numeric", "numeric", "numeric", "numeric"),
+                 .name_repair = "minimal" 
+                 ) 
+colnames(df) <- c(colnames(df[,1]), colnames(df[,2]), colnames(df[,3]), paste0(colnames(df[,4]), " Prev"), colnames(df[,5]))
+
+df[2,1] <- "Million Acres"
+df[5,1] <- "Bushels"
+df[7,1] <- "Million Bushels"
+
+df %>% kable() %>% 
+   kable_styling() %>%
+  row_spec( c(11, 15, 17, 19), bold = TRUE) %>%
+  row_spec( c(2, 5, 7), italic = TRUE) #%>%
+  #row_spec(1:dim(df)[1], font_size = "small")
+
+#unlink(tf)
 ```
 
-(source: August 2016 USDA [WASDE Report](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1194) )
+(source: February 2021 USDA WASDE Report)
 
 The balance sheet for corn follows the same generic patter, but we can be a bit more specific with the use categories since we know what the major use categories are for any given commodity. The use components are as follows: 
 <!-- Put percentages here? --> 
@@ -148,16 +173,43 @@ The balance sheet for corn follows the same generic patter, but we can be a bit 
 - The final use category is export. Corn grown in the United States is consumed around the globe, and strength or weakness in the export market is a carefully component of demand. 
 
 
-: Table 5. August 2016 USDA WASDE Balance Sheet for Soybeans
+: Table 5. Recent USDA WASDE Balance Sheet for  Soybeans
 
-```{r, echo=FALSE, warning=FALSE}
-library(knitr)
-aug15wasdes <- read.csv('Excel-files/FundamentalAnalysisand-aug15wasdes.csv')
-kable(aug15wasdes, align = 'l', col.names = c("Soybeans", "Marketing Year 2014/2015", "Marketing Year 2015/2016 Est.", "Marketing Year 2016/2017 July Projection", "Marketing Year 2016/2017 August Projection"))
 
+```{r, echo=FALSE, warning=FALSE, message= FALSE}
+
+options(knitr.kable.NA = '')
+
+#url1 <- 'https://www.usda.gov/oce/commodity/wasde/wasde0221.xls'
+#GET(url1, write_disk(tf <- tempfile(fileext = ".xls")))
+df <- read_excel(tf, 
+                 n_max = 20,
+                 sheet = "Page 15", 
+                 skip = 8, 
+                 col_types = c("text", "numeric", "numeric", "numeric", "numeric"),
+                 .name_repair = "minimal" 
+                 ) 
+colnames(df) <- c(colnames(df[,1]), colnames(df[,2]), colnames(df[,3]), paste0(colnames(df[,4]), " Prev"), colnames(df[,5]))
+
+df <- df %>% add_row(SOYBEANS = "Million Bushels", .before = 8)
+
+df[2,1] <- "Million Acres"
+df[6,1] <- "Bushels"
+#df[7,1] <- "Million Bushels"
+
+
+
+df %>% kable() %>% 
+  kable_styling() %>%
+  row_spec( c(1, 13, 18), bold = TRUE) %>%
+  row_spec( c(2,6, 8), italic = TRUE) 
+#%>%
+ # row_spec(1:dim(df)[1], font_size = "14") 
+
+unlink(tf)
 ```
 
-(source: August 2016 USDA [WASDE Report](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1194) )
+(source: February 2021 USDA WASDE Report)
 
 For soybeans, stocks are comprised of beginning stocks, production, and imports, just as they were for the general balance sheet and the corn balance sheet. The use side, contains items specific to soybeans:
 

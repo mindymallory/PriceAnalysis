@@ -127,31 +127,166 @@ Since the USDA makes regular reports on the balance sheet for commodities (the W
 - Beginning Stocks: Some production from the previous year usually remains into the next crop season. Carryover stocks function as a buffer against current year yield uncertainty. For example, if carryover stocks are high and current year yield is expected to be below trend, the market price may fall in response but modestly. However, if carryover stocks are low - resulting from several years of below trend production and strong demand - then an expected yield below trend will likely cause a volatile rise in prices.  
 
 
-: Table 4. August 2016 USDA WASDE Balance Sheet for Corn
+: Table 4. Recent USDA WASDE Balance Sheet for Corn
 
 
-|Corn                       |Marketing Year 2014/2015 |Marketing Year 2015/2016 Est. |Marketing Year 2016/2017 July Projection |Marketing Year 2016/2017 August Projection |
-|:--------------------------|:------------------------|:-----------------------------|:----------------------------------------|:------------------------------------------|
-|**Million Acres**          |                         |                              |                                         |                                           |
-|Area Planted               |90.6                     |88                            |94.1 *                                   |94.1                                       |
-|Area Harvested             |83.1                     |80.7                          |86.6 *                                   |86.6                                       |
-|**Bushels**                |                         |                              |                                         |                                           |
-|Yield per Harvested Acre   |171                      |168.4                         |168.0 *                                  |175.1                                      |
-|**Million Bushels**        |                         |                              |                                         |                                           |
-|Beginning Stocks           |1232                     |1731                          |1701                                     |1706                                       |
-|Production                 |14216                    |13601                         |14540                                    |15153                                      |
-|Imports                    |32                       |65                            |40                                       |50                                         |
-|**Supply, Total**          |**15479**                |**15397**                     |**16281**                                |**16909**                                  |
-|Feed and Residual          |5314                     |5200                          |5500                                     |5675                                       |
-|Food, Seed & Industrial    |6567                     |6567                          |6650                                     |6650                                       |
-|*Ethanol & by-products*    |*5200*                   |*5200*                        |*5275*                                   |*5275*                                     |
-|Domestic, Total            |11881                    |11767                         |12150                                    |12325                                      |
-|Exports                    |1867                     |1925                          |2050                                     |2175                                       |
-|**Use, Total**             |**13748**                |**13692**                     |**14200**                                |**14500**                                  |
-|Ending Stocks              |1731                     |1706                          |2081                                     |2409                                       |
-|**Avg. Farm Price ($/bu)** |**3.7**                  |**3.55 - 3.65**               |**3.10 - 3.70**                          |**2.85 - 3.45**                            |
+```
+## Response [https://www.usda.gov/oce/commodity/wasde/wasde0221.xls]
+##   Date: 2021-02-23 18:18
+##   Status: 200
+##   Content-Type: application/vnd.ms-excel
+##   Size: 326 kB
+## <ON DISK>  C:\Users\mindy\AppData\Local\Temp\RtmpKaCDEt\file712c21605aed.xls
+```
 
-(source: August 2016 USDA [WASDE Report](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1194) )
+<table class="table" style="margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:left;"> CORN </th>
+   <th style="text-align:right;"> 2018/19 </th>
+   <th style="text-align:right;"> 2019/20 Est. </th>
+   <th style="text-align:right;"> 2020/21 Proj. Prev </th>
+   <th style="text-align:right;"> 2020/21 Proj. </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:right;">  </td>
+   <td style="text-align:right;">  </td>
+   <td style="text-align:right;">  </td>
+   <td style="text-align:right;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;font-style: italic;"> Million Acres </td>
+   <td style="text-align:right;font-style: italic;">  </td>
+   <td style="text-align:right;font-style: italic;">  </td>
+   <td style="text-align:right;font-style: italic;">  </td>
+   <td style="text-align:right;font-style: italic;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Area Planted </td>
+   <td style="text-align:right;"> 88.90 </td>
+   <td style="text-align:right;"> 89.70 </td>
+   <td style="text-align:right;"> 90.8 </td>
+   <td style="text-align:right;"> 90.8 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Area Harvested </td>
+   <td style="text-align:right;"> 81.30 </td>
+   <td style="text-align:right;"> 81.30 </td>
+   <td style="text-align:right;"> 82.5 </td>
+   <td style="text-align:right;"> 82.5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;font-style: italic;"> Bushels </td>
+   <td style="text-align:right;font-style: italic;">  </td>
+   <td style="text-align:right;font-style: italic;">  </td>
+   <td style="text-align:right;font-style: italic;">  </td>
+   <td style="text-align:right;font-style: italic;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Yield per Harvested Acre </td>
+   <td style="text-align:right;"> 176.40 </td>
+   <td style="text-align:right;"> 167.50 </td>
+   <td style="text-align:right;"> 172.0 </td>
+   <td style="text-align:right;"> 172.0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;font-style: italic;"> Million Bushels </td>
+   <td style="text-align:right;font-style: italic;">  </td>
+   <td style="text-align:right;font-style: italic;">  </td>
+   <td style="text-align:right;font-style: italic;">  </td>
+   <td style="text-align:right;font-style: italic;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Beginning Stocks </td>
+   <td style="text-align:right;"> 2140.00 </td>
+   <td style="text-align:right;"> 2221.00 </td>
+   <td style="text-align:right;"> 1919.0 </td>
+   <td style="text-align:right;"> 1919.0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Production </td>
+   <td style="text-align:right;"> 14340.00 </td>
+   <td style="text-align:right;"> 13620.00 </td>
+   <td style="text-align:right;"> 14182.0 </td>
+   <td style="text-align:right;"> 14182.0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Imports </td>
+   <td style="text-align:right;"> 28.00 </td>
+   <td style="text-align:right;"> 42.00 </td>
+   <td style="text-align:right;"> 25.0 </td>
+   <td style="text-align:right;"> 25.0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;font-weight: bold;"> Supply, Total </td>
+   <td style="text-align:right;font-weight: bold;"> 16509.00 </td>
+   <td style="text-align:right;font-weight: bold;"> 15883.00 </td>
+   <td style="text-align:right;font-weight: bold;"> 16127.0 </td>
+   <td style="text-align:right;font-weight: bold;"> 16127.0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Feed and Residual </td>
+   <td style="text-align:right;"> 5429.00 </td>
+   <td style="text-align:right;"> 5903.00 </td>
+   <td style="text-align:right;"> 5650.0 </td>
+   <td style="text-align:right;"> 5650.0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Food, Seed &amp; Industrial 2/ </td>
+   <td style="text-align:right;"> 6793.00 </td>
+   <td style="text-align:right;"> 6282.00 </td>
+   <td style="text-align:right;"> 6375.0 </td>
+   <td style="text-align:right;"> 6375.0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Ethanol &amp; by-products 3/ </td>
+   <td style="text-align:right;"> 5378.00 </td>
+   <td style="text-align:right;"> 4852.00 </td>
+   <td style="text-align:right;"> 4950.0 </td>
+   <td style="text-align:right;"> 4950.0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;font-weight: bold;"> Domestic, Total </td>
+   <td style="text-align:right;font-weight: bold;"> 12222.00 </td>
+   <td style="text-align:right;font-weight: bold;"> 12185.00 </td>
+   <td style="text-align:right;font-weight: bold;"> 12025.0 </td>
+   <td style="text-align:right;font-weight: bold;"> 12025.0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Exports </td>
+   <td style="text-align:right;"> 2066.00 </td>
+   <td style="text-align:right;"> 1778.00 </td>
+   <td style="text-align:right;"> 2550.0 </td>
+   <td style="text-align:right;"> 2600.0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;font-weight: bold;"> Use, Total </td>
+   <td style="text-align:right;font-weight: bold;"> 14288.00 </td>
+   <td style="text-align:right;font-weight: bold;"> 13963.00 </td>
+   <td style="text-align:right;font-weight: bold;"> 14575.0 </td>
+   <td style="text-align:right;font-weight: bold;"> 14625.0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Ending Stocks </td>
+   <td style="text-align:right;"> 2221.00 </td>
+   <td style="text-align:right;"> 1919.00 </td>
+   <td style="text-align:right;"> 1552.0 </td>
+   <td style="text-align:right;"> 1502.0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;font-weight: bold;"> Avg. Farm Price ($/bu)  4/ </td>
+   <td style="text-align:right;font-weight: bold;"> 3.61 </td>
+   <td style="text-align:right;font-weight: bold;"> 3.56 </td>
+   <td style="text-align:right;font-weight: bold;"> 4.2 </td>
+   <td style="text-align:right;font-weight: bold;"> 4.3 </td>
+  </tr>
+</tbody>
+</table>
+
+(source: February 2021 USDA WASDE Report)
 
 The balance sheet for corn follows the same generic patter, but we can be a bit more specific with the use categories since we know what the major use categories are for any given commodity. The use components are as follows: 
 <!-- Put percentages here? --> 
@@ -162,30 +297,171 @@ The balance sheet for corn follows the same generic patter, but we can be a bit 
 - The final use category is export. Corn grown in the United States is consumed around the globe, and strength or weakness in the export market is a carefully component of demand. 
 
 
-: Table 5. August 2016 USDA WASDE Balance Sheet for Soybeans
+: Table 5. Recent USDA WASDE Balance Sheet for  Soybeans
 
 
-|Soybeans                   |Marketing Year 2014/2015 |Marketing Year 2015/2016 Est. |Marketing Year 2016/2017 July Projection |Marketing Year 2016/2017 August Projection |
-|:--------------------------|:------------------------|:-----------------------------|:----------------------------------------|:------------------------------------------|
-|**Million Acres**          |                         |                              |                                         |                                           |
-|Area Planted               |83.3                     |82.7                          |83.7*                                    |83.7                                       |
-|Area Harvested             |82.6                     |81.8                          |83*                                      |83                                         |
-|**Bushels**                |                         |                              |                                         |                                           |
-|Yield per Harvested Acre   |47.5                     |48                            |48.9*                                    |50.6                                       |
-|**Million Bushels**        |                         |                              |                                         |                                           |
-|Beginning Stocks           |92                       |191                           |255                                      |195                                        |
-|Production                 |3927                     |3929                          |4060                                     |4201                                       |
-|Imports                    |33                       |25                            |30                                       |30                                         |
-|**Supply, Total**          |**4052**                 |**4145**                      |**4346**                                 |**4426**                                   |
-|Crushings                  |1873                     |1900                          |1940                                     |1950                                       |
-|Exports                    |1842                     |1880                          |1950                                     |1985                                       |
-|Seed                       |96                       |97                            |95                                       |95                                         |
-|Residual                   |50                       |12                            |31                                       |31                                         |
-|**Use, Total**             |**3862**                 |**3889**                      |**4016**                                 |**4061**                                   |
-|Ending Stocks              |191                      |255                           |330                                      |365                                        |
-|**Avg. Farm Price ($/bu)** |**10.1**                 |**8.95**                      |**8.35 - 9.85**                          |**8.30 - 9.80**                            |
+<table class="table" style="margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:left;"> SOYBEANS </th>
+   <th style="text-align:right;"> 2018/19 </th>
+   <th style="text-align:right;"> 2019/20 Est. </th>
+   <th style="text-align:right;"> 2020/21 Proj. Prev </th>
+   <th style="text-align:right;"> 2020/21 Proj. </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;font-weight: bold;">  </td>
+   <td style="text-align:right;font-weight: bold;">  </td>
+   <td style="text-align:right;font-weight: bold;">  </td>
+   <td style="text-align:right;font-weight: bold;">  </td>
+   <td style="text-align:right;font-weight: bold;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;font-style: italic;"> Million Acres </td>
+   <td style="text-align:right;font-style: italic;">  </td>
+   <td style="text-align:right;font-style: italic;">  </td>
+   <td style="text-align:right;font-style: italic;">  </td>
+   <td style="text-align:right;font-style: italic;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:right;">  </td>
+   <td style="text-align:right;">  </td>
+   <td style="text-align:right;">  </td>
+   <td style="text-align:right;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Area Planted </td>
+   <td style="text-align:right;"> 89.20 </td>
+   <td style="text-align:right;"> 76.10 </td>
+   <td style="text-align:right;"> 83.10 </td>
+   <td style="text-align:right;"> 83.10 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Area Harvested </td>
+   <td style="text-align:right;"> 87.60 </td>
+   <td style="text-align:right;"> 74.90 </td>
+   <td style="text-align:right;"> 82.30 </td>
+   <td style="text-align:right;"> 82.30 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;font-style: italic;"> Bushels </td>
+   <td style="text-align:right;font-style: italic;">  </td>
+   <td style="text-align:right;font-style: italic;">  </td>
+   <td style="text-align:right;font-style: italic;">  </td>
+   <td style="text-align:right;font-style: italic;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Yield per Harvested Acre </td>
+   <td style="text-align:right;"> 50.60 </td>
+   <td style="text-align:right;"> 47.40 </td>
+   <td style="text-align:right;"> 50.20 </td>
+   <td style="text-align:right;"> 50.20 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;font-style: italic;"> Million Bushels </td>
+   <td style="text-align:right;font-style: italic;">  </td>
+   <td style="text-align:right;font-style: italic;">  </td>
+   <td style="text-align:right;font-style: italic;">  </td>
+   <td style="text-align:right;font-style: italic;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:right;">  </td>
+   <td style="text-align:right;">  </td>
+   <td style="text-align:right;">  </td>
+   <td style="text-align:right;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Beginning Stocks </td>
+   <td style="text-align:right;"> 438.00 </td>
+   <td style="text-align:right;"> 909.00 </td>
+   <td style="text-align:right;"> 525.00 </td>
+   <td style="text-align:right;"> 525.00 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Production </td>
+   <td style="text-align:right;"> 4428.00 </td>
+   <td style="text-align:right;"> 3552.00 </td>
+   <td style="text-align:right;"> 4135.00 </td>
+   <td style="text-align:right;"> 4135.00 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Imports </td>
+   <td style="text-align:right;"> 14.00 </td>
+   <td style="text-align:right;"> 15.00 </td>
+   <td style="text-align:right;"> 35.00 </td>
+   <td style="text-align:right;"> 35.00 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;font-weight: bold;"> Supply, Total </td>
+   <td style="text-align:right;font-weight: bold;"> 4880.00 </td>
+   <td style="text-align:right;font-weight: bold;"> 4476.00 </td>
+   <td style="text-align:right;font-weight: bold;"> 4695.00 </td>
+   <td style="text-align:right;font-weight: bold;"> 4695.00 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Crushings </td>
+   <td style="text-align:right;"> 2092.00 </td>
+   <td style="text-align:right;"> 2165.00 </td>
+   <td style="text-align:right;"> 2200.00 </td>
+   <td style="text-align:right;"> 2200.00 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Exports </td>
+   <td style="text-align:right;"> 1752.00 </td>
+   <td style="text-align:right;"> 1682.00 </td>
+   <td style="text-align:right;"> 2230.00 </td>
+   <td style="text-align:right;"> 2250.00 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Seed </td>
+   <td style="text-align:right;"> 88.00 </td>
+   <td style="text-align:right;"> 96.00 </td>
+   <td style="text-align:right;"> 103.00 </td>
+   <td style="text-align:right;"> 103.00 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Residual </td>
+   <td style="text-align:right;"> 39.00 </td>
+   <td style="text-align:right;"> 9.00 </td>
+   <td style="text-align:right;"> 22.00 </td>
+   <td style="text-align:right;"> 22.00 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;font-weight: bold;"> Use, Total </td>
+   <td style="text-align:right;font-weight: bold;"> 3971.00 </td>
+   <td style="text-align:right;font-weight: bold;"> 3952.00 </td>
+   <td style="text-align:right;font-weight: bold;"> 4555.00 </td>
+   <td style="text-align:right;font-weight: bold;"> 4575.00 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Ending Stocks </td>
+   <td style="text-align:right;"> 909.00 </td>
+   <td style="text-align:right;"> 525.00 </td>
+   <td style="text-align:right;"> 140.00 </td>
+   <td style="text-align:right;"> 120.00 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Avg. Farm Price ($/bu)  2/ </td>
+   <td style="text-align:right;"> 8.48 </td>
+   <td style="text-align:right;"> 8.57 </td>
+   <td style="text-align:right;"> 11.15 </td>
+   <td style="text-align:right;"> 11.15 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Total </td>
+   <td style="text-align:right;">  </td>
+   <td style="text-align:right;">  </td>
+   <td style="text-align:right;">  </td>
+   <td style="text-align:right;">  </td>
+  </tr>
+</tbody>
+</table>
 
-(source: August 2016 USDA [WASDE Report](http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1194) )
+(source: February 2021 USDA WASDE Report)
 
 For soybeans, stocks are comprised of beginning stocks, production, and imports, just as they were for the general balance sheet and the corn balance sheet. The use side, contains items specific to soybeans:
 
