@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Advanced Options Topics</title>
+    <meta charset="utf-8" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Advanced Options Topics
+## Price Analysis: A Fundamental Approach to the Study of Commodity Prices
+
+---
+
+
+
+
+
+
+---
+
+# Advanced Option Topics
+
+**Highlights**
+
+-   Black-Scholes and the Black 1976 option pricing models
+
+-   Put-Call Parity and no arbitrage conditions
+
+-   Implied volatility
+
+-   Option Greeks
+
+**Check your Understanding**
+
+-   How can you create a synthetic put option?
+
+-   How do time to maturity and volatility impact an option's gamma?
+
+---
+
+# Black-Scholes Option Pricing Model
+
+- The Black-Scholes option pricing model provides a model for the price of a European call and the price of a European put on a non-dividend paying stock  
+
+- Options on commodity **futures** on CME Group exchanges, are **American options**  
+
+  - American options == European option + the right to exercise at any time 
+  
+  - American option Price &gt;= Identical European option  
+  
+  - Distinction is often small or zero, so BS intuition works pretty well for the American options we focus on
+
+
+
+---
+
+# Black-Scholes Option Pricing Model
+
+First, we need to establish the assumptions required in order for the Black-Scholes model to hold true. [@blacksc2020]
+
+*Assumptions About Assets*
+
+-   There exists a **riskless asset** that returns a constant **risk free rate**
+
+-   The stock price exhibits instantaneous returns that are log normal. More formally, the stock price follows a geometric Brownian motion and volatility and drift are constant. Without writing out the mathematical equation for the geometric Brownian motion, the drift term defines how much the stock price appreciates on average
+
+
+---
+
+# Black-Scholes Option Pricing Model
+
+### Assumptions
+
+
+*Assumptions about the Market*
+
+-   There are no arbitrage opportunities
+
+-   There are no restrictions on borrowing and lending at the risk free rate
+
+-   Market participants can buy or sell unlimited quantities of the stock
+
+-   There are no transactions costs
+
+
+---
+
+# Black-Scholes Option Pricing Model
+
+
+### Notation
+
+-   `\(C\)` = Call Option Price
+
+-   `\(P\)` = Put Option Price
+
+-   `\(S\)` = Current Stock Price
+
+-   `\(K\)` = Strike Price
+
+-   `\(r\)` = Risk free rate
+
+-   `\(\sigma\)` = Standard deviation of the stock price returns
+
+-   `\(t\)` = Time to maturity (in fraction of a year)
+
+-   `\(N\)` = Standard normal cumulative distribution function
+
+---
+
+# Black-Scholes Option Pricing Model
+
+
+### Notation
+
+
+-   `\(d_{1} = \frac{ln(\frac{S_{t}}{K}) + (r + \frac{\sigma^{2}}{2})t}{\sigma \sqrt{t}}\)`
+
+-   `\(d_{2} = d_{1} - \sigma \sqrt{t}\)`
+
+---
+
+# Black-Scholes Option Pricing Model
+
+
+The formula for a call option on a non-dividend paying stock with strike price `\(K\)` that has time to maturity `\(t\)` is:
+
+`$$C = S_{t}N(d_{1}) - K e^{-rt} N(d_{2})$$`
+
+---
+
+# Black-Scholes Option Pricing Model
+
+The price of a similar put option is:
+
+`$$P = N(-d_{2}) K e^{-rt} - N(-d_{1}) S_{t}$$`
+
+---
+
+# Black-Scholes Option Pricing Model
+
+### Option Pricing Formula for Futures Contracts
+
+- Black [-@black1976] derives BS model for futures contracts  
+
+- The key difference:  stock trading requires that the full value of the stock be spent upfront 
+
+  - Thus, the `\(S_{t}\)` in the Black-Scholes equations above is referencing expenditures at the current time, and do not need to be discounted  
+  
+  - Futures contracts do not require expenditure upfront (besides posting margin) 
+  
+  - Therefore, the price of the underlying should be discounted  
+  
+
+---
+
+# Black-Scholes Option Pricing Model
+
+### Option Pricing Formula for Futures Contracts
+
+
+`$$C = F_{t} e^{-rt} N(d_{1}) - K e^{-rt} N(d_{2})$$`
+
+and
+
+`$$P = N(-d_{2}) K e^{-rt} - N(-d_{1}) F_{t} e^{-rt}$$`
+---
+
+# Put-Call Parity
+
+Put and call options of the same strike price and same expiration have to follow a specific relationship. That means that if you know the price of a call option, the price of the put option with the same strike and expiration is determined or there is an arbitrage opportunity.
+
+To illustrate why this must be true consider the example below in the embedded Google Sheets file. If you would rather work with the full size Google sheet you can find it at [**Put-Call Parity Sheet**](https://docs.google.com/spreadsheets/d/1ivvTGqC9R4L3zkG8c4ApDg8dC1LHj4v_8uLjgiurxX0/edit?usp=sharing).
+
+---
+
+# Put-Call Parity
+
+- Suppose underlying is 470 cents 
+
+- A call option with strike price of 450 cents has a premium of 25 cents  
+
+- In the table we consider underlying price ranges from 400 to 500 cents. Then we calculate the profit at expiration from the call option in the second column of the table. 
+
+  - In the plot the call option profit is the 'hockey stick' shaped line in black.
+
+---
+
+# Put-Call Parity
+
+- Suppose underlying is 470 cents 
+
+- Third column we have the profit from a short position in the underlying futures contract where the position was initiated at the current price of the underlying (470 cents)  
+
+- Clicking in `C7` shows the formula for the profit of this position is `=$D$2-A7`. Being a short position, this position makes money as the price of the underlying falls. This position is shown by the straight black line that crosses the x-axis at 470 in the figure.
+
+- Fourth column shows what your profit at expiration would look like if you bought the call option and also sold the underlying futures for 470. 
+
+  - Clicking on `D7` shows that the formula for this payoff is simply `=B7+C7`, or the sum of the profit in each position. 
+  
+---
+
+# Put-Call Parity  
+  
+- Buying a call and selling a futures is called a sythetic put  
+  
+This profit function is shown in gold.
+
+
+---
+
+# Put-Call Parity 
+
+Notice that the gold line looks exactly like the profit at expiration of a put option with strike equal to 450 cents! This is called a synthetic put position. So, it must be that the put option premium in this example is 5 cents, otherwise you could buy the synthetic and sell the real put or vice versa and make a riskless profit. This relationship between the call and put price is called put-call parity.
+
+Take a minute and play around with different values of call option premium. For example, try 50, 30, and 10. What is strange about premium = 10 cents?
+
+As an aside, note that you can create a synthetic call option by buying a put option and buying the underlying.
+
+
+---
+
+# Implied Volatility
+
+- `\(\sigma\)` is only variable we don't directly observe
+
+- That means if we plug in all the numbers we know into the option pricing formula and then make a guess, or a good estimate of what `\(\sigma\)` should be the formula will give us an estimate of what the option should be worth as well 
+
+- **Alternatively** we usually do the opposite because we can observe prices the option is being bought and sold for at any moment   
+
+- If instead we take these prices that are actually trading in the market and use that in the formula   
+
+  - solve for `\(\sigma\)` and we get a measure of the volatility 'implied' by the prices at which the option is currently trading for
+
+---
+
+# Implied Volatility
+
+- Implied volatility is an important measure because it tells you how much of a move traders expect the underlying could make 
+
+- Implied volatility is normalized to units of % per annum  
+
+  - implied volatility of 16% which means that option market participants think the underlying could move (in either direction) 16% per year[@ganti]. 
+  
+  - Always changing though with market conditions 
+  
+  - Criticism of the Black-Scholes model requires the underlying to have constant volatility, which is clearly not the case for any asset.
+
+---
+
+# Option Prices Compared to the Profit Diagram
+
+In the Google Sheet embedded below we have plotted in gold the price of a call and put option with strike price of 450 cents along with the intrinsic value of the option plotted in black. Remember that the intrinsic value of the option is what the option is worth at expiration given the value of the underlying, not considering the premium paid. Therefore, if we take the profit diagrams we considered from the previous chapter and moved the flat part of the hockey stick diagram to the x-axis we get the intrinsic value of the option.
+
+Notice a few things about the option price line. First of all, for every value of the underlying the call price is above the black line. That is because the price of an option prior to expiration must be worth at least as much as its intrinsic value, with a little bit extra to account for the uncertainty in price that could change the moneyness of the option before it expires.
+
+Further, notice that the option differs from its intrinsic value most near the strike price; this is because the option price must smooth out the kink in the intrinsic value diagram.
+
+&lt;iframe src="https://docs.google.com/spreadsheets/d/1hvLorMPGFuMJqGJ2xKiR6TswvU4aGuaF6tyesDKcXyY/edit?usp=sharing" title="Put-Call Parity" width="100%" height="950"&gt;
+
+&lt;/iframe&gt;
+
+
+---
+
+# Option Greeks
+
+In this section we will learn the option 'greeks'. This, along with the second derivatives, will do more than anything to give you a better understanding of how option prices really work. As you read this section keep looking back to the embedded plot of option prices in section \@ref(option-prices-compared-to-the-profit-diagram)
+
+
+---
+
+# Option Greeks
+
+
+**Delta**
+
+- The delta of a call option is `\(\Delta = \frac{\partial C}{\partial F}\)` 
+
+- The delta of a put option is `\(\Delta = \frac{\partial P}{\partial F}\)` 
+
+How much the value of a call option changes as the underlying changes. 
+
+- Literally, this is the slope of the line representing the option price. 
+
+---
+
+# Option Greeks
+
+
+**Delta**
+
+Price Increase
+
+- As the price of the underlying moves larger the call option is more in the money, and the delta of the call option approaches +1 
+
+- As the price of the underlying moves larger the put option moves more out of the money and the delta of the put option approaches 0. 
+
+---
+
+# Option Greeks
+
+
+**Delta**
+
+Price Decrease
+
+- As the price of the underlying moves lower, the delta of the call option approaches 0 and the delta of the put option approaches -1  
+
+---
+
+# Option Greeks
+
+
+**Delta**
+
+Also, notice that at the money, the delta of the call option is +0.5 and the delta of the at the money put option is -0.5.
+
+
+---
+
+# Option Greeks
+
+
+**Gamma**
+
+- Gamma of a call option is `\(\gamma = \frac{\partial^2 C}{\partial F^2}\)`  
+
+- Gamma of a put option is `\(\gamma = \frac{\partial^2 P}{\partial F^2}\)` 
+
+- It tells you the curvature of the option price with respect to the underlying 
+
+  - How much additional `\(\Delta\)` do you get as the underlying price increases. 
+  
+---
+
+# Option Greeks
+
+
+**Gamma**  
+
+- An option's `\(\gamma\)` is the friend of speculators who use options 
+
+- Large `\(\gamma\)` allows a trader to buy a cheap out of the money option on an underlying they know will move up or down 
+
+- If they are right their position enjoys convex gains. 
+
+- The higher the `\(\gamma\)` the better it is for the directional speculator using long option positions  
+
+- However, we will see that `\(\gamma\)` is counter-balanced by the next greeks we will learn.
+
+
+
+---
+
+# Option Greeks
+
+**Theta**
+
+- Option's lose value as expiration nears due to reduced uncertainty or 'time decay' 
+
+- Theta of a call option is `\(\theta = \frac{\partial C}{\partial t}\)` 
+
+- Theta of a put option is `\(\theta = \frac{\partial P}{\partial t}\)` 
+
+---
+
+# Option Greeks
+
+**Theta**
+
+- Theta is how option sellers make money and theta is the enemy of long option holders 
+
+- Theta is usually quoted in terms of how much the option will lose value per day, all other things equal 
+
+- Go back to the embedded Google Sheet in \@ref(option-prices-compared-to-the-profit-diagram). Play around with the time value in the option premium by putting in some larger and smaller values for time to maturity  
+
+- Remember, the units of time to maturity is fraction of a year. So if you put in 0.5 that is the same as six months, and 0.02 is about one week.
+
+---
+
+# Option Greeks
+
+**Theta**
+
+- Theta decay accelerates as time to maturity approaches 
+
+- Try setting the time to maturity cell (E2) to `=180/365` then to `=173/365` and notice how much the gold lines of the option prices shift down 
+- Compare that to how much the gold lines shift down when you do `=10/365` and `=3/365` 
+
+In both cases one week passed between the first and second time calculated, but the option lost a lot more value both nominally and in percentage terms in the second case.
+
+---
+
+# Option Greeks
+
+**Vega**
+
+- Vega measures sensitivity of the option value to changes in the volatility, Vega `\(= \frac{\partial C}{\partial \sigma}\)` in the case of call options 
+
+- Vega = `\(= \frac{\partial P}{\partial \sigma}\)` in the case of put options 
+
+- An increase in volatility will cause an increase in options prices, all other things equal
+
+---
+
+# Option Greeks
+
+
+**Other Greeks**
+
+There are other greeks (including Rho, Vanna, Vomma, and more) that become important if you are involved in managing a large book of options positions, but we will not cover them in detail. The [**Greeks Wikipedia page**](https://en.wikipedia.org/wiki/Greeks_(finance)) is a good place to start if you are interested.
+
+
+---
+
+# Option Greeks
+
+**How other Volatility and Time-to-Maturity Impacts Gamma**
+
+For a couple of the greeks we mentioned how they interact with each other, or react to different times to maturity. Here I just want to point out a bit more about this mechanics. I mentioned that `\(\gamma\)` is the friend of the option buyer and it is the foe of the option seller because of the convex shape of the return profile you get with large gamma.
+
+---
+
+# Option Greeks
+
+**How other Volatility and Time-to-Maturity Impacts Gamma**
+
+So what makes `\(\gamma\)` large? Biggest things giving large `\(\gamma\)` would be short time to maturity and low volatility. However, both of these have drawbacks for the option buyer. When time to maturity is short, `\(\theta\)` decay is fast, which works against the option buyer. Regarding volatility, sure low volatility produces large gamma, but option buyers get the most benefit from gamma by buying slightly out of the money options prior to a significant move in their favor. Thus, periods of low volatility make a significant move less likely.
+
+---
+
+# Option Greeks
+
+**How other Volatility and Time-to-Maturity Impacts Gamma**
+
+So even though the option buyer can create countless profit scenarios over many price ranges, at the end of the day, profitable option buying for speculation requires anticipating a significant price move to pay off.
+
+
+---
+
+# Criticisms of the Black-Scholes Pricing Model
+
+
+---
+
+# Delta Hedging
+
+---
+
+# Delta Hedging Examples
+
+
+ Example 1: Delta Hedge Your Overnight Exposure
+ 
+- You sold 10 call Options on the May corn futures contracts at the money, because you think the price will go down
+
+- You don't want to risk a position in the overnight session, but you don't want to close out your option position either because you would like to keep earning theta decay
+
+- Should you buy or sell futures, and how many contracts to delta hedge your overnight risk?
+
+---
+
+# Why is delta-hedging not fool-proof?
+
+
+---
+
+# Why is delta-hedging not fool-proof?
+
+- Price moves continuously, so to stay perfectly delta neutral would have to continuously rebalence your delta hedge -&gt; impractical
+
+- Can't delta hedge for big overnight or weekend gaps 
+
+  - big gap moves -&gt; big change in delta that cannot be rebalenced with market is closed
+
+---
+
+# Gamma Squeezes
+
+- Speculative call option buyers
+
+- -&gt; dealers are short delta in the option
+
+- -&gt; dealers hedge this exposure by buying enough underlying to get back to zero delta
+
+- -&gt; dealer flow of buying the underlying causes price of underlying to go up
+
+- -&gt; more speculative call buyers are attracted and buy more
+
+repeat cycle
+
+Price goes parabolic
+
+
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": true
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

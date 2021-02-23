@@ -1,0 +1,483 @@
+---
+title: "Fundamental Analysis - Chapter 10"
+subtitle: "Price Analysis: A Fundamental Approach to the Study of Commodity Prices"  
+
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: xaringan-themer.css
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: TRUE
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+purduegold <- '#CEB888'
+colorscheme <- purduegold
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_duo_accent(
+  #base_color = purduegold,
+  primary_color = colorscheme,
+  secondary_color = "black",
+  header_font_google = google_font("Josefin Sans"),
+  text_font_google   = google_font("Montserrat", "300", "300i"),
+  code_font_google   = google_font("Fira Mono")
+)
+```
+
+
+
+---
+# Balance Sheet Analysis
+
+
+**Highlights**
+
+  + Balance sheet analysis is the most important tool for fundamentals-based price forecasting.
+  
+  + This chapter covers the balance sheets take, and introduces the USDA WASDE balance sheet.
+  
+  + This chapter shows the  affects each row of the balance sheet.
+  
+  + This chapter provides a timeline of when the rows of a balance sheet can be updated.
+  
+---
+
+# Balance Sheet Analysis (CONT...)
+
+**Check Your Understanding**
+
++ Do you know which cells in the balance sheet must be estimated by the USDA and which can be calculated from other cells in the table?
+
+  + Fundamental analysis is an assessment of price based on underlying supply and demand factors. 
+  
+  + Focusing on changes in the relationship between supply and demand allows one to calibrate an informed opinion of the value of the commodity. 
+  
+  + The main role of the market is to find the value supply equals to demand. 
+  
+  + The estimated 'fundamental value' is simply a forecast, or expectation of, the market clearing price. 
+  
+  + The goal of any forecasting exercise is to compare the forecast to the current market price and make decisions accordingly. 
+  
+---
+
+# Balance Sheet Analysis (CONT...)
+
+**Check Your Understanding**
+
+  + If your forecast is above the current market price, that is bullish because your forecast implies the market is undervaluing the commodity.
+  
+  + An opportunity to buy low and sell high! 
+  
+  + If your forecast is below the current market price, that is bearish because your forecast implies the market is overvaluing the commodity. 
+  
+  + An opportunity to sell high and buy low! 
+---
+
+## Supply and Demand
+
+  + Conducting fundamental analyses involves taking into account. 
+  
+  + All the factors that determine supply, demand, and ultimately, prices. 
+  
+  + For grain markets there are basically two supply models to keep in mind: 
+  
+    + Preplanting  
+    
+    + Post planting. 
+
+  + The intuition here is simply that before planting, the final supply for the crop can be affected by farmers.
+  
+---
+
+![Figure 1. Supply and Demand Model of a Commodity Before and After Planting](assets\Ch3.1.png)
+
+---
+
+## Supply and Demand (CONT...)
+
+**Supply is Affected by:**
+
++ Acreage
+
+    + Prices of crops competing for acreage
+
+    + Pre-Plant Weather 
+
++ Yield
+
+    + Post-Plant Weather
+
++ Government Policies
+
+---
+## Supply and Demand (CONT...)
+
+**Supply is Affected by:**
+
+**Acreage** 
+
+  + Before planting, farmers plan how much acreage to devote to each commodity, thus determining the baseline expected production level. 
+  
+  + Before summer weather is revealed, expected production is simply `Acreage X Trend Yield`. 
+  
+  + In the Corn Belt, farmer's decision matter where planting the acres between corn and soybeans, their relative prices. 
+  
+  + If futures prices indicate planting soybeans will be more profitable than planting corn, farmers will plan to devote more acres to soybeans. 
+  
+---
+  
+## Supply and Demand (CONT...)
+
+**Supply is Affected by:**
+
+**Acreage**
+
++ For Example: 
+    
+  + Weather can be an important determinant of acreage decisions as well. 
+    
+  + The most ardent planting intentions of a farmer can be derailed by persistent wet weather. 
+    
+  + An unusually rainy planting season can reduce planted acres from intentions. 
+    
+  + Before the crop is actually in the ground, the supply of grain is relatively elastic. 
+      
+---
+## Supply and Demand (CONT...)
+
+**Supply is Affected by:**
+
+**Yield**
+
+  + After the crop is planted supply is quite inelastic. 
+  
+  + There is still considerable uncertainty related to the of the crop will yield. 
+  
+  + This is largely determined by weather during the growing season.
+---
+
+## Supply and Demand (CONT...)
+
+**Supply is Affected by:**
+
+**Government Policies**
+
+  + The government has been heavily involved in Agriculture in the United States since the great depression of the 1930's. 
+  
+  + There have been programs that guarantee a minimum price, minimum revenue and various incarnations of crop insurance programs. 
+  
+  + Occasionally these favor the production of one type of crop over another. 
+  
+  + When this happens, farmers predictably respond by planting more of the crop treated more favorably by the program.   
+  
+---
+
+## Supply and Demand (CONT...)
+
+**Demand is Affected by:**
+
+**Consumer Income** 
+
+  + When people have more money, they will spend it on goods. 
+  
+  + This means increased demand for commodities and their derived products. 
+  
+  + This includes foreign income, since exports are a big component of demand for commodities in the United States. 
+  
+  + Rising incomes usually means rising consumption of meat, which increases the demand for commodities like corn, soybeans, wheat etc.
+
+  
+---
+
+## Supply and Demand (CONT...)
+
+**Demand is Affected by:**
+
+**Exchange Rates**
+
+  + Exchange rates also affect demand through their influence on exports. 
+  
+  + For Example: 
+  
+    + If the U.S. dollar is weak, then consumers in other countries can buy dollars cheaply - giving them more purchasing power for goods denominated in dollars. 
+
+---
+
+## Balance Sheet
+
+  + Most fundamental analyses rely on maintaining balance sheets of a commodity for a country, region, or the world. 
+  
+  + The approach is to maintain a careful accounting of supply exists and quantity of the commodity has been used. 
+  
+  + Through various means we will explore, one arrives at a price that is expected to ration remaining supplies across competing uses. 
+---
+
+## Balance Sheet (CONT...)
+
+### The Marketing Year and Balance Sheet Forecasting Schedule
+ 
+  + Balance sheet analysis is often organized by marketing year. 
+  
+  + Since production happens once per year, the marketing year is defined in the first month the commodity is harvested aT ends with the following year's harvest:
+
+
+| Crop                    |  Beginning of Marketing Year - First Month of Harvest |
+|:------------------------|:-----------------------------------------------------|
+| Corn                    | September                                            |
+| Soybeans                | September                                            |
+| Spring Wheat (Chicago)  | August                                               |
+| Winter Wheat (KC)       | July                                                 |
+
+
+**Table 1. Beginning of Marketing Year by Crop.**
+
+---
+## Balance Sheet (CONT...)
+
+### The Marketing Year and Balance Sheet Forecasting Schedule
+  + Forecasting supply and demand for any given marketing year begins well before harvest. **Table 2:** Forecasting Calendar for 2017/2018 Marketing Year with Harvest in September 2016:
+
+| Timeline     | Forecasting Focus                                                                                               |
+|:------------------------|:-----------------------------------------------------------------------------------------------------|
+| Fall 2016    | The first forecasts of supply based on , *trend forecasts*, *recent history*, *economic relationships*    |
+| Spring 2017  | Update supply forecasts based on USDA acreage surveys.                                                          |
+| Summer 2017  | Update supply forecasts based on weather and USDA crop and stocks reports                                       |
+| Fall 2017    | Update supply forecasts as yield uncertainty is resolved through harvest reports and USDA production reports    |
+| Summer 2018  | Update supply forecasts based on USDA production revisions, southern hemisphere production, stocks, and use reports.  |
+
+
+
+---
+
+### Southern Hemisphere Production
+
+  + Production of corn, soybeans, and other commodities in the southern hemisphere has grown rapidly over the last ten to fifteen years. 
+  
+  + It has impacted global commodity markets tremendously. 
+  
+  + Since southern hemisphere production occurs in the middle of marketing years organized by northern hemisphere harvest. 
+  
+  + There is an uncertain additional supply that must be forecast and updated to keep an accurate global balance sheet.  
+
+---
+
+### Uncertainty 
+
+  + Even careful accounting of supply and demand factors make up the balance sheet leaves a tremendous amount of uncertainty in the market.  
+  
+  + Demand can be difficult to forecast, and can sometimes change dramatically. 
+  
+  + The USDA keeps careful track of stocks, but we only get stocks estimates once a quarter. 
+  
+  + Between *Grain Stocks* reports there is always a great deal of speculation. 
+  
+  + The pace of consumption we are eating into stocks at a faster or slower pace than expected. 
+  
+  + Analysts talk about whether the market is on pace to achieve the forecast level of ethanol crush, soybean crush, or exports. 
+  
+---
+
+### Balance Sheet Format
+
+The common format balance sheets for any commodity have in common. **Table 3.** Balance Sheet for a General Commodity:
+
+| Stocks and Use   |   | 
+|:-------------------|:--|
+|Beginning Stocks    |   | 
+| + Production       |   |
+| + Imports          |   |
+| **= Total Supply**     |   |
+|Domestic Consumption|    |
+| + Exports          |   |
+| + Residual          |   |
+| **= Total Consumption (Use)**     |   |
+| **Ending Stocks = Total Supply - Total Consumption**|    |
+
+---
+
+```{r, echo=FALSE, warning=FALSE, message= FALSE}
+library(readxl)
+library(knitr)
+library(httr)
+library(kableExtra)
+options(knitr.kable.NA = '')
+# aug15wasdec <- read.csv('Excel-files/FundamentalAnalysisand-aug15wasdec.csv')
+# kable(aug15wasdec, align = 'l', col.names = c("Corn", "Marketing Year 2014/2015", "Marketing Year 2015/2016 Est.", "Marketing Year 2016/2017 July Projection", "Marketing Year 2016/2017 August Projection"))
+
+
+
+url1 <- 'https://www.usda.gov/oce/commodity/wasde/wasde0221.xls'
+
+GET(url1, write_disk(tf <- tempfile(fileext = ".xls")))
+df <- read_excel(tf, 
+                 n_max = 20,
+                 sheet = "Page 12", 
+                 skip = 29, 
+                 col_types = c("text", "numeric", "numeric", "numeric", "numeric"),
+                 .name_repair = "minimal" 
+                 ) 
+
+colnames(df) <- c(colnames(df[,1]), colnames(df[,2]), colnames(df[,3]), paste0(colnames(df[,4]), " Prev"), colnames(df[,5]))
+
+df[2,1] <- "Million Acres"
+df[5,1] <- "Bushels"
+df[7,1] <- "Million Bushels"
+
+df %>% kable() %>% 
+  row_spec( c(11, 15, 17, 19), bold = TRUE) %>%
+  row_spec( c(2, 5, 7), italic = TRUE) %>%
+  row_spec(1:dim(df)[1], font_size = "small")
+  
+
+
+unlink(tf)
+
+
+```
+---
+
+### Balance Sheet Format (CONT...)
+
+  + USDA makes regular reports on the balance sheet for commodities. 
+  
+  + Most of them conducing private analyses with balance sheets use the USDA categories.
+  
+  + USDA estimates can be taken as a benchmark. 
+  
+  + The supply side (Stocks) is relatively straightforward. 
+  
+  + Total stocks for the marketing year will be beginning stocks, the portion of last year's stocks that were not used up during the previous marketing year. 
+  
+  + Plus this year's production, any imports of the commodity. 
+  
+  + Summing these three reveals the total amount of the commodity available for use during the marketing year.
+  
+---
+
+### Balance Sheet Format (CONT...)
+
+**Beginning Stocks:** 
+
+  + Some production from the previous year usually remains into the next crop season. 
+  
+  + Carryover stocks function as a buffer against current year yield uncertainty. 
+  
+  + **For example:** 
+  
+    + If carryover stocks are high and current year yield is expected to be below trend, the market price may fall in response but modestly. 
+    
+    + If carryover stocks are low - resulting from several years of below trend production and strong demand. 
+    
+    + An expected yield below trend will likely cause a volatile rise in prices.
+    
+---
+
+### Balance Sheet Format (CONT...)
+
+  + The balance sheet for corn follows the same generic patter. 
+  
+  + We can be a bit more specific with the use of the categories. 
+  
+  + Since we know the major use of the categories are for any given commodity. 
+  
+
+---
+### Balance Sheet Format (CONT...)
+
+**The use components are as follows:** 
+
+  + Feed and Residual: 
+  
+    + A large portion of the corn crop is used as feed for livestock (cattle, pigs, poultry).
+    
+  +  Food, Seed, and Industrial: 
+  
+    + Corn is used to make tortilla chips, high fructose corn syrup, edible oil and other food items. 
+    
+    + A portion of the crop is grown specifically as seed for the next years crop. 
+    
+    + There are some industrial uses for components of processed corn. Those are grouped in this category as well. 
+    
+  + Ethanol production also demands a significant amount of corn, so much that it gets its own line in the balance sheet. 
+  
+  + It is technically part of the Food, Seed, and Industrial category.
+  
+---
+
+### Balance Sheet Format (CONT...)
+
+**The use components are as follows:** 
+
+  + For soybeans, stocks are comprised of beginning stocks, production, and imports. 
+  
+  + The general balance sheet and the corn balance sheet. 
+  
+  + The use side, contains items specific to soybeans:
+
+  + **Crush:**
+  
+    + The amount of raw soybeans that are processed into soybean oil and soybean meal. 
+    
+    + Soybean oil is used predominately as edible oil; it also is used to make bio-diesel in modest quantities.
+
+---
+### Balance Sheet Format (CONT...)
+
+**The use components are as follows:** 
+
+
+  + **Food, Seed, and Industrial:** 
+  
+    + We saw this category in the corn balance sheet. 
+    
+    + The definition remains the same. 
+    
+  + **Exports:** 
+  
+    + The United States exports a large quantity of soybeans to global buyers.
+    
+  +  The final use category is export. 
+  
+  + Corn grown in the United States is consumed around the globe, and strength or weakness in the export market is a carefully component of demand.
+
+---
+
+## Coming up with a Price
+
+  + Balance sheet forecasting is definitely as much art as it is science. 
+  
+  + It involves tracking of the rate and use of commodities. 
+  
+  + One should intuitively see the forecasted ending stocks is a measure of scarcity of the commodity. 
+  
+  + It should be negatively related to price (i.e., tight ending stocks go along with high prices). 
+  
+  + One needs to pin down the exact nature of this relationship in order to form a meaningful forecast of price from a commodity balance sheet. 
+  
+---
+
+## Exercises
+
+1. Copy and paste the corn and soybeans balance sheets into a spreadsheet. 
+
+    + In the cell next to **= Total Supply**, manually add the cells needed to reproduce the **'=Total Supply'** number.
+    
+    + in the cell next to **= Total Consumption**, manually add the cells needed to reproduce the **= Total Consumption** number. 
+    
+2. If you were making a forecast in July 2015 for the 2014/2015 marketing year balance sheet, which columns (if any) should remain fixed? I.e., they are already determined and do not need to be forecast. 
+
+3. If you were making a forecast in July 2015 for the 2015/2016 marketing year balance sheet, which columns (if any) should remain fixed?
+
+---
+
+class: inverse, middle center
+
+###Chapter End
+
+---
