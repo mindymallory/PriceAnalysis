@@ -254,8 +254,32 @@ Market prices react strongly to USDA reports when the reports inject significant
   
   + The future contracts are specified for a quantity of 5,000 bushels.
   
-  
-![Figure 2: Price of July 2010 corn on June 30, 2010 before and after the release of Planted Acres Report.](assets\100630.png)
+---
+
+Figure 2: Price of July 2010 corn on June 30, 2010 before and after the release of Planted Acres Report
+
+```{r, echo = FALSE, warning = FALSE, message = FALSE}
+# Until capable of charting body when open=close can't use
+
+
+library(quantmod)
+library(tidyverse)
+library(tidyquant)
+df <- read.csv("assets/cn10-2010-06-30.txt")
+
+df[, c(4:8)] %>% 
+  as.xts(order.by = as_datetime(df[,2], tz = Sys.timezone(location = TRUE))) %>% 
+  candleChart(multi.col=FALSE,theme='white')
+ 
+# df %>%
+#     ggplot(aes(x = timestamp, y = close, colour_up = "green", fill_up = "green")) +
+#     geom_candlestick(aes(open = open, high = high, low = low, close = close)) +
+#     labs(title = "15-Min Candles on 2020-06-30", y = "Closing Price", x = "") +
+#     theme_tq() +
+#     theme(axis.text.x = element_text(angle = 90))
+
+
+```
   
 ---
 
@@ -288,8 +312,22 @@ Market prices react strongly to USDA reports when the reports inject significant
  
 ---
 
-![Figure 3: Price of December 2010 corn on October 8th, 2010 before and after the release of the WASDE Report.](assets\101008.png)
+Figure 3: Price of December 2010 corn on October 8th, 2010 before and after the release of the WASDE Report
 
+
+```{r, echo = FALSE, warning = FALSE, message = FALSE}
+
+df <- read.csv("assets/cz10-2010-10-08.txt")
+# 
+# df %>%
+#     ggplot(aes(x = timestamp, y = close, colour_up = "green", fill_up = "green")) +
+#     geom_candlestick(aes(open = open, high = high, low = low, close = close)) +
+#     labs(title = "15-Min Candles on 2020-10-08", y = "Closing Price", x = "") +
+#     theme_tq() +
+#     theme(axis.text.x = element_text(angle = 90))
+
+df[, c(4:8)] %>% as.xts(order.by = as_datetime(df[,2], tz = Sys.timezone(location = TRUE))) %>% candleChart(multi.col=FALSE,theme='white')
+```
 ---
 
 ###Three Examples from 2010 Marketing year (CONT...) 
@@ -302,7 +340,22 @@ Market prices react strongly to USDA reports when the reports inject significant
   
 ---
 
-![Figure 5:  Price of May 2011 corn on March 31st, 2011 before and after the release of the Planted Acres Report.](assets\110331.png)
+Figure 5:  Price of May 2011 corn on March 31st, 2011 before and after the release of the Planted Acres Report
+
+
+```{r, echo = FALSE, warning = FALSE, message = FALSE}
+
+df <- read.csv("assets/cn11-2011-03-31.txt")
+# 
+# df %>%
+#     ggplot(aes(x = timestamp, y = close, colour_up = "green", fill_up = "green")) +
+#     geom_candlestick(aes(open = open, high = high, low = low, close = close)) +
+#     labs(title = "15-Min Candles on 2020-10-08", y = "Closing Price", x = "") +
+#     theme_tq() +
+#     theme(axis.text.x = element_text(angle = 90))
+
+df[, c(4:8)] %>% as.xts(order.by = as_datetime(df[,2], tz = Sys.timezone(location = TRUE))) %>% candleChart(multi.col=FALSE,theme='white')
+```
 ---
 
 ## Conclusions

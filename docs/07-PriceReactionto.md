@@ -84,56 +84,26 @@ Three examples come from the 2010 marketing year.
 
 The June 30 Planted Acres report resulted in the market opening (at 8:30am EST) 15 cents higher than it closed the overnight trade just two hours earlier. Ultimately it closed the day trading session 3.54 cents/bushel - 7.5% or 25 cents higher than the most recent pre-report price. Two put that into perspective, 25 cents that is an increase in value of one futures contract of $1,250, since future contracts are specified for a quantity of 5,000 bushels. 
 
-![Figure 2: Price of July 2010 corn on June 30, 2010 before and after the release of Planted Acres Report.](images\100630.png)
+Figure 2: Price of July 2010 corn on June 30, 2010 before and after the release of Planted Acres Report
 
-
-```r
-# Until capable of charting body when open=close can't use
-
-
-# library(quantmod)
-# library(tidyverse)
-# library(tidyquant)
-# df <- read.csv("assets/cn10-2010-06-30.txt")
-# 
-# df %>%
-#     ggplot(aes(x = timestamp, y = close, colour_up = "green", fill_up = "green")) +
-#     geom_candlestick(aes(open = open, high = high, low = low, close = close)) +
-#     labs(title = "15-Min Candles on 2020-06-30", y = "Closing Price", x = "") +
-#     theme_tq() +
-#     theme(axis.text.x = element_text(angle = 90))
-```
+<img src="07-PriceReactionto_files/figure-html/unnamed-chunk-1-1.png" width="672" />
 
 In the top panel of Figure 2 you can see that the time stamps indicate those are transactions occurring in the overnight electronic market. There is a break in the morning prior to 9:30 CST when trading begins in the daytime session. It is in this period that the Planted Acres report is released. The bottom panel only displays the daytime session, so that you can see the trading action more clearly. Between 9:30am and about 10:15 the market trades in a 10 cent range. 
 
 
 The Oct 8th WASDE report caused the market to open limit up. The exchange sets the maximum fluctuation a futures price can trade in a given day. The value of the limit can change at the discretion of the exchange with some advance notice. The report indicated a sharp drop in forecasted yield for corn. This resulted in the ending stocks number for the 2010/2011 marketing year forecast below 1 billion bushels with a very low stocks to use ratio as well. The market reaction is show below in Figure 3. 
 
-![Figure 3: Price of December 2010 corn on October 8th, 2010 before and after the release of the WASDE Report.](images\101008.png)
+Figure 3: Price of December 2010 corn on October 8th, 2010 before and after the release of the WASDE Report
 
-
-```r
-# df <- read.csv("assets/cz10-2010-10-08.txt")
-# 
-# df %>%
-#     ggplot(aes(x = timestamp, y = close, colour_up = "green", fill_up = "green")) +
-#     geom_candlestick(aes(open = open, high = high, low = low, close = close)) +
-#     labs(title = "15-Min Candles on 2020-10-08", y = "Closing Price", x = "") +
-#     theme_tq() +
-#     theme(axis.text.x = element_text(angle = 90))
-```
+<img src="07-PriceReactionto_files/figure-html/unnamed-chunk-2-1.png" width="672" />
 
 The flat line during the daytime trading session is apparent, resulting from prices being locked at the limit during the entire trading day. 
 
-The next example is December 9th, 2010, the release day of the December WASDE report. 
 
-![Figure 4:  Price of March 2011 corn on December 9th, 2010 before and after the release of the WASDE Report.](images\101209.png)
+Figure 5:  Price of May 2011 corn on March 31st, 2011 before and after the release of the Planted Acres Report
 
-On this day the market opened 10 cents higher, or 1.8%. On a non-report day, this would be a large price move. However, for a report day, it seems like a small price adjustment. 
+<img src="07-PriceReactionto_files/figure-html/unnamed-chunk-3-1.png" width="672" />
 
-Figure 5, below, is the price action on the March 31st, 2011, the day the Prospective Plantings and Grain Stocks reports were released. 
-
-![Figure 5:  Price of May 2011 corn on March 31st, 2011 before and after the release of the Planted Acres Report.](images\110331.png)
 
 This report indicated that corn acreage was to be higher than previously expected, but corn stocks were lower than expected. The stocks number dominated the price direction strongly and the market traded limit up on this day as well.  
 
