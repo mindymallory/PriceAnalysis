@@ -607,22 +607,16 @@ ggsave(filename = "PricesSpaceTime-pricesdecreasing-hyp.png")
 
 
 
-# Graphs for Forecasting Production `08-ForecastingProduction.Rmd`
-
-```{r}
-
-
-```
 
 # Figures for `08-ForecastingProduction.Rmd`
 
-```{r}
+```{r, fig.width = 6, fig.height= 5}
 nassqs_auth(key)
 
 params1 <- list(commodity_desc = c("CORN", "SOYBEANS", "WHEAT"), 
                 year__GE = 1926, 
                 agg_level_desc = "NATIONAL", 
-                statisticcat_desc = c("YIELD", "Area Planted", "Production", "PRICE RECEIVED"),
+                statisticcat_desc = c("YIELD", "Area Planted", "Area Harvested", "Production", "PRICE RECEIVED"),
                 prodn_practice_desc = "ALL PRODUCTION PRACTICES",
                 util_practice_desc = c("GRAIN", "ALL UTILIZATION PRACTICES"),
                 reference_period_desc = c("YEAR", "Marketing Year"),
@@ -631,6 +625,75 @@ params1 <- list(commodity_desc = c("CORN", "SOYBEANS", "WHEAT"),
                 ) # GE means "greater than or equal to"
 data1   <- nassqs(params1)
 data1$Value <- as.numeric(gsub(",", "", as.character(data1$Value)))
+data1
+
+corn2 <- data1 %>% 
+  filter( commodity_desc == "CORN" | commodity_desc == "SOYBEANS") %>%
+  filter(statisticcat_desc == "AREA PLANTED") %>%
+  #filter(short_desc == "CORN, GRAIN - PRODUCTION, MEASURED IN BU") %>%
+  filter( domaincat_desc == "NOT SPECIFIED") %>% 
+  filter(source_desc == "SURVEY") %>%
+  select(c(commodity_desc, statisticcat_desc, short_desc, domaincat_desc, source_desc, year, Value )) %>% 
+  ggplot(aes(x = year, y = Value/1000000, color = commodity_desc)) + 
+  geom_line() +
+  geom_line(data = data1 %>% 
+    filter( commodity_desc == "CORN" | commodity_desc == "SOYBEANS") %>%
+    filter(statisticcat_desc == "PRICE RECEIVED") %>%
+    filter(reference_period_desc == "MARKETING YEAR") %>% 
+    select(c(commodity_desc, year, Value )) %>% 
+    pivot_wider(names_from = "commodity_desc", values_from = "Value", values_fn = {mean}) %>% 
+    mutate(CornSoyRatio = lead(CORN, 2)/lead(SOYBEANS, 2)*100), 
+     aes(x = year, y = CornSoyRatio, color = "Last-Year-Corn/Soy-Ratio")) +
+  theme_bw() +
+  #lims(y = c(0, 16)) +
+  labs(title = "U.S. Corn and Soybeans Planted Acres", x = "", y = "Millions of Acres") + 
+  scale_x_continuous(n.breaks = 15)
+  
+corn2
+
+ggsave(filename = "ForecastingProduction-PlantedAcres.png")
 
 
+corn <- read.csv("zcz17.csv") %>% select( timestamp, close)
+soybeans <- read.csv("zsx17.csv") %>% select( timestamp, close)
+       
+temp <- inner_join(corn, soybeans, by = "timestamp")
+colnames(temp) <- c("timestamp", "Corn", "Soybeans")
+
+ 
+temp %>% mutate(CornSoyRatio = Corn/Soybeans*100) %>%
+  mutate(timestamp = as.Date(timestamp)) %>% 
+  filter(timestamp < as.Date("2017-07-01")) %>%
+  ggplot(aes(x = timestamp, y = CornSoyRatio)) +
+   geom_line() +
+  theme_bw() +
+  #lims(y = c(0, 16)) +
+  labs(title = "2017 Harvest Price Ratio Corn and Soybeans", x = "", y = "Corn/Soy*100")
+
+ggsave(filename = "ForecastingProduction-PriceRatio.png")
+
+
+corn2 <- data1 %>% 
+  filter( commodity_desc == "CORN" ) %>%
+  filter(statisticcat_desc == "AREA PLANTED" | statisticcat_desc == "AREA HARVESTED") %>%
+  filter( domaincat_desc == "NOT SPECIFIED") %>% 
+  filter(source_desc == "SURVEY") %>%
+  select(c(year, commodity_desc, statisticcat_desc, Value )) %>% 
+  filter(year > 1998) %>% 
+  pivot_wider(names_from = 'statisticcat_desc', values_from = "Value") %>%
+  mutate(DIFFERENCE = `AREA PLANTED` - `AREA HARVESTED`) %>% 
+  pivot_longer(cols = c("AREA PLANTED", "AREA HARVESTED", "DIFFERENCE"), names_to = "ACRES") %>%
+  ggplot(aes(x = year, y = value/1000000, color = ACRES)) + 
+  geom_line() +
+  theme_bw() +
+  scale_x_continuous(n.breaks = 5) +
+  #lims(y = c(0, 16)) +
+  labs(title = "Corn Planted Acres and Harvested Acres Since 1999", x = "", y = "Millions of Acres")
+
+corn2
+ggsave(filename = "ForecastingProduction-PAHA.png")
 ```
+
+
+
+

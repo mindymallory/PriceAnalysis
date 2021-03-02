@@ -40,7 +40,7 @@ Historical acres planted and harvested can be found from USDA NASS.
 
 The following is a graph of historical corn *Planted Acres* along with the ratio of *Average Prices Received by Farmers* for corn and soybeans.  
 
-![Figure 3: Corn Planted Acres and Corn/Soybean Price Ratio](Excel-files\ForecastingProduction-HistoricalAcreage_files\image003.png)
+![Figure 3: Corn Planted Acres and Corn/Soybean Price Ratio](assets/ForecastingProduction-PlantedAcres.png)
 
 The following is a graph of historical corn *Planted Acres and Harvested Acres* generated from the data described above from 2000 to 2014. The left axis shows planted and harvested acres while the right axis shows the difference between the two. Since 2000, you can see that corn acreage has been increasing steadily from 80 million acres to just above 90 million acres. Given this, prior to planting season we might expect a simple trend-line to forecast corn acreage fairly well. However, notice that in a couple of instances there were fairly large deviations from the trend-line.
 
@@ -50,7 +50,8 @@ Figure 4 shows the December 2017 and November 2017 corn and soybean futures pric
 
 Figure 4 shows that during the fall of 2016, the corn/soy price ratio was falling, so acreage expectations should have been shifting slightly from corn toward soybeans. However, in late spring 2017, the corn price gained relative to the soybean price, so some corn acres may have been added back at the last minute that were originally planned for soybean acres. If we compare the 2017 prospective plantings report ([released on 3/21/2017](http://usda.mannlib.cornell.edu/usda/current/ProsPlan/ProsPlan-03-31-2017.pdf)) with the 2017 acreage report ([released on 6/30/2017](http://usda.mannlib.cornell.edu/usda/current/Acre/Acre-06-30-2017.pdf)) we see that this was indeed the case. In the prospective planing report the USDA estimated corn acres to be 90 million, but the acreage report showed plantings were nearly 1 million acres higher at 90.9 million. 
 
-![Figure 4: 2017 December Corn and 2017 November Soybean Futures Price Ratio from 10/1/2016 to 5/1/2017](Excel-files\c-s2017_files\image001.png) 
+![](assets/ForecastingProduction-PriceRatio.png) 
+
 
 ### Forecasting Harvested Acres
 
@@ -58,7 +59,8 @@ After forecasting *Planted Acres* one still needs to provide a forecast for *Har
 
 Harvested acres tends to be a fairly stable number, averaging 7.6 million acres between 2000 and 2014. Although, years when this variable deviates most from trend corresponds to years of exceptionally poor production. In figure 5, see 2012 and 2002 as examples. These years marginal reductions in production are explained by reduced yield and abandoned acres, so forecasting the harvested acres number accurately becomes very important to accurately forecasting production in shortfall years. 
 
-![Figure 5: Corn Planted Acres and Harvested Acres, 2000-2014](Excel-files\ForecastingProduction-HistoricalAcreage_files\image001.png)
+![](assets/ForecastingProduction-PAHA.png)
+
 
 ## Forecasting Yield
 
