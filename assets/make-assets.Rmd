@@ -14,7 +14,9 @@ library(ggpubr)
 purduegold <- '#CEB888'
 ```
 
-## This file creates assets for my price analysis book. Code can be run to update figures and tables in the book. Assets are located in the `/assets` subdirectory. 
+# This file creates assets for my price analysis book. Code can be run to update figures and tables in the book. Assets are located in the `/assets` subdirectory. 
+
+# Graphs for `041-Options1.Rmd`
 
 ```{r}
 prices <- data.frame(price = 400:500)
@@ -145,7 +147,11 @@ figure
 ggsave(filename = "Options1-optionintrinsic.png")
 
 ```
-## The following code prepares figures for "PrimerforGrain.rmd"
+
+
+
+
+# Figures for "PrimerforGrain.rmd"
 
 ```{r}
 key = 'BD652A51-1B61-3442-B80A-9B4030E2F382'
@@ -328,7 +334,7 @@ ggsave(wheat2, filename = "PrimerforGrain_WheatProdand$.png")
 
 ```
 
-Getting the USE graphs for `PrimerforGrain.Rmd`
+
 
 ```{r}
 library(tidyverse)
@@ -435,4 +441,172 @@ CornPrices<- data1 %>%
 
 CornPrices
 ggsave(CornPrices, filename = "PrimerforGrain_CornPrices.png")
+```
+
+
+
+
+
+# Figures for `05-PricesSpaceTime.Rmd`
+
+
+```{r, echo = FALSE, message = FALSE, warning=FALSE}
+library(tidyr)
+library(ggplot2)
+
+df <- tibble(xaxis = c("Dec", "Mar", "May", "Jul", "Sep", "Dec2"),
+             day = c('day 1', 'day 1', 'day 1', 'day 1', 'day 1', 'day 1'),
+             price = c(330, 340, 345, 353, 360, 370))
+
+df$xaxis <- factor(df$xaxis, levels = unique(df$xaxis[order(df$price)]))
+
+g <- ggplot(df, aes(xaxis, price)) + ylim(300,425) + theme_bw() +
+        geom_point() + 
+        geom_line(aes(group = day)) +
+        scale_color_manual(values = c(purduegold, purduegold, purduegold, purduegold, purduegold, purduegold)) +
+        labs(title = "Increasing Forward Curve from Sep 26, 2016", x = "", y = "Price cents per bushel") 
+        
+g       
+ggsave(filename = "PricesSpaceTime-increasing-9-26-2016.png")
+
+
+
+df <- tibble(xaxis = c("Dec", "Mar", "May", "Jul", "Sep", "Dec2"),
+             day = c('day 1', 'day 1', 'day 1', 'day 1', 'day 1', 'day 1'),
+             price = c(390, 400, 408, 412, 405, 410))
+
+df$xaxis <- factor(df$xaxis, levels = unique(df$xaxis))
+
+g <- ggplot(df, aes(xaxis, price)) + ylim(375,415) + theme_bw() +
+        geom_point() + 
+        geom_line(aes(group = day)) +
+        scale_color_manual(values = c(purduegold, purduegold, purduegold, purduegold, purduegold, purduegold)) +
+        labs(title = "Increasing Forward Curve from Sep 25, 2015", x = "", y = "Price cents per bushel") 
+        
+       
+g
+ggsave(filename = "PricesSpaceTime-increasing-9-25-2015.png")
+
+
+df <- tibble(xaxis = c("May", "Jul", "Sep", "Dec", "Mar", "May2"),
+             day = c('day 1', 'day 1', 'day 1', 'day 1', 'day 1', 'day 1'),
+             price = c(630, 620, 555, 540, 545, 555))
+
+df$xaxis <- factor(df$xaxis, levels = unique(df$xaxis))
+
+g <- ggplot(df, aes(xaxis, price)) + ylim(480,640) + theme_bw() +
+        geom_point() + 
+        geom_line(aes(group = day)) +
+        scale_color_manual(values = c(purduegold, purduegold, purduegold, purduegold, purduegold, purduegold)) +
+        labs(title = "Decreasing Forward Curve from Apr 13, 2012", x = "", y = "Price cents per bushel") 
+        
+       
+g
+ggsave(filename = "PricesSpaceTime-decreasing-4-13-2012.png")
+
+
+
+df <- tibble(xaxis = c("Sep", "Dec", "Mar", "May", "Jul", "Sep2", "Dec2"),
+             day = c('day 1', 'day 1', 'day 1', 'day 1', 'day 1', 'day 1', 'day 1'),
+             price = c(800, 800, 800, 799, 797, 698, 610))
+
+df$xaxis <- factor(df$xaxis, levels = unique(df$xaxis))
+
+g <- ggplot(df, aes(xaxis, price)) + ylim(500,900) + theme_bw() +
+        geom_point() + 
+        geom_line(aes(group = day)) +
+        scale_color_manual(values = c(purduegold, purduegold, purduegold, purduegold, purduegold, purduegold)) +
+        labs(title = "Flat Forward Curve from Aug 1, 2012", x = "", y = "Price cents per bushel") 
+        
+       
+g
+ggsave(filename = "PricesSpaceTime-flat-8-01-2012.png")
+
+
+df <- tibble(xaxis = c("Dec", "Mar", "May", "Jul", "Sep2", "Dec2"),
+             day = c('day 1', 'day 1', 'day 1', 'day 1', 'day 1', 'day 1' ),
+             price = c(745, 755, 754, 740, 660, 640))
+
+df$xaxis <- factor(df$xaxis, levels = unique(df$xaxis))
+
+g <- ggplot(df, aes(xaxis, price)) + ylim(500,900) + theme_bw() +
+        geom_point() + 
+        geom_line(aes(group = day)) +
+        scale_color_manual(values = c(purduegold, purduegold, purduegold, purduegold, purduegold, purduegold)) +
+        labs(title = "Flat and Falling Forward Curve from Dec 3, 2012", x = "", y = "Price cents per bushel") 
+        
+       
+g
+ggsave(filename = "PricesSpaceTime-flat-12-03-2012.png")
+
+xaxis <- c('Dec', 'March', 'May', 'July', 'Sept')
+day1 <- c('day 1', 'day 1', 'day 1', 'day 1', 'day 1')
+day2 <- c('day 2', 'day 2', 'day 2', 'day 2', 'day 2')
+day3 <- c('day 3', 'day 3', 'day 3', 'day 3', 'day 3')
+day4 <- c('day 4', 'day 4', 'day 4', 'day 4', 'day 4')
+day1p <- as.numeric(c(350, 360, 369, 375, 378))
+day2p <- as.numeric(c(355, 364, 372, 377, 379))
+day3p <- as.numeric(c(360, 367, 374, 378, 380))
+day4p <- as.numeric(c(385, 383, 382, 381, 381))
+
+day1 <- cbind(xaxis, day1, day1p)
+day2 <- cbind(xaxis, day2, day2p)
+day3 <- cbind(xaxis, day3, day3p)
+day4 <- cbind(xaxis, day4, day4p)
+df <- rbind(day1, day2, day3, day4)
+df <- as.data.frame(df)
+colnames(df) <- c('xaxis', 'day', 'price')
+# df$xaxis <- factor(df$xaxis, levels = df$xaxis[order(df$price)])
+df$xaxis <- factor(df$xaxis, levels = unique(df$xaxis[order(df$price)]))
+
+df$price <- as.numeric(as.character(df$price))
+g <- ggplot(df, aes(xaxis, price, colour= day)) + ylim(300,425) + theme_bw() +
+        geom_point() + geom_line(aes(group = day)) +
+        scale_color_manual(values = c("darkblue", "darkblue", "darkblue", "darkblue")) +
+        labs(x = "", y = "Price cents per bushel") + 
+        geom_text(aes(label= ifelse(xaxis == "Dec", as.character(day), '')),hjust=1.5, vjust=0) + 
+        theme(legend.position = "none")
+       
+g
+ggsave(filename = "PricesSpaceTime-pricesincreasing-hyp.png")
+
+
+xaxis <- c('Dec', 'March', 'May', 'July', 'Sept')
+day1 <- c('day 1', 'day  1', 'day 1', 'day 1', 'day 1')
+day2 <- c('day 2', 'day 2', 'day 2', 'day 2', 'day 2')
+day3 <- c('day 3', 'day 3', 'day 3', 'day 3', 'day 3')
+day4 <- c('day 4', 'day 4', 'day 4', 'day 4', 'day 4')
+day1p <- as.numeric(c(350, 360, 369, 375, 378))
+day2p <- as.numeric(c(342, 354, 366, 372, 377))
+day3p <- as.numeric(c(332, 346, 360, 368, 374))
+day4p <- as.numeric(c(327, 341, 355, 363, 369))
+
+day1 <- cbind(xaxis, day1, day1p)
+day2 <- cbind(xaxis, day2, day2p)
+day3 <- cbind(xaxis, day3, day3p)
+day4 <- cbind(xaxis, day4, day4p)
+df <- rbind(day1, day2, day3, day4)
+df <- as.data.frame(df)
+colnames(df) <- c('xaxis', 'day', 'price')
+# df$xaxis <- factor(df$xaxis, levels = df$xaxis[order(df$price)])
+df$xaxis <- factor(df$xaxis, levels = unique(df$xaxis[order(df$price)]))
+df$price <- as.numeric(as.character(df$price))
+g <- ggplot(df, aes(xaxis, price, colour= day)) + ylim(300,425) + theme_bw() +
+        geom_point() + geom_line(aes(group = day)) +
+        scale_color_manual(values = c("darkblue", "darkblue", "darkblue", "darkblue", "darkblue")) +
+        labs(x = "", y = "Price cents per bushel") + 
+        geom_text(aes(label= ifelse(xaxis == "Dec", as.character(day), '')),hjust=1.5, vjust=0) + 
+        theme(legend.position = "none")
+       
+g
+ggsave(filename = "PricesSpaceTime-pricesdecreasing-hyp.png")
+```
+
+```
+
+# Graphs for Forecasting Production `08-ForecastingProduction.Rmd`
+
+```{r}
+
+
 ```
