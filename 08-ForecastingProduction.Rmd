@@ -66,7 +66,7 @@ Harvested acres tends to be a fairly stable number, averaging 7.6 million acres 
 
 Just like in forecasting acreage, we have different procedures for forecasting yield prior to planting. Before the summer growing season gets underway trend yield is usually used. The trouble is, where to start?
 
-![Figure 6: Historical Yields since 1866](Excel-files\ForecastingProduction-HistoricalAcreage_files\image005.png)
+![](assets/ForecastProduction-yieldsall.png)  
 
 USDA has records on yield that go back to 1866. While one often thinks more information is better when forecasting, the old yield estimates are no longer useful for forecasting current yield. Technological progress caused yields to take of in the 1950's and they have been climbing ever since. In the forecasting world, this is called *structural change* or a *structural break*. If *structural change* has occurred, the world looks so different now than it did before the structural change that data from before the break just is not useful for forecasting going forward. 
 

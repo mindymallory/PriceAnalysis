@@ -700,8 +700,8 @@ corn2 <- data1 %>%
   filter(statisticcat_desc == "YIELD") %>%
   select(c(year, commodity_desc, statisticcat_desc, Value )) %>% 
   ggplot(aes(x = year, y = Value)) + 
-  geom_line(color = purduegold, size = .75) +
-  geom_smooth(method = "lm", color = "black") +
+  geom_line(color = "black", size = .75) +
+  geom_smooth(method = "lm", color = purduegold) +
   theme_bw() +
   scale_x_continuous(n.breaks = 10) +
   #lims(y = c(0, 16)) +
@@ -716,8 +716,8 @@ corn2 <- data1 %>%
   filter(year >= 1950) %>% 
   select(c(year, commodity_desc, statisticcat_desc, Value )) %>% 
   ggplot(aes(x = year, y = Value)) + 
-  geom_line(color = purduegold, size = .75) +
-  geom_smooth(method = "lm", color = "black") +
+  geom_line(color = "black", size = .75) +
+  geom_smooth(method = "lm", color = purduegold) +
   theme_bw() +
   scale_x_continuous(n.breaks = 10) +
   #lims(y = c(0, 16)) +
@@ -733,8 +733,8 @@ corn2 <- data1 %>%
   filter(year >= 1980) %>% 
   select(c(year, commodity_desc, statisticcat_desc, Value )) %>% 
   ggplot(aes(x = year, y = Value)) + 
-  geom_line(color = purduegold, size = .75) +
-  geom_smooth(method = "lm", color = "black") +
+  geom_line(color = "black", size = .75) +
+  geom_smooth(method = "lm", color = purduegold) +
   theme_bw() +
   scale_x_continuous(n.breaks = 10) +
   #lims(y = c(0, 16)) +
