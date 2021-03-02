@@ -643,7 +643,7 @@ corn2 <- data1 %>%
     select(c(commodity_desc, year, Value )) %>% 
     pivot_wider(names_from = "commodity_desc", values_from = "Value", values_fn = {mean}) %>% 
     mutate(CornSoyRatio = lead(CORN, 2)/lead(SOYBEANS, 2)*100), 
-     aes(x = year, y = CornSoyRatio, color = "Last-Year-Corn/Soy-Ratio")) +
+     aes(x = year, y = CornSoyRatio, color = "Last-Year-Corn/Soy-PriceRatio")) +
   theme_bw() +
   #lims(y = c(0, 16)) +
   labs(title = "U.S. Corn and Soybeans Planted Acres", x = "", y = "Millions of Acres") + 
