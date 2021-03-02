@@ -692,6 +692,106 @@ corn2 <- data1 %>%
 
 corn2
 ggsave(filename = "ForecastingProduction-PAHA.png")
+
+
+
+corn2 <- data1 %>% 
+  filter( commodity_desc == "CORN" ) %>%
+  filter(statisticcat_desc == "YIELD") %>%
+  select(c(year, commodity_desc, statisticcat_desc, Value )) %>% 
+  ggplot(aes(x = year, y = Value)) + 
+  geom_line(color = purduegold, size = .75) +
+  geom_smooth(method = "lm", color = "black") +
+  theme_bw() +
+  scale_x_continuous(n.breaks = 10) +
+  #lims(y = c(0, 16)) +
+  labs(title = "Corn Yields, bu/acre", x = "", y = "")
+
+corn2
+ggsave("ForecastProduction-yieldsall.png")
+
+corn2 <- data1 %>% 
+  filter( commodity_desc == "CORN" ) %>%
+  filter(statisticcat_desc == "YIELD") %>%
+  filter(year >= 1950) %>% 
+  select(c(year, commodity_desc, statisticcat_desc, Value )) %>% 
+  ggplot(aes(x = year, y = Value)) + 
+  geom_line(color = purduegold, size = .75) +
+  geom_smooth(method = "lm", color = "black") +
+  theme_bw() +
+  scale_x_continuous(n.breaks = 10) +
+  #lims(y = c(0, 16)) +
+  labs(title = "Corn Yields 1950-present, bu/acre", x = "", y = "")
+
+corn2
+ggsave("ForecastProduction-yields1950.png")
+
+
+corn2 <- data1 %>% 
+  filter( commodity_desc == "CORN" ) %>%
+  filter(statisticcat_desc == "YIELD") %>%
+  filter(year >= 1980) %>% 
+  select(c(year, commodity_desc, statisticcat_desc, Value )) %>% 
+  ggplot(aes(x = year, y = Value)) + 
+  geom_line(color = purduegold, size = .75) +
+  geom_smooth(method = "lm", color = "black") +
+  theme_bw() +
+  scale_x_continuous(n.breaks = 10) +
+  #lims(y = c(0, 16)) +
+  labs(title = "Corn Yields 1980-present, bu/acre", x = "", y = "")
+
+corn2
+ggsave("ForecastProduction-yields1980.png")
+
+
+temp1 <- data1 %>% 
+  filter( commodity_desc == "CORN" ) %>%
+  filter(statisticcat_desc == "YIELD") %>%
+  filter(year >= 1980) %>% 
+  select(c(year, commodity_desc, statisticcat_desc, Value ))
+  
+temp1 <- lm(Value ~ year, temp1)
+
+temp <- data1 %>% 
+  filter( commodity_desc == "CORN" ) %>%
+  filter(statisticcat_desc == "YIELD") %>%
+  filter(year >= 1950) %>% 
+  select(c(year, commodity_desc, statisticcat_desc, Value ))
+  
+temp <- lm(Value ~ year, temp)
+
+
+corn2 <- data1 %>% 
+  filter( commodity_desc == "CORN" ) %>%
+  filter(statisticcat_desc == "YIELD") %>%
+  filter(year >= 1980) %>% 
+  select(c(year, commodity_desc, statisticcat_desc, Value )) %>% 
+  mutate(LevelDeviation = Value - (temp1$coefficients[1] + temp1$coefficients[2]*year)) %>% 
+  ggplot(aes(x = year, y = LevelDeviation)) + 
+  geom_line(color = purduegold, size = .75) +
+  theme_bw() +
+  scale_x_continuous(n.breaks = 10) +
+  #lims(y = c(0, 16)) +
+  labs(title = "Deviations from Trend Yield (1980)", x = "", y = "")
+
+corn2
+ggsave("ForecastProduction-LevelDeviation.png")
+
+corn2 <- data1 %>% 
+  filter( commodity_desc == "CORN" ) %>%
+  filter(statisticcat_desc == "YIELD") %>%
+  filter(year >= 1980) %>% 
+  select(c(year, commodity_desc, statisticcat_desc, Value )) %>% 
+  mutate(LevelDeviation = 100*(log(Value) - log((temp1$coefficients[1] + temp1$coefficients[2]*year)))) %>% 
+  ggplot(aes(x = year, y = LevelDeviation)) + 
+  geom_line(color = purduegold, size = .75) +
+  theme_bw() +
+  scale_x_continuous(n.breaks = 10) +
+  #lims(y = c(0, 16)) +
+  labs(title = "% Deviations from Trend Yield (1980)", x = "", y = "")
+
+corn2
+ggsave("ForecastProduction-PercDeviation.png")
 ```
 
 

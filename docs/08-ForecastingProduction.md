@@ -70,13 +70,23 @@ Just like in forecasting acreage, we have different procedures for forecasting y
 
 USDA has records on yield that go back to 1866. While one often thinks more information is better when forecasting, the old yield estimates are no longer useful for forecasting current yield. Technological progress caused yields to take of in the 1950's and they have been climbing ever since. In the forecasting world, this is called *structural change* or a *structural break*. If *structural change* has occurred, the world looks so different now than it did before the structural change that data from before the break just is not useful for forecasting going forward. 
 
-It turns out that if you estimate a trend-line beginning with 1952, with 1980, or with pretty much any date in between, you will get an estimate that is roughly similar. 
+It turns out that if you estimate a trend-line beginning with 1950, with 1980, or with pretty much any date in between, you will get an estimate that is roughly similar. 
 
-![](Excel-files\ForecastingProduction-HistoricalAcreage_files\image007.png) 
+![](assets/ForecastProduction-yields1950.png) 
 
-![Figure 7: Historical Yields since 1952 and 1980](Excel-files\ForecastingProduction-HistoricalAcreage_files\image013.png) 
+![](assets/ForecastProduction-yields1950.png) 
 
-For example, using the trend-line beginning with 1952 to forecast yield we come up with $Yield^{2015} = 1.9066*2015 - 3677.9 = 163.899$. While, using the trend-line beginning with 1980 to forecast yield we come up with $Yield^{2015} = 1.8619*2015 - 3588.9 = 162.8285$.In other words, yields have been increasing by an average of just under 2 bushels per acre since the 1950's.
+
+
+For example, using the trend-line beginning with 1950 to forecast yield we come up with the following: 
+
+$$Yield^{t} = 1.935*t - 3733.903$$ 
+
+While, using the trend-line beginning with 1980 to forecast yield we come up with the following: 
+
+$$Yield^{t} = 1.939*t-3742.918$$ 
+
+In other words, yields have been increasing by an average of just under 2 bushels per acre since the 1950's.
 
 ## Growing Season Yield Forecasts
  
@@ -86,9 +96,9 @@ Since commodity futures markets respond to new information in the USDA reports, 
 
 This is difficult because an independent analyst will not have the same level of resources as the USDA does when it compiles its monthly yield estimates; he or she will have to rely on historical data and an understanding of how weather is affecting crop yields across the geographically dispersed growing region.  Figure 8 below plots each year's deviation from trend yield since 1980. The first plot is in levels (i.e., $Yield_t - Trend Yield_t$); whereas the second plot is in percent terms (i.e., $\ln{Yield_t} - \ln{Trend Yield_t}$. Notice that the shape looks roughly the same, but the 2012 drought looks worse expressed in level deviations than the short crops of 1983, 1988, and 1993. This is because yield is trending higher. In percentage terms we see that the 2012 drought was equally as bad as 1983 and not quite as bad as 1988.   
 
-![](Excel-files\ForecastingProduction-HistoricalAcreage_files\image015.png)
+![](assets/ForecastProduction-LevelDeviation.png)
 
-![Figure 8: Deviations from Trend in both Level and Percent (using trend since 1980)](Excel-files\ForecastingProduction-HistoricalAcreage_files\image017.png)
+![](assets/ForecastProduction-LevelDeviation.png) 
 
 Short of an advanced agronomic model that can take into account planting date, precipitation, [growing degree days](https://en.wikipedia.org/wiki/Growing_degree-day), or ability to estimate yield from remote sensing technology [@unganai1998drought], we will have to resort to the *similar year approach*.  
 
