@@ -17,7 +17,7 @@ Our first task in forecasting a balance sheet will be to get a good estimate of 
 
 
 
-![Figure 1: Snippet of Supply Rows from WASDE Report](images\8_wasdeprod_snip.png)
+![Figure 1: Snippet of Supply Rows from WASDE Report](images/8_wasdeprod_snip.png)
 
 As we noted before, `Production = Acreage X Yield`. To begin, we will discuss the fundamentals of estimating acreage. 
 

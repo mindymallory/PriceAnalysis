@@ -17,7 +17,7 @@ Our first task in forecasting a balance sheet will be to get a good estimate of 
 
 
 
-![Figure 1: Snippet of Supply Rows from WASDE Report](images\8_wasdeprod_snip.png)
+![Figure 1: Snippet of Supply Rows from WASDE Report](images/8_wasdeprod_snip.png)
 
 As we noted before, `Production = Acreage X Yield`. To begin, we will discuss the fundamentals of estimating acreage. 
 
@@ -36,7 +36,7 @@ Historical acres planted and harvested can be found from USDA NASS.
 > 6. Select the years you want. Hold the Ctrl key to select multiple.
 > 7. Click *Get Data*. 
 
-![Figure 2: Historical Acreage Data](images\ACRES_historical.png)
+![Figure 2: Historical Acreage Data](images/ACRES_historical.png)
 
 The following is a graph of historical corn *Planted Acres* along with the ratio of *Average Prices Received by Farmers* for corn and soybeans.  
 

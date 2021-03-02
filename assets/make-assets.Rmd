@@ -447,6 +447,8 @@ ggsave(CornPrices, filename = "PrimerforGrain_CornPrices.png")
 
 
 
+
+
 # Figures for `05-PricesSpaceTime.Rmd`
 
 
@@ -600,13 +602,35 @@ g <- ggplot(df, aes(xaxis, price, colour= day)) + ylim(300,425) + theme_bw() +
        
 g
 ggsave(filename = "PricesSpaceTime-pricesdecreasing-hyp.png")
-```
 
 ```
+
+
 
 # Graphs for Forecasting Production `08-ForecastingProduction.Rmd`
 
 ```{r}
+
+
+```
+
+# Figures for `08-ForecastingProduction.Rmd`
+
+```{r}
+nassqs_auth(key)
+
+params1 <- list(commodity_desc = c("CORN", "SOYBEANS", "WHEAT"), 
+                year__GE = 1926, 
+                agg_level_desc = "NATIONAL", 
+                statisticcat_desc = c("YIELD", "Area Planted", "Production", "PRICE RECEIVED"),
+                prodn_practice_desc = "ALL PRODUCTION PRACTICES",
+                util_practice_desc = c("GRAIN", "ALL UTILIZATION PRACTICES"),
+                reference_period_desc = c("YEAR", "Marketing Year"),
+                freq_desc = "ANNUAL"
+                #prodn_practice_desc = "NON-IRRIGATED"
+                ) # GE means "greater than or equal to"
+data1   <- nassqs(params1)
+data1$Value <- as.numeric(gsub(",", "", as.character(data1$Value)))
 
 
 ```
