@@ -7,6 +7,7 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 library(ggpubr)
+library(rnassqs)
 
 
 # Color Schemes:
@@ -156,7 +157,7 @@ ggsave(filename = "Options1-optionintrinsic.png")
 ```{r}
 key = 'BD652A51-1B61-3442-B80A-9B4030E2F382'
 
-library(rnassqs)
+
 # apikey <- "YOUR API KEY"
 nassqs_auth(key)
 
@@ -792,6 +793,69 @@ corn2 <- data1 %>%
 
 corn2
 ggsave("ForecastProduction-PercDeviation.png")
+
+
+# Getting crop condition ratings
+
+params1 <- list(commodity_desc = c("CORN"), 
+                year__GE = 1986, 
+                agg_level_desc = "NATIONAL", 
+                statisticcat_desc = c("YIELD", "CONDITION"),
+                prodn_practice_desc = "ALL PRODUCTION PRACTICES",
+                util_practice_desc = c("GRAIN", "ALL UTILIZATION PRACTICES"),
+                reference_period_desc = c("YEAR", "WEEK #30", "WEEK #31", "WEEK #32", "WEEK #33", "WEEK #34", "WEEK #35", "WEEK #36", "WEEK #37",
+                                          "WEEK #38", "WEEK #39", "WEEK #40", "WEEK #41", "WEEK #42", "WEEK #43", "WEEK #44", "WEEK #45", 
+                                          "WEEK #46"),
+                freq_desc = c("ANNUAL", "WEEKLY")
+                #prodn_practice_desc = "NON-IRRIGATED"
+                ) # GE means "greater than or equal to"
+data1   <- nassqs(params1)
+data1$Value <- as.numeric(gsub(",", "", as.character(data1$Value)))
+
+data1 <- data1 %>% filter(str_detect(short_desc, "EXCELLENT") | str_detect(short_desc, "GOOD") | str_detect(short_desc, "YIELD")) %>%
+  select(c(year, week_ending, short_desc, Value)) %>% 
+  mutate(type = case_when(str_detect(short_desc, "EXCELLENT") ~ "Condition",
+                          str_detect(short_desc, "GOOD") ~ "Condition",
+                          TRUE ~ "YIELD"))
+  
+
+dataGE <- data1 %>% filter(type == "Condition") %>% 
+  group_by(year) %>%
+  pivot_wider(names_from = short_desc, values_from = Value) %>%
+  slice(n()) %>% 
+  mutate(`% Good + Excellent` = `CORN - CONDITION, MEASURED IN PCT EXCELLENT` + `CORN - CONDITION, MEASURED IN PCT GOOD`) %>%
+  select(year, `% Good + Excellent`) %>% 
+  ungroup()
+
+dataY <- data1 %>% filter(type == "YIELD") %>% 
+  select(year, Value)
+
+colnames(dataY) <- c("year", "Yield")
+
+temp1 <- lm(Yield ~ year, dataY)
+
+inner_join(dataGE, dataY, by = "year") %>%
+  mutate(`Percent Deviation from Trend` = 100*(log(Yield) - log((temp1$coefficients[1] + temp1$coefficients[2]*year)))) %>% 
+  pivot_longer(cols = c(`% Good + Excellent`, `Percent Deviation from Trend`), names_to = "Series", values_to = "Value") %>% 
+  ggplot(aes(x = year, y = Value, color = Series)) + 
+  geom_line(size = .75) + 
+  theme_bw() + 
+  scale_color_manual(values=c("black", purduegold)) + 
+  labs(title = "End of Season G + E Crop Condition Ratings and Final Yield")
+
+ggsave("ForecastProduction-PercDeviationVSGE.png")
+
+
+inner_join(dataGE, dataY, by = "year") %>%
+  mutate(`Percent Deviation from Trend` = 100*(log(Yield) - log((temp1$coefficients[1] + temp1$coefficients[2]*year)))) %>% 
+  ggplot(aes(x = `% Good + Excellent`, y = `Percent Deviation from Trend`)) + 
+  geom_point() + 
+  geom_smooth(method = "lm", color = purduegold) +
+  theme_bw() + 
+  #scale_color_manual(values=c("black", purduegold)) + 
+  labs(title = "End of Season G + E Crop Condition Ratings and Final Yield")
+
+ggsave("ForecastProduction-PercDeviationVSGEXY.png")
 ```
 
 

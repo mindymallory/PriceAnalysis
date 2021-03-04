@@ -98,7 +98,7 @@ This is difficult because an independent analyst will not have the same level of
 
 ![](assets/ForecastProduction-LevelDeviation.png)
 
-![](assets/ForecastProduction-LevelDeviation.png) 
+![](assets/ForecastProduction-PercDeviation.png) 
 
 Short of an advanced agronomic model that can take into account planting date, precipitation, [growing degree days](https://en.wikipedia.org/wiki/Growing_degree-day), or ability to estimate yield from remote sensing technology [@unganai1998drought], we will have to resort to the *similar year approach*.  
 
@@ -106,7 +106,10 @@ Analysts often estimate deviations from trend yield by finding year similar to t
 
 An alternative approach would be to use the *Crop Condition Report* and find a year in recent history that had a similar percent of the crop rated *Good/Excellent*. Figure 9 below shows how *Good* + *Excellent* crop condition ratings relate to percent deviations in trend yield. They should be at least positively correlated, and in fact starting in the late 90's this measure began to correlate strongly with the final yield. 
 
-![Figure 9: *Good* plus *Excellent* Crop Condition Ratings in Final Week of Reporting versus Percent Deviations in Yields](Excel-files\ForecastingProduction-HistoricalAcreage_files\image033.png)
+![Figure: *Good* plus *Excellent* Crop Condition Ratings in Final Week of Reporting versus Percent Deviations in Final Yield from Trend](assets/ForecastProduction-PercDeviationVSGE.png)
+
+
+![Figure: *Good* plus *Excellent* Crop Condition Ratings in Final Week of Reporting versus Percent Deviations in Final Yield from Trend](assets/ForecastProduction-PercDeviationVSGEXY.png)
 
 ## Forecasting Production
 
