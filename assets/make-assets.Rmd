@@ -865,7 +865,7 @@ ggsave("ForecastProduction-PercDeviationVSGEXY.png")
 
 # Figures for `09-ForecastingUseof.Rmd` and `10-ForecastingUseofSoy.Rmd`
 
-```{r}
+```{r fig.height = 5}
 library(tidyverse)
 library(readxl)
 library(httr)
@@ -904,7 +904,7 @@ data_tidy
 
 Now let's plot the corn dissapearance
 
-```{r}
+```{r, fig.height= 5}
 # Plot the Marketing Year Data
 data_tidy %>% filter(Quarter != "MY Sep-Aug") %>%
   filter(UseCategory %in% c("FoodAlcoholInd", "Seed", "FeedandResidual", "Exports")) %>%
@@ -971,7 +971,7 @@ ggsave(filename = "ForecastingUseof-CornUseCategoriesExportsPropofUse.png")
 
 ```
 
-```{r}
+```{r, fig.height= 5}
 
 data_tidy %>% filter(Quarter == "MY Sep-Aug") %>%
   filter(UseCategory %in% c("FoodAlcoholInd", "Seed", "FeedandResidual", "Exports")) %>%
@@ -1008,7 +1008,7 @@ ggsave(filename = "ForecastingUseof-ExportsMY.png")
 
 Ethanol 
 
-```{r}
+```{r, fig.height= 5}
 
 ethanol <- read_excel("Table_10.3_Fuel_Ethanol_Overview.xlsx", sheet = 2, skip = 1) 
 

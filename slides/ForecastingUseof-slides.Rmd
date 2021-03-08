@@ -1,0 +1,593 @@
+---
+title: "Forecasting: Use Of Corn"
+subtitle: "Price Analysis: A Fundamental Approach to the Study of Commodity Prices"  
+
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: xaringan-themer.css
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: TRUE
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+purduegold <- '#CEB888'
+colorscheme <- purduegold
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_duo_accent(
+  #base_color = purduegold,
+  primary_color = colorscheme,
+  secondary_color = "black",
+  header_font_google = google_font("Josefin Sans"),
+  text_font_google   = google_font("Montserrat", "300", "300i"),
+  code_font_google   = google_font("Fira Mono")
+)
+```
+
+
+
+---
+
+#Highlights
+
+  + In the WASDE balance sheet for corn there are three use categories. 
+  
+  + Two account for domestic consumption: 
+  
+   + Food 
+   
+   + Seed and Industrial
+   
+   + Feed and Residual  
+   
+  + Exports make up the third category: 
+  
+   + Ethanol makes up a large portion of the Food, Seed, and Industrial category, so it is given its own line in the balance sheet. 
+   
+---
+
+#Highlights (CONT...)
+
+  + Historical use patterns are the first place to starting using the forecast categories for the marketing year. 
+  
+  + Looking at quarterly gives you a sense of using distribution across the marketing year in different categories. 
+  
+  + The annual histories, however, are probably the most useful. 
+  
+---
+
+![](assets/ForecastingUseof-CornUseCategories.png)
+
+---
+
+## Food, Alcohol, and Industrial Use
+
+  + The data was queried from the **Feed Grains database** maintained by the USDA ERS. 
+  
+  + In Figure 1: the **Food, Alcohol, and Industrial** use category. 
+  
+---
+
+
+## Food, Alcohol, and Industrial Use (CONT...)
+
+   
+  + This omits seed from the **Food, Seed, and Industrial** category in the WASDE balance sheet. 
+  
+  + The Feed Grains database actually breaks out the seed.  
+  
+  + Use its own column, but corn used for seed is a very small proportion of production and it is largely predictable from year to year. 
+
+
+
+---
+
+![](assets/ForecastingUseof-CornUseCategoriesFoodAlcoholInd.png)  
+  
+   
+---
+
+
+![](assets/ForecastingUseof-CornUseCategoriesFoodAlcoholIndMY.png) 
+
+--- 
+
+
+## Food, Alcohol, and Industrial Use (CONT...)
+
+  + Figure 1 shows a dramatic uptrend in the Food, Alcohol and Industrial use category. 
+  
+   + This is due to the dramatic increase in the production of ethanol starting around 2005/2006 and plateauing around 2010. 
+  
+   + When U.S. ethanol consumption roughly hit the **blend-wall** where ethanol makes up 10% of the retail gasoline supply.
+
+  + Figure 2 shows the same data, but the quarterly figures are aggregated to the marketing year total. 
+  
+   + In both figures 1 and 2, the rationing effects of high prices that occurred as a result of the drought in 2012. 
+
+---
+
+## Food, Alcohol, and Industrial Use (CONT...)
+
+  + From Figure 3, it is easier to see the shares of the crop. 
+  
+   + The large increase in corn use in the Food, Alcohol, and Industrial use category. 
+  
+   + In Figure 3 this category is presented as a percentage of that marketing year's production. 
+  
+   + In the early 1990's, this category accounted for over 50% since 2010. 
+  
+   + The drop in percentage of production in 2015 occurs because of the large crop in 2015. 
+  
+   + The use level is flat.
+   
+   
+---
+
+![](assets/ForecastingUseof-CornUseCategoriesFoodAlcoholIndPropofUse.png)
+  
+---
+
+## Exports 
+
+  + Quarterly corn exports are displayed in Figure 4. 
+  
+   + Unlike Food, alcohol and industrial use, exports tend to have a very seasonal or cyclical pattern. 
+   
+   + Exports are large in the second quarter of the marketing year, december to February, right after we harvest the new crop. 
+   
+   + The stocks are most plentiful and prices are at season lows in years exhibiting an upward sloped forward curve. 
+   
+---
+
+![](assets/ForecastingUseof-CornUseCategoriesExports.png) 
+   
+---
+
+
+![](assets/ForecastingUseof-ExportsMY.png) 
+
+---
+
+## Exports (CONT...)
+
+  + Displaying the same data in Figure 5, but aggregating to an annual frequency, we see the marketing seasonality smoothed away. 
+  
+  + On average, it appears that exports follow a constant trend-line with variation around the mean produced by years of surplus or scarcity. 
+  
+  + The drought year of 2012, is clearly visible as an exceedingly low export year. 
+
+  + In Figure 6, we display annual corn exports as a percentage of corn production. 
+  
+---
+
+![](assets/ForecastingUseof-CornUseCategoriesExportsPropofUse.png)
+
+---
+
+## Exports (CONT...)
+
+  + When exports are viewed as a proportion of production, we see a pronounced downward trend. 
+  
+  + This is due to the increasing share of production allocated to the Food, seed, and Industrial category visible in Figure 3. 
+  
+  + Recall the category is comprised mainly of corn as feed-stock for ethanol production.
+
+  + The year-to-year variation is caused by price fluctuations with low prices encouraging and higher prices discouraging consumption.
+  
+---
+
+## Exports (CONT...)
+
+  + Table 1 shows the top 12 importers of U.S. corn for the 2016/2017 marketing year. 
+  
+  + Export totals are given in 1,000 metric ton units. 
+  
+  + Clearly Japan and Mexico are the dominant Importers of U.S. corn, with South Korea being a distant third. 
+  
+  + The Table shows that most countries rank has remained fairly stable across the marketing years.   
+
+---
+
+: Table 1: Top 12 Importers of U.S. Corn 2012/2013 through 2016/2017 Marketing Years, Ranked in Descending Order for Marketing Year 2015/2016 (1,000 Metric Tons)
+
+```{r, echo=FALSE, warning=FALSE}
+
+library(knitr)
+corn_importers <- read.csv('assets/ForecastingUseof-corn_importers.csv', header = TRUE)
+kable(corn_importers, align = 'l',  col.names = c("COUNTRY", "EXPORTS 2016/2017", 	"RANK",	"EXPORTS 2015/2016",	"RANK",	
+                                                              "EXPORTS 2014/2015",	"RANK",	"EXPORTS 2013/2014", "RANK"))
+
+```
+
+
+---
+
+## Feed and Residual
+
+  + The final use category is the most difficult to forecast because its quantity is derived, not estimated. 
+  
+  + The USDA makes estimates of every other row in the balance sheet. 
+  
+  + To ensure the numbers add up, they infer the Feed and Residual category by subtracting the other demand categories from supply. 
+
+$Feed\&Residual = Production + Imports + Beginning Stocks - Ending Stocks$
+ 
+$- FoodSeed\&Industrial - Exports$
+
+
+---
+
+## Feed and Residual (CONT...)
+
+  + Each category on the right hand side is itself estimated with some error. 
+  
+  + The error for the Feed and Residual category is the sum of the errors of the other categories. 
+  
+  + The forecast errors from each of the categories get added together, creating a category with larger forecast error than all the others. 
+  
+  + For this reason, the Feed and Residual category is the most difficult to forecast. 
+  
+  + It should correlate roughly to livestock feeding units, but does not prove to be that effective in practice. 
+  
+---
+
+![](assets/ForecastingUseof-CornUseCategoriesFeedResid.png)
+
+
+
+---
+
+## Feed and Residual (CONT...)
+
+ $Feed\&Residual = (Production + \epsilon_{prod}) + (Imports + \epsilon_{import})$
+
+ $+ (Beginning Stocks + \epsilon_{BStocks}) \\ - (Ending Stocks + \epsilon_{EStocks})$
+
+ $- (FoodSeed\&Industrial + \epsilon_{Food}) - (Exports + \epsilon_{Export})$
+
+  + Figure 7 below displays the Feed and Residual category since 1990. 
+
+---
+
+## Feed and Residual (CONT...)
+
+  + Unlike Exports which saw its biggest quarter of use in the second quarter of the marketing year. 
+  
+  + The biggest quarter of use in the Feed and Residual category is the first (beginning in September). 
+  
+  + This is because at the end of summer, ranchers bring cattle home from grass and they begin eating grain and hay instead of green grass on pasture. 
+  
+  + This is also when calves born in the spring begin to be **Fattened** for slaughter. 
+  
+---
+
+## Feed and Residual (CONT...)
+
+  + Figure 8: shows the Feed and Residual category annually and Figure 9 shows the category annually as a percent of production.
+  
+  + Figure 8 shows that the category has remained roughly constant over the time-period graphed. 
+  
+  + As a percentage of production it has fallen since 2005. 
+  
+  + Like the export category, this reflects a proportional shift in use toward ethanol production. 
+  
+---
+
+![](assets/ForecastingUseof-FeedandResidualMY.png)
+
+---
+
+
+![](assets/ForecastingUseof-CornUseCategoriesFeedandResidPropofUse.png)
+
+---
+
+## Price Sensitivity of Use Categories 
+
+  + Examining annual figures as a percentage of production reveals some interesting facts about the price sensitivity of the three use categories. 
+
+   + The least price sensitive category seems to be Food, Seed, and Industrial. 
+   
+   + This should be intuitive because this category is composed primarily of corn for feedstock in ethanol production. 
+   
+   + Since ethanol consumption is effectively mandated at a certain level by the Renewable Fuels Standard.  
+   
+   + Users (gasoline blenders) must purchase a certain amount of ethanol to blend into the retail gasoline supply. 
+   
+   + This implies a significant portion of the corn crop that will be used regardless of the price.
+   
+---
+
+## Price Sensitivity of Use Categories (CONT...)
+
+  + The second category is Feed and Residual. 
+   
+   + Although year-to-year variation can come about due to price responsiveness of the U.S. livestock industry. 
+   
+   + This variation tends to be overwhelmed by the variation due to the aggregate forecast errors in the other categories. 
+
+  + The most price sensitive category is Exports, which is readily visible in Figure 5 and 6. 
+  
+   + Foreign buyers of corn can substitute to purchase their corn from other parts of the world like (Argentina comes first to mind). 
+   
+   + The consumers of meat in the less developed world are more price sensitive and presumably reduce consumption when prices are high.
+   
+---
+
+## Forecasting Use 
+
+  + One method for forecasting is the use of categories during the marketing year, and to keep track of corn consumption whichhas been used to date. 
+  
+  + This pace of use can be compared to the pace of use in previous years. 
+  
+  + Alternatively, the pace of use can be expressed as a percent of the WASDE forecast use. 
+  
+  + Ideally this percent of WASDE forecast would be compared to historical percent of WASDE forecast. 
+  
+  + The idea behind such exercise being the seasonality in the historical graphs is likely to repeat itself.  
+  
+  + Information about the pace of use in each category must be obtained from different sources within the USDA. 
+  
+---
+
+## Food, Seed, and Industrial
+
+  + Ethanol production is the primary user of corn in the Food, Seed, and Industrial Category. 
+  
+  + This becomes obvious by comparing Figure 10, which displays ethanol production and consumption over time, with Figure 1.
+  
+  + Ethanol production and consumption begin to increase rapidly around 2005. 
+  
+  + The Energy Policy Act of 2005 and later the Energy Security and Independence Act of 2007 created the Renewable Fuels Standard (RFS). 
+  
+  + The RFS mandated quantities of ethanol that blenders of gasoline are required to blend into the retail gasoline supply. 
+  
+---
+
+## Food, Seed, and Industrial (CONT...)
+
+  + These annual mandates are revised every year. 
+  
+  + They were designed to steadily increase year after year until 2015 when the mandate reached 15 billion gallons per year. 
+  
+  + This Figure came because gasoline consumption in the United States was forecast to reach 150 billion gallons per year by 2015. 
+  
+  + The RFS mandates were designed to reach the point where the entire retail gasoline supply would include 10% ethanol. 
+  
+  + Incidentally, 300,000,000 barrels indicated in Figure 10 corresponds to 15 billion gallons (300,000,000*50gallons/barrel = 15,000,000,000 
+  
+gallons). 
+  
+  + The orange line shows that blenders of gasoline have been blending greater than 15 billion gallons of ethanol since 2010. 
+  
+  
+---
+
+![](assets/ForecastingUseof-Ethanol.png)
+
+---
+
+## Food, Seed, and Industrial (CONT...)
+
+  + Without significant growth in the consumption of gasoline in the United States. 
+  
+  + This corn use category is likely to remain flat for the foreseeable future. 
+  
+  + Ethanol blenders sometimes experience an ethanol-to-gasoline price ratio that is favorable to blending ethanol even above the levels of the RFS 
+mandate. 
+  
+  + Conducting a pace-of-use analysis for this corn use category makes sense. 
+  
+  + Data on monthly fuel ethanol production can be found at [EIA.GOV]. 
+  
+  + Examining the current marketing year's production of ethanol.
+  
+  + It gives some indication of whether ethanol production is likely to exceed the 15 billion gallon per year mandated level. 
+
+---
+
+## Exports 
+
+  + Two USDA agencies are involved in providing estimates of export sales. 
+  
+   + The **USDA Foreign Agricultural Service**
+  
+   + The **USDA Grain Inspection, Packers, and Stockyards Administration** 
+   
+---
+
+## USDA FAS Export Sales Reporting System
+
+  + The **USDA Foreign Agricultural Service** maintains the Export Sales Reporting System.
+
+  + It reports weekly export quantities and daily reports of large export sales.
+
+  + The Export Sales Reporting Program has its roots from the unexpected purchase of large amounts of grain by the Soviet Union in 1972, **“The** 
+  
+**Great Russian Grain Robbery”**. 
+  
+  + The huge, unanticipated purchases of U.S. wheat and corn that year depleted U.S. 
+  
+  + Reserve stocks which caused a sizable run-up in U.S. food prices.
+
+---
+
+## USDA FAS Export Sales Reporting System (CONT...)
+
+  + There was growing concern that some companies might have an unfair advantage in situations. 
+  
+  + They had access to market-sensitive information which was unavailable to the public. 
+  
+  + To ensure that all parties involved in the production and export of U.S. grain had access to up-to-date export information. 
+  
+  + Congress mandated the Export Sales Reporting program in 1973.
+
+  + Before the program was established, it was difficult for the public to obtain information on exports until the products were actually shipped. 
+  
+  + The program helps facilitate price stability by guaranteeing that everyone has access to the same information at the same time. 
+
+---
+
+## Daily Reports
+
+  + Under the export sales reporting system, U.S. exporters are required to report all large sales. 
+  
+  + Report certain designated commodities by 3 p.m. (Eastern time) on the next business day after the sale is made. 
+  
+  + The designated commodities for these daily reports are wheat (by class), barley, corn, grain sorghum, oats, soybeans, soybean cake and meal, 
+  
+and soybean oil. 
+
+  + Large sales for all reportable commodities except soybean oil are defined as 100,000 metric tons or more of one commodity. 
+  
+  + In one day, single destination or 200,000 tons or more of one commodity during the weekly reporting period. 
+  
+  + Large sales for soybean oil are 20,000 tons and 40,000 tons, respectively.
+
+---
+
+## Weekly Reports
+
+  + Weekly reports are also required, regardless of the size of the sales transaction. 
+  
+  + For all of these commodities: 
+  
+   + Wheat products 
+   
+   + Rye 
+   
+   + Flaxseed 
+   
+   + Linseed Oil 
+   
+   + Cotton (by staple length) 
+   
+---
+
+## Weekly Reports (CONT...)
+
+  + Commodities (Cont...):
+   
+   + Cottonseed, Cottonseed cake and meal & Cottonseed oil  
+   
+   + Rice (by class) 
+   
+   + Cattle hides and skins (cattle, calf, and kip) 
+   
+   + And, beef. 
+   
+  + The reporting week for the export sales reporting system is Friday-Thursday. 
+  
+  + The Secretary of Agriculture has the authority to add other commodities to this list. 
+  
+---
+
+## GIPSA
+
+  + USDA GIPSA mission is **"To facilitate the marketing of:** 
+  
+   + Livestock 
+   
+   + Poultry 
+   
+   + Meat  
+   
+   + Cereals  
+   
+   + Oil-seeds and related agricultural products
+  
+  + Fair and competitive trading practices for the overall benefit of consumers and American agriculture. 
+  
+---
+
+## History 
+
+  + The Grain Inspection, Packers and Stockyards Administration (GIPSA) was established in 1994 as part of the reorganization of the U.S.
+  
+  + The formation of the agency resulted from the joining of two previously independent agencies: 
+  
+   + The Federal Grain Inspection Service and the Packers and Stockyards Administration. 
+   
+  + GIPSA is part of USDA's Marketing and Regulatory Programs, which are working to ensure a productive and competitive global marketplace for U.S. agricultural products.
+
+---
+
+## History (CONT...)
+
+  + The Federal Grain Inspection Service (FGIS) was established by Congress in 1976 to manage the national grain inspection system. 
+  
+  + It was initially established in 1916, and to institute a national grain weighing program. 
+  
+  + The goal of creating a single Federal grain inspection entity was to ensure development and maintenance of uniform U.S. standards. 
+  
+  + To develop inspection and weighing procedures for grain in domestic and export trade, and to facilitate grain marketing.
+
+---
+
+## History (CONT...)
+
+  + Today's Packers and Stockyards Program (P&S) is the progeny of the Packers and Stockyards Administration. 
+  
+  + It was established in 1921 under the Packers and Stockyards Act. 
+  
+  + The organization was instituted to regulate livestock marketing activities at public stockyards.
+  
+  + The operations of meat packers and live poultry dealers.
+  
+---
+
+## History (CONT...)
+
+  + The GIPSA's main objective is to maintain standard in quality grading and weighing. 
+  
+  + As a by-product of their reporting they also produce on export shipments. 
+  
+  + Monthly data on grains inspected and weighed for export by (U.S. region) and destination country is available. 
+  
+  + Annual reports are also available. 
+
+  + FAS & GIPSA have a memorandum of understanding with one another and will be reconciled so the export totals reported by each agency will not  differ substantially. 
+
+---
+
+## Feed and Residual
+
+  + The Residual component tends to dominate the variation in the Feed and Residual category. 
+  
+  + The USDA does publish statistics related to numbers of cattle, hogs, and poultry. 
+  
+  + Major changes in livestock numbers produce a detectable impact in the Feed and Residual use category.
+  
+  + It is worthwhile knowing where to find these estimates. 
+  
+---
+
+## Feed and Residual (CONT...)
+
+
+  + The USDA releases a monthly report which gives a sense of trends in beef cattle herd size and production. 
+  
+  + Similarly, the **Hogs and Pigs** report is released quarterly and provides inventory estimates. 
+  
+  + The monthly **Poultry Slaughter** report contains the number of head and live weight of:
+  
+   + Chickens 
+   
+   + Turkeys  
+   
+   + Ducks and other poultry slaughtered under Federal inspection.    
+
+---
+
+class: inverse, center, middle
+
+##CHAPTER END
+
+---
