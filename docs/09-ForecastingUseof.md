@@ -6,25 +6,23 @@ In the WASDE balance sheet for corn there are three use categories. Two account 
 
 As we have noted before, historical use patterns are the first place to start when trying to forecast use categories for the marketing year. Looking at quarterly gives you a sense of how use is distributed across the marketing year in different categories. The annual histories, however, are probably the most useful. 
 
+![](assets/ForecastingUseof-CornUseCategories.png)
+
 ## Food, Alcohol, and Industrial Use
 
 Let us begin by looking at the Food, Alcohol and Industrial category. These data were queried from the [Feed Grains database](http://www.ers.usda.gov/data-products/feed-grains-database/feed-grains-yearbook-tables.aspx#26780) maintained by the USDA ERS. The categories here are a little more disaggregated than those presented in the USDA WASDE balance sheets, but they are roughly the same. For example, in figure 1 below we show the *Food, Alcohol, and Industrial* use category. This omits seed from the *Food, Seed, and Industrial* category in the WASDE balance sheet. The Feed Grains database actually breaks out the seed use as its own column, but corn used for seed is a very small proportion of production and it is largely predictable from year to year. 
 
-![Figure 1: Corn Food, Alcohol, and Industrial Use, Quarterly 1990-2015](Excel-files\IntroductiontoCommodityTS-FeedGrains_Corn_files\image013.png)
-
+![](assets/ForecastingUseof-CornUseCategoriesFoodAlcoholInd.png)
 Source: [Feed Grains database](http://www.ers.usda.gov/data-products/feed-grains-database/feed-grains-yearbook-tables.aspx#26780) maintained by the USDA ERS.
 
 Figure 1 shows a dramatic uptrend in the Food, Alcohol and Industrial use category. This is due to the dramatic increase in the production of ethanol starting around 2005/2006 and plateauing around 2010 when U.S. ethanol consumption roughly hit the 'blend-wall' where ethanol makes up 10% of the retail gasoline supply. 
 
-![Figure 2: Corn Food, Alcohol, and Industrial Use, Annual 1990-2015](Excel-files\IntroductiontoCommodityTS-FeedGrains_Corn_files\image001.png)
-
+![](assets/ForecastingUseof-CornUseCategoriesFoodAlcoholIndMY.png)
 Source: [Feed Grains database](http://www.ers.usda.gov/data-products/feed-grains-database/feed-grains-yearbook-tables.aspx#26780) maintained by the USDA ERS.
 
 Figure 2 shows the same data, but the quarterly figures are aggregated to the marketing year total. In both figures 1 and 2 the rationing effects of high prices that occurred as a result of the drought in 2012. 
 
-
-![Figure 3: Corn Food, Alchohol, and Industrial Use, Annual 1990-2016 as a percentage of production](Excel-files\IntroductiontoCommodityTS-FeedGrains_Corn_files\image009.png)
-
+![](assets/ForecastingUseof-CornUseCategoriesFoodAlcoholIndPropofUse.png)
 Source: [Feed Grains database](http://www.ers.usda.gov/data-products/feed-grains-database/feed-grains-yearbook-tables.aspx#26780) maintained by the USDA ERS.
 
 From figure 3 it is easier to see what share of the crop the large increase in corn use in the Food, Alcohol, and Industrial use category. In figure 3 this use category is presented as a percentage of that marketing year's production. In the early 1990's this use category accounted for over 50% since 2010. The drop in percentage of production in 2015 occurs because of the large crop in 2015, even though the use level is flat (shown in figure 2).
@@ -33,13 +31,13 @@ From figure 3 it is easier to see what share of the crop the large increase in c
 
 Quarterly corn exports are displayed in figure 4. Unlike Food, alcohol and industrial use, exports tend to have a very seasonal or cyclical pattern. Exports are large in the second quarter of the marketing year, December to February, right after we harvest the new crop. This is when stocks are most plentiful and prices are at season lows in years exhibiting an upward sloped forward curve. 
 
-![Figure 4: Corn Exports, Quarterly 1990-2015](Excel-files\IntroductiontoCommodityTS-FeedGrains_Corn_files\image014.png)
+![](assets/ForecastingUseof-CornUseCategoriesExports.png)
 
 Source: [Feed Grains database](http://www.ers.usda.gov/data-products/feed-grains-database/feed-grains-yearbook-tables.aspx#26780) maintained by the USDA ERS.
 
 Displaying the same data in Figure 5, but aggregating to an annual frequency, we see the marketing seasonality smoothed away. 
 
-![Figure 5: Corn Exports, Annual 1990-2015](Excel-files\IntroductiontoCommodityTS-FeedGrains_Corn_files\image023.png)
+![](assets/ForecastingUseof-ExportsMY.png)
 
 Source: [Feed Grains database](http://www.ers.usda.gov/data-products/feed-grains-database/feed-grains-yearbook-tables.aspx#26780) maintained by the USDA ERS.
 
@@ -47,14 +45,13 @@ On average, it appears that exports follow a constant trend-line with variation 
 
 In figure 6 we display annual corn exports as a percentage of corn production. 
 
-![Figure 6: Corn Exports, Annual 1990-2016 as a percentage of corn production](Excel-files\IntroductiontoCommodityTS-FeedGrains_Corn_files\image029.png)
-
+![](assets/ForecastingUseof-CornUseCategoriesExportsPropofUse.png)
 Source: [Feed Grains database](http://www.ers.usda.gov/data-products/feed-grains-database/feed-grains-yearbook-tables.aspx#26780) maintained by the USDA ERS.
 
 
 When exports are viewed as a proportion of production, we see a pronounced downward trend. This is due to the increasing share of production allocated to the Food, seed, and Industrial category visible in figure 3. Recall that this category is comprised mainly of corn as feed-stock for ethanol production.
 
-The year-to-year variation is caused by price fluctuations with low prices encouraging and high prices discouraging consumption. 
+The year-to-year variation is caused by price fluctuations with low prices encouraging and high prices discouraging consumption. The marketing year 2020 has shown a dramatic uptick in expected exports both in millions of bushels and as a proportion of total use. A dramatic increase in buying from China relative to previou levels has been the biggest contributor.  
 
                    
 
@@ -95,7 +92,7 @@ Feed\&Residual = (Production + \epsilon_{prod}) + (Imports + \epsilon_{import}) 
 
 Figure 7 below displays the Feed and Residual category since 1990. 
 
-![Figure 7: Feed and Residual Use, Quarterly 1990-2015](Excel-files\IntroductiontoCommodityTS-FeedGrains_Corn_files\image019.png)
+![](assets/ForecastingUseof-CornUseCategoriesFeedResid.png)
 
 Source: [Feed Grains database](http://www.ers.usda.gov/data-products/feed-grains-database/feed-grains-yearbook-tables.aspx#26780) maintained by the USDA ERS.
 
@@ -103,11 +100,12 @@ Unlike Exports which saw its biggest quarter of use in the second quarter of the
 
 Figure 8: shows the Feed and Residual category annually and figure 9 shows the category annually as a percent of production. 
 
-![Figure 8: Feed and Residual Use, Annual 1990-2016](Excel-files\IntroductiontoCommodityTS-FeedGrains_Corn_files\image025.png)
+![](assets/ForecastingUseof-FeedandResidualMY.png)
 
 Source: [Feed Grains database](http://www.ers.usda.gov/data-products/feed-grains-database/feed-grains-yearbook-tables.aspx#26780) maintained by the USDA ERS.
 
-![Figure 9: Feed and Residual Use, Annual 1990-2016 as a percent of production](Excel-files\IntroductiontoCommodityTS-FeedGrains_Corn_files\image031.png)
+
+![](assets/ForecastingUseof-CornUseCategoriesFeedandResidPropofUse.png)
 
 Source: [Feed Grains database](http://www.ers.usda.gov/data-products/feed-grains-database/feed-grains-yearbook-tables.aspx#26780) maintained by the USDA ERS.
 
@@ -131,7 +129,7 @@ One method for forecasting the use categories during the marketing year, is to k
 
 We discussed above that ethanol production is the primary user of corn in the Food, Seed, and Industrial Category. This becomes obvious by comparing figure 10 below, which displays ethanol production and consumption over time, with figure 1 above. 
 
-![Figure 10: Annual Fuel Ethanol Production and Consumption 1990-2016](Excel-files\Forecastinguseof_Fuel_Ethanol_Overview_files\image001.png)
+![](assets/ForecastingUseof-Ethanol.png)
 
 Source: [EIA](http://www.eia.gov/totalenergy/data/monthly/#renewable) website. Click the link for access to the raw data. 
 

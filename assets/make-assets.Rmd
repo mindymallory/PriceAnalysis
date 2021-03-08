@@ -861,3 +861,174 @@ ggsave("ForecastProduction-PercDeviationVSGEXY.png")
 
 
 
+
+
+# Figures for `09-ForecastingUseof.Rmd` and `10-ForecastingUseofSoy.Rmd`
+
+```{r}
+library(tidyverse)
+library(readxl)
+library(httr)
+library(tidyr)
+tmp <- tempfile(fileext = ".xls")
+httr::GET(url = "https://www.ers.usda.gov/webdocs/DataFiles/50048/Feed%20Grains%20Yearbook%20Tables-All%20Years.xls",
+          write_disk(tmp, overwrite = TRUE) )
+data_xl <- read_excel(tmp, sheet = "FGYearbookTable04-Full", 
+                      skip = 4, 
+                      col_names = c("MktYear", "Quarter", "BeginningStocks", "Production", "Imports", 
+                                    "TotalSupply", "FoodAlcoholInd", "Seed", "FeedandResidual", 
+                                    "TotalDomestic", "Exports", "TotalUse", "EndingStocks")) %>%
+  fill(MktYear) %>% 
+  # Make columns for more standard date handling
+  mutate(month = ifelse(Quarter =="Q1 Sep-Nov", "09-01", 
+                        ifelse(Quarter == "Q2 Dec-Feb", "12-01", 
+                               ifelse(Quarter == "Q3 Mar-May", "03-01", 
+                                      ifelse(Quarter == "Q4 Jun-Aug", "06-01",
+                                             ifelse(Quarter == "MY Sep-Aug", "09-01", NA)))))) %>%
+  mutate(year = ifelse(Quarter =="Q1 Sep-Nov" | Quarter == "Q2 Dec-Feb" | Quarter == "MY Sep-Aug", as.numeric(str_sub(MktYear, 1,4)), 
+                       as.numeric(str_sub(MktYear, 1,4)) +1 )) %>%
+  mutate(date = as.Date(paste0(as.character(year), "-", month))) # Now we have a proper date column.
+```
+
+Making the data "Tidy"
+
+Now lets transform the data from 'wide' formet to 'long' format so we can make nice graphs with `ggplot2`.
+
+```{r , message = FALSE, warning = FALSE}
+# Make tidy getting ready for ggplot
+data_tidy <- data_xl %>% 
+  select(c(-MktYear, -month, -year)) %>%
+  pivot_longer(c(-date, -Quarter), names_to = "UseCategory", values_to = "Value")
+data_tidy
+```
+
+Now let's plot the corn dissapearance
+
+```{r}
+# Plot the Marketing Year Data
+data_tidy %>% filter(Quarter != "MY Sep-Aug") %>%
+  filter(UseCategory %in% c("FoodAlcoholInd", "Seed", "FeedandResidual", "Exports")) %>%
+  ggplot(aes(x = date, y = Value, color = UseCategory)) + 
+  geom_line() + 
+  theme_bw() +
+  labs(x = "", y = "Millions of bushels", title = "Corn Quarterly Use Categories Since 1975")
+ggsave(filename = "ForecastingUseof-CornUseCategories.png")
+
+data_tidy %>% filter(Quarter != "MY Sep-Aug") %>%
+  filter(UseCategory %in% c("FoodAlcoholInd")) %>%
+  ggplot(aes(x = date, y = Value)) + 
+  geom_line(color = purduegold, size = .75) + 
+  theme_bw() +
+  labs(x = "", y = "Millions of bushels", title = "Corn Quarterly Food Alcohol and Industrial Use Since 1975")
+ggsave(filename = "ForecastingUseof-CornUseCategoriesFoodAlcoholInd.png")
+
+data_tidy %>% filter(Quarter == "MY Sep-Aug") %>%
+  filter(UseCategory %in% c("FoodAlcoholInd", "TotalUse")) %>%
+  pivot_wider(names_from = UseCategory, values_from = Value) %>%
+  mutate(ProportionofUse = FoodAlcoholInd/TotalUse) %>%
+  ggplot(aes(x = date, y = ProportionofUse)) + 
+  geom_line(color = purduegold, size = .75) + 
+  theme_bw() +
+  labs(x = "", y = "Millions of bushels", title = "Corn Marketing Year Food, Alcohol, & Industrial as Proportion of Total Use")
+ggsave(filename = "ForecastingUseof-CornUseCategoriesFoodAlcoholIndPropofUse.png")
+
+data_tidy %>% filter(Quarter != "MY Sep-Aug") %>%
+  filter(UseCategory %in% c("FeedandResidual")) %>%
+  ggplot(aes(x = date, y = Value)) + 
+  geom_line(color = purduegold, size = .75) + 
+  theme_bw() +
+  labs(x = "", y = "Millions of bushels", title = "Corn Quarterly Feed and Residual Use Since 1975")
+ggsave(filename = "ForecastingUseof-CornUseCategoriesFeedResid.png")
+
+data_tidy %>% filter(Quarter == "MY Sep-Aug") %>%
+  filter(UseCategory %in% c("FeedandResidual", "TotalUse")) %>%
+  pivot_wider(names_from = UseCategory, values_from = Value) %>%
+  mutate(ProportionofUse = FeedandResidual/TotalUse) %>%
+  ggplot(aes(x = date, y = ProportionofUse)) + 
+  geom_line(color = purduegold, size = .75) + 
+  theme_bw() +
+  labs(x = "", y = "Millions of bushels", title = "Corn Marketing Year Feed and Residual as Proportion of Total Use")
+ggsave(filename = "ForecastingUseof-CornUseCategoriesFeedandResidPropofUse.png")
+
+data_tidy %>% filter(Quarter != "MY Sep-Aug") %>%
+  filter(UseCategory %in% c("Exports")) %>%
+  ggplot(aes(x = date, y = Value)) + 
+  geom_line(color = purduegold, size = .75) + 
+  theme_bw() +
+  labs(x = "", y = "Millions of bushels", title = "Corn Quarterly Exports Since 1975")
+ggsave(filename = "ForecastingUseof-CornUseCategoriesExports.png")
+
+data_tidy %>% filter(Quarter == "MY Sep-Aug") %>%
+  filter(UseCategory %in% c("Exports", "TotalUse")) %>%
+  pivot_wider(names_from = UseCategory, values_from = Value) %>%
+  mutate(ProportionofUse = Exports/TotalUse) %>%
+  ggplot(aes(x = date, y = ProportionofUse)) + 
+  geom_line(color = purduegold, size = .75) + 
+  theme_bw() +
+  labs(x = "", y = "Millions of bushels", title = "Corn Marketing Year Exports as Proportion of Total Use")
+ggsave(filename = "ForecastingUseof-CornUseCategoriesExportsPropofUse.png")
+
+
+```
+
+```{r}
+
+data_tidy %>% filter(Quarter == "MY Sep-Aug") %>%
+  filter(UseCategory %in% c("FoodAlcoholInd", "Seed", "FeedandResidual", "Exports")) %>%
+  ggplot(aes(x = date, y = Value, color = UseCategory)) + 
+  geom_line() + 
+  theme_bw() +
+  labs(x = "", y = "Millions of bushels", title = "Marketing Year Corn Use Categories Since 1975")
+ggsave(filename = "ForecastingUseof-CornUseCategoriesMY.png")
+
+data_tidy %>% filter(Quarter == "MY Sep-Aug") %>%
+  filter(UseCategory %in% c("FoodAlcoholInd")) %>%
+  ggplot(aes(x = date, y = Value)) + 
+  geom_line(color = purduegold, size = .75) + 
+  theme_bw() +
+  labs(x = "", y = "Millions of bushels", title = "Marketing Year Food Alcohol and Industrial Use Since 1975")
+ggsave(filename = "ForecastingUseof-CornUseCategoriesFoodAlcoholIndMY.png")
+
+data_tidy %>% filter(Quarter == "MY Sep-Aug") %>%
+  filter(UseCategory %in% c("FeedandResidual")) %>%
+  ggplot(aes(x = date, y = Value)) + 
+  geom_line(color = purduegold, size = .75) + 
+  theme_bw() +
+  labs(x = "", y = "Millions of bushels", title = "Marketing Year Corn Feed and Residual Use Since 1975")
+ggsave(filename = "ForecastingUseof-FeedandResidualMY.png")
+
+data_tidy %>% filter(Quarter == "MY Sep-Aug") %>%
+  filter(UseCategory %in% c("Exports")) %>%
+  ggplot(aes(x = date, y = Value)) + 
+  geom_line(color = purduegold, size = .75) + 
+  theme_bw() +
+  labs(x = "", y = "Millions of bushels", title = "Marketing Year Corn Exports Since 1975")
+ggsave(filename = "ForecastingUseof-ExportsMY.png")
+```
+
+Ethanol 
+
+```{r}
+
+ethanol <- read_excel("Table_10.3_Fuel_Ethanol_Overview.xlsx", sheet = 2, skip = 1) 
+
+colnames(ethanol) <- c("Year", "Production", "Consumption" )
+
+ethanol %>% pivot_longer(cols = -Year, names_to = "Series", values_to = "MillionGallons") %>% 
+  ggplot(aes(x = Year, y = MillionGallons, color = Series)) + 
+  geom_line(size = .75) +
+  scale_color_manual(values = c(purduegold, "black")) +
+  theme_bw() +
+  labs(x = "", y = "Millions of gallons", title = "Production and Consumption of Ethanol")
+
+  ggsave(filename = "ForecastingUseof-Ethanol.png")
+  
+
+```
+
+
+
+
+
+
+
