@@ -1036,9 +1036,9 @@ ethanol %>% pivot_longer(cols = -Year, names_to = "Series", values_to = "Million
 
 # Figures for `12-A-South-American-Production.Rmd`
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE}
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.width= 6, fig.hight = 4}
 library(tidyverse)
-grains   <- read.csv('assets/psd_grains_pulses.csv')
+grains   <- read.csv('psd_grains_pulses.csv')
 
 
 start <- 1990
@@ -1067,14 +1067,16 @@ c <- ggplot(top_corn, aes(x = Market_Year, y = Value, fill = Country_Name)) + ge
       theme(axis.title.x = element_blank()) +   # Remove x-axis label
       ylab("Production - 1000 MT") + 
       scale_fill_brewer(palette = 'Accent')  +
+      theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
       ggtitle("Figure 1: Top World Producers of Corn")  
       
+ 
 
-ggsave(filename = "SouthAmericanProduction_TopProdCorn.png")
+ggsave(filename = "SouthAmericanProduction_TopProdCorn.png", width= 6, height = 4)
 
 ```
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE}
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.width= 6, fig.hight = 4}
 
 get_top_corn <- grains %>% 
                   filter(Market_Year == year) %>%
@@ -1098,22 +1100,17 @@ c2 <- ggplot(top_corn, aes(x = Market_Year, y = Value, fill = Country_Name)) + g
       theme(axis.title.x = element_blank()) +   # Remove x-axis label
       ylab("Exports - 1000 MT") + 
       scale_fill_brewer(palette = 'Accent')  +
+      theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
       ggtitle("Figure 2: Top World Exporters of Corn")  
       
 
-ggsave(filename = "SouthAmericanProduction_TopExporterCorn.png")
+ggsave(filename = "SouthAmericanProduction_TopExporterCorn.png" , width= 6, height = 4)
 
 
 
 ```
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE}
-library(tidyverse)
-library(tibble)
-
-
-
-
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.width= 6, fig.hight = 4}
 get_top_corn <- grains %>% 
                   filter(Market_Year == year) %>%
                   filter(Commodity_Description == "Corn") %>%
@@ -1136,8 +1133,7 @@ grains %>%
  
 ```
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE}
-
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.width= 6, fig.hight = 4}
 
 oilseeds <- read.csv('psd_oilseeds.csv')
 
@@ -1165,13 +1161,14 @@ s <- ggplot(top_soy, aes(x = Market_Year, y = Value, fill = Country_Name)) + geo
       theme(axis.title.x = element_blank()) +   # Remove x-axis label
       ylab("Production - 1000 MT") + 
       scale_fill_brewer(palette = 'Accent')  +
+      theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
       ggtitle("Figure 3: Top World Producers of Soybeans")  
 
-ggsave(filename = "SouthAmericanProd_TopProdSoy.png")
+ggsave(filename = "SouthAmericanProd_TopProdSoy.png", width= 6, height = 4)
 
 ```
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE}
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.width= 6, fig.hight = 4}
 
 
 
@@ -1200,13 +1197,14 @@ s2 <- ggplot(top_soy, aes(x = Market_Year, y = Value, fill = Country_Name)) + ge
       theme(axis.title.x = element_blank()) +   # Remove x-axis label
       ylab("Exports - 1000 MT") + 
       scale_fill_brewer(palette = 'Accent')  +
+      theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
       ggtitle("Figure 4: Top World Exporters of Soybeans")  
 
-ggsave(filename = "SouthAmericanProd_TopExporterSoy.png")
+ggsave(filename = "SouthAmericanProd_TopExporterSoy.png", height = 4, width = 6)
 
 ```
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE}
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.width= 6, fig.hight = 4}
 
 
 get_top_soy <- oilseeds %>% 
