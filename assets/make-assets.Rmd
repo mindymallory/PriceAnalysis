@@ -1032,3 +1032,202 @@ ethanol %>% pivot_longer(cols = -Year, names_to = "Series", values_to = "Million
 
 
 
+
+
+# Figures for `12-A-South-American-Production.Rmd`
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(tidyverse)
+grains   <- read.csv('assets/psd_grains_pulses.csv')
+
+
+start <- 1990
+
+year <-  as.numeric(format(Sys.Date(), format="%Y")) - 1
+  
+get_top_corn <- grains %>% 
+                  filter(Market_Year == year) %>%
+                  filter(Commodity_Description == "Corn") %>%
+                  filter(Attribute_ID == 28) %>%
+                  arrange(desc(Value))
+
+get_top_corn <- get_top_corn[1:5, 'Country_Name']
+
+top_corn <- grains %>%
+  filter(Commodity_Description == "Corn") %>%
+  filter(Attribute_ID == 28) %>%
+  filter(Country_Name %in% get_top_corn) %>%
+  filter(Market_Year %in% c(start:year))
+
+
+c <- ggplot(top_corn, aes(x = Market_Year, y = Value, fill = Country_Name)) + geom_area() + 
+      theme_bw() +
+      scale_x_continuous(breaks = seq(start, year, 2)) +
+      labs(fill = "Top 5 Countries") +
+      theme(axis.title.x = element_blank()) +   # Remove x-axis label
+      ylab("Production - 1000 MT") + 
+      scale_fill_brewer(palette = 'Accent')  +
+      ggtitle("Figure 1: Top World Producers of Corn")  
+      
+
+ggsave(filename = "SouthAmericanProduction_TopProdCorn.png")
+
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+
+get_top_corn <- grains %>% 
+                  filter(Market_Year == year) %>%
+                  filter(Commodity_Description == "Corn") %>%
+                  filter(Attribute_ID == 88) %>%
+                  arrange(desc(Value))
+
+get_top_corn <- get_top_corn[1:5, 'Country_Name']
+
+top_corn <- grains %>%
+  filter(Commodity_Description == "Corn") %>%
+  filter(Attribute_ID == 88) %>%
+  filter(Country_Name %in% get_top_corn) %>%
+  filter(Market_Year %in% c(start:year))
+
+
+c2 <- ggplot(top_corn, aes(x = Market_Year, y = Value, fill = Country_Name)) + geom_area() + 
+      theme_bw() +
+      scale_x_continuous(breaks = seq(start, year, 2)) +
+      labs(fill = "Top 5 Countries") +
+      theme(axis.title.x = element_blank()) +   # Remove x-axis label
+      ylab("Exports - 1000 MT") + 
+      scale_fill_brewer(palette = 'Accent')  +
+      ggtitle("Figure 2: Top World Exporters of Corn")  
+      
+
+ggsave(filename = "SouthAmericanProduction_TopExporterCorn.png")
+
+
+
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(tidyverse)
+library(tibble)
+
+
+
+
+get_top_corn <- grains %>% 
+                  filter(Market_Year == year) %>%
+                  filter(Commodity_Description == "Corn") %>%
+                  filter(Attribute_ID == 28) %>%
+                  arrange(desc(Value))
+
+get_top_corn <- get_top_corn[1:10, 'Country_Name']
+
+grains$Production <- grains$Value
+
+grains %>%
+              filter(Commodity_Description == "Corn") %>%
+              filter(Attribute_ID == 28) %>%
+               filter(Country_Name %in% get_top_corn) %>%
+              filter(Market_Year == year) %>%
+              select(Country_Name, Production) %>%
+              arrange(desc(Production)) %>%
+  write.csv(file = "corn_exporters.csv")
+
+ 
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+
+
+oilseeds <- read.csv('psd_oilseeds.csv')
+
+
+
+get_top_soy <- oilseeds %>% 
+                  filter(Market_Year == year) %>%
+                  filter(Commodity_Code == 2222000) %>%
+                  filter(Attribute_ID == 28) %>%
+                  arrange(desc(Value))
+
+get_top_soy <- get_top_soy[1:5, 'Country_Name']
+
+top_soy<- oilseeds %>%
+  filter(Commodity_Code == 2222000) %>%
+  filter(Attribute_ID == 28) %>%
+  filter(Country_Name %in% get_top_soy) %>%
+  filter(Market_Year %in% c(start:year))
+
+
+s <- ggplot(top_soy, aes(x = Market_Year, y = Value, fill = Country_Name)) + geom_area() + 
+      theme_bw() +
+      scale_x_continuous(breaks = seq(start, year, 2))+
+      labs(fill = "Top 5 Countries") +
+      theme(axis.title.x = element_blank()) +   # Remove x-axis label
+      ylab("Production - 1000 MT") + 
+      scale_fill_brewer(palette = 'Accent')  +
+      ggtitle("Figure 3: Top World Producers of Soybeans")  
+
+ggsave(filename = "SouthAmericanProd_TopProdSoy.png")
+
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+
+
+
+
+
+
+get_top_soy <- oilseeds %>% 
+                  filter(Market_Year == year) %>%
+                  filter(Commodity_Code == 2222000) %>%
+                  filter(Attribute_ID == 88) %>%
+                  arrange(desc(Value))
+
+get_top_soy <- get_top_soy[1:5, 'Country_Name']
+
+top_soy<- oilseeds %>%
+  filter(Commodity_Code == 2222000) %>%
+  filter(Attribute_ID == 88) %>%
+  filter(Country_Name %in% get_top_soy) %>%
+  filter(Market_Year %in% c(start:year))
+
+
+s2 <- ggplot(top_soy, aes(x = Market_Year, y = Value, fill = Country_Name)) + geom_area() + 
+      theme_bw() +
+      scale_x_continuous(breaks = seq(start, year, 2))+
+      labs(fill = "Top 5 Countries") +
+      theme(axis.title.x = element_blank()) +   # Remove x-axis label
+      ylab("Exports - 1000 MT") + 
+      scale_fill_brewer(palette = 'Accent')  +
+      ggtitle("Figure 4: Top World Exporters of Soybeans")  
+
+ggsave(filename = "SouthAmericanProd_TopExporterSoy.png")
+
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+
+
+get_top_soy <- oilseeds %>% 
+                  filter(Market_Year == year) %>%
+                  filter(Commodity_Code == 2222000) %>%
+                  filter(Attribute_ID == 28) %>%
+                  arrange(desc(Value))
+
+get_top_soy <- get_top_soy[1:10, 'Country_Name']
+
+oilseeds$Production <- oilseeds$Value
+
+oilseeds %>%
+              filter(Commodity_Code == 2222000) %>%
+              filter(Attribute_ID == 28) %>%
+               filter(Country_Name %in% get_top_soy) %>%
+              filter(Market_Year == year) %>%
+              select(Country_Name, Production) %>%
+              arrange(desc(Production)) %>%
+  write.csv(file = "soy_exporters.csv")
+
+
+
+```

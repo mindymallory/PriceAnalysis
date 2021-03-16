@@ -153,7 +153,6 @@ brazil
 where-to-find-information-on-brazilian-crops
 argentina
 where-to-find-information-on-argentinian-crops
-exercises-6
 the-soybean-crush
 oilseed-processing
 soybean-oil-uses
@@ -164,7 +163,7 @@ the-1-1-1-spread
 the-9-11-10-spread
 readings-4
 references-1
-exercises-7
+exercises-6
 ethanol
 ethanol-production
 dry-grind-ethanol-production
@@ -177,7 +176,7 @@ ethanol-crush-spread
 hedging-the-crush-spread
 cross-hedging
 minimize-the-variance-of-cash-flow-with-optimal-hedge-ratio-for-ddgs-and-corn-futures
-exercises-8
+exercises-7
 readings-5
 cattle-markets-and-the-livestock-crush
 the-cow-calf-operation
@@ -209,7 +208,7 @@ price-determination
 lean-hogs-futures
 why-only-one-contract-instead-of-two-like-feeder-and-live-cattle
 demise-of-the-frozen-pork-belly-futures-contracts
-exercises-9
+exercises-8
 crude-oil-and-the-crack-spread
 light-versus-heavysweet-versus-sour
 light-sweet-wti-and-brent-crude-oil
@@ -222,9 +221,9 @@ production-of-crude-gasoline-and-distillates
 inventories-of-crude-gasoline-and-distillates
 geopolitical-events
 the-crack-spread
-exercises-10
+exercises-9
 forecasting-production---advanced
-exercises-11
+exercises-10
 appendix-forecasting-with-ts-models
 nearby-futures-prices
 trading-volume-as-contract-maturity-approaches
@@ -238,7 +237,7 @@ stationarity
 the-log-normal-price-model.
 time-series-econometrics-technical-details
 efficient-market-hypothesis
-exercises-12
+exercises-11
 appendix-single-market-models-arima
 integrated-or-not
 arp-models
