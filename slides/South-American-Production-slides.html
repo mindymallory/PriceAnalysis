@@ -30,10 +30,26 @@ class: center, middle, inverse, title-slide
   + Over the last twenty years Brazil and Argentina have grown in prominence on the world stage. 
   
   + They are currently among the most important growers of soybeans and corn, particularly so for soybeans. 
+  
+---
+
+# South American Production
+
 
   + Many thanks to Felipe Grimaldi Avileis, my teaching assistant for ACE 427 in 2017. 
+  
+---
 
-  + In Figure 1, we have plotted the production since 1990 of the world's top five producers of corn. 
+  + Figure 1, world's top five producers of corn
+  
+  + Data for Figures 1-4 come from the [USDA FAS World Production Supply and Demand](https://apps.fas.usda.gov/) historical data-sets for grains and oilseeds.
+  
+---
+
+![](assets/SouthAmericanProduction_TopProdCorn.png)
+
+---
+
   
   + Argentina, Brazil, China, the European Union, and the United States round out this group. 
   
@@ -43,15 +59,42 @@ class: center, middle, inverse, title-slide
 
 ## Production of Corn
 
-  + Data for Figures 1-4 come from the [USDA FAS World Production Supply and Demand]historical data-sets for grains and oilseeds.
 
   + Figure 2 plots the top five countries by exports. 
   
-  + We see China and the EU dropping out of the top five with Russia and Ukraine taking their place. 
+---
+
+![](assets/SouthAmericanProduction_TopExporterCorn.png)
+
+---
   
-  + While U.S. exports have been mostly flat over this time period, exports from Brazil have been expanding rapidly since about 2004. 
+   + While U.S. exports have been mostly flat over this time period, exports from Brazil have been expanding rapidly since about 2004. 
+   
+---
   
   + Next, in table 1, we present the top producers of corn in 2017.
+  
+  
+---
+
+
+```r
+read.csv(file = "assets/corn_exporters.csv") 
+```
+
+```
+##     X   Country_Name Production
+## 1   1  United States     360252
+## 2   2          China     260670
+## 3   3         Brazil     109000
+## 4   4 European Union      63700
+## 5   5      Argentina      47500
+## 6   6          India      30200
+## 7   7        Ukraine      29500
+## 8   8         Mexico      27800
+## 9   9   South Africa      17000
+## 10 10         Russia      13872
+```
   
   + Table 1: Top 10 World Producers of Corn, 2017
   
@@ -63,6 +106,12 @@ class: center, middle, inverse, title-slide
   
   + In Figure 3, we present production since 1990 from the top five countries. 
   
+---
+
+![](assets/SouthAmericanProd_TopProdSoy.png)
+
+---
+  
   + The importance of Brazil and Argentina is much more obvious. 
   
   + While production in the U.S. has a visible upward trend, Brazil and Argentina are really increasing at a rapid rate.
@@ -73,9 +122,35 @@ class: center, middle, inverse, title-slide
   
   + In Figure 4, we plot the exports from the top five countries. 
   
-  + From Figure 3 to 4 China and India drop out and are replaced by Canada and Paraguay. 
+  
+---
+
+![](assets/SouthAmericanProd_TopExporterSoy.png)
+
+---
   
   + The growth in soybean exports from Brazil is quite remarkable in this chart. 
+  
+---
+
+
+```r
+read.csv(file = "assets/corn_exporters.csv") 
+```
+
+```
+##     X   Country_Name Production
+## 1   1  United States     360252
+## 2   2          China     260670
+## 3   3         Brazil     109000
+## 4   4 European Union      63700
+## 5   5      Argentina      47500
+## 6   6          India      30200
+## 7   7        Ukraine      29500
+## 8   8         Mexico      27800
+## 9   9   South Africa      17000
+## 10 10         Russia      13872
+```
   
   + Table 2 shows the top ten producers of soybeans in the World. Here we see that Paraguay and Bolivia are present in the top ten as well. 
   
@@ -86,6 +161,8 @@ class: center, middle, inverse, title-slide
   + South America experiences summer when we in the North America experience winter and vice versa. 
   
   + North American and South American production is nicely complementary in providing corn and soybeans for the export market. 
+  
+---
   
   + U.S. corn and soybean exports are at their highest levels during the 2nd quarter of the marketing year - right after harvest. 
   
@@ -113,11 +190,20 @@ class: center, middle, inverse, title-slide
   
   + If they plant corn first, there is not enough time to get a second crop of soybeans. 
   
+---
+  
   + Yields of first crop corn are higher then yields of second crop corn due to when the rainy season comes. 
   
   + In some places, farmers choose to plant one crop of corn and forego double cropping.  
+  
+---
 
 Figure 6 show production intensity of soybeans by state, and also provides a calendar of when planting and harvest activity of first crop soybeans are taking place. 
+
+
+---
+
+![](assets/Brazil_Soybean.png)
 
 ---
 
@@ -125,7 +211,20 @@ Figure 6 show production intensity of soybeans by state, and also provides a cal
 
   + Figure 7 shows the same for second crop corn. 
   
+  
+---
+
+![](assets/Brazil_SecondSeason_Corn.png)
+
+---
+  
   + While Figure 8 shows the regional production intensity of first crop corn. 
+  
+---
+
+![](assets/Brazil_FirstSeason_Corn.png)
+
+---
   
   + The highest production of first crop corn is located in regions that have no second crop in Figure 7. 
   
@@ -135,58 +234,13 @@ Figure 6 show production intensity of soybeans by state, and also provides a cal
 
 ### Where to find information on Brazilian Crops 
 
-  + Information about Brazillian production the [National Supply Company (Conab)] is the main resource. 
+  + Information about Brazillian production the [National Supply Company (Conab)](https://www.conab.gov.br/) is the main resource. 
   
   + They publish crop reports monthly, just like the USDA's WASDE report. 
   
   + Typically, the Brazillian report is released a couple of days before the WASDE report. 
   
   + If there is information from Brazil that will affect world stocks or production, these reports will move prices in the U.S. 
-  
----
-
-### Where to find information on Brazilian Crops  (CONT...)
-
-  + A calendar of release dates for 2016/2017 and 2017/2018 marketing years is found. 
-  
-  + The monthly crop reports can be found on the [Conab website]. 
-  
-  + Ask Google to automatically translate the page to English for you. 
-  
-  + Navigate through the **Produtos e Servicos** menu, through **Crops**, and choose **Harvesting Safra**. 
-  
----
-
-### Where to find information on Brazilian Crops  (CONT...)
-
-  + This brings up a list of reports listed in reverse chronological order by release date. 
-  
-  + Look for a row of the form **1st Survey - Harvest 2017/2018-Grains**. 
-  
-  + In the product column will be **Food**. 
-  
-  + There are three kinds of reports, Food (which contains grains and oilseeds like corn and soybeans), Coffee, and Sugar Cane. 
-  
-  + Since, the food report is released once per month, the most recent report should always appear on the first page of the table. 
-  
----
-
-### Where to find information on Brazilian Crops  (CONT...)
-
-
-**Area Planted, Yield, and Production**
-
-  + Estimates are given for area planted to soybeans. 
-  
-  + We have reproduced table 36 from the October 2017 report. 
-  
-  + Decimals are marked with ',' and 1,000's are marked with '.' - just the opposite of the convention of most English-speaking traditions. 
-  
-  + We learn that for the country as a whole (bottom row) soybean plantings are up about 2.7% (1.6% - 3.8% low to high range). 
-  
-  + But, yields are expected to decrease by 8.6%. 
-  
-  + This leaves productino estimates for the 2017/2018 crop in the range of  -7.1% to -5.1%.
   
 ---
 
@@ -198,29 +252,28 @@ Figure 6 show production intensity of soybeans by state, and also provides a cal
   
   + Planting of soybeans begins in November and harvest runs from April to May. 
   
-|Spanish - English Crop Names | |
-|:----------------------------|:-------------------|
-|Trigo | Wheat  |
-|Cebada | Barley  |
-|Girasol | Sunflower  |
-| Soja | Soybean  |
-| Maiz | Corn | 
-|Sorgo | Sorghum |
-
 ---
+  
 
 ### Where to find information on Argentinian Crops
 
 
-  + The Bolsa de Cereales is the grain exhcange in Argentina. 
+  + The [Bolsa de Cereales](https://www.bolsadecereales.com/) is the grain exchange in Argentina. 
   
   + They undertake the responsibility of producing crop reports. 
   
+---
+
+
   + The reports most closely followed are the Weekly Agricultural Report, which tells the planting or harvest progress, and gives a general update about market conditions. 
   
   + The other report is the Esdtado Y Condition de Cultivos (ECC), which is released once per month. 
   
   + This has more detailed estimates about planting and growing conditions. 
+  
+---
+
+THE END
   
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
