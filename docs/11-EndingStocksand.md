@@ -80,17 +80,17 @@ Since the supply curve shifts from year-to-year and the demand curve shifts from
 
 This section continues to draw heavily on the Good and Irwin fdd article referenced above. First let us take a look at the average price received for corn over time and the stocks-to-use of corn over time in figure 2. These data can both be obtained from the [USDA ERS Feed Grains Database](http://www.ers.usda.gov/data-products/feed-grains-database.aspx) database, although you have to download the *stocks* and *use* separately and create your own stocks-use-variable. 
 
-![Figure 2: Corn Average Price Received and Stocks-to-Use](Excel-files/EndingStocksand-corn_endingstock_prices_files/image005.png)
+![Figure 2: Corn Average Price Received and Stocks-to-Use](assets/EndingStocksand-StocksUsePrices.png)
 
 Perhaps the first thing that one notices in this figure is the pronounced stocks-to-use spikes that occurred in the 1982/1983 and 1985/1986, 1986/1987, 1987/1988 marketing years. Those exceptionally high stocks relative to use was a result of government commodity programs designed to keep prices from falling too far. Specifically, the stocks were help primarily in the Farmer-Owned-Reserve or by the Commodity Credit Corporation [@westcott1999price]. Both programs were designed to keep bushels off the market and thus buoying prices. During periods of prolonged excesses, however, it becomes very costly for the government to procure and store large quantities of the commodity and it has a continuing depressing effect on market prices because the market knows the government holds large stockpiles. Farm legislation ('The Farm Bill' is re-negotiated every four years by congress) has trended toward more market-oriented approaches to supporting agriculture, and one can observe a marked decline in stocks-to-use over time. 
 
 Aside from the the wild swings in the 1980's, the series still seem to show a negative relationship between stocks-to-use and prices, as one would expect. Figure 3 graphs these two series as a scatter-plot with stocks-to-use on the x-axis. 
 
-![Figure 3: Corn Prices vs. Stocks-to-Use](Excel-files/EndingStocksand-corn_endingstock_prices_files/image001.png)
+![Figure 3: Corn Prices vs. Stocks-to-Use](assets/EndingStocksand-StocksUsePrices2.png)
 
 A clear negative relationship emerges, but the relationship when stocks are less than 20% of use is less clear. To help clarify, figure 4 highlights years before and after 2006. 
 
-![Figure 4: Corn Prices vs Stocks-to-Use Pre- and Post-2006](Excel-files/EndingStocksand-corn_endingstock_prices_files/image002.png)
+![Figure 4: Corn Prices vs Stocks-to-Use Pre- and Post-2006](assets/EndingStocksand-StocksUsePrices3.png)
 
 Highlighting the data and pre- or post-2006[^post2006] clearly shows a wide range of prices over a relatively narrow range of stocks-to-use realizations. Given that 2006 is the beginning of the ramp-up in ethanol production, this should not be surprising. Suddenly there was a large and very inelastic demander of corn in the market. This ensured supply would have to be rationed by price to keep stocks from falling to low levels. 
 
