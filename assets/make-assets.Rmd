@@ -8,6 +8,8 @@ knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 library(ggpubr)
 library(rnassqs)
+library(readxl)
+library(lubridate)
 
 
 # Color Schemes:
@@ -1229,3 +1231,127 @@ oilseeds %>%
 
 
 ```
+
+# Figures for `11-EndingStocksand.Rmd`
+
+```{r}
+tmp <- tempfile(fileext = ".xls")
+library(httr)
+
+httr::GET(url = "https://www.ers.usda.gov/webdocs/DataFiles/50048/Feed%20Grains%20Yearbook%20Tables-All%20Years.xls",
+          write_disk( tmp) )
+
+data_xl <- read_excel(tmp, sheet = "FGYearbookTable04-Full", 
+                      skip = 4, 
+                      col_names = c("MktYear", "Quarter", "BeginningStocks", "Production", "Imports", 
+                                    "TotalSupply", "FoodAlcoholInd", "Seed", "FeedandResidual", 
+                                    "TotalDomestic", "Exports", "TotalUse", "EndingStocks")) %>%
+  fill(MktYear) %>% 
+  # Make columns for more standard date handling
+  mutate(month = ifelse(Quarter =="Q1 Sep-Nov", "09-01", 
+                        ifelse(Quarter == "Q2 Dec-Feb", "12-01", 
+                               ifelse(Quarter == "Q3 Mar-May", "03-01", 
+                                      ifelse(Quarter == "Q4 Jun-Aug", "06-01",
+                                             ifelse(Quarter == "MY Sep-Aug", "09-01", NA)))))) %>%
+  mutate(year = ifelse(Quarter =="Q1 Sep-Nov" | Quarter == "Q2 Dec-Feb" | Quarter == "MY Sep-Aug", as.numeric(str_sub(MktYear, 1,4)), 
+                       as.numeric(str_sub(MktYear, 1,4)) +1 )) %>%
+  mutate(date = as.Date(paste0(as.character(year), "-", month))) # Now we have a proper date column.
+
+data_xl
+```
+
+
+```{r}
+
+
+
+data_fg <- data_xl %>% 
+  filter(Quarter == "MY Sep-Aug") %>% 
+  select(c(date, TotalUse, EndingStocks)) %>%
+  mutate(date = year(date)) %>% 
+  mutate(StockstoUse = EndingStocks/TotalUse*100)
+
+key = 'BD652A51-1B61-3442-B80A-9B4030E2F382'
+
+
+# apikey <- "YOUR API KEY"
+nassqs_auth(key)
+
+params1 <- list(commodity_desc = "CORN", 
+                year__GE = 1975, 
+                agg_level_desc = "NATIONAL", 
+                statisticcat_desc = "PRICE RECEIVED",
+                #prodn_practice_desc = "ALL PRODUCTION PRACTICES",
+                #util_practice_desc = c("GRAIN", "ALL UTILIZATION PRACTICES"),
+                reference_period_desc = "Marketing Year",
+                freq_desc = "ANNUAL",
+                unit_desc = "$ / BU"
+                #prodn_practice_desc = "NON-IRRIGATED"
+                ) # GE means "greater than or equal to"
+data1   <- nassqs(params1)
+data1$Value <- as.numeric(gsub(",", "", as.character(data1$Value)))
+
+data1 <- data1 %>% mutate(date = as.double(year))
+
+data1 <- inner_join(data_fg, data1 %>% select(date, Value), by = "date") %>% select(date, StockstoUse, Value)
+colnames(data1) <- c("date", "StockstoUse", "PricesRecieved")
+data1 <- data1 %>% mutate(PricesRecieved2 = 10*PricesRecieved)
+```
+
+```{r}
+
+data1 %>% pivot_longer(cols = c(StockstoUse, PricesRecieved2), 
+                       names_to = "Series", 
+                       values_to = "value") %>%
+  ggplot(aes(x = date, y = value, color = Series)) + 
+  geom_line(size = 0.75) +
+  scale_color_manual(values = c(purduegold, "black")) + 
+  theme_bw() + 
+  scale_y_continuous(# Features of the first axis
+    name = "Stocks-to-Use %",
+    # Add a second axis and specify its features
+    sec.axis = sec_axis( trans=~./10, name="$/bu Prices Received")) +
+  labs(title = "Corn Stocks-to-Use and Prices Received by Farmers", 
+       x = "", 
+       y = "$/bu and Stocks/TotalUse*100",
+       caption = "1975-2020 Marketing Years (2020 Estimated as of 2021-03-23)")
+
+ggsave(filename = "EndingStocksand-StocksUsePrices.png" , width= 6, height = 4)
+
+```
+
+
+```{r}
+
+data1 %>% 
+  ggplot(aes(x = StockstoUse, y = PricesRecieved)) + 
+  geom_point(size = 1.5) +
+  scale_color_manual(values = c(purduegold, "black")) + 
+  theme_bw() + 
+  labs(title = "Corn Stocks-to-Use and Prices Received by Farmers", 
+       x = "Stocks/TotalUse*100", 
+       y = "$/bu",
+       caption = "1975-2020 Marketing Years (2020 Estimated as of 2021-03-23)")
+
+ggsave(filename = "EndingStocksand-StocksUsePrices2.png" , width= 6, height = 4)
+
+```
+
+```{r}
+
+data1 %>% mutate(BeforeAfter = case_when(date < 2006 ~ "Before",
+                           date >= 2006 ~ "After")) %>%
+  ggplot(aes(x = StockstoUse, y = PricesRecieved, color = BeforeAfter)) + 
+  geom_point(size = 1.5) +
+  geom_smooth(method = lm, formula = y ~ 1 + log(x), se = FALSE) +
+  scale_color_manual(values = c(purduegold, "black")) + 
+  theme_bw() + 
+  labs(title = "Corn Stocks-to-Use and Prices Received by Farmers, Before and After 2006", 
+       x = "Stocks/TotalUse*100", 
+       y = "$/bu",
+       caption = "1975-2020 Marketing Years (2020 Estimated as of 2021-03-23)")
+
+ggsave(filename = "EndingStocksand-StocksUsePrices3.png" , width= 6, height = 4)
+
+```
+
