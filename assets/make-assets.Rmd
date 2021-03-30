@@ -1316,7 +1316,8 @@ data1 %>% pivot_longer(cols = c(StockstoUse, PricesRecieved2),
        y = "$/bu and Stocks/TotalUse*100",
        caption = "1975-2020 Marketing Years (2020 Estimated as of 2021-03-23)")
 
-ggsave(filename = "EndingStocksand-StocksUsePrices.png" , width= 6, height = 4)
+ggsave(filename = "EndingStocksand-StocksUsePrices.png
+       " , width= 6, height = 4)
 
 ```
 
@@ -1355,3 +1356,61 @@ ggsave(filename = "EndingStocksand-StocksUsePrices3.png" , width= 6, height = 4)
 
 ```
 
+# Figures for `13-EthanolMarketsand.Rmd`
+
+```{r}
+data <- read_excel('d1-10ethanolprofitability.xlsx', 
+           sheet = "Returns per Bu.", 
+           range = "A8:J1000",
+           col_types = c("date", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric")) %>% 
+  select(c(1, 4, 6, 8, 10))
+
+colnames(data) <- c("Date", "Ethanol", "DDG", "Corn", "NaturalGas")
+
+```
+
+```{r}
+
+data %>% mutate(DDG = DDG/2000*17) %>% 
+  pivot_longer(cols = c(Ethanol, DDG, Corn, NaturalGas), names_to = "Commodity", values_to = "Prices") %>% 
+  filter(Commodity == "Corn" | Commodity == "DDG") %>% 
+  ggplot(aes(x = Date, y = Prices, color = Commodity)) +
+  geom_line(size = .75) + 
+  theme_bw() + 
+  scale_color_manual(values = c(purduegold, "black")) +
+  labs(title = "Corn and DDG Prices, 2005-2021")
+
+ggsave("CornDDGPrices.png", width = 6, height = 4)
+
+```
+
+
+```{r}
+
+data %>% 
+   mutate(Ratio = DDG/Corn) %>%
+  ggplot(aes(x = Date, y = Ratio)) +
+  geom_line(size = .75, color = purduegold) + 
+  theme_bw() + 
+  #scale_color_manual(values = c(purduegold, "black")) +
+  labs(title = "DDG/Corn Price Ratio, 2005-2021")
+
+ggsave("DDGCORNRatio.png", width = 6, height = 4)
+
+```
+
+
+```{r}
+
+data %>% 
+   mutate(Crush = Ethanol*2.8 + DDG*17/2000 - Corn) %>%
+  ggplot(aes(x = Date, y = Crush)) +
+  geom_line(size = .75, color = purduegold) + 
+  theme_bw() +
+  lims(y = c(-1,8)) +
+  #scale_color_manual(values = c(purduegold, "black")) +
+  labs(title = "Ethanol Crush Spread, 2005-2021")
+
+ggsave("ECrushSpread.png" , width = 6, height = 4)
+
+```

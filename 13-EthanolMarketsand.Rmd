@@ -73,11 +73,11 @@ DDGs are a by product of the dry grind ethanol production process that is valuab
 
 DDG prices tend to follow the trend of corn prices, although not perfectly because the two are not perfect substitutes. In figure 3, DDG and corn prices are compared using monthly U.S. average price received by farmers for corn (cents per bushel) and the average wholesale bulk price for Central IL ($/ton). We put corn prices in cents per bushel so the units are comparable on one axis. 
 
-![Figure 3: DDG and Corn Prices, Monthly Aug 2000 - Oct 2015](Excel-files/EthanolMarketsand-Ethanol_files/image001.png)
+![Figure 3: DDG and Corn Prices, Monthly Aug 2005 - 2021](assets/CornDDGPrices.png)
 
 It is also informative to look at the price ratio of DDG and corn prices. This is displayed in figure 4. 
 
-![Figure 4: Ratio of DDG and Corn Prices, MonthlyAug 2000 - Oct 2015](Excel-files/EthanolMarketsand-Ethanol_files/image003.png)
+![Figure 4: Ratio of DDG and Corn Prices, MonthlyAug 2005 - Oct 2015](assets/DDGCORNRatio.png)
 
 The price ratio is fairly variable, but appears to follow a stationary and possibly mean reverting pattern. DDG prices seem to range from 30% to 50% of corn prices. 
 
@@ -92,7 +92,7 @@ Ethanol is also a compliment with gasoline because it acts as an oxygenate. Oxyg
 
 That said, it is difficult to anticipate whether Ethanol prices will exhibit a relationship consistent with a substitute or consistent with a complement good. In figure 5, ethanol and RBOB gasoline prices are graphed together for comparison. 
 
-![Figure 5: Iowa Ethanol Spot and Los Angelous Spot RBOB Gasoline Prices](Excel-files/EthanolMarketsand-Ethanol_files/image006.png)
+![Figure 5: Iowa Ethanol Spot and Los Angelous Spot RBOB Gasoline Prices](assets/EthRBOB.png)
 
 It appears that ethanol and Los Angelos spot RBOB have a positive relationship consistent with substitute goods, but ethanol prices are usually discounted relative to gasoline prices. Geographical differences in transport costs likely explain part of this, but also, a gallon of ethanol has about 75% of the energy content of a gallon of gasoline. So gasoline with ethanol blended into it will yield fewer miles per gallon. This is particularly true for E85. 
 
@@ -118,6 +118,10 @@ A bushel of corn will yeild 2.8 gallons of ethanol and 17 lbs of ddgs, when proc
 Equation 2 gives the GPM per bushel of corn processed into ethanol. Dividing $17/2000 = 0.0085$ yields 
 
 3. $P_{eth}*2.8 + P_{DDG}*0.0085 - P_{corn}$
+
+
+![Figure 6: Ethanol Crush Spread](assets/ECrushSpread.png)
+Note: Prices come from ISU Ethanol Profitability Model
 
 ## Hedging the Crush Spread
 
