@@ -11,7 +11,7 @@ Source: [United Soybean Board](http://unitedsoybean.org/), [Flicker](https://www
 
 ## Oilseed Processing
 
-Now the most prevalant method for crushing soybeans is a method that uses a solvent to extract the oil from the soybean. Basically, soybeans are pretreated, then flaked to destroy the cell walls so the solvent can get at the oil in the cells. A crude oil is then further prcesssed refined to remove the solvent and other compounds like glycerine, leaving only pure soybean oil. The soybean flakes, minus the oil are then ground in to meal that can be used as a high protein livestock feed. 
+Now the most prevalent method for crushing soybeans is a method that uses a solvent to extract the oil from the soybean. Basically, soybeans are pre-treated, then flaked to destroy the cell walls so the solvent can get at the oil in the cells. A crude oil is then further processed refined to remove the solvent and other compounds like glycerin, leaving only pure soybean oil. The soybean flakes, minus the oil are then ground in to meal that can be used as a high protein livestock feed. 
 
 ![Soy Flakes](images/soyflakes.jpg)
 
@@ -27,9 +27,9 @@ Source: [United Soybean Board](http://unitedsoybean.org/), [Flicker](https://www
 Source: [United Soybean Board](http://unitedsoybean.org/), [Flicker](https://www.flickr.com/photos/unitedsoybean/10058954054/)
 
 
-Hisorically, soybeans were processed by feeding soybeans into a mechanical press that literally squeezed the oil out. This process is less efficicent and more time consuming - thus more costly. Nearly all commercially crushed soybeans are done with with the solvent extraction method. 
+Historically, soybeans were processed by feeding soybeans into a mechanical press that literally squeezed the oil out. This process is less efficient and more time consuming - thus more costly. Nearly all commercially crushed soybeans are done with with the solvent extraction method. 
 
-Crushing soybeans yields about 11lbs of oil and 44lbs meal per bushel of soybeans, these yields can vary slighly, but most use these values in the price analysis that will follow. 
+Crushing soybeans yields about 11lbs of oil and 44lbs meal per bushel of soybeans, these yields can vary slightly, but most use these values in the price analysis that will follow. 
 
 
 
@@ -37,9 +37,9 @@ Crushing soybeans yields about 11lbs of oil and 44lbs meal per bushel of soybean
 
 Soybean oil is used primarily as a food-grade product. It is not usually found in grocery stores as 100% soybean oil, but it will be present in oil branded as 'cooking oil' - where it is blended with other edible oils like corn oil and canola (also known as rapeseed) oil. Composition of cooking oil can vary from one purchase to the next as producers of cooking oil can blend the edible oil components based on relative prices. 
 
-Soybean oil also can be futher processed into partially hydrogenated soybean oil. This is accomplished by literally adding hydrogen to the vegatable oil. The resulting product is widely used in processed food such as baked goods, crackers, frozen foods; it is used in a lot of processed foods generally speaking. It is a perfect ingredient in processed foods because it is solid at room temperature, and essentially never goes bad. If natural vegatable oils were used in processed foods the oil would go rancid in a short period of time. 
+Soybean oil also can be further processed into partially hydrogenated soybean oil. This is accomplished by literally adding hydrogen to the vegetable oil. The resulting product is widely used in processed food such as baked goods, crackers, frozen foods; it is used in a lot of processed foods generally speaking. It is a perfect ingredient in processed foods because it is solid at room temperature, and essentially never goes bad. If natural vegetable oils were used in processed foods the oil would go rancid in a short period of time. 
 
-Use of partially hydrogenated vegatable oils will decrease in coming years. Partially hydrogenated vegatable oils are examples of what is commonly referred to as *trans fat* in nutritional articles (and on the back of nutrition labels). Trans fat has been shown to [increase LDL cholesteral and heart disease](http://www.fda.gov/ForConsumers/ConsumerUpdates/ucm372915.htm) [@dri2002Nap]. The FDA announced a ban on most added trans fats in processed foods; the ban is set to take effect by 2018.
+Use of partially hydrogenated vegetable oils will decrease in coming years. Partially hydrogenated vegetable oils are examples of what is commonly referred to as *trans fat* in nutritional articles (and on the back of nutrition labels). Trans fat has been shown to [increase LDL cholesteral and heart disease](http://www.fda.gov/ForConsumers/ConsumerUpdates/ucm372915.htm) [@dri2002Nap]. The FDA announced a ban on most added trans fats in processed foods; the ban is set to take effect by 2018.
 
 ![Partially Hydrogenated Soybean Oil](images/hydrogenated_oil.jpg)
 
@@ -49,7 +49,7 @@ Soybean oil is also used in the production of biodiesel. This amounts to a small
 
 ## Soybean Meal Uses
 
-Soybean meal is used exclusively for livestock feed as a high protein component. Beef cattle, dairy cattle, hogs, and poultry use soybean meal in feed rations. Soybean meal provides a good source of protein, and combined with cereal grains like corn allow a complete balence of essential amino acids that hogs and poultry must have. 
+Soybean meal is used exclusively for livestock feed as a high protein component. Beef cattle, dairy cattle, hogs, and poultry use soybean meal in feed rations. Soybean meal provides a good source of protein, and combined with cereal grains like corn allow a complete balance of essential amino acids that hogs and poultry must have. 
 
 ![Hogs](images/pigs.jpg)
 
@@ -61,9 +61,9 @@ Soybean meal is used exclusively for livestock feed as a high protein component.
 
 ## Price Relationships 
 
-Since the input (soybeans) and outputs (oil and meal) are all commodities, and the production techology is fairly widely understood and replicable, the oilseed crushing business is a very competitive one. Recall from intermediate microeconomics that in the long run firms in a competitive market with identical technology (identical production functions) should not expected to earn economic profits or losses in the long run. If short-term profits exist, firms enter the market, shifting the supply curve out and reducing the equilibrium price until there is no more incentive to expand. This simple prediction has implications for our expectations about the relative prices of these commodities. 
+Since the input (soybeans) and outputs (oil and meal) are all commodities, and the production technology is fairly widely understood and replicable, the oilseed crushing business is a very competitive one. Recall from intermediate microeconomics that in the long run firms in a competitive market with identical technology (identical production functions) should not expected to earn economic profits or losses in the long run. If short-term profits exist, firms enter the market, shifting the supply curve out and reducing the equilibrium price until there is no more incentive to expand. This simple prediction has implications for our expectations about the relative prices of these commodities. 
 
-An soybean processer's profit is roughly, 
+An soybean processor's profit is roughly, 
 
 1. $P_{oil}*q_{oil} + P_{meal}*q_{meal} - P_{soybean}*q_{soybean}$
 
@@ -87,11 +87,11 @@ Source: [Quandl.com](www.Quandl.com)
 
 ## The Board Crush
 
-Since soybeans, soybean oil, and soybean meal all have actively traded futures contracts, the oil proccessing GPM calculated with futures prices is widely followed, along with the local crush spread oil processers would earn in their local cash markets. When the Crush Spread is calculated with futures prices instead of spot prices it is sometimes called the 'Board Crush' short-hand for the 'Board of Trade' Crush. Speculators trade this spread by selling (buying) oil and meal and buying (selling) soybeans. Oil processers use the Board Crush to hedge their positions in the cash markets for oil, meal, and soybeans and to 'lock in' processing margins. 
+Since soybeans, soybean oil, and soybean meal all have actively traded futures contracts, the oil processing GPM calculated with futures prices is widely followed, along with the local crush spread oil processors would earn in their local cash markets. When the Crush Spread is calculated with futures prices instead of spot prices it is sometimes called the 'Board Crush' short-hand for the 'Board of Trade' Crush. Speculators trade this spread by selling (buying) oil and meal and buying (selling) soybeans. Oil processors use the Board Crush to hedge their positions in the cash markets for oil, meal, and soybeans and to 'lock in' processing margins. 
 
 Since in the cash market a soybean crusher buys soybeans and sells meal and oil, to hedge they will buy soybeans and sell meal and oil. 
 
-Notice that this futures spread will make money crushers are losing money in the cash market (as is the design of the hedge), in that the spread makes money if the cost of the business (buying soybeans) becomes higher - relatively speaking - and the revenaue of the business (selling meal and oil) becomes smaller - relatively speaking. 
+Notice that this futures spread will make money crushers are losing money in the cash market (as is the design of the hedge), in that the spread makes money if the cost of the business (buying soybeans) becomes higher - relatively speaking - and the revenue of the business (selling meal and oil) becomes smaller - relatively speaking. 
 
 Now to get the spread right, you need to buy soybeans and sell oil and meal in the correct proportions to mimic the business of crushing soybeans. Recall, 1 bushel of soybeans equals 11 lbs of oil and 44 lbs of meal. There are two versions of the spread that are fairly widely followed, the 1-1-1 spread and the 9-11-10 spread. The 1-1-1 spread is not as accurate in getting the proportions right, but it is easier to remember and implement as a trade. It would be cheaper to implement with brokers who charge commission per contract. 
 
@@ -128,7 +128,7 @@ So the 1-1-1 spread does not represent equivalent quantities of soybeans, oil, a
 
 ### The 9-11-10 Spread
 
-The commercial oil processers use a 9-11-10 spread of 9 contracts of soybean oil, 11 contracts of soybean meal, and 10 contracts of soybeans to hedge their GPM. 
+The commercial oil processors use a 9-11-10 spread of 9 contracts of soybean oil, 11 contracts of soybean meal, and 10 contracts of soybeans to hedge their GPM. 
 
 Then the quantities match more closely. Ten contracts of soybeans produces
 
@@ -170,7 +170,7 @@ The following file contains crush prices on the forward curve for the first of J
 
 [CSV File with Prices](Excel-files/soy-crush-exercise.csv)
 
-Recall the product yeilds: 
+Recall the product yields: 
 
 |Input/Output |   Yield |
 |:------------|:--------|
@@ -185,9 +185,9 @@ $GPM = P_{oil}/100*11 + P_{meal}*44/2000 - P_{soybean}/100$
 
 When oil and soybean prices are in cents, and meal prices are in $/ton.
 
-1.  Now suppose that on *July 3, 2017* you observe the prices (provided in the excel spreadsheet) on the crush forward curve. Create three new columns in N, O, and P for AugGPM, SepGPM, and OctGPM, respectively. Compute the forward gross processing margin on July 3 for Aug, Sep, and Oct expirations. Note that this is just like the flour mill hedging problem from Chapter 4, but there are three products to hedge. 
+1.  Now suppose that on *July 3, 2017* you observe the prices (provided in the excel spreadsheet) on the crush forward curve. Create three new columns in N, O, and P for AugGPM, SepGPM, and OctGPM, respectively. Compute the forward gross processing margin on July 3 for Aug, Sep, and Oct expiration. Note that this is just like the flour mill hedging problem from Chapter 4, but there are three products to hedge. 
 
-This is akin to just observing the forward futures prices in the flour mill problem. But in this example we are really concered about the margins in soybean crushing so we have to compute that ourselves. 
+This is akin to just observing the forward futures prices in the flour mill problem. But in this example we are really concerned about the margins in soybean crushing so we have to compute that ourselves. 
 
 2.  Suppose we hedged the forward margins we see offered on the forward curve for Aug. What futures trades do we make?
 
@@ -195,7 +195,7 @@ This is akin to just observing the forward futures prices in the flour mill prob
 
 3.  In row 9 create headers for a new table similar to the one we used in Ch 4 for the flour mill hedging example. Except here create the following columns: 
 
-Dates, Action in Futures, Action in Cash, Remaining Futures Positions, Net Cost Soybeans (Cash and futures combined)	Net Revanue Oil (Cash and futures combined)	Net Revanue Meal (Cash and Futures Combined)	Hedged Processing Profit	Hedged GPM $/bu. There should be two rows with dates 7/3/2017 and 8/1/2017. 
+Dates, Action in Futures, Action in Cash, Remaining Futures Positions, Net Cost Soybeans (Cash and futures combined)	Net Revenue Oil (Cash and futures combined)	Net Revenue Meal (Cash and Futures Combined)	Hedged Processing Profit	Hedged GPM $/bu. There should be two rows with dates 7/3/2017 and 8/1/2017. 
 
 
 4.  Fill in each cell (except in the first row there is only the futures action cell to fill in).
