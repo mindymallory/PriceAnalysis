@@ -67,9 +67,8 @@ option-prices-compared-to-the-profit-diagram
 option-greeks
 criticisms-of-the-black-scholes-pricing-model
 delta-hedging
-example-1-delta-hedge-your-overnight-exposure
-example-2-delta-hedge-your-weekend-exposure
 why-is-delta-hedging-not-fool-proof
+famous-blow-ups-in-delta-hedging-operations
 option-spread-strategies
 bull-call-spread
 bull-put-spread

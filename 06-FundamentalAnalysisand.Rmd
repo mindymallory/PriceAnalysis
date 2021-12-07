@@ -138,7 +138,8 @@ library(kableExtra)
 options(knitr.kable.NA = '')
 library(tidyverse)
 
-url1 <- 'https://www.usda.gov/oce/commodity/wasde/wasde0221.xls'
+#url1 <- 'https://www.usda.gov/oce/commodity/wasde/wasde0221.xls'
+url1 <- "https://downloads.usda.library.cornell.edu/usda-esmis/files/3t945q76s/dv140m16d/jm215h19t/latest.xls"
 GET(url1, write_disk(tf <- tempfile(fileext = ".xls")))
 df <- read_excel(tf, 
                  n_max = 20,

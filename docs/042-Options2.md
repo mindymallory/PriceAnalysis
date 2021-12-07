@@ -176,10 +176,149 @@ So even though the option buyer can create countless profit scenarios over many 
 
 ## Criticisms of the Black-Scholes Pricing Model
 
+We should be aware that while the Black-Scholes option pricing model is very elegant and easy to work with, it has some limitations. Most limitations stem from unrealistic assumptions underpinning the model.
+
+Recall the model assumptions from earlier:
+
+> *Assumptions About Assets*
+>
+> -   There exists a riskless asset that returns a constant risk free rate
+>
+> -   The stock price exhibits instantaneous returns that are log normal. More formally, the stock price follows a geometric Brownian motion and volatility and drift are constant. Without writing out the mathematical equation for the geometric Brownian motion, the drift term defines how much the stock price appreciates on average.
+>
+> *Assumptions about the Market*
+>
+> -   There are no arbitrage opportunities
+>
+> -   There are no restrictions on borrowing and lending at the risk free rate
+>
+> -   Market participants can buy or sell unlimited quantities of the stock
+>
+> -   There are no transactions costs
+
+These assumptions are at odds with several commonly observed attributes of real markets . In particular, assets commonly have the following characteristics:
+
+1.  Heavy-tailed returns
+2.  Positively correlated volatility, volatility clustering, variable volatility
+
+The first item means that extreme market movements (up or down) happen more often than implied by the normal distribution. Since option prices depend on the full probability distribution of potential outcomes, a model that assumes a normal distribution will chronically under-price options.
+
+The second item reflects the tendency in markets for volatility events to be clustered together. That means if we have a large price movement, it will likely be followed by large price movements in the near future. We cannot predict whether it will be up or down, but we can be sure it will be volatile. In the figure below we plot continuous series of weekly soybean futures since 2010 in the first panel. In the second panel we plot squared log differences of prices, which is one way to calculate volatility. You can clearly observe the positive correlation and volatility clustering in this market. Once there is an event that spikes volatility, it takes a while for volatility to 'calm down'.
+
+![](assets/Options2-volcluster.png)
+
+This explains the limitation of the Black-Scholes model along the volatility dimension. Another practical matter is that the model requires one to continuously maintain a perfectly hedged portfolio of an option and the underlying asset. This can be impossible when prices experience 'jumps' or non continuous movements. These can occur in due to unexpected information hitting the market and traders pulling their standing orders in the market. But, it also occurs during routine market closures. The overnight jumps can be substantial in cases where a lot of information is revealed overnight.
+
 ## Delta Hedging
 
-## Example 1: Delta Hedge Your Overnight Exposure
+One proof of the Black-Scholes option pricing formula shows that if one can continuously hedge the sale of an option contract with the underlying asset so that the position is 'delta neutral' then the hedged portfolio (the short option and long stock) is riskless and therefore must earn the 'risk-free rate'. This implies that if you know the price of the stock and you know the risk free rate, then you can deduce what the price of the option should be at any time. Solving that yields the Black-Scholes equation.
 
-## Example 2: Delta Hedge Your Weekend Exposure
+Let's discuss the delta neutral concept more fully. Recall that the $\Delta$ (delta) of an option is $\Delta = \frac{\partial C}{\partial F}$, or how much the price of the option changes if the price of the underlying asset increases by one unit. A position is said to be 'delta neutral' if options and the underlying asset are held in a proportion such that for small changes in the underlying asset's price, the value of the position is unchanged.
+
+**Example**
+
+Suppose the price of the nearby corn futures contract is 450 cents. A trader might sell 100 the 450 strike call options that is trading for 11 cents. The trader is hoping to profit from theta decay, as the price of the option decreases over time. They do not want exposure to the changing price of the futures contract, however.
+
+1.  How many futures contracts should they buy/sell to make their position delta neutral?
+
+![](assets/Options2-deltahedge.png)
+
+**Answer**: Consider the figure above. The gold 'hockey stick' line represents the payoff of the call option to someone long the option. The thick black line is the Black-Scholes price of the option at the current time, for different values of the underlying (indicated on the x-axis). The dashed black lines show that at 450, the slope of the option price curve is .5 and at 475 the slope is .85. These are the delta's of the option price when the underlying is 450 and 475, respectively.
+
+Since the $\Delta$ of the 450 strike option is 0.5 that means that the price of the option increases (decreases) by .5 times the futures price increase (decrease). Another way to think about it is selling the 100 of the 450 strike call options is like being short 50 of the futures; with a delta of .5 every 1 cent change in the underlying results in a .5 cent change in the option. So, if the trader does not want price exposure, they can **buy** 50 futures contracts at the same time they **sell** the call options. Now, for small changes in the futures price around 450, they are fully hedged.
+
+As an example consider what happens to their delta-hedged position for a modest price increase of 2 cents in the futures contract from 450 to 452. This will imply the call option increases to 12.18 cents, all else being equal. Walking through the profit an loss calculations in this case, we see the trader loses \$600 from this price movement. Recall, they are short the premium of \$55,000 that they are hoping to pocket as time eats away at the premium.
+
++---------------------+------------------------------+----------------------------------+
+|                     | Short Calls                  | Long Futures                     |
++=====================+==============================+==================================+
+| t = 0               |                              |                                  |
++---------------------+------------------------------+----------------------------------+
+| Price               | 11.06 cents per contract     | 450                              |
++---------------------+------------------------------+----------------------------------+
+| Quantity            | 100 contracts                | 50                               |
++---------------------+------------------------------+----------------------------------+
+| **Value**           | (11.06/100)\*100\*5000 =     | (450/100)\*50\*5000 =            |
+|                     |                              |                                  |
+|                     | **\$55,300**                 | **\$1,125,000** (notional value) |
++---------------------+------------------------------+----------------------------------+
+| t = 1               |                              |                                  |
++---------------------+------------------------------+----------------------------------+
+| Price               | 12.18 cents per contract     | 452                              |
++---------------------+------------------------------+----------------------------------+
+| Quantity            | 100                          | 50                               |
++---------------------+------------------------------+----------------------------------+
+| **Value**           | (12.18/100)\*100\*5000 =     | (452/100)\*50\*5000 =            |
+|                     |                              |                                  |
+|                     | **\$60,900**                 | **\$1,130,000** (notional value) |
++---------------------+------------------------------+----------------------------------+
+| **Profit/Loss**     | 55,300 - 60,900 =            | 1,130,000 - 1,125,000 =          |
+|                     |                              |                                  |
+|                     | **-\$5,600**                 | **+\$5,000**                     |
++---------------------+------------------------------+----------------------------------+
+| **Net Profit/Loss** | 62,500 - 89,000 = **-\$600** |                                  |
++---------------------+------------------------------+----------------------------------+
+
+: Change in value of delta-hedged position after small price move
+
+2.  Suppose now that the futures price experiences a big increase to 475 from close of the day session to open of the night session. Is the trader's position still delta neutral? What should they do to get their position delta neutral?
+
+**Answer**:
+
+To recap, our trader is short 100 of the 450 call options and bought 50 futures contracts against it when the futures price was 450 to get their position delta neutral. Then the price of the futures contract went to 475 between the close of the day session and open of the night session, so they could not adjust their hedge gradually. The price 'jumped' to 475. That means that the option position now has a delta of -.85\*100 (negative because our trader is short the option) and only has +1\*50 delta from the long futures position (the outright futures position always had a delta of 1). To get delta neutral the trader needs to buy an additional 35 futures contracts to get the delta of their futures position to +1\*.85.
 
 ### Why is delta-hedging not fool-proof?
+
+Delta hedging only works if traders can continuously re-balance their option and futures positions to keep delta neutral as prices change. There are a couple major problems with this.
+
+First is that it is costly to re-balance. Traders face trading costs from commissions, fees, and/or the bid-ask spread. Re-balancing too often would quickly eat into whatever profit they hoped to earn from theta-decay.
+
+Second, sometimes market prices move in significant 'jumps'. Whether this comes from information hitting the market that causes resting orders on the order book to be canceled and resent at much higher (or lower) prices, or from prices changing significantly from the market close to open, the result is the same for the delta neutral trader. They will have to re-balance their position after a large discrete jump. If the price jump goes against them, they will lock in a loss.
+
+In our example above, if the move from 450 to 475 happens from between market close and the next market open, the traders position will have a bigger loss on the short call option position than gain in the long futures position, due to the significant change in slope (or delta) of the option price.
+
++---------------------+---------------------------------+----------------------------------+
+|                     | Short Calls                     | Long Futures                     |
++=====================+=================================+==================================+
+| t = 0               |                                 |                                  |
++---------------------+---------------------------------+----------------------------------+
+| Price               | 11.06 cents per contract        | 450                              |
++---------------------+---------------------------------+----------------------------------+
+| Quantity            | 100 contracts                   | 50                               |
++---------------------+---------------------------------+----------------------------------+
+| **Value**           | (11.06/100)\*100\*5000 =        | (450/100)\*50\*5000 =            |
+|                     |                                 |                                  |
+|                     | **\$55,300**                    | **\$1,125,000** (notional value) |
++---------------------+---------------------------------+----------------------------------+
+| t = 1               |                                 |                                  |
++---------------------+---------------------------------+----------------------------------+
+| Price               | 28.86 cents per contract        | 475                              |
++---------------------+---------------------------------+----------------------------------+
+| Quantity            | 100                             | 50                               |
++---------------------+---------------------------------+----------------------------------+
+| **Value**           | (28.86/100)\*100\*5000 =        | (475/100)\*50\*5000 =            |
+|                     |                                 |                                  |
+|                     | **\$144,300**                   | **\$1,187,500** (notional value) |
++---------------------+---------------------------------+----------------------------------+
+| **Profit/Loss**     | 55,300 - 144,300 =              | 1,187,500 - 1,125,000 =          |
+|                     |                                 |                                  |
+|                     | **-\$89,000**                   | **+\$62,500**                    |
++---------------------+---------------------------------+----------------------------------+
+| **Net Profit/Loss** | 62,500 - 89,000 = **-\$26,000** |                                  |
++---------------------+---------------------------------+----------------------------------+
+
+: Change in value of delta-hedged position after big price move
+
+### Famous Blow-Ups in Delta-Hedging Operations
+
+Large unexpected price movements, have a storied history of blowing up hedge funds who focus on selling volatility. Several articles are linked below for the interested reader.
+
+1.  ["Epic Failures - Lessons from Volatility Funds Blow-Ups." Harel Jacobson](https://volquant.medium.com/epic-failures-lessons-from-volatility-funds-blow-ups-6f4226c8334f)
+2.  ["Turbulent Markets Upend Volatility Hedge Funds." Laurence Fletcher and Richard Hendarson, FT.](https://www.ft.com/content/b8ddbf92-c9b4-4a81-a167-ef9ee80962a5)
+3.  ["How to Lose a Billion Dollars Without Really Trying." Leanna Orr. Institutional Investor.](https://www.institutionalinvestor.com/article/b1m6kkzscgqrl0/How-to-Lose-a-Billion-Dollars-Without-Really-Trying)
+
+> History doesn't repeat itself, but it often rhymes. --- Mark Twain
+
+> Its like picking up pennies in front of a steamroller. --- Unknown
+
+These stories have a common theme. A fund engages in a strategy of selling volatility (selling calls, selling puts, selling vix futures, etc) with high leverage. The high leverage and nature of volatility premium mean these funds make spectacular returns for as long as there is not a 'volatility event'. One day, the volatility event arrives and anyone with a highly leveraged short volatility position is highly likely to blow up (total loss of trading capital).

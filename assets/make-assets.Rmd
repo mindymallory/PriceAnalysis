@@ -151,7 +151,58 @@ ggsave(filename = "Options1-optionintrinsic.png")
 
 ```
 
+# Figures for "042-Options2.RMD"
 
+```{r}
+library(gridExtra)
+library(OptionPricing)
+S <- read.csv(url(paste0("http://ondemand.websol.barchart.com/getHistory.csv?apikey=", KEY, "&symbol=ZS*1&type=weeklyNearest&backAdjust=false&startDate=20100201"))) %>%
+   mutate(tradingDay = as.Date(tradingDay)) %>% 
+  mutate(sqr_ret = (log(close)- log(lag(close)))^2)
+
+p <- S %>% ggplot(aes(x = tradingDay, y = close)) + 
+  geom_line() + 
+  theme_bw() +
+  labs(x = "", y = "Weekly Closing Price", title = "Soybean Futures")
+
+vol <- S %>% ggplot(aes(x = tradingDay, y = sqr_ret)) + 
+  geom_line() + 
+  theme_bw() +
+  labs(x = "", y = "Squared Returns")
+
+pn <- grid.arrange(p, vol)
+ggsave(pn, filename = "Options2-volcluster.png")
+```
+
+```{r, fig.width= 6, fig.hight = 4}
+prices <- data.frame(price = 400:500)
+strike = 450
+premc = 0
+premp = 0
+c <- map(prices$price, BS_EC, T = 0.08, K = strike, r = 0.05, sigma = 0.2) %>% bind_rows()
+p <- map(prices$price, BS_EP, T = 0.08, K = strike, r = 0.05, sigma = 0.2) %>% bind_rows()
+prices <- prices %>% 
+  mutate(callpayoffs = pmax(price - strike, 0) - premc) %>% 
+  mutate(putpayoffs = pmax(strike - price, 0) - premp) %>% 
+  mutate(callPrice = c$price) %>% 
+  mutate(putPrice = p$price)
+
+prices %>% ggplot(aes(x = price, y = callpayoffs)) + 
+  geom_line(size = 1.2, color = purduegold) +
+  geom_line(size = 1., aes(x = price, y = callPrice)) +
+  theme_bw() +
+  geom_abline(intercept= -213.9426894, slope= .5, linetype="dashed") +
+  geom_abline(intercept= -375.25, slope= .85, linetype="dashed") +
+  geom_point(aes(x = 450, y = 11.0573106), size = 2) +
+  geom_point(aes(x = 475, y = 28.8629907), size = 2) +
+  annotate("segment", x = 445, xend = 449, y = 30, yend = 15, colour = "black", size = 1, arrow = arrow()) +
+  annotate("segment", x = 478, xend = 476, y = 10, yend = 22, colour = "black", size = 1, arrow = arrow()) +
+  annotate("segment", x = 450, xend = 475, y = 1, yend = 1, colour = "black", size = .5, arrow = arrow()) +
+  annotate("text", x = 445, y = 32, label = "delta = .5") +
+  annotate("text", x = 478, y = 8, label = "delta = .85") +
+  labs(x = "", y = "", title = "Delta of the Option Changes as Asset Price Changes")
+ggsave(filename = "Options2-deltahedge.png")
+```
 
 
 # Figures for "PrimerforGrain.rmd"
@@ -1412,5 +1463,32 @@ data %>%
   labs(title = "Ethanol Crush Spread, 2005-2021")
 
 ggsave("ECrushSpread.png" , width = 6, height = 4)
+
+```
+
+
+
+
+# Figures for `12-SoybeanCrush.Rmd`
+
+```{r}
+S <- read.csv(url(paste0("http://ondemand.websol.barchart.com/getHistory.csv?apikey=", 
+                         KEY, 
+                         "&symbol=ZS*1&type=dailyNearest&backAdjust=true&startDate=20060201"))) %>%
+   mutate(tradingDay = as.Date(tradingDay))
+
+BO <- read.csv(url(paste0("http://ondemand.websol.barchart.com/getHistory.csv?apikey=", 
+                          KEY, 
+                          "&symbol=ZL*1&type=dailyNearest&backAdjust=true&startDate=20060201"))) %>%
+   mutate(tradingDay = as.Date(tradingDay))
+
+BM <- read.csv(url(paste0("http://ondemand.websol.barchart.com/getHistory.csv?apikey=", 
+                          KEY, 
+                          "&symbol=ZM*1&type=dailyNearest&backAdjust=true&startDate=20060201"))) %>%
+   mutate(tradingDay = as.Date(tradingDay))
+
+#S %>% mutate(spread = )
+
+BM %>% ggplot(aes(x = tradingDay, y = close)) + geom_line()
 
 ```
