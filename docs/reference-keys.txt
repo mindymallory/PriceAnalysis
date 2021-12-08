@@ -81,7 +81,8 @@ butterfly-spread
 hedging-with-options
 farmer-hedging-price-risk-on-production-with-a-put-option
 farmer-hedging-by-putting-on-a-fence
-comparing-crop-insurance-to-a-put-option
+a-note-on-margin
+wrapping-up
 prices-over-space-and-time
 storage-costs-to-the-farmer
 an-increasing-forward-curve

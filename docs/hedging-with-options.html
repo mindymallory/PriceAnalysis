@@ -241,8 +241,11 @@ div.csl-indent {
 <li class="chapter" data-level="8" data-path="hedging-with-options.html"><a href="hedging-with-options.html"><i class="fa fa-check"></i><b>8</b> Hedging with Options</a>
 <ul>
 <li class="chapter" data-level="8.1" data-path="hedging-with-options.html"><a href="hedging-with-options.html#farmer-hedging-price-risk-on-production-with-a-put-option"><i class="fa fa-check"></i><b>8.1</b> Farmer Hedging Price Risk on Production with a Put Option</a></li>
-<li class="chapter" data-level="8.2" data-path="hedging-with-options.html"><a href="hedging-with-options.html#farmer-hedging-by-putting-on-a-fence"><i class="fa fa-check"></i><b>8.2</b> Farmer Hedging by Putting on a Fence</a></li>
-<li class="chapter" data-level="8.3" data-path="hedging-with-options.html"><a href="hedging-with-options.html#comparing-crop-insurance-to-a-put-option"><i class="fa fa-check"></i><b>8.3</b> Comparing Crop Insurance to a Put Option</a></li>
+<li class="chapter" data-level="8.2" data-path="hedging-with-options.html"><a href="hedging-with-options.html#farmer-hedging-by-putting-on-a-fence"><i class="fa fa-check"></i><b>8.2</b> Farmer Hedging by Putting on a Fence</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="hedging-with-options.html"><a href="hedging-with-options.html#a-note-on-margin"><i class="fa fa-check"></i><b>8.2.1</b> A Note on Margin</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="hedging-with-options.html"><a href="hedging-with-options.html#wrapping-up"><i class="fa fa-check"></i><b>8.3</b> Wrapping Up</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="prices-over-space-and-time.html"><a href="prices-over-space-and-time.html"><i class="fa fa-check"></i><b>9</b> Prices Over Space and Time</a>
 <ul>
@@ -533,9 +536,15 @@ div.csl-indent {
 <p><img src="assets/Options4-spotfence.png" /></p>
 <p>The essence of this strategy is that you are giving up some upside potential to finance your expense in limiting downside risk. The figure below gives a zoomed in view of the net position after putting on the fence. The first kink in the black line is at the strike of the long put, 425. The second kink in the black line is the strike of the short call, 475.</p>
 <p><img src="assets/Options4-Netspotfence.png" /></p>
+<div id="a-note-on-margin" class="section level3" number="8.2.1">
+<h3><span class="header-section-number">8.2.1</span> A Note on Margin</h3>
+<p>When putting on a fence, you have to keep in mind that your short call position will require margin. If the price goes up, your short call position will be losing money. Maintaining the position open will require posting additional margin. To employ this strategy, you have to be ready to lose the short call position, or have an agreement set up with a lender to post margin in the event the price goes up enough to wipe out your posted margin.</p>
+<p>The long put position is fully paid up front, so that position does not require margin posted to the account. As long as you have enough money in your brokerage account to buy the option + fees, you can get into the long put position.</p>
 </div>
-<div id="comparing-crop-insurance-to-a-put-option" class="section level2" number="8.3">
-<h2><span class="header-section-number">8.3</span> Comparing Crop Insurance to a Put Option</h2>
+</div>
+<div id="wrapping-up" class="section level2" number="8.3">
+<h2><span class="header-section-number">8.3</span> Wrapping Up</h2>
+<p>In this chapter we learned how options can be used to hedge spot positions in commodity markets. Downside risk can be protected with put options, but this comes at significant cost in premium paid, especially for options that have expirations longer than a week or two out.</p>
 
 </div>
 </div>

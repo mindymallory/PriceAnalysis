@@ -48,4 +48,12 @@ The essence of this strategy is that you are giving up some upside potential to 
 
 ![](assets/Options4-Netspotfence.png)
 
-## Comparing Crop Insurance to a Put Option
+### A Note on Margin
+
+When putting on a fence, you have to keep in mind that your short call position will require margin. If the price goes up, your short call position will be losing money. Maintaining the position open will require posting additional margin. To employ this strategy, you have to be ready to lose the short call position, or have an agreement set up with a lender to post margin in the event the price goes up enough to wipe out your posted margin.
+
+The long put position is fully paid up front, so that position does not require margin posted to the account. As long as you have enough money in your brokerage account to buy the option + fees, you can get into the long put position.
+
+## Wrapping Up
+
+In this chapter we learned how options can be used to hedge spot positions in commodity markets. Downside risk can be protected with put options, but this comes at significant cost in premium paid, especially for options that have expirations longer than a week or two out.
