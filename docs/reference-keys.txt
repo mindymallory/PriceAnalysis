@@ -79,7 +79,6 @@ strangle
 iron-condor-spread
 butterfly-spread
 hedging-with-options
-hedging-a-speculative-outright-futures-position
 farmer-hedging-price-risk-on-production-with-a-put-option
 farmer-hedging-by-putting-on-a-fence
 comparing-crop-insurance-to-a-put-option

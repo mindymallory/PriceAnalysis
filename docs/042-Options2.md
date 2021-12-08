@@ -217,7 +217,7 @@ Let's discuss the delta neutral concept more fully. Recall that the $\Delta$ (de
 
 **Example**
 
-Suppose the price of the nearby corn futures contract is 450 cents. A trader might sell 100 the 450 strike call options that is trading for 11 cents. The trader is hoping to profit from theta decay, as the price of the option decreases over time. They do not want exposure to the changing price of the futures contract, however.
+Suppose the price of the nearby corn futures contract is 450 cents. A trader might sell 100 the 450 strike call options that are trading for 11 cents. The trader is hoping to profit from theta decay, as the price of the option decreases over time. They do not want exposure to the changing price of the futures contract, however.
 
 1.  How many futures contracts should they buy/sell to make their position delta neutral?
 
@@ -227,7 +227,7 @@ Suppose the price of the nearby corn futures contract is 450 cents. A trader mig
 
 Since the $\Delta$ of the 450 strike option is 0.5 that means that the price of the option increases (decreases) by .5 times the futures price increase (decrease). Another way to think about it is selling the 100 of the 450 strike call options is like being short 50 of the futures; with a delta of .5 every 1 cent change in the underlying results in a .5 cent change in the option. So, if the trader does not want price exposure, they can **buy** 50 futures contracts at the same time they **sell** the call options. Now, for small changes in the futures price around 450, they are fully hedged.
 
-As an example consider what happens to their delta-hedged position for a modest price increase of 2 cents in the futures contract from 450 to 452. This will imply the call option increases to 12.18 cents, all else being equal. Walking through the profit an loss calculations in this case, we see the trader loses \$600 from this price movement. Recall, they are short the premium of \$55,000 that they are hoping to pocket as time eats away at the premium.
+As an example consider what happens to their delta-hedged position for a modest price increase of 2 cents in the futures contract from 450 to 452. This will imply the call option increases to 12.18 cents, all else being equal. Walking through the profit an loss calculations in this case, we see the trader loses \$600 from this price movement. Recall, they are short the premium of \$55,000 that they are hoping to pocket as time eats away at the premium. They do experience a loss from this, but it will likely be outweighed by the premium decay if the price does not continue to rise too fast.
 
 +---------------------+------------------------------+----------------------------------+
 |                     | Short Calls                  | Long Futures                     |
@@ -265,7 +265,7 @@ As an example consider what happens to their delta-hedged position for a modest 
 
 **Answer**:
 
-To recap, our trader is short 100 of the 450 call options and bought 50 futures contracts against it when the futures price was 450 to get their position delta neutral. Then the price of the futures contract went to 475 between the close of the day session and open of the night session, so they could not adjust their hedge gradually. The price 'jumped' to 475. That means that the option position now has a delta of -.85\*100 (negative because our trader is short the option) and only has +1\*50 delta from the long futures position (the outright futures position always had a delta of 1). To get delta neutral the trader needs to buy an additional 35 futures contracts to get the delta of their futures position to +1\*.85.
+To recap, our trader is short 100 of the 450 call options and bought 50 futures contracts against it when the futures price was 450 to get their position delta neutral. Then the price of the futures contract went to 475 between the close of the day session and open of the night session, so they could not adjust their hedge gradually. The price 'jumped' to 475. That means that the option position now has a delta of -.85\*100 (negative because our trader is short the option) and only has +1\*50 delta from the long futures position (the outright futures position always had a delta of 1). To get delta neutral the trader needs to buy an additional 35 futures contracts to get the delta of their futures position to +1\*.85, but doing so does not erase the loss they experienced from the rise in price from 450 to 475, it just gets them delta-hedged against small price movements going forward.
 
 ### Why is delta-hedging not fool-proof?
 

@@ -15,6 +15,8 @@ library(lubridate)
 # Color Schemes:
 
 purduegold <- '#CEB888'
+
+
 ```
 
 # This file creates assets for my price analysis book. Code can be run to update figures and tables in the book. Assets are located in the `/assets` subdirectory. 
@@ -151,7 +153,7 @@ ggsave(filename = "Options1-optionintrinsic.png")
 
 ```
 
-# Figures for "042-Options2.RMD"
+# Figures for `042-Options2.RMD`
 
 ```{r}
 library(gridExtra)
@@ -204,6 +206,129 @@ prices %>% ggplot(aes(x = price, y = callpayoffs)) +
 ggsave(filename = "Options2-deltahedge.png")
 ```
 
+
+# Figures for `044-Options4.Rmd`
+
+```{r, fig.width= 6, fig.hight = 4}
+prices <- data.frame(price = 0:500)
+strike = 450
+strike2 = 425
+premc = 0
+premp = 17
+premp2 = 7.85
+c <- map(prices$price, BS_EC, T = 0.33, K = strike, r = 0.05, sigma = 0.2) %>% bind_rows()
+p <- map(prices$price, BS_EP, T = 0.33, K = strike, r = 0.05, sigma = 0.2) %>% bind_rows()
+p2 <- map(prices$price, BS_EP, T = 0.33, K = strike2, r = 0.05, sigma = 0.2) %>% bind_rows()
+
+prices <- prices %>% 
+  mutate(callpayoffs = pmax(price - strike, 0) - premc) %>% 
+  mutate(putpayoffs = pmax(strike - price, 0) - premp) %>% 
+  mutate(putpayoffs2 = pmax(strike2 - price, 0) - premp2) %>% 
+  mutate(callPrice = c$price) %>% 
+  mutate(putPrice = p$price) %>% 
+  mutate(putPrice2 = p2$price)
+
+prices %>% ggplot(aes(x = price, y = price)) + 
+  geom_line(size = 1.2, color = purduegold) +
+  theme_bw() +
+  labs(x = "Price of Corn", y = "Revanue, $/bu", title = "Farmer Spot Sale per Bushel Revenue")
+ggsave(filename = "Options4-spot.png")
+
+prices %>% ggplot(aes(x = price, y = putpayoffs)) + 
+  geom_line(size = 1, color = purduegold) +
+  geom_line(size = 1., aes(x = price, y = price), color = purduegold) +
+  geom_abline(intercept=0, slope= 0, size = .25) +
+  theme_bw() +
+  labs(x = "Price of Corn", y = "Revanue, $/bu", title = "Farmer Spot Sale and Long Put Revenue per Bushel")
+ggsave(filename = "Options4-spotput.png")
+
+prices %>% ggplot(aes(x = price, y = putpayoffs)) + 
+  geom_line(size = 1, color = purduegold) +
+  geom_line(size = 1., aes(x = price, y = price), color = purduegold) +
+  geom_line(size = 1, aes(x = price, y = price + putpayoffs)) +
+  geom_abline(intercept=0, slope= 0, size = .25) +
+  theme_bw() +
+  labs(x = "Price of Corn", y = "Revanue, $/bu", title = "Net Farmer Spot Sale and Long Put Revenue per Bushel")
+ggsave(filename = "Options4-spotputcomb.png")
+
+prices %>% ggplot(aes(x = price, y = putpayoffs)) + 
+  geom_line(size = 1, color = purduegold) +
+  geom_line(size = 1., aes(x = price, y = price), color = purduegold) +
+  geom_line(size = 1, aes(x = price, y = price + putpayoffs)) +
+  geom_abline(intercept=0, slope= 0, size = .25) +
+  theme_bw() +
+  lims(x = c(400, 500), y = c(400, 500)) +
+  labs(x = "Price of Corn", y = "Revanue, $/bu", title = "Farmer Spot Sale and Long Put Revenue per Bushel")
+ggsave(filename = "Options4-spotputcombzoom.png")
+
+prices %>% ggplot(aes(x = price, y = putpayoffs)) + 
+  geom_line(size = 1, color = purduegold) +
+  geom_line(size = 1., aes(x = price, y = price), color = purduegold) +
+  geom_line(size = 1, aes(x = price, y = price + putpayoffs)) +
+  geom_line(size = 1, aes(x = price, y = putpayoffs2), linetype = "dashed", color = purduegold) +
+  geom_line(size = 1, aes(x = price, y = price + putpayoffs2), linetype = "dashed") +
+  geom_abline(intercept=0, slope= 0, size = .25) +
+  theme_bw() +
+  #lims(x = c(400, 500), y = c(400, 500)) +
+  labs(x = "Price of Corn", y = "Revanue, $/bu", title = "Farmer Spot Sale and Long Put Revenue per Bushel")
+ggsave(filename = "Options4-spotputcombzoomchoice.png")
+```
+
+```{r, fig.width= 6, fig.hight = 8}
+prices <- data.frame(price = 0:550)
+strike = 450
+strike2 = 425
+strike3 = 475
+premc = 0
+premp = 17
+premp2 = 7.85
+premp3 = 13.5
+c <- map(prices$price, BS_EC, T = 0.33, K = strike, r = 0.05, sigma = 0.2) %>% bind_rows()
+p <- map(prices$price, BS_EP, T = 0.33, K = strike, r = 0.05, sigma = 0.2) %>% bind_rows()
+p2 <- map(prices$price, BS_EP, T = 0.33, K = strike2, r = 0.05, sigma = 0.2) %>% bind_rows()
+c3 <- map(prices$price, BS_EC, T = 0.33, K = strike3, r = 0.05, sigma = 0.2) %>% bind_rows()
+
+prices <- prices %>% 
+  mutate(callpayoffs = pmax(price - strike, 0) - premc) %>% 
+  mutate(putpayoffs = pmax(strike - price, 0) - premp) %>% 
+  mutate(putpayoffs2 = pmax(strike2 - price, 0) - premp2) %>% 
+  mutate(callpayoffs3 = pmax(price - strike3, 0) - premp3) %>% 
+  mutate(callPrice = c$price) %>% 
+  mutate(putPrice = p$price) %>% 
+  mutate(putPrice2 = p2$price) %>% 
+  mutate(callPrice3 = c3$price)
+
+
+
+prices %>% ggplot(aes(x = price, y = putpayoffs2)) + 
+  geom_line(size = 1, color = purduegold) +
+  annotate("segment", x = 100, xend = 100, y = 500, yend = 320, colour = "black", size = .5, arrow = arrow()) +
+  annotate("text", x = 105, y = 525, label = "2. Long 425 Put, 7.85 cent prem") +
+  geom_line(size = 1., aes(x = price, y = price), color = purduegold) +
+  annotate("segment", x = 380, xend = 370, y = 210, yend = 360, colour = "black", size = .5, arrow = arrow()) +
+  annotate("text", x = 380, y = 200, label = "1. Naturally Long Spot") +
+  geom_line(size = 1., aes(x = price, y = -callpayoffs3), color = purduegold) +
+  annotate("segment", x = 215, xend = 295, y = -60, yend = 5, colour = "black", size = .5, arrow = arrow()) +
+  annotate("text", x = 200, y = -75, label = "3. Short 475 Call, 13.5 cent prem") +
+  geom_line(aes(x = price, y = putpayoffs2 + price - callpayoffs3)) +
+  annotate("segment", x = 500, xend = 510, y = 320, yend = 470, colour = "black", size = .5, arrow = arrow()) +
+  annotate("text", x = 500, y = 300, label = "4. Net Position") +
+  geom_abline(intercept=0, slope= 0, size = .25) +
+  theme_bw() +
+  labs(x = "", y = "", title = "Farmer Spot Sale and Fence")
+ggsave(filename = "Options4-spotfence.png")
+```
+
+```{r, fig.width= 6, fig.hight = 4}
+prices %>% ggplot(aes(x = price, y = putpayoffs2 + price - callpayoffs3)) + 
+  geom_line(size = 1) +
+  geom_abline(intercept=0, slope= 0, size = .25) +
+  theme_bw() +
+  lims(x = c(350, 550), y = c(425, 500)) +
+  labs(x = "", y = "", title = "Net Farmer Spot Sale and Fence")
+ggsave(filename = "Options4-Netspotfence.png")
+
+```
 
 # Figures for "PrimerforGrain.rmd"
 
