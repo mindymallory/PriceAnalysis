@@ -27,7 +27,7 @@ Next, in table 1, we present the top producers of corn in 2017.
 
 <div data-pagedtable="false">
   <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["X"],"name":[1],"type":["int"],"align":["right"]},{"label":["Country_Name"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Production"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"1","2":"United States","3":"360252"},{"1":"2","2":"China","3":"260670"},{"1":"3","2":"Brazil","3":"109000"},{"1":"4","2":"European Union","3":"63700"},{"1":"5","2":"Argentina","3":"47500"},{"1":"6","2":"India","3":"30200"},{"1":"7","2":"Ukraine","3":"29500"},{"1":"8","2":"Mexico","3":"27800"},{"1":"9","2":"South Africa","3":"17000"},{"1":"10","2":"Russia","3":"13872"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["X"],"name":[1],"type":["int"],"align":["right"]},{"label":["Country_Name"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Production"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"1","2":"United States","3":"358447"},{"1":"2","2":"China","3":"260670"},{"1":"3","2":"Brazil","3":"87000"},{"1":"4","2":"European Union","3":"67092"},{"1":"5","2":"Argentina","3":"50500"},{"1":"6","2":"India","3":"31510"},{"1":"7","2":"Ukraine","3":"30297"},{"1":"8","2":"Mexico","3":"27346"},{"1":"9","2":"South Africa","3":"16900"},{"1":"10","2":"Russia","3":"13872"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 Table 1: Top 10 World Producers of Corn, 2020
@@ -52,7 +52,7 @@ Table 2 shows the top ten producers of soybeans in the World. Here we see that P
 
 <div data-pagedtable="false">
   <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["X"],"name":[1],"type":["int"],"align":["right"]},{"label":["Country_Name"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Production"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"1","2":"Brazil","3":"134000"},{"1":"2","2":"United States","3":"112549"},{"1":"3","2":"Argentina","3":"47500"},{"1":"4","2":"China","3":"19600"},{"1":"5","2":"India","3":"10700"},{"1":"6","2":"Paraguay","3":"10200"},{"1":"7","2":"Canada","3":"6350"},{"1":"8","2":"Russia","3":"4307"},{"1":"9","2":"Ukraine","3":"3100"},{"1":"10","2":"Bolivia","3":"2850"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["X"],"name":[1],"type":["int"],"align":["right"]},{"label":["Country_Name"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Production"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"1","2":"Brazil","3":"138000"},{"1":"2","2":"United States","3":"114749"},{"1":"3","2":"Argentina","3":"46200"},{"1":"4","2":"China","3":"19602"},{"1":"5","2":"India","3":"10450"},{"1":"6","2":"Paraguay","3":"9900"},{"1":"7","2":"Canada","3":"6359"},{"1":"8","2":"Russia","3":"4307"},{"1":"9","2":"Bolivia","3":"3000"},{"1":"10","2":"Ukraine","3":"3000"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 Table 2: Top 10 World Producers of Soybeans, 2020

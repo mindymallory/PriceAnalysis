@@ -581,7 +581,8 @@ data_xl <- read_excel(tmp1, sheet = "tab3",
 
 # Make tidy getting ready for ggplot
 data_xl$Prices <- as.numeric(data_xl$Prices)
-data_xl <- data_xl[1:39,]  # Increase this by one to update. Have to cut off junk at bottom
+data_xl <- data_xl[1:40,]  # Increase this by one to update. Have to cut off junk at bottom
+data_xl$MktYear <- str_sub(data_xl$MktYear,1,nchar(data_xl$MktYear)-3) 
 data_xl$MktYear <- as.numeric(data_xl$MktYear)
 data_tidy <- data_xl %>% 
   pivot_longer(c(-MktYear), names_to = "UseCategory", values_to = "Value")
@@ -789,7 +790,7 @@ ggsave(filename = "PricesSpaceTime-pricesdecreasing-hyp.png")
 
 # Figures for `08-ForecastingProduction.Rmd`
 
-```{r, fig.width = 6, fig.height= 5}
+```{r, fig.width = 8, fig.height= 5}
 nassqs_auth(key)
 
 params1 <- list(commodity_desc = c("CORN", "SOYBEANS", "WHEAT"), 
@@ -831,7 +832,9 @@ corn2 <- data1 %>%
 corn2
 
 ggsave(filename = "ForecastingProduction-PlantedAcres.png")
+```
 
+```{r, fig.width = 6, fig.height= 5}
 
 corn <- read.csv("zcz17.csv") %>% select( timestamp, close)
 soybeans <- read.csv("zsx17.csv") %>% select( timestamp, close)
@@ -1077,7 +1080,7 @@ Now lets transform the data from 'wide' formet to 'long' format so we can make n
 data_tidy <- data_xl %>% 
   select(c(-MktYear, -month, -year)) %>%
   pivot_longer(c(-date, -Quarter), names_to = "UseCategory", values_to = "Value")
-data_tidy
+data_tidy %>% tail()
 ```
 
 Now let's plot the corn dissapearance
@@ -1188,8 +1191,8 @@ Ethanol
 
 ```{r, fig.height= 5}
 
-ethanol <- read_excel("Table_10.3_Fuel_Ethanol_Overview.xlsx", sheet = 2, skip = 1) 
-
+ethanol <- read_excel("Table_10.3_Fuel_Ethanol_Overview1.xlsx", sheet = 2, skip = 11) 
+ethanol <- ethanol[, c(1, 6,12)]
 colnames(ethanol) <- c("Year", "Production", "Consumption" )
 
 ethanol %>% pivot_longer(cols = -Year, names_to = "Series", values_to = "MillionGallons") %>% 
@@ -1476,7 +1479,7 @@ data1 <- data1 %>% mutate(PricesRecieved2 = 10*PricesRecieved)
 
 ```{r}
 
-data1 %>% pivot_longer(cols = c(StockstoUse, PricesRecieved2), 
+ppp<- data1 %>% pivot_longer(cols = c(StockstoUse, PricesRecieved2), 
                        names_to = "Series", 
                        values_to = "value") %>%
   ggplot(aes(x = date, y = value, color = Series)) + 
@@ -1492,8 +1495,7 @@ data1 %>% pivot_longer(cols = c(StockstoUse, PricesRecieved2),
        y = "$/bu and Stocks/TotalUse*100",
        caption = "1975-2020 Marketing Years (2020 Estimated as of 2021-03-23)")
 
-ggsave(filename = "EndingStocksand-StocksUsePrices.png
-       " , width= 6, height = 4)
+ggsave(ppp, filename = "EndingStocksand-StocksUsePrices.png" , width= 6, height = 4)
 
 ```
 
