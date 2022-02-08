@@ -577,8 +577,7 @@ div.csl-indent {
 <li>Calculate residuals, <span class="math inline">\(\epsilon_t\)</span></li>
 <li>Calculate Sum of Squared Residuals</li>
 <li>Use ‘Solver’ to minimize the sum of squared residuals by choosing <span class="math inline">\(\theta_i\)</span></li>
-<li>Regress returns on residuals
-6 Conduct hypothesis testing</li>
+<li>Regress returns on residuals 6 Conduct hypothesis testing</li>
 </ol>
 </blockquote>
 <p>Keep in mind, this process in uneccessarily complicated. If you get seriously involved in generating forecasts, you will invest the time to learn a common statistical package; however, hopefully this process helps to build some intuition about how these models are estimated by the more powerful statistical software packages.</p>
@@ -587,7 +586,7 @@ div.csl-indent {
 <div id="lag-length" class="section level2" number="23.4">
 <h2><span class="header-section-number">23.4</span> Lag Length</h2>
 <p>You may be wondering at this point if it would be useful to try including more lags in the regression equation; perhaps we will find longer lag lengths that seem to matter in forecasting corn price returns. Usually, if lags have predictive power, the strongest effects are in the nearest lags. So adding lags to the <span class="math inline">\(AR(.)\)</span> model is unlikely to help.</p>
-<p>Still, as a practical matter, lag length must be selected before estimating an <span class="math inline">\(AR(p)\)</span> model. If we were using a more advanced statistical package, we could use Information Criterion<a href="#fn15" class="footnote-ref" id="fnref15"><sup>15</sup></a> to select the optimal lag length, but like unit root tests, it is not convenient to implement in Excel so we will not cover Information Criterion.</p>
+<p>Still, as a practical matter, lag length must be selected before estimating an <span class="math inline">\(AR(p)\)</span> model. If we were using a more advanced statistical package, we could use Information Criterion<a href="#fn14" class="footnote-ref" id="fnref14"><sup>14</sup></a> to select the optimal lag length, but like unit root tests, it is not convenient to implement in Excel so we will not cover Information Criterion.</p>
 <p>The intuition of selecting a lag length by Information Criterion is simple enough, though. Basically, a model with a large number of lags is estimated. The longest lags are then sequentially removed one by one, until explanatory power is detrimentally affected by removing a lag. That determines lag length.</p>
 <p>As a rough substitute, one could estimate an <span class="math inline">\(AR(p)\)</span> model for large <span class="math inline">\(p\)</span>. Then sequentially remove the longest lag until the likelihood decreases; or until the F-statistic is dramatically reduced by eliminating lagged variables. In practice, we will be lucky to find any statistically significant coefficients on the lags, and the nearest lags will be most likely to be significant, so a small number of lags will usually be sufficient.</p>
 </div>
@@ -626,8 +625,8 @@ div.csl-indent {
 </div>
 <div class="footnotes">
 <hr />
-<ol start="15">
-<li id="fn15"><p>Wikipedia has good articles for <a href="https://en.wikipedia.org/wiki/Akaike_information_criterion">AIC</a> and <a href="https://en.wikipedia.org/wiki/Bayesian_information_criterion">BIC</a><a href="appendix-single-market-models-arima.html#fnref15" class="footnote-back">↩︎</a></p></li>
+<ol start="14">
+<li id="fn14"><p>Wikipedia has good articles for <a href="https://en.wikipedia.org/wiki/Akaike_information_criterion">AIC</a> and <a href="https://en.wikipedia.org/wiki/Bayesian_information_criterion">BIC</a><a href="appendix-single-market-models-arima.html#fnref14" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

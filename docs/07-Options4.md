@@ -9,7 +9,7 @@
 
 **Check Your Understanding**
 
--   Why does a long put option protect from downside risk? 
+-   Why does a long put option protect from downside risk?
 -   What are the options trades required to lock in a price range?
 -   Which of the strategies described in this chapter require one to maintain margin?
 

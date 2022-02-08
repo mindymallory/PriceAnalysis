@@ -514,7 +514,7 @@ div.csl-indent {
 <div id="black-scholes-option-pricing-model" class="section level2" number="6.1">
 <h2><span class="header-section-number">6.1</span> Black-Scholes Option Pricing Model</h2>
 <p>The Black-Scholes option pricing model provides the price of a European call and the price of a European put on a non-dividend paying stock. The options we generally are focused on in the context of this book, namely options on commodity futures on CME Group exchanges, are American options. Since American options have all the rights of a European option plus the right to exercise at any time, an American option cannot be less than the price of the otherwise identical European option. Nevertheless, this distinction is often small or zero, so the intuition we glean from the Black-Scholes model works for the American options we focus on in this book.</p>
-<p>In this book we present the Black-Scholes option pricing model without proof. Since we only provide an introduction to the concepts of option markets a proof is beyond the scope of this book. However, there are many well explained and free resources on the internet. The original papers by Fischer Black, Myron Scholes and Robert Merton were published in 1973<span class="citation">(<a href="#ref-black1973" role="doc-biblioref"><strong>black1973?</strong></a>; <a href="#ref-merton1973" role="doc-biblioref"><strong>merton1973?</strong></a>)</span>. The classic text by John Hull also provides a detailed explanation <span class="citation">(<a href="#ref-hull2017fundamentals" role="doc-biblioref"><strong>hull2017fundamentals?</strong></a>)</span>.</p>
+<p>In this book we present the Black-Scholes option pricing model without proof. Since we only provide an introduction to the concepts of option markets a proof is beyond the scope of this book. However, there are many well explained and free resources on the internet. The original papers by Fischer Black, Myron Scholes and Robert Merton were published in 1973<span class="citation">(<a href="#ref-black_pricing_1973" role="doc-biblioref">Black and Scholes 1973</a>; <a href="#ref-merton_theory_1973" role="doc-biblioref">Merton 1973</a>)</span>. The classic text by John Hull also provides a detailed explanation <span class="citation">(<a href="#ref-hull2017" role="doc-biblioref"><strong>hull2017?</strong></a>)</span>.</p>
 <p>The most basic form of the Black-Scholes model is for options on non-dividend paying stock. We will present this model, then we will show the slight modification required for options on futures contracts.</p>
 <div id="assumptions" class="section level3" number="6.1.1">
 <h3><span class="header-section-number">6.1.1</span> Assumptions</h3>
@@ -555,7 +555,7 @@ P = N(-d_{2}) K e^{-rt} - N(-d_{1}) S_{t}
 </div>
 <div id="option-pricing-formula-for-futures-contracts" class="section level3" number="6.1.3">
 <h3><span class="header-section-number">6.1.3</span> Option Pricing Formula for Futures Contracts</h3>
-<p>Black <span class="citation">(<a href="#ref-black1976" role="doc-biblioref"><strong>black1976?</strong></a>)</span> derives a version of the Black-Scholes model that is appropriate for pricing futures contracts. The key difference between the two option pricing models is that stock trading requires that the full value of the stock be spent upfront. Thus, the <span class="math inline">\(S_{t}\)</span> in the Black-Scholes equations above is referencing expenditures at the current time, and do not need to be discounted. Futures contracts differ in that entering into a futures contract does not require expenditure upfront (besides posting margin). Therefore, the price of the underlying should be discounted, bringing the future value of the expenditure related to the futures contract to the present. The Black equations for pricing call and put options on commodity futures are therefore as follows:</p>
+<p>Black <span class="citation">(<a href="#ref-black_pricing_1976" role="doc-biblioref">1976</a>)</span> derives a version of the Black-Scholes model that is appropriate for pricing futures contracts. The key difference between the two option pricing models is that stock trading requires that the full value of the stock be spent upfront. Thus, the <span class="math inline">\(S_{t}\)</span> in the Black-Scholes equations above is referencing expenditures at the current time, and do not need to be discounted. Futures contracts differ in that entering into a futures contract does not require expenditure upfront (besides posting margin). Therefore, the price of the underlying should be discounted, bringing the future value of the expenditure related to the futures contract to the present. The Black equations for pricing call and put options on commodity futures are therefore as follows:</p>
 <p><span class="math display">\[
 C = F_{t} e^{-rt} N(d_{1}) - K e^{-rt} N(d_{2})
 \]</span></p>
@@ -830,6 +830,18 @@ P = N(-d_{2}) K e^{-rt} - N(-d_{1}) F_{t} e^{-rt}
 <p>These stories have a common theme. A fund engages in a strategy of selling volatility (selling calls, selling puts, selling vix futures, etc) with high leverage. The high leverage and nature of volatility premium mean these funds make spectacular returns for as long as there is not a ‘volatility event.’ One day, the volatility event arrives and anyone with a highly leveraged short volatility position is highly likely to blow up (total loss of trading capital).</p>
 
 </div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-black_pricing_1976" class="csl-entry">
+Black, Fischer. 1976. <span>“The Pricing of Commodity Contracts.”</span> <em>Journal of Financial Economics</em> 3 (1): 167–79. <a href="https://doi.org/10.1016/0304-405X(76)90024-6">https://doi.org/10.1016/0304-405X(76)90024-6</a>.
+</div>
+<div id="ref-black_pricing_1973" class="csl-entry">
+Black, Fischer, and Myron Scholes. 1973. <span>“The Pricing of Options and Corporate Liabilities.”</span> <em>Journal of Political Economy</em> 81 (3): 637–54. <a href="https://doi.org/10.1086/260062">https://doi.org/10.1086/260062</a>.
+</div>
+<div id="ref-merton_theory_1973" class="csl-entry">
+Merton, Robert C. 1973. <span>“Theory of Rational Option Pricing.”</span> <em>The Bell Journal of Economics and Management Science</em> 4 (1): 141. <a href="https://doi.org/10.2307/3003143">https://doi.org/10.2307/3003143</a>.
 </div>
 </div>
             </section>

@@ -6,18 +6,23 @@ This chapter serves as an introduction to real-time and historical data sources,
 
 The best way to learn commodity price analysis is to listen to the professionals who provide commentary on the markets on a regular basis. Land grant universities located in major commodity producing states all have components of their outreach programs dedicated to market commentary. The University of Illinois' web extension program, FARMDOC, is particularly good. Also, public radio in major commodity producing areas has excellent coverage. Champaign-Urbana's WILL, and Iowa Public Televisions' Market to Market are very good. There are *many* other great sources providing regular commentary, but this will get the reader started.
 
++--------------------------+----------------------------------------------------+-----------------------------------------------------------------------+
 | Outlet                   | Description                                        | Link                                                                  |
-|:-------------------------|:---------------------------------------------------|:----------------------------------------------------------------------|
++:=========================+:===================================================+:======================================================================+
 | Farmdoc Daily            | Extension web presence by the department of ACE    | [farmdocdaily.illinois.edu](http://farmdocdaily.illinois.edu)         |
++--------------------------+----------------------------------------------------+-----------------------------------------------------------------------+
 | WILL Agriculture         | WILL and the University of Illinois Extension      | [will.illinois.edu/agriculture](http://will.illinois.edu/agriculture) |
++--------------------------+----------------------------------------------------+-----------------------------------------------------------------------+
 | Market to Market         | Agricultural programming by Iowa Public Television | [www.iptv.org/mtom/](http://www.iptv.org/mtom/)                       |
++--------------------------+----------------------------------------------------+-----------------------------------------------------------------------+
 | Center for Commercial Ag | Purdue University Ag Econ                          | <https://ag.purdue.edu/commercialag/home/>                            |
++--------------------------+----------------------------------------------------+-----------------------------------------------------------------------+
 
 : Table 1. Resources for Commodity Market Commentary
 
 ## Futures Price Quotes
 
-Futures contracts (contracts to buy/sell a specific quantity of, say, corn at a specific price on a specific date in the future) can be distinguished from forward contracts in that quantity and quality are standardized. This facilitates the ability of futures contracts to be traded on an exchange. Whereas a forward contract has specific counter-parties (buyers and sellers), with futures contracts the exchange becomes the seller to every buyer and the buyer to every seller. If enough market participants are present it is very easy to get into and out of these futures contracts because you do not have to come to an agreement with the original buyer/seller. You simply take an offsetting position (sell if you originally bought and buy if you originally sold) at the currently prevailing price. The exchange takes your contractual obligation off the books and you just pay (or receive) the difference in price between when you bought and when you sold. Fully understanding the function of futures markets is well beyond the scope of this book, but the interested reader is encouraged to refer to Kub [-@kub2012Mastering] for a practical introduction and Hull [@hull1991introduction] for a more technical approach.
+Futures contracts (contracts to buy/sell a specific quantity of, say, corn at a specific price on a specific date in the future) can be distinguished from forward contracts in that quantity and quality are standardized. This facilitates the ability of futures contracts to be traded on an exchange. Whereas a forward contract has specific counter-parties (buyers and sellers), with futures contracts the exchange becomes the seller to every buyer and the buyer to every seller. If enough market participants are present it is very easy to get into and out of these futures contracts because you do not have to come to an agreement with the original buyer/seller. You simply take an offsetting position (sell if you originally bought and buy if you originally sold) at the currently prevailing price. The exchange takes your contractual obligation off the books and you just pay (or receive) the difference in price between when you bought and when you sold. Fully understanding the function of futures markets is well beyond the scope of this book, but the interested reader is encouraged to refer to Kub [@kub_mastering_2012] for a practical introduction and Hull [@hull_fundamentals_2017] for a more technical approach.
 
 ### Futures Data Sources
 
@@ -47,11 +52,15 @@ Contracts for several different expiry dates trade at the same time. There is a 
 
 Table 3 provides some links to spread charts for commodity spreads we will cover in this class.
 
++---------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Spread        | Link                                                                                                                                                                                     |
-|:--------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
++:==============+:=========================================================================================================================================================================================+
 | Soybean Crush | [Barchart Spread Chart](https://www.barchart.com/futures/quotes/CSZ18/interactive-chart)                                                                                                 |
++---------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Cattle Crush  | [ISU Spread Calculation](http://www2.econ.iastate.edu/estimated-returns/Finishing%20Steer%20Calves%20Chart.pdf) [ISU Livestock Returns](http://www2.econ.iastate.edu/estimated-returns/) |
++---------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Corn Crush    | [ISU Ethanol Grind Margin](https://www.extension.iastate.edu/agdm/energy/html/d1-10.html) (Download Ethanol Profitability spreadsheet. Look at Grind Margin chart)                       |
++---------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 : Table 3. Commodity Spreads
 
