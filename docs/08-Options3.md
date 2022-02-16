@@ -40,6 +40,20 @@ Area Revenue Protection, similar to Yield Protection, calculates the revenue gua
 
 Revenue protection with Harvest Price Exclusion is the same as Revenue Protection, except the policy does guarantee based on the Harvest Price, Revenue is calculated based on the Projected price times APH.
 
-## Marketing Strategies Paired with Crop Insurance Protection
+## Pre-Harvest Marketing Strategies Paired with Crop Insurance Protection
 
-Now we turn our attention to marketing strategies that can complement crop insurance, since roughly 90% of U.S. cropland is insured in some way in the Federal Crop Insurance program[@farrin_how_2016].
+Now we turn our attention to marketing strategies that can complement crop insurance, since roughly 90% of U.S. cropland is insured in some way in the Federal Crop Insurance program[@farrin_how_2016]. The rest of this section will consider marketing strategies to lock in a forward price of *insured* bushels. Note that marketing uninsured bushels is very risky in the event of a crop failure. For example, suppose you entered into a forward contract to deliver 1000 bushels of corn at \$5.00 per bushel, but you experienced yield losses so that you only made 500 bushels. You cannot meet your obligation to deliver 1000 bushels. In this case you will have to buy out the contract. The only way your crop will cover the value of the contract is if prices are at least \$5000/500 = \$10 per bushel. If prices are less than that, the value of your crop falls short of the value of the grain you promised to deliver. However, if you have Revenue Protection crop insurance, you are guaranteed coverage percent X APH X max(Base Price, Harvest Price). This revenue guarantee ensures you can at least buy out your forward contract in the event of a crop failure.
+
+Second, from a hedging perspective the marketing decision is trivial if prices fall after the base price is set. You are already have revenue protected at a level of coverage level X APH X Base Price. So if price falls you are already hedged. If you take a bullish or bearish position you are a speculator at that point.
+
+It does become an interesting marketing question in the case where the price rises after the Base Price is set at the first of March. The producer is exposed to price uncertainty to both the upside and downside. However, with revenue protection, revenue is guaranteed at the harvest price unless price falls below the Base price.
+
+Such a scenario is shown in the figure below. Also in this assumption is that the Base Price of \$5.00 is above the BreakEven Price of \$4.90. Then, suppose as of July the December corn futures price is \$5.35, a substantial rise above the Base Price. Should a producer lock in this high price?
+
+![](assets/cropins_ex.png)
+
+To simplify our thought experiment, suppose that from July to October the price might do one of three things, rise to \$5.60, stay flat at \$5.35, or fall to \$5.10. We will examine the following marketing choices: selling futures, or contracting for harvest delivery (we will assume zero basis to keep that part simple). Also, we will examine what happens if you make 100% of your APH, and what happens if you make 80% of your APH. For the sake of example, assume the APH is 200 bushels per acre, and coverage level on Revenue Protection policy is 85%. You can explore the moving parts yourself by going to the Google sheet [here](https://docs.google.com/spreadsheets/d/1rbne8odUljxIuIYP3IRiWyzaQDs83-mjOkuaaDWxb3w/edit?usp=sharing).
+
+<iframe src="https://docs.google.com/spreadsheets/d/1rbne8odUljxIuIYP3IRiWyzaQDs83-mjOkuaaDWxb3w/edit?usp=sharing" title="Marketing with Revenue Protection" width="100%" height="950">
+
+</iframe>

@@ -330,6 +330,41 @@ ggsave(filename = "Options4-Netspotfence.png")
 
 ```
 
+# Figures for "08-Options3.Rmd"
+
+```{r}
+data <- read.csv("cropins_ex - Sheet1.csv") 
+  
+p1 <- data %>% 
+  ggplot(aes(x = index, y = main)) + 
+  geom_line(data = subset(data, !is.na(main)), size = 1) + 
+  geom_line(data = subset(data, !is.na(Up)), aes(x = index, y = Up), color = "green", size = 1) +
+  geom_line(data = subset(data, !is.na(Flat)), aes(x = index, y = Flat), color = "grey", size = 1) +
+  geom_line(data = subset(data, !is.na(Down)), aes(x = index, y = Down), color = "red", size = 1) +
+  geom_line(data = subset(data, !is.na(BreakEven)), aes(x = index, y = BreakEven), color = "black", size = 1, linetype = "dashed") +
+  geom_line(data = subset(data, !is.na(BasePrice)), aes(x = index, y = BasePrice), color = purduegold, size = 1) + 
+  theme_bw() + 
+  scale_x_continuous(breaks = seq(3,10, 1)) +
+  labs(x = "Calendar Month", y = "cents per bushel", title = "Marketing Scenario, Prices Rise Above Breakeven and Base") +
+  geom_vline(xintercept = 7) +
+  annotate("text", x = 7.18, y = 560, label = "July"  ) +
+  annotate("text", x = 8.28, y = 555, label = "Thinking of Locking in High Price"  ) +
+  annotate("text", x = 10.15, y = 560, label = "560" ) +
+  annotate("text", x = 10.15, y = 535, label = "535" ) +
+  annotate("text", x = 10.15, y = 510, label = "510" ) +
+  annotate("text", x = 9.85, y = 500, label = "Base 500") +
+  annotate("text", x = 9.85, y = 490, label = "BreakEven 490") 
+  
+ggsave(p1, filename = "cropins_ex.png", width = 8)
+
+
+
+
+
+
+```
+
+
 # Figures for "PrimerforGrain.rmd"
 
 ```{r}
