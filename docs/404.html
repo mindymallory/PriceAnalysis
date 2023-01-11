@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 6 Advanced Option Topics | Price Analysis: A Fundamental Approach to the Study of Commodity Prices</title>
+  <title>Page not found | Price Analysis: A Fundamental Approach to the Study of Commodity Prices</title>
   <meta name="description" content="This book introduces the basics of fundamental analysis of prices in food commodity markets. Learn how to follow and understand futures markets for commodities like corn, soybeans, wheat, live cattle, feeder cattle, hogs, ethanol, and crude oil. Learn about calendar, wheat, soybean crush, corn crush, and cattle crush spreads. Additionally, learn about which USDA reports are important to markets, when they come out, and why they move prices. Special focus on the WASDE, Grain Stocks, Prospective Plantings, Planted Acres, Crop Production, and Crop Progress and Condition reports." />
   <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 6 Advanced Option Topics | Price Analysis: A Fundamental Approach to the Study of Commodity Prices" />
+  <meta property="og:title" content="Page not found | Price Analysis: A Fundamental Approach to the Study of Commodity Prices" />
   <meta property="og:type" content="book" />
   <meta property="og:image" content="http:mindymallory.github.io/PriceAnalysis//images/cover.png" />
   <meta property="og:description" content="This book introduces the basics of fundamental analysis of prices in food commodity markets. Learn how to follow and understand futures markets for commodities like corn, soybeans, wheat, live cattle, feeder cattle, hogs, ethanol, and crude oil. Learn about calendar, wheat, soybean crush, corn crush, and cattle crush spreads. Additionally, learn about which USDA reports are important to markets, when they come out, and why they move prices. Special focus on the WASDE, Grain Stocks, Prospective Plantings, Planted Acres, Crop Production, and Crop Progress and Condition reports." />
   <meta name="github-repo" content="mindymallory/PriceAnalysis" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 6 Advanced Option Topics | Price Analysis: A Fundamental Approach to the Study of Commodity Prices" />
+  <meta name="twitter:title" content="Page not found | Price Analysis: A Fundamental Approach to the Study of Commodity Prices" />
   
   <meta name="twitter:description" content="This book introduces the basics of fundamental analysis of prices in food commodity markets. Learn how to follow and understand futures markets for commodities like corn, soybeans, wheat, live cattle, feeder cattle, hogs, ethanol, and crude oil. Learn about calendar, wheat, soybean crush, corn crush, and cattle crush spreads. Additionally, learn about which USDA reports are important to markets, when they come out, and why they move prices. Special focus on the WASDE, Grain Stocks, Prospective Plantings, Planted Acres, Crop Production, and Crop Progress and Condition reports." />
   <meta name="twitter:image" content="http:mindymallory.github.io/PriceAnalysis//images/cover.png" />
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="introduction-to-option-contracts.html"/>
-<link rel="next" href="hedging-with-options.html"/>
+
+
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -495,361 +495,19 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="advanced-option-topics" class="section level1 hasAnchor" number="6">
-<h1><span class="header-section-number">Chapter 6</span> Advanced Option Topics<a href="advanced-option-topics.html#advanced-option-topics" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p><strong>Highlights</strong></p>
-<ul>
-<li><p>Black-Scholes and the Black 1976 option pricing models</p></li>
-<li><p>Put-Call Parity and no arbitrage conditions</p></li>
-<li><p>Implied volatility</p></li>
-<li><p>Option Greeks</p></li>
-</ul>
-<p><strong>Check your Understanding</strong></p>
-<ul>
-<li><p>How can you create a synthetic put option?</p></li>
-<li><p>How do time to maturity and volatility impact an option’s gamma?</p></li>
-</ul>
-<p>In this chapter we will cover some more advanced concepts in options markets. First we will learn the Black-Scholes option pricing model. Then we will learn Put-Call Parity; we will discuss implied volatility; then we will learn “The Greeks”, or how option prices are impacted by different market variables. We will learn that the Black-Scholes model is not perfect and hear some of the most important criticisms of the model. Lastly, we will learn the concept of delta hedging and how options positions can be used as a hedging tool in the underlying market.</p>
-<div id="black-scholes-option-pricing-model" class="section level2 hasAnchor" number="6.1">
-<h2><span class="header-section-number">6.1</span> Black-Scholes Option Pricing Model<a href="advanced-option-topics.html#black-scholes-option-pricing-model" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The Black-Scholes option pricing model provides the price of a European call and the price of a European put on a non-dividend paying stock. The options we generally are focused on in the context of this book, namely options on commodity futures on CME Group exchanges, are American options. Since American options have all the rights of a European option plus the right to exercise at any time, an American option cannot be less than the price of the otherwise identical European option. Nevertheless, this distinction is often small or zero, so the intuition we glean from the Black-Scholes model works for the American options we focus on in this book.</p>
-<p>In this book we present the Black-Scholes option pricing model without proof. Since we only provide an introduction to the concepts of option markets a proof is beyond the scope of this book. However, there are many well explained and free resources on the internet. The original papers by Fischer Black, Myron Scholes and Robert Merton were published in 1973<span class="citation">(<a href="#ref-black_pricing_1973" role="doc-biblioref">Black and Scholes 1973</a>; <a href="#ref-merton_theory_1973" role="doc-biblioref">Merton 1973</a>)</span>. The classic text by John Hull also provides a detailed explanation <span class="citation">(<a href="#ref-hull2017" role="doc-biblioref"><strong>hull2017?</strong></a>)</span>.</p>
-<p>The most basic form of the Black-Scholes model is for options on non-dividend paying stock. We will present this model, then we will show the slight modification required for options on futures contracts.</p>
-<div id="assumptions" class="section level3 hasAnchor" number="6.1.1">
-<h3><span class="header-section-number">6.1.1</span> Assumptions<a href="advanced-option-topics.html#assumptions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>First, we need to establish the assumptions required in order for the Black-Scholes model to hold true. <span class="citation">(<a href="#ref-blacksc2020" role="doc-biblioref"><strong>blacksc2020?</strong></a>)</span></p>
-<p><em>Assumptions About Assets</em></p>
-<ul>
-<li><p>There exists a <strong>riskless asset</strong> that returns a constant <strong>risk free rate</strong></p></li>
-<li><p>The stock price exhibits instantaneous returns that are log normal. More formally, the stock price follows a geometric Brownian motion and volatility and drift are constant. Without writing out the mathematical equation for the geometric Brownian motion, the drift term defines how much the stock price appreciates on average.</p></li>
-</ul>
-<p><em>Assumptions about the Market</em></p>
-<ul>
-<li><p>There are no arbitrage opportunities</p></li>
-<li><p>There are no restrictions on borrowing and lending at the risk free rate</p></li>
-<li><p>Market participants can buy or sell unlimited quantities of the stock</p></li>
-<li><p>There are no transactions costs</p></li>
-</ul>
-</div>
-<div id="notation" class="section level3 hasAnchor" number="6.1.2">
-<h3><span class="header-section-number">6.1.2</span> Notation<a href="advanced-option-topics.html#notation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<ul>
-<li><p><span class="math inline">\(C\)</span> = Call Option Price</p></li>
-<li><p><span class="math inline">\(P\)</span> = Put Option Price</p></li>
-<li><p><span class="math inline">\(S\)</span> = Current Stock Price</p></li>
-<li><p><span class="math inline">\(K\)</span> = Strike Price</p></li>
-<li><p><span class="math inline">\(r\)</span> = Risk free rate</p></li>
-<li><p><span class="math inline">\(\sigma\)</span> = Standard deviation of the stock price returns</p></li>
-<li><p><span class="math inline">\(t\)</span> = Time to maturity (in fraction of a year)</p></li>
-<li><p><span class="math inline">\(N\)</span> = Standard normal cumulative distribution function</p></li>
-<li><p><span class="math inline">\(d_{1} = \frac{ln(\frac{S_{t}}{K}) + (r + \frac{\sigma^{2}}{2})t}{\sigma \sqrt{t}}\)</span></p></li>
-<li><p><span class="math inline">\(d_{2} = d_{1} - \sigma \sqrt{t}\)</span></p></li>
-</ul>
-<p>The formula for a call option on a non-dividend paying stock with strike price <span class="math inline">\(K\)</span> that has time to maturity <span class="math inline">\(t\)</span> is:</p>
-<p><span class="math display">\[C = S_{t}N(d_{1}) - K e^{-rt} N(d_{2})\]</span></p>
-<p>The price of a similar put option is:</p>
-<p><span class="math display">\[
-P = N(-d_{2}) K e^{-rt} - N(-d_{1}) S_{t}
-\]</span></p>
-</div>
-<div id="option-pricing-formula-for-futures-contracts" class="section level3 hasAnchor" number="6.1.3">
-<h3><span class="header-section-number">6.1.3</span> Option Pricing Formula for Futures Contracts<a href="advanced-option-topics.html#option-pricing-formula-for-futures-contracts" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Black <span class="citation">(<a href="#ref-black_pricing_1976" role="doc-biblioref">1976</a>)</span> derives a version of the Black-Scholes model that is appropriate for pricing futures contracts. The key difference between the two option pricing models is that stock trading requires that the full value of the stock be spent upfront. Thus, the <span class="math inline">\(S_{t}\)</span> in the Black-Scholes equations above is referencing expenditures at the current time, and do not need to be discounted. Futures contracts differ in that entering into a futures contract does not require expenditure upfront (besides posting margin). Therefore, the price of the underlying should be discounted, bringing the future value of the expenditure related to the futures contract to the present. The Black equations for pricing call and put options on commodity futures are therefore as follows:</p>
-<p><span class="math display">\[
-C = F_{t} e^{-rt} N(d_{1}) - K e^{-rt} N(d_{2})
-\]</span></p>
-<p>and</p>
-<p><span class="math display">\[
-P = N(-d_{2}) K e^{-rt} - N(-d_{1}) F_{t} e^{-rt}
-\]</span></p>
-</div>
-</div>
-<div id="put-call-parity" class="section level2 hasAnchor" number="6.2">
-<h2><span class="header-section-number">6.2</span> Put-Call Parity<a href="advanced-option-topics.html#put-call-parity" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Put and call options of the same strike price and same expiration have to follow a specific relationship. That means that if you know the price of a call option, the price of the put option with the same strike and expiration is determined or there is an arbitrage opportunity.</p>
-<p>To illustrate why this must be true consider the example below in the embedded Google Sheets file. The cells in gold are editable so that you can play around with the put-call parity result. The default values are shown in row 3, replace the default values if the values in gold do not match the defaults. If you would rather work with the full size Google sheet you can find it at <a href="https://docs.google.com/spreadsheets/d/1ivvTGqC9R4L3zkG8c4ApDg8dC1LHj4v_8uLjgiurxX0/edit?usp=sharing">Put-Call Parity Sheet</a>.</p>
-<p>Suppose that the price of the underlying is 470 cents, and a call option with strike price of 450 cents has a premium of 25 cents. In the table we consider underlying price ranges from 400 to 500 cents. Then we calculate the profit at expiration from the call option in the second column of the table. From 400 cents to 450 cents the profit would be -25 cents. Then as the price of the underlying increases from 450 to 500 cents the profit of the call option at expiration increases one for one. Clicking in <code>B7</code> shows the formula for the call option profit at expiration to be <code>=max(0-$B$2, A7-$C$2-$B2</code>. In the plot the call option profit is the ‘hockey stick’ shaped line in black.</p>
-<p>In the third column we have the profit from a short position in the underlying futures contract where the position was initiated at the current price of the underlying (470 cents). Clicking in <code>C7</code> shows the formula for the profit of this position is <code>=$D$2-A7</code>. Being a short position, this position makes money as the price of the underlying falls. This position is shown by the straight black line that crosses the x-axis at 470 in the figure.</p>
-<p>The fourth column shows what your profit at expiration would look like if you bought the call option and also sold the underlying futures for 470. Clicking on <code>D7</code> shows that the formula for this payoff is simply <code>=B7+C7</code>, or the sum of the profit in each position. This profit function is shown in gold.</p>
-<iframe src="https://docs.google.com/spreadsheets/d/1ivvTGqC9R4L3zkG8c4ApDg8dC1LHj4v_8uLjgiurxX0/edit?usp=sharing" title="Put-Call Parity" width="100%" height="950">
-</iframe>
-<p>Notice that the gold line looks exactly like the profit at expiration of a put option with strike equal to 450 cents! This is called a synthetic put position. So, it must be that the put option premium in this example is 5 cents, otherwise you could buy the synthetic and sell the real put or vice versa and make a riskless profit. This relationship between the call and put price is called put-call parity.</p>
-<p>Take a minute and play around with different values of call option premium. For example, try 50, 30, and 10. What is strange about premium = 10 cents?</p>
-<p>As an aside, note that you can create a synthetic call option by buying a put option and buying the underlying.</p>
-</div>
-<div id="implied-volatility" class="section level2 hasAnchor" number="6.3">
-<h2><span class="header-section-number">6.3</span> Implied Volatility<a href="advanced-option-topics.html#implied-volatility" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Notice that of all the variables that go into the option pricing model, the only ones we don’t know beforehand are the option price and <span class="math inline">\(\sigma\)</span> (the standard deviation of returns of the underlying). That means if we plug in all the numbers we know into the option pricing formula and then make a guess, or a good estimate of what <span class="math inline">\(\sigma\)</span> should be the formula will give us an estimate of what the option should be worth as well.</p>
-<p>In practice we usually do the opposite because we can observe the markets where these options are trading and know what prices the option is being bought and sold for at any moment the markets are open. If instead we take these prices that are actually trading in the market and use that in the formula, then we can solve for <span class="math inline">\(\sigma\)</span> and we get a measure of the volatility ‘implied’ by the prices at which the option is currently trading for.</p>
-<p>Implied volatility is an important measure because it tells you how much of a move traders expect the underlying could make. Implied volatility is normalized to units of % per annum so that you might see and implied volatility of 16% which means that option market participants think the underlying could move (in either direction) 16% per year<span class="citation">(<a href="#ref-ganti" role="doc-biblioref"><strong>ganti?</strong></a>)</span>. The implied volatility is always changing though. In fact, that is one criticism of the Black-Scholes model. The model requires the underlying to have constant volatility, which is clearly not the case for any asset.</p>
-<p>In the next sections we will explore how the different variables in the option pricing model affect option prices. We will see that implied volatility has a big impact. High implied volatility means high option prices all else equal.</p>
-</div>
-<div id="option-prices-compared-to-the-profit-diagram" class="section level2 hasAnchor" number="6.4">
-<h2><span class="header-section-number">6.4</span> Option Prices Compared to the Profit Diagram<a href="advanced-option-topics.html#option-prices-compared-to-the-profit-diagram" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>In the Google Sheet embedded below we have plotted in gold the price of a call and put option with strike price of 450 cents along with the intrinsic value of the option plotted in black. Remember that the intrinsic value of the option is what the option is worth at expiration given the value of the underlying, not considering the premium paid. Therefore, if we take the profit diagrams we considered from the previous chapter and moved the flat part of the hockey stick diagram to the x-axis we get the intrinsic value of the option.</p>
-<p>Notice a few things about the option price line. First of all, for every value of the underlying the call price is above the black line. That is because the price of an option prior to expiration must be worth at least as much as its intrinsic value, with a little bit extra to account for the uncertainty in price that could change the moneyness of the option before it expires.</p>
-<p>Further, notice that the option differs from its intrinsic value most near the strike price; this is because the option price must smooth out the kink in the intrinsic value diagram.</p>
-<iframe src="https://docs.google.com/spreadsheets/d/1hvLorMPGFuMJqGJ2xKiR6TswvU4aGuaF6tyesDKcXyY/edit?usp=sharing" title="Put-Call Parity" width="100%" height="950">
-</iframe>
-</div>
-<div id="option-greeks" class="section level2 hasAnchor" number="6.5">
-<h2><span class="header-section-number">6.5</span> Option Greeks<a href="advanced-option-topics.html#option-greeks" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>In this section we will learn the option ‘greeks’. This, along with the second derivatives, will do more than anything to give you a better understanding of how option prices really work. As you read this section keep looking back to the embedded plot of option prices in section <a href="advanced-option-topics.html#option-prices-compared-to-the-profit-diagram">6.4</a></p>
-<p><strong>Delta</strong></p>
-<p>The delta of a call option is <span class="math inline">\(\Delta = \frac{\partial C}{\partial F}\)</span> , and the delta of a put option is <span class="math inline">\(\Delta = \frac{\partial P}{\partial F}\)</span>, or how much the value of a call option changes as the underlying changes. Literally, this is the slope of the line representing the option price. The main thing is to notice that as the price of the underlying moves larger the call option is more in the money, and the delta of the call option approaches +1. As the price of the underlying moves larger the put option moves more out of the money and the delta of the put option approaches 0. As the price of the underlying moves lower, the delta of the call option approaches 0 and the delta of the put option approaches -1. Also, notice that at the money, the delta of the call option is +0.5 and the delta of the at the money put option is -0.5.</p>
-<p><strong>Gamma</strong></p>
-<p>The gamma of a call option is <span class="math inline">\(\gamma = \frac{\partial^2 C}{\partial F^2}\)</span> and the gamma of a put option is <span class="math inline">\(\gamma = \frac{\partial^2 P}{\partial F^2}\)</span>, that is it tells you the curvature of the option price with respect to the underlying. Which is to say, how much additional <span class="math inline">\(\Delta\)</span> do you get as the underlying price increases. Looking above at the price of the call option, notice that at an underlying price of 425 the option line is pretty flat (low delta), while at an underlying price of 475 the option line is pretty steep and nearly equal to the slope of the black line which is 1. The curvature in the line that is required to get from a flat slope to a steep slope is the <span class="math inline">\(\gamma\)</span> of the option.</p>
-<p>An option’s <span class="math inline">\(\gamma\)</span> is the friend of speculators who use options. Large <span class="math inline">\(\gamma\)</span> allows a trader to buy a cheap out of the money option on an underlying they know will move up or down. If they are right their position enjoys convex gains. The higher the <span class="math inline">\(\gamma\)</span> the better it is for the directional speculator using long option positions. However, we will see that <span class="math inline">\(\gamma\)</span> is counter-balanced by the next greeks we will learn.</p>
-<p><strong>Theta</strong></p>
-<p>Option’s lose value as expiration nears due to reduced uncertainty related to where the price of the underlying will be relative to the strike. This ‘time decay’ is made explicit by the theta of the option. Theta of a call option is <span class="math inline">\(\theta = \frac{\partial C}{\partial t}\)</span> and the theta of a put option is <span class="math inline">\(\theta = \frac{\partial P}{\partial t}\)</span>. Theta is how option sellers make money and theta is the enemy of long option holders. Theta is usually quoted in terms of how much the option will lose value per day, all other things equal. Go back to the embedded Google Sheet in <a href="advanced-option-topics.html#option-prices-compared-to-the-profit-diagram">6.4</a>. Play around with the time value in the option premium by putting in some larger and smaller values for time to maturity. Remember, the units of time to maturity is fraction of a year. So if you put in 0.5 that is the same as six months, and 0.02 is about one week.</p>
-<p>For reference, focus on the at-the-money call and put options with strike of 450. With time to maturity = 0.5, the call option is worth 19.89 cents (or 4.4% of the value of the underlying contract) while the put option is worth 28.89 cents (6.4% of the value of the underlying contract). With time to maturity = 0.02, the call option is worth 4.06 cents (0.90% of the value of the underlying contract) and the put option is worth 4.42 cents (0.98% of the value of the underlying contract).</p>
-<p>Another thing to notice is how the pace of theta decay accelerates as time to maturity approaches. Try setting the time to maturity cell (E2) to <code>=180/365</code> then to <code>=173/365</code> and notice how much the gold lines of the option prices shift down. Compare that to how much the gold lines shift down when you do <code>=10/365</code> and <code>=3/365</code>. In both cases one week passed between the first and second time calculated, but the option lost a lot more value both nominally and in percentage terms in the second case.</p>
-<p><strong>Vega</strong></p>
-<p>Vega measures sensitivity of the option value to changes in the volatility. In other words, Vega <span class="math inline">\(= \frac{\partial C}{\partial \sigma}\)</span> in the case of call options and Vega = <span class="math inline">\(= \frac{\partial P}{\partial \sigma}\)</span> in the case of put options. An increase in volatility will cause an increase in options prices, all other things equal. Play with different values in <a href="advanced-option-topics.html#option-prices-compared-to-the-profit-diagram">6.4</a> try volatility as low as 10 and as high as 100. Also, see what impact changes in volatility has for different time to maturity values.</p>
-<p><strong>Other Greeks</strong></p>
-<p>There are other greeks (including Rho, Vanna, Vomma, and more) that become important if you are involved in managing a large book of options positions, but we will not cover them in detail. The <a href="https://en.wikipedia.org/wiki/Greeks_(finance)">Greeks Wikipedia page</a> is a good place to start if you are interested.</p>
-<p><strong>How other Volatility and Time-to-Maturity Impacts Gamma</strong></p>
-<p>For a couple of the greeks we mentioned how they interact with each other, or react to different times to maturity. Here I just want to point out a bit more about this mechanics. I mentioned that <span class="math inline">\(\gamma\)</span> is the friend of the option buyer and it is the foe of the option seller because of the convex shape of the return profile you get with large gamma.</p>
-<p>So what makes <span class="math inline">\(\gamma\)</span> large? Biggest things giving large <span class="math inline">\(\gamma\)</span> would be short time to maturity and low volatility. However, both of these have drawbacks for the option buyer. When time to maturity is short, <span class="math inline">\(\theta\)</span> decay is fast, which works against the option buyer. Regarding volatility, sure low volatility produces large gamma, but option buyers get the most benefit from gamma by buying slightly out of the money options prior to a significant move in their favor. Thus, periods of low volatility make a significant move less likely.</p>
-<p>So even though the option buyer can create countless profit scenarios over many price ranges, at the end of the day, profitable option buying for speculation requires anticipating a significant price move to pay off.</p>
-</div>
-<div id="criticisms-of-the-black-scholes-pricing-model" class="section level2 hasAnchor" number="6.6">
-<h2><span class="header-section-number">6.6</span> Criticisms of the Black-Scholes Pricing Model<a href="advanced-option-topics.html#criticisms-of-the-black-scholes-pricing-model" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>We should be aware that while the Black-Scholes option pricing model is very elegant and easy to work with, it has some limitations. Most limitations stem from unrealistic assumptions underpinning the model.</p>
-<p>Recall the model assumptions from earlier:</p>
-<blockquote>
-<p><em>Assumptions About Assets</em></p>
-<ul>
-<li><p>There exists a riskless asset that returns a constant risk free rate</p></li>
-<li><p>The stock price exhibits instantaneous returns that are log normal. More formally, the stock price follows a geometric Brownian motion and volatility and drift are constant. Without writing out the mathematical equation for the geometric Brownian motion, the drift term defines how much the stock price appreciates on average.</p></li>
-</ul>
-<p><em>Assumptions about the Market</em></p>
-<ul>
-<li><p>There are no arbitrage opportunities</p></li>
-<li><p>There are no restrictions on borrowing and lending at the risk free rate</p></li>
-<li><p>Market participants can buy or sell unlimited quantities of the stock</p></li>
-<li><p>There are no transactions costs</p></li>
-</ul>
-</blockquote>
-<p>These assumptions are at odds with several commonly observed attributes of real markets . In particular, assets commonly have the following characteristics:</p>
-<ol style="list-style-type: decimal">
-<li>Heavy-tailed returns</li>
-<li>Positively correlated volatility, volatility clustering, variable volatility</li>
-</ol>
-<p>The first item means that extreme market movements (up or down) happen more often than implied by the normal distribution. Since option prices depend on the full probability distribution of potential outcomes, a model that assumes a normal distribution will chronically under-price options.</p>
-<p>The second item reflects the tendency in markets for volatility events to be clustered together. That means if we have a large price movement, it will likely be followed by large price movements in the near future. We cannot predict whether it will be up or down, but we can be sure it will be volatile. In the figure below we plot continuous series of weekly soybean futures since 2010 in the first panel. In the second panel we plot squared log differences of prices, which is one way to calculate volatility. You can clearly observe the positive correlation and volatility clustering in this market. Once there is an event that spikes volatility, it takes a while for volatility to ‘calm down’.</p>
-<p><img src="assets/Options2-volcluster.png" /></p>
-<p>This explains the limitation of the Black-Scholes model along the volatility dimension. Another practical matter is that the model requires one to continuously maintain a perfectly hedged portfolio of an option and the underlying asset. This can be impossible when prices experience ‘jumps’ or non continuous movements. These can occur in due to unexpected information hitting the market and traders pulling their standing orders in the market. But, it also occurs during routine market closures. The overnight jumps can be substantial in cases where a lot of information is revealed overnight.</p>
-</div>
-<div id="delta-hedging" class="section level2 hasAnchor" number="6.7">
-<h2><span class="header-section-number">6.7</span> Delta Hedging<a href="advanced-option-topics.html#delta-hedging" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>One proof of the Black-Scholes option pricing formula shows that if one can continuously hedge the sale of an option contract with the underlying asset so that the position is ‘delta neutral’ then the hedged portfolio (the short option and long stock) is riskless and therefore must earn the ‘risk-free rate’. This implies that if you know the price of the stock and you know the risk free rate, then you can deduce what the price of the option should be at any time. Solving that yields the Black-Scholes equation.</p>
-<p>Let’s discuss the delta neutral concept more fully. Recall that the <span class="math inline">\(\Delta\)</span> (delta) of an option is <span class="math inline">\(\Delta = \frac{\partial C}{\partial F}\)</span>, or how much the price of the option changes if the price of the underlying asset increases by one unit. A position is said to be ‘delta neutral’ if options and the underlying asset are held in a proportion such that for small changes in the underlying asset’s price, the value of the position is unchanged.</p>
-<p><strong>Example</strong></p>
-<p>Suppose the price of the nearby corn futures contract is 450 cents. A trader might sell 100 the 450 strike call options that are trading for 11 cents. The trader is hoping to profit from theta decay, as the price of the option decreases over time. They do not want exposure to the changing price of the futures contract, however.</p>
-<ol style="list-style-type: decimal">
-<li>How many futures contracts should they buy/sell to make their position delta neutral?</li>
-</ol>
-<p><img src="assets/Options2-deltahedge.png" /></p>
-<p><strong>Answer</strong>: Consider the figure above. The gold ‘hockey stick’ line represents the payoff of the call option to someone long the option. The thick black line is the Black-Scholes price of the option at the current time, for different values of the underlying (indicated on the x-axis). The dashed black lines show that at 450, the slope of the option price curve is .5 and at 475 the slope is .85. These are the delta’s of the option price when the underlying is 450 and 475, respectively.</p>
-<p>Since the <span class="math inline">\(\Delta\)</span> of the 450 strike option is 0.5 that means that the price of the option increases (decreases) by .5 times the futures price increase (decrease). Another way to think about it is selling the 100 of the 450 strike call options is like being short 50 of the futures; with a delta of .5 every 1 cent change in the underlying results in a .5 cent change in the option. So, if the trader does not want price exposure, they can <strong>buy</strong> 50 futures contracts at the same time they <strong>sell</strong> the call options. Now, for small changes in the futures price around 450, they are fully hedged.</p>
-<p>As an example consider what happens to their delta-hedged position for a modest price increase of 2 cents in the futures contract from 450 to 452. This will imply the call option increases to 12.18 cents, all else being equal. Walking through the profit an loss calculations in this case, we see the trader loses $600 from this price movement. Recall, they are short the premium of $55,000 that they are hoping to pocket as time eats away at the premium. They do experience a loss from this, but it will likely be outweighed by the premium decay if the price does not continue to rise too fast.</p>
-<table style="width:99%;">
-<caption>Change in value of delta-hedged position after small price move</caption>
-<colgroup>
-<col width="24%" />
-<col width="34%" />
-<col width="39%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th></th>
-<th>Short Calls</th>
-<th>Long Futures</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>t = 0</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Price</td>
-<td>11.06 cents per contract</td>
-<td>450</td>
-</tr>
-<tr class="odd">
-<td>Quantity</td>
-<td>100 contracts</td>
-<td>50</td>
-</tr>
-<tr class="even">
-<td><strong>Value</strong></td>
-<td><p>(11.06/100)*100*5000 =</p>
-<p><strong>$55,300</strong></p></td>
-<td><p>(450/100)*50*5000 =</p>
-<p><strong>$1,125,000</strong> (notional value)</p></td>
-</tr>
-<tr class="odd">
-<td>t = 1</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Price</td>
-<td>12.18 cents per contract</td>
-<td>452</td>
-</tr>
-<tr class="odd">
-<td>Quantity</td>
-<td>100</td>
-<td>50</td>
-</tr>
-<tr class="even">
-<td><strong>Value</strong></td>
-<td><p>(12.18/100)*100*5000 =</p>
-<p><strong>$60,900</strong></p></td>
-<td><p>(452/100)*50*5000 =</p>
-<p><strong>$1,130,000</strong> (notional value)</p></td>
-</tr>
-<tr class="odd">
-<td><strong>Profit/Loss</strong></td>
-<td><p>55,300 - 60,900 =</p>
-<p><strong>-$5,600</strong></p></td>
-<td><p>1,130,000 - 1,125,000 =</p>
-<p><strong>+$5,000</strong></p></td>
-</tr>
-<tr class="even">
-<td><strong>Net Profit/Loss</strong></td>
-<td>62,500 - 89,000 = <strong>-$600</strong></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<ol start="2" style="list-style-type: decimal">
-<li>Suppose now that the futures price experiences a big increase to 475 from close of the day session to open of the night session. Is the trader’s position still delta neutral? What should they do to get their position delta neutral?</li>
-</ol>
-<p><strong>Answer</strong>:</p>
-<p>To recap, our trader is short 100 of the 450 call options and bought 50 futures contracts against it when the futures price was 450 to get their position delta neutral. Then the price of the futures contract went to 475 between the close of the day session and open of the night session, so they could not adjust their hedge gradually. The price ‘jumped’ to 475. That means that the option position now has a delta of -.85*100 (negative because our trader is short the option) and only has +1*50 delta from the long futures position (the outright futures position always had a delta of 1). To get delta neutral the trader needs to buy an additional 35 futures contracts to get the delta of their futures position to +1*.85, but doing so does not erase the loss they experienced from the rise in price from 450 to 475, it just gets them delta-hedged against small price movements going forward.</p>
-<div id="why-is-delta-hedging-not-fool-proof" class="section level3 hasAnchor" number="6.7.1">
-<h3><span class="header-section-number">6.7.1</span> Why is delta-hedging not fool-proof?<a href="advanced-option-topics.html#why-is-delta-hedging-not-fool-proof" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Delta hedging only works if traders can continuously re-balance their option and futures positions to keep delta neutral as prices change. There are a couple major problems with this.</p>
-<p>First is that it is costly to re-balance. Traders face trading costs from commissions, fees, and/or the bid-ask spread. Re-balancing too often would quickly eat into whatever profit they hoped to earn from theta-decay.</p>
-<p>Second, sometimes market prices move in significant ‘jumps’. Whether this comes from information hitting the market that causes resting orders on the order book to be canceled and resent at much higher (or lower) prices, or from prices changing significantly from the market close to open, the result is the same for the delta neutral trader. They will have to re-balance their position after a large discrete jump. If the price jump goes against them, they will lock in a loss.</p>
-<p>In our example above, if the move from 450 to 475 happens from between market close and the next market open, the traders position will have a bigger loss on the short call option position than gain in the long futures position, due to the significant change in slope (or delta) of the option price.</p>
-<table style="width:99%;">
-<caption>Change in value of delta-hedged position after big price move</caption>
-<colgroup>
-<col width="23%" />
-<col width="36%" />
-<col width="38%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th></th>
-<th>Short Calls</th>
-<th>Long Futures</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>t = 0</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Price</td>
-<td>11.06 cents per contract</td>
-<td>450</td>
-</tr>
-<tr class="odd">
-<td>Quantity</td>
-<td>100 contracts</td>
-<td>50</td>
-</tr>
-<tr class="even">
-<td><strong>Value</strong></td>
-<td><p>(11.06/100)*100*5000 =</p>
-<p><strong>$55,300</strong></p></td>
-<td><p>(450/100)*50*5000 =</p>
-<p><strong>$1,125,000</strong> (notional value)</p></td>
-</tr>
-<tr class="odd">
-<td>t = 1</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Price</td>
-<td>28.86 cents per contract</td>
-<td>475</td>
-</tr>
-<tr class="odd">
-<td>Quantity</td>
-<td>100</td>
-<td>50</td>
-</tr>
-<tr class="even">
-<td><strong>Value</strong></td>
-<td><p>(28.86/100)*100*5000 =</p>
-<p><strong>$144,300</strong></p></td>
-<td><p>(475/100)*50*5000 =</p>
-<p><strong>$1,187,500</strong> (notional value)</p></td>
-</tr>
-<tr class="odd">
-<td><strong>Profit/Loss</strong></td>
-<td><p>55,300 - 144,300 =</p>
-<p><strong>-$89,000</strong></p></td>
-<td><p>1,187,500 - 1,125,000 =</p>
-<p><strong>+$62,500</strong></p></td>
-</tr>
-<tr class="even">
-<td><strong>Net Profit/Loss</strong></td>
-<td>62,500 - 89,000 = <strong>-$26,000</strong></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="famous-blow-ups-in-delta-hedging-operations" class="section level3 hasAnchor" number="6.7.2">
-<h3><span class="header-section-number">6.7.2</span> Famous Blow-Ups in Delta-Hedging Operations<a href="advanced-option-topics.html#famous-blow-ups-in-delta-hedging-operations" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Large unexpected price movements, have a storied history of blowing up hedge funds who focus on selling volatility. Several articles are linked below for the interested reader.</p>
-<ol style="list-style-type: decimal">
-<li><a href="https://volquant.medium.com/epic-failures-lessons-from-volatility-funds-blow-ups-6f4226c8334f">“Epic Failures - Lessons from Volatility Funds Blow-Ups.” Harel Jacobson</a></li>
-<li><a href="https://www.ft.com/content/b8ddbf92-c9b4-4a81-a167-ef9ee80962a5">“Turbulent Markets Upend Volatility Hedge Funds.” Laurence Fletcher and Richard Hendarson, FT.</a></li>
-<li><a href="https://www.institutionalinvestor.com/article/b1m6kkzscgqrl0/How-to-Lose-a-Billion-Dollars-Without-Really-Trying">“How to Lose a Billion Dollars Without Really Trying.” Leanna Orr. Institutional Investor.</a></li>
-</ol>
-<blockquote>
-<p>History doesn’t repeat itself, but it often rhymes. — Mark Twain</p>
-</blockquote>
-<blockquote>
-<p>Its like picking up pennies in front of a steamroller. — Unknown</p>
-</blockquote>
-<p>These stories have a common theme. A fund engages in a strategy of selling volatility (selling calls, selling puts, selling vix futures, etc) with high leverage. The high leverage and nature of volatility premium mean these funds make spectacular returns for as long as there is not a ‘volatility event’. One day, the volatility event arrives and anyone with a highly leveraged short volatility position is highly likely to blow up (total loss of trading capital).</p>
-
-</div>
-</div>
-</div>
-<h3>References</h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
-<div id="ref-black_pricing_1976" class="csl-entry">
-Black, Fischer. 1976. <span>“The Pricing of Commodity Contracts.”</span> <em>Journal of Financial Economics</em> 3 (1): 167–79. <a href="https://doi.org/10.1016/0304-405X(76)90024-6">https://doi.org/10.1016/0304-405X(76)90024-6</a>.
-</div>
-<div id="ref-black_pricing_1973" class="csl-entry">
-Black, Fischer, and Myron Scholes. 1973. <span>“The Pricing of Options and Corporate Liabilities.”</span> <em>Journal of Political Economy</em> 81 (3): 637–54. <a href="https://doi.org/10.1086/260062">https://doi.org/10.1086/260062</a>.
-</div>
-<div id="ref-merton_theory_1973" class="csl-entry">
-Merton, Robert C. 1973. <span>“Theory of Rational Option Pricing.”</span> <em>The Bell Journal of Economics and Management Science</em> 4 (1): 141. <a href="https://doi.org/10.2307/3003143">https://doi.org/10.2307/3003143</a>.
-</div>
+<div id="page-not-found" class="section level1">
+<h1>Page not found</h1>
+<p>The page you requested cannot be found (perhaps it was moved or renamed).</p>
+<p>You may want to try searching to find the page's new location, or use
+the table of contents to find the page you are looking for.</p>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="introduction-to-option-contracts.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="hedging-with-options.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 14 Forecasting Use of Soybeans | Price Analysis: A Fundamental Approach to the Study of Commodity Prices</title>
   <meta name="description" content="This book introduces the basics of fundamental analysis of prices in food commodity markets. Learn how to follow and understand futures markets for commodities like corn, soybeans, wheat, live cattle, feeder cattle, hogs, ethanol, and crude oil. Learn about calendar, wheat, soybean crush, corn crush, and cattle crush spreads. Additionally, learn about which USDA reports are important to markets, when they come out, and why they move prices. Special focus on the WASDE, Grain Stocks, Prospective Plantings, Planted Acres, Crop Production, and Crop Progress and Condition reports." />
-  <meta name="generator" content="bookdown 0.21.5 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 14 Forecasting Use of Soybeans | Price Analysis: A Fundamental Approach to the Study of Commodity Prices" />
   <meta property="og:type" content="book" />
-  <meta property="og:url" content="http:mindymallory.github.io/PriceAnalysis/" />
   <meta property="og:image" content="http:mindymallory.github.io/PriceAnalysis//images/cover.png" />
   <meta property="og:description" content="This book introduces the basics of fundamental analysis of prices in food commodity markets. Learn how to follow and understand futures markets for commodities like corn, soybeans, wheat, live cattle, feeder cattle, hogs, ethanol, and crude oil. Learn about calendar, wheat, soybean crush, corn crush, and cattle crush spreads. Additionally, learn about which USDA reports are important to markets, when they come out, and why they move prices. Special focus on the WASDE, Grain Stocks, Prospective Plantings, Planted Acres, Crop Production, and Crop Progress and Condition reports." />
   <meta name="github-repo" content="mindymallory/PriceAnalysis" />
@@ -24,7 +23,7 @@
 <meta name="author" content="Mindy L. Mallory" />
 
 
-<meta name="date" content="2022-02-15" />
+<meta name="date" content="2023-01-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +32,8 @@
   
 <link rel="prev" href="forecasting-use-of-corn.html"/>
 <link rel="next" href="ending-stocks-and-price.html"/>
-<script src="libs/header-attrs-2.6.0/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,11 +49,11 @@
 
 
 
-
 <link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
 <script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
@@ -420,9 +419,9 @@ div.csl-indent {
 <li class="chapter" data-level="20.5" data-path="crude-oil-and-the-crack-spread.html"><a href="crude-oil-and-the-crack-spread.html#the-crack-spread"><i class="fa fa-check"></i><b>20.5</b> The Crack Spread</a></li>
 <li class="chapter" data-level="20.6" data-path="crude-oil-and-the-crack-spread.html"><a href="crude-oil-and-the-crack-spread.html#exercises-9"><i class="fa fa-check"></i><b>20.6</b> Exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="21" data-path="forecasting-production-advanced.html"><a href="forecasting-production-advanced.html"><i class="fa fa-check"></i><b>21</b> Forecasting Production - Advanced</a>
+<li class="chapter" data-level="21" data-path="forecasting-production---advanced.html"><a href="forecasting-production---advanced.html"><i class="fa fa-check"></i><b>21</b> Forecasting Production - Advanced</a>
 <ul>
-<li class="chapter" data-level="21.1" data-path="forecasting-production-advanced.html"><a href="forecasting-production-advanced.html#exercises-10"><i class="fa fa-check"></i><b>21.1</b> Exercises</a></li>
+<li class="chapter" data-level="21.1" data-path="forecasting-production---advanced.html"><a href="forecasting-production---advanced.html#exercises-10"><i class="fa fa-check"></i><b>21.1</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="22" data-path="appendix-forecasting-with-ts-models.html"><a href="appendix-forecasting-with-ts-models.html"><i class="fa fa-check"></i><b>22</b> Appendix: Forecasting with TS Models</a>
 <ul>
@@ -496,8 +495,8 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="forecasting-use-of-soybeans" class="section level1" number="14">
-<h1><span class="header-section-number">Chapter 14</span> Forecasting Use of Soybeans</h1>
+<div id="forecasting-use-of-soybeans" class="section level1 hasAnchor" number="14">
+<h1><span class="header-section-number">Chapter 14</span> Forecasting Use of Soybeans<a href="forecasting-use-of-soybeans.html#forecasting-use-of-soybeans" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>In the WASDE balance sheet for soybeans there are three use categories. Two account for domestic consumption - Crush, and Feed, Seed, and Residual - while exports make up the third category. The main distinction between cereal grains, like corn, and oilseeds, like soybeans, is that cereal grains are generally ground whole for whatever the end use turns out to be. Most oilseeds, on the other hand, are crushed to extract oil and meal before their ultimate use. Soybean oil is food-grade and can be found on the shelves of any American grocery store. Soybean meal is protein rich and used as an ingredient in livestock feed rations.</p>
 <p>In the next sections we will examine historical use patterns of soybeans in the three categories expressed nominally, and as a percent of the concurrent year’s total supply, similar to the organization of chapter 7.</p>
 <p>Since this book has taken a closer look at corn production than soybean production, we will ground our discussion of use by first noting the pattern of annual supply of soybeans in recent history.</p>
@@ -508,8 +507,8 @@ div.csl-indent {
 </div>
 <p>Source: <a href="http://www.ers.usda.gov/data-products/oil-crops-yearbook.aspx">USDA ERS Oil Crops Yearbook</a></p>
 <p>Since soybeans are not consumed whole as food by humans or feed for animals in the U.S., nearly all the soybean supply is crushed domestically or exported.</p>
-<div id="soybean-crush" class="section level2" number="14.1">
-<h2><span class="header-section-number">14.1</span> Soybean Crush</h2>
+<div id="soybean-crush" class="section level2 hasAnchor" number="14.1">
+<h2><span class="header-section-number">14.1</span> Soybean Crush<a href="forecasting-use-of-soybeans.html#soybean-crush" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Figure 2 displays the annual crush of soybeans from 1980-2014. A pronounced upward trend, similar to the trend in soybean supply is observed.</p>
 <div class="figure">
 <img src="Excel-files/ForecastingUseSoy-OilCropsYearbook_files/image005.png" alt="" />
@@ -523,8 +522,8 @@ div.csl-indent {
 </div>
 <p>Source: <a href="http://www.ers.usda.gov/data-products/oil-crops-yearbook.aspx">USDA ERS Oil Crops Yearbook</a></p>
 </div>
-<div id="exports-2" class="section level2" number="14.2">
-<h2><span class="header-section-number">14.2</span> Exports</h2>
+<div id="exports-2" class="section level2 hasAnchor" number="14.2">
+<h2><span class="header-section-number">14.2</span> Exports<a href="forecasting-use-of-soybeans.html#exports-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Figure 4 displays annual soybean exports. Similar to the crush category, exports are observed to steadily increase over the period from 1980-2014.</p>
 <div class="figure">
 <img src="Excel-files/ForecastingUseSoy-OilCropsYearbook_files/image001.png" alt="" />
@@ -701,8 +700,8 @@ div.csl-indent {
 <p>Source: <a href="http://apps.fas.usda.gov/export-sales/myrk_rpt.htm">USDA FAS</a></p>
 <p>Clearly China is the dominant importer of U.S. soybeans. They buy 10 times more than 2nd ranked Mexico. Examining the short history in table 1, you can see that increasing exports of soybeans to China accounts for nearly all of the uptrend in figure 4. In the 2016/2017 marketing year China was the destination of over 60% of U.S. soybean exports.</p>
 </div>
-<div id="feed-seed-and-residual" class="section level2" number="14.3">
-<h2><span class="header-section-number">14.3</span> Feed, Seed, and Residual</h2>
+<div id="feed-seed-and-residual" class="section level2 hasAnchor" number="14.3">
+<h2><span class="header-section-number">14.3</span> Feed, Seed, and Residual<a href="forecasting-use-of-soybeans.html#feed-seed-and-residual" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="figure">
 <img src="Excel-files/ForecastingUseSoy-OilCropsYearbook_files/image003.png" alt="" />
 <p class="caption">Figure 6: Annual Soybean Feed, Seed, and Residual, 1980-2014</p>
@@ -714,18 +713,18 @@ div.csl-indent {
 </div>
 <p>Source: <a href="http://www.ers.usda.gov/data-products/oil-crops-yearbook.aspx">USDA ERS Oil Crops Yearbook</a></p>
 </div>
-<div id="price-sensitivity-of-use-categories-1" class="section level2" number="14.4">
-<h2><span class="header-section-number">14.4</span> Price Sensitivity of Use Categories</h2>
+<div id="price-sensitivity-of-use-categories-1" class="section level2 hasAnchor" number="14.4">
+<h2><span class="header-section-number">14.4</span> Price Sensitivity of Use Categories<a href="forecasting-use-of-soybeans.html#price-sensitivity-of-use-categories-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Soybeans are a bit different from corn because there are only two use categories that are important, crush and exports. The soybean use categories historically have been reliably 50% crush and 50% exports as a percent of supply. In recent years, exports have been increasing both nominally and as a percent of supply. So forecasting demand for soybeans has largely become a matter of forecasting soybean exports.</p>
 <p>Recently, with the rise of South American soybean (and corn) production, forecasting exports is a matter of balancing the price of U.S soybeans compared with the price of South American soybeans and the raw demand from our trading partners. China has become the major player in this space, as is evident in table 1.</p>
 </div>
-<div id="forecasting-use-of-soybeans-1" class="section level2" number="14.5">
-<h2><span class="header-section-number">14.5</span> Forecasting Use of Soybeans</h2>
+<div id="forecasting-use-of-soybeans-1" class="section level2 hasAnchor" number="14.5">
+<h2><span class="header-section-number">14.5</span> Forecasting Use of Soybeans<a href="forecasting-use-of-soybeans.html#forecasting-use-of-soybeans-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>As we mentioned in chapter 7, keeping track of how much soybeans have been used to date in each category is a useful exercise to determine a reasonable forecast for different use categories of soybeans. As was true for corn, information about the pace of use in each category must be obtained from different sources within the USDA.</p>
 <p>Soybeans exports can be followed during the marketing year by following the <a href="">GIPSA</a> and <a href="">FAS Export Reporting System</a> as was identified for corn exports in Chapter 7. Also, as identified in Chapter 7 is is useful to tracking <a href="http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1020">Cattle on Feed</a>, <a href="http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1086">Hogs and Pigs</a>, and the <a href="https://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1131">Poultry Slaughter</a>, specifically because livestock numbers contribute to demand for soybean meal, which in turn contributes to crush demand.</p>
 </div>
-<div id="exercises-4" class="section level2" number="14.6">
-<h2><span class="header-section-number">14.6</span> Exercises</h2>
+<div id="exercises-4" class="section level2 hasAnchor" number="14.6">
+<h2><span class="header-section-number">14.6</span> Exercises<a href="forecasting-use-of-soybeans.html#exercises-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong>Skills Learned</strong></p>
 <ul>
 <li><p>A common method for accounting strength of demand: pace of use.</p></li>
@@ -771,7 +770,6 @@ b. Scroll down and choose Export Grain Totals (Yearly) in the Data and Statistic
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -790,6 +788,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -810,6 +809,10 @@ gitbook.start({
 "text": null
 },
 "download": ["price-analysis.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "section"
 }
@@ -823,7 +826,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

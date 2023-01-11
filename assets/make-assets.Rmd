@@ -391,13 +391,15 @@ data1$Value <- as.numeric(gsub(",", "", as.character(data1$Value)))
 corn1 <- data1 %>% 
   select(c(commodity_desc, statisticcat_desc, short_desc, year, Value )) %>%
   filter( commodity_desc == "CORN") %>%
-  filter(statisticcat_desc == "AREA PLANTED") %>%
+  filter(statisticcat_desc == "AREA PLANTED") %>% 
+   mutate(year = as.numeric(year)) %>%
   ggplot(aes(x = year, y = Value/1000000)) + 
   geom_col(width = .7) +
   geom_line(data = data1 %>% 
   select(c(commodity_desc, statisticcat_desc, short_desc, year, Value )) %>%
   filter( commodity_desc == "CORN") %>%
-  filter(statisticcat_desc == "YIELD"), aes(x = year, y = Value), color = purduegold, size = 1.5) +
+  filter(statisticcat_desc == "YIELD") %>%
+   mutate(year = as.numeric(year)), aes(x = year, y = Value), color = purduegold, size = 1.5) +
   theme_bw() +
   lims(y = c(0, 200)) +
   labs(title = "U.S. Corn Acreage and Yield", x = "", y = "Millions of Acres, and Bu/Acre, respectively") + 
@@ -413,7 +415,8 @@ corn2 <- data1 %>%
   filter(statisticcat_desc == "PRODUCTION") %>%
   filter(short_desc == "CORN, GRAIN - PRODUCTION, MEASURED IN BU") %>%
   filter( domaincat_desc == "NOT SPECIFIED") %>% 
-  filter(source_desc == "SURVEY") %>%
+  filter(source_desc == "SURVEY") %>% 
+   mutate(year = as.numeric(year)) %>%
   select(c(commodity_desc, statisticcat_desc, short_desc, domaincat_desc, source_desc, year, Value )) %>% 
   ggplot(aes(x = year, y = Value/1000000000)) + 
   geom_col(width = 1.0) +
@@ -422,7 +425,10 @@ corn2 <- data1 %>%
   filter(statisticcat_desc == "PRICE RECEIVED") %>%
   filter(reference_period_desc == "MARKETING YEAR") %>% 
   filter(short_desc == "CORN, GRAIN - PRICE RECEIVED, MEASURED IN $ / BU") %>% 
- select(c(commodity_desc, statisticcat_desc, short_desc, year, Value )), aes(x = year, y = Value), color = purduegold, size = 1.5) +
+    
+   mutate(year = as.numeric(year)) %>%
+ select(c(commodity_desc, statisticcat_desc, short_desc, year, Value )) %>%
+   mutate(year = as.numeric(year)), aes(x = year, y = Value), color = purduegold, size = 1.5) +
   theme_bw() +
   lims(y = c(0, 16)) +
   labs(title = "U.S. Corn Production and Prices", x = "", y = "Billions of Bushels, and $/bu, respectively") + 
@@ -444,13 +450,15 @@ ggsave(corn2, filename = "PrimerforGrain_CornProdand$.png")
 soy1 <- data1 %>% 
   select(c(commodity_desc, statisticcat_desc, short_desc, year, Value )) %>%
   filter( commodity_desc == "SOYBEANS") %>%
-  filter(statisticcat_desc == "AREA PLANTED") %>%
+  filter(statisticcat_desc == "AREA PLANTED") %>% 
+  mutate(year = as.numeric(year)) %>%
   ggplot(aes(x = year, y = Value/1000000)) + 
   geom_col(width = 1) +
   geom_line(data = data1 %>% 
   select(c(commodity_desc, statisticcat_desc, short_desc, year, Value )) %>%
   filter( commodity_desc == "SOYBEANS") %>%
-  filter(statisticcat_desc == "YIELD"), aes(x = year, y = Value), color = purduegold, size = 1.5) +
+  filter(statisticcat_desc == "YIELD") %>%
+   mutate(year = as.numeric(year)), aes(x = year, y = Value), color = purduegold, size = 1.5)  +
   theme_bw() +
   lims(y = c(0, 100)) +
   labs(title = "U.S. Soybean Acreage and Yield", x = "", y = "Millions of Acres, and Bu/Acre, respectively") + 
@@ -466,7 +474,8 @@ soy2 <- data1 %>%
   filter(statisticcat_desc == "PRODUCTION") %>%
   filter(short_desc == "SOYBEANS - PRODUCTION, MEASURED IN BU") %>%
   filter( domaincat_desc == "NOT SPECIFIED") %>% 
-  filter(source_desc == "SURVEY") %>%
+  filter(source_desc == "SURVEY") %>% 
+   mutate(year = as.numeric(year))%>%
   select(c(commodity_desc, statisticcat_desc, short_desc, domaincat_desc, source_desc, year, Value )) %>% 
   ggplot(aes(x = year, y = Value/1000000000)) + 
   geom_col(width = 1.0) +
@@ -475,7 +484,8 @@ soy2 <- data1 %>%
   filter(statisticcat_desc == "PRICE RECEIVED") %>%
   filter(reference_period_desc == "MARKETING YEAR") %>% 
   filter(short_desc == "SOYBEANS - PRICE RECEIVED, MEASURED IN $ / BU") %>% 
- select(c(commodity_desc, statisticcat_desc, short_desc, year, Value )), aes(x = year, y = Value), color = purduegold, size = 1.5) +
+ select(c(commodity_desc, statisticcat_desc, short_desc, year, Value )) %>%
+   mutate(year = as.numeric(year)), aes(x = year, y = Value), color = purduegold, size = 1.5) +
   theme_bw() +
   lims(y = c(0, 16)) +
   labs(title = "U.S. Soybean Production and Prices", x = "", y = "Billions of Bushels, and $/bu, respectively") + 
@@ -498,14 +508,16 @@ wheat1 <- data1 %>%
   select(c(commodity_desc, statisticcat_desc, short_desc, year, Value )) %>%
   filter( commodity_desc == "WHEAT") %>%
   filter(short_desc == "WHEAT - ACRES PLANTED") %>%  
-  filter(statisticcat_desc == "AREA PLANTED") %>%
+  filter(statisticcat_desc == "AREA PLANTED") %>% 
+   mutate(year = as.numeric(year)) %>%
   ggplot(aes(x = year, y = Value/1000000)) + 
   geom_col(width = 1) +
   geom_line(data = data1 %>% 
   select(c(commodity_desc, statisticcat_desc, short_desc, year, Value )) %>%
   filter( commodity_desc == "WHEAT") %>%
   filter(short_desc == "WHEAT - YIELD, MEASURED IN BU / ACRE") %>%
-  filter(statisticcat_desc == "YIELD"), aes(x = year, y = Value), color = purduegold, size = 1.5) +
+  filter(statisticcat_desc == "YIELD") %>%
+   mutate(year = as.numeric(year)), aes(x = year, y = Value) , color = purduegold, size = 1.5) +
   theme_bw() +
   lims(y = c(0, 100)) +
   labs(title = "U.S. Wheat Acreage and Yield", x = "", y = "Millions of Acres, and Bu/Acre, respectively") + 
@@ -521,7 +533,8 @@ wheat2 <- data1 %>%
   filter(statisticcat_desc == "PRODUCTION") %>%
   filter(short_desc == "WHEAT - PRODUCTION, MEASURED IN BU") %>%
   filter( domaincat_desc == "NOT SPECIFIED") %>% 
-  filter(source_desc == "SURVEY") %>%
+  filter(source_desc == "SURVEY") %>% 
+   mutate(year = as.numeric(year)) %>%
   select(c(commodity_desc, statisticcat_desc, short_desc, domaincat_desc, source_desc, year, Value )) %>% 
   ggplot(aes(x = year, y = Value/1000000000)) + 
   geom_col(width = 1.0) +
@@ -530,7 +543,8 @@ wheat2 <- data1 %>%
   filter(statisticcat_desc == "PRICE RECEIVED") %>%
   filter(reference_period_desc == "MARKETING YEAR") %>% 
   filter(short_desc == "WHEAT - PRICE RECEIVED, MEASURED IN $ / BU") %>% 
- select(c(commodity_desc, statisticcat_desc, short_desc, year, Value )), aes(x = year, y = Value), color = purduegold, size = 1.5) +
+ select(c(commodity_desc, statisticcat_desc, short_desc, year, Value )) %>%
+   mutate(year = as.numeric(year)), aes(x = year, y = Value),  color = purduegold, size = 1.5) +
   theme_bw() +
   lims(y = c(0,9)) +
   labs(title = "U.S. Wheat Production and Prices", x = "", y = "Billions of Bushels, and $/bu, respectively") + 
@@ -646,7 +660,8 @@ CornPrices<- data1 %>%
   filter(statisticcat_desc == "PRICE RECEIVED") %>%
   filter(reference_period_desc == "MARKETING YEAR") %>% 
   filter(short_desc == "CORN, GRAIN - PRICE RECEIVED, MEASURED IN $ / BU") %>% 
- select(c(commodity_desc, statisticcat_desc, short_desc, year, Value )) %>% 
+ select(c(commodity_desc, statisticcat_desc, short_desc, year, Value ))%>%
+   mutate(year = as.numeric(year)) %>% 
   ggplot(aes(x = year, y = Value)) + 
   geom_line(color = purduegold, size = 1.5) +
   theme_bw() +
@@ -821,7 +836,7 @@ ggsave(filename = "PricesSpaceTime-pricesdecreasing-hyp.png")
 ```
 
 
-
+#2023 updated to here
 
 # Figures for `08-ForecastingProduction.Rmd`
 

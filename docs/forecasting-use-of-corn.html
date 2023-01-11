@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 13 Forecasting Use of Corn | Price Analysis: A Fundamental Approach to the Study of Commodity Prices</title>
   <meta name="description" content="This book introduces the basics of fundamental analysis of prices in food commodity markets. Learn how to follow and understand futures markets for commodities like corn, soybeans, wheat, live cattle, feeder cattle, hogs, ethanol, and crude oil. Learn about calendar, wheat, soybean crush, corn crush, and cattle crush spreads. Additionally, learn about which USDA reports are important to markets, when they come out, and why they move prices. Special focus on the WASDE, Grain Stocks, Prospective Plantings, Planted Acres, Crop Production, and Crop Progress and Condition reports." />
-  <meta name="generator" content="bookdown 0.21.5 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 13 Forecasting Use of Corn | Price Analysis: A Fundamental Approach to the Study of Commodity Prices" />
   <meta property="og:type" content="book" />
-  <meta property="og:url" content="http:mindymallory.github.io/PriceAnalysis/" />
   <meta property="og:image" content="http:mindymallory.github.io/PriceAnalysis//images/cover.png" />
   <meta property="og:description" content="This book introduces the basics of fundamental analysis of prices in food commodity markets. Learn how to follow and understand futures markets for commodities like corn, soybeans, wheat, live cattle, feeder cattle, hogs, ethanol, and crude oil. Learn about calendar, wheat, soybean crush, corn crush, and cattle crush spreads. Additionally, learn about which USDA reports are important to markets, when they come out, and why they move prices. Special focus on the WASDE, Grain Stocks, Prospective Plantings, Planted Acres, Crop Production, and Crop Progress and Condition reports." />
   <meta name="github-repo" content="mindymallory/PriceAnalysis" />
@@ -24,7 +23,7 @@
 <meta name="author" content="Mindy L. Mallory" />
 
 
-<meta name="date" content="2022-02-15" />
+<meta name="date" content="2023-01-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +32,8 @@
   
 <link rel="prev" href="forecasting-production.html"/>
 <link rel="next" href="forecasting-use-of-soybeans.html"/>
-<script src="libs/header-attrs-2.6.0/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,11 +49,11 @@
 
 
 
-
 <link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
 <script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
@@ -420,9 +419,9 @@ div.csl-indent {
 <li class="chapter" data-level="20.5" data-path="crude-oil-and-the-crack-spread.html"><a href="crude-oil-and-the-crack-spread.html#the-crack-spread"><i class="fa fa-check"></i><b>20.5</b> The Crack Spread</a></li>
 <li class="chapter" data-level="20.6" data-path="crude-oil-and-the-crack-spread.html"><a href="crude-oil-and-the-crack-spread.html#exercises-9"><i class="fa fa-check"></i><b>20.6</b> Exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="21" data-path="forecasting-production-advanced.html"><a href="forecasting-production-advanced.html"><i class="fa fa-check"></i><b>21</b> Forecasting Production - Advanced</a>
+<li class="chapter" data-level="21" data-path="forecasting-production---advanced.html"><a href="forecasting-production---advanced.html"><i class="fa fa-check"></i><b>21</b> Forecasting Production - Advanced</a>
 <ul>
-<li class="chapter" data-level="21.1" data-path="forecasting-production-advanced.html"><a href="forecasting-production-advanced.html#exercises-10"><i class="fa fa-check"></i><b>21.1</b> Exercises</a></li>
+<li class="chapter" data-level="21.1" data-path="forecasting-production---advanced.html"><a href="forecasting-production---advanced.html#exercises-10"><i class="fa fa-check"></i><b>21.1</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="22" data-path="appendix-forecasting-with-ts-models.html"><a href="appendix-forecasting-with-ts-models.html"><i class="fa fa-check"></i><b>22</b> Appendix: Forecasting with TS Models</a>
 <ul>
@@ -496,8 +495,8 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="forecasting-use-of-corn" class="section level1" number="13">
-<h1><span class="header-section-number">Chapter 13</span> Forecasting Use of Corn</h1>
+<div id="forecasting-use-of-corn" class="section level1 hasAnchor" number="13">
+<h1><span class="header-section-number">Chapter 13</span> Forecasting Use of Corn<a href="forecasting-use-of-corn.html#forecasting-use-of-corn" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>In the WASDE balance sheet for corn there are three use categories. Two
 account for domestic consumption - Food, Seed and Industrial, and Feed
 and Residual - while exports make up the third category. Ethanol makes
@@ -509,8 +508,8 @@ Looking at quarterly gives you a sense of how use is distributed across
 the marketing year in different categories. The annual histories,
 however, are probably the most useful.</p>
 <p><img src="assets/ForecastingUseof-CornUseCategories.png" /></p>
-<div id="food-alcohol-and-industrial-use" class="section level2" number="13.1">
-<h2><span class="header-section-number">13.1</span> Food, Alcohol, and Industrial Use</h2>
+<div id="food-alcohol-and-industrial-use" class="section level2 hasAnchor" number="13.1">
+<h2><span class="header-section-number">13.1</span> Food, Alcohol, and Industrial Use<a href="forecasting-use-of-corn.html#food-alcohol-and-industrial-use" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Let us begin by looking at the Food, Alcohol and Industrial category.
 These data were queried from the <a href="http://www.ers.usda.gov/data-products/feed-grains-database/feed-grains-yearbook-tables.aspx#26780">Feed Grains
 database</a>
@@ -550,8 +549,8 @@ accounted for over 50% since 2010. The drop in percentage of production
 in 2015 occurs because of the large crop in 2015, even though the use
 level is flat (shown in figure 2).</p>
 </div>
-<div id="exports" class="section level2" number="13.2">
-<h2><span class="header-section-number">13.2</span> Exports</h2>
+<div id="exports" class="section level2 hasAnchor" number="13.2">
+<h2><span class="header-section-number">13.2</span> Exports<a href="forecasting-use-of-corn.html#exports" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Quarterly corn exports are displayed in figure 4. Unlike Food, alcohol
 and industrial use, exports tend to have a very seasonal or cyclical
 pattern. Exports are large in the second quarter of the marketing year,
@@ -759,8 +758,8 @@ Clearly Japan and Mexico are the dominant Importers of U.S. corn, with
 South Korea being a distant third. The table shows that most countries
 rank has remained fairly stable across the marketing years shown.</p>
 </div>
-<div id="feed-and-residual" class="section level2" number="13.3">
-<h2><span class="header-section-number">13.3</span> Feed and Residual</h2>
+<div id="feed-and-residual" class="section level2 hasAnchor" number="13.3">
+<h2><span class="header-section-number">13.3</span> Feed and Residual<a href="forecasting-use-of-corn.html#feed-and-residual" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The final use category is the most difficult to forecast because its
 quantity is derived, not estimated. This means the USDA makes estimates
 of every other row in the balance sheet. Then, to ensure the numbers add
@@ -803,8 +802,8 @@ time-period graphed, but as a percentage of production it has fallen
 since 2005. Like the export category, this reflects a proportional shift
 in use toward ethanol production.</p>
 </div>
-<div id="price-sensitivity-of-use-categories" class="section level2" number="13.4">
-<h2><span class="header-section-number">13.4</span> Price Sensitivity of Use Categories</h2>
+<div id="price-sensitivity-of-use-categories" class="section level2 hasAnchor" number="13.4">
+<h2><span class="header-section-number">13.4</span> Price Sensitivity of Use Categories<a href="forecasting-use-of-corn.html#price-sensitivity-of-use-categories" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Examining annual figures as a percentage of production reveals some
 interesting facts about the price sensitivity of the three use
 categories.</p>
@@ -827,8 +826,8 @@ mind). Also, consumers of meat (exported corn is primarily used as
 animal feed in the foreign country) in the less developed world are more
 price sensitive and presumably reduce consumption when prices are high.</p>
 </div>
-<div id="forecasting-use" class="section level2" number="13.5">
-<h2><span class="header-section-number">13.5</span> Forecasting Use</h2>
+<div id="forecasting-use" class="section level2 hasAnchor" number="13.5">
+<h2><span class="header-section-number">13.5</span> Forecasting Use<a href="forecasting-use-of-corn.html#forecasting-use" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>One method for forecasting the use categories during the marketing year,
 is to keep track of how much corn has been used to date in each
 category. This pace of use can be compared to the pace of use in
@@ -839,8 +838,8 @@ use. The idea behind such an exercise being the seasonality we saw in
 the historical graphs above is likely to repeat itself. Information
 about the pace of use in each category must be obtained from different
 sources within the USDA.</p>
-<div id="food-seed-and-industrial" class="section level3" number="13.5.1">
-<h3><span class="header-section-number">13.5.1</span> Food, Seed, and Industrial</h3>
+<div id="food-seed-and-industrial" class="section level3 hasAnchor" number="13.5.1">
+<h3><span class="header-section-number">13.5.1</span> Food, Seed, and Industrial<a href="forecasting-use-of-corn.html#food-seed-and-industrial" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We discussed above that ethanol production is the primary user of corn
 in the Food, Seed, and Industrial Category. This becomes obvious by
 comparing figure 10 below, which displays ethanol production and
@@ -875,14 +874,14 @@ Examining the current marketing year’s production of ethanol gives some
 indication of whether ethanol production is likely to exceed the 15
 billion gallon per year mandated level.</p>
 </div>
-<div id="exports-1" class="section level3" number="13.5.2">
-<h3><span class="header-section-number">13.5.2</span> Exports</h3>
+<div id="exports-1" class="section level3 hasAnchor" number="13.5.2">
+<h3><span class="header-section-number">13.5.2</span> Exports<a href="forecasting-use-of-corn.html#exports-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Two USDA agencies are involved in providing estimates of export sales.
 The <a href="http://www.fas.usda.gov/">USDA Foreign Agricultural Service</a> and
 the <a href="http://www.gipsa.usda.gov/">USDA Grain Inspection, Packers, and Stockyards
 Administration</a>.</p>
-<div id="usda-fas-export-sales-reporting-system" class="section level4" number="13.5.2.1">
-<h4><span class="header-section-number">13.5.2.1</span> USDA FAS Export Sales Reporting System</h4>
+<div id="usda-fas-export-sales-reporting-system" class="section level4 hasAnchor" number="13.5.2.1">
+<h4><span class="header-section-number">13.5.2.1</span> USDA FAS Export Sales Reporting System<a href="forecasting-use-of-corn.html#usda-fas-export-sales-reporting-system" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The <a href="http://www.fas.usda.gov/">USDA Foreign Agricultural Service</a>
 maintains the Export Sales Reporting System, which reports weekly export
 quantities and daily reports of large export sales. From the FAS
@@ -891,7 +890,7 @@ quantities and daily reports of large export sales. From the FAS
 <blockquote>
 <p>The Export Sales Reporting Program has its roots from the unexpected
 purchase of large amounts of grain by the Soviet Union in 1972, “The
-Great Russian Grain Robbery.” The huge, unanticipated purchases of
+Great Russian Grain Robbery”. The huge, unanticipated purchases of
 U.S. wheat and corn that year depleted U.S. reserve stocks which
 caused a sizable run-up in U.S. food prices.</p>
 <p>Furthermore, there was growing concern that some companies might have
@@ -907,8 +906,8 @@ that everyone has access to the same information at the same time.</p>
 </blockquote>
 </div>
 </div>
-<div id="daily-reports" class="section level3" number="13.5.3">
-<h3><span class="header-section-number">13.5.3</span> Daily Reports</h3>
+<div id="daily-reports" class="section level3 hasAnchor" number="13.5.3">
+<h3><span class="header-section-number">13.5.3</span> Daily Reports<a href="forecasting-use-of-corn.html#daily-reports" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Under the export sales reporting system, U.S. exporters are required to
 report all large sales of certain designated commodities by 3 p.m.
 (Eastern time) on the next business day after the sale is made. The
@@ -928,14 +927,14 @@ for the export sales reporting system is Friday-Thursday. The Secretary
 of Agriculture has the authority to add other commodities to this list.
 Source: <a href="http://apps.fas.usda.gov/export-sales/backgrnd.htm#Daily%20Reports">USDA
 FAS</a></p>
-<div id="gipsa" class="section level4" number="13.5.3.1">
-<h4><span class="header-section-number">13.5.3.1</span> GIPSA</h4>
+<div id="gipsa" class="section level4 hasAnchor" number="13.5.3.1">
+<h4><span class="header-section-number">13.5.3.1</span> GIPSA<a href="forecasting-use-of-corn.html#gipsa" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>USDA GIPSA mission is “To facilitate the marketing of livestock,
 poultry, meat, cereals, oil-seeds, and related agricultural products,
 and promote fair and competitive trading practices for the overall
 benefit of consumers and American agriculture.” From the GIPSA website:</p>
 <blockquote>
-<h3 id="history">History</h3>
+<h3 id="history" class="hasAnchor">History<a href="forecasting-use-of-corn.html#history" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The Grain Inspection, Packers and Stockyards Administration (GIPSA)
 was established in 1994 as part of the reorganization of the U.S.
 Department of Agriculture. The formation of the agency resulted from
@@ -971,8 +970,8 @@ differences will be reconciled so that the export totals reported by
 each agency will not differ substantially.</p>
 </div>
 </div>
-<div id="feed-and-residual-1" class="section level3" number="13.5.4">
-<h3><span class="header-section-number">13.5.4</span> Feed and Residual</h3>
+<div id="feed-and-residual-1" class="section level3 hasAnchor" number="13.5.4">
+<h3><span class="header-section-number">13.5.4</span> Feed and Residual<a href="forecasting-use-of-corn.html#feed-and-residual-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>While the Residual component tends to dominate the variation in the Feed
 and Residual category, the USDA does publish statistics related to
 numbers of cattle, hogs, and poultry. Major changes in livestock numbers
@@ -990,8 +989,8 @@ report contains the number of head and live weight of chickens, turkeys,
 ducks and other poultry slaughtered under Federal inspection.</p>
 </div>
 </div>
-<div id="readings-3" class="section level2" number="13.6">
-<h2><span class="header-section-number">13.6</span> Readings</h2>
+<div id="readings-3" class="section level2 hasAnchor" number="13.6">
+<h2><span class="header-section-number">13.6</span> Readings<a href="forecasting-use-of-corn.html#readings-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><a href="http://farmdocdaily.illinois.edu/2015/01/reviewing-pace-of-corn-and-soybean-exports.html">Reviewing the Pace of Corn and Soybean
 Exports</a></p>
 <p>Newton, J. “Reviewing the Pace of Corn and Soybean Exports.” farmdoc
@@ -1010,7 +1009,6 @@ University of Illinois at Urbana-Champaign, January 26, 2015.</p>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -1029,6 +1027,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -1049,6 +1048,10 @@ gitbook.start({
 "text": null
 },
 "download": ["price-analysis.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "section"
 }
@@ -1062,7 +1065,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

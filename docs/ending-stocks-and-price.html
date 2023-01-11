@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 15 Ending Stocks and Price | Price Analysis: A Fundamental Approach to the Study of Commodity Prices</title>
   <meta name="description" content="This book introduces the basics of fundamental analysis of prices in food commodity markets. Learn how to follow and understand futures markets for commodities like corn, soybeans, wheat, live cattle, feeder cattle, hogs, ethanol, and crude oil. Learn about calendar, wheat, soybean crush, corn crush, and cattle crush spreads. Additionally, learn about which USDA reports are important to markets, when they come out, and why they move prices. Special focus on the WASDE, Grain Stocks, Prospective Plantings, Planted Acres, Crop Production, and Crop Progress and Condition reports." />
-  <meta name="generator" content="bookdown 0.21.5 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 15 Ending Stocks and Price | Price Analysis: A Fundamental Approach to the Study of Commodity Prices" />
   <meta property="og:type" content="book" />
-  <meta property="og:url" content="http:mindymallory.github.io/PriceAnalysis/" />
   <meta property="og:image" content="http:mindymallory.github.io/PriceAnalysis//images/cover.png" />
   <meta property="og:description" content="This book introduces the basics of fundamental analysis of prices in food commodity markets. Learn how to follow and understand futures markets for commodities like corn, soybeans, wheat, live cattle, feeder cattle, hogs, ethanol, and crude oil. Learn about calendar, wheat, soybean crush, corn crush, and cattle crush spreads. Additionally, learn about which USDA reports are important to markets, when they come out, and why they move prices. Special focus on the WASDE, Grain Stocks, Prospective Plantings, Planted Acres, Crop Production, and Crop Progress and Condition reports." />
   <meta name="github-repo" content="mindymallory/PriceAnalysis" />
@@ -24,7 +23,7 @@
 <meta name="author" content="Mindy L. Mallory" />
 
 
-<meta name="date" content="2022-02-15" />
+<meta name="date" content="2023-01-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +32,8 @@
   
 <link rel="prev" href="forecasting-use-of-soybeans.html"/>
 <link rel="next" href="the-soybean-crush.html"/>
-<script src="libs/header-attrs-2.6.0/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,11 +49,11 @@
 
 
 
-
 <link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
 <script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
@@ -420,9 +419,9 @@ div.csl-indent {
 <li class="chapter" data-level="20.5" data-path="crude-oil-and-the-crack-spread.html"><a href="crude-oil-and-the-crack-spread.html#the-crack-spread"><i class="fa fa-check"></i><b>20.5</b> The Crack Spread</a></li>
 <li class="chapter" data-level="20.6" data-path="crude-oil-and-the-crack-spread.html"><a href="crude-oil-and-the-crack-spread.html#exercises-9"><i class="fa fa-check"></i><b>20.6</b> Exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="21" data-path="forecasting-production-advanced.html"><a href="forecasting-production-advanced.html"><i class="fa fa-check"></i><b>21</b> Forecasting Production - Advanced</a>
+<li class="chapter" data-level="21" data-path="forecasting-production---advanced.html"><a href="forecasting-production---advanced.html"><i class="fa fa-check"></i><b>21</b> Forecasting Production - Advanced</a>
 <ul>
-<li class="chapter" data-level="21.1" data-path="forecasting-production-advanced.html"><a href="forecasting-production-advanced.html#exercises-10"><i class="fa fa-check"></i><b>21.1</b> Exercises</a></li>
+<li class="chapter" data-level="21.1" data-path="forecasting-production---advanced.html"><a href="forecasting-production---advanced.html#exercises-10"><i class="fa fa-check"></i><b>21.1</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="22" data-path="appendix-forecasting-with-ts-models.html"><a href="appendix-forecasting-with-ts-models.html"><i class="fa fa-check"></i><b>22</b> Appendix: Forecasting with TS Models</a>
 <ul>
@@ -496,8 +495,8 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="ending-stocks-and-price" class="section level1" number="15">
-<h1><span class="header-section-number">Chapter 15</span> Ending Stocks and Price</h1>
+<div id="ending-stocks-and-price" class="section level1 hasAnchor" number="15">
+<h1><span class="header-section-number">Chapter 15</span> Ending Stocks and Price<a href="ending-stocks-and-price.html#ending-stocks-and-price" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Over the course of the last several chapters we have covered each category of supply and use. In tables 1 and 2 below, that literally means we covered how to forecast the numbers in each row of the USDA WASDE balance sheet. Subtracting total use from total supply gives an estimate of marketing year ending stocks. For example, in table 1,</p>
 <p><span class="math display">\[Supply, Total - Use, Total = 16,909 - 14,500 = 2,409 (Million bushels) = Ending Stocks;\]</span></p>
 <p>in table 2<a href="Recall%20that%20WASDE%20balance%20sheets%20do%20not%20always%20add%20perfectly%20due%20to%20rounding.">^adding</a></p>
@@ -791,8 +790,8 @@ div.csl-indent {
 </tbody>
 </table>
 <p>However, this still leaves a lot to be desired because the most compelling reason to keep a detailed balance sheet and forecast future supply and use is to come up with a reasonable expectation for price. After all our work on forecasting the components of the balance sheet, we have not made much headway in that regard. In this chapter, we cover some approaches for taking a forecast of ending stocks and translating that into a forecast of price.</p>
-<div id="forecasting-price" class="section level2" number="15.1">
-<h2><span class="header-section-number">15.1</span> Forecasting Price</h2>
+<div id="forecasting-price" class="section level2 hasAnchor" number="15.1">
+<h2><span class="header-section-number">15.1</span> Forecasting Price<a href="ending-stocks-and-price.html#forecasting-price" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Arriving at an estimate of ending stocks gives one a sense of the degree of scarcity (or lack-thereof) in the market. It is still difficult to infer the marketing year average price from that, because the prevailing price that should coincide with the forecasted ending stocks is a function of the elasticities of demand for different use categories. These can be difficult to estimate, and we are not guaranteed that elasticity is constant from one year to the next.</p>
 <p>Figure 1 below is reproduced from the farmDoc Daily (fdd) article by Good and Irwin, “The Relationship between Stocks-to-Use and Corn Prices Revisited”</p>
 <div class="figure">
@@ -802,8 +801,8 @@ div.csl-indent {
 <p>Source: <a href="http://farmdocdaily.illinois.edu/2015/04/relationship-stock-to-use-and-corn-prices.html">FarmDoc Daily</a></p>
 <p>Since the supply curve shifts from year-to-year and the demand curve shifts from year-to-year due to a myriad of factors, one cannot count on estimating a single supply or demand curve from a series of price and quantity pairs. However, once we have entered a marketing year; i.e., we have harvested the domestic supply in the balance sheet, we can count of total supply being quite inelastic. We can be confident of this because imports are historically a very small part of domestic total supply for corn, and after the domestic harvest, imports would be the only way to shift the supply curve. Further, if one had some confidence that the demand curve was more or less constant through time, a time-series of prices and quantities would approximately trace out the demand curve.</p>
 </div>
-<div id="examining-the-data" class="section level2" number="15.2">
-<h2><span class="header-section-number">15.2</span> Examining the Data</h2>
+<div id="examining-the-data" class="section level2 hasAnchor" number="15.2">
+<h2><span class="header-section-number">15.2</span> Examining the Data<a href="ending-stocks-and-price.html#examining-the-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This section continues to draw heavily on the Good and Irwin fdd article referenced above. First let us take a look at the average price received for corn over time and the stocks-to-use of corn over time in figure 2. These data can both be obtained from the <a href="http://www.ers.usda.gov/data-products/feed-grains-database.aspx">USDA ERS Feed Grains Database</a> database, although you have to download the <em>stocks</em> and <em>use</em> separately and create your own stocks-use-variable.</p>
 <div class="figure">
 <img src="assets/EndingStocksand-StocksUsePrices.png" alt="" />
@@ -823,12 +822,12 @@ div.csl-indent {
 <p>Highlighting the data and pre- or post-2006<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a> clearly shows a wide range of prices over a relatively narrow range of stocks-to-use realizations. Given that 2006 is the beginning of the ramp-up in ethanol production, this should not be surprising. Suddenly there was a large and very inelastic demander of corn in the market. This ensured supply would have to be rationed by price to keep stocks from falling to low levels.</p>
 <p>Also in figure 4 trendlines are fitted for the two subsets of the data. Since both scatterplots appear to display a curvature, the price data are regressed on the log of the stocks-to-use data. Also, this specification provided the highest <span class="math inline">\(R^2\)</span> of the regression specifications available in the defalt Excel options. The regression in the post-2006 period explains 80% of the variaiton in the price data, which suggests it is a reasonable starting point for forecasting price using ending stocks and the balance sheet approach.</p>
 </div>
-<div id="references" class="section level2" number="15.3">
-<h2><span class="header-section-number">15.3</span> References</h2>
+<div id="references" class="section level2 hasAnchor" number="15.3">
+<h2><span class="header-section-number">15.3</span> References<a href="ending-stocks-and-price.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Good, D., and S. Irwin. “<a href="http://farmdocdaily.illinois.edu/2015/04/relationship-stock-to-use-and-corn-prices.html">The Relationship between Stocks-to-Use and Corn Prices Revisited</a>.” farmdoc daily (5):65, Department of Agricultural and Consumer Economics, University of Illinois at Urbana-Champaign, April 9, 2015.</p>
 </div>
-<div id="exercises-5" class="section level2" number="15.4">
-<h2><span class="header-section-number">15.4</span> Exercises</h2>
+<div id="exercises-5" class="section level2 hasAnchor" number="15.4">
+<h2><span class="header-section-number">15.4</span> Exercises<a href="ending-stocks-and-price.html#exercises-5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ol style="list-style-type: decimal">
 <li><p>Go to <a href="www.agmanager.info">www.agmanager.info</a>, the extension website of Kansas State University’s Agricultural Economics department.</p>
 <ul>
@@ -873,7 +872,6 @@ Westcott, Paul C, and Linwood A Hoffman. 1999. <span>“Price Determination for 
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -892,6 +890,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -912,6 +911,10 @@ gitbook.start({
 "text": null
 },
 "download": ["price-analysis.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "section"
 }
@@ -925,7 +928,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

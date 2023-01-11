@@ -3,7 +3,7 @@ title: "Price Analysis: A Fundamental Approach to the Study of Commodity Prices"
 author: "Mindy L. Mallory"
 description: "This book introduces the basics of fundamental analysis of prices in food commodity markets. Learn how to follow and understand futures markets for commodities like corn, soybeans, wheat, live cattle, feeder cattle, hogs, ethanol, and crude oil. Learn about calendar, wheat, soybean crush, corn crush, and cattle crush spreads. Additionally, learn about which USDA reports are important to markets, when they come out, and why they move prices. Special focus on the WASDE, Grain Stocks, Prospective Plantings, Planted Acres,  Crop Production, and Crop Progress and Condition reports."
 cover-image: "images/cover.png"
-date: "2022-02-15"
+date: "2023-01-11"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib]
@@ -52,5 +52,5 @@ mlmallor at purdue dot edu
 knitr::include_url("https://www.youtube.com/embed/9bZkp7q19f0")
 ```
 
-<iframe src="https://www.youtube.com/embed/9bZkp7q19f0" width="672" height="400px"></iframe>
+<iframe src="https://www.youtube.com/embed/9bZkp7q19f0" width="672" height="400px" data-external="1"></iframe>
 -->

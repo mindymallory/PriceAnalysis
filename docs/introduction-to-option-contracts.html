@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 5 Introduction to Option Contracts | Price Analysis: A Fundamental Approach to the Study of Commodity Prices</title>
   <meta name="description" content="This book introduces the basics of fundamental analysis of prices in food commodity markets. Learn how to follow and understand futures markets for commodities like corn, soybeans, wheat, live cattle, feeder cattle, hogs, ethanol, and crude oil. Learn about calendar, wheat, soybean crush, corn crush, and cattle crush spreads. Additionally, learn about which USDA reports are important to markets, when they come out, and why they move prices. Special focus on the WASDE, Grain Stocks, Prospective Plantings, Planted Acres, Crop Production, and Crop Progress and Condition reports." />
-  <meta name="generator" content="bookdown 0.21.5 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 5 Introduction to Option Contracts | Price Analysis: A Fundamental Approach to the Study of Commodity Prices" />
   <meta property="og:type" content="book" />
-  <meta property="og:url" content="http:mindymallory.github.io/PriceAnalysis/" />
   <meta property="og:image" content="http:mindymallory.github.io/PriceAnalysis//images/cover.png" />
   <meta property="og:description" content="This book introduces the basics of fundamental analysis of prices in food commodity markets. Learn how to follow and understand futures markets for commodities like corn, soybeans, wheat, live cattle, feeder cattle, hogs, ethanol, and crude oil. Learn about calendar, wheat, soybean crush, corn crush, and cattle crush spreads. Additionally, learn about which USDA reports are important to markets, when they come out, and why they move prices. Special focus on the WASDE, Grain Stocks, Prospective Plantings, Planted Acres, Crop Production, and Crop Progress and Condition reports." />
   <meta name="github-repo" content="mindymallory/PriceAnalysis" />
@@ -24,7 +23,7 @@
 <meta name="author" content="Mindy L. Mallory" />
 
 
-<meta name="date" content="2022-02-15" />
+<meta name="date" content="2023-01-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +32,8 @@
   
 <link rel="prev" href="futures-and-hedging-review.html"/>
 <link rel="next" href="advanced-option-topics.html"/>
-<script src="libs/header-attrs-2.6.0/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,11 +49,11 @@
 
 
 
-
 <link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
 <script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
@@ -420,9 +419,9 @@ div.csl-indent {
 <li class="chapter" data-level="20.5" data-path="crude-oil-and-the-crack-spread.html"><a href="crude-oil-and-the-crack-spread.html#the-crack-spread"><i class="fa fa-check"></i><b>20.5</b> The Crack Spread</a></li>
 <li class="chapter" data-level="20.6" data-path="crude-oil-and-the-crack-spread.html"><a href="crude-oil-and-the-crack-spread.html#exercises-9"><i class="fa fa-check"></i><b>20.6</b> Exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="21" data-path="forecasting-production-advanced.html"><a href="forecasting-production-advanced.html"><i class="fa fa-check"></i><b>21</b> Forecasting Production - Advanced</a>
+<li class="chapter" data-level="21" data-path="forecasting-production---advanced.html"><a href="forecasting-production---advanced.html"><i class="fa fa-check"></i><b>21</b> Forecasting Production - Advanced</a>
 <ul>
-<li class="chapter" data-level="21.1" data-path="forecasting-production-advanced.html"><a href="forecasting-production-advanced.html#exercises-10"><i class="fa fa-check"></i><b>21.1</b> Exercises</a></li>
+<li class="chapter" data-level="21.1" data-path="forecasting-production---advanced.html"><a href="forecasting-production---advanced.html#exercises-10"><i class="fa fa-check"></i><b>21.1</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="22" data-path="appendix-forecasting-with-ts-models.html"><a href="appendix-forecasting-with-ts-models.html"><i class="fa fa-check"></i><b>22</b> Appendix: Forecasting with TS Models</a>
 <ul>
@@ -496,8 +495,8 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="introduction-to-option-contracts" class="section level1" number="5">
-<h1><span class="header-section-number">Chapter 5</span> Introduction to Option Contracts</h1>
+<div id="introduction-to-option-contracts" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">Chapter 5</span> Introduction to Option Contracts<a href="introduction-to-option-contracts.html#introduction-to-option-contracts" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p><strong>Highlights</strong></p>
 <ul>
 <li><p>Learn the basics of call and put options</p></li>
@@ -510,15 +509,15 @@ div.csl-indent {
 <li><p>Does a long put position have unlimited upside potential? What about a long call position?</p></li>
 <li><p>Suppose you are a farmer with unpriced grain that you will harvest in October. Why would why would a long put option be a hedge?</p></li>
 </ul>
-<div id="what-is-an-option-contract" class="section level2" number="5.1">
-<h2><span class="header-section-number">5.1</span> What is an Option Contract?</h2>
+<div id="what-is-an-option-contract" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> What is an Option Contract?<a href="introduction-to-option-contracts.html#what-is-an-option-contract" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The previous chapter provided an introduction to futures markets and how they can be used to hedge a position in the cash market, or to speculate if you have conviction about the direction of price movement in the future. In this chapter, we introduce options contracts. An option contract gives the holder the right, but not the obligation to a position in the underlying contract by a certain date <span class="citation">(<a href="#ref-hull2017" role="doc-biblioref"><strong>hull2017?</strong></a>)</span>. That means that every option contract is tied to another asset or financial instrument. The purchaser of an option contract will accept the position in the underlying only if it is advantageous to do so.</p>
-<div id="call-options-vs-put-options" class="section level3" number="5.1.1">
-<h3><span class="header-section-number">5.1.1</span> Call Options Vs Put Options</h3>
+<div id="call-options-vs-put-options" class="section level3 hasAnchor" number="5.1.1">
+<h3><span class="header-section-number">5.1.1</span> Call Options Vs Put Options<a href="introduction-to-option-contracts.html#call-options-vs-put-options" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>There are two basic types of options: call options and put options. Call options give the holder the <em>right to buy</em> the underlying at a specified price (known as the strike price) by the expiration date of the option contract. Put options give the holder the <em>right to sell</em> the underlying at the strike price by the expiration date. Standard call and put options are most commonly one of two types, either American or European. American options can be exercised at any time (meaning the holder of the option contract may take the long position in the underlying asset at any time prior to or at expiration). Whereas, a European contract can only be exercised at the option contract’s expiration.</p>
 </div>
-<div id="option-contract-components" class="section level3" number="5.1.2">
-<h3><span class="header-section-number">5.1.2</span> Option Contract Components</h3>
+<div id="option-contract-components" class="section level3 hasAnchor" number="5.1.2">
+<h3><span class="header-section-number">5.1.2</span> Option Contract Components<a href="introduction-to-option-contracts.html#option-contract-components" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>All option contracts must specify the following details.</p>
 <ul>
 <li><p><strong>Expiration Date</strong>: The date at which the option contract either must be exercised or left to expire worthless. Sometimes call maturity.</p></li>
@@ -529,14 +528,14 @@ div.csl-indent {
 </ul>
 </div>
 </div>
-<div id="what-are-the-obligations-of-option-sellers" class="section level2" number="5.2">
-<h2><span class="header-section-number">5.2</span> What are the Obligations of Option Sellers?</h2>
+<div id="what-are-the-obligations-of-option-sellers" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> What are the Obligations of Option Sellers?<a href="introduction-to-option-contracts.html#what-are-the-obligations-of-option-sellers" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Every option contract has a buyer and a seller. We discussed how the buyer of the option has the right, but not the obligation to buy (for a call option) or sell (for a put option). Once an option seller has taken the position, they have certain obligations, namely to deliver a long position to the call buyer or deliver a short position to the put buyer.</p>
 <p><strong>Call Option Seller:</strong> The call option seller must be ready to deliver a long position in the underlying to a call option buyer. That means that they must be ready to sell the underlying at the strike price. Notice, that the rational call buyer will only exercise if the price of the underlying is above the strike price of the option contract. The call option seller hopes that the price of the underlying stays below the strike price and they get to keep the premium without having to be assigned a losing position in the underling.</p>
 <p><strong>Put Option Seller:</strong> The put option seller is in a similar situation as the call option seller. The put option seller must be ready to buy the underlying at the strike price. The rational put option buyer will only exercise their option if the price of the underlying is below the strike price. Therefore, the put option seller hopes that the price of the underlying stays above the strike price so they are paid the option premium without getting assigned to a losing position in the underlying.</p>
 </div>
-<div id="profit-and-loss-diagrams-for-option-positions" class="section level2" number="5.3">
-<h2><span class="header-section-number">5.3</span> <strong>Profit and Loss Diagrams for Option Positions</strong></h2>
+<div id="profit-and-loss-diagrams-for-option-positions" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> <strong>Profit and Loss Diagrams for Option Positions</strong><a href="introduction-to-option-contracts.html#profit-and-loss-diagrams-for-option-positions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The preceding discussion containing a lot of descriptions can be quite wordy. In this case, a picture really is worth a thousand words. In the figure below we plot the profit diagram for long and short positions of both a call and put option. For simplicity, we plot both the call and put options with an equal premium. In the next chapter we will learn that call and put options with the same strike have a very specific relationship (and it is not that the prices are equal), but for now it helps create a simple example.</p>
 <p>The specifics:</p>
 <ul>
@@ -550,33 +549,33 @@ div.csl-indent {
 <p>Similarly for the short put position, with the short put position having 10 cents profit when the price is above 450 cents at expiration, and losing money when the price is below 440 cents at expiration.</p>
 <p>The key observation being that long option positions have nearly unlimited upside potential, but require an upfront cost, while short option positions receive payment upfront in the form of the option premium in exchange for taking the downside risk.</p>
 </div>
-<div id="moneyness-of-an-option" class="section level2" number="5.4">
-<h2><span class="header-section-number">5.4</span> Moneyness of an Option</h2>
+<div id="moneyness-of-an-option" class="section level2 hasAnchor" number="5.4">
+<h2><span class="header-section-number">5.4</span> Moneyness of an Option<a href="introduction-to-option-contracts.html#moneyness-of-an-option" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Option contracts are often characterized by their <em><strong>moneyness</strong>.</em> Moneyness simply refers to how near the price of the underlying is to the strike price. We say an option is deep <strong>out-of-the money</strong> if the price of the underlying is far below the strike of a call option and far above the strike of a put option (basically when the price of the underlying is in the flat part of the option profit diagrams). We say an option is deep <strong>in-the-money</strong> when the price of the underlying is far above the strike of the call option and far below the strike of the put option (when the price of the underlying falls in the sloped part of the option profit diagram). Finally, we say an option is <strong>at-the-money</strong> or <strong>near-the-money</strong> when the price of the underlying is near the kink of the option profit diagram.</p>
 <p>Getting a feel for these definitions will help you develop intuition for options prices in the next chapter. In-the-money options should be expensive and out-of-the-money options should be cheap.</p>
 </div>
-<div id="option-prices-premium" class="section level2" number="5.5">
-<h2><span class="header-section-number">5.5</span> Option Prices (Premium)</h2>
+<div id="option-prices-premium" class="section level2 hasAnchor" number="5.5">
+<h2><span class="header-section-number">5.5</span> Option Prices (Premium)<a href="introduction-to-option-contracts.html#option-prices-premium" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Option prices (also called option premium) are determined by buyers and sellers in options markets, usually in electronic limit order books similar to other assets available to trade like stocks or futures contracts. It helps to think about option contracts like insurance policies. When you buy insurance for your car you pay a small amount at the beginning of the policy period in exchange for an agreement from your insurance company that they will pay damages in the (hopefully unlikely) event that you crash your car. You buy the insurance to protect yourself financially in the event you need to unexpectedly replace your car. Over your lifetime of car ownership you will probably pay more in car insurance than you collect in insurance claims. But for most of us, the comfort of not having to worry about a surprise $20K expenditure is worth it. The insurance company makes money year over year because they set premiums in such a way that they take in more premium than they pay out in claims. Insurance companies employ armies of actuaries and statisticians to calculate the probability you will crash our car and the actuarily fair rate (which is probability of a crash time what they have to pay you if you crash). Then the insurance company adds enough to cover business overhead and a profit margin, and that is how your car insurance rate is determined.</p>
 <p>Option buyers are like you and options sellers are like the insurance company in the car insurance example. Except in the case of options premiums, market participants are continually assessing what each option contract’s premium should be. Given the current price of the underling asset, volatility levels in the market, time to expiration of the contract, and some other things, what is the probability the contract will expire in the money? What is a fair price for a position in the market with limited downside risk and unlimited upside potential? In the next chapter we will learn the basics of option pricing and the most famous (though imperfect) option pricing model, but we can use a concept called intrinsic value to get a sense of some properties option prices should have.</p>
-<div id="intrinsic-value" class="section level3" number="5.5.1">
-<h3><span class="header-section-number">5.5.1</span> Intrinsic Value</h3>
+<div id="intrinsic-value" class="section level3 hasAnchor" number="5.5.1">
+<h3><span class="header-section-number">5.5.1</span> Intrinsic Value<a href="introduction-to-option-contracts.html#intrinsic-value" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>If we take the profit diagrams for the long call and put positions above and just plot what the gain or loss in the underlying market would be if we exercised right now, they would look similar to the plots above, except not shifted down by the amount of the option premium. This plots the intrinsic value of the options, or how much the position would be in profit if it were exercised immediately.</p>
 <p><img src="assets/Options1-optionintrinsic.png" /></p>
 <p>The options should be worth at least as much as its intrinsic value. Otherwise and arbitrage opportunity would exist. You could buy the option, exercise immediately, and immediately offset your position in the underlying for a riskless profit. For this reason, option prices usually fall somewhat above the intrinsic value diagram, as a function of the price of the underlying along the x-axis. How far above is determined by several factors that we will learn about in the next chapter.</p>
 </div>
 </div>
-<div id="margin-requirements" class="section level2" number="5.6">
-<h2><span class="header-section-number">5.6</span> Margin Requirements</h2>
+<div id="margin-requirements" class="section level2 hasAnchor" number="5.6">
+<h2><span class="header-section-number">5.6</span> Margin Requirements<a href="introduction-to-option-contracts.html#margin-requirements" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Since long option positions require premium to be paid upfront, the option buyer literally prepays the entire risk of the position. Therefore, no additional margin is required. Option sellers on the other hand, have large downside exposure so those positions require margin to be posted. The amount is determined by the exchange that offers the option contract for trading (with some brokers requiring even more than set by the exchange). The amount of margin required is set at the discretion of the exchange, but is greatly influenced by both recent and historical volatility of that particular market.</p>
 </div>
-<div id="size-of-the-underlying" class="section level2" number="5.7">
-<h2><span class="header-section-number">5.7</span> Size of the Underlying</h2>
+<div id="size-of-the-underlying" class="section level2 hasAnchor" number="5.7">
+<h2><span class="header-section-number">5.7</span> Size of the Underlying<a href="introduction-to-option-contracts.html#size-of-the-underlying" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Every option contract will specify how much of the underlying the contract is associated with. In the case of stock options, options most frequently are for 100 shares of the underlying. So if you buy 1 call option with a premium of $1.00 and a strike of $120 on company XYZ $2.00, for example, you have purchased the right to buy 100 shares of XYZ at a price of $120. Making the actual cost to buy the option <span class="math inline">\(100*1.00 = \$100\)</span>.</p>
 <p>The size units for options on futures contracts are typically just for one futures contract, though. So if you buy a call option on soybean futures at the <a href="cmegroup.com">cmegroup.com</a> it is the right to buy just one futures contract.</p>
 </div>
-<div id="reading-option-quotes" class="section level2" number="5.8">
-<h2><span class="header-section-number">5.8</span> Reading Option Quotes</h2>
+<div id="reading-option-quotes" class="section level2 hasAnchor" number="5.8">
+<h2><span class="header-section-number">5.8</span> Reading Option Quotes<a href="introduction-to-option-contracts.html#reading-option-quotes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The figure below shows quotes for several options on the January 2021 soybeans futures contract that trades on the <a href="cmegroup.com">cmegroup.com</a> exchange. The underlying contract information is in the top table. In the LAST column we see that last price the contract had traded for at the time I took a snapshot of these quotes. CHANGE shows the price change since the PRIOR SETTLE price, which is the settlement price from the previous day. HIGH price, LOW price, and VOLUME on the trading session are also provided.</p>
 <p>Recall that soybeans are quoted to the eight of a cent, so the 1249’0 means <span class="math inline">\(1249 + \frac{0}{8} = 1249.00\)</span> cents. While the PRIOR SETTLE price of 1243’6 means <span class="math inline">\(1243 + \frac{6}{8} = 1243.75\)</span> cents.</p>
 <p>Most providers of option contract quotes will organize the information in a similar way as shown below. Calls and Puts are shown in major columns, organized by ascending strike prices, which are usually displayed in the middle of the table for easy reference whether you are focused on Call or Put options.</p>
@@ -588,17 +587,17 @@ div.csl-indent {
 <p><img src="assets/Options1-optionmoneynessplot.png" /></p>
 <p>Notice the volume columns for both the calls and puts compared to the volume on the underlying. Some contracts that are near-the-money, which means the price of the underlying is pretty close to their strike price, have quite low volume traded. This is an example of an issue trading option markets. Since there are so many option contracts created by offering different strikes, liquidity gets spread thin. So if you are trading option contracts you have to make sure the contract will be liquid enough to get out of the position if you want to.</p>
 </div>
-<div id="closing-an-option-position" class="section level2" number="5.9">
-<h2><span class="header-section-number">5.9</span> Closing an Option Position</h2>
+<div id="closing-an-option-position" class="section level2 hasAnchor" number="5.9">
+<h2><span class="header-section-number">5.9</span> Closing an Option Position<a href="introduction-to-option-contracts.html#closing-an-option-position" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>There are two ways to close or ‘get out of’ an option position: take the opposite position or exercise (in the case of option longs) or get exercised upon (in the case of option shorts). Taking the opposite position is the same as exiting a position in any other familiar instrument like a stock or futures contract. If you are long, you simply sell the same option contract then you become ‘flat’ or have no position anymore. If you are short or have sold the option, you can simply buy the same contract and become flat.</p>
-<div id="exercise-and-assignment" class="section level3" number="5.9.1">
-<h3><span class="header-section-number">5.9.1</span> Exercise and Assignment</h3>
+<div id="exercise-and-assignment" class="section level3 hasAnchor" number="5.9.1">
+<h3><span class="header-section-number">5.9.1</span> Exercise and Assignment<a href="introduction-to-option-contracts.html#exercise-and-assignment" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The second way to exit the option position is to exercise (if you are long the option) or be exercised upon (if you are short the option). Note that you only have control over this case when you are long the option. If you are long the option and it is in-the-money you have the option to exercise at any time (in the case of American options which most options trading in the United States are American). Though you would only want to if the option is in the money. When you exercise, you receive the corresponding position in the underlying. For example, if you are long one call option on CME March corn futures that is in-the-money and you exercise it, you receive a long position of one contract in the March corn futures with your purchase price being the strike of the option. Likewise, if you are long a put option that is in-the-money and you exercise it you receive a short position in the underlying at the strike price of the option. Note that if you are long an option and you decide to exercise, you will trade a position with zero margin requirements to having to post margin for the futures position, because you will no longer have a position with no downside risk.</p>
 <p>If you are short an option contract that is in-the-money you should be ready to be assigned (exercised upon) at any time. If a long party indicates to the exchange that they want to exercise and you are matched with them then you must provide them with the position in the underlying at the strike price. For example, suppose you are short a March Corn put with a strike of 450 cents. Price goes to 445 and you get assigned. That means you will have a long position in the March corn futures with a purchase price of 450. This is because as the option seller you have to be the other side of the person who exercised their right to sell at 450.</p>
 <p>If markets were perfect with no liquidity cost, no one should ever exercise an option position early, since they could sell the option for at least as much as the intrinsic value of the option. But, markets are not perfect, and options in many markets can have wide bid-ask spreads meaning that you will have to buy at a higher price and sell at a lower price if you want to do the trade immediately. If the bid-ask spread is wide enough, it may be more beneficial just to exercise and then offset your position in the underlying.</p>
 </div>
-<div id="option-expiration" class="section level3" number="5.9.2">
-<h3><span class="header-section-number">5.9.2</span> Option Expiration</h3>
+<div id="option-expiration" class="section level3 hasAnchor" number="5.9.2">
+<h3><span class="header-section-number">5.9.2</span> Option Expiration<a href="introduction-to-option-contracts.html#option-expiration" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Options on futures usually expire a few weeks before the underlying futures contract expires. In most cases, the exchange will automatically exercise in-the-money options that are held to expiration.</p>
 
 </div>
@@ -614,7 +613,6 @@ div.csl-indent {
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -633,6 +631,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -653,6 +652,10 @@ gitbook.start({
 "text": null
 },
 "download": ["price-analysis.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "section"
 }
@@ -666,7 +669,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 7 Hedging with Options | Price Analysis: A Fundamental Approach to the Study of Commodity Prices</title>
   <meta name="description" content="This book introduces the basics of fundamental analysis of prices in food commodity markets. Learn how to follow and understand futures markets for commodities like corn, soybeans, wheat, live cattle, feeder cattle, hogs, ethanol, and crude oil. Learn about calendar, wheat, soybean crush, corn crush, and cattle crush spreads. Additionally, learn about which USDA reports are important to markets, when they come out, and why they move prices. Special focus on the WASDE, Grain Stocks, Prospective Plantings, Planted Acres, Crop Production, and Crop Progress and Condition reports." />
-  <meta name="generator" content="bookdown 0.21.5 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 7 Hedging with Options | Price Analysis: A Fundamental Approach to the Study of Commodity Prices" />
   <meta property="og:type" content="book" />
-  <meta property="og:url" content="http:mindymallory.github.io/PriceAnalysis/" />
   <meta property="og:image" content="http:mindymallory.github.io/PriceAnalysis//images/cover.png" />
   <meta property="og:description" content="This book introduces the basics of fundamental analysis of prices in food commodity markets. Learn how to follow and understand futures markets for commodities like corn, soybeans, wheat, live cattle, feeder cattle, hogs, ethanol, and crude oil. Learn about calendar, wheat, soybean crush, corn crush, and cattle crush spreads. Additionally, learn about which USDA reports are important to markets, when they come out, and why they move prices. Special focus on the WASDE, Grain Stocks, Prospective Plantings, Planted Acres, Crop Production, and Crop Progress and Condition reports." />
   <meta name="github-repo" content="mindymallory/PriceAnalysis" />
@@ -24,7 +23,7 @@
 <meta name="author" content="Mindy L. Mallory" />
 
 
-<meta name="date" content="2022-02-15" />
+<meta name="date" content="2023-01-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +32,8 @@
   
 <link rel="prev" href="advanced-option-topics.html"/>
 <link rel="next" href="marketing-hedging-and-crop-insurance.html"/>
-<script src="libs/header-attrs-2.6.0/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,11 +49,11 @@
 
 
 
-
 <link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
 <script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
@@ -420,9 +419,9 @@ div.csl-indent {
 <li class="chapter" data-level="20.5" data-path="crude-oil-and-the-crack-spread.html"><a href="crude-oil-and-the-crack-spread.html#the-crack-spread"><i class="fa fa-check"></i><b>20.5</b> The Crack Spread</a></li>
 <li class="chapter" data-level="20.6" data-path="crude-oil-and-the-crack-spread.html"><a href="crude-oil-and-the-crack-spread.html#exercises-9"><i class="fa fa-check"></i><b>20.6</b> Exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="21" data-path="forecasting-production-advanced.html"><a href="forecasting-production-advanced.html"><i class="fa fa-check"></i><b>21</b> Forecasting Production - Advanced</a>
+<li class="chapter" data-level="21" data-path="forecasting-production---advanced.html"><a href="forecasting-production---advanced.html"><i class="fa fa-check"></i><b>21</b> Forecasting Production - Advanced</a>
 <ul>
-<li class="chapter" data-level="21.1" data-path="forecasting-production-advanced.html"><a href="forecasting-production-advanced.html#exercises-10"><i class="fa fa-check"></i><b>21.1</b> Exercises</a></li>
+<li class="chapter" data-level="21.1" data-path="forecasting-production---advanced.html"><a href="forecasting-production---advanced.html#exercises-10"><i class="fa fa-check"></i><b>21.1</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="22" data-path="appendix-forecasting-with-ts-models.html"><a href="appendix-forecasting-with-ts-models.html"><i class="fa fa-check"></i><b>22</b> Appendix: Forecasting with TS Models</a>
 <ul>
@@ -496,8 +495,8 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="hedging-with-options" class="section level1" number="7">
-<h1><span class="header-section-number">Chapter 7</span> Hedging with Options</h1>
+<div id="hedging-with-options" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">Chapter 7</span> Hedging with Options<a href="hedging-with-options.html#hedging-with-options" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p><strong>Highlights</strong></p>
 <ul>
 <li>Hedge a speculative position with options</li>
@@ -511,8 +510,8 @@ div.csl-indent {
 <li>What are the options trades required to lock in a price range?</li>
 <li>Which of the strategies described in this chapter require one to maintain margin?</li>
 </ul>
-<div id="farmer-hedging-price-risk-on-production-with-a-put-option" class="section level2" number="7.1">
-<h2><span class="header-section-number">7.1</span> Farmer Hedging Price Risk on Production with a Put Option</h2>
+<div id="farmer-hedging-price-risk-on-production-with-a-put-option" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> Farmer Hedging Price Risk on Production with a Put Option<a href="hedging-with-options.html#farmer-hedging-price-risk-on-production-with-a-put-option" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>We know from chapter 4 that hedging in the financial sense is an activity designed to generate positive cash flows when the main pain position is experiencing a drawdown. The classic example being a farmer who has a crop in the field or in the bin is exposed to price risk and will experience financial loss if crop prices decline. To hedge this risk, they can sell a futures contract. Corn futures prices are highly correlated to the spot price the farmer faces in the local market. So if corn prices decline, the losses in spot sales are offset by gains from the short futures position.</p>
 <p>Hedging with futures has the disadvantage of removing exposure to both downside <em>and</em> upside price movements. By hedging with a put option, a farmer can eliminate downside risk (save for the risk of a falling basis) while retaining benefits from price increases.</p>
 <p>To visualize how it works first recall what a farmer’s per bushel revenue looks like as a function of the price of corn. Its simply a 45 degree line radiating from the origin.</p>
@@ -527,19 +526,19 @@ div.csl-indent {
 <p><img src="assets/Options4-spotputcombzoomchoice.png" /></p>
 <p>A way to mitigate the cost of buying a put option to protect downside risk is to sell a call option whose strike is above the current market prices. Let’s suppose current market price is 450, and we buy the 425 put for 7.85 cents premium and sell the 475 call for 13.5 cents premium. You can see these individual positions in the figure below. If we sum payoffs from all three of these separate positions you get the black line. Below 425 there is no downside risk since you are protected by the long put. Above 475 you do not enjoy additional gains because you sold the call. In this case the upward sloped part of the black line is 13.5 - 7.85 = 5.9 cents above the gold spot line. However, whether you are net positive or negative from the call premium collected minus the put premium paid will depend on our strike choice. For example, if you choose a tighter strike for the protective put, your downside is even more limited, but the premium paid will be higher. Similarly, if you choose a higher strike for the sold call you will retain more upside potential, but the premium you receive will be smaller.</p>
 </div>
-<div id="farmer-hedging-by-putting-on-a-fence" class="section level2" number="7.2">
-<h2><span class="header-section-number">7.2</span> Farmer Hedging by Putting on a Fence</h2>
+<div id="farmer-hedging-by-putting-on-a-fence" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> Farmer Hedging by Putting on a Fence<a href="hedging-with-options.html#farmer-hedging-by-putting-on-a-fence" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><img src="assets/Options4-spotfence.png" /></p>
 <p>The essence of this strategy is that you are giving up some upside potential to finance your expense in limiting downside risk. The figure below gives a zoomed in view of the net position after putting on the fence. The first kink in the black line is at the strike of the long put, 425. The second kink in the black line is the strike of the short call, 475.</p>
 <p><img src="assets/Options4-Netspotfence.png" /></p>
-<div id="a-note-on-margin" class="section level3" number="7.2.1">
-<h3><span class="header-section-number">7.2.1</span> A Note on Margin</h3>
+<div id="a-note-on-margin" class="section level3 hasAnchor" number="7.2.1">
+<h3><span class="header-section-number">7.2.1</span> A Note on Margin<a href="hedging-with-options.html#a-note-on-margin" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>When putting on a fence, you have to keep in mind that your short call position will require margin. If the price goes up, your short call position will be losing money. Maintaining the position open will require posting additional margin. To employ this strategy, you have to be ready to lose the short call position, or have an agreement set up with a lender to post margin in the event the price goes up enough to wipe out your posted margin.</p>
 <p>The long put position is fully paid up front, so that position does not require margin posted to the account. As long as you have enough money in your brokerage account to buy the option + fees, you can get into the long put position.</p>
 </div>
 </div>
-<div id="wrapping-up" class="section level2" number="7.3">
-<h2><span class="header-section-number">7.3</span> Wrapping Up</h2>
+<div id="wrapping-up" class="section level2 hasAnchor" number="7.3">
+<h2><span class="header-section-number">7.3</span> Wrapping Up<a href="hedging-with-options.html#wrapping-up" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In this chapter we learned how options can be used to hedge spot positions in commodity markets. Downside risk can be protected with put options, but this comes at significant cost in premium paid, especially for options that have expirations longer than a week or two out.</p>
 
 </div>
@@ -554,7 +553,6 @@ div.csl-indent {
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -573,6 +571,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -593,6 +592,10 @@ gitbook.start({
 "text": null
 },
 "download": ["price-analysis.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "section"
 }
@@ -606,7 +609,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

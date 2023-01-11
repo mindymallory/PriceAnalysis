@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 23 Appendix: Single Market Models: ARIMA | Price Analysis: A Fundamental Approach to the Study of Commodity Prices</title>
   <meta name="description" content="This book introduces the basics of fundamental analysis of prices in food commodity markets. Learn how to follow and understand futures markets for commodities like corn, soybeans, wheat, live cattle, feeder cattle, hogs, ethanol, and crude oil. Learn about calendar, wheat, soybean crush, corn crush, and cattle crush spreads. Additionally, learn about which USDA reports are important to markets, when they come out, and why they move prices. Special focus on the WASDE, Grain Stocks, Prospective Plantings, Planted Acres, Crop Production, and Crop Progress and Condition reports." />
-  <meta name="generator" content="bookdown 0.21.5 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 23 Appendix: Single Market Models: ARIMA | Price Analysis: A Fundamental Approach to the Study of Commodity Prices" />
   <meta property="og:type" content="book" />
-  <meta property="og:url" content="http:mindymallory.github.io/PriceAnalysis/" />
   <meta property="og:image" content="http:mindymallory.github.io/PriceAnalysis//images/cover.png" />
   <meta property="og:description" content="This book introduces the basics of fundamental analysis of prices in food commodity markets. Learn how to follow and understand futures markets for commodities like corn, soybeans, wheat, live cattle, feeder cattle, hogs, ethanol, and crude oil. Learn about calendar, wheat, soybean crush, corn crush, and cattle crush spreads. Additionally, learn about which USDA reports are important to markets, when they come out, and why they move prices. Special focus on the WASDE, Grain Stocks, Prospective Plantings, Planted Acres, Crop Production, and Crop Progress and Condition reports." />
   <meta name="github-repo" content="mindymallory/PriceAnalysis" />
@@ -24,7 +23,7 @@
 <meta name="author" content="Mindy L. Mallory" />
 
 
-<meta name="date" content="2022-02-15" />
+<meta name="date" content="2023-01-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +32,8 @@
   
 <link rel="prev" href="appendix-forecasting-with-ts-models.html"/>
 <link rel="next" href="south-american-production.html"/>
-<script src="libs/header-attrs-2.6.0/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,11 +49,11 @@
 
 
 
-
 <link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
 <script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
@@ -420,9 +419,9 @@ div.csl-indent {
 <li class="chapter" data-level="20.5" data-path="crude-oil-and-the-crack-spread.html"><a href="crude-oil-and-the-crack-spread.html#the-crack-spread"><i class="fa fa-check"></i><b>20.5</b> The Crack Spread</a></li>
 <li class="chapter" data-level="20.6" data-path="crude-oil-and-the-crack-spread.html"><a href="crude-oil-and-the-crack-spread.html#exercises-9"><i class="fa fa-check"></i><b>20.6</b> Exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="21" data-path="forecasting-production-advanced.html"><a href="forecasting-production-advanced.html"><i class="fa fa-check"></i><b>21</b> Forecasting Production - Advanced</a>
+<li class="chapter" data-level="21" data-path="forecasting-production---advanced.html"><a href="forecasting-production---advanced.html"><i class="fa fa-check"></i><b>21</b> Forecasting Production - Advanced</a>
 <ul>
-<li class="chapter" data-level="21.1" data-path="forecasting-production-advanced.html"><a href="forecasting-production-advanced.html#exercises-10"><i class="fa fa-check"></i><b>21.1</b> Exercises</a></li>
+<li class="chapter" data-level="21.1" data-path="forecasting-production---advanced.html"><a href="forecasting-production---advanced.html#exercises-10"><i class="fa fa-check"></i><b>21.1</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="22" data-path="appendix-forecasting-with-ts-models.html"><a href="appendix-forecasting-with-ts-models.html"><i class="fa fa-check"></i><b>22</b> Appendix: Forecasting with TS Models</a>
 <ul>
@@ -496,18 +495,18 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="appendix-single-market-models-arima" class="section level1" number="23">
-<h1><span class="header-section-number">Chapter 23</span> Appendix: Single Market Models: ARIMA</h1>
+<div id="appendix-single-market-models-arima" class="section level1 hasAnchor" number="23">
+<h1><span class="header-section-number">Chapter 23</span> Appendix: Single Market Models: ARIMA<a href="appendix-single-market-models-arima.html#appendix-single-market-models-arima" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <!-- Add a bit about 'Box-Jenkins' model identification -->
 <p>In this chapter we introduce the first category of time-series econometric forecasting models we will learn: Auto-regressive Integrated Moving Average (ARIMA) models. This class of models is only capable of forecasting one market at a time, and we will see in later chapters how to econometrically consider (forecast) more than one market at a time when there is reason to believe two or markets are related.</p>
 <p>The ARIMA class of models can be broken down into subcategories that are useful for building intuition.</p>
-<div id="integrated-or-not" class="section level2" number="23.1">
-<h2><span class="header-section-number">23.1</span> Integrated or Not?</h2>
-<p>We spent considerable effort in Chapters 10 and 11 on the importance of stationarity in estimating time-series forecasting models. If a series is stationary it is said to be ‘Integrated of Order Zero,’ or I(0), or not integrated; if a series is non-stationary, but the first (log) difference of the series is stationary then the series is said to be ‘Integrated of Order One,’ or I(1); if a series is non-stationary, but the second (log) difference of the series is stationary then the series is said to be ‘Integrated of Order Two,’ or I(2); and so forth. The number of times required to difference the data before it becomes stationary determines the order of integration. As discussed in Chapter 11, it is a relatively safe assumption that our price data will be integrated of order one, and thus first (log) differences of the data should be used.</p>
+<div id="integrated-or-not" class="section level2 hasAnchor" number="23.1">
+<h2><span class="header-section-number">23.1</span> Integrated or Not?<a href="appendix-single-market-models-arima.html#integrated-or-not" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We spent considerable effort in Chapters 10 and 11 on the importance of stationarity in estimating time-series forecasting models. If a series is stationary it is said to be ‘Integrated of Order Zero’, or I(0), or not integrated; if a series is non-stationary, but the first (log) difference of the series is stationary then the series is said to be ‘Integrated of Order One’, or I(1); if a series is non-stationary, but the second (log) difference of the series is stationary then the series is said to be ‘Integrated of Order Two’, or I(2); and so forth. The number of times required to difference the data before it becomes stationary determines the order of integration. As discussed in Chapter 11, it is a relatively safe assumption that our price data will be integrated of order one, and thus first (log) differences of the data should be used.</p>
 <p>With all that said, the ‘I’ in ARIMA stands for <em>integrated</em>, and simply signifies the functional forms that follow can be implemented with price levels (no differencing) if the data are stationary and in differences if the data are non-stationary. We will always use first differenced data for the examples in this class.</p>
 </div>
-<div id="arp-models" class="section level2" number="23.2">
-<h2><span class="header-section-number">23.2</span> <span class="math inline">\(AR(p)\)</span>, Models</h2>
+<div id="arp-models" class="section level2 hasAnchor" number="23.2">
+<h2><span class="header-section-number">23.2</span> <span class="math inline">\(AR(p)\)</span>, Models<a href="appendix-single-market-models-arima.html#arp-models" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In Chapter 10 we introduced the Efficient Market Hypothesis (EMH) that states all information about an asset should be reflected in its current price, and therefore is unpredictable. In Chapter 11, we argued that if the EMH is true than prices should follow a log-normal price model fairly well. Indeed, it is true that a log-normal price model is difficult to beat, or that coming up with an informative forecast is difficult, but there are some common properties of data that can inform a forecasting model.</p>
 <p>The first is that recent (changes in) prices can effect the next period’s price realization. Simply put, prices often exhibit auto-correlation in returns. If so, adding lags of price changes in our forecasting model can help to improve forecasts.</p>
 <p>In figure 1 percent returns of the March 2016 corn futures contract are plotted.</p>
@@ -526,8 +525,8 @@ div.csl-indent {
 <p class="caption">Figure 3: <span class="math inline">\(AR(P)\)</span> Correlations</p>
 </div>
 <p>Given the low values of correlations between the contemporaneous price and the one-lag and two-lagged prices, I am not hopeful for the prospects of a good forecast from the <span class="math inline">\(AR(p)\)</span> model, but we will go ahead and estimate it nonetheless for illustrative purposes.</p>
-<div id="the-arp-model" class="section level3" number="23.2.1">
-<h3><span class="header-section-number">23.2.1</span> The <span class="math inline">\(AR(p)\)</span> Model</h3>
+<div id="the-arp-model" class="section level3 hasAnchor" number="23.2.1">
+<h3><span class="header-section-number">23.2.1</span> The <span class="math inline">\(AR(p)\)</span> Model<a href="appendix-single-market-models-arima.html#the-arp-model" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The <span class="math inline">\(AR(p)\)</span> model is formally defined by equation 1.</p>
 <ol style="list-style-type: decimal">
 <li><span class="math inline">\(R_{t+1} = \beta_0 + \beta_1R_{t} + \beta_2R_{t-1}+ ... + \beta_{p}R_{t-(p-1)} + \epsilon_t\)</span></li>
@@ -540,16 +539,16 @@ div.csl-indent {
 <p>All of the p-values for our regressors are large, certainly much bigger than 0.05. We fail to reject the null hypothesis that one and two lags of corn price returns are unrelated to the next price return realization. Therefore, the <span class="math inline">\(AR(2)\)</span> model does not seem to provide much forecasting power.</p>
 </div>
 </div>
-<div id="maq-models" class="section level2" number="23.3">
-<h2><span class="header-section-number">23.3</span> <span class="math inline">\(MA(q)\)</span>, Models</h2>
+<div id="maq-models" class="section level2 hasAnchor" number="23.3">
+<h2><span class="header-section-number">23.3</span> <span class="math inline">\(MA(q)\)</span>, Models<a href="appendix-single-market-models-arima.html#maq-models" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The Moving Average Model incorporates lagged random shocks into the forecast model. Commonly denoted by <span class="math inline">\(MA(q)\)</span>, the <span class="math inline">\(q\)</span> stands for the number of lags of shocks to be included. Formally,</p>
 <ol start="2" style="list-style-type: decimal">
 <li><span class="math inline">\(R_{t+1} = \theta_0 + \epsilon_t + \theta_1\epsilon_{t-1} + ... + \theta_q\epsilon_{t-q}\)</span></li>
 </ol>
 <p>Compare this modeling approach with the <span class="math inline">\(AR(p)\)</span> approach. In the <span class="math inline">\(AR(p)\)</span> model, lagged shocks incorporated only indirectly through thier effect on lagged returns. In the <span class="math inline">\(MA(q)\)</span> model, lagged shocks affect current returns directly. Estimating the <span class="math inline">\(MA(q)\)</span> model is not as simple a metter as estimating the <span class="math inline">\(AR(p)\)</span> model. We were able to directly estimate the <span class="math inline">\(AR(p)\)</span> model with ordinary least squares in Excel.</p>
 <p>In equation 2, we see that it is impossible to implement with ordinary least squares becasue we need to know the values of the <span class="math inline">\(\theta_i\)</span> in order to calculate the residuals, <span class="math inline">\(\epsilon_i\)</span>. Instead, we will take an iteritive approach to estimating this model.</p>
-<div id="guesing-the-theta_i-and-minimising-the-sum-of-squared-residuals" class="section level3" number="23.3.1">
-<h3><span class="header-section-number">23.3.1</span> Guesing the <span class="math inline">\(\theta_i\)</span> and Minimising the Sum of Squared Residuals</h3>
+<div id="guesing-the-theta_i-and-minimising-the-sum-of-squared-residuals" class="section level3 hasAnchor" number="23.3.1">
+<h3><span class="header-section-number">23.3.1</span> Guesing the <span class="math inline">\(\theta_i\)</span> and Minimising the Sum of Squared Residuals<a href="appendix-single-market-models-arima.html#guesing-the-theta_i-and-minimising-the-sum-of-squared-residuals" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We discussed in Chapter 11, that linear regression finds estimated coeficients by minimizing the <em>Sum of Squared Residuals</em>. One approach to estimating the $MA(q) model in Excel is to guess the values of the <span class="math inline">\(\theta_i\)</span> coeficients. That will let us calculate residuals by hand.</p>
 <ol start="3" style="list-style-type: decimal">
 <li><span class="math inline">\(\epsilon_{t} = R_{t+1} - (\theta_0 + \theta_1\epsilon_{t-1} + ... + \theta_q\epsilon_{t-q})\)</span></li>
@@ -563,7 +562,7 @@ div.csl-indent {
 <img src="images/12_solvermaq.PNG" alt="" />
 <p class="caption">Figure 5: Screenshot of the Solver Function to Minimize Sum of Squared Residuals</p>
 </div>
-<p>Doing just those steps will give you accurate estimates of the <span class="math inline">\(\theta_i\)</span> coefficents, but no information of the standard errors of the coefficients so hypothesis testing up this point is not possible. After using the Excel solver functionality to find the <span class="math inline">\(\theta_i\)</span> that minimizes the sum of squared residuals, you will have accurate calculations of the residuals. You can now regress returns on the calculated residuals to perform hypothesis testing. Your regression coefficients should match the <span class="math inline">\(\theta_i\)</span> you calculated with the Excel ‘Solver.’</p>
+<p>Doing just those steps will give you accurate estimates of the <span class="math inline">\(\theta_i\)</span> coefficents, but no information of the standard errors of the coefficients so hypothesis testing up this point is not possible. After using the Excel solver functionality to find the <span class="math inline">\(\theta_i\)</span> that minimizes the sum of squared residuals, you will have accurate calculations of the residuals. You can now regress returns on the calculated residuals to perform hypothesis testing. Your regression coefficients should match the <span class="math inline">\(\theta_i\)</span> you calculated with the Excel ‘Solver’.</p>
 <div class="figure">
 <img src="images/12_ma2.PNG" alt="" />
 <p class="caption">Figure 6: Shows the Regression Output of Estimating the <span class="math inline">\(MA(q)\)</span> Model in Excel</p>
@@ -571,7 +570,7 @@ div.csl-indent {
 <p>We see that the regression coefficients match very well for <span class="math inline">\(\theta_0\)</span>, <span class="math inline">\(\theta_1\)</span>, and <span class="math inline">\(\theta_3\)</span>, while <span class="math inline">\(\theta_2\)</span> seems to be off from the calculations we received from the ‘Solver’ function in Excel.</p>
 <p>The <span class="math inline">\(MA(2)\)</span> model does not seem to explain the March 2016 corn returns very well. We are explaining just under 1% of the variation in the data, as shown by the <span class="math inline">\(R^2\)</span>, and none of the coefficients are close to statistical significance since the p-values are all well above 0.05.</p>
 <blockquote>
-<h3 id="fitting-an-maq-model-in-excel">Fitting an <span class="math inline">\(MA(q)\)</span> model in Excel</h3>
+<h3 id="fitting-an-maq-model-in-excel" class="hasAnchor">Fitting an <span class="math inline">\(MA(q)\)</span> model in Excel<a href="appendix-single-market-models-arima.html#fitting-an-maq-model-in-excel" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ol style="list-style-type: decimal">
 <li>Guess <span class="math inline">\(\theta_i\)</span> values</li>
 <li>Calculate residuals, <span class="math inline">\(\epsilon_t\)</span></li>
@@ -583,19 +582,19 @@ div.csl-indent {
 <p>Keep in mind, this process in uneccessarily complicated. If you get seriously involved in generating forecasts, you will invest the time to learn a common statistical package; however, hopefully this process helps to build some intuition about how these models are estimated by the more powerful statistical software packages.</p>
 </div>
 </div>
-<div id="lag-length" class="section level2" number="23.4">
-<h2><span class="header-section-number">23.4</span> Lag Length</h2>
+<div id="lag-length" class="section level2 hasAnchor" number="23.4">
+<h2><span class="header-section-number">23.4</span> Lag Length<a href="appendix-single-market-models-arima.html#lag-length" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>You may be wondering at this point if it would be useful to try including more lags in the regression equation; perhaps we will find longer lag lengths that seem to matter in forecasting corn price returns. Usually, if lags have predictive power, the strongest effects are in the nearest lags. So adding lags to the <span class="math inline">\(AR(.)\)</span> model is unlikely to help.</p>
 <p>Still, as a practical matter, lag length must be selected before estimating an <span class="math inline">\(AR(p)\)</span> model. If we were using a more advanced statistical package, we could use Information Criterion<a href="#fn14" class="footnote-ref" id="fnref14"><sup>14</sup></a> to select the optimal lag length, but like unit root tests, it is not convenient to implement in Excel so we will not cover Information Criterion.</p>
 <p>The intuition of selecting a lag length by Information Criterion is simple enough, though. Basically, a model with a large number of lags is estimated. The longest lags are then sequentially removed one by one, until explanatory power is detrimentally affected by removing a lag. That determines lag length.</p>
 <p>As a rough substitute, one could estimate an <span class="math inline">\(AR(p)\)</span> model for large <span class="math inline">\(p\)</span>. Then sequentially remove the longest lag until the likelihood decreases; or until the F-statistic is dramatically reduced by eliminating lagged variables. In practice, we will be lucky to find any statistically significant coefficients on the lags, and the nearest lags will be most likely to be significant, so a small number of lags will usually be sufficient.</p>
 </div>
-<div id="dealing-with-seasonality" class="section level2" number="23.5">
-<h2><span class="header-section-number">23.5</span> Dealing with Seasonality</h2>
+<div id="dealing-with-seasonality" class="section level2 hasAnchor" number="23.5">
+<h2><span class="header-section-number">23.5</span> Dealing with Seasonality<a href="appendix-single-market-models-arima.html#dealing-with-seasonality" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <!-- Add bit about seasonality ex quarterly p = 5 -->
 </div>
-<div id="caculating-forecast-values" class="section level2" number="23.6">
-<h2><span class="header-section-number">23.6</span> Caculating Forecast Values</h2>
+<div id="caculating-forecast-values" class="section level2 hasAnchor" number="23.6">
+<h2><span class="header-section-number">23.6</span> Caculating Forecast Values<a href="appendix-single-market-models-arima.html#caculating-forecast-values" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Figure 5 shows a screenshot of Excel where the model output from figure 4 is used to produce the <span class="math inline">\(AR(2)\)</span> model forecasts shown in column <code>F</code>.</p>
 <div class="figure">
 <img src="images/12_forecast_screenshot.PNG" alt="" />
@@ -639,7 +638,6 @@ div.csl-indent {
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -658,6 +656,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -678,6 +677,10 @@ gitbook.start({
 "text": null
 },
 "download": ["price-analysis.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "section"
 }
@@ -691,7 +694,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 16 The Soybean Crush | Price Analysis: A Fundamental Approach to the Study of Commodity Prices</title>
   <meta name="description" content="This book introduces the basics of fundamental analysis of prices in food commodity markets. Learn how to follow and understand futures markets for commodities like corn, soybeans, wheat, live cattle, feeder cattle, hogs, ethanol, and crude oil. Learn about calendar, wheat, soybean crush, corn crush, and cattle crush spreads. Additionally, learn about which USDA reports are important to markets, when they come out, and why they move prices. Special focus on the WASDE, Grain Stocks, Prospective Plantings, Planted Acres, Crop Production, and Crop Progress and Condition reports." />
-  <meta name="generator" content="bookdown 0.21.5 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 16 The Soybean Crush | Price Analysis: A Fundamental Approach to the Study of Commodity Prices" />
   <meta property="og:type" content="book" />
-  <meta property="og:url" content="http:mindymallory.github.io/PriceAnalysis/" />
   <meta property="og:image" content="http:mindymallory.github.io/PriceAnalysis//images/cover.png" />
   <meta property="og:description" content="This book introduces the basics of fundamental analysis of prices in food commodity markets. Learn how to follow and understand futures markets for commodities like corn, soybeans, wheat, live cattle, feeder cattle, hogs, ethanol, and crude oil. Learn about calendar, wheat, soybean crush, corn crush, and cattle crush spreads. Additionally, learn about which USDA reports are important to markets, when they come out, and why they move prices. Special focus on the WASDE, Grain Stocks, Prospective Plantings, Planted Acres, Crop Production, and Crop Progress and Condition reports." />
   <meta name="github-repo" content="mindymallory/PriceAnalysis" />
@@ -24,7 +23,7 @@
 <meta name="author" content="Mindy L. Mallory" />
 
 
-<meta name="date" content="2022-02-15" />
+<meta name="date" content="2023-01-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +32,8 @@
   
 <link rel="prev" href="ending-stocks-and-price.html"/>
 <link rel="next" href="ethanol.html"/>
-<script src="libs/header-attrs-2.6.0/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,11 +49,11 @@
 
 
 
-
 <link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
 <script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
@@ -420,9 +419,9 @@ div.csl-indent {
 <li class="chapter" data-level="20.5" data-path="crude-oil-and-the-crack-spread.html"><a href="crude-oil-and-the-crack-spread.html#the-crack-spread"><i class="fa fa-check"></i><b>20.5</b> The Crack Spread</a></li>
 <li class="chapter" data-level="20.6" data-path="crude-oil-and-the-crack-spread.html"><a href="crude-oil-and-the-crack-spread.html#exercises-9"><i class="fa fa-check"></i><b>20.6</b> Exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="21" data-path="forecasting-production-advanced.html"><a href="forecasting-production-advanced.html"><i class="fa fa-check"></i><b>21</b> Forecasting Production - Advanced</a>
+<li class="chapter" data-level="21" data-path="forecasting-production---advanced.html"><a href="forecasting-production---advanced.html"><i class="fa fa-check"></i><b>21</b> Forecasting Production - Advanced</a>
 <ul>
-<li class="chapter" data-level="21.1" data-path="forecasting-production-advanced.html"><a href="forecasting-production-advanced.html#exercises-10"><i class="fa fa-check"></i><b>21.1</b> Exercises</a></li>
+<li class="chapter" data-level="21.1" data-path="forecasting-production---advanced.html"><a href="forecasting-production---advanced.html#exercises-10"><i class="fa fa-check"></i><b>21.1</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="22" data-path="appendix-forecasting-with-ts-models.html"><a href="appendix-forecasting-with-ts-models.html"><i class="fa fa-check"></i><b>22</b> Appendix: Forecasting with TS Models</a>
 <ul>
@@ -496,12 +495,12 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="the-soybean-crush" class="section level1" number="16">
-<h1><span class="header-section-number">Chapter 16</span> The Soybean Crush</h1>
+<div id="the-soybean-crush" class="section level1 hasAnchor" number="16">
+<h1><span class="header-section-number">Chapter 16</span> The Soybean Crush<a href="the-soybean-crush.html#the-soybean-crush" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>In this Chapter we describe the physical process of converting soybeans into meal and oil, as well as the price relationship that is maintained between these highly related commodities. We saw in the chapter, ‘Forecasting Use of Soybeans in the WASDE Balance Sheet,’ that approximately half of the supply of soybeans in the U.S. is crushed into soybean meal and oil. Nearly all of the remainder of soybean supply is exported where most of it will be crushed abroad.</p>
 <p><img src="images/soyoilmeal_checkoff.jpg" alt="Soybean Oil and Soybean Meal" /> Source: <a href="http://unitedsoybean.org/">United Soybean Board</a>, <a href="https://www.flickr.com/photos/unitedsoybean/10059732523/in/photolist-gjWL1c-iSHsD6-gjRZN5-gjSiez-gjRDSm-3GTus-gjT5Pf-gjT5FQ-gjT5Zf-iRrGux-5mxrJp-iRuCDS-fEhEb4-iSHt56-gjSLAj-gjTptX-gjSLDL-gjSNeR-gjSLEC-gjT72q-6m2BCX-gjSUHT-gjTpzi-6m6Jay-qBtpPq-5wBq3U-gjWLbe-aMpXNc-qRDdLA-gjWY8m-rujuvk-iRqECD-rNDaeg-GL7Qd-6m2Yyc-6JGi4H-ar3khU-cNjfUf-6m2A3g-aE4dw4-c3VUt9-c3VVq5-4JzMWS-6KY45z-6m2Xsv-6m6Eny-6m2XZg-6m2WVa-6m2ZFF-6m7ad1">Flicker</a></p>
-<div id="oilseed-processing" class="section level2" number="16.1">
-<h2><span class="header-section-number">16.1</span> Oilseed Processing</h2>
+<div id="oilseed-processing" class="section level2 hasAnchor" number="16.1">
+<h2><span class="header-section-number">16.1</span> Oilseed Processing<a href="the-soybean-crush.html#oilseed-processing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Now the most prevalent method for crushing soybeans is a method that uses a solvent to extract the oil from the soybean. Basically, soybeans are pre-treated, then flaked to destroy the cell walls so the solvent can get at the oil in the cells. A crude oil is then further processed refined to remove the solvent and other compounds like glycerin, leaving only pure soybean oil. The soybean flakes, minus the oil are then ground in to meal that can be used as a high protein livestock feed.</p>
 <div class="figure">
 <img src="images/soyflakes.jpg" alt="" />
@@ -521,8 +520,8 @@ div.csl-indent {
 <p>Historically, soybeans were processed by feeding soybeans into a mechanical press that literally squeezed the oil out. This process is less efficient and more time consuming - thus more costly. Nearly all commercially crushed soybeans are done with with the solvent extraction method.</p>
 <p>Crushing soybeans yields about 11lbs of oil and 44lbs meal per bushel of soybeans, these yields can vary slightly, but most use these values in the price analysis that will follow.</p>
 </div>
-<div id="soybean-oil-uses" class="section level2" number="16.2">
-<h2><span class="header-section-number">16.2</span> Soybean Oil Uses</h2>
+<div id="soybean-oil-uses" class="section level2 hasAnchor" number="16.2">
+<h2><span class="header-section-number">16.2</span> Soybean Oil Uses<a href="the-soybean-crush.html#soybean-oil-uses" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Soybean oil is used primarily as a food-grade product. It is not usually found in grocery stores as 100% soybean oil, but it will be present in oil branded as ‘cooking oil’ - where it is blended with other edible oils like corn oil and canola (also known as rapeseed) oil. Composition of cooking oil can vary from one purchase to the next as producers of cooking oil can blend the edible oil components based on relative prices.</p>
 <p>Soybean oil also can be further processed into partially hydrogenated soybean oil. This is accomplished by literally adding hydrogen to the vegetable oil. The resulting product is widely used in processed food such as baked goods, crackers, frozen foods; it is used in a lot of processed foods generally speaking. It is a perfect ingredient in processed foods because it is solid at room temperature, and essentially never goes bad. If natural vegetable oils were used in processed foods the oil would go rancid in a short period of time.</p>
 <p>Use of partially hydrogenated vegetable oils will decrease in coming years. Partially hydrogenated vegetable oils are examples of what is commonly referred to as <em>trans fat</em> in nutritional articles (and on the back of nutrition labels). Trans fat has been shown to <a href="http://www.fda.gov/ForConsumers/ConsumerUpdates/ucm372915.htm">increase LDL cholesteral and heart disease</a> <span class="citation">(<a href="#ref-remig_trans_2010" role="doc-biblioref">Remig et al. 2010</a>)</span>. The FDA announced a ban on most added trans fats in processed foods; the ban is set to take effect by 2018.</p>
@@ -533,8 +532,8 @@ div.csl-indent {
 <p>Source: <a href="http://unitedsoybean.org/">United Soybean Board</a>, <a href="https://www.flickr.com/photos/unitedsoybean/16910795086/">Flicker</a></p>
 <p>Soybean oil is also used in the production of biodiesel. This amounts to a small percentage of the total soybean oil produced, however.</p>
 </div>
-<div id="soybean-meal-uses" class="section level2" number="16.3">
-<h2><span class="header-section-number">16.3</span> Soybean Meal Uses</h2>
+<div id="soybean-meal-uses" class="section level2 hasAnchor" number="16.3">
+<h2><span class="header-section-number">16.3</span> Soybean Meal Uses<a href="the-soybean-crush.html#soybean-meal-uses" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Soybean meal is used exclusively for livestock feed as a high protein component. Beef cattle, dairy cattle, hogs, and poultry use soybean meal in feed rations. Soybean meal provides a good source of protein, and combined with cereal grains like corn allow a complete balance of essential amino acids that hogs and poultry must have.</p>
 <div class="figure">
 <img src="images/pigs.jpg" alt="" />
@@ -547,8 +546,8 @@ div.csl-indent {
 </div>
 <p>“<a href="https://commons.wikimedia.org/wiki/File:Poultry_Classes_Blog_photo_-_Flickr_-_USDAgov.jpg#/media/File:Poultry_Classes_Blog_photo_-_Flickr_-_USDAgov.jpg">Poultry Classes Blog photo - Flickr - USDAgov</a>” by <a rel="nofollow" class="external text" href="http://www.flickr.com/people/41284017@N08">U.S. Department of Agriculture</a> - <a rel="nofollow" class="external text" href="http://www.flickr.com/photos/usdagov/6354331371/">Poultry Classes Blog photo</a>. Licensed under <a href="http://creativecommons.org/licenses/by/2.0" title="Creative Commons Attribution 2.0">CC BY 2.0</a> via <a href="//commons.wikimedia.org/wiki/">Wikimedia Commons</a>.</p>
 </div>
-<div id="price-relationships" class="section level2" number="16.4">
-<h2><span class="header-section-number">16.4</span> Price Relationships</h2>
+<div id="price-relationships" class="section level2 hasAnchor" number="16.4">
+<h2><span class="header-section-number">16.4</span> Price Relationships<a href="the-soybean-crush.html#price-relationships" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Since the input (soybeans) and outputs (oil and meal) are all commodities, and the production technology is fairly widely understood and replicable, the oilseed crushing business is a very competitive one. Recall from intermediate microeconomics that in the long run firms in a competitive market with identical technology (identical production functions) should not expected to earn economic profits or losses in the long run. If short-term profits exist, firms enter the market, shifting the supply curve out and reducing the equilibrium price until there is no more incentive to expand. This simple prediction has implications for our expectations about the relative prices of these commodities.</p>
 <p>An soybean processor’s profit is roughly,</p>
 <ol style="list-style-type: decimal">
@@ -567,14 +566,14 @@ div.csl-indent {
 <p><img src="16-TheSoybeanCrush_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
 <p>Source: <a href="www.Quandl.com">Quandl.com</a></p>
 </div>
-<div id="the-board-crush" class="section level2" number="16.5">
-<h2><span class="header-section-number">16.5</span> The Board Crush</h2>
+<div id="the-board-crush" class="section level2 hasAnchor" number="16.5">
+<h2><span class="header-section-number">16.5</span> The Board Crush<a href="the-soybean-crush.html#the-board-crush" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Since soybeans, soybean oil, and soybean meal all have actively traded futures contracts, the oil processing GPM calculated with futures prices is widely followed, along with the local crush spread oil processors would earn in their local cash markets. When the Crush Spread is calculated with futures prices instead of spot prices it is sometimes called the ‘Board Crush’ short-hand for the ‘Board of Trade’ Crush. Speculators trade this spread by selling (buying) oil and meal and buying (selling) soybeans. Oil processors use the Board Crush to hedge their positions in the cash markets for oil, meal, and soybeans and to ‘lock in’ processing margins.</p>
 <p>Since in the cash market a soybean crusher buys soybeans and sells meal and oil, to hedge they will buy soybeans and sell meal and oil.</p>
 <p>Notice that this futures spread will make money crushers are losing money in the cash market (as is the design of the hedge), in that the spread makes money if the cost of the business (buying soybeans) becomes higher - relatively speaking - and the revenue of the business (selling meal and oil) becomes smaller - relatively speaking.</p>
 <p>Now to get the spread right, you need to buy soybeans and sell oil and meal in the correct proportions to mimic the business of crushing soybeans. Recall, 1 bushel of soybeans equals 11 lbs of oil and 44 lbs of meal. There are two versions of the spread that are fairly widely followed, the 1-1-1 spread and the 9-11-10 spread. The 1-1-1 spread is not as accurate in getting the proportions right, but it is easier to remember and implement as a trade. It would be cheaper to implement with brokers who charge commission per contract.</p>
-<div id="the-1-1-1-spread" class="section level3" number="16.5.1">
-<h3><span class="header-section-number">16.5.1</span> The 1-1-1 Spread</h3>
+<div id="the-1-1-1-spread" class="section level3 hasAnchor" number="16.5.1">
+<h3><span class="header-section-number">16.5.1</span> The 1-1-1 Spread<a href="the-soybean-crush.html#the-1-1-1-spread" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The 1-1-1 spread and it requires placing the following trades:</p>
 <ul>
 <li>Buy 1 contract soybean oil</li>
@@ -602,8 +601,8 @@ div.csl-indent {
 </ul>
 <p>So the 1-1-1 spread does not represent equivalent quantities of soybeans, oil, and meal. It over hedges oil by 5,000 lbs and under hedges meal by 20,000 lbs.</p>
 </div>
-<div id="the-9-11-10-spread" class="section level3" number="16.5.2">
-<h3><span class="header-section-number">16.5.2</span> The 9-11-10 Spread</h3>
+<div id="the-9-11-10-spread" class="section level3 hasAnchor" number="16.5.2">
+<h3><span class="header-section-number">16.5.2</span> The 9-11-10 Spread<a href="the-soybean-crush.html#the-9-11-10-spread" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The commercial oil processors use a 9-11-10 spread of 9 contracts of soybean oil, 11 contracts of soybean meal, and 10 contracts of soybeans to hedge their GPM.</p>
 <p>Then the quantities match more closely. Ten contracts of soybeans produces</p>
 <ul>
@@ -618,8 +617,8 @@ div.csl-indent {
 <p>So the quantities match except for being under hedged by 10,000 lbs in soybean oil.</p>
 </div>
 </div>
-<div id="readings-4" class="section level2" number="16.6">
-<h2><span class="header-section-number">16.6</span> Readings</h2>
+<div id="readings-4" class="section level2 hasAnchor" number="16.6">
+<h2><span class="header-section-number">16.6</span> Readings<a href="the-soybean-crush.html#readings-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ol style="list-style-type: decimal">
 <li><a href="http://unitedsoybean.org/wp-content/uploads/2013/07/RevisedJan12_GlobalOilSeedGrainTrade_2011.pdf">How the Global Oilseed and Grain Trade Works</a></li>
 </ol>
@@ -629,11 +628,11 @@ div.csl-indent {
 </ol>
 <p>A DTN article that has a nice graphic of historical crush margins.</p>
 </div>
-<div id="references-1" class="section level2" number="16.7">
-<h2><span class="header-section-number">16.7</span> References</h2>
+<div id="references-1" class="section level2 hasAnchor" number="16.7">
+<h2><span class="header-section-number">16.7</span> References<a href="the-soybean-crush.html#references-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 </div>
-<div id="exercises-6" class="section level2" number="16.8">
-<h2><span class="header-section-number">16.8</span> Exercises</h2>
+<div id="exercises-6" class="section level2 hasAnchor" number="16.8">
+<h2><span class="header-section-number">16.8</span> Exercises<a href="the-soybean-crush.html#exercises-6" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In this weeks exercises we will put ourselves in the role of risk manager for a commercial soybean crushing facility. Suppose our facility we crush 50,000 bushels of soybeans per month.</p>
 <p>The following file contains crush prices on the forward curve for the first of July, Aug, Sep and Oct of 2017. Also provided are the forward bases for each commodity in each date.</p>
 <p><a href="Excel-files/soy-crush-exercise.csv">CSV File with Prices</a></p>
@@ -701,7 +700,6 @@ Remig, Valentina, Barry Franklin, Simeon Margolis, Georgia Kostas, Theresa Nece,
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -720,6 +718,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -740,6 +739,10 @@ gitbook.start({
 "text": null
 },
 "download": ["price-analysis.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "section"
 }
@@ -753,7 +756,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

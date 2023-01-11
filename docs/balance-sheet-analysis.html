@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 10 Balance Sheet Analysis | Price Analysis: A Fundamental Approach to the Study of Commodity Prices</title>
   <meta name="description" content="This book introduces the basics of fundamental analysis of prices in food commodity markets. Learn how to follow and understand futures markets for commodities like corn, soybeans, wheat, live cattle, feeder cattle, hogs, ethanol, and crude oil. Learn about calendar, wheat, soybean crush, corn crush, and cattle crush spreads. Additionally, learn about which USDA reports are important to markets, when they come out, and why they move prices. Special focus on the WASDE, Grain Stocks, Prospective Plantings, Planted Acres, Crop Production, and Crop Progress and Condition reports." />
-  <meta name="generator" content="bookdown 0.21.5 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 10 Balance Sheet Analysis | Price Analysis: A Fundamental Approach to the Study of Commodity Prices" />
   <meta property="og:type" content="book" />
-  <meta property="og:url" content="http:mindymallory.github.io/PriceAnalysis/" />
   <meta property="og:image" content="http:mindymallory.github.io/PriceAnalysis//images/cover.png" />
   <meta property="og:description" content="This book introduces the basics of fundamental analysis of prices in food commodity markets. Learn how to follow and understand futures markets for commodities like corn, soybeans, wheat, live cattle, feeder cattle, hogs, ethanol, and crude oil. Learn about calendar, wheat, soybean crush, corn crush, and cattle crush spreads. Additionally, learn about which USDA reports are important to markets, when they come out, and why they move prices. Special focus on the WASDE, Grain Stocks, Prospective Plantings, Planted Acres, Crop Production, and Crop Progress and Condition reports." />
   <meta name="github-repo" content="mindymallory/PriceAnalysis" />
@@ -24,7 +23,7 @@
 <meta name="author" content="Mindy L. Mallory" />
 
 
-<meta name="date" content="2022-02-15" />
+<meta name="date" content="2023-01-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +32,8 @@
   
 <link rel="prev" href="prices-over-space-and-time.html"/>
 <link rel="next" href="price-reaction-to-usda-reports.html"/>
-<script src="libs/header-attrs-2.6.0/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,11 +49,11 @@
 
 
 
-
 <link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
 <script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
@@ -420,9 +419,9 @@ div.csl-indent {
 <li class="chapter" data-level="20.5" data-path="crude-oil-and-the-crack-spread.html"><a href="crude-oil-and-the-crack-spread.html#the-crack-spread"><i class="fa fa-check"></i><b>20.5</b> The Crack Spread</a></li>
 <li class="chapter" data-level="20.6" data-path="crude-oil-and-the-crack-spread.html"><a href="crude-oil-and-the-crack-spread.html#exercises-9"><i class="fa fa-check"></i><b>20.6</b> Exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="21" data-path="forecasting-production-advanced.html"><a href="forecasting-production-advanced.html"><i class="fa fa-check"></i><b>21</b> Forecasting Production - Advanced</a>
+<li class="chapter" data-level="21" data-path="forecasting-production---advanced.html"><a href="forecasting-production---advanced.html"><i class="fa fa-check"></i><b>21</b> Forecasting Production - Advanced</a>
 <ul>
-<li class="chapter" data-level="21.1" data-path="forecasting-production-advanced.html"><a href="forecasting-production-advanced.html#exercises-10"><i class="fa fa-check"></i><b>21.1</b> Exercises</a></li>
+<li class="chapter" data-level="21.1" data-path="forecasting-production---advanced.html"><a href="forecasting-production---advanced.html#exercises-10"><i class="fa fa-check"></i><b>21.1</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="22" data-path="appendix-forecasting-with-ts-models.html"><a href="appendix-forecasting-with-ts-models.html"><i class="fa fa-check"></i><b>22</b> Appendix: Forecasting with TS Models</a>
 <ul>
@@ -496,8 +495,8 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="balance-sheet-analysis" class="section level1" number="10">
-<h1><span class="header-section-number">Chapter 10</span> Balance Sheet Analysis</h1>
+<div id="balance-sheet-analysis" class="section level1 hasAnchor" number="10">
+<h1><span class="header-section-number">Chapter 10</span> Balance Sheet Analysis<a href="balance-sheet-analysis.html#balance-sheet-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p><strong>Highlights</strong></p>
 <ul>
 <li>Balance sheet analysis is the most important tool for fundamentals-based price forecasting.</li>
@@ -509,10 +508,10 @@ div.csl-indent {
 <ul>
 <li>Do you know which cells in the balance sheet must be estimated by the USDA and which can be calculated from other cells in the table?</li>
 </ul>
-<p>Fundamental analysis is an assessment of price based on underlying supply and demand factors. Focusing on changes in the relationship between supply and demand allows one to calibrate an informed opinion of the value of the commodity. The main role of the market is to find the value at which supply equals demand - or in other words, the value that ‘clears the market.’ The estimated ‘fundamental value’ is simply a forecast, or expectation of, the market clearing price. The goal of any forecasting exercise is to compare the forecast (estimated fundamental value) to the current market price and make decisions accordingly.</p>
+<p>Fundamental analysis is an assessment of price based on underlying supply and demand factors. Focusing on changes in the relationship between supply and demand allows one to calibrate an informed opinion of the value of the commodity. The main role of the market is to find the value at which supply equals demand - or in other words, the value that ‘clears the market’. The estimated ‘fundamental value’ is simply a forecast, or expectation of, the market clearing price. The goal of any forecasting exercise is to compare the forecast (estimated fundamental value) to the current market price and make decisions accordingly.</p>
 <p>If your forecast is above the current market price, that is bullish because your forecast implies the market is undervaluing the commodity - an opportunity to buy low and sell high! If your forecast is below the current market price, that is bearish because your forecast implies the market is overvaluing the commodity - an opportunity to sell high and buy low! This, of course, only works if your forecast is correct, that is, the market eventually agrees and moves into line with your forecast.</p>
-<div id="supply-and-demand" class="section level2" number="10.1">
-<h2><span class="header-section-number">10.1</span> Supply and Demand</h2>
+<div id="supply-and-demand" class="section level2 hasAnchor" number="10.1">
+<h2><span class="header-section-number">10.1</span> Supply and Demand<a href="balance-sheet-analysis.html#supply-and-demand" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Conducting fundamental analyses involves taking into account all the factors that determine supply, demand, and ultimately, prices. For grain markets there are basically two supply models to keep in mind: preplanting and post planting. Below we display both.</p>
 <div class="figure">
 <img src="images/ch3.1.png" alt="" />
@@ -534,13 +533,16 @@ div.csl-indent {
 </ul>
 <dl>
 <dt>Acreage</dt>
-<dd><p>Before planting, farmers plan how much acreage to devote to each commodity, thus determining the baseline expected production level. Before summer weather is revealed, expected production is simply <code>Acreage X Trend Yield</code>. In the Corn Belt, where planting decisions amount to deciding how to divide acres between corn and soybeans, their relative prices play a large role in the farmer’s decision. If futures prices indicate planting soybeans will be more profitable than planting corn, farmers will plan to devote more acres than usual to soybeans, for example. Weather can be an important determinant of acreage decisions as well. The most ardent planting intentions of a farmer can be derailed by persistent wet weather. An unusually rainy planting season can reduce planted acres from intentions. Before the crop is actually in the ground, the supply of grain is relatively elastic.</p>
+<dd>
+<p>Before planting, farmers plan how much acreage to devote to each commodity, thus determining the baseline expected production level. Before summer weather is revealed, expected production is simply <code>Acreage X Trend Yield</code>. In the Corn Belt, where planting decisions amount to deciding how to divide acres between corn and soybeans, their relative prices play a large role in the farmer’s decision. If futures prices indicate planting soybeans will be more profitable than planting corn, farmers will plan to devote more acres than usual to soybeans, for example. Weather can be an important determinant of acreage decisions as well. The most ardent planting intentions of a farmer can be derailed by persistent wet weather. An unusually rainy planting season can reduce planted acres from intentions. Before the crop is actually in the ground, the supply of grain is relatively elastic.</p>
 </dd>
 <dt>Yield</dt>
-<dd><p>After the crop is planted supply is quite inelastic, but there is still considerable uncertainty related to how much the crop will yield; this is largely determined by weather during the growing season.</p>
+<dd>
+<p>After the crop is planted supply is quite inelastic, but there is still considerable uncertainty related to how much the crop will yield; this is largely determined by weather during the growing season.</p>
 </dd>
 <dt>Government Policies</dt>
-<dd><p>The government has been heavily involved in Agriculture in the United States since the great depression of the 1930’s. There have been programs that guarantee a minimum price, programs that guarantee minimum revenue, and various incarnations of crop insurance programs. Occasionally these favor the production of one type of crop over another. When this happens, farmers predictably respond by planting more of the crop treated more favorably by the program.</p>
+<dd>
+<p>The government has been heavily involved in Agriculture in the United States since the great depression of the 1930’s. There have been programs that guarantee a minimum price, programs that guarantee minimum revenue, and various incarnations of crop insurance programs. Occasionally these favor the production of one type of crop over another. When this happens, farmers predictably respond by planting more of the crop treated more favorably by the program.</p>
 </dd>
 </dl>
 <p><strong>Demand is Affected by:</strong></p>
@@ -550,21 +552,27 @@ div.csl-indent {
 </ul>
 <dl>
 <dt>Consumer Income</dt>
-<dd><p>This one is straight from economics 101. When people have more money, they will spend it on goods. This means increased demand for commodities and their derived products. This includes foreign income, since exports are a big component of demand for commodities in the United States. Rising incomes usually means rising consumption of meat, which increases the demand for commodities like corn, soybeans, and even wheat that are used as animal feed.</p>
+<dd>
+<p>This one is straight from economics 101. When people have more money, they will spend it on goods. This means increased demand for commodities and their derived products. This includes foreign income, since exports are a big component of demand for commodities in the United States. Rising incomes usually means rising consumption of meat, which increases the demand for commodities like corn, soybeans, and even wheat that are used as animal feed.</p>
 </dd>
 <dt>Exchange Rates</dt>
-<dd><p>Exchange rates also affect demand through their influence on exports. For example, if the U.S. dollar is weak, then consumers in other countries can buy dollars cheaply - giving them more purchasing power for goods denominated in dollars.</p>
+<dd>
+<p>Exchange rates also affect demand through their influence on exports. For example, if the U.S. dollar is weak, then consumers in other countries can buy dollars cheaply - giving them more purchasing power for goods denominated in dollars.</p>
 </dd>
 </dl>
 </div>
-<div id="balance-sheet" class="section level2" number="10.2">
-<h2><span class="header-section-number">10.2</span> Balance Sheet</h2>
+<div id="balance-sheet" class="section level2 hasAnchor" number="10.2">
+<h2><span class="header-section-number">10.2</span> Balance Sheet<a href="balance-sheet-analysis.html#balance-sheet" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Most fundamental analyses rely on maintaining balance sheets of a commodity for a country, region, or the world. The approach is to maintain a careful accounting of how much supply exists and how much of the commodity has been used. Then through various means we will explore later, one arrives at a price that is expected to ration remaining supplies across competing uses.</p>
-<div id="the-marketing-year-and-balance-sheet-forecasting-schedule" class="section level3" number="10.2.1">
-<h3><span class="header-section-number">10.2.1</span> The Marketing Year and Balance Sheet Forecasting Schedule</h3>
+<div id="the-marketing-year-and-balance-sheet-forecasting-schedule" class="section level3 hasAnchor" number="10.2.1">
+<h3><span class="header-section-number">10.2.1</span> The Marketing Year and Balance Sheet Forecasting Schedule<a href="balance-sheet-analysis.html#the-marketing-year-and-balance-sheet-forecasting-schedule" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Balance sheet analysis is often organized by marketing year. Since production happens once per year, the marketing year is defined to begin in the first month the commodity is harvested and ends with the following year’s harvest. The table below makes note the month on which marketing years begin for several crops.</p>
 <table>
 <caption>Table 1. Beginning of Marketing Year by Crop. (Source <a href="http://www.nass.usda.gov/Publications/National_Crop_Progress/">NASS Timetables</a>)</caption>
+<colgroup>
+<col width="30%" />
+<col width="69%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="left">Crop</th>
@@ -627,16 +635,16 @@ div.csl-indent {
 </tbody>
 </table>
 </div>
-<div id="southern-hemisphere-production" class="section level3" number="10.2.2">
-<h3><span class="header-section-number">10.2.2</span> Southern Hemisphere Production</h3>
+<div id="southern-hemisphere-production" class="section level3 hasAnchor" number="10.2.2">
+<h3><span class="header-section-number">10.2.2</span> Southern Hemisphere Production<a href="balance-sheet-analysis.html#southern-hemisphere-production" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Production of corn, soybeans, and other commodities in the southern hemisphere (most notably in Brazil and Argentina) has grown rapidly over the last ten to fifteen years, and has impacted global commodity markets tremendously. Since southern hemisphere production occurs in the middle of marketing years organized by northern hemisphere harvest, there is an uncertain additional supply that must be forecast and updated to keep an accurate global balance sheet.</p>
 </div>
-<div id="uncertainty" class="section level3" number="10.2.3">
-<h3><span class="header-section-number">10.2.3</span> Uncertainty</h3>
+<div id="uncertainty" class="section level3 hasAnchor" number="10.2.3">
+<h3><span class="header-section-number">10.2.3</span> Uncertainty<a href="balance-sheet-analysis.html#uncertainty" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Even careful accounting of supply and demand factors that make up the balance sheet leaves a tremendous amount of uncertainty in the market. Demand can be difficult to forecast, and can sometimes change dramatically. The USDA keeps careful track of stocks, but we only get stocks estimates once a quarter. Between <em>Grain Stocks</em> reports there is always a great deal of speculation as to the pace of consumption and whether we are eating into stocks at a faster or slower pace than expected. Analysts talk about whether the market is on pace to achieve the forecast level of ethanol crush, soybean crush, or exports. Surprises in any of these components can lead to rapid corrections in the commodity markets.</p>
 </div>
-<div id="balance-sheet-format" class="section level3" number="10.2.4">
-<h3><span class="header-section-number">10.2.4</span> Balance Sheet Format</h3>
+<div id="balance-sheet-format" class="section level3 hasAnchor" number="10.2.4">
+<h3><span class="header-section-number">10.2.4</span> Balance Sheet Format<a href="balance-sheet-analysis.html#balance-sheet-format" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Here we discuss the common format balance sheets for any commodity have in common. Then we talk about the components of specific balance sheets for corn and soybeans.</p>
 <table>
 <caption>Table 3. Balance Sheet for a General Commodity</caption>
@@ -691,11 +699,11 @@ div.csl-indent {
 </ul>
 <p>: Table 4. Recent USDA WASDE Balance Sheet for Corn</p>
 <pre><code>## Response [https://downloads.usda.library.cornell.edu/usda-esmis/files/3t945q76s/dv140m16d/jm215h19t/latest.xls]
-##   Date: 2022-02-16 02:01
+##   Date: 2023-01-11 14:31
 ##   Status: 200
 ##   Content-Type: application/vnd.ms-excel
 ##   Size: 326 kB
-## &lt;ON DISK&gt;  C:\Users\mindy\AppData\Local\Temp\RtmpaQaak6\file518c5d1b5d63.xls</code></pre>
+## &lt;ON DISK&gt;  C:\Users\mindy\AppData\Local\Temp\RtmpSmKr10\file6aac5b606856.xls</code></pre>
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
@@ -1392,25 +1400,27 @@ Total
 </ul>
 </div>
 </div>
-<div id="coming-up-with-a-price" class="section level2" number="10.3">
-<h2><span class="header-section-number">10.3</span> Coming up with a Price</h2>
+<div id="coming-up-with-a-price" class="section level2 hasAnchor" number="10.3">
+<h2><span class="header-section-number">10.3</span> Coming up with a Price<a href="balance-sheet-analysis.html#coming-up-with-a-price" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Balance sheet forecasting is definitely as much art as it is science. It involves keeping track of the rate of use of commodities to see how much a need there will be to ration late in the marketing year while waiting on harvest and new supplies. One should intuitively see that the forecasted ending stocks is a measure of scarcity of the commodity and therefore should be negatively related to price (i.e., tight ending stocks go along with high prices). One needs to pin down the exact nature of this relationship in order to form a meaningful forecast of price from a commodity balance sheet. We will discuss this process in more detail in a later chapter.</p>
 </div>
-<div id="readings-2" class="section level2" number="10.4">
-<h2><span class="header-section-number">10.4</span> Readings</h2>
+<div id="readings-2" class="section level2 hasAnchor" number="10.4">
+<h2><span class="header-section-number">10.4</span> Readings<a href="balance-sheet-analysis.html#readings-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <dl>
 <dt><a href="http://farmdocdaily.illinois.edu/2015/02/balance-sheet-projections-for-2015-16-corn-marketing-year.html">Balance Sheet Projections for the 2015-16 Corn Marketing Year</a></dt>
-<dd><p>This <em>farmdoc daily</em> article was written in February of 2015. This is well before spring planting of corn and soybeans in the United States. However, farmers during this time are actively planning for planting season - prepping equipment, fertilizing and preparing ground, and buying seed. Good lays out the groundwork for early forecasts of the 2015/2016 marketing year balance sheet. This article is published two days before the February 2015 WASDE report, and Good provides context upon which market expectations for the WASDE report can be based upon.</p>
+<dd>
+<p>This <em>farmdoc daily</em> article was written in February of 2015. This is well before spring planting of corn and soybeans in the United States. However, farmers during this time are actively planning for planting season - prepping equipment, fertilizing and preparing ground, and buying seed. Good lays out the groundwork for early forecasts of the 2015/2016 marketing year balance sheet. This article is published two days before the February 2015 WASDE report, and Good provides context upon which market expectations for the WASDE report can be based upon.</p>
 <p>Good, D. “<a href="http://farmdocdaily.illinois.edu/2015/02/balance-sheet-projections-for-2015-16-corn-marketing-year.html">Balance Sheet Projections for the 2015-16 Corn Marketing Year</a>.” <em>farmdoc daily</em> (5):23, Department of Agricultural and Consumer Economics, University of Illinois at Urbana-Champaign, February 9, 2015.</p>
 </dd>
 <dt><a href="http://farmdocdaily.illinois.edu/2015/04/projecting-2015-16-corn-balance-sheet.html">Projecting the 2015-16 Corn Balance Sheet and Price Implications</a></dt>
-<dd><p>In this reading Good and Irwin break down the USDA’s April 9th WASDE report and offer their own projections that differ slightly from the USDA’s projection that came out a week earlier. Pay close attention to why their price estimate is higher than the USDA’s.</p>
+<dd>
+<p>In this reading Good and Irwin break down the USDA’s April 9th WASDE report and offer their own projections that differ slightly from the USDA’s projection that came out a week earlier. Pay close attention to why their price estimate is higher than the USDA’s.</p>
 <p>Good, D., and S. Irwin. “<a href="http://farmdocdaily.illinois.edu/2015/04/projecting-2015-16-corn-balance-sheet.html">Projecting the 2015-16 Corn Balance Sheet and Price Implications</a>.” <em>farmdoc daily</em> (5):70, Department of Agricultural and Consumer Economics, University of Illinois at Urbana-Champaign, April 16, 2015.</p>
 </dd>
 </dl>
 </div>
-<div id="exercises-2" class="section level2" number="10.5">
-<h2><span class="header-section-number">10.5</span> Exercises</h2>
+<div id="exercises-2" class="section level2 hasAnchor" number="10.5">
+<h2><span class="header-section-number">10.5</span> Exercises<a href="balance-sheet-analysis.html#exercises-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ol style="list-style-type: decimal">
 <li><p>Copy and paste the corn and soybeans balance sheets into a spreadsheet.</p>
 <ul>
@@ -1433,7 +1443,6 @@ Total
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -1452,6 +1461,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -1472,6 +1482,10 @@ gitbook.start({
 "text": null
 },
 "download": ["price-analysis.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "section"
 }
@@ -1485,7 +1499,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

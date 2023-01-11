@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 22 Appendix: Forecasting with TS Models | Price Analysis: A Fundamental Approach to the Study of Commodity Prices</title>
   <meta name="description" content="This book introduces the basics of fundamental analysis of prices in food commodity markets. Learn how to follow and understand futures markets for commodities like corn, soybeans, wheat, live cattle, feeder cattle, hogs, ethanol, and crude oil. Learn about calendar, wheat, soybean crush, corn crush, and cattle crush spreads. Additionally, learn about which USDA reports are important to markets, when they come out, and why they move prices. Special focus on the WASDE, Grain Stocks, Prospective Plantings, Planted Acres, Crop Production, and Crop Progress and Condition reports." />
-  <meta name="generator" content="bookdown 0.21.5 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 22 Appendix: Forecasting with TS Models | Price Analysis: A Fundamental Approach to the Study of Commodity Prices" />
   <meta property="og:type" content="book" />
-  <meta property="og:url" content="http:mindymallory.github.io/PriceAnalysis/" />
   <meta property="og:image" content="http:mindymallory.github.io/PriceAnalysis//images/cover.png" />
   <meta property="og:description" content="This book introduces the basics of fundamental analysis of prices in food commodity markets. Learn how to follow and understand futures markets for commodities like corn, soybeans, wheat, live cattle, feeder cattle, hogs, ethanol, and crude oil. Learn about calendar, wheat, soybean crush, corn crush, and cattle crush spreads. Additionally, learn about which USDA reports are important to markets, when they come out, and why they move prices. Special focus on the WASDE, Grain Stocks, Prospective Plantings, Planted Acres, Crop Production, and Crop Progress and Condition reports." />
   <meta name="github-repo" content="mindymallory/PriceAnalysis" />
@@ -24,17 +23,17 @@
 <meta name="author" content="Mindy L. Mallory" />
 
 
-<meta name="date" content="2022-02-15" />
+<meta name="date" content="2023-01-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="forecasting-production-advanced.html"/>
+<link rel="prev" href="forecasting-production---advanced.html"/>
 <link rel="next" href="appendix-single-market-models-arima.html"/>
-<script src="libs/header-attrs-2.6.0/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,11 +49,11 @@
 
 
 
-
 <link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
 <script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
@@ -420,9 +419,9 @@ div.csl-indent {
 <li class="chapter" data-level="20.5" data-path="crude-oil-and-the-crack-spread.html"><a href="crude-oil-and-the-crack-spread.html#the-crack-spread"><i class="fa fa-check"></i><b>20.5</b> The Crack Spread</a></li>
 <li class="chapter" data-level="20.6" data-path="crude-oil-and-the-crack-spread.html"><a href="crude-oil-and-the-crack-spread.html#exercises-9"><i class="fa fa-check"></i><b>20.6</b> Exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="21" data-path="forecasting-production-advanced.html"><a href="forecasting-production-advanced.html"><i class="fa fa-check"></i><b>21</b> Forecasting Production - Advanced</a>
+<li class="chapter" data-level="21" data-path="forecasting-production---advanced.html"><a href="forecasting-production---advanced.html"><i class="fa fa-check"></i><b>21</b> Forecasting Production - Advanced</a>
 <ul>
-<li class="chapter" data-level="21.1" data-path="forecasting-production-advanced.html"><a href="forecasting-production-advanced.html#exercises-10"><i class="fa fa-check"></i><b>21.1</b> Exercises</a></li>
+<li class="chapter" data-level="21.1" data-path="forecasting-production---advanced.html"><a href="forecasting-production---advanced.html#exercises-10"><i class="fa fa-check"></i><b>21.1</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="22" data-path="appendix-forecasting-with-ts-models.html"><a href="appendix-forecasting-with-ts-models.html"><i class="fa fa-check"></i><b>22</b> Appendix: Forecasting with TS Models</a>
 <ul>
@@ -496,16 +495,16 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="appendix-forecasting-with-ts-models" class="section level1" number="22">
-<h1><span class="header-section-number">Chapter 22</span> Appendix: Forecasting with TS Models</h1>
+<div id="appendix-forecasting-with-ts-models" class="section level1 hasAnchor" number="22">
+<h1><span class="header-section-number">Chapter 22</span> Appendix: Forecasting with TS Models<a href="appendix-forecasting-with-ts-models.html#appendix-forecasting-with-ts-models" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <!-- Slightly more rigor and some econometric textbook citations are appropriate here.-->
 <p>This chapter marks a break in forecasting philosophy from the approach we have used in previous chapters. In previous chapters we were forecasting from a viewpoint that was very structural and focused on market fundamentals. We built tools and information sources to monitor supply and demand conditions in commodity markets in fairly great detail. We utilized publicly available information and research published by various branches of the USDA.</p>
 <p>In this chapter, we will take a reduced-form econometric approach. The focus will be the utilization of basic time-series econometric models to examine and forecast commodity prices. In this chapter time-series-specific concepts are introduced: constructing a series of ‘nearby’ futures prices, periodicity of data realizations and forecast horizon, trends in data series, inflation and deflating data, seasonality, stationarity, and random walks.</p>
-<div id="nearby-futures-prices" class="section level2" number="22.1">
-<h2><span class="header-section-number">22.1</span> ‘Nearby’ Futures Prices</h2>
+<div id="nearby-futures-prices" class="section level2 hasAnchor" number="22.1">
+<h2><span class="header-section-number">22.1</span> ‘Nearby’ Futures Prices<a href="appendix-forecasting-with-ts-models.html#nearby-futures-prices" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>There is considerable interest in the analysis of local or ‘spot’ prices, but the vast majority of forecasting exercises in commodity markets are focused on forecasting futures prices. Futures markets are much more ‘liquid’ than local spot markets. A market’s liquidity simply refers to the level of trading activity and ease or difficulty with which it is to find a trading partner. Since futures markets are liquid<a href="#fn12" class="footnote-ref" id="fnref12"><sup>12</sup></a> and futures contracts are standardized, futures markets attract a diverse set of hedgers, speculators, and liquidity providers.<a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a> Therefore, we will focus on forecasting futures prices, although the techniques covered could be applied to spot prices as well.</p>
-<div id="trading-volume-as-contract-maturity-approaches" class="section level3" number="22.1.1">
-<h3><span class="header-section-number">22.1.1</span> Trading Volume as Contract Maturity Approaches</h3>
+<div id="trading-volume-as-contract-maturity-approaches" class="section level3 hasAnchor" number="22.1.1">
+<h3><span class="header-section-number">22.1.1</span> Trading Volume as Contract Maturity Approaches<a href="appendix-forecasting-with-ts-models.html#trading-volume-as-contract-maturity-approaches" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Futures contracts do not experience uniform trading volume over the lifetime of the contract. For example, corn futures are listed as available to trade two years before the maturity date, but the contract does not usually attract significant trading volume until it is has one year or less time to contract maturity. Figure 1 shows the December 2014 corn futures contract prices and volume from 10/3/2011 to the last day the contract traded, 12/12/2014.</p>
 <div class="figure">
 <img src="Excel-files/IntroductiontoCommodityTS-Nearby_construct_files/image005.png" alt="" />
@@ -576,8 +575,8 @@ div.csl-indent {
 </table>
 <p>Rolling futures contracts in this way produces a series that always represents actively traded contracts, so the information content should be high.</p>
 </div>
-<div id="when-to-roll-to-the-next-to-expire" class="section level3" number="22.1.2">
-<h3><span class="header-section-number">22.1.2</span> When to Roll to the Next-to-Expire?</h3>
+<div id="when-to-roll-to-the-next-to-expire" class="section level3 hasAnchor" number="22.1.2">
+<h3><span class="header-section-number">22.1.2</span> When to Roll to the Next-to-Expire?<a href="appendix-forecasting-with-ts-models.html#when-to-roll-to-the-next-to-expire" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>One technical detail is when exactly should you roll to the next to expire contract? Notice in table 1, the series does not roll to the next to expire contract on the last day the CZ14 contract is traded. Corn futures mature on the 14th day of the month of expiration, or the first business day prior to the 14th if the 14th falls on a weekend or holiday.</p>
 <p>Generally, contracts are rolled to the next to expire contract on the first day of the expiration month. As you can see in figure 1, once the ‘delivery’ or expiration month has been entered volume of trading in the contract quickly falls. This is partly because the corn futures contract is physically settled. If you hold a long position until expiration of the futures contract, you are obligated to buy 5,000 bushels of corn at the futures contract’s settle price. And, in fact, the process of preparing for delivery begins the first day of the delivery month. Since most traders do not want to take delivery of 5,000 bushels of corn, they exit their positions in the nearby and roll the position to the next-to-expire if they still want to be long.</p>
 <p>For the purposes of generating a series of nearby prices that are meaningful, using contract prices that are within the delivery month may represent transactions in a thin market, so it is best to roll the series at the end of the previous month. Figure 2 below shows the series of nearby futures prices, rolled at the end of the month prior to the expiration month.</p>
@@ -588,8 +587,8 @@ div.csl-indent {
 <p>Notice in particular that the scale for volume is the same in figures 1 and 2, and in figure 2 volume is strong throughout the series.</p>
 </div>
 </div>
-<div id="time-series-forecasting" class="section level2" number="22.2">
-<h2><span class="header-section-number">22.2</span> Time-Series Forecasting</h2>
+<div id="time-series-forecasting" class="section level2 hasAnchor" number="22.2">
+<h2><span class="header-section-number">22.2</span> Time-Series Forecasting<a href="appendix-forecasting-with-ts-models.html#time-series-forecasting" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Given a time-series of prices that one would like to forecast, the analyst seeks to find a function, <span class="math inline">\(f(.)\)</span>, that can take information known at date <span class="math inline">\(t\)</span> and predict the value of the price at date <span class="math inline">\(t+1\)</span>. Various kinds of information is known at time <span class="math inline">\(t\)</span> and could be used in a forecasting function, but the most commonly used are time <span class="math inline">\(t\)</span> and earlier prices, time <span class="math inline">\(t\)</span> and earlier prices of substitute or complement commodities, variables directly relevant to the price of interest (like pace of production or consumption), interest rates, or other variables thought to be relevant. Of course, the analyst knows that even in the best case scenario, they will be producing forecasts with an error as shown in the equation below.</p>
 <ol style="list-style-type: decimal">
 <li><span class="math inline">\(p_{t+1} = f(p_t, p_{t-1}, ..., z_t) + \epsilon_t\)</span></li>
@@ -597,11 +596,11 @@ div.csl-indent {
 <p>In the equation, <span class="math inline">\(z_t\)</span> represents any variables the analyst believes might have forecasting power other than lags of the commodity’s own price. The <span class="math inline">\(\epsilon_t\)</span> term represents the forecast error term. In practice, the function <span class="math inline">\(f\)</span> will be determined by estimating a regression model of <span class="math inline">\(t+1\)</span> prices on lagged prices and other important variables contained in <span class="math inline">\(z_t\)</span>.</p>
 <p>Using a regression approach requires that the future look somewhat like the past, in econometric terms, the error term must be stationary. This means <span class="math inline">\(\epsilon_t\)</span> must be represented well by a single probability distribution, for example normal with a constant mean and variance. The bulk of time-series analysis consists of verifying that your data is stationary so that this assumption holds, or performing transformations on your data so that the stationarity assumption holds for the transformed data. This concept may seem abstract now, but the coming chapters and exercises will reinforce this point over and over again.</p>
 </div>
-<div id="properties-of-time-series-data" class="section level2" number="22.3">
-<h2><span class="header-section-number">22.3</span> Properties of Time-Series Data</h2>
+<div id="properties-of-time-series-data" class="section level2 hasAnchor" number="22.3">
+<h2><span class="header-section-number">22.3</span> Properties of Time-Series Data<a href="appendix-forecasting-with-ts-models.html#properties-of-time-series-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Some properties of commodity prices occur frequently: trends, seasonality, and stationarity.</p>
-<div id="trends" class="section level3" number="22.3.1">
-<h3><span class="header-section-number">22.3.1</span> Trends</h3>
+<div id="trends" class="section level3 hasAnchor" number="22.3.1">
+<h3><span class="header-section-number">22.3.1</span> Trends<a href="appendix-forecasting-with-ts-models.html#trends" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>A lot of time series data will exhibit clear trends. The Food, Alcohol, and Industrial Use category from the corn balance sheet comes to mind.</p>
 <div class="figure">
 <img src="Excel-files/IntroductiontoCommodityTS-FeedGrains_Corn_files/image010.png" alt="" />
@@ -609,8 +608,8 @@ div.csl-indent {
 </div>
 <p>This series is clearly not stationary, a clear upward trend guarantees that the conditional mean of a subsample from early in the time-series is lower than the conditional mean of a subsample from later in the series. The trend can be easily removed, or ‘detrended’ and therefore forecast fairly easily well with a simple linear trend, log trend, or exponential trend model.</p>
 </div>
-<div id="inflation" class="section level3" number="22.3.2">
-<h3><span class="header-section-number">22.3.2</span> Inflation</h3>
+<div id="inflation" class="section level3 hasAnchor" number="22.3.2">
+<h3><span class="header-section-number">22.3.2</span> Inflation<a href="appendix-forecasting-with-ts-models.html#inflation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>In any long series of prices, inflation can be a concern. Inflation is the phenomenon that explains why $20 today will not buy as much as $20 thirty years ago. Inflation is a special kind of trend that is dealt with by ‘deflating’ the price series by an inflation index. Figure 4 from the Dallas Federal Reserve Bank shows three price indices growing over time.</p>
 <div class="figure">
 <img src="images/dallasfednominal_c1.png" alt="" />
@@ -622,8 +621,8 @@ div.csl-indent {
 <li><span class="math inline">\(Real Value = \frac{Nominal Value}{Price Index}\)</span></li>
 </ol>
 </div>
-<div id="seasonality" class="section level3" number="22.3.3">
-<h3><span class="header-section-number">22.3.3</span> Seasonality</h3>
+<div id="seasonality" class="section level3 hasAnchor" number="22.3.3">
+<h3><span class="header-section-number">22.3.3</span> Seasonality<a href="appendix-forecasting-with-ts-models.html#seasonality" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Some variables have a natural pattern through time. Often data pertaining to production or consumption will exhibit predictable seasonal patterns. We saw this with quarterly exports of corn for example.</p>
 <div class="figure">
 <img src="Excel-files/IntroductiontoCommodityTS-FeedGrains_Corn_files/image026.png" alt="" />
@@ -632,8 +631,8 @@ div.csl-indent {
 <p>The seasonal pattern ensures that the conditional mean and variance of this variable is not constant through time. Seasonality is fairly easy to address in a regression model, and we will see some popular methods for removing the predictable seasonal component so that the resultant series is stationary.</p>
 </div>
 </div>
-<div id="stationarity" class="section level2" number="22.4">
-<h2><span class="header-section-number">22.4</span> Stationarity</h2>
+<div id="stationarity" class="section level2 hasAnchor" number="22.4">
+<h2><span class="header-section-number">22.4</span> Stationarity<a href="appendix-forecasting-with-ts-models.html#stationarity" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Price series often seem to follow a random walk. That is, the price at <span class="math inline">\(t+1\)</span> appears to be a random deviation from the price at time <span class="math inline">\(t\)</span>. More formally,</p>
 <ol start="3" style="list-style-type: decimal">
 <li><span class="math inline">\(p_{t+1} = p_{t} + \epsilon_t\)</span></li>
@@ -654,8 +653,8 @@ div.csl-indent {
 </ol>
 <p>Figure 7 motivates the most common ‘fix’ when price data appear to be non-stationary. Taking the first difference of prices often will yield a series that is stationary.</p>
 <p>The only problem with the random walk model in terms of understanding stationarity of prices is that there is nothing preventing the random walk model from producing negative prices. Since negative prices are, generally, impossible, the standard random walk model does not work very well for prices. A simple modification will solve this problem, however.</p>
-<div id="the-log-normal-price-model." class="section level3" number="22.4.1">
-<h3><span class="header-section-number">22.4.1</span> The Log-normal Price Model.</h3>
+<div id="the-log-normal-price-model." class="section level3 hasAnchor" number="22.4.1">
+<h3><span class="header-section-number">22.4.1</span> The Log-normal Price Model.<a href="appendix-forecasting-with-ts-models.html#the-log-normal-price-model." class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>If we modify the random walk model as follows, we guarantee a model that will produce non-negative prices.</p>
 <ol start="5" style="list-style-type: decimal">
 <li><span class="math inline">\(\ln{p_{t+1}} = \ln{p_{t}} + \epsilon_t\)</span></li>
@@ -688,8 +687,8 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<div id="time-series-econometrics-technical-details" class="section level2" number="22.5">
-<h2><span class="header-section-number">22.5</span> Time Series Econometrics Technical Details</h2>
+<div id="time-series-econometrics-technical-details" class="section level2 hasAnchor" number="22.5">
+<h2><span class="header-section-number">22.5</span> Time Series Econometrics Technical Details<a href="appendix-forecasting-with-ts-models.html#time-series-econometrics-technical-details" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>It turns out that if data are non-stationary and you try to run a typical OLS regression with the data in levels, the regression will be what is call <em>Super Consistent</em>. Practically, this means no matter what you put on the left hand side and right hand side of the regression, everything will appear statistically significant with a regular t-test. The relationships however, may just be spurious and not meaningful.</p>
 <p>In time series econometrics the first thing you have to do is understand whether or not your data are stationary or not. Data that are non-stationary are said to have a <em>unit root</em>. Data is typically tested for stationarity versus unit root with an Augmented Dickey Fuller test (or one of several other unit root tests).</p>
 <p>For a deeper discussion of how to implement these tests, please see <a href="http://mindymallory.com/R-Companion-Price-Analysis/">Primer for Time Series Econometrics in R</a> chapter 4.</p>
@@ -700,14 +699,14 @@ div.csl-indent {
 <p class="caption">Figure 11: Single Price Series Time Series Workflow</p>
 </div>
 </div>
-<div id="efficient-market-hypothesis" class="section level2" number="22.6">
-<h2><span class="header-section-number">22.6</span> Efficient Market Hypothesis</h2>
+<div id="efficient-market-hypothesis" class="section level2 hasAnchor" number="22.6">
+<h2><span class="header-section-number">22.6</span> Efficient Market Hypothesis<a href="appendix-forecasting-with-ts-models.html#efficient-market-hypothesis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The Efficient Market Hypothesis (EMH) states that all the information available regarding an asset is incorporated into its price <span class="citation">(<a href="#ref-fama1970" role="doc-biblioref"><strong>fama1970?</strong></a>)</span>. If the EMH were true, forecasting would be a hopeless endeavor because one could never use current and past information to predict future prices - as in the Log-normal price model. There is a large debate about the whether or not this hypothesis is true, or how and when it deviates from being true.</p>
 <p>While a large literature in finance argues that it is not strictly true, markets are ‘close to efficient’ most of the time. I say this because making a forecast that one can actually profitably trade with is difficult. We will explore several forecasting models in the subsequent chapters, and we will find it difficult to find a forecasting model were our 95% confidence interval around our forecast of percent return does not contain 0.0%. If one cannot produce a forecasting model that does that, your model is not giving a clear ‘buy’ or ‘sell’ signal.</p>
 <p>The Efficient Market Hypothesis is related to the concept of stationarity because the Efficient Market Hypothesis states that futures returns are not predictable. Anything information useful for forecasting would have been discovered by someone, and arbitraged away. In other words, if you have information that makes you sure the price of an asset or commodity will go up, then you will buy it until the price goes up so that there is no discrepency between what the price ‘should be’ and what the price is. Because there is a strong financial incentive to arbitrage away any of these kind of discrepancies, even if markets are temporarily inefficient, traders will correct the inefficiency by pushing the price up or down.</p>
 </div>
-<div id="exercises-11" class="section level2" number="22.7">
-<h2><span class="header-section-number">22.7</span> Exercises</h2>
+<div id="exercises-11" class="section level2 hasAnchor" number="22.7">
+<h2><span class="header-section-number">22.7</span> Exercises<a href="appendix-forecasting-with-ts-models.html#exercises-11" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ol style="list-style-type: decimal">
 <li>Download the corn futures contracts CZ2014, CH2015, CK2015, CN2015, and CU2015. Replicate the series of nearby contracts depicted in figure 2 by concatenating prices of the appropriate dates for each contract. As a Check, replicate figure 2.</li>
 </ol>
@@ -727,12 +726,11 @@ div.csl-indent {
           </div>
         </div>
       </div>
-<a href="forecasting-production-advanced.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="forecasting-production---advanced.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="appendix-single-market-models-arima.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -751,6 +749,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -771,6 +770,10 @@ gitbook.start({
 "text": null
 },
 "download": ["price-analysis.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "section"
 }
@@ -784,7 +787,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 24 South American Production | Price Analysis: A Fundamental Approach to the Study of Commodity Prices</title>
   <meta name="description" content="This book introduces the basics of fundamental analysis of prices in food commodity markets. Learn how to follow and understand futures markets for commodities like corn, soybeans, wheat, live cattle, feeder cattle, hogs, ethanol, and crude oil. Learn about calendar, wheat, soybean crush, corn crush, and cattle crush spreads. Additionally, learn about which USDA reports are important to markets, when they come out, and why they move prices. Special focus on the WASDE, Grain Stocks, Prospective Plantings, Planted Acres, Crop Production, and Crop Progress and Condition reports." />
-  <meta name="generator" content="bookdown 0.21.5 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 24 South American Production | Price Analysis: A Fundamental Approach to the Study of Commodity Prices" />
   <meta property="og:type" content="book" />
-  <meta property="og:url" content="http:mindymallory.github.io/PriceAnalysis/" />
   <meta property="og:image" content="http:mindymallory.github.io/PriceAnalysis//images/cover.png" />
   <meta property="og:description" content="This book introduces the basics of fundamental analysis of prices in food commodity markets. Learn how to follow and understand futures markets for commodities like corn, soybeans, wheat, live cattle, feeder cattle, hogs, ethanol, and crude oil. Learn about calendar, wheat, soybean crush, corn crush, and cattle crush spreads. Additionally, learn about which USDA reports are important to markets, when they come out, and why they move prices. Special focus on the WASDE, Grain Stocks, Prospective Plantings, Planted Acres, Crop Production, and Crop Progress and Condition reports." />
   <meta name="github-repo" content="mindymallory/PriceAnalysis" />
@@ -24,7 +23,7 @@
 <meta name="author" content="Mindy L. Mallory" />
 
 
-<meta name="date" content="2022-02-15" />
+<meta name="date" content="2023-01-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +32,8 @@
   
 <link rel="prev" href="appendix-single-market-models-arima.html"/>
 
-<script src="libs/header-attrs-2.6.0/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,11 +49,11 @@
 
 
 
-
 <link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
 <script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
@@ -420,9 +419,9 @@ div.csl-indent {
 <li class="chapter" data-level="20.5" data-path="crude-oil-and-the-crack-spread.html"><a href="crude-oil-and-the-crack-spread.html#the-crack-spread"><i class="fa fa-check"></i><b>20.5</b> The Crack Spread</a></li>
 <li class="chapter" data-level="20.6" data-path="crude-oil-and-the-crack-spread.html"><a href="crude-oil-and-the-crack-spread.html#exercises-9"><i class="fa fa-check"></i><b>20.6</b> Exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="21" data-path="forecasting-production-advanced.html"><a href="forecasting-production-advanced.html"><i class="fa fa-check"></i><b>21</b> Forecasting Production - Advanced</a>
+<li class="chapter" data-level="21" data-path="forecasting-production---advanced.html"><a href="forecasting-production---advanced.html"><i class="fa fa-check"></i><b>21</b> Forecasting Production - Advanced</a>
 <ul>
-<li class="chapter" data-level="21.1" data-path="forecasting-production-advanced.html"><a href="forecasting-production-advanced.html#exercises-10"><i class="fa fa-check"></i><b>21.1</b> Exercises</a></li>
+<li class="chapter" data-level="21.1" data-path="forecasting-production---advanced.html"><a href="forecasting-production---advanced.html#exercises-10"><i class="fa fa-check"></i><b>21.1</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="22" data-path="appendix-forecasting-with-ts-models.html"><a href="appendix-forecasting-with-ts-models.html"><i class="fa fa-check"></i><b>22</b> Appendix: Forecasting with TS Models</a>
 <ul>
@@ -496,12 +495,12 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="south-american-production" class="section level1" number="24">
-<h1><span class="header-section-number">Chapter 24</span> South American Production</h1>
+<div id="south-american-production" class="section level1 hasAnchor" number="24">
+<h1><span class="header-section-number">Chapter 24</span> South American Production<a href="south-american-production.html#south-american-production" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Over<a href="#fn15" class="footnote-ref" id="fnref15"><sup>15</sup></a> the last twenty years Brazil and Argentina have grown in prominence on the world stage and are currently among the most important growers of soybeans and corn, particularly so for soybeans.</p>
 <p>In figure 1 we have plotted the production since 1990 of the world’s top five producers of corn. Argentina, Brazil, China, the European Union, and the United States round out this group. A clear pattern of increases over time is notable particularly for the U.S., China, and Brazil, generating a dramatic upward trend in the production from this top group.</p>
-<div id="production-of-corn" class="section level2" number="24.1">
-<h2><span class="header-section-number">24.1</span> Production of Corn</h2>
+<div id="production-of-corn" class="section level2 hasAnchor" number="24.1">
+<h2><span class="header-section-number">24.1</span> Production of Corn<a href="south-american-production.html#production-of-corn" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Data for figures 1-4 come from the <a href="https://apps.fas.usda.gov/psdonline/app/index.html#/app/downloads">USDA FAS World Production Supply and Demand</a> historical data-sets for grains and oilseeds.</p>
 <p><img src="assets/SouthAmericanProduction_TopProdCorn.png" /></p>
 <p>Figure 2 plots the top five countries by exports. Here we see China and the EU dropping out of the top five with Russia and Ukraine taking their place. While U.S. exports have been mostly flat over this time period, exports from Brazil have been expanding rapidly since about 2004.</p>
@@ -514,8 +513,8 @@ div.csl-indent {
 </div>
 <p>Table 1: Top 10 World Producers of Corn, 2020</p>
 </div>
-<div id="production-of-soybeans" class="section level2" number="24.2">
-<h2><span class="header-section-number">24.2</span> Production of Soybeans</h2>
+<div id="production-of-soybeans" class="section level2 hasAnchor" number="24.2">
+<h2><span class="header-section-number">24.2</span> Production of Soybeans<a href="south-american-production.html#production-of-soybeans" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Now we turn our attention to the soybean market. In figure 3 we present production since 1990 from the top five countries. Here, the importance of Brazil and Argentina is much more obvious. While production in the U.S. has a visible upward trend, Brazil and Argentina are really increasing at a rapid rate.</p>
 <p><img src="assets/SouthAmericanProd_TopProdSoy.png" /></p>
 <p>In figure 4 we plot the exports from the top five countries. From figure 3 to 4 China and India drop out and are replaced by Canada and Paraguay. The growth in soybean exports from Brazil is quite remarkable in this chart.</p>
@@ -528,13 +527,13 @@ div.csl-indent {
 </div>
 <p>Table 2: Top 10 World Producers of Soybeans, 2020</p>
 </div>
-<div id="south-american-production-seasons-and-trade-flows" class="section level2" number="24.3">
-<h2><span class="header-section-number">24.3</span> South American Production Seasons and Trade Flows</h2>
+<div id="south-american-production-seasons-and-trade-flows" class="section level2 hasAnchor" number="24.3">
+<h2><span class="header-section-number">24.3</span> South American Production Seasons and Trade Flows<a href="south-american-production.html#south-american-production-seasons-and-trade-flows" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Since South America experiences summer when we in the North America experience winter and vice versa, North American and South American production is nicely complementary in providing corn and soybeans for the export market. We noted in Chapter 9 and 10 that U.S. corn and soybean exports are at their highest levels during the 2nd quarter of the marketing year - right after harvest. During this time, the planting and growing seasons are underway in South America, and the heavy export season from harvesting the previous crop is winding down.</p>
 <p>Then, South American farmers are harvesting during our planting and growing seasons (March through June).</p>
 <p>The seasonality is a boon for importers because they have the opportunity to buy for seasonally low harvest-time prices twice per year rather than just once per year.</p>
-<div id="brazil" class="section level3" number="24.3.1">
-<h3><span class="header-section-number">24.3.1</span> Brazil</h3>
+<div id="brazil" class="section level3 hasAnchor" number="24.3.1">
+<h3><span class="header-section-number">24.3.1</span> Brazil<a href="south-american-production.html#brazil" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Brazil, being quite close to the equator, enjoys the ability to double crop most every year. Typically, farmers plant soybeans as the first crop because if they plant soybeans first they get a second crop of corn. If they plant corn first, there is not enough time to get a second crop of soybeans. However, yields of first crop corn are higher then yields of second crop corn due to when the rainy season comes, so in some places farmers choose to plant one crop of corn and forego double cropping.</p>
 <p>Figure 6 show production intensity of soybeans by state, and also provides a calendar of when planting and harvest activity of first crop soybeans are taking place.</p>
 <div class="figure">
@@ -552,12 +551,12 @@ div.csl-indent {
 <p class="caption">Figure 8: Regional Brazillian 1st Crop Corn Production Seasons</p>
 </div>
 </div>
-<div id="where-to-find-information-on-brazilian-crops" class="section level3" number="24.3.2">
-<h3><span class="header-section-number">24.3.2</span> Where to find information on Brazilian Crops</h3>
+<div id="where-to-find-information-on-brazilian-crops" class="section level3 hasAnchor" number="24.3.2">
+<h3><span class="header-section-number">24.3.2</span> Where to find information on Brazilian Crops<a href="south-american-production.html#where-to-find-information-on-brazilian-crops" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>For information about Brazillian production the <a href="http://www.conab.gov.br/index.php">National Supply Company (Conab)</a> is the main resource. They publish crop reports monthly, just like the USDA’s WASDE report. Typically, the Brazillian report is released a couple of days before the WASDE report, so if there is information from Brazil that will affect world stocks or production, these reports will move prices in the U.S.</p>
 </div>
-<div id="argentina" class="section level3" number="24.3.3">
-<h3><span class="header-section-number">24.3.3</span> Argentina</h3>
+<div id="argentina" class="section level3 hasAnchor" number="24.3.3">
+<h3><span class="header-section-number">24.3.3</span> Argentina<a href="south-american-production.html#argentina" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Argentina is more similar to the U.S. in latitude, so they are only able to plant a single crop. Planting of corn begins in September and harvest runs from March until May.</p>
 <div class="figure">
 <img src="assets/Argentina_Departments_Corn.png" alt="" />
@@ -569,8 +568,8 @@ div.csl-indent {
 <p class="caption">Figure 10: Regional Argentinian Soybean Production Seasons</p>
 </div>
 </div>
-<div id="where-to-find-information-on-argentinian-crops" class="section level3" number="24.3.4">
-<h3><span class="header-section-number">24.3.4</span> Where to find information on Argentinian Crops</h3>
+<div id="where-to-find-information-on-argentinian-crops" class="section level3 hasAnchor" number="24.3.4">
+<h3><span class="header-section-number">24.3.4</span> Where to find information on Argentinian Crops<a href="south-american-production.html#where-to-find-information-on-argentinian-crops" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The <a href="https://www.bolsadecereales.com/">Bolsa de Cereales</a> is the grain exchange in Argentina. They undertake the responsibility of producing crop reports. The reports most closely followed are the Weekly Agricultural Report, which tells the planting or harvest progress, and gives a general update about market conditions. The other report is the Esdtado Y Condition de Cultivos (ECC), which is released once per month. This has more detailed estimates about planting and growing conditions.</p>
 <p>With Google Translate to translate web pages reports can be found and understood by English-only speakers.</p>
 
@@ -591,7 +590,7 @@ Black, Fischer, and Myron Scholes. 1973. <span>“The Pricing of Options and Cor
 Cochran, Clay L. 1951. <span>“Price Supports and the Distribution of Agricultural Income.”</span> <em>Southern Economic Journal</em> 17 (3): 330–38. <a href="https://doi.org/10.2307/1053897">https://doi.org/10.2307/1053897</a>.
 </div>
 <div class="csl-entry">
-Farrin, Katie, Mario Miranda, and Erik O’Donoghue. 2016. <span>“How Do Time and Money Affect Agricultural Insurance Uptake? A New Approach to Farm Risk Management Analysis.”</span> USDA ERS Report <span>ERR</span>-212. Washington, D.C.: United States Department of Agriculture, Economic Research Service. <a href="https://www.ers.usda.gov/publications/pub-details/?pubid=74681">https://www.ers.usda.gov/publications/pub-details/?pubid=74681</a>.
+Farrin, Katie, Mario Miranda, and Erik O’Donoghue. 2016. <span>“How Do Time and Money Affect Agricultural Insurance Uptake? A New Approach to Farm Risk Management Analysis.”</span> {USDA} {ERS} Report <span>ERR</span>-212. Washington, D.C.: United States Department of Agriculture, Economic Research Service. <a href="https://www.ers.usda.gov/publications/pub-details/?pubid=74681">https://www.ers.usda.gov/publications/pub-details/?pubid=74681</a>.
 </div>
 <div class="csl-entry">
 Glauber, Joseph W. 2013. <span>“The Growth of the Federal Crop Insurance Program, 1990–2011.”</span> <em>American Journal of Agricultural Economics</em> 95 (2): 482–88. <a href="https://doi.org/10.1093/ajae/aas091">https://doi.org/10.1093/ajae/aas091</a>.
@@ -603,7 +602,7 @@ Glauber, Joseph, and Anne Effland. 2016. <span>“United States Agricultural Pol
 Good, Darrel, and Scott Irwin. 2011. <em><span>USDA</span> Corn and Soybean Acreage Estimates and Yield Forecasts: Dispelling Myths and Misunderstandings</em>. Marketing and Outlook Briefs March <span>MOBR</span> 11-02. Department of Agricultural; Consumer Economics, University of Illinois.
 </div>
 <div class="csl-entry">
-<span>“History of Agricultural Price Support and Adjustment Programs.”</span> 1984. <span>USDA</span> Economic Research Service.
+<span>“History of Agricultural Price Support and Adjustment Programs.”</span> 1984. Information Bulletin No. 485. <span>USDA</span> Economic Research Service.
 </div>
 <div class="csl-entry">
 Hull, John. 2017. <em>Fundamentals of Futures and Options Markets</em>. 9th ed. Pearson.
@@ -678,7 +677,6 @@ Zulauf, Carl. 2016. <span>“Crop Insurance Premium Subsidy Rates: A Proposed Ob
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -697,6 +695,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -717,6 +716,10 @@ gitbook.start({
 "text": null
 },
 "download": ["price-analysis.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "section"
 }
@@ -730,7 +733,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

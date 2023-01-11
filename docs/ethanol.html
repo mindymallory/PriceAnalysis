@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 17 Ethanol | Price Analysis: A Fundamental Approach to the Study of Commodity Prices</title>
   <meta name="description" content="This book introduces the basics of fundamental analysis of prices in food commodity markets. Learn how to follow and understand futures markets for commodities like corn, soybeans, wheat, live cattle, feeder cattle, hogs, ethanol, and crude oil. Learn about calendar, wheat, soybean crush, corn crush, and cattle crush spreads. Additionally, learn about which USDA reports are important to markets, when they come out, and why they move prices. Special focus on the WASDE, Grain Stocks, Prospective Plantings, Planted Acres, Crop Production, and Crop Progress and Condition reports." />
-  <meta name="generator" content="bookdown 0.21.5 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 17 Ethanol | Price Analysis: A Fundamental Approach to the Study of Commodity Prices" />
   <meta property="og:type" content="book" />
-  <meta property="og:url" content="http:mindymallory.github.io/PriceAnalysis/" />
   <meta property="og:image" content="http:mindymallory.github.io/PriceAnalysis//images/cover.png" />
   <meta property="og:description" content="This book introduces the basics of fundamental analysis of prices in food commodity markets. Learn how to follow and understand futures markets for commodities like corn, soybeans, wheat, live cattle, feeder cattle, hogs, ethanol, and crude oil. Learn about calendar, wheat, soybean crush, corn crush, and cattle crush spreads. Additionally, learn about which USDA reports are important to markets, when they come out, and why they move prices. Special focus on the WASDE, Grain Stocks, Prospective Plantings, Planted Acres, Crop Production, and Crop Progress and Condition reports." />
   <meta name="github-repo" content="mindymallory/PriceAnalysis" />
@@ -24,7 +23,7 @@
 <meta name="author" content="Mindy L. Mallory" />
 
 
-<meta name="date" content="2022-02-15" />
+<meta name="date" content="2023-01-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +32,8 @@
   
 <link rel="prev" href="the-soybean-crush.html"/>
 <link rel="next" href="cattle-markets-and-the-livestock-crush.html"/>
-<script src="libs/header-attrs-2.6.0/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,11 +49,11 @@
 
 
 
-
 <link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
 <script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
@@ -420,9 +419,9 @@ div.csl-indent {
 <li class="chapter" data-level="20.5" data-path="crude-oil-and-the-crack-spread.html"><a href="crude-oil-and-the-crack-spread.html#the-crack-spread"><i class="fa fa-check"></i><b>20.5</b> The Crack Spread</a></li>
 <li class="chapter" data-level="20.6" data-path="crude-oil-and-the-crack-spread.html"><a href="crude-oil-and-the-crack-spread.html#exercises-9"><i class="fa fa-check"></i><b>20.6</b> Exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="21" data-path="forecasting-production-advanced.html"><a href="forecasting-production-advanced.html"><i class="fa fa-check"></i><b>21</b> Forecasting Production - Advanced</a>
+<li class="chapter" data-level="21" data-path="forecasting-production---advanced.html"><a href="forecasting-production---advanced.html"><i class="fa fa-check"></i><b>21</b> Forecasting Production - Advanced</a>
 <ul>
-<li class="chapter" data-level="21.1" data-path="forecasting-production-advanced.html"><a href="forecasting-production-advanced.html#exercises-10"><i class="fa fa-check"></i><b>21.1</b> Exercises</a></li>
+<li class="chapter" data-level="21.1" data-path="forecasting-production---advanced.html"><a href="forecasting-production---advanced.html#exercises-10"><i class="fa fa-check"></i><b>21.1</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="22" data-path="appendix-forecasting-with-ts-models.html"><a href="appendix-forecasting-with-ts-models.html"><i class="fa fa-check"></i><b>22</b> Appendix: Forecasting with TS Models</a>
 <ul>
@@ -496,12 +495,20 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="ethanol" class="section level1" number="17">
-<h1><span class="header-section-number">Chapter 17</span> Ethanol</h1>
+<div id="ethanol" class="section level1 hasAnchor" number="17">
+<h1><span class="header-section-number">Chapter 17</span> Ethanol<a href="ethanol.html#ethanol" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Ethanol production and consumption begin to increase rapidly around 2005, which is when the Energy Policy Act of 2005 and later the Energy Security and Independence Act of 2007 created the Renewable Fuels Standard (RFS). The RFS mandated quantities of ethanol that blenders of gasoline are required to blend into the retail gasoline supply. These annual mandates are revised every year, but they were designed to steadily increase year after year until 2015 when the mandate reached 15 billion gallons per year. This figure came about because gasoline consumption in the United States was forecast to reach 150 billion gallons per year by 2015. So the RFS mandates were designed to reach the point where the entire retail gasoline supply would include 10% ethanol.</p>
 <p>The EPA released <a href="https://www.epa.gov/renewable-fuel-standard-program/proposed-renewable-fuel-standards-2017-and-biomass-based-diesel">proposed rules</a> regarding RFS for volume requirements of biofuels for 2014, 2015, 2016, and 2017 on May 31, 2016.</p>
 <table>
 <caption>Table 1: Renewable Fuel Mandated Volumes for 2014, 2015, 2016, and 2017</caption>
+<colgroup>
+<col width="36%" />
+<col width="6%" />
+<col width="6%" />
+<col width="6%" />
+<col width="5%" />
+<col width="38%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="left"></th>
@@ -552,8 +559,8 @@ div.csl-indent {
 <p>Advanced biofuel is defined as fuel made from renewable sources that provides greater than 50% reduction in greenhouse gas emissions than the renewable fuel they replace. Cellulosic biofuel and biomass-based diesel are considered advanced biofuels, so the cellulosic and biomass-based diesel requirements comprise 2.13 billion gallons of the 3.61 billion gallon advanced biofuel requirement. This leaves 1.48 billion billion gallons in undifferentiated advanced biofuel in the mandate. This will most likely be fulfilled by importing sugarcane-based ethanol from Brazil, since the greenhouse gas emission reductions for sugarcane-based ethanol is accepted as an advanced biofuel and considered to have greater than 50% reduction in greenhouse gas emissions.</p>
 <p>Since ethanol production is a significant user of corn, and has important price impacts, it is useful to calculate the implied corn usage under the RFS mandates. First, with an 18.11 billion gallon total renewable fuel requirement, and a 3.61 advanced biofuel requirement, that leaves <span class="math inline">\(18.11 - 3.61 = 14.5\)</span> billion gallons of the total renewable fuel requirement than can be met with conventional biofuel, like corn-based ethanol. Assuming an ethanol plant yields 2.8 gallons of ethanol per bushel of corn, that is an implied usage mandate of 5.17 billion bushels corn. This is spot on with the November 2015 WASDE’s estimate of Ethanol usage for the 2015/2016 marketing year of 5.175 billion bushels.</p>
 <p>In the sections that follow the basic ethanol production process is presented. We discuss the by-product of ethanol production, distillers dried grains (DDGs), and its importance to the livestock industry. Then we will discuss some important price relationships involving ethanol, including the ethanol-RBOB gasoline price relationship, and the ethanol-corn-natural gas-DDGs price relationship.</p>
-<div id="ethanol-production" class="section level2" number="17.1">
-<h2><span class="header-section-number">17.1</span> Ethanol Production</h2>
+<div id="ethanol-production" class="section level2 hasAnchor" number="17.1">
+<h2><span class="header-section-number">17.1</span> Ethanol Production<a href="ethanol.html#ethanol-production" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Ethanol production<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a> takes place at biorefineries <a href="http://www.ethanolrfa.org/resources/biorefinery-locations/">all across the country</a>, but production is concentrated in the corn belt. Ethanol plants take advantage of the plentiful supplies of corn and the relatively favorable basis in the corn belt. Some plants are located close to major livestock feeding operations. If you click the source link for the map below and zoom in to look more closely at Kansas you will see a few ethanol plants located in the vicinity of the cattle feedlots we explored in an earlier chapter.</p>
 <div class="figure">
 <img src="images/eth_locations.PNG" alt="" />
@@ -561,29 +568,29 @@ div.csl-indent {
 </div>
 <p>Source: <a href="http://www.ethanolrfa.org/resources/biorefinery-locations/">Renewable Fuels Association</a></p>
 <p>Corn-based ethanol can be produced via two methods. Dry grind, and wet grind.</p>
-<div id="dry-grind-ethanol-production" class="section level3" number="17.1.1">
-<h3><span class="header-section-number">17.1.1</span> Dry Grind Ethanol Production</h3>
+<div id="dry-grind-ethanol-production" class="section level3 hasAnchor" number="17.1.1">
+<h3><span class="header-section-number">17.1.1</span> Dry Grind Ethanol Production<a href="ethanol.html#dry-grind-ethanol-production" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>In dry grind ethanol production, the entire kernel of corn is ground into a meal and mixed with water to create a slurry. Then enzymes are added to convert the starches in the slurry to simple sugar. Ammonia and yeast are added, and the yeast ferments the slurry and converts the slurry into ethanol and carbon dioxide. The ethanol is dehydrated to 200 proof and then a little gasoline is added to make the product undrinkable.</p>
 <p>What is left over after the sugars have been converted to ethanol is called stillage. This product is dehydrated and sold as livestock feed called DDGs. The drying process usually is implemented with natural gas fueled furnaces, so natural gas is a significant input expense for dry grind ethanol plants. So dry-grind ethanol production involves two revenue streams, ethanol and Dd Gs. More on the economics of Dd Gs in the section that follows.</p>
 <div class="figure">
 <img src="images/640px-Ethanol_plant.jpg" alt="" />
 <p class="caption">Figure 2: An Ethanol Plant</p>
 </div>
-<p>“<a href="https://commons.wikimedia.org/wiki/File:Ethanol_plant.jpg#/media/File:Ethanol_plant.jpg">Ethanol plant</a>.” Licensed under Public Domain via <a href="//commons.wikimedia.org/wiki/">Wikimedia Commons</a>.</p>
+<p>“<a href="https://commons.wikimedia.org/wiki/File:Ethanol_plant.jpg#/media/File:Ethanol_plant.jpg">Ethanol plant</a>”. Licensed under Public Domain via <a href="//commons.wikimedia.org/wiki/">Wikimedia Commons</a>.</p>
 <p>Follow the link to a Google Maps satellite view of <a href="https://www.google.com/maps/place/Lincolnway+Energy+LLC/@42.0259566,-93.5094383,1084m/data=!3m1!1e3!4m2!3m1!1s0x0000000000000000:0xe75269d9c81692ab!6m1!1e1">Lincolnway Energy LLC, Ames, IA</a>. Note the location. The ethanol plant is located directly next to Key Cooperative, and both have access to a rail-head.</p>
 </div>
-<div id="wet-grind-ethanol-production" class="section level3" number="17.1.2">
-<h3><span class="header-section-number">17.1.2</span> Wet Grind Ethanol Production</h3>
+<div id="wet-grind-ethanol-production" class="section level3 hasAnchor" number="17.1.2">
+<h3><span class="header-section-number">17.1.2</span> Wet Grind Ethanol Production<a href="ethanol.html#wet-grind-ethanol-production" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Unlike dry grind ethanol production, in the wet grind process whole corn kernels are steeped in a combination of sulfuric acid and water to separate the kernel into its components: pericarp (or skin), the endosperm (which contains the starch), and germ (which contains the oil). Pre-processing the corn in this way allows fermentation to be done on the starchy part alone, and corn oil and corn bran (from the pericarp) can be extracted separately. The wet-grind ethanol production involves three revenue streams, ethanol, corn oil, and corn bran.</p>
 <p>Wet grind ethanol production is more costly than dry grind, so the majority of corn-based ethanol production capacity is of the dry grind type.</p>
 </div>
 </div>
-<div id="distillers-grains" class="section level2" number="17.2">
-<h2><span class="header-section-number">17.2</span> Distiller’s Grains</h2>
+<div id="distillers-grains" class="section level2 hasAnchor" number="17.2">
+<h2><span class="header-section-number">17.2</span> Distiller’s Grains<a href="ethanol.html#distillers-grains" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>DDGs are a by product of the dry grind ethanol production process that is valuable as a livestock feed. DDGs have about 26% protein, 8% fat, and significant metabolizable energy (kcals), so it can be used to replace both energy (typically corn) and protein (soybean meal or other) requirements in feed rations.</p>
 <p><a href="https://www.google.com/search?q=ddgs&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ved=0ahUKEwj4udmomr7JAhWF2B4KHailApcQ_AUICCgC&amp;biw=1920&amp;bih=1031#">Images of DDGs</a></p>
-<div id="ddg-prices" class="section level3" number="17.2.1">
-<h3><span class="header-section-number">17.2.1</span> DDG Prices</h3>
+<div id="ddg-prices" class="section level3 hasAnchor" number="17.2.1">
+<h3><span class="header-section-number">17.2.1</span> DDG Prices<a href="ethanol.html#ddg-prices" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>DDG prices tend to follow the trend of corn prices, although not perfectly because the two are not perfect substitutes. In figure 3, DDG and corn prices are compared using monthly U.S. average price received by farmers for corn (cents per bushel) and the average wholesale bulk price for Central IL ($/ton). We put corn prices in cents per bushel so the units are comparable on one axis.</p>
 <div class="figure">
 <img src="assets/CornDDGPrices.png" alt="" />
@@ -597,13 +604,13 @@ div.csl-indent {
 <p>The price ratio is fairly variable, but appears to follow a stationary and possibly mean reverting pattern. DDG prices seem to range from 30% to 50% of corn prices.</p>
 </div>
 </div>
-<div id="ethanol-prices" class="section level2" number="17.3">
-<h2><span class="header-section-number">17.3</span> Ethanol Prices</h2>
+<div id="ethanol-prices" class="section level2 hasAnchor" number="17.3">
+<h2><span class="header-section-number">17.3</span> Ethanol Prices<a href="ethanol.html#ethanol-prices" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Since ethanol is used as a liquid motor fuel, it makes sense that demand follows the same general trend that other energy products like crude oil and gasoline. This intuition is complicated, however, by the fact that ethanol is both a substitute and a compliment for gasoline. Blending ethanol at 10% with retail gasoline displaces, or substitutes for some quantity of gasoline. Also E85, 85% blend of gasoline, clearly substitutes for gasoline, although the size of the E85 market is small relative to the size of the retail gasoline market.</p>
 <p>Ethanol is also a compliment with gasoline because it acts as an oxygenate. Oxygenates are added to retail gasoline to reduce carbon monoxide emissions and soot. By blending ethanol into retail gasoline blenders do not have to add other costly oxygenates derived from fossil fuels, such as MTBE (which is outlawed in California and New York among others) or <a href="https://en.wikipedia.org/wiki/Oxygenate">others</a>.</p>
 </div>
-<div id="ethanol-and-gas-prices" class="section level2" number="17.4">
-<h2><span class="header-section-number">17.4</span> Ethanol and Gas Prices</h2>
+<div id="ethanol-and-gas-prices" class="section level2 hasAnchor" number="17.4">
+<h2><span class="header-section-number">17.4</span> Ethanol and Gas Prices<a href="ethanol.html#ethanol-and-gas-prices" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>That said, it is difficult to anticipate whether Ethanol prices will exhibit a relationship consistent with a substitute or consistent with a complement good. In figure 5, ethanol and RBOB gasoline prices are graphed together for comparison.</p>
 <div class="figure">
 <img src="assets/EthRBOB.png" alt="" />
@@ -611,8 +618,8 @@ div.csl-indent {
 </div>
 <p>It appears that ethanol and Los Angelos spot RBOB have a positive relationship consistent with substitute goods, but ethanol prices are usually discounted relative to gasoline prices. Geographical differences in transport costs likely explain part of this, but also, a gallon of ethanol has about 75% of the energy content of a gallon of gasoline. So gasoline with ethanol blended into it will yield fewer miles per gallon. This is particularly true for E85.</p>
 </div>
-<div id="ethanol-crush-spread" class="section level2" number="17.5">
-<h2><span class="header-section-number">17.5</span> Ethanol Crush Spread</h2>
+<div id="ethanol-crush-spread" class="section level2 hasAnchor" number="17.5">
+<h2><span class="header-section-number">17.5</span> Ethanol Crush Spread<a href="ethanol.html#ethanol-crush-spread" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The price relationship between ethanol, its coproduct DDGs and its inputs, corn and natural gas, is also closely followed by the industry. Since we have recently ended a period of rapid expansion in the ethanol industry, ‘blending margins’ or the profitability of a typical ethanol plant were closely monitored to gauge how fast or slow we might expect future expansion. Although expansion has slowed, industry participants still follow the margin closely to determine the health of the industry and whether we can expect any idling of capacity or expansion.</p>
 <p>Iowa State University Extension maintains an excellent spreadsheet model of ethanol economics. If you are involved in the commodity of ethanol industry, you will want to state up to date with the contents of the ISU model and what it says about economic conditions for ethanol production.</p>
 <p><a href="https://www.extension.iastate.edu/agdm/articles/hof/HofJan08.html">Iowa State University Ethanol Plant Economic Model</a></p>
@@ -631,19 +638,19 @@ div.csl-indent {
 </ol>
 <p><img src="assets/ECrushSpread.png" alt="Figure 6: Ethanol Crush Spread" /> Note: Prices come from ISU Ethanol Profitability Model</p>
 </div>
-<div id="hedging-the-crush-spread" class="section level2" number="17.6">
-<h2><span class="header-section-number">17.6</span> Hedging the Crush Spread</h2>
+<div id="hedging-the-crush-spread" class="section level2 hasAnchor" number="17.6">
+<h2><span class="header-section-number">17.6</span> Hedging the Crush Spread<a href="ethanol.html#hedging-the-crush-spread" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Like soybean crushers, ethanol producers can use futures contracts to hedge their profitability. Ethanol producers buy corn and sell ethanol and DDGs, so the appropriate hedge trades would be to buy corn futures and sell (one month later) ethanol futures. An ethanol futures contract is for <span class="math inline">\(29,000\)</span> gallons of ethanol (the amount that will fill one typical train car).</p>
 <p>Then two corn futures contracts produces just about one ethanol futures contract worth of ethanol, since</p>
 <p><span class="math inline">\(10,000\)</span> bu corn <span class="math inline">\(= 10,000*2.8\)</span> gallons, or <span class="math inline">\(28,000\)</span> gallons of ethanol.</p>
 <p>Therefore a 2-1 ratio of corn to ethanol contracts hedges the purchase of corn and the sale of ethanol, which will reduce the variability in GPM.</p>
 <p>In this case, however, the sale of DDGs would remain unhedged. Since one bushel of corn weighs about <span class="math inline">\(56lbs\)</span> and one bushel of corn yeilds <span class="math inline">\(17lbs\)</span> of DDGs, by weight, the producer gets back <span class="math inline">\(17/56 = 0.30\)</span> in DDGs and the price of DDGs tracks the price of corn closely as we observed above. Intuitively, by hedging the purchase of corn and not the sale of DDGs, the ethanol producer would effectively be overhedged on the purchase of corn. With no viable futures contract for DDGs, the producer cannot directly solve this problem. Instead they can use a <strong>cross hedge</strong>.</p>
 </div>
-<div id="cross-hedging" class="section level2" number="17.7">
-<h2><span class="header-section-number">17.7</span> Cross Hedging</h2>
+<div id="cross-hedging" class="section level2 hasAnchor" number="17.7">
+<h2><span class="header-section-number">17.7</span> Cross Hedging<a href="ethanol.html#cross-hedging" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>When there is no futures contract for exact product or commodity that one needs to hedge, another futures contract whose price is highly correlated with the commodity you need to hedge can be used. In our case, we already observed above that the prices of DDGs and corn futures are highly correlated, so it may be beneficial to use corn futures to hedge the sale of DDGs.</p>
-<div id="minimize-the-variance-of-cash-flow-with-optimal-hedge-ratio-for-ddgs-and-corn-futures" class="section level3" number="17.7.1">
-<h3><span class="header-section-number">17.7.1</span> Minimize the Variance of Cash Flow with Optimal Hedge Ratio for DDGs and Corn Futures</h3>
+<div id="minimize-the-variance-of-cash-flow-with-optimal-hedge-ratio-for-ddgs-and-corn-futures" class="section level3 hasAnchor" number="17.7.1">
+<h3><span class="header-section-number">17.7.1</span> Minimize the Variance of Cash Flow with Optimal Hedge Ratio for DDGs and Corn Futures<a href="ethanol.html#minimize-the-variance-of-cash-flow-with-optimal-hedge-ratio-for-ddgs-and-corn-futures" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>To develop the concept of a <em>cash flow variance minimizing</em> optimal hedge ratio, lets step back to the simpler example of a farmer hedging a crop of grain. We saw that the spot prices a farmer recieves is not exactly equal to the futures price for corn. Factors like transportation cost and local supply and demand conditions in the spot market make the basis, or the difference between spot and futures prices, variable. If this variability is too high, it may not be optimal to hedge with a 1-1 cash and futures position, even for the simple case of a farmer’s short hedge.</p>
 <p>The farmer’s hedged cash flow</p>
 <p><span class="math inline">\(CashFlow(t) = S(t) - b[F(t) - F(0)]\)</span><br />
@@ -663,8 +670,8 @@ div.csl-indent {
 <p>This means we can use historical prices to estimate the relationship between spot and futures prices, which yields the optimal hedge ratio for hedging the spot price with futures.</p>
 </div>
 </div>
-<div id="exercises-7" class="section level2" number="17.8">
-<h2><span class="header-section-number">17.8</span> Exercises</h2>
+<div id="exercises-7" class="section level2 hasAnchor" number="17.8">
+<h2><span class="header-section-number">17.8</span> Exercises<a href="ethanol.html#exercises-7" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The exercises for this chapter have you compute the optimal hedge ratio for using corn contracts to hedge DDG sales. Skills learned include:</p>
 <ul>
 <li><p>How to compute an optimal hedge ratio given price data.</p></li>
@@ -680,8 +687,8 @@ div.csl-indent {
 <li>State the trades you should make to hedge one month’s production of ethanol for a plant that produces 100 millon gallons per year, with constant production throughout the year. Assuming we use the cross hedge determined in 1 to hedge the sale of DDGs.</li>
 </ol>
 </div>
-<div id="readings-5" class="section level2" number="17.9">
-<h2><span class="header-section-number">17.9</span> Readings</h2>
+<div id="readings-5" class="section level2 hasAnchor" number="17.9">
+<h2><span class="header-section-number">17.9</span> Readings<a href="ethanol.html#readings-5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ol style="list-style-type: decimal">
 <li><a href="http://www.cmegroup.com/trading/agricultural/files/AC-406_DDG_CornCrush_042010.pdf">Corn for Ethanol Crush Spread by CMEGroup</a></li>
 </ol>
@@ -704,7 +711,6 @@ div.csl-indent {
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -723,6 +729,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -743,6 +750,10 @@ gitbook.start({
 "text": null
 },
 "download": ["price-analysis.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "section"
 }
@@ -756,7 +767,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

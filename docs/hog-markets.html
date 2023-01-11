@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 19 Hog Markets | Price Analysis: A Fundamental Approach to the Study of Commodity Prices</title>
   <meta name="description" content="This book introduces the basics of fundamental analysis of prices in food commodity markets. Learn how to follow and understand futures markets for commodities like corn, soybeans, wheat, live cattle, feeder cattle, hogs, ethanol, and crude oil. Learn about calendar, wheat, soybean crush, corn crush, and cattle crush spreads. Additionally, learn about which USDA reports are important to markets, when they come out, and why they move prices. Special focus on the WASDE, Grain Stocks, Prospective Plantings, Planted Acres, Crop Production, and Crop Progress and Condition reports." />
-  <meta name="generator" content="bookdown 0.21.5 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 19 Hog Markets | Price Analysis: A Fundamental Approach to the Study of Commodity Prices" />
   <meta property="og:type" content="book" />
-  <meta property="og:url" content="http:mindymallory.github.io/PriceAnalysis/" />
   <meta property="og:image" content="http:mindymallory.github.io/PriceAnalysis//images/cover.png" />
   <meta property="og:description" content="This book introduces the basics of fundamental analysis of prices in food commodity markets. Learn how to follow and understand futures markets for commodities like corn, soybeans, wheat, live cattle, feeder cattle, hogs, ethanol, and crude oil. Learn about calendar, wheat, soybean crush, corn crush, and cattle crush spreads. Additionally, learn about which USDA reports are important to markets, when they come out, and why they move prices. Special focus on the WASDE, Grain Stocks, Prospective Plantings, Planted Acres, Crop Production, and Crop Progress and Condition reports." />
   <meta name="github-repo" content="mindymallory/PriceAnalysis" />
@@ -24,7 +23,7 @@
 <meta name="author" content="Mindy L. Mallory" />
 
 
-<meta name="date" content="2022-02-15" />
+<meta name="date" content="2023-01-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +32,8 @@
   
 <link rel="prev" href="cattle-markets-and-the-livestock-crush.html"/>
 <link rel="next" href="crude-oil-and-the-crack-spread.html"/>
-<script src="libs/header-attrs-2.6.0/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,11 +49,11 @@
 
 
 
-
 <link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
 <script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
@@ -420,9 +419,9 @@ div.csl-indent {
 <li class="chapter" data-level="20.5" data-path="crude-oil-and-the-crack-spread.html"><a href="crude-oil-and-the-crack-spread.html#the-crack-spread"><i class="fa fa-check"></i><b>20.5</b> The Crack Spread</a></li>
 <li class="chapter" data-level="20.6" data-path="crude-oil-and-the-crack-spread.html"><a href="crude-oil-and-the-crack-spread.html#exercises-9"><i class="fa fa-check"></i><b>20.6</b> Exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="21" data-path="forecasting-production-advanced.html"><a href="forecasting-production-advanced.html"><i class="fa fa-check"></i><b>21</b> Forecasting Production - Advanced</a>
+<li class="chapter" data-level="21" data-path="forecasting-production---advanced.html"><a href="forecasting-production---advanced.html"><i class="fa fa-check"></i><b>21</b> Forecasting Production - Advanced</a>
 <ul>
-<li class="chapter" data-level="21.1" data-path="forecasting-production-advanced.html"><a href="forecasting-production-advanced.html#exercises-10"><i class="fa fa-check"></i><b>21.1</b> Exercises</a></li>
+<li class="chapter" data-level="21.1" data-path="forecasting-production---advanced.html"><a href="forecasting-production---advanced.html#exercises-10"><i class="fa fa-check"></i><b>21.1</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="22" data-path="appendix-forecasting-with-ts-models.html"><a href="appendix-forecasting-with-ts-models.html"><i class="fa fa-check"></i><b>22</b> Appendix: Forecasting with TS Models</a>
 <ul>
@@ -496,13 +495,13 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="hog-markets" class="section level1" number="19">
-<h1><span class="header-section-number">Chapter 19</span> Hog Markets</h1>
+<div id="hog-markets" class="section level1 hasAnchor" number="19">
+<h1><span class="header-section-number">Chapter 19</span> Hog Markets<a href="hog-markets.html#hog-markets" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>This chapter covers basic hog production, industry structure, and marketing practices, with an emphasis on how these affect hog prices. The hog market has undergone significant changes in industry organization in recent history. The industry used to be very unconcentrated with large numbers of independently owned and operated small and medium sized farms. Recently, the industry has trended toward more and more concentration in ownership, contracting and marketing agreements between owners and operators, and vertical integration in structure. This is in contrast to the beef cattle market, where ownership remains unconcentrated until the final finishing stage of produciton.</p>
 <p>To get a sense of modern hog production practices, I recommend watching videos produced by Smithfield Foods subsidiary Muphey Brown, LLC. In the linked Youtube playlist, watch the ‘Wean-to-finish’ video, the ‘Environmental Protection’ video, and the ‘Animal Care’ video.</p>
 <p><a href="https://www.youtube.com/playlist?list=PL6B939D758396045B">Smithfield Videos of Production Stages</a></p>
-<div id="definitions" class="section level2" number="19.1">
-<h2><span class="header-section-number">19.1</span> Definitions</h2>
+<div id="definitions" class="section level2 hasAnchor" number="19.1">
+<h2><span class="header-section-number">19.1</span> Definitions<a href="hog-markets.html#definitions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>First, we begin by introucing specialized nomenclature used in the industry.</p>
 <table>
 <caption>Table 1: Defintions Related to Hog Production</caption>
@@ -584,22 +583,22 @@ div.csl-indent {
 </tbody>
 </table>
 </div>
-<div id="gestation-and-farrowing" class="section level2" number="19.2">
-<h2><span class="header-section-number">19.2</span> Gestation and Farrowing</h2>
+<div id="gestation-and-farrowing" class="section level2 hasAnchor" number="19.2">
+<h2><span class="header-section-number">19.2</span> Gestation and Farrowing<a href="hog-markets.html#gestation-and-farrowing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The gestation period for a sow is 114 days or 16 weeks. Sows are usually kept in a specialized barn for farrowing where special care can be given to the sow and the new piglets. This has historically meant keeping sows in individual stalls. There has been a movement among animal rights activists to end the practice of using individual stalls and moving toward group housing for sows preparring for farrowing. This movement has prompted several large producers to change production practices and large consumers of pork to seek pork suppliers who do not use individual sow stalls. In the European Union, individual stalls are not allowed after the fourth week of pregnancy <span class="citation">(<a href="#ref-mcglone_future_2013" role="doc-biblioref">McGlone 2013</a>)</span>, the practice is banned in Canada, and in the US several states have banned their use. Smithfield Foods, one of the largest U.S. pork producers, has commited to converting all company owned farms to <a href="pdf-Readings/smithfield-2014report.pdf">group housing for pregnant sows by 2017</a>, and it is putting pressure on contract growers to convert as well, suggesting production contracts might not be renewed with growers who</p>
 <p>The industry began using individual stalls because hogs are aggressive animals that will fight with, and often injure one another. If one animal recieved an injury that results in a bloody wound, the other hogs will become very aggressive and sometimes kill the wounded hog if the the wounded animal is not isolated. The individual stalls solve this problem, but they are quite cramped. Purdue University article about <a href="http://www.ansc.purdue.edu/faen/gest%20crates.html">gestation and farrowing crates</a>.</p>
 <p>Sows have 8-12 pigets per litter, and the piglets stay with their mothers for 2-3 weeks before they are weaned. Sows generally have approximately 2 litters per year and breeding sows are replaced on average after 3-4 litters.</p>
 </div>
-<div id="feeding" class="section level2" number="19.3">
-<h2><span class="header-section-number">19.3</span> Feeding</h2>
+<div id="feeding" class="section level2 hasAnchor" number="19.3">
+<h2><span class="header-section-number">19.3</span> Feeding<a href="hog-markets.html#feeding" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Commercial hog operations keep feeder pigs in barns or ‘hog houses’ that hold hundreds of animals divided into smaller pens. Hogs are fed a ration of primarily corn and soybean meal. They require feed that contians a high quality protien and digestible amino acids, specifically lysine. Lysine is the amino acid that is most likely to be deficient in a corn-soybean diet, so it is usually supplemented. With the rise of ethanol production, distillers dried grains are utilized for both calories and protien, but not usually at higher than 30% of the ration. Utilizing higher proportions of distillers grains causes the carcass fat to be too soft.</p>
 </div>
-<div id="waste-management" class="section level2" number="19.4">
-<h2><span class="header-section-number">19.4</span> Waste Management</h2>
+<div id="waste-management" class="section level2 hasAnchor" number="19.4">
+<h2><span class="header-section-number">19.4</span> Waste Management<a href="hog-markets.html#waste-management" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Since a large number of hogs are housed together in close confinement, special systems to manage the waste are employed. Usually, the floors of the hog houses are slatted so the manure falls through the floor to a temporary chamber below. The waste is continually pumped to waste management lagoons located near (or under) the hog house(s).</p>
 </div>
-<div id="geography-of-hog-production" class="section level2" number="19.5">
-<h2><span class="header-section-number">19.5</span> Geography of Hog Production</h2>
+<div id="geography-of-hog-production" class="section level2 hasAnchor" number="19.5">
+<h2><span class="header-section-number">19.5</span> Geography of Hog Production<a href="hog-markets.html#geography-of-hog-production" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Hogs historically have been produced in locations close to corn and soybean production. Corn belt states historically have been the dominant producers. Recently, production in the southeast region of the United States has increased rapidly. Figure 1 show the top 8 producing states as of 2013, with figures for 2008-2013 displayed. North Carolina is the only top hog producing state not in the corn belt.</p>
 <div class="figure">
 <img src="images/hogstates.PNG" alt="" />
@@ -614,8 +613,8 @@ div.csl-indent {
 <p>Source: <a href="pdf-Readings/12CensusHighlightsHogs.pdf">USDA NASS 2012 Census Highlights</a></p>
 <p><a href="https://www.google.com/maps/place/Hardin+County,+IA/@42.3833668,-93.3907209,60627m/data=!3m2!1e3!4b1!4m2!3m1!1s0x87ee2ed39f2db5df:0x67a785cf003d5369!6m1!1e1">See some Hog Production Operations</a> in Hardin County, Iowa’s largest hog producing county.</p>
 </div>
-<div id="industry-structure" class="section level2" number="19.6">
-<h2><span class="header-section-number">19.6</span> Industry Structure</h2>
+<div id="industry-structure" class="section level2 hasAnchor" number="19.6">
+<h2><span class="header-section-number">19.6</span> Industry Structure<a href="hog-markets.html#industry-structure" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The hog industry has experienced considerable consolidation in recent history with the number of farms declining, and number of hogs per operation increasing. Along with this consolidation has been a trend away from cash sales (only 7.5 percent of sales were cash in 2010) toward forward contract pricing and marketing agreements between operators and large vertically integrated firms or owned directly by pork packers themselves (<a href="pdf-readings/gipsa10.pdf">21.6 percent</a> were raised in packer-owned operations in 2010 <span class="citation">(<a href="#ref-gipsa10" role="doc-biblioref"><strong>gipsa10?</strong></a>)</span>.</p>
 <div class="figure">
 <img src="images/numberproducersshare.PNG" alt="" />
@@ -628,29 +627,29 @@ div.csl-indent {
 <p>Source: Pork and Swine Industry and Trade Summary, USITC</p>
 <p>Grower operators have trended toward specializing shorter stages of the production process. For example gestation, farrowing, and weaning versus nursery or weanling feeders, versus finishing operations. Growers are typically responsible for financing the facilities and the owner, who is often a large multinational firm will provide the animals, feed, vetrenary and other expenses.</p>
 </div>
-<div id="price-determination" class="section level2" number="19.7">
-<h2><span class="header-section-number">19.7</span> Price Determination</h2>
+<div id="price-determination" class="section level2 hasAnchor" number="19.7">
+<h2><span class="header-section-number">19.7</span> Price Determination<a href="hog-markets.html#price-determination" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Although the number of cash sales has declined, forward contract prices and marketing agreements between contract growers and operators are often based on a formula with cash sales as a baseline. The majority of hogs are sold based on carcass quality characteristics, and not solely based on weight.</p>
 <p><a href="http://www.lmic.info/spreadsheet/prices-and-production">Prices from Livestock Marketing Information Center</a></p>
 <p><a href="http://www.lmic.info/quick_market_reports/hogs">USDA Ag News Service Prices, via LMIC</a></p>
 </div>
-<div id="lean-hogs-futures" class="section level2" number="19.8">
-<h2><span class="header-section-number">19.8</span> Lean Hogs Futures</h2>
+<div id="lean-hogs-futures" class="section level2 hasAnchor" number="19.8">
+<h2><span class="header-section-number">19.8</span> Lean Hogs Futures<a href="hog-markets.html#lean-hogs-futures" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><a href="http://www.cmegroup.com/trading/agricultural/livestock/lean-hogs.html">Lean Hogs Futures Contracts on the CME</a></p>
-<div id="why-only-one-contract-instead-of-two-like-feeder-and-live-cattle" class="section level3" number="19.8.1">
-<h3><span class="header-section-number">19.8.1</span> Why only one Contract Instead of Two like Feeder and Live Cattle?</h3>
+<div id="why-only-one-contract-instead-of-two-like-feeder-and-live-cattle" class="section level3 hasAnchor" number="19.8.1">
+<h3><span class="header-section-number">19.8.1</span> Why only one Contract Instead of Two like Feeder and Live Cattle?<a href="hog-markets.html#why-only-one-contract-instead-of-two-like-feeder-and-live-cattle" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Industry consolidation has left few firms needing to hedge risk. Futures contracts are usually successful when there are a large number of firms who have a hedging need. Only then does the futures market attract speculators who provide liquidity to the market and active trading.</p>
 <p>Also, vertical integration of the industry means that if firms can hedge the risk of their market weight hogs, that translates all along the supply chain. Unlike cattle markets where feedlots both need to buy feeder cattle and sell fattened cattle. Hog producer can hedge market hogs with the lean hogs contract and input costs with corn and soybean meal futures contracts. No second livestock contract is needed.</p>
 </div>
-<div id="demise-of-the-frozen-pork-belly-futures-contracts" class="section level3" number="19.8.2">
-<h3><span class="header-section-number">19.8.2</span> Demise of the Frozen Pork Belly Futures Contracts</h3>
+<div id="demise-of-the-frozen-pork-belly-futures-contracts" class="section level3 hasAnchor" number="19.8.2">
+<h3><span class="header-section-number">19.8.2</span> Demise of the Frozen Pork Belly Futures Contracts<a href="hog-markets.html#demise-of-the-frozen-pork-belly-futures-contracts" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Until recently (2011), there existed a futures contract in frozen pork bellies.</p>
 <p><a href="https://www.google.com/search?q=pork+belly&amp;biw=1920&amp;bih=1075&amp;noj=1&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ved=0CAgQ_AUoAmoVChMIhbO55IqdyQIVDNUeCh0_owNp">Pork belly images</a></p>
 <p>Concentration in the hog industry reduced the need for the pork belly contract in part. Also, an increased trend toward year-round consumption of bacon and production of pork reduced the need to store frozen pork bellies.</p>
 </div>
 </div>
-<div id="exercises-8" class="section level2" number="19.9">
-<h2><span class="header-section-number">19.9</span> Exercises</h2>
+<div id="exercises-8" class="section level2 hasAnchor" number="19.9">
+<h2><span class="header-section-number">19.9</span> Exercises<a href="hog-markets.html#exercises-8" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In the exercises for this chapter we will use some of the time-series econometric techniques discussed in Appendix 18 and 19. Appendix 18 discusses the log-normal price model and how first differences of logged prices are typically used when conducting a time series econometric analysis with non-statioanary price data (price data often, but not always, is non-stationary). Then Appendix 19 discusses the AR(p) regression model. This model will be successful if past returns have any significant predictive power for future returns.</p>
 <p>Spoiler: They usually have very little predictive power. If returns were easy to predict based on several previous returns, we could all be rich. But alas, it is not easy to get rich forecasting prices.</p>
 <ol style="list-style-type: decimal">
@@ -696,7 +695,6 @@ McGlone, John. 2013. <span>“The Future of Pork Production in the World: Toward
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -715,6 +713,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -735,6 +734,10 @@ gitbook.start({
 "text": null
 },
 "download": ["price-analysis.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "section"
 }
@@ -748,7 +751,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');
