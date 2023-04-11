@@ -12,11 +12,11 @@ Data for figures 1-4 come from the [USDA FAS World Production Supply and Demand]
 
 ![](assets/SouthAmericanProduction_TopProdCorn.png)
 
-Figure 2 plots the top five countries by exports. Here we see China and the EU dropping out of the top five with Russia and Ukraine taking their place. While U.S. exports have been mostly flat over this time period, exports from Brazil have been expanding rapidly since about 2004.
+Figure 2 plots the top five countries by exports. Here we see China and the EU dropping out of the top five with Russia and Ukraine taking their place. While U.S. exports have been mostly flat over this time period, exports from Brazil have been expanding rapidly since about 2004, and exports from Brazil are expected to top exports from the U.S. for the first time in 2022. 
 
 ![](assets/SouthAmericanProduction_TopExporterCorn.png)
 
-Next, in table 1, we present the top producers of corn in 2017.
+Next, in table 1, we present the top producers of corn in 2022.
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 
@@ -24,7 +24,7 @@ read.csv(file = "assets/corn_exporters.csv")
  
 ```
 
-Table 1: Top 10 World Producers of Corn, 2020
+Table 1: Top 10 World Producers of Corn, 2022
 
 ## Production of Soybeans
 
@@ -44,7 +44,7 @@ read.csv(file = "assets/soy_exporters.csv")
  
 ```
 
-Table 2: Top 10 World Producers of Soybeans, 2020
+Table 2: Top 10 World Producers of Soybeans, 2022
 
 ## South American Production Seasons and Trade Flows
 

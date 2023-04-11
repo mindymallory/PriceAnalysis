@@ -864,6 +864,7 @@ corn2 <- data1 %>%
   filter( domaincat_desc == "NOT SPECIFIED") %>% 
   filter(source_desc == "SURVEY") %>%
   select(c(commodity_desc, statisticcat_desc, short_desc, domaincat_desc, source_desc, year, Value )) %>% 
+  mutate(year = as.numeric(year)) %>% 
   ggplot(aes(x = year, y = Value/1000000, color = commodity_desc)) + 
   geom_line() +
   geom_line(data = data1 %>% 
@@ -1269,6 +1270,10 @@ ethanol %>% pivot_longer(cols = -Year, names_to = "Series", values_to = "Million
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.width= 6, fig.hight = 4}
 library(tidyverse)
+
+# update from FAS Production supply and demand datasets. https://apps.fas.usda.gov/psdonline/app/index.html#/app/downloads 
+# all psd_grains_pulses.csv.zip. unzip manually for now. 
+
 grains   <- read.csv('psd_grains_pulses.csv')
 
 
@@ -1302,7 +1307,7 @@ c <- ggplot(top_corn, aes(x = Market_Year, y = Value, fill = Country_Name)) + ge
       ggtitle("Figure 1: Top World Producers of Corn")  
       
  
-
+c
 ggsave(filename = "SouthAmericanProduction_TopProdCorn.png", width= 6, height = 4)
 
 ```
@@ -1334,7 +1339,7 @@ c2 <- ggplot(top_corn, aes(x = Market_Year, y = Value, fill = Country_Name)) + g
       theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
       ggtitle("Figure 2: Top World Exporters of Corn")  
       
-
+c2
 ggsave(filename = "SouthAmericanProduction_TopExporterCorn.png" , width= 6, height = 4)
 
 
@@ -1345,7 +1350,7 @@ ggsave(filename = "SouthAmericanProduction_TopExporterCorn.png" , width= 6, heig
 get_top_corn <- grains %>% 
                   filter(Market_Year == year) %>%
                   filter(Commodity_Description == "Corn") %>%
-                  filter(Attribute_ID == 28) %>%
+                  filter(Attribute_ID == 88) %>%
                   arrange(desc(Value))
 
 get_top_corn <- get_top_corn[1:10, 'Country_Name']
@@ -1354,11 +1359,11 @@ grains$Production <- grains$Value
 
 grains %>%
               filter(Commodity_Description == "Corn") %>%
-              filter(Attribute_ID == 28) %>%
+              filter(Attribute_ID == 88) %>%
                filter(Country_Name %in% get_top_corn) %>%
               filter(Market_Year == year) %>%
-              select(Country_Name, Production) %>%
-              arrange(desc(Production)) %>%
+              select(Country_Name, Value) %>%
+              arrange(desc(Value)) %>%
   write.csv(file = "corn_exporters.csv")
 
  
@@ -1394,7 +1399,7 @@ s <- ggplot(top_soy, aes(x = Market_Year, y = Value, fill = Country_Name)) + geo
       scale_fill_brewer(palette = 'Accent')  +
       theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
       ggtitle("Figure 3: Top World Producers of Soybeans")  
-
+s
 ggsave(filename = "SouthAmericanProd_TopProdSoy.png", width= 6, height = 4)
 
 ```
@@ -1430,7 +1435,7 @@ s2 <- ggplot(top_soy, aes(x = Market_Year, y = Value, fill = Country_Name)) + ge
       scale_fill_brewer(palette = 'Accent')  +
       theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
       ggtitle("Figure 4: Top World Exporters of Soybeans")  
-
+s2
 ggsave(filename = "SouthAmericanProd_TopExporterSoy.png", height = 4, width = 6)
 
 ```
@@ -1441,7 +1446,7 @@ ggsave(filename = "SouthAmericanProd_TopExporterSoy.png", height = 4, width = 6)
 get_top_soy <- oilseeds %>% 
                   filter(Market_Year == year) %>%
                   filter(Commodity_Code == 2222000) %>%
-                  filter(Attribute_ID == 28) %>%
+                  filter(Attribute_ID == 88) %>%
                   arrange(desc(Value))
 
 get_top_soy <- get_top_soy[1:10, 'Country_Name']
@@ -1450,11 +1455,11 @@ oilseeds$Production <- oilseeds$Value
 
 oilseeds %>%
               filter(Commodity_Code == 2222000) %>%
-              filter(Attribute_ID == 28) %>%
+              filter(Attribute_ID == 88) %>%
                filter(Country_Name %in% get_top_soy) %>%
               filter(Market_Year == year) %>%
-              select(Country_Name, Production) %>%
-              arrange(desc(Production)) %>%
+              select(Country_Name, Value) %>%
+              arrange(desc(Value)) %>%
   write.csv(file = "soy_exporters.csv")
 
 
@@ -1544,7 +1549,7 @@ ppp<- data1 %>% pivot_longer(cols = c(StockstoUse, PricesRecieved2),
        x = "", 
        y = "$/bu and Stocks/TotalUse*100",
        caption = "1975-2020 Marketing Years (2020 Estimated as of 2021-03-23)")
-
+ppp
 ggsave(ppp, filename = "EndingStocksand-StocksUsePrices.png" , width= 6, height = 4)
 
 ```
