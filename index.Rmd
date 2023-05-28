@@ -31,7 +31,7 @@ This book is targeted at the upper level undergraduate student, or professional 
 
 This book is updated with current information in the tables and figures each time I teach the course. Previous versions of the book can be found [here](https://github.com/mindymallory/PriceAnalysis/releases).
 
-For readers interested in more in-depth analysis of commodity prices from a statistical perspective, I am working on an [R Companion](http://mindymallory.github.io/R-Companion-Price-Analysis/index.html) to this book. 
+For readers interested in more in-depth analysis of commodity prices using statistical software, I had been working on an [R Companion](http://mindymallory.github.io/R-Companion-Price-Analysis/index.html) to this book, but I have indefinitely paused development of this. If you are interested in the R code to create most of the tables and figures in this book from publicly available sources, you can study the script I use to update this book [here](https://github.com/mindymallory/PriceAnalysis/blob/master/assets/make-assets.Rmd).  
 
 # About the Author {-}
 
