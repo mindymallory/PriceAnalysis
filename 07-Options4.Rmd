@@ -1,5 +1,8 @@
 # Hedging with Options
 
+<span style="color:red">Interested in more? Please let me know by</span> [taking the survey](https://forms.gle/Q3VByCQZHjfQSy9D7)! 
+
+
 **Highlights**
 
 -   Hedge a speculative position with options

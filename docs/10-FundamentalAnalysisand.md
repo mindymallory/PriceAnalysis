@@ -1,5 +1,7 @@
 # Balance Sheet Analysis
 
+<span style="color:red">Interested in more? Please let me know by</span> [taking the survey](https://forms.gle/Q3VByCQZHjfQSy9D7)! 
+
 **Highlights**
 
 -   Balance sheet analysis is the most important tool for fundamentals-based price forecasting.
@@ -125,11 +127,11 @@ Since the USDA makes regular reports on the balance sheet for commodities (the W
 
 ```
 ## Response [https://downloads.usda.library.cornell.edu/usda-esmis/files/3t945q76s/dv140m16d/jm215h19t/latest.xls]
-##   Date: 2023-04-12 14:46
+##   Date: 2023-05-27 19:50
 ##   Status: 200
 ##   Content-Type: application/vnd.ms-excel
 ##   Size: 326 kB
-## <ON DISK>  C:\Users\mindy\AppData\Local\Temp\RtmpwLlAGk\filea3281d432e0c.xls
+## <ON DISK>  C:\Users\mindy\AppData\Local\Temp\RtmpMRznOP\filea2ac41b0670d.xls
 ```
 
 <table class="table" style="margin-left: auto; margin-right: auto;">

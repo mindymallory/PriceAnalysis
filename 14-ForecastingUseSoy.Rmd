@@ -1,5 +1,7 @@
 # Forecasting Use of Soybeans
 
+<span style="color:red">Interested in more? Please let me know by</span> [taking the survey](https://forms.gle/Q3VByCQZHjfQSy9D7)! 
+
 In the WASDE balance sheet for soybeans there are three use categories. Two account for domestic consumption - Crush, and Feed, Seed, and Residual - while exports make up the third category. The main distinction between cereal grains, like corn, and oilseeds, like soybeans, is that cereal grains are generally ground whole for whatever the end use turns out to be. Most oilseeds, on the other hand, are crushed to extract oil and meal before their ultimate use. Soybean oil is food-grade and can be found on the shelves of any American grocery store. Soybean meal is protein rich and used as an ingredient in livestock feed rations.
 
 In the next sections we will examine historical use patterns of soybeans in the three categories expressed nominally, and as a percent of the concurrent year's total supply, similar to the organization of chapter 7.

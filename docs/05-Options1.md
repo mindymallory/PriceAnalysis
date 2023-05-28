@@ -1,5 +1,8 @@
 # Introduction to Option Contracts
 
+<span style="color:red">Interested in more? Please let me know by</span> [taking the survey](https://forms.gle/Q3VByCQZHjfQSy9D7)! 
+
+
 **Highlights**
 
 -   Learn the basics of call and put options

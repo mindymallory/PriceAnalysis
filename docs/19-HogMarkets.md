@@ -1,5 +1,7 @@
 # Hog Markets
 
+<span style="color:red">Interested in more? Please let me know by</span> [taking the survey](https://forms.gle/Q3VByCQZHjfQSy9D7)! 
+
 This chapter covers basic hog production, industry structure, and marketing practices, with an emphasis on how these affect hog prices. The hog market has undergone significant changes in industry organization in recent history. The industry used to be very unconcentrated with large numbers of independently owned and operated small and medium sized farms. Recently, the industry has trended toward more and more concentration in ownership, contracting and marketing agreements between owners and operators, and vertical integration in structure. This is in contrast to the beef cattle market, where ownership remains unconcentrated until the final finishing stage of produciton.
 
 To get a sense of modern hog production practices, I recommend watching videos produced by Smithfield Foods subsidiary Muphey Brown, LLC. In the linked Youtube playlist, watch the 'Wean-to-finish' video, the 'Environmental Protection' video, and the 'Animal Care' video.

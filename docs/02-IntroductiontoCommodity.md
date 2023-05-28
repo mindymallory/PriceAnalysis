@@ -1,5 +1,8 @@
 # Commodity Price Analysis and Forecasting
 
+<span style="color:red">Interested in more? Please let me know by</span> [taking the survey](https://forms.gle/Q3VByCQZHjfQSy9D7)! 
+
+
 A commodity is a good that can be supplied without qualitative differences. A bushel of wheat is regarded as a bushel of wheat everywhere. Commodities are fully or partially fungible so that the market treats a unit of good the same no matter who produced it or where it was produced. Think of grain elevators, for example. Farmers bring their grain to an elevator at harvest. Sometimes they sell it outright to the elevator, but sometimes they pay the elevator to store it for them. When the farmer decides to come get his grain out of storage do you think he gets the exact same kernels he brought in? Of course that would be impractical. The elevator just gives him back the same amount of grain he brought in of the same quality. The farmer is happy because the wheat is fungible. The grain he will be able to sell the grain he took out just as easily as the grain he put in. This is in stark contrast to differentiated goods where branding and quality make important distinctions between goods, resulting in differentiated demands. Just try to find someone indifferent between iPhone and Android!
 
 Since commodities are fungible, it also makes sense that prices of commodities are determined by the entire (often global) market for the good. They tend to be basic resources such as agricultural and food products, metals, energy, an fibers. The fungibility of commodities enables the commodity to be traded in centralized spot and futures markets.

@@ -1,5 +1,8 @@
 # Futures and Hedging Review
 
+<span style="color:red">Interested in more? Please let me know by</span> [taking the survey](https://forms.gle/Q3VByCQZHjfQSy9D7)! 
+
+
 **Highlights**
 
 -   Review of futures contracts and how to calculate profit or loss on a trade.

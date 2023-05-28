@@ -1,5 +1,8 @@
 # Price Reaction to USDA Reports
 
+<span style="color:red">Interested in more? Please let me know by</span> [taking the survey](https://forms.gle/Q3VByCQZHjfQSy9D7)! 
+
+
 Some of the USDA reports contain very sensitive market information causing market prices to adjust rapidly to new information about supply and demand. Access to the contents of a market sensitive report would result in the ability to perform 'insider trading' and obtain nearly risk-less profits. This activity is illegal, and the USDA's Interagency Commodity Estimates Committees prepares the reports under lock-down conditions where during the process of finalizing estimates of the report's content, officials are locked in a secure area and not allowed to leave until the report is made known to the public.
 
 This chapter explores some history related to the compilation and release of USDA reports, discusses how release times have evolved over time, indicates some particular report releases that are more likely to cause large and rapid price adjustments, and demonstrates this with a few charts of transactions prices pre- and post-release of particularly interesting recent days.

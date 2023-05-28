@@ -1,5 +1,8 @@
 # Marketing, Hedging, and Crop Insurance
 
+<span style="color:red">Interested in more? Please let me know by</span> [taking the survey](https://forms.gle/Q3VByCQZHjfQSy9D7)! 
+
+
 **Highlights**
 
 -   Purchasing crop insurance provides protection against catastrophic loss in the event of crop failure, and/or significant price decline between planting and harvest

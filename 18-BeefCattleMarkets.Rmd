@@ -1,5 +1,8 @@
 # Cattle Markets and the Livestock Crush
 
+<span style="color:red">Interested in more? Please let me know by</span> [taking the survey](https://forms.gle/Q3VByCQZHjfQSy9D7)! 
+
+
 This chapter covers the basic production cycle and ownership structures in beef cattle markets. We cover cow-calf, backgrounder, and finisher/feedlot operations. We discuss the basic geography of beef cattle production, and various biological constraints that impact market prices.
 
 In the United States, beef cattle production tends to be segmented between cow-calf operations that keep a breeding herd of cows for the purposes of having calves for sale every year; backgrounder operations that buy 'light' calves and feed them grain until they are big enough to go to a finisher or feedlot operation where the calves are fed a grain-based diet until they are big enough to slaughter. These three stages of the production process are usually managed by independent firms, so that the cow-calf operator is a different entity than the backgrounder, who is a different entity than the finisher. There are cases of more vertically integrated operations, but this is relatively rare.

@@ -1,5 +1,7 @@
 # Crude Oil and the Crack Spread
 
+<span style="color:red">Interested in more? Please let me know by</span> [taking the survey](https://forms.gle/Q3VByCQZHjfQSy9D7)! 
+
 Crude oil is an extremely important commodity. Much of the world's economic activity is dependent on the energy products derived from this commodity. Crude oil was formed long ago when biological material fell to the bottom of ancient oceans. Over time the material was exposed to heat and pressure and transformed the material into crude oil. Crude oil is composed of a mix of different hydrocarbons, molecules that contain both hydrogen and carbon atoms. When these molecules are broken down and then recombined in different configurations, different materials like gasoline, diesel fuel, heating oil, jet fuel, and kerosene can be made. Obviously, crude oil and its derivative products are valued for the energy stored in the hydrocarbon molecules.
 
 [Introduction to Crude Oil by The Atlantic](https://www.youtube.com/watch?v=62LvVYYqUFA)

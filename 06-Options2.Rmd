@@ -1,5 +1,8 @@
 # Advanced Option Topics
 
+<span style="color:red">Interested in more? Please let me know by</span> [taking the survey](https://forms.gle/Q3VByCQZHjfQSy9D7)! 
+
+
 **Highlights**
 
 -   Black-Scholes and the Black 1976 option pricing models
