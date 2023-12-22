@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Price Analysis: A Fundamental Approach to the Study of Commodity Prices - 23&nbsp; Appendix: Single Market Models: ARIMA</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./24-A-South-American-Production.html" rel="next">
+<link href="./22-IntroductiontoCommodityTS.html" rel="prev">
+<link href="./cover.jpg" rel="icon" type="image/jpeg">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=361343775"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '361343775', { 'anonymize_ip': true});
+</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<meta property="og:title" content="Price Analysis: A Fundamental Approach to the Study of Commodity Prices - 23&nbsp; Appendix: Single Market Models: ARIMA">
+<meta property="og:description" content="">
+<meta property="og:image" content="http://mindymallory.com/PriceAnalysis/images/12_corn_h2016.png">
+<meta property="og:site-name" content="Price Analysis: A Fundamental Approach to the Study of Commodity Prices">
+<meta property="og:image:height" content="521">
+<meta property="og:image:width" content="948">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./23-IntroductiontoSingle.html"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Appendix: Single Market Models: ARIMA</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Price Analysis: A Fundamental Approach to the Study of Commodity Prices</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/mindymallory/PriceAnalysis" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Price-Analysis--A-Fundamental-Approach-to-the-Study-of-Commodity-Prices.pdf">
+              <i class="bi bi-bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Price-Analysis--A-Fundamental-Approach-to-the-Study-of-Commodity-Prices.epub">
+              <i class="bi bi-bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
+              <i class="bi bi-bi-facebook pe-1"></i>
+            Facebook
+            </a>
+          </li>
+      </ul>
+    </div>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-PrimerforGrain.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Grain and Oilseed Markets</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-IntroductiontoCommodity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Commodity Price Analysis and Forecasting</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-HowtoFind.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">How to Find Information</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-FuturesContractsandHedging.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Futures and Hedging Review</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-Options1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Introduction to Option Contracts</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-Options2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Advanced Option Topics</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-Options4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Hedging with Options</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-Options3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Marketing, Hedging, and Crop Insurance</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-PricesSpaceTime.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Prices Over Space and Time</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-FundamentalAnalysisand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Balance Sheet Analysis</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-PriceReactionto.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Price Reaction to USDA Reports</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12-ForecastingProduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Price Reaction to USDA Reports</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13-ForecastingUseof.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Forecasting Use of Corn</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14-ForecastingUseSoy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Forecasting Use of Soybeans</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15-EndingStocksand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Ending Stocks and Price</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16-TheSoybeanCrush.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">The Soybean Crush</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./17-EthanolMarketsand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Ethanol</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./18-BeefCattleMarkets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Cattle Markets and the Livestock Crush</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./19-HogMarkets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Hog Markets</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./20-CrudeOiland.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Crude Oil and the Crack Spread</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./21-ForecastingProductionAdvanced.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Forecasting Production - Advanced</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./22-IntroductiontoCommodityTS.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Appendix: Forecasting with TS Models</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./23-IntroductiontoSingle.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Appendix: Single Market Models: ARIMA</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./24-A-South-American-Production.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">South American Production</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#integrated-or-not" id="toc-integrated-or-not" class="nav-link active" data-scroll-target="#integrated-or-not"><span class="header-section-number">23.1</span> Integrated or Not?</a></li>
+  <li><a href="#arp-models" id="toc-arp-models" class="nav-link" data-scroll-target="#arp-models"><span class="header-section-number">23.2</span> <span class="math inline">\(AR(p)\)</span>, Models</a>
+  <ul class="collapse">
+  <li><a href="#the-arp-model" id="toc-the-arp-model" class="nav-link" data-scroll-target="#the-arp-model"><span class="header-section-number">23.2.1</span> The <span class="math inline">\(AR(p)\)</span> Model</a></li>
+  </ul></li>
+  <li><a href="#maq-models" id="toc-maq-models" class="nav-link" data-scroll-target="#maq-models"><span class="header-section-number">23.3</span> <span class="math inline">\(MA(q)\)</span>, Models</a>
+  <ul class="collapse">
+  <li><a href="#guesing-the-theta_i-and-minimising-the-sum-of-squared-residuals" id="toc-guesing-the-theta_i-and-minimising-the-sum-of-squared-residuals" class="nav-link" data-scroll-target="#guesing-the-theta_i-and-minimising-the-sum-of-squared-residuals"><span class="header-section-number">23.3.1</span> Guesing the <span class="math inline">\(\theta_i\)</span> and Minimising the Sum of Squared Residuals</a></li>
+  </ul></li>
+  <li><a href="#lag-length" id="toc-lag-length" class="nav-link" data-scroll-target="#lag-length"><span class="header-section-number">23.4</span> Lag Length</a></li>
+  <li><a href="#dealing-with-seasonality" id="toc-dealing-with-seasonality" class="nav-link" data-scroll-target="#dealing-with-seasonality"><span class="header-section-number">23.5</span> Dealing with Seasonality</a></li>
+  <li><a href="#caculating-forecast-values" id="toc-caculating-forecast-values" class="nav-link" data-scroll-target="#caculating-forecast-values"><span class="header-section-number">23.6</span> Caculating Forecast Values</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/mindymallory/PriceAnalysis/edit/main/23-IntroductiontoSingle.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Appendix: Single Market Models: ARIMA</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p><span style="color:red">Interested in more? Please let me know by</span> <a href="https://forms.gle/Q3VByCQZHjfQSy9D7">taking the survey</a>!</p>
+<!-- Add a bit about 'Box-Jenkins' model identification -->
+<p>In this chapter we introduce the first category of time-series econometric forecasting models we will learn: Auto-regressive Integrated Moving Average (ARIMA) models. This class of models is only capable of forecasting one market at a time, and we will see in later chapters how to econometrically consider (forecast) more than one market at a time when there is reason to believe two or markets are related.</p>
+<p>The ARIMA class of models can be broken down into subcategories that are useful for building intuition.</p>
+<section id="integrated-or-not" class="level2" data-number="23.1">
+<h2 data-number="23.1" class="anchored" data-anchor-id="integrated-or-not"><span class="header-section-number">23.1</span> Integrated or Not?</h2>
+<p>We spent considerable effort in Chapters 10 and 11 on the importance of stationarity in estimating time-series forecasting models. If a series is stationary it is said to be ‘Integrated of Order Zero’, or I(0), or not integrated; if a series is non-stationary, but the first (log) difference of the series is stationary then the series is said to be ‘Integrated of Order One’, or I(1); if a series is non-stationary, but the second (log) difference of the series is stationary then the series is said to be ‘Integrated of Order Two’, or I(2); and so forth. The number of times required to difference the data before it becomes stationary determines the order of integration. As discussed in Chapter 11, it is a relatively safe assumption that our price data will be integrated of order one, and thus first (log) differences of the data should be used.</p>
+<p>With all that said, the ‘I’ in ARIMA stands for <em>integrated</em>, and simply signifies the functional forms that follow can be implemented with price levels (no differencing) if the data are stationary and in differences if the data are non-stationary. We will always use first differenced data for the examples in this class.</p>
+</section>
+<section id="arp-models" class="level2" data-number="23.2">
+<h2 data-number="23.2" class="anchored" data-anchor-id="arp-models"><span class="header-section-number">23.2</span> <span class="math inline">\(AR(p)\)</span>, Models</h2>
+<p>In Chapter 10 we introduced the Efficient Market Hypothesis (EMH) that states all information about an asset should be reflected in its current price, and therefore is unpredictable. In Chapter 11, we argued that if the EMH is true than prices should follow a log-normal price model fairly well. Indeed, it is true that a log-normal price model is difficult to beat, or that coming up with an informative forecast is difficult, but there are some common properties of data that can inform a forecasting model.</p>
+<p>The first is that recent (changes in) prices can effect the next period’s price realization. Simply put, prices often exhibit auto-correlation in returns. If so, adding lags of price changes in our forecasting model can help to improve forecasts.</p>
+<p>In figure 1 percent returns of the March 2016 corn futures contract are plotted.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/12_corn_h2016.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure 1: Corn March 2016 Contract 1-Day Price Returns</figcaption>
+</figure>
+</div>
+<p>To investigate if a price series exhibits auto-correlation, we need to generate time lags in the price series. Figure 2 shows a screenshot in Excel of how to generate time lags of returns. Basically, you just point the cell to the value in the previous period. Note that the value in <code>D7</code> simply takes the value in <code>C6</code>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/12.lags.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure 2: Generating Time Lags in Excel</figcaption>
+</figure>
+</div>
+<p>Now, to get a rough idea if there is auto-correlation in corn returns, we calculate the correlation of columns <code>C</code>, <code>D</code>, and <code>E</code>. This function can be performed in the ‘Data Analysis’ choice of the ‘Data’ menu tab in Excel. The output is displayed in Figure 3.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/12_corn_autocorrel.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure 3: <span class="math inline">\(AR(P)\)</span> Correlations</figcaption>
+</figure>
+</div>
+<p>Given the low values of correlations between the contemporaneous price and the one-lag and two-lagged prices, I am not hopeful for the prospects of a good forecast from the <span class="math inline">\(AR(p)\)</span> model, but we will go ahead and estimate it nonetheless for illustrative purposes.</p>
+<section id="the-arp-model" class="level3" data-number="23.2.1">
+<h3 data-number="23.2.1" class="anchored" data-anchor-id="the-arp-model"><span class="header-section-number">23.2.1</span> The <span class="math inline">\(AR(p)\)</span> Model</h3>
+<p>The <span class="math inline">\(AR(p)\)</span> model is formally defined by equation 1.</p>
+<ol type="1">
+<li><span class="math inline">\(R_{t+1} = \beta_0 + \beta_1R_{t} + \beta_2R_{t-1}+ ... + \beta_{p}R_{t-(p-1)} + \epsilon_t\)</span></li>
+</ol>
+<p>where <span class="math inline">\(R_i\)</span> represents the percentage return on period <span class="math inline">\(i\)</span>. The <span class="math inline">\(p\)</span> in <span class="math inline">\(AR(p)\)</span> is the number of lagged returns included in the model. In figure 4, we show regression output in Excel from estimating an <span class="math inline">\(AR(2)\)</span> price model on corn price returns in the March 2016 contract from 1/2/2015 - 10/20/2015.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/12_corn_ar2_output.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure 4: Regression output for <span class="math inline">\(AR(2)\)</span> model of Corn Price Returns in the March 2016 Contract, 1/2/2015 - 10/20/2015</figcaption>
+</figure>
+</div>
+<p>All of the p-values for our regressors are large, certainly much bigger than 0.05. We fail to reject the null hypothesis that one and two lags of corn price returns are unrelated to the next price return realization. Therefore, the <span class="math inline">\(AR(2)\)</span> model does not seem to provide much forecasting power.</p>
+</section>
+</section>
+<section id="maq-models" class="level2" data-number="23.3">
+<h2 data-number="23.3" class="anchored" data-anchor-id="maq-models"><span class="header-section-number">23.3</span> <span class="math inline">\(MA(q)\)</span>, Models</h2>
+<p>The Moving Average Model incorporates lagged random shocks into the forecast model. Commonly denoted by <span class="math inline">\(MA(q)\)</span>, the <span class="math inline">\(q\)</span> stands for the number of lags of shocks to be included. Formally,</p>
+<ol start="2" type="1">
+<li><span class="math inline">\(R_{t+1} = \theta_0 + \epsilon_t + \theta_1\epsilon_{t-1} + ... + \theta_q\epsilon_{t-q}\)</span></li>
+</ol>
+<p>Compare this modeling approach with the <span class="math inline">\(AR(p)\)</span> approach. In the <span class="math inline">\(AR(p)\)</span> model, lagged shocks incorporated only indirectly through thier effect on lagged returns. In the <span class="math inline">\(MA(q)\)</span> model, lagged shocks affect current returns directly. Estimating the <span class="math inline">\(MA(q)\)</span> model is not as simple a metter as estimating the <span class="math inline">\(AR(p)\)</span> model. We were able to directly estimate the <span class="math inline">\(AR(p)\)</span> model with ordinary least squares in Excel.</p>
+<p>In equation 2, we see that it is impossible to implement with ordinary least squares becasue we need to know the values of the <span class="math inline">\(\theta_i\)</span> in order to calculate the residuals, <span class="math inline">\(\epsilon_i\)</span>. Instead, we will take an iteritive approach to estimating this model.</p>
+<section id="guesing-the-theta_i-and-minimising-the-sum-of-squared-residuals" class="level3" data-number="23.3.1">
+<h3 data-number="23.3.1" class="anchored" data-anchor-id="guesing-the-theta_i-and-minimising-the-sum-of-squared-residuals"><span class="header-section-number">23.3.1</span> Guesing the <span class="math inline">\(\theta_i\)</span> and Minimising the Sum of Squared Residuals</h3>
+<p>We discussed in Chapter 11, that linear regression finds estimated coeficients by minimizing the <em>Sum of Squared Residuals</em>. One approach to estimating the $MA(q) model in Excel is to guess the values of the <span class="math inline">\(\theta_i\)</span> coeficients. That will let us calculate residuals by hand.</p>
+<ol start="3" type="1">
+<li><span class="math inline">\(\epsilon_{t} = R_{t+1} - (\theta_0 + \theta_1\epsilon_{t-1} + ... + \theta_q\epsilon_{t-q})\)</span></li>
+</ol>
+<p>After that, we can calculate the sum of squared residuals that results from our guess.</p>
+<ol start="4" type="1">
+<li><span class="math inline">\(\sum_{t=1}^{T} \epsilon_t^2\)</span></li>
+</ol>
+<p>Then we can use the ‘Solver’ function in Excel’s Analysis toolpack to minimize the sum of squared residuals by choosing the <span class="math inline">\(\theta_i\)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/12_solvermaq.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure 5: Screenshot of the Solver Function to Minimize Sum of Squared Residuals</figcaption>
+</figure>
+</div>
+<p>Doing just those steps will give you accurate estimates of the <span class="math inline">\(\theta_i\)</span> coefficents, but no information of the standard errors of the coefficients so hypothesis testing up this point is not possible. After using the Excel solver functionality to find the <span class="math inline">\(\theta_i\)</span> that minimizes the sum of squared residuals, you will have accurate calculations of the residuals. You can now regress returns on the calculated residuals to perform hypothesis testing. Your regression coefficients should match the <span class="math inline">\(\theta_i\)</span> you calculated with the Excel ‘Solver’.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/12_ma2.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure 6: Shows the Regression Output of Estimating the <span class="math inline">\(MA(q)\)</span> Model in Excel</figcaption>
+</figure>
+</div>
+<p>We see that the regression coefficients match very well for <span class="math inline">\(\theta_0\)</span>, <span class="math inline">\(\theta_1\)</span>, and <span class="math inline">\(\theta_3\)</span>, while <span class="math inline">\(\theta_2\)</span> seems to be off from the calculations we received from the ‘Solver’ function in Excel.</p>
+<p>The <span class="math inline">\(MA(2)\)</span> model does not seem to explain the March 2016 corn returns very well. We are explaining just under 1% of the variation in the data, as shown by the <span class="math inline">\(R^2\)</span>, and none of the coefficients are close to statistical significance since the p-values are all well above 0.05.</p>
+<blockquote class="blockquote">
+<h3 id="fitting-an-maq-model-in-excel" data-number="23.3.2" class="anchored"><span class="header-section-number">23.3.2</span> Fitting an <span class="math inline">\(MA(q)\)</span> model in Excel</h3>
+<ol type="1">
+<li>Guess <span class="math inline">\(\theta_i\)</span> values</li>
+<li>Calculate residuals, <span class="math inline">\(\epsilon_t\)</span></li>
+<li>Calculate Sum of Squared Residuals</li>
+<li>Use ‘Solver’ to minimize the sum of squared residuals by choosing <span class="math inline">\(\theta_i\)</span></li>
+<li>Regress returns on residuals 6 Conduct hypothesis testing</li>
+</ol>
+</blockquote>
+<p>Keep in mind, this process in uneccessarily complicated. If you get seriously involved in generating forecasts, you will invest the time to learn a common statistical package; however, hopefully this process helps to build some intuition about how these models are estimated by the more powerful statistical software packages.</p>
+</section>
+</section>
+<section id="lag-length" class="level2" data-number="23.4">
+<h2 data-number="23.4" class="anchored" data-anchor-id="lag-length"><span class="header-section-number">23.4</span> Lag Length</h2>
+<p>You may be wondering at this point if it would be useful to try including more lags in the regression equation; perhaps we will find longer lag lengths that seem to matter in forecasting corn price returns. Usually, if lags have predictive power, the strongest effects are in the nearest lags. So adding lags to the <span class="math inline">\(AR(.)\)</span> model is unlikely to help.</p>
+<p>Still, as a practical matter, lag length must be selected before estimating an <span class="math inline">\(AR(p)\)</span> model. If we were using a more advanced statistical package, we could use Information Criterion<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> to select the optimal lag length, but like unit root tests, it is not convenient to implement in Excel so we will not cover Information Criterion.</p>
+<p>The intuition of selecting a lag length by Information Criterion is simple enough, though. Basically, a model with a large number of lags is estimated. The longest lags are then sequentially removed one by one, until explanatory power is detrimentally affected by removing a lag. That determines lag length.</p>
+<p>As a rough substitute, one could estimate an <span class="math inline">\(AR(p)\)</span> model for large <span class="math inline">\(p\)</span>. Then sequentially remove the longest lag until the likelihood decreases; or until the F-statistic is dramatically reduced by eliminating lagged variables. In practice, we will be lucky to find any statistically significant coefficients on the lags, and the nearest lags will be most likely to be significant, so a small number of lags will usually be sufficient.</p>
+</section>
+<section id="dealing-with-seasonality" class="level2" data-number="23.5">
+<h2 data-number="23.5" class="anchored" data-anchor-id="dealing-with-seasonality"><span class="header-section-number">23.5</span> Dealing with Seasonality</h2>
+<!-- Add bit about seasonality ex quarterly p = 5 -->
+</section>
+<section id="caculating-forecast-values" class="level2" data-number="23.6">
+<h2 data-number="23.6" class="anchored" data-anchor-id="caculating-forecast-values"><span class="header-section-number">23.6</span> Caculating Forecast Values</h2>
+<p>Figure 5 shows a screenshot of Excel where the model output from figure 4 is used to produce the <span class="math inline">\(AR(2)\)</span> model forecasts shown in column <code>F</code>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/12_forecast_screenshot.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure 5: Calculating Forecast Values</figcaption>
+</figure>
+</div>
+<p>Forecasts are found by using the estimated model and recent realizations of returns to produce a one-step-ahead forecast as follows</p>
+<ol start="3" type="1">
+<li><span class="math inline">\(\hat{R_{t+1}} = E[\beta_0 + \beta_1R_{t} + \beta_2R_{t-1}+ ... + \beta_{p}R_{t-(p-1)} + \epsilon_t]\)</span></li>
+</ol>
+<p>Since the only random part of the equation is <span class="math inline">\(\epsilon_t\)</span> and it is iid with mean equal to zero, the one step ahead forecast is found by,</p>
+<ol start="4" type="1">
+<li><span class="math inline">\(\hat{R_{t+1}} = \beta_0 + \beta_1R_{t} + \beta_2R_{t-1}+ ... + \beta_{p}R_{t-(p-1)}\)</span></li>
+</ol>
+<p>Although we know our forecast model will have an error component, the mean of the error is zero so our forecast simply comes from plugging lags back into our estimated model. Notice the hat on the <span class="math inline">\(\hat{R_{t+1}}\)</span> that signifies the equation produces a forecast and not an actual realization.</p>
+<p>What if we want to gererate a forecast two steps ahead and so forth? Since we do not yet observe <span class="math inline">\(R_{t+1}\)</span> we use our forecast <span class="math inline">\(\hat{R_{t+1}}\)</span>.</p>
+<ol start="5" type="1">
+<li><span class="math inline">\(\hat{R_{t+2}} = \beta_0 + \beta_1\hat{R_{t+1}} + \beta_2R_{t}+ ... + \beta_{p}R_{t-(p)}\)</span></li>
+</ol>
+<p>As we produce increasingly distant <em>h</em>-step ahead forecasts, we will run out of realizations and begin plugging in forecasts for the lagged values. Figure 6 Plots the 1-4-step ahead forecasts shown in column <code>F</code> of figure 5, along with the return realizations.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/12_forecast_plot.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure 6: 1-4-Step Ahead Forecasts Generated from an <span class="math inline">\(AR(2) Model\)</span></figcaption>
+</figure>
+</div>
+<p>The <span class="math inline">\(AR(2)\)</span> model more or less forecasts a percent return of zero. This result should be fairly intiutive because we did not find stron autocorrelation in the return series; additionally, the return series itself is roughly mean zero, so the forecast is relying mostly on the unconditional mean (the mean of <span class="math inline">\(\epsilon\)</span>) because we did not find statistically siginificant autocorrelation coefficients.</p>
+
+
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Wikipedia has good articles for <a href="https://en.wikipedia.org/wiki/Akaike_information_criterion">AIC</a> and <a href="https://en.wikipedia.org/wiki/Bayesian_information_criterion">BIC</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./22-IntroductiontoCommodityTS.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Appendix: Forecasting with TS Models</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./24-A-South-American-Production.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">South American Production</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

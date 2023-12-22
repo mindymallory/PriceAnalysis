@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Price Analysis: A Fundamental Approach to the Study of Commodity Prices - 22&nbsp; Appendix: Forecasting with TS Models</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./23-IntroductiontoSingle.html" rel="next">
+<link href="./21-ForecastingProductionAdvanced.html" rel="prev">
+<link href="./cover.jpg" rel="icon" type="image/jpeg">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=361343775"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '361343775', { 'anonymize_ip': true});
+</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<meta property="og:title" content="Price Analysis: A Fundamental Approach to the Study of Commodity Prices - 22&nbsp; Appendix: Forecasting with TS Models">
+<meta property="og:description" content="">
+<meta property="og:image" content="http://mindymallory.com/PriceAnalysis/Excel-files/IntroductiontoCommodityTS-Nearby_construct_files/image005.png">
+<meta property="og:site-name" content="Price Analysis: A Fundamental Approach to the Study of Commodity Prices">
+<meta property="og:image:height" content="919">
+<meta property="og:image:width" content="1168">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./22-IntroductiontoCommodityTS.html"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Appendix: Forecasting with TS Models</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Price Analysis: A Fundamental Approach to the Study of Commodity Prices</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/mindymallory/PriceAnalysis" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Price-Analysis--A-Fundamental-Approach-to-the-Study-of-Commodity-Prices.pdf">
+              <i class="bi bi-bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Price-Analysis--A-Fundamental-Approach-to-the-Study-of-Commodity-Prices.epub">
+              <i class="bi bi-bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
+              <i class="bi bi-bi-facebook pe-1"></i>
+            Facebook
+            </a>
+          </li>
+      </ul>
+    </div>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-PrimerforGrain.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Grain and Oilseed Markets</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-IntroductiontoCommodity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Commodity Price Analysis and Forecasting</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-HowtoFind.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">How to Find Information</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-FuturesContractsandHedging.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Futures and Hedging Review</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-Options1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Introduction to Option Contracts</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-Options2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Advanced Option Topics</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-Options4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Hedging with Options</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-Options3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Marketing, Hedging, and Crop Insurance</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-PricesSpaceTime.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Prices Over Space and Time</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-FundamentalAnalysisand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Balance Sheet Analysis</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-PriceReactionto.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Price Reaction to USDA Reports</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12-ForecastingProduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Price Reaction to USDA Reports</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13-ForecastingUseof.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Forecasting Use of Corn</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14-ForecastingUseSoy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Forecasting Use of Soybeans</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15-EndingStocksand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Ending Stocks and Price</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16-TheSoybeanCrush.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">The Soybean Crush</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./17-EthanolMarketsand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Ethanol</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./18-BeefCattleMarkets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Cattle Markets and the Livestock Crush</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./19-HogMarkets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Hog Markets</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./20-CrudeOiland.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Crude Oil and the Crack Spread</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./21-ForecastingProductionAdvanced.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Forecasting Production - Advanced</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./22-IntroductiontoCommodityTS.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Appendix: Forecasting with TS Models</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./23-IntroductiontoSingle.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Appendix: Single Market Models: ARIMA</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./24-A-South-American-Production.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">South American Production</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#nearby-futures-prices" id="toc-nearby-futures-prices" class="nav-link active" data-scroll-target="#nearby-futures-prices"><span class="header-section-number">22.1</span> ‘Nearby’ Futures Prices</a>
+  <ul class="collapse">
+  <li><a href="#trading-volume-as-contract-maturity-approaches" id="toc-trading-volume-as-contract-maturity-approaches" class="nav-link" data-scroll-target="#trading-volume-as-contract-maturity-approaches"><span class="header-section-number">22.1.1</span> Trading Volume as Contract Maturity Approaches</a></li>
+  <li><a href="#when-to-roll-to-the-next-to-expire" id="toc-when-to-roll-to-the-next-to-expire" class="nav-link" data-scroll-target="#when-to-roll-to-the-next-to-expire"><span class="header-section-number">22.1.2</span> When to Roll to the Next-to-Expire?</a></li>
+  </ul></li>
+  <li><a href="#time-series-forecasting" id="toc-time-series-forecasting" class="nav-link" data-scroll-target="#time-series-forecasting"><span class="header-section-number">22.2</span> Time-Series Forecasting</a></li>
+  <li><a href="#properties-of-time-series-data" id="toc-properties-of-time-series-data" class="nav-link" data-scroll-target="#properties-of-time-series-data"><span class="header-section-number">22.3</span> Properties of Time-Series Data</a>
+  <ul class="collapse">
+  <li><a href="#trends" id="toc-trends" class="nav-link" data-scroll-target="#trends"><span class="header-section-number">22.3.1</span> Trends</a></li>
+  <li><a href="#inflation" id="toc-inflation" class="nav-link" data-scroll-target="#inflation"><span class="header-section-number">22.3.2</span> Inflation</a></li>
+  <li><a href="#seasonality" id="toc-seasonality" class="nav-link" data-scroll-target="#seasonality"><span class="header-section-number">22.3.3</span> Seasonality</a></li>
+  </ul></li>
+  <li><a href="#stationarity" id="toc-stationarity" class="nav-link" data-scroll-target="#stationarity"><span class="header-section-number">22.4</span> Stationarity</a>
+  <ul class="collapse">
+  <li><a href="#the-log-normal-price-model." id="toc-the-log-normal-price-model." class="nav-link" data-scroll-target="#the-log-normal-price-model."><span class="header-section-number">22.4.1</span> The Log-normal Price Model.</a></li>
+  </ul></li>
+  <li><a href="#time-series-econometrics-technical-details" id="toc-time-series-econometrics-technical-details" class="nav-link" data-scroll-target="#time-series-econometrics-technical-details"><span class="header-section-number">22.5</span> Time Series Econometrics Technical Details</a></li>
+  <li><a href="#efficient-market-hypothesis" id="toc-efficient-market-hypothesis" class="nav-link" data-scroll-target="#efficient-market-hypothesis"><span class="header-section-number">22.6</span> Efficient Market Hypothesis</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">22.7</span> Exercises</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/mindymallory/PriceAnalysis/edit/main/22-IntroductiontoCommodityTS.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Appendix: Forecasting with TS Models</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p><span style="color:red">Interested in more? Please let me know by</span> <a href="https://forms.gle/Q3VByCQZHjfQSy9D7">taking the survey</a>!</p>
+<!-- Slightly more rigor and some econometric textbook citations are appropriate here.-->
+<p>This chapter marks a break in forecasting philosophy from the approach we have used in previous chapters. In previous chapters we were forecasting from a viewpoint that was very structural and focused on market fundamentals. We built tools and information sources to monitor supply and demand conditions in commodity markets in fairly great detail. We utilized publicly available information and research published by various branches of the USDA.</p>
+<p>In this chapter, we will take a reduced-form econometric approach. The focus will be the utilization of basic time-series econometric models to examine and forecast commodity prices. In this chapter time-series-specific concepts are introduced: constructing a series of ‘nearby’ futures prices, periodicity of data realizations and forecast horizon, trends in data series, inflation and deflating data, seasonality, stationarity, and random walks.</p>
+<section id="nearby-futures-prices" class="level2" data-number="22.1">
+<h2 data-number="22.1" class="anchored" data-anchor-id="nearby-futures-prices"><span class="header-section-number">22.1</span> ‘Nearby’ Futures Prices</h2>
+<p>There is considerable interest in the analysis of local or ‘spot’ prices, but the vast majority of forecasting exercises in commodity markets are focused on forecasting futures prices. Futures markets are much more ‘liquid’ than local spot markets. A market’s liquidity simply refers to the level of trading activity and ease or difficulty with which it is to find a trading partner. Since futures markets are liquid<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> and futures contracts are standardized, futures markets attract a diverse set of hedgers, speculators, and liquidity providers.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> Therefore, we will focus on forecasting futures prices, although the techniques covered could be applied to spot prices as well.</p>
+<section id="trading-volume-as-contract-maturity-approaches" class="level3" data-number="22.1.1">
+<h3 data-number="22.1.1" class="anchored" data-anchor-id="trading-volume-as-contract-maturity-approaches"><span class="header-section-number">22.1.1</span> Trading Volume as Contract Maturity Approaches</h3>
+<p>Futures contracts do not experience uniform trading volume over the lifetime of the contract. For example, corn futures are listed as available to trade two years before the maturity date, but the contract does not usually attract significant trading volume until it is has one year or less time to contract maturity. Figure 1 shows the December 2014 corn futures contract prices and volume from 10/3/2011 to the last day the contract traded, 12/12/2014.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Excel-files/IntroductiontoCommodityTS-Nearby_construct_files/image005.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure 1: December 2014 Corn Futures Prices</figcaption>
+</figure>
+</div>
+<p>Figure 1 shows that trading activity begins to ramp up in the months leading up to this contract’s expiration. Until the contract is being actively traded, the quality of the information contained in these prices is suspect, since significant periods of time will pass with very few active transactions taking place. For this reason, a series of futures prices for one contract should not be used to conduct a forecasting analysis if the data used covers dates where the contract was not actively traded.</p>
+<p>What is typically done is a series of ‘nearby’ contract prices is constructed by concatenating together the prices of futures contracts nearest to expire. This way, the data always represent contracts that are the most actively traded. For example, consider table 1. Here we see a short snippet of a nearby contract series (in Volume, Open, High, Low, Close format) for corn futures prices from 11/26/2014 to 12/3/2014. The last column of the table records which expiry futures contract the price and volume information represents. Prior to December 1st, the nearby contract is the December 2014 contract, as indicated in the last column. On December 1st, the nearby ‘rolls over’ to the next-to-expire contract, the March 2015 contract.</p>
+<table class="table">
+<caption>Table 1: Example of ‘Rolling’ the Nearby Contract to the Next-to-Expire</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Date</th>
+<th style="text-align: center;">Volume</th>
+<th style="text-align: center;">Open</th>
+<th style="text-align: center;">High</th>
+<th style="text-align: center;">Low</th>
+<th style="text-align: center;">Close</th>
+<th style="text-align: center;">Contract</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">11/26/2014</td>
+<td style="text-align: center;">162748</td>
+<td style="text-align: center;">374</td>
+<td style="text-align: center;">378.75</td>
+<td style="text-align: center;">373.75</td>
+<td style="text-align: center;">378</td>
+<td style="text-align: center;">CZ14</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">11/28/2014</td>
+<td style="text-align: center;">28899</td>
+<td style="text-align: center;">377</td>
+<td style="text-align: center;">380.25</td>
+<td style="text-align: center;">370.25</td>
+<td style="text-align: center;">377</td>
+<td style="text-align: center;">CZ14</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">12/1/2014</td>
+<td style="text-align: center;">149495</td>
+<td style="text-align: center;">386</td>
+<td style="text-align: center;">391.5</td>
+<td style="text-align: center;">383</td>
+<td style="text-align: center;">389.5</td>
+<td style="text-align: center;">CH15</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">12/2/2014</td>
+<td style="text-align: center;">154056</td>
+<td style="text-align: center;">389</td>
+<td style="text-align: center;">391</td>
+<td style="text-align: center;">380.75</td>
+<td style="text-align: center;">380.5</td>
+<td style="text-align: center;">CH15</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">12/3/2014</td>
+<td style="text-align: center;">93153</td>
+<td style="text-align: center;">381.5</td>
+<td style="text-align: center;">382.5</td>
+<td style="text-align: center;">377.25</td>
+<td style="text-align: center;">380.5</td>
+<td style="text-align: center;">CH15</td>
+</tr>
+</tbody>
+</table>
+<p>Rolling futures contracts in this way produces a series that always represents actively traded contracts, so the information content should be high.</p>
+</section>
+<section id="when-to-roll-to-the-next-to-expire" class="level3" data-number="22.1.2">
+<h3 data-number="22.1.2" class="anchored" data-anchor-id="when-to-roll-to-the-next-to-expire"><span class="header-section-number">22.1.2</span> When to Roll to the Next-to-Expire?</h3>
+<p>One technical detail is when exactly should you roll to the next to expire contract? Notice in table 1, the series does not roll to the next to expire contract on the last day the CZ14 contract is traded. Corn futures mature on the 14th day of the month of expiration, or the first business day prior to the 14th if the 14th falls on a weekend or holiday.</p>
+<p>Generally, contracts are rolled to the next to expire contract on the first day of the expiration month. As you can see in figure 1, once the ‘delivery’ or expiration month has been entered volume of trading in the contract quickly falls. This is partly because the corn futures contract is physically settled. If you hold a long position until expiration of the futures contract, you are obligated to buy 5,000 bushels of corn at the futures contract’s settle price. And, in fact, the process of preparing for delivery begins the first day of the delivery month. Since most traders do not want to take delivery of 5,000 bushels of corn, they exit their positions in the nearby and roll the position to the next-to-expire if they still want to be long.</p>
+<p>For the purposes of generating a series of nearby prices that are meaningful, using contract prices that are within the delivery month may represent transactions in a thin market, so it is best to roll the series at the end of the previous month. Figure 2 below shows the series of nearby futures prices, rolled at the end of the month prior to the expiration month.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Excel-files/IntroductiontoCommodityTS-Nearby_construct_files/image001.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure 2: Nearby Corn Futures Prices</figcaption>
+</figure>
+</div>
+<p>Notice in particular that the scale for volume is the same in figures 1 and 2, and in figure 2 volume is strong throughout the series.</p>
+</section>
+</section>
+<section id="time-series-forecasting" class="level2" data-number="22.2">
+<h2 data-number="22.2" class="anchored" data-anchor-id="time-series-forecasting"><span class="header-section-number">22.2</span> Time-Series Forecasting</h2>
+<p>Given a time-series of prices that one would like to forecast, the analyst seeks to find a function, <span class="math inline">\(f(.)\)</span>, that can take information known at date <span class="math inline">\(t\)</span> and predict the value of the price at date <span class="math inline">\(t+1\)</span>. Various kinds of information is known at time <span class="math inline">\(t\)</span> and could be used in a forecasting function, but the most commonly used are time <span class="math inline">\(t\)</span> and earlier prices, time <span class="math inline">\(t\)</span> and earlier prices of substitute or complement commodities, variables directly relevant to the price of interest (like pace of production or consumption), interest rates, or other variables thought to be relevant. Of course, the analyst knows that even in the best case scenario, they will be producing forecasts with an error as shown in the equation below.</p>
+<ol type="1">
+<li><span class="math inline">\(p_{t+1} = f(p_t, p_{t-1}, ..., z_t) + \epsilon_t\)</span></li>
+</ol>
+<p>In the equation, <span class="math inline">\(z_t\)</span> represents any variables the analyst believes might have forecasting power other than lags of the commodity’s own price. The <span class="math inline">\(\epsilon_t\)</span> term represents the forecast error term. In practice, the function <span class="math inline">\(f\)</span> will be determined by estimating a regression model of <span class="math inline">\(t+1\)</span> prices on lagged prices and other important variables contained in <span class="math inline">\(z_t\)</span>.</p>
+<p>Using a regression approach requires that the future look somewhat like the past, in econometric terms, the error term must be stationary. This means <span class="math inline">\(\epsilon_t\)</span> must be represented well by a single probability distribution, for example normal with a constant mean and variance. The bulk of time-series analysis consists of verifying that your data is stationary so that this assumption holds, or performing transformations on your data so that the stationarity assumption holds for the transformed data. This concept may seem abstract now, but the coming chapters and exercises will reinforce this point over and over again.</p>
+</section>
+<section id="properties-of-time-series-data" class="level2" data-number="22.3">
+<h2 data-number="22.3" class="anchored" data-anchor-id="properties-of-time-series-data"><span class="header-section-number">22.3</span> Properties of Time-Series Data</h2>
+<p>Some properties of commodity prices occur frequently: trends, seasonality, and stationarity.</p>
+<section id="trends" class="level3" data-number="22.3.1">
+<h3 data-number="22.3.1" class="anchored" data-anchor-id="trends"><span class="header-section-number">22.3.1</span> Trends</h3>
+<p>A lot of time series data will exhibit clear trends. The Food, Alcohol, and Industrial Use category from the corn balance sheet comes to mind.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Excel-files/IntroductiontoCommodityTS-FeedGrains_Corn_files/image010.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure 3: Food, Alcohol, and Industrial Use</figcaption>
+</figure>
+</div>
+<p>This series is clearly not stationary, a clear upward trend guarantees that the conditional mean of a subsample from early in the time-series is lower than the conditional mean of a subsample from later in the series. The trend can be easily removed, or ‘detrended’ and therefore forecast fairly easily well with a simple linear trend, log trend, or exponential trend model.</p>
+</section>
+<section id="inflation" class="level3" data-number="22.3.2">
+<h3 data-number="22.3.2" class="anchored" data-anchor-id="inflation"><span class="header-section-number">22.3.2</span> Inflation</h3>
+<p>In any long series of prices, inflation can be a concern. Inflation is the phenomenon that explains why $20 today will not buy as much as $20 thirty years ago. Inflation is a special kind of trend that is dealt with by ‘deflating’ the price series by an inflation index. Figure 4 from the Dallas Federal Reserve Bank shows three price indices growing over time.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/dallasfednominal_c1.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure 4: Inflation</figcaption>
+</figure>
+</div>
+<p>Source: <a href="http://www.dallasfed.org/research/basics/nominal.cfm">Dallas Federal Reserve Bank</a></p>
+<p>If your analysis involves any kind of comparison of prices or price changes across long spans of time, a price deflator should be used to put values at different dates into comparable real terms. The <a href="http://www.bls.gov/cpi/data.htm">Consumer Price Index</a> and the <a href="http://www.bls.gov/ppi/data.htm">Producer Price Index</a> can be downloaded from the Bureau of Labor Statistics.</p>
+<ol start="2" type="1">
+<li><span class="math inline">\(Real Value = \frac{Nominal Value}{Price Index}\)</span></li>
+</ol>
+</section>
+<section id="seasonality" class="level3" data-number="22.3.3">
+<h3 data-number="22.3.3" class="anchored" data-anchor-id="seasonality"><span class="header-section-number">22.3.3</span> Seasonality</h3>
+<p>Some variables have a natural pattern through time. Often data pertaining to production or consumption will exhibit predictable seasonal patterns. We saw this with quarterly exports of corn for example.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Excel-files/IntroductiontoCommodityTS-FeedGrains_Corn_files/image026.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure 5: Quarterly Exports of Corn as a Percent of Production</figcaption>
+</figure>
+</div>
+<p>The seasonal pattern ensures that the conditional mean and variance of this variable is not constant through time. Seasonality is fairly easy to address in a regression model, and we will see some popular methods for removing the predictable seasonal component so that the resultant series is stationary.</p>
+</section>
+</section>
+<section id="stationarity" class="level2" data-number="22.4">
+<h2 data-number="22.4" class="anchored" data-anchor-id="stationarity"><span class="header-section-number">22.4</span> Stationarity</h2>
+<p>Price series often seem to follow a random walk. That is, the price at <span class="math inline">\(t+1\)</span> appears to be a random deviation from the price at time <span class="math inline">\(t\)</span>. More formally,</p>
+<ol start="3" type="1">
+<li><span class="math inline">\(p_{t+1} = p_{t} + \epsilon_t\)</span></li>
+</ol>
+<p>Using Excel’s random number generator I drew 1,000 draws from a Standard Normal distribution and simulated a series of prices with the equation above and assuming a <span class="math inline">\(p_0\)</span> of $20.00. The random draws and the simulated price path are shown in figure 6 and 7.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Excel-files/IntroductiontoCommodityTS-random_walk_files/image003.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure 6: Draws from a Standard Normal Distribution (n=1,000)</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Excel-files/IntroductiontoCommodityTS-random_walk_files/image001.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure 7: Simulated Random Walk of Prices (<span class="math inline">\(p_0 = \$20.00\)</span>)</figcaption>
+</figure>
+</div>
+<p>If this is a reasonable model for how prices evolve, it will be a problem to estimate a regression model where we regress current prices on past prices. The random walk equation clearly shows that the distribution of <span class="math inline">\(\epsilon_t\)</span> depends on the current price, which is not constant over time. The simulated price series in figure 6 is definitely not stationary.</p>
+<p>However, it is clear that the first difference of prices from the random walk equation above is stationary. The error term is just draws from the standard normal distribution in this case (Shown in figure 7).</p>
+<ol start="4" type="1">
+<li><span class="math inline">\(p_{t+1} - p_{t} = \epsilon_t\)</span></li>
+</ol>
+<p>Figure 7 motivates the most common ‘fix’ when price data appear to be non-stationary. Taking the first difference of prices often will yield a series that is stationary.</p>
+<p>The only problem with the random walk model in terms of understanding stationarity of prices is that there is nothing preventing the random walk model from producing negative prices. Since negative prices are, generally, impossible, the standard random walk model does not work very well for prices. A simple modification will solve this problem, however.</p>
+<section id="the-log-normal-price-model." class="level3" data-number="22.4.1">
+<h3 data-number="22.4.1" class="anchored" data-anchor-id="the-log-normal-price-model."><span class="header-section-number">22.4.1</span> The Log-normal Price Model.</h3>
+<p>If we modify the random walk model as follows, we guarantee a model that will produce non-negative prices.</p>
+<ol start="5" type="1">
+<li><span class="math inline">\(\ln{p_{t+1}} = \ln{p_{t}} + \epsilon_t\)</span></li>
+</ol>
+<p>This is true because, if we wanted to recover the price level from this model we need to exponentiate both sides.</p>
+<ol start="6" type="1">
+<li><span class="math inline">\(e^{(\ln{p_{t+1}})} = e^{(\ln{p_{t}} + \epsilon_t)}\)</span></li>
+</ol>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="math inline">\(p_{t+1} = e^{(\ln{p_{t}} + \epsilon_t)}\)</span></p>
+<p>Since the exponential function cannot take on a negative value, this model cannot produce negative prices.</p>
+<p>The figure 8 and 9 show 1,000 random draws from a normal distribution <span class="math inline">\(\epsilon_t ~ N(0, .02)\)</span>, and the simulated price distribution that results from the log-normal price model and those random draws.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Excel-files/IntroductiontoCommodityTS-random_walk_files/image007.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure 8: Random Draws from a Normal(0, 0.02), (n = 1,000)</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Excel-files/IntroductiontoCommodityTS-random_walk_files/image005.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure 9: Simulated Log-Norma Prices, <span class="math inline">\(P_0 = \$20.00\)</span></figcaption>
+</figure>
+</div>
+<p>As was the case with the random walk model, the first difference of the log of prices is stationary. This means that if we specify a regression forecasting model and we believe the prices we wish to forecast are log-normally distributed then we will use log differences of our prices. In the coming chapters we will discuss how to formally test whether prices are stationary in levels or differences.</p>
+<p>The log-normal price model can be expressed in difference form as</p>
+<ol start="7" type="1">
+<li><span class="math inline">\(\ln{p_{t+1}} - \ln{p_{t}} = \epsilon_t\)</span></li>
+</ol>
+<p>It turns out that the log-difference of price is approximately equal to the percent change in price, especially for small changes. Percent changes of <span class="math inline">\(p_{t+1}\)</span> versus <span class="math inline">\(p_t\)</span> are also the returns one would get from holding a long position in the asset or commodity from time <span class="math inline">\(t\)</span> to time <span class="math inline">\(t+1\)</span>, and the log-normal price model says that returns are normally distributed. If this is true, forecasting is an impossible job; price returns are an unpredictable random draw from a normal distribution.</p>
+<p>In figure 10 the log-differences of the nearby corn futures price series (shown in figure 2) are plotted. Just visually, it seems a difficult task to anticipate what the next day’s return will be in the context of trying to decide whether to buy or sell, for example.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Excel-files/IntroductiontoCommodityTS-Nearby_construct_files/image002.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure 10: Percent Change in Nearby Corn Futures Prices 9/2/2014-8/31/2015</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="time-series-econometrics-technical-details" class="level2" data-number="22.5">
+<h2 data-number="22.5" class="anchored" data-anchor-id="time-series-econometrics-technical-details"><span class="header-section-number">22.5</span> Time Series Econometrics Technical Details</h2>
+<p>It turns out that if data are non-stationary and you try to run a typical OLS regression with the data in levels, the regression will be what is call <em>Super Consistent</em>. Practically, this means no matter what you put on the left hand side and right hand side of the regression, everything will appear statistically significant with a regular t-test. The relationships however, may just be spurious and not meaningful.</p>
+<p>In time series econometrics the first thing you have to do is understand whether or not your data are stationary or not. Data that are non-stationary are said to have a <em>unit root</em>. Data is typically tested for stationarity versus unit root with an Augmented Dickey Fuller test (or one of several other unit root tests).</p>
+<p>For a deeper discussion of how to implement these tests, please see <a href="http://mindymallory.com/R-Companion-Price-Analysis/">Primer for Time Series Econometrics in R</a> chapter 4.</p>
+<p>If your time series data are non-stationary (have a unit root), then typically taking the first difference of logged prices (as shown in equation 7) will result in a stationary time series. This means transforming your data to percent returns (thats the same thing as first difference of logged prices) usually produces a stationary time series on which you can safely run typical regressions.</p>
+<p>In sum, the beginning of any time series data analysis consists of the following workflow.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/ts-workflow.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure 11: Single Price Series Time Series Workflow</figcaption>
+</figure>
+</div>
+</section>
+<section id="efficient-market-hypothesis" class="level2" data-number="22.6">
+<h2 data-number="22.6" class="anchored" data-anchor-id="efficient-market-hypothesis"><span class="header-section-number">22.6</span> Efficient Market Hypothesis</h2>
+<p>The Efficient Market Hypothesis (EMH) states that all the information available regarding an asset is incorporated into its price <span class="citation" data-cites="fama1970">(<a href="#ref-fama1970" role="doc-biblioref"><strong>fama1970?</strong></a>)</span>. If the EMH were true, forecasting would be a hopeless endeavor because one could never use current and past information to predict future prices - as in the Log-normal price model. There is a large debate about the whether or not this hypothesis is true, or how and when it deviates from being true.</p>
+<p>While a large literature in finance argues that it is not strictly true, markets are ‘close to efficient’ most of the time. I say this because making a forecast that one can actually profitably trade with is difficult. We will explore several forecasting models in the subsequent chapters, and we will find it difficult to find a forecasting model were our 95% confidence interval around our forecast of percent return does not contain 0.0%. If one cannot produce a forecasting model that does that, your model is not giving a clear ‘buy’ or ‘sell’ signal.</p>
+<p>The Efficient Market Hypothesis is related to the concept of stationarity because the Efficient Market Hypothesis states that futures returns are not predictable. Anything information useful for forecasting would have been discovered by someone, and arbitraged away. In other words, if you have information that makes you sure the price of an asset or commodity will go up, then you will buy it until the price goes up so that there is no discrepency between what the price ‘should be’ and what the price is. Because there is a strong financial incentive to arbitrage away any of these kind of discrepancies, even if markets are temporarily inefficient, traders will correct the inefficiency by pushing the price up or down.</p>
+</section>
+<section id="exercises" class="level2" data-number="22.7">
+<h2 data-number="22.7" class="anchored" data-anchor-id="exercises"><span class="header-section-number">22.7</span> Exercises</h2>
+<ol type="1">
+<li>Download the corn futures contracts CZ2014, CH2015, CK2015, CN2015, and CU2015. Replicate the series of nearby contracts depicted in figure 2 by concatenating prices of the appropriate dates for each contract. As a Check, replicate figure 2.</li>
+</ol>
+<p>“Deflating Nominal Values to Real Values” Federal Reserve Bank of Dallas. <a href="http://www.dallasfed.org/research/basics/nominal.cfm" class="uri">http://www.dallasfed.org/research/basics/nominal.cfm</a></p>
+
+
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>The successful futures contracts, anyhow, are liquid and actively traded. Exchanges periodically introduce new futures contracts that have a hard time gaining the interest of traders. Without an initial push of great interest a new futures contract will often fail; that is, fail to attract trading activity.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Liquidity providers are traders whose business model is to place standing orders to buy (at a low price) and sell (at a high price) in the market at all times. They in turn earn a small profit equal to the spread between the two prices. This spread is called the Bid-Ask spread. If volume is high, these trading profits can be significant.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./21-ForecastingProductionAdvanced.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Forecasting Production - Advanced</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./23-IntroductiontoSingle.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Appendix: Single Market Models: ARIMA</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

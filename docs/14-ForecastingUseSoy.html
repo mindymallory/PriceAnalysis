@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Price Analysis: A Fundamental Approach to the Study of Commodity Prices - 14&nbsp; Forecasting Use of Soybeans</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./15-EndingStocksand.html" rel="next">
+<link href="./13-ForecastingUseof.html" rel="prev">
+<link href="./cover.jpg" rel="icon" type="image/jpeg">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=361343775"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '361343775', { 'anonymize_ip': true});
+</script>
+
+
+<meta property="og:title" content="Price Analysis: A Fundamental Approach to the Study of Commodity Prices - 14&nbsp; Forecasting Use of Soybeans">
+<meta property="og:description" content="">
+<meta property="og:image" content="http://mindymallory.com/PriceAnalysis/Excel-files/ForecastingUseSoy-OilCropsYearbook_files/image013.png">
+<meta property="og:site-name" content="Price Analysis: A Fundamental Approach to the Study of Commodity Prices">
+<meta property="og:image:height" content="740">
+<meta property="og:image:width" content="1100">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./14-ForecastingUseSoy.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Forecasting Use of Soybeans</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Price Analysis: A Fundamental Approach to the Study of Commodity Prices</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/mindymallory/PriceAnalysis" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Price-Analysis--A-Fundamental-Approach-to-the-Study-of-Commodity-Prices.pdf">
+              <i class="bi bi-bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Price-Analysis--A-Fundamental-Approach-to-the-Study-of-Commodity-Prices.epub">
+              <i class="bi bi-bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
+              <i class="bi bi-bi-facebook pe-1"></i>
+            Facebook
+            </a>
+          </li>
+      </ul>
+    </div>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-PrimerforGrain.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Grain and Oilseed Markets</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-IntroductiontoCommodity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Commodity Price Analysis and Forecasting</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-HowtoFind.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">How to Find Information</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-FuturesContractsandHedging.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Futures and Hedging Review</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-Options1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Introduction to Option Contracts</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-Options2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Advanced Option Topics</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-Options4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Hedging with Options</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-Options3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Marketing, Hedging, and Crop Insurance</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-PricesSpaceTime.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Prices Over Space and Time</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-FundamentalAnalysisand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Balance Sheet Analysis</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-PriceReactionto.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Price Reaction to USDA Reports</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12-ForecastingProduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Price Reaction to USDA Reports</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13-ForecastingUseof.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Forecasting Use of Corn</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14-ForecastingUseSoy.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Forecasting Use of Soybeans</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15-EndingStocksand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Ending Stocks and Price</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16-TheSoybeanCrush.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">The Soybean Crush</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./17-EthanolMarketsand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Ethanol</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./18-BeefCattleMarkets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Cattle Markets and the Livestock Crush</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./19-HogMarkets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Hog Markets</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./20-CrudeOiland.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Crude Oil and the Crack Spread</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./21-ForecastingProductionAdvanced.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Forecasting Production - Advanced</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./22-IntroductiontoCommodityTS.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Appendix: Forecasting with TS Models</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./23-IntroductiontoSingle.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Appendix: Single Market Models: ARIMA</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./24-A-South-American-Production.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">South American Production</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#soybean-crush" id="toc-soybean-crush" class="nav-link active" data-scroll-target="#soybean-crush"><span class="header-section-number">14.1</span> Soybean Crush</a></li>
+  <li><a href="#exports" id="toc-exports" class="nav-link" data-scroll-target="#exports"><span class="header-section-number">14.2</span> Exports</a></li>
+  <li><a href="#feed-seed-and-residual" id="toc-feed-seed-and-residual" class="nav-link" data-scroll-target="#feed-seed-and-residual"><span class="header-section-number">14.3</span> Feed, Seed, and Residual</a></li>
+  <li><a href="#price-sensitivity-of-use-categories" id="toc-price-sensitivity-of-use-categories" class="nav-link" data-scroll-target="#price-sensitivity-of-use-categories"><span class="header-section-number">14.4</span> Price Sensitivity of Use Categories</a></li>
+  <li><a href="#forecasting-use-of-soybeans" id="toc-forecasting-use-of-soybeans" class="nav-link" data-scroll-target="#forecasting-use-of-soybeans"><span class="header-section-number">14.5</span> Forecasting Use of Soybeans</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">14.6</span> Exercises</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/mindymallory/PriceAnalysis/edit/main/14-ForecastingUseSoy.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Forecasting Use of Soybeans</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p><span style="color:red">Interested in more? Please let me know by</span> <a href="https://forms.gle/Q3VByCQZHjfQSy9D7">taking the survey</a>!</p>
+<p>In the WASDE balance sheet for soybeans there are three use categories. Two account for domestic consumption - Crush, and Feed, Seed, and Residual - while exports make up the third category. The main distinction between cereal grains, like corn, and oilseeds, like soybeans, is that cereal grains are generally ground whole for whatever the end use turns out to be. Most oilseeds, on the other hand, are crushed to extract oil and meal before their ultimate use. Soybean oil is food-grade and can be found on the shelves of any American grocery store. Soybean meal is protein rich and used as an ingredient in livestock feed rations.</p>
+<p>In the next sections we will examine historical use patterns of soybeans in the three categories expressed nominally, and as a percent of the concurrent year’s total supply, similar to the organization of chapter 7.</p>
+<p>Since this book has taken a closer look at corn production than soybean production, we will ground our discussion of use by first noting the pattern of annual supply of soybeans in recent history.</p>
+<p>Figure 1 displays annual soybean production in millions of bushels from 1980-2014. A steadily increasing trend can be observed; supply had roughly doubled since the early 1980s from about 2,300 million bushels to about 4,000 million bushels in 2014.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Excel-files\ForecastingUseSoy-OilCropsYearbook_files/image013.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure 1: Annual Soybean Supply, 1980-2014</figcaption>
+</figure>
+</div>
+<p>Source: <a href="http://www.ers.usda.gov/data-products/oil-crops-yearbook.aspx">USDA ERS Oil Crops Yearbook</a></p>
+<p>Since soybeans are not consumed whole as food by humans or feed for animals in the U.S., nearly all the soybean supply is crushed domestically or exported.</p>
+<section id="soybean-crush" class="level2" data-number="14.1">
+<h2 data-number="14.1" class="anchored" data-anchor-id="soybean-crush"><span class="header-section-number">14.1</span> Soybean Crush</h2>
+<p>Figure 2 displays the annual crush of soybeans from 1980-2014. A pronounced upward trend, similar to the trend in soybean supply is observed.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Excel-files\ForecastingUseSoy-OilCropsYearbook_files/image005.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure 2: Annual Soybean Crush, 1980-2014</figcaption>
+</figure>
+</div>
+<p>Source: <a href="http://www.ers.usda.gov/data-products/oil-crops-yearbook.aspx">USDA ERS Oil Crops Yearbook</a></p>
+<p>When examining corn use, we saw that the proportion of supply shifted dramatically from other use categories to Food, Seed, and Industrial use due to the increase in ethanol production since 2005. In figure 3, we show soybean crush as a percent of the concurrent year’s total supply. While the bushels of soybeans devoted to the crush is steadily increasing, figure 3 shows that the crush is increasing roughly proportionally. There does not seem to be a shift into or out of the crush category.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Excel-files\ForecastingUseSoy-OilCropsYearbook_files/image007.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure 3: Annual Soybean Crush as a Percent of Supply, 1980-2014</figcaption>
+</figure>
+</div>
+<p>Source: <a href="http://www.ers.usda.gov/data-products/oil-crops-yearbook.aspx">USDA ERS Oil Crops Yearbook</a></p>
+</section>
+<section id="exports" class="level2" data-number="14.2">
+<h2 data-number="14.2" class="anchored" data-anchor-id="exports"><span class="header-section-number">14.2</span> Exports</h2>
+<p>Figure 4 displays annual soybean exports. Similar to the crush category, exports are observed to steadily increase over the period from 1980-2014.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Excel-files\ForecastingUseSoy-OilCropsYearbook_files/image001.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure 4: Annual Soybean Exports, 1980-2014</figcaption>
+</figure>
+</div>
+<p>Source: <a href="http://www.ers.usda.gov/data-products/oil-crops-yearbook.aspx">USDA ERS Oil Crops Yearbook</a></p>
+<p>Figure 5 shows soybean exports as a percent of total supply from 1980-2014. Similar to the crush category, the percentage of supply has remained constant.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Excel-files\ForecastingUseSoy-OilCropsYearbook_files/image009.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure 2: Annual Soybean Exports as a Percent of Supply, 1980-2014</figcaption>
+</figure>
+</div>
+<dl>
+<dt>Source: <a href="http://www.ers.usda.gov/data-products/oil-crops-yearbook.aspx">USDA ERS Oil Crops Yearbook</a></dt>
+<dd>
+<p>Table 1: Top 10 Importers of U.S. Soybeans 2012/2013 through 2016/2017 Marketing Years, Ranked in Descending Order for Marketing Year 2016/2017 (1,000 Metric Tons)</p>
+</dd>
+</dl>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 8%">
+<col style="width: 17%">
+<col style="width: 4%">
+<col style="width: 17%">
+<col style="width: 4%">
+<col style="width: 17%">
+<col style="width: 4%">
+<col style="width: 17%">
+<col style="width: 4%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">COUNTRY</th>
+<th style="text-align: left;">EXPORTS 2016/2017</th>
+<th style="text-align: left;">RANK</th>
+<th style="text-align: left;">EXPORTS 2015/2016</th>
+<th style="text-align: left;">RANK</th>
+<th style="text-align: left;">EXPORTS 2014/2015</th>
+<th style="text-align: left;">RANK</th>
+<th style="text-align: left;">EXPORTS 2013/2014</th>
+<th style="text-align: left;">RANK</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">CHINA</td>
+<td style="text-align: left;">36148.3</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">29855.0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">29640.8</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">27602.2</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">MEXICO</td>
+<td style="text-align: left;">3665.0</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">3252.6</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">3438.8</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">3194.5</td>
+<td style="text-align: left;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">INDNSIA</td>
+<td style="text-align: left;">2296.9</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">2028.6</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">1875.9</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">2291.5</td>
+<td style="text-align: left;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">JAPAN</td>
+<td style="text-align: left;">2137.2</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">2145.6</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">2011.4</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">1826.4</td>
+<td style="text-align: left;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NETHLDS</td>
+<td style="text-align: left;">2044.9</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">2037.7</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">1879.4</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">1015.6</td>
+<td style="text-align: left;">7</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">TAIWAN</td>
+<td style="text-align: left;">1292.7</td>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">1232.9</td>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">1310.8</td>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">1133.6</td>
+<td style="text-align: left;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">GERMANY</td>
+<td style="text-align: left;">1287.7</td>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">1757.5</td>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">1005.9</td>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">676.1</td>
+<td style="text-align: left;">8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">BANGLADH</td>
+<td style="text-align: left;">1050.0</td>
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">551.0</td>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">545.7</td>
+<td style="text-align: left;">13</td>
+<td style="text-align: left;">160.5</td>
+<td style="text-align: left;">21</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">THAILND</td>
+<td style="text-align: left;">950.6</td>
+<td style="text-align: left;">9</td>
+<td style="text-align: left;">424.2</td>
+<td style="text-align: left;">15</td>
+<td style="text-align: left;">518.2</td>
+<td style="text-align: left;">14</td>
+<td style="text-align: left;">432.4</td>
+<td style="text-align: left;">13</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">EGYPT</td>
+<td style="text-align: left;">807.2</td>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">295.4</td>
+<td style="text-align: left;">19</td>
+<td style="text-align: left;">712.4</td>
+<td style="text-align: left;">11</td>
+<td style="text-align: left;">604.6</td>
+<td style="text-align: left;">9</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">SPAIN</td>
+<td style="text-align: left;">731.8</td>
+<td style="text-align: left;">11</td>
+<td style="text-align: left;">964.1</td>
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">852.4</td>
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">1099.5</td>
+<td style="text-align: left;">6</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">KOR REP</td>
+<td style="text-align: left;">653.4</td>
+<td style="text-align: left;">12</td>
+<td style="text-align: left;">480.3</td>
+<td style="text-align: left;">13</td>
+<td style="text-align: left;">548.1</td>
+<td style="text-align: left;">12</td>
+<td style="text-align: left;">599.2</td>
+<td style="text-align: left;">10</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Source: <a href="http://apps.fas.usda.gov/export-sales/myrk_rpt.htm">USDA FAS</a></p>
+<p>Clearly China is the dominant importer of U.S. soybeans. They buy 10 times more than 2nd ranked Mexico. Examining the short history in table 1, you can see that increasing exports of soybeans to China accounts for nearly all of the uptrend in figure 4. In the 2016/2017 marketing year China was the destination of over 60% of U.S. soybean exports.</p>
+</section>
+<section id="feed-seed-and-residual" class="level2" data-number="14.3">
+<h2 data-number="14.3" class="anchored" data-anchor-id="feed-seed-and-residual"><span class="header-section-number">14.3</span> Feed, Seed, and Residual</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Excel-files\ForecastingUseSoy-OilCropsYearbook_files/image003.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure 6: Annual Soybean Feed, Seed, and Residual, 1980-2014</figcaption>
+</figure>
+</div>
+<p>Source: <a href="http://www.ers.usda.gov/data-products/oil-crops-yearbook.aspx">USDA ERS Oil Crops Yearbook</a></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Excel-files\ForecastingUseSoy-OilCropsYearbook_files/image012.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure 7: Annual Soybean Feed, Seed, and Residual as a Percent of Supply, 1980-2014</figcaption>
+</figure>
+</div>
+<p>Source: <a href="http://www.ers.usda.gov/data-products/oil-crops-yearbook.aspx">USDA ERS Oil Crops Yearbook</a></p>
+</section>
+<section id="price-sensitivity-of-use-categories" class="level2" data-number="14.4">
+<h2 data-number="14.4" class="anchored" data-anchor-id="price-sensitivity-of-use-categories"><span class="header-section-number">14.4</span> Price Sensitivity of Use Categories</h2>
+<p>Soybeans are a bit different from corn because there are only two use categories that are important, crush and exports. The soybean use categories historically have been reliably 50% crush and 50% exports as a percent of supply. In recent years, exports have been increasing both nominally and as a percent of supply. So forecasting demand for soybeans has largely become a matter of forecasting soybean exports.</p>
+<p>Recently, with the rise of South American soybean (and corn) production, forecasting exports is a matter of balancing the price of U.S soybeans compared with the price of South American soybeans and the raw demand from our trading partners. China has become the major player in this space, as is evident in table 1.</p>
+</section>
+<section id="forecasting-use-of-soybeans" class="level2" data-number="14.5">
+<h2 data-number="14.5" class="anchored" data-anchor-id="forecasting-use-of-soybeans"><span class="header-section-number">14.5</span> Forecasting Use of Soybeans</h2>
+<p>As we mentioned in chapter 7, keeping track of how much soybeans have been used to date in each category is a useful exercise to determine a reasonable forecast for different use categories of soybeans. As was true for corn, information about the pace of use in each category must be obtained from different sources within the USDA.</p>
+<p>Soybeans exports can be followed during the marketing year by following the <a href="">GIPSA</a> and <a href="">FAS Export Reporting System</a> as was identified for corn exports in Chapter 7. Also, as identified in Chapter 7 is is useful to tracking <a href="http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1020">Cattle on Feed</a>, <a href="http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1086">Hogs and Pigs</a>, and the <a href="https://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1131">Poultry Slaughter</a>, specifically because livestock numbers contribute to demand for soybean meal, which in turn contributes to crush demand.</p>
+</section>
+<section id="exercises" class="level2" data-number="14.6">
+<h2 data-number="14.6" class="anchored" data-anchor-id="exercises"><span class="header-section-number">14.6</span> Exercises</h2>
+<p><strong>Skills Learned</strong></p>
+<ul>
+<li><p>A common method for accounting strength of demand: pace of use.</p></li>
+<li><p>How to directly import data that is hosted on a website so that a .csv file has a url for download</p></li>
+<li><p>How to work with pivot tables in excel to summarize large data-sets with many factor variables</p></li>
+</ul>
+<p>Compare the pace of export sales in the first few weeks of marketing year 2017/2018 to the pace of export sales in the previous three marketing years. Make inferences about whether this marketing year seems to be getting off to a good start in export sales.</p>
+<ol type="1">
+<li>Go to <a href="https://www.gipsa.usda.gov/" class="uri">https://www.gipsa.usda.gov/</a></li>
+</ol>
+<!-- -->
+<pre><code>a. Choose FGIS Reports in the Federal Grain Inspection Menu  
+
+b. Scroll down and choose Export Grain Totals (Yearly) in the Data and Statistics section  </code></pre>
+<ol start="2" type="1">
+<li>Import the reports for 2014-2017 into excel so we can examine the following marketing years:</li>
+</ol>
+<!-- -->
+<pre><code>a. 2014/2015, 2015/2016, 2016/2017, and 2017/2018 (so far)  </code></pre>
+<ol start="3" type="1">
+<li><p>Create a pivot table that has weeks in the rows, marketing year in the columns, and sums the export sales in each week. Filter by Grain.</p></li>
+<li><p>Copy and paste special this table into a new worksheet as plain text (so that is not a pivot table).</p></li>
+<li><p>Delete the data in 2014 prior to September so that we start at the beginning of the marketing year.</p></li>
+<li><p>Collapse all the marketing year into a single set of 53 rows (so we can compare by marketing year.)</p></li>
+<li><p>Create a new column on the left side and fill it in with a sequence of 1 to 53, for weeks in the marketing year.</p></li>
+<li><p>Insert two columns between each marketing year; label them Cumulative Sum and Pace of Export.</p></li>
+<li><p>Calculate the cumulative sums.</p></li>
+<li><p>Go find the historical export numbers from old WASDE reports for each marketing year. Enter these values in your spreadsheet somewhere, and convert the million bushel numbers into pounds using the fact that bushel of soybeans weighs about 60 lbs.</p></li>
+<li><p>Calculate the pace of use by dividing the cumulative sums by the export total for each marketing year.</p></li>
+<li><p>Plot the pace of use with the Week numbers on the x axis for each marketing year.</p></li>
+<li><p>Infer whether or not the 2017/2018 export sales are off to a strong start.</p></li>
+</ol>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./13-ForecastingUseof.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Forecasting Use of Corn</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./15-EndingStocksand.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Ending Stocks and Price</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

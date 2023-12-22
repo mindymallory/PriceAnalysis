@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Price Analysis: A Fundamental Approach to the Study of Commodity Prices - 4&nbsp; Futures and Hedging Review</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./05-Options1.html" rel="next">
+<link href="./03-HowtoFind.html" rel="prev">
+<link href="./cover.jpg" rel="icon" type="image/jpeg">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=361343775"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '361343775', { 'anonymize_ip': true});
+</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<meta property="og:title" content="Price Analysis: A Fundamental Approach to the Study of Commodity Prices - 4&nbsp; Futures and Hedging Review">
+<meta property="og:description" content="">
+<meta property="og:image" content="http://mindymallory.com/PriceAnalysis/assets/Grain_elevator_royal_IL.jpg">
+<meta property="og:site-name" content="Price Analysis: A Fundamental Approach to the Study of Commodity Prices">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04-FuturesContractsandHedging.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Futures and Hedging Review</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Price Analysis: A Fundamental Approach to the Study of Commodity Prices</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/mindymallory/PriceAnalysis" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Price-Analysis--A-Fundamental-Approach-to-the-Study-of-Commodity-Prices.pdf">
+              <i class="bi bi-bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Price-Analysis--A-Fundamental-Approach-to-the-Study-of-Commodity-Prices.epub">
+              <i class="bi bi-bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
+              <i class="bi bi-bi-facebook pe-1"></i>
+            Facebook
+            </a>
+          </li>
+      </ul>
+    </div>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-PrimerforGrain.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Grain and Oilseed Markets</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-IntroductiontoCommodity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Commodity Price Analysis and Forecasting</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-HowtoFind.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">How to Find Information</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-FuturesContractsandHedging.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Futures and Hedging Review</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-Options1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Introduction to Option Contracts</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-Options2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Advanced Option Topics</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-Options4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Hedging with Options</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-Options3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Marketing, Hedging, and Crop Insurance</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-PricesSpaceTime.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Prices Over Space and Time</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-FundamentalAnalysisand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Balance Sheet Analysis</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-PriceReactionto.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Price Reaction to USDA Reports</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12-ForecastingProduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Price Reaction to USDA Reports</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13-ForecastingUseof.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Forecasting Use of Corn</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14-ForecastingUseSoy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Forecasting Use of Soybeans</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15-EndingStocksand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Ending Stocks and Price</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16-TheSoybeanCrush.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">The Soybean Crush</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./17-EthanolMarketsand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Ethanol</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./18-BeefCattleMarkets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Cattle Markets and the Livestock Crush</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./19-HogMarkets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Hog Markets</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./20-CrudeOiland.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Crude Oil and the Crack Spread</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./21-ForecastingProductionAdvanced.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Forecasting Production - Advanced</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./22-IntroductiontoCommodityTS.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Appendix: Forecasting with TS Models</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./23-IntroductiontoSingle.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Appendix: Single Market Models: ARIMA</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./24-A-South-American-Production.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">South American Production</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#futures-contract-review" id="toc-futures-contract-review" class="nav-link active" data-scroll-target="#futures-contract-review"><span class="header-section-number">4.1</span> Futures Contract Review</a>
+  <ul class="collapse">
+  <li><a href="#delivery" id="toc-delivery" class="nav-link" data-scroll-target="#delivery"><span class="header-section-number">4.1.1</span> Delivery</a></li>
+  </ul></li>
+  <li><a href="#examples-who-hedges-and-how-does-a-futures-contract-facilitate-a-hedge" id="toc-examples-who-hedges-and-how-does-a-futures-contract-facilitate-a-hedge" class="nav-link" data-scroll-target="#examples-who-hedges-and-how-does-a-futures-contract-facilitate-a-hedge"><span class="header-section-number">4.2</span> Examples: Who Hedges and How Does a Futures Contract Facilitate a Hedge?</a>
+  <ul class="collapse">
+  <li><a href="#farmer" id="toc-farmer" class="nav-link" data-scroll-target="#farmer"><span class="header-section-number">4.2.1</span> Farmer</a></li>
+  <li><a href="#flour-mill" id="toc-flour-mill" class="nav-link" data-scroll-target="#flour-mill"><span class="header-section-number">4.2.2</span> Flour Mill</a></li>
+  <li><a href="#soybean-crusher" id="toc-soybean-crusher" class="nav-link" data-scroll-target="#soybean-crusher"><span class="header-section-number">4.2.3</span> Soybean Crusher</a></li>
+  <li><a href="#importance-of-having-a-line-of-credit-in-futures-hedging" id="toc-importance-of-having-a-line-of-credit-in-futures-hedging" class="nav-link" data-scroll-target="#importance-of-having-a-line-of-credit-in-futures-hedging"><span class="header-section-number">4.2.4</span> Importance of Having a Line of Credit in Futures Hedging</a></li>
+  <li><a href="#how-crop-revanue-insurance-has-changed-commodity-marketing-and-hedging-needs" id="toc-how-crop-revanue-insurance-has-changed-commodity-marketing-and-hedging-needs" class="nav-link" data-scroll-target="#how-crop-revanue-insurance-has-changed-commodity-marketing-and-hedging-needs"><span class="header-section-number">4.2.5</span> How Crop Revanue Insurance Has Changed Commodity Marketing and Hedging Needs</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/mindymallory/PriceAnalysis/edit/main/04-FuturesContractsandHedging.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Futures and Hedging Review</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p><span style="color:red">Interested in more? Please let me know by</span> <a href="https://forms.gle/Q3VByCQZHjfQSy9D7">taking the survey</a>!</p>
+<p><strong>Highlights</strong></p>
+<ul>
+<li>Review of futures contracts and how to calculate profit or loss on a trade.</li>
+<li>Hedging examples from the sell side (farmer’s hedge) and from the buy side (flour mill’s hedge).</li>
+<li>Learn how basis risk impacts a hedge.</li>
+</ul>
+<p><strong>Check your Understanding</strong></p>
+<ul>
+<li>Can you calculate the profit or loss from a trade?</li>
+<li>Can you fill out a hedging net revenue table given prices on key dates?</li>
+</ul>
+<p>This chapter is a review of the basics of hedging. What is its purpose? Who does it? And how do futures contracts facilitate a ‘hedge’?</p>
+<p>Merriam-Webster defines a ‘hedge’ as a means of protection or defense (as against a financial loss). Hedging in the sense of hedging with a futures contract, is exactly that a defense against a financial loss. In the present context, a hedge is the use of a derivative contract to reduce or eliminate risk in your business’ profits.</p>
+<p>Understanding who is hedging and why is very helpful to understanding price relationships and what drives them to move up or down.</p>
+<section id="futures-contract-review" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="futures-contract-review"><span class="header-section-number">4.1</span> Futures Contract Review</h2>
+<p>A futures contract is a contract between two parties to buy and sell at an agreed to price, a specific quantity and quality of something at a specific location. In the case of CBOT corn futures, it is 5,000 bushels of U.S. number 2 yellow corn, at specific elevators along the Illinois River, Lake Michigan, or associated canals. These contracts are traded on a centralized exchange, similar to the ‘stock market’, and the two counter-parties do not know each other. The difference between a futures contract, and say buying a stock, is that when the trade takes place, no ownership transfer occurs. It is simply a promise to buy or sell at a specific date in the future. That is why there are many different futures contract ‘months’ like ‘December 2017’ corn futures, and ‘March 2018’ corn futures. Traders on futures exchanges need to post ‘margin’ which is just an amount of money that acts as a performance bond so that everyone has confidence that both parties can make good on the contract if it is held until the futures contract expires. As the price moves up, the seller’s position is losing (because selling ‘low’ is ‘bad’ business), and some money is taken from their margin account and put into the buyer’s margin account (because buying ‘low’ is ‘good’ business). This daily transfer of money from the losers to the winners is called ‘marking to market’, and it makes sure everyone has the financial capital required to make good on the terms of the contract.</p>
+<p>Consider this example. At 10am the March corn futures contract is trading at $4.50 per bushel. Trader A decides to buy one contract and Trader B decides to sell one contract. At 1pm both traders decide to close their position and the price has moved up to $4.75 per bushel. Since the price went up the by $0.25 per bushel, the longs (buyers) gain <span class="math inline">\(+0.25*5000 = \$1250\)</span> and the shorts (sellers) lose <span class="math inline">\(-0.25*5000 = \$1250\)</span>.</p>
+<table class="table">
+<colgroup>
+<col style="width: 28%">
+<col style="width: 36%">
+<col style="width: 36%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Time</th>
+<th style="text-align: left;">Trader A</th>
+<th style="text-align: left;">Trader B</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">10am</td>
+<td style="text-align: left;">buy $4.50</td>
+<td style="text-align: left;">sell $4.50</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1pm</td>
+<td style="text-align: left;">sell $4.75</td>
+<td style="text-align: left;">buy $4.75</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">profit per bu</td>
+<td style="text-align: left;">$4.75 - $4.50 = +$0.25</td>
+<td style="text-align: left;">$4.50 - $4.75 = -$0.25</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">profit one contract</td>
+<td style="text-align: left;">+$1250</td>
+<td style="text-align: left;">-$1250</td>
+</tr>
+</tbody>
+</table>
+<p>Very few contracts are held all the way to expiration when transfer of ownership would take place. The traders who originally bought, sometime before expiration will sell, eliminating their obligation in the market, or getting them to a ‘flat’ position. The traders who originally sold, will buy, getting them to a ‘flat’ position as well. The rest of the chapter will cover how exactly these futures contracts can facilitate a hedge for different types of businesses.</p>
+<section id="delivery" class="level3" data-number="4.1.1">
+<h3 data-number="4.1.1" class="anchored" data-anchor-id="delivery"><span class="header-section-number">4.1.1</span> Delivery</h3>
+<p>The CME Group grain and oilseed future are deliverable contracts, ensuring a link between the spot market and the futures market. Only a few of the futures contracts traded are actually delivered on, however. The purpose of the futures market is not to provide a mechanism for physical exchange, but rather a means for streamlined risk management in a liquid market. That said, there is always some contracts that end up being held by the long and the short side of the trade into delivery. We will discuss briefly the mechanism the CME Group grain and oilseed contracts for delivery.</p>
+<p>The exchange has designated a few large commercial grain handlers and warehouses as <em>regular for delivery</em>. These grain handlers lie in one of the following territories specified in the <a href="https://www.cmegroup.com/rulebook/CBOT/II/10/10.pdf">CME Group Rulebook</a></p>
+<blockquote class="blockquote">
+<p>Corn shipping certificates shall specify shipment from one of the warehouses or shipping stations currently regular for delivery and located in one of the following territories:</p>
+<p>A. Chicago and Burns Harbor, Indiana Switching District - When used in these Rules, the Chicago Switching District will be that area geographically defined by Tariff ICC WTL 8020-Series and that portion of the Illinois Waterway at or above river mile 304 which includes the Calumet Sag Channel and the Chicago Sanitary &amp; Ship Canal. When used in these Rules, Burns Harbor, Indiana Switching District will be that area geographically defined by the boundaries of Burns Waterway Harbor at Burns Harbor, Indiana which is owned and operated by the Indiana Port Commission.</p>
+<p>B. Lockport-Seneca Shipping District - When used in these Rules, the Lockport-Seneca Shipping District will be that portion of the Illinois Waterway below river mile 304 at the junction of the Calumet Sag Channel and the Chicago Sanitary &amp; Ship Canal and above river mile 244.6 at the Marseilles Lock and Dam.</p>
+<p>C. Ottawa-Chillicothe Shipping District - When used in these Rules, the Ottawa-Chillicothe Shipping District will be that portion of the Illinois Waterway below river mile 244.6 at the Marseilles Lock and Dam and at or above river mile 170 between Chillicothe and Peoria, IL.</p>
+<p>D. Peoria – Pekin Shipping District - When used in these Rules, the Peoria-Pekin Shipping District will be that portion of the Illinois Waterway below river mile 170 between Chillicothe and Peoria, IL and at or above river mile 151 at Pekin, IL.</p>
+</blockquote>
+<p>If someone with a short futures position wants to deliver on their futures contract they cannot just show up at one of these locations with 5,000 bushels of grain in trucks. The actual thing that can be delivered is referred to as a <em>shipping certificate</em> for 5,000 bushels of grain from a regular for delivery warehouse. This is a certificate giving the holder the right to demand load-out of grain that meets certain quality standards. Since the shipping certificates represent physical bushels in storage at these regular for delivery warehouses, and warehouse space is not free, holders of shipping certificates are required to pay what are called <em>premium charges</em>. Premium charges are simply fees collected by the warehouse for the space provided to store the grain. The exchange specifies that premium charges for corn and soybeans shall not exceed 0.165 cents per bushel per day, or about 4.95 cents per bushel per month. We will need to use the premium charges on shipping certificates in Chapter 5 when we introduce the concept of <em>Financial Full Carry</em>.</p>
+<p>Likewise, if the long party (the person who bought the futures contract) wants to take delivery, they must pay the full amount, <span class="math inline">\(Futures Price X 5,000\)</span> bushels, and must pay premium charges to the warehouse to hold the shipping certificate.</p>
+</section>
+</section>
+<section id="examples-who-hedges-and-how-does-a-futures-contract-facilitate-a-hedge" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="examples-who-hedges-and-how-does-a-futures-contract-facilitate-a-hedge"><span class="header-section-number">4.2</span> Examples: Who Hedges and How Does a Futures Contract Facilitate a Hedge?</h2>
+<section id="farmer" class="level3" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" data-anchor-id="farmer"><span class="header-section-number">4.2.1</span> Farmer</h3>
+<p>Consider the corn farmer who plants her crop in April waits for it to grow and then mature through the summer and fall, then harvests it in November. If the farmer sells right after harvest in the cash market, she will very likely take her grain to a local grain elevator (similar to the one pictured below), where the elevator will purchase all she has at a price they publicly offer anyone interested in selling grain.</p>
+<p>Figure 1. A Grain Elevator in Royal, IL</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://commons.wikimedia.org/wiki/File:Grain_elevators_in_Royal,_IL."><img src="assets/Grain_elevator_royal_IL.jpg" class="img-fluid figure-img"></a></p>
+</figure>
+</div>
+<p>Source: <a href="https://commons.wikimedia.org/wiki/File%3AGrain_elevators_in_Royal%2C_IL.jpg">Daniel Schwen, CC-License</a></p>
+<p>The farmer’s entire income for the year will come from the sale of this grain, and a lot can happen to the price of corn between April and November, leaving the farmer exposed to tremendous income risk. Many farmers desire the ability to reduce this income risk by entering into a contractual relationship that reduces the uncertainty in the income they receive. Currently there are several ways they can achieve this.</p>
+<ol type="1">
+<li><p>Crop Insurance. They can purchase a crop insurance policy that will pay them an indemnity if either price goes down, yield is low, or both depending on the exact specification of the contract. This activity does not directly interact with the futures market, so it does not have a large effect on price.</p></li>
+<li><p>Forward Price Contract. Local grain elevators (sometimes called merchandisers) typically offer forward contracts to buy grain from farmers. Along with the cash price they post publicly on a daily basis, they will post forward ‘bids’. The forward contract simply states that the farmer will deliver a certain quantity of grain to that elevator within a specific date range, usually a window of a few weeks. Upon delivery, the elevator will pay the farmer the price agreed to (the forward bid price) on the date they entered int the forward contract together. This eliminates price uncertainty for the farmer, as long as the elevator does not go bankrupt before the delivery date of the contract, they will have the forward bid price with certainty. The forward contract transfers price risk to the elevator. The elevator does not want to entertain price risk during this time either, but the elevator has a contract to buy the grain at a specific price, but the price at which they can turn around and sell it to someone else is uncertain. They will transfer the price risk to speculators in the futures market by selling futures. So farmers entering into forward contracts with local grain merchandisers ultimately results in selling of futures contracts by the grain merchandisers. We will see in an examples below how exactly selling futures eliminates price risk.</p></li>
+<li><p>Futures Market. Alternatively, a farmer could go directly to the futures market themselves to sell futures contracts and reduce price uncertainty. This reduces, but not eliminates uncertainty because the farmer still faces basis risk in this case. A detailed example will help explain how this works.</p></li>
+</ol>
+<p>Suppose on May 1st, the farmer’s local elevator is offering to buy corn for $3.50, and the May futures contract is trading at $3.60. Since the May futures contract is about to expire, the cash price and Futures price are not separated by much time (we have discussed briefly how prices through time along the futures forward curve provide incentives to store) and thus should not be very different because of time. However, the local elevator’s price can differ from the Futures price because they are at different locations. For example, the elevator in the photo at Royal, IL is about 116 miles from the ‘regular for delivery’ elevators in the Calmet-Sag Chanel near Orland Park, IL. The $0.10 difference between the May futures price and the cash price on May 1st in Royal, IL is largely due to the geographic distance between the two locations. The price distance over space is called the basis. Basis can be computed compared to any of the futures contracts, but it makes sense to consider basis compared to the futures contract that corresponds to the planned cash sale.</p>
+<p><span class="math display">\[Basis = Cash Price - Futures Price\]</span></p>
+<p>Also on May 1st, the December futures contract price is $3.75. If the farmer wants to reduce price uncertainty they will sell futures, sometimes referred to as ‘selling forward’ or ‘selling ahead’.</p>
+<p><strong>To Hedge - Take the same action in the futures market (buy or sell) that you will do in the cash market at a future date</strong></p>
+<p>The farmer will sell corn in the cash market in November, so to hedge she should sell (the December) futures to hedge. Consider two cases, one where the Dec futures price in November turned out to be $4.00, and one where the Dec futures price in November turned out to be $3.60.</p>
+<p><strong>Dec Futures Price went Up to $4.00, Basis Unchanged</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 27%">
+<col style="width: 20%">
+<col style="width: 22%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Date</th>
+<th style="text-align: center;">Action</th>
+<th style="text-align: center;">Cash Price in Royal, IL</th>
+<th style="text-align: center;">Dec Corn Futures Price</th>
+<th style="text-align: center;">Basis</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">May 1st</td>
+<td style="text-align: center;">Sell Dec Futures</td>
+<td style="text-align: center;">$3.50</td>
+<td style="text-align: center;">$3.75</td>
+<td style="text-align: center;">-$0.25 (Dec)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Nov 1st</td>
+<td style="text-align: center;">Buy Dec Futures &amp; Sell Cash Corn</td>
+<td style="text-align: center;">$3.75</td>
+<td style="text-align: center;">$4.00</td>
+<td style="text-align: center;">-$0.25 (Dec)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Profit Calculation,</td>
+<td style="text-align: center;">Cash and Futures</td>
+<td style="text-align: center;">$3.75</td>
+<td style="text-align: center;">$3.75 - $4.00 = -$0.25</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Net per bushel revenue</td>
+<td style="text-align: center;">$3.75 - $0.25</td>
+<td style="text-align: center;">= $3.50</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<p>With the basis unchanged, the farmer eliminated the uncertainty over the price at which she will sell her crop. By ‘selling ahead’ in the futures market, the price was locked in, except for the basis. Note that in this case, the farmer would have liked to be able to sell for $3.75 instead of $3.50 net, but by locking in the price with futures she gave up the potential for upside. In the next example, though, we show the advantage. In the next example, prices go down between May and November, and the futures hedge protects the farmer from these deteriorating prices.</p>
+<p><strong>Dec Futures Price went Down to $3.60, Basis Unchanged</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 27%">
+<col style="width: 20%">
+<col style="width: 22%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Date</th>
+<th style="text-align: center;">Action</th>
+<th style="text-align: center;">Cash Price in Royal, IL</th>
+<th style="text-align: center;">Dec Corn Futures Price</th>
+<th style="text-align: center;">Basis</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">May 1st</td>
+<td style="text-align: center;">Sell Dec Futures</td>
+<td style="text-align: center;">$3.50</td>
+<td style="text-align: center;">$3.75</td>
+<td style="text-align: center;">-$0.25 (Dec)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Nov 1st</td>
+<td style="text-align: center;">Buy Dec Futures &amp; Sell Cash Corn</td>
+<td style="text-align: center;">$3.35</td>
+<td style="text-align: center;">$3.60</td>
+<td style="text-align: center;">-$0.25 (Dec)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Profit Calculation,</td>
+<td style="text-align: center;">Cash and Futures</td>
+<td style="text-align: center;">$3.35</td>
+<td style="text-align: center;">$3.75 - $3.60 = +$0.15</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Net per bushel revenue</td>
+<td style="text-align: center;">$3.35 + $0.15</td>
+<td style="text-align: center;">= $3.50</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<p>By selling Dec futures ahead of the cash sale, price risk was reduced. It was reduced, but not eliminated because by hedging with futures there is still basis risk. The next examples show what happens when the basis is uncertain. Consider now that the futures price was unchanged in November, that is in November the Dec futures is still trading at $3.80. Now however, consider two cases. The basis widens to -$0.50, and the basis narrows to $0.00.</p>
+<p><strong>Dec Futures Price Unchanged, Basis now -$0.50</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 27%">
+<col style="width: 20%">
+<col style="width: 22%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Date</th>
+<th style="text-align: center;">Action</th>
+<th style="text-align: center;">Cash Price in Royal, IL</th>
+<th style="text-align: center;">Dec Corn Futures Price</th>
+<th style="text-align: center;">Basis</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">May 1st</td>
+<td style="text-align: center;">Sell Dec Futures</td>
+<td style="text-align: center;">$3.50</td>
+<td style="text-align: center;">$3.75</td>
+<td style="text-align: center;">-$0.25 (Dec)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Nov 1st</td>
+<td style="text-align: center;">Buy Dec Futures &amp; Sell Cash Corn</td>
+<td style="text-align: center;">$3.25</td>
+<td style="text-align: center;">$3.75</td>
+<td style="text-align: center;">-$0.50 (Dec)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Profit Calculation,</td>
+<td style="text-align: center;">Cash and Futures</td>
+<td style="text-align: center;">$3.25</td>
+<td style="text-align: center;">$3.75 - $3.75 = +$0.00</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Net per bushel revenue</td>
+<td style="text-align: center;">$3.25 + $0.00</td>
+<td style="text-align: center;">= $3.25</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<p>This time, the basis widening from -$0.25 to -$0.50 was a loss to the farmer, even though general price levels were unchanged (Dec price unchanged). The next example shows the farmer’s revenue if the basis strengthens, or narrows.</p>
+<p><strong>Dec Futures Price Unchanged, Basis now $0.00</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 27%">
+<col style="width: 20%">
+<col style="width: 22%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Date</th>
+<th style="text-align: center;">Action</th>
+<th style="text-align: center;">Cash Price in Royal, IL</th>
+<th style="text-align: center;">Dec Corn Futures Price</th>
+<th style="text-align: center;">Basis</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">May 1st</td>
+<td style="text-align: center;">Sell Dec Futures</td>
+<td style="text-align: center;">$3.50</td>
+<td style="text-align: center;">$3.75</td>
+<td style="text-align: center;">-$0.25 (Dec)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Nov 1st</td>
+<td style="text-align: center;">Buy Dec Futures &amp; Sell Cash Corn</td>
+<td style="text-align: center;">$3.75</td>
+<td style="text-align: center;">$3.75</td>
+<td style="text-align: center;">$0.00 (Dec)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Profit Calculation,</td>
+<td style="text-align: center;">Cash and Futures</td>
+<td style="text-align: center;">$3.75</td>
+<td style="text-align: center;">$3.75 - $3.75 = +$0.00</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Net per bushel revenue</td>
+<td style="text-align: center;">$3.75 + $0.00</td>
+<td style="text-align: center;">= $3.75</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<p>The narrowing of the basis was an increase in profit to the farmer.</p>
+<p>These examples show why it is said that when a farmer hedges with futures they are ‘long in the basis’. a futures hedge eliminates price uncertainty that comes from general price levels:</p>
+<ul>
+<li>If prices go up, they receive an increase in the cash price they receive, but a loss on their futures position</li>
+<li>If prices go down, they receive less in cash price when they sell corn in their local market, but a gain on their futures position.</li>
+</ul>
+<p>The futures hedge, however, does not protect against changes (good or bad) in the relative price in their local cash market and the futures price.</p>
+<ol start="4" type="1">
+<li>Options Market. They could also use options on futures contracts to reduce downside risk, but maintain upside potential profits. Specifically, a farmer could buy a put option for a premium paid upfront. The put option makes money if the price goes down, like a short (sold) futures position, but if the price goes up, it does not lose any more than the original premium paid. Therefore, if the price goes down, she is hedged, but if the price goes up, she will enjoy increased profits.</li>
+</ol>
+</section>
+<section id="flour-mill" class="level3" data-number="4.2.2">
+<h3 data-number="4.2.2" class="anchored" data-anchor-id="flour-mill"><span class="header-section-number">4.2.2</span> Flour Mill</h3>
+<p>A flour mill buys large quantities of grain for making into flour. They can use futures to hedge price risk by ‘buying ahead’ futures contracts. Remember that a futures hedge always involves making a trade in the futures contract that is the same as what you will do in the cash market. In this case, the flour mill buys grain, so their futures hedge should buy futures. Since the flour mill likely wants to process grain year round, they need to hedge price risk at multiple points in time to correspond to when they routinely purchase grain. For example, high commercial wheat flour mills can process upwards of 50,000 bushels of wheat per month. With wheat futures contracts specified for 5,000 bushels they need 10 wheat futures contracts to hedge their wheat buying for one month.</p>
+<p>There are five wheat futures contracts per year, March, May, July, September, and December</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Wheat Futures Contracts</th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Expiration</td>
+<td style="text-align: center;">March</td>
+<td style="text-align: center;">May</td>
+<td style="text-align: center;">July</td>
+<td style="text-align: center;">September</td>
+<td style="text-align: center;">December</td>
+</tr>
+</tbody>
+</table>
+<p>If the mill buys wheat at the first of every month, they will have to use the nearest contract month to hedge price. For example, to hedge a purchase of wheat on February 1st, the mill will have to use the March futures expiration, because there is no February contract and the March contract is the closest expiration. Then suppose on December 1st the mill wants to lock in its wheat purchase price (aside from basis risk) for the first six months of the next year. Then, for example, it will have to hedge January, February, and March wheat purchases with the March futures contract. Since they buy 50,000 bushels per month, which is equivalent to 10 contracts per month, they will need to buy 60 contracts of wheat on Dec 1 to hedge January through July purchases. Hedges should be lifted simultaneously with activity in the cash market. For example, on January 1st the mill will purchase 50,000 bushels to process for the month of January in the cash market. Then they should lift their hedge on 10 contracts, or sell 10 contracts also on January first. This means after January 1st, the mill is still holding 20 long March futures contracts (they are ‘long’ 20 contracts) which keeps February and March’s purchases hedged. The table below details the mills activities in the spot market and futures market throughout the year. It takes real data from 2016, and assumes that the basis is fixed at -0.25 cents under the nearby futures contract, meaning the spot price column is always 0.25 cents less than the next to expire futures contract.</p>
+<table class="table">
+<colgroup>
+<col style="width: 8%">
+<col style="width: 21%">
+<col style="width: 18%">
+<col style="width: 25%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 7%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Dates</th>
+<th style="text-align: center;">Action</th>
+<th style="text-align: center;">Long</th>
+<th style="text-align: center;">Net Price Paid</th>
+<th style="text-align: center;">Spot</th>
+<th style="text-align: center;">Mar Fut</th>
+<th style="text-align: center;">May Fut</th>
+<th style="text-align: center;">Jul Futs</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Dec 1, 15</td>
+<td style="text-align: center;">Buy 30 Mar, 20 May, 10 Jul</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">469.75</td>
+<td style="text-align: center;">470</td>
+<td style="text-align: center;">476.5</td>
+<td style="text-align: center;">483.25</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Jan 1, 16</td>
+<td style="text-align: center;">Buy 50k spot, Sell 10 Mar</td>
+<td style="text-align: center;">20 Mar, 20 May, 10 Jul</td>
+<td style="text-align: center;">-479 + (479.25-470) = - 469.75</td>
+<td style="text-align: center;">479.00</td>
+<td style="text-align: center;">479.25</td>
+<td style="text-align: center;">485</td>
+<td style="text-align: center;">490.5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Feb 1</td>
+<td style="text-align: center;">Buy 50k spot, Sell 10 Mar</td>
+<td style="text-align: center;">10 Mar, 20 May, 10 Jul</td>
+<td style="text-align: center;">-444.75 + (445-470) = -469.75</td>
+<td style="text-align: center;">444.75</td>
+<td style="text-align: center;">445</td>
+<td style="text-align: center;">453.25</td>
+<td style="text-align: center;">460.25</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Mar 1</td>
+<td style="text-align: center;">Buy 50k spot, Sell 10 Mar</td>
+<td style="text-align: center;">20 May, 10 Jul</td>
+<td style="text-align: center;">-471.25 + (471.5-470) = -469.75</td>
+<td style="text-align: center;">471.25</td>
+<td style="text-align: center;">471.5</td>
+<td style="text-align: center;">473.5</td>
+<td style="text-align: center;">480.75</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Apr 1</td>
+<td style="text-align: center;">Buy 50k spot, Sell 10 May</td>
+<td style="text-align: center;">10 May, 10 Jul</td>
+<td style="text-align: center;">-477.75 + (478- 476.5) = -476.25</td>
+<td style="text-align: center;">477.75</td>
+<td style="text-align: center;">NA</td>
+<td style="text-align: center;">478</td>
+<td style="text-align: center;">488.5</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">May 1</td>
+<td style="text-align: center;">Buy 50k spot, Sell 10 May</td>
+<td style="text-align: center;">10 Jul</td>
+<td style="text-align: center;">-464.75 + (465 -476.5) = 476.25</td>
+<td style="text-align: center;">464.75</td>
+<td style="text-align: center;">NA</td>
+<td style="text-align: center;">465</td>
+<td style="text-align: center;">464.5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Jun 1</td>
+<td style="text-align: center;">Buy 50k spot, Sell 10 Jul</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">-431 + (431.25- 483.25) = -483</td>
+<td style="text-align: center;">431</td>
+<td style="text-align: center;">NA</td>
+<td style="text-align: center;">NA</td>
+<td style="text-align: center;">431.25</td>
+</tr>
+</tbody>
+</table>
+<p>The ‘crush’ hedges are a little more complicated because they involve buying a certain kind of commodity, transforming it, and selling another commodity. Some are lucky in that they can hedge both the buy and sell side of the crushing business.</p>
+</section>
+<section id="soybean-crusher" class="level3" data-number="4.2.3">
+<h3 data-number="4.2.3" class="anchored" data-anchor-id="soybean-crusher"><span class="header-section-number">4.2.3</span> Soybean Crusher</h3>
+<p>The soybean crusher buys soybeans and sells soybean meal and oil. Their futures hedge would involve buying soybean futures and selling meal and oil futures.</p>
+</section>
+<section id="importance-of-having-a-line-of-credit-in-futures-hedging" class="level3" data-number="4.2.4">
+<h3 data-number="4.2.4" class="anchored" data-anchor-id="importance-of-having-a-line-of-credit-in-futures-hedging"><span class="header-section-number">4.2.4</span> Importance of Having a Line of Credit in Futures Hedging</h3>
+<p>Anyone who is hedging with futures – whether they be farmers, flour mills, or commercial grain handlers – must have a line of credit in place to meet margin calls in the event that the market is moving against their hedge. For example, the farmer sells futures as a hedge against her cash sale at a later date. If the price starts moving up, the grain she will sell in the cash market is worth more, but the futures hedge is losing money. As the short hedge is losing money, margin needs to be maintained in their hedging account. If prices move against the hedge a lot, additional money will need to be deposited to keep sufficient margin in the account. Usually, this will need to come from a lender. The lender knows it is a safe loan because prices are going up, the cash sale will cover any losses in the futures account. Without the ability to access a line of credit and maintain margin, the short hedge position will be forced to liquidate, and then the farmer will no longer be hedged.</p>
+</section>
+<section id="how-crop-revanue-insurance-has-changed-commodity-marketing-and-hedging-needs" class="level3" data-number="4.2.5">
+<h3 data-number="4.2.5" class="anchored" data-anchor-id="how-crop-revanue-insurance-has-changed-commodity-marketing-and-hedging-needs"><span class="header-section-number">4.2.5</span> How Crop Revanue Insurance Has Changed Commodity Marketing and Hedging Needs</h3>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./03-HowtoFind.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">How to Find Information</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./05-Options1.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Introduction to Option Contracts</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
