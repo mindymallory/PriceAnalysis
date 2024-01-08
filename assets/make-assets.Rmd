@@ -617,10 +617,10 @@ ggsave(CornUse, filename = "PrimerforGrain_CornUse.png")
 ```{r}
 tmp1 <- tempfile(fileext = ".xlsx")
 
-httr::GET(url = "https://www.ers.usda.gov/webdocs/DataFiles/52218/OilCropsAllTables.xlsx?v=3685",
+httr::GET(url = "https://www.ers.usda.gov/webdocs/DataFiles/52218/OilCropsAllTables.xlsx?v=486",
           write_disk( tmp1) )
 
-
+# old ""https://www.ers.usda.gov/webdocs/DataFiles/52218/OilCropsAllTables.xlsx?v=3685"
 
 data_xl <- read_excel(tmp1, sheet = "tab3", 
                      skip = 6, 
@@ -630,8 +630,8 @@ data_xl <- read_excel(tmp1, sheet = "tab3",
 
 # Make tidy getting ready for ggplot
 data_xl$Prices <- as.numeric(data_xl$Prices)
-data_xl <- data_xl[1:40,]  # Increase this by one to update. Have to cut off junk at bottom
-data_xl$MktYear <- str_sub(data_xl$MktYear,1,nchar(data_xl$MktYear)-3) 
+data_xl <- data_xl[1:43,]  # Increase this by one to update. Have to cut off junk at bottom
+data_xl$MktYear <- str_sub(data_xl$MktYear,1,4) 
 data_xl$MktYear <- as.numeric(data_xl$MktYear)
 data_tidy <- data_xl %>% 
   pivot_longer(c(-MktYear), names_to = "UseCategory", values_to = "Value")
@@ -871,6 +871,8 @@ corn2 <- data1 %>%
     filter( commodity_desc == "CORN" | commodity_desc == "SOYBEANS") %>%
     filter(statisticcat_desc == "PRICE RECEIVED") %>%
     filter(reference_period_desc == "MARKETING YEAR") %>% 
+    mutate(year = as.numeric(year)) %>% 
+    filter(year> 1910) %>% 
     select(c(commodity_desc, year, Value )) %>% 
     pivot_wider(names_from = "commodity_desc", values_from = "Value", values_fn = {mean}) %>% 
     mutate(CornSoyRatio = lead(CORN, 2)/lead(SOYBEANS, 2)*100), 
@@ -912,6 +914,7 @@ corn2 <- data1 %>%
   filter( domaincat_desc == "NOT SPECIFIED") %>% 
   filter(source_desc == "SURVEY") %>%
   select(c(year, commodity_desc, statisticcat_desc, Value )) %>% 
+  mutate(year = as.numeric(year)) %>% 
   filter(year > 1998) %>% 
   pivot_wider(names_from = 'statisticcat_desc', values_from = "Value") %>%
   mutate(DIFFERENCE = `AREA PLANTED` - `AREA HARVESTED`) %>% 
@@ -932,6 +935,7 @@ corn2 <- data1 %>%
   filter( commodity_desc == "CORN" ) %>%
   filter(statisticcat_desc == "YIELD") %>%
   select(c(year, commodity_desc, statisticcat_desc, Value )) %>% 
+  mutate(year = as.numeric(year)) %>% 
   ggplot(aes(x = year, y = Value)) + 
   geom_line(color = "black", size = .75) +
   geom_smooth(method = "lm", color = purduegold) +
@@ -946,6 +950,7 @@ ggsave("ForecastProduction-yieldsall.png")
 corn2 <- data1 %>% 
   filter( commodity_desc == "CORN" ) %>%
   filter(statisticcat_desc == "YIELD") %>%
+  mutate(year = as.numeric(year)) %>% 
   filter(year >= 1950) %>% 
   select(c(year, commodity_desc, statisticcat_desc, Value )) %>% 
   ggplot(aes(x = year, y = Value)) + 
@@ -963,6 +968,7 @@ ggsave("ForecastProduction-yields1950.png")
 corn2 <- data1 %>% 
   filter( commodity_desc == "CORN" ) %>%
   filter(statisticcat_desc == "YIELD") %>%
+  mutate(year = as.numeric(year)) %>% 
   filter(year >= 1980) %>% 
   select(c(year, commodity_desc, statisticcat_desc, Value )) %>% 
   ggplot(aes(x = year, y = Value)) + 
@@ -980,6 +986,7 @@ ggsave("ForecastProduction-yields1980.png")
 temp1 <- data1 %>% 
   filter( commodity_desc == "CORN" ) %>%
   filter(statisticcat_desc == "YIELD") %>%
+  mutate(year = as.numeric(year)) %>% 
   filter(year >= 1980) %>% 
   select(c(year, commodity_desc, statisticcat_desc, Value ))
   
@@ -988,6 +995,7 @@ temp1 <- lm(Value ~ year, temp1)
 temp <- data1 %>% 
   filter( commodity_desc == "CORN" ) %>%
   filter(statisticcat_desc == "YIELD") %>%
+  mutate(year = as.numeric(year)) %>% 
   filter(year >= 1950) %>% 
   select(c(year, commodity_desc, statisticcat_desc, Value ))
   
@@ -997,6 +1005,7 @@ temp <- lm(Value ~ year, temp)
 corn2 <- data1 %>% 
   filter( commodity_desc == "CORN" ) %>%
   filter(statisticcat_desc == "YIELD") %>%
+  mutate(year = as.numeric(year)) %>% 
   filter(year >= 1980) %>% 
   select(c(year, commodity_desc, statisticcat_desc, Value )) %>% 
   mutate(LevelDeviation = Value - (temp1$coefficients[1] + temp1$coefficients[2]*year)) %>% 
@@ -1013,6 +1022,7 @@ ggsave("ForecastProduction-LevelDeviation.png")
 corn2 <- data1 %>% 
   filter( commodity_desc == "CORN" ) %>%
   filter(statisticcat_desc == "YIELD") %>%
+  mutate(year = as.numeric(year)) %>% 
   filter(year >= 1980) %>% 
   select(c(year, commodity_desc, statisticcat_desc, Value )) %>% 
   mutate(LevelDeviation = 100*(log(Value) - log((temp1$coefficients[1] + temp1$coefficients[2]*year)))) %>% 
@@ -1067,6 +1077,7 @@ colnames(dataY) <- c("year", "Yield")
 temp1 <- lm(Yield ~ year, dataY)
 
 inner_join(dataGE, dataY, by = "year") %>%
+   mutate(year = as.numeric(year)) %>% 
   mutate(`Percent Deviation from Trend` = 100*(log(Yield) - log((temp1$coefficients[1] + temp1$coefficients[2]*year)))) %>% 
   pivot_longer(cols = c(`% Good + Excellent`, `Percent Deviation from Trend`), names_to = "Series", values_to = "Value") %>% 
   ggplot(aes(x = year, y = Value, color = Series)) + 
@@ -1079,6 +1090,7 @@ ggsave("ForecastProduction-PercDeviationVSGE.png")
 
 
 inner_join(dataGE, dataY, by = "year") %>%
+  mutate(year = as.numeric(year)) %>% 
   mutate(`Percent Deviation from Trend` = 100*(log(Yield) - log((temp1$coefficients[1] + temp1$coefficients[2]*year)))) %>% 
   ggplot(aes(x = `% Good + Excellent`, y = `Percent Deviation from Trend`)) + 
   geom_point() + 
@@ -1656,21 +1668,31 @@ ggsave("ECrushSpread.png" , width = 6, height = 4)
 ```{r}
 S <- read.csv(url(paste0("http://ondemand.websol.barchart.com/getHistory.csv?apikey=", 
                          KEY, 
-                         "&symbol=ZS*1&type=dailyNearest&backAdjust=true&startDate=20060201"))) %>%
+                         "&symbol=ZS*1&type=dailyNearest&backAdjust=false&startDate=20060201"))) %>%
    mutate(tradingDay = as.Date(tradingDay))
 
 BO <- read.csv(url(paste0("http://ondemand.websol.barchart.com/getHistory.csv?apikey=", 
                           KEY, 
-                          "&symbol=ZL*1&type=dailyNearest&backAdjust=true&startDate=20060201"))) %>%
+                          "&symbol=ZL*1&type=dailyNearest&backAdjust=false&startDate=20060201"))) %>%
    mutate(tradingDay = as.Date(tradingDay))
 
 BM <- read.csv(url(paste0("http://ondemand.websol.barchart.com/getHistory.csv?apikey=", 
                           KEY, 
-                          "&symbol=ZM*1&type=dailyNearest&backAdjust=true&startDate=20060201"))) %>%
+                          "&symbol=ZM*1&type=dailyNearest&backAdjust=false&startDate=20060201"))) %>%
    mutate(tradingDay = as.Date(tradingDay))
 
 #S %>% mutate(spread = )
 
 BM %>% ggplot(aes(x = tradingDay, y = close)) + geom_line()
 
+
+df = data.frame(Date = S$tradingDay, y = BO$close*11/100+ BM$close*.022- S$close/100 )
+
+pp <- df %>% ggplot(aes(x = Date, y = y)) + 
+  geom_line() +
+  theme_bw() + 
+  labs(y = "Soybean Crush Spread, $/bu")
+pp
+ggsave("SoyCrushSpread.png" , width = 6, height = 4)
 ```
+

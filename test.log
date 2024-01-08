@@ -1,0 +1,560 @@
+
+! fmtutil: fmtutil is using the following fmtutil.cnf files (in precedence order):
+! fmtutil:   c:/texlive/2023/texmf-dist/web2c/fmtutil.cnf
+! fmtutil: fmtutil is using the following fmtutil.cnf file for writing changes:
+! fmtutil:   c:/users/mindy/.texlive2023/texmf-config/web2c/fmtutil.cnf
+! fmtutil [INFO]: writing formats under c:/users/mindy/.texlive2023/texmf-var/web2c
+! fmtutil [INFO]: --- remaking pdflatex with pdftex
+! fmtutil: running `pdftex -ini   -jobname=pdflatex -progname=pdflatex -translate-file=cp227.tcx *pdflatex.ini' ...
+! This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (INITEX)
+!  restricted \write18 enabled.
+!  (c:/texlive/2023/texmf-dist/web2c/cp227.tcx)
+! entering extended mode
+! (c:/texlive/2023/texmf-dist/tex/latex/tex-ini-files/pdflatex.ini
+! (c:/texlive/2023/texmf-dist/tex/generic/tex-ini-files/pdftexconfig.tex)
+! (c:/texlive/2023/texmf-dist/tex/latex/base/latex.ltx
+! (c:/texlive/2023/texmf-dist/tex/latex/base/texsys.cfg)
+! ./texsys.aux found
+
+
+! \@currdir set to: ./.
+
+
+! Assuming \openin and \input 
+! have the same search path.
+
+
+! Defining UNIX/DOS style filename parser.
+
+! catcodes, registers, parameters,
+! LaTeX2e <2023-11-01>
+! (c:/texlive/2023/texmf-dist/tex/latex/l3kernel/expl3.ltx
+! (c:/texlive/2023/texmf-dist/tex/latex/l3kernel/expl3-code.tex)) hacks,
+! document commands, control, par, spacing, files, font encodings, lengths,
+! ====================================
+
+! Local config file fonttext.cfg used
+
+! ====================================
+! (c:/texlive/2023/texmf-dist/tex/latex/base/fonttext.cfg
+! (c:/texlive/2023/texmf-dist/tex/latex/base/fonttext.ltx
+! === Don't modify this file, use a .cfg file instead ===
+
+! (c:/texlive/2023/texmf-dist/tex/latex/base/omlenc.def)
+! (c:/texlive/2023/texmf-dist/tex/latex/base/omsenc.def)
+! (c:/texlive/2023/texmf-dist/tex/latex/base/ot1enc.def)
+! (c:/texlive/2023/texmf-dist/tex/latex/base/t1enc.def)
+! (c:/texlive/2023/texmf-dist/tex/latex/base/ts1enc.def)
+! (c:/texlive/2023/texmf-dist/tex/latex/base/ts1cmr.fd)
+! (c:/texlive/2023/texmf-dist/tex/latex/base/t1cmr.fd)
+! (c:/texlive/2023/texmf-dist/tex/latex/base/ot1cmr.fd)
+! (c:/texlive/2023/texmf-dist/tex/latex/base/ot1cmss.fd)
+! (c:/texlive/2023/texmf-dist/tex/latex/base/ot1cmtt.fd)))
+! ====================================
+
+! Local config file fontmath.cfg used
+
+! ====================================
+! (c:/texlive/2023/texmf-dist/tex/latex/base/fontmath.cfg
+! (c:/texlive/2023/texmf-dist/tex/latex/base/fontmath.ltx
+! === Don't modify this file, use a .cfg file instead ===
+
+! (c:/texlive/2023/texmf-dist/tex/latex/base/omlcmm.fd)
+! (c:/texlive/2023/texmf-dist/tex/latex/base/omscmsy.fd)
+! (c:/texlive/2023/texmf-dist/tex/latex/base/omxcmex.fd)
+! (c:/texlive/2023/texmf-dist/tex/latex/base/ucmr.fd)))
+! ====================================
+
+! Local config file preload.cfg used
+
+! =====================================
+! (c:/texlive/2023/texmf-dist/tex/latex/base/preload.cfg
+! (c:/texlive/2023/texmf-dist/tex/latex/base/preload.ltx)) page nos., x-ref,
+! environments, center, verbatim, math definitions, boxes, title, sectioning,
+! contents, floats, footnotes, index, bibliography, output,
+! ===========================================
+! Local configuration file hyphen.cfg used
+! ===========================================
+! (c:/texlive/2023/texmf-dist/tex/generic/babel/hyphen.cfg
+! (c:/texlive/2023/texmf-dist/tex/generic/hyphen/hyphen.tex)
+! (c:/texlive/2023/texmf-dist/tex/generic/hyphen/dumyhyph.tex)
+! (c:/texlive/2023/texmf-dist/tex/generic/hyphen/zerohyph.tex)
+! (c:/texlive/2023/texmf-dist/tex/generic/hyphen/zerohyph.tex)
+! (c:/texlive/2023/texmf-dist/tex/generic/hyphen/zerohyph.tex)
+! (c:/texlive/2023/texmf-dist/tex/generic/dehyph-exptl/dehypht-x-2023-03-06.tex
+! dehyph-exptl: using an 8-bit TeX engine.
+! (c:/texlive/2023/texmf-dist/tex/generic/dehyph-exptl/dehypht-x-2023-03-06.pat
+! German Hyphenation Patterns (Traditional Orthography) `dehypht-x' 2023-03-06 (W
+! L)))
+! (c:/texlive/2023/texmf-dist/tex/generic/dehyph-exptl/dehyphn-x-2023-03-06.tex
+! dehyph-exptl: using an 8-bit TeX engine.
+! (c:/texlive/2023/texmf-dist/tex/generic/dehyph-exptl/dehyphn-x-2023-03-06.pat
+! German Hyphenation Patterns (Reformed Orthography, 2006) `dehyphn-x' 2023-03-06
+!  (WL)))
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-af.tex
+! EC Afrikaans hyphenation patterns
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/conversions/conv-utf8-ec.tex)
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-af.tex))
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-grc.tex
+! Hyphenation patterns for Ancient Greek
+! (c:/texlive/2023/texmf-dist/tex/generic/hyphen/grahyph5.tex
+! Hyphenation patterns for Ancient Greek))
+! (c:/texlive/2023/texmf-dist/tex/generic/hyphen/ibyhyph.tex
+! Greek hyphenation patterns for Ibycus encoding, v3.0)
+! (c:/texlive/2023/texmf-dist/tex/generic/hyphen/zerohyph.tex)
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-hy.tex
+! No Armenian hyphenation patterns - only for Unicode engines)
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-eu.tex
+! EC Basque hyphenation patterns
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/conversions/conv-utf8-ec.tex)
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-eu.tex))
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-be.tex
+! T2A Belarusian hyphenation patterns
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/conversions/conv-utf8-t2a.tex
+! ) (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-be.tex))
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-bg.tex
+! T2A Bulgarian hyphenation patterns
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/conversions/conv-utf8-t2a.tex
+! ) (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-bg.tex
+! Bulgarian hyphenation patterns (options: --safe-morphology --standalone-tex, ve
+! rsion 21 October 2017)))
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-ca.tex
+! EC Catalan hyphenation patterns
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/conversions/conv-utf8-ec.tex)
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-ca.tex))
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-zh-latn-pin
+! yin.tex EC Pinyin Hyphenation Patterns (with tone markers) 2018-11-25 (WL)
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/patterns/ptex/hyph-zh-latn-pi
+! nyin.ec.tex))
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-cu.tex
+! No Church Slavonic hyphenation patterns - only for Unicode engines)
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-cop.tex
+! Coptic hyphenation patterns
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/patterns/tex-8bit/copthyph.te
+! x)) (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-hr.tex
+! EC Croatian hyphenation patterns
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/conversions/conv-utf8-ec.tex)
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-hr.tex))
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-cs.tex
+! EC Czech hyphenation patterns
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/conversions/conv-utf8-ec.tex)
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-cs.tex))
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-da.tex
+! EC Danish hyphenation patterns
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/conversions/conv-utf8-ec.tex)
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-da.tex))
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-nl.tex
+! EC Dutch hyphenation patterns
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/conversions/conv-utf8-ec.tex)
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-nl.tex))
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-en-gb.tex
+! ASCII Hyphenation patterns for British English
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-en-gb.tex))
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-en-us.tex
+! ASCII Hyphenation patterns for American English
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-en-us.tex))
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-eo.tex
+! IL3 Esperanto hyphenation patterns
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/conversions/conv-utf8-il3.tex
+! ) (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-eo.tex))
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-et.tex
+! EC Estonian hyphenation patterns
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/conversions/conv-utf8-ec.tex)
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-et.tex))
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-mul-ethi.te
+! x No Pan-Ethiopic hyphenation patterns - only for Unicode engines)
+! (c:/texlive/2023/texmf-dist/tex/generic/hyphen/zerohyph.tex)
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-fi.tex
+! EC Finnish hyphenation patterns
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/conversions/conv-utf8-ec.tex)
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-fi.tex))
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-fi-x-school
+! .tex EC Finnish hyphenation patterns for school
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/conversions/conv-utf8-ec.tex)
+
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-fi-x-school
+! .tex))
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-fr.tex
+! EC French hyphenation patterns
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/conversions/conv-utf8-ec.tex)
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-fr.tex))
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-fur.tex
+! EC Friulan hyphenation patterns
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/conversions/conv-utf8-ec.tex)
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-fur.tex))
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-gl.tex
+! EC Galician hyphenation patterns
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/conversions/conv-utf8-ec.tex)
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-gl.tex))
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-ka.tex
+! T8M Georgian hyphenation patterns
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/conversions/conv-utf8-t8m.tex
+! ) (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-ka.tex))
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-de-1901.tex
+! EC German hyphenation patterns (traditional orthography)
+! (c:/texlive/2023/texmf-dist/tex/generic/dehyph/dehypht.tex
+! German Traditional Hyphenation Patterns `dehypht' Version 3.2a <1999/03/03>
+! (Formerly known under the name `ghyph31' and `ghyphen'.)))
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-de-1996.tex
+! EC German hyphenation patterns (reformed orthography)
+! (c:/texlive/2023/texmf-dist/tex/generic/dehyph/dehyphn.tex
+! New German Hyphenation Patterns `dehyphn' Rev.31 <2001-05-07> (WaS)))
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-de-ch-1901.
+! tex EC Swiss-German hyphenation patterns (traditional orthography)
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/conversions/conv-utf8-ec.tex)
+
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-de-ch-1901.
+! tex
+! Swiss-German Hyphenation Patterns (Traditional Orthography) `dehyphts-x' 2021-0
+! 2-26 (WL)))
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-el-polyton.
+! tex Hyphenation patterns for multi-accent (polytonic) Modern Greek
+! (c:/texlive/2023/texmf-dist/tex/generic/hyphen/grphyph5.tex
+! Hyphenation patterns for multi-accent (polytonic) Modern Greek))
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-el-monoton.
+! tex Hyphenation patterns for uni-accent (monotonic) Modern Greek
+! (c:/texlive/2023/texmf-dist/tex/generic/hyphen/grmhyph5.tex
+! Hyphenation patterns for uni-accent (monotonic) Modern Greek))
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-hu.tex
+! EC Hungarian hyphenation patterns
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/conversions/conv-utf8-ec.tex)
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-hu.tex))
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-is.tex
+! EC Icelandic hyphenation patterns
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/conversions/conv-utf8-ec.tex)
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-is.tex))
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-as.tex
+! No Assamese hyphenation patterns - only for Unicode engines)
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-bn.tex
+! No Bengali hyphenation patterns - only for Unicode engines)
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-gu.tex
+! No Gujarati hyphenation patterns - only for Unicode engines)
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-hi.tex
+! No Hindi hyphenation patterns - only for Unicode engines)
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-kn.tex
+! No Kannada hyphenation patterns - only for Unicode engines)
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-ml.tex
+! No Malayalam hyphenation patterns - only for Unicode engines)
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-mr.tex
+! No Marathi hyphenation patterns - only for Unicode engines)
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-or.tex
+! No Oriya hyphenation patterns - only for Unicode engines)
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-pi.tex
+! No Pali hyphenation patterns - only for Unicode engines)
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-pa.tex
+! No Panjabi hyphenation patterns - only for Unicode engines)
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-ta.tex
+! No Tamil hyphenation patterns - only for Unicode engines)
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-te.tex
+! No Telugu hyphenation patterns - only for Unicode engines)
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-id.tex
+! ASCII Indonesian hyphenation patterns
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-id.tex))
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-ia.tex
+! ASCII Hyphenation patterns for Interlingua
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-ia.tex))
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-ga.tex
+! EC Irish hyphenation patterns
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/conversions/conv-utf8-ec.tex)
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-ga.tex))
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-it.tex
+! ASCII Italian hyphenation patterns
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-it.tex))
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-kmr.tex
+! EC Kurmanji hyphenation patterns
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/conversions/conv-utf8-ec.tex)
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-kmr.tex))
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-la-x-classi
+! c.tex EC Classical Latin hyphenation patterns, v.2.0 2019-07-03
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/patterns/tex-8bit/hyph-la-x-c
+! lassic.ec.tex))
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-la.tex
+! EC Latin hyphenation patterns
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/conversions/conv-utf8-ec.tex)
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-la.tex))
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-la-x-liturg
+! ic.tex EC Liturgical Latin hyphenation patterns
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/patterns/ptex/hyph-la-x-litur
+! gic.ec.tex))
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-lv.tex
+! L7X Latvian hyphenation patterns
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/conversions/conv-utf8-l7x.tex
+! ) (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-lv.tex))
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-lt.tex
+! L7X Lithuanian hyphenation patterns
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/conversions/conv-utf8-l7x.tex
+! ) (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-lt.tex))
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-mk.tex
+! MACEDONIAN Macedonian hyphenation patterns
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/patterns/tex-8bit/hyph-mk.mac
+! edonian.tex))
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-mn-cyrl.tex
+! T2A (New) Mongolian hyphenation patterns
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/conversions/conv-utf8-t2a.tex
+! )
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-mn-cyrl.tex
+! ))
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-mn-cyrl-x-l
+! mc.tex LMC Mongolian hyphenation patterns
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/conversions/conv-utf8-lmc.tex
+! )
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-mn-cyrl-x-l
+! mc.tex))
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-nb.tex
+! EC Norwegian Bokmal hyphenation patterns
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/conversions/conv-utf8-ec.tex)
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-nb.tex
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-no.tex)))
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-nn.tex
+! EC Norwegian Nynorsk hyphenation patterns
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/conversions/conv-utf8-ec.tex)
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-nn.tex
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-no.tex)))
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-oc.tex
+! EC Occitan hyphenation patterns
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/conversions/conv-utf8-ec.tex)
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-oc.tex))
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-pms.tex
+! ASCII Piedmontese hyphenation patterns
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-pms.tex))
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-pl.tex
+! QX Polish hyphenation patterns
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/conversions/conv-utf8-qx.tex)
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-pl.tex))
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-pt.tex
+! EC Portuguese hyphenation patterns
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/conversions/conv-utf8-ec.tex)
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-pt.tex))
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-ro.tex
+! EC Romanian hyphenation patterns
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/conversions/conv-utf8-ec.tex)
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-ro.tex))
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-rm.tex
+! ASCII Romansh hyphenation patterns
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-rm.tex))
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-ru.tex
+! T2A Russian hyphenation patterns
+! (c:/texlive/2023/texmf-dist/tex/generic/ruhyphen/ruhyphen.tex
+! (c:/texlive/2023/texmf-dist/tex/generic/ruhyphen/catkoi.tex)
+! (c:/texlive/2023/texmf-dist/tex/generic/ruhyphen/koi2t2a.tex)
+! (c:/texlive/2023/texmf-dist/tex/generic/ruhyphen/ruhyphal.tex)
+! (c:/texlive/2023/texmf-dist/tex/generic/ruhyphen/cyryoal.tex)
+! (c:/texlive/2023/texmf-dist/tex/generic/ruhyphen/hypht2.tex)))
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-sa.tex
+! No Sanskrit hyphenation patterns - only for Unicode engines)
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-sr-latn.tex
+! EC Serbian hyphenation patterns in Latin script
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/conversions/conv-utf8-ec.tex)
+
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-sh-latn.tex
+! ))
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-sr-cyrl.tex
+! T2A Serbian hyphenation patterns in Cyrillic script
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/conversions/conv-utf8-t2a.tex
+! )
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-sh-cyrl.tex
+! )) (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-sk.tex
+! EC Slovak hyphenation patterns
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/conversions/conv-utf8-ec.tex)
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-sk.tex))
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-sl.tex
+! EC Slovenian hyphenation patterns
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/conversions/conv-utf8-ec.tex)
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-sl.tex))
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-es.tex
+! EC Spanish hyphenation patterns
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/conversions/conv-utf8-ec.tex)
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-es.tex))
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-sv.tex
+! EC Swedish hyphenation patterns
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/conversions/conv-utf8-ec.tex)
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-sv.tex))
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-th.tex
+! LTH Thai hyphenation patterns
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/conversions/conv-utf8-lth.tex
+! ) (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-th.tex))
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-tr.tex
+! EC Turkish hyphenation patterns
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/conversions/conv-utf8-ec.tex)
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-tr.tex))
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-tk.tex
+! EC Turkmen hyphenation patterns
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/conversions/conv-utf8-ec.tex)
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-tk.tex))
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-uk.tex
+! T2A Ukrainian hyphenation patterns
+! (c:/texlive/2023/texmf-dist/tex/generic/ukrhyph/ukrhyph.tex
+! Ukrainian hyphenation patterns in t2a encoding
+! (c:/texlive/2023/texmf-dist/tex/generic/ukrhyph/catlcy.tex)
+! (c:/texlive/2023/texmf-dist/tex/generic/ukrhyph/lcy2t2a.tex)
+! (c:/texlive/2023/texmf-dist/tex/generic/ukrhyph/ukrhypmp.tex)
+! (c:/texlive/2023/texmf-dist/tex/generic/ruhyphen/hypht2.tex)))
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-hsb.tex
+! EC Upper Sorbian hyphenation patterns
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/conversions/conv-utf8-ec.tex)
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-hsb.tex))
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-cy.tex
+! EC Welsh hyphenation patterns
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/conversions/conv-utf8-ec.tex)
+! (c:/texlive/2023/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-cy.tex)))
+! (c:/texlive/2023/texmf-dist/tex/generic/pdftex/glyphtounicode.tex)
+! (c:/texlive/2023/texmf-dist/tex/latex/base/utf8.def
+! (c:/texlive/2023/texmf-dist/tex/latex/base/omsenc.dfu)
+! (c:/texlive/2023/texmf-dist/tex/latex/base/ot1enc.dfu)
+! (c:/texlive/2023/texmf-dist/tex/latex/base/t1enc.dfu)
+! (c:/texlive/2023/texmf-dist/tex/latex/base/ts1enc.dfu))
+! (c:/texlive/2023/texmf-dist/tex/latex/firstaid/latex2e-first-aid-for-external-f
+! iles.ltx)
+!  ) )
+! Beginning to dump on file pdflatex.fmt
+!  (preloaded format=pdflatex 2023.12.21)
+! 25825 strings of total length 500303
+! 1923646 memory locations dumped; current usage is 204&371773
+! 22406 multiletter control sequences
+! \font\nullfont=nullfont
+! \font\c__fp_exp_intarray=cmr10 at 0.00002pt
+! \font\c__fp_trig_intarray=cmr10 at 0.00003pt
+! \font\c_initex_cctab=cmr10 at 0.00005pt
+! \font\c_other_cctab=cmr10 at 0.00006pt
+! \font\c_str_cctab=cmr10 at 0.00008pt
+! \font\g_tmpa_cctab=cmr10 at 0.00009pt
+! \font\g_tmpb_cctab=cmr10 at 0.0001pt
+! \font\g__regex_state_active_intarray=cmr10 at 0.00012pt
+! \font\g__regex_thread_info_intarray=cmr10 at 0.00014pt
+! \font\g__regex_submatch_prev_intarray=cmr10 at 0.00015pt
+! \font\g__regex_submatch_begin_intarray=cmr10 at 0.00017pt
+! \font\g__regex_submatch_end_intarray=cmr10 at 0.00018pt
+! \font\g__regex_submatch_case_intarray=cmr10 at 0.0002pt
+! \font\g__regex_balance_intarray=cmr10 at 0.00021pt
+! \font\g__codepoint_category_index_intarray=cmr10 at 0.00023pt
+! \font\g__codepoint_uppercase_index_intarray=cmr10 at 0.00024pt
+! \font\g__codepoint_lowercase_index_intarray=cmr10 at 0.00026pt
+! \font\g__codepoint_category_blocks_intarray=cmr10 at 0.00027pt
+! \font\g__codepoint_uppercase_blocks_intarray=cmr10 at 0.00029pt
+! \font\g__codepoint_lowercase_blocks_intarray=cmr10 at 0.0003pt
+! \font\OMX/cmex/m/n/10=cmex10
+! \font\tenln=line10
+! \font\tenlnw=linew10
+! \font\tencirc=lcircle10
+! \font\tencircw=lcirclew10
+! \font\OT1/cmr/m/n/5=cmr5
+! \font\OT1/cmr/m/n/7=cmr7
+! \font\OT1/cmr/m/n/10=cmr10
+! \font\OML/cmm/m/it/5=cmmi5
+! \font\OML/cmm/m/it/7=cmmi7
+! \font\OML/cmm/m/it/10=cmmi10
+! \font\OMS/cmsy/m/n/5=cmsy5
+! \font\OMS/cmsy/m/n/7=cmsy7
+! \font\OMS/cmsy/m/n/10=cmsy10
+! \font\c_code_cctab=cmr10 at 0.00032pt
+! \font\c_document_cctab=cmr10 at 0.00034pt
+! 558062 words of font info for 36 preloaded fonts
+! 1141 hyphenation exceptions
+! Hyphenation trie of length 428923 has 8835 ops out of 35111
+!   143 for language 88
+!   110 for language 87
+!   138 for language 86
+!   7 for language 85
+!   12 for language 84
+!   53 for language 83
+!   127 for language 82
+!   195 for language 81
+!   71 for language 80
+!   248 for language 79
+!   62 for language 78
+!   66 for language 77
+!   119 for language 75
+!   43 for language 74
+!   58 for language 73
+!   7 for language 72
+!   194 for language 71
+!   37 for language 70
+!   23 for language 69
+!   852 for language 68
+!   852 for language 67
+!   21 for language 66
+!   38 for language 65
+!   38 for language 64
+!   77 for language 63
+!   58 for language 62
+!   206 for language 61
+!   25 for language 60
+!   216 for language 59
+!   27 for language 58
+!   37 for language 57
+!   229 for language 56
+!   38 for language 55
+!   21 for language 54
+!   147 for language 41
+!   185 for language 40
+!   18 for language 39
+!   50 for language 38
+!   420 for language 37
+!   235 for language 36
+!   207 for language 35
+!   39 for language 34
+!   76 for language 33
+!   40 for language 32
+!   89 for language 31
+!   6 for language 30
+!   31 for language 29
+!   113 for language 26
+!   145 for language 25
+!   377 for language 24
+!   224 for language 23
+!   265 for language 22
+!   60 for language 21
+!   63 for language 20
+!   19 for language 19
+!   14 for language 18
+!   3 for language 16
+!   21 for language 15
+!   54 for language 14
+!   36 for language 13
+!   5 for language 12
+!   148 for language 9
+!   97 for language 8
+!   137 for language 7
+!   440 for language 6
+!   440 for language 5
+!   2 for language 1
+!   181 for language 0
+! 0 words of pdfTeX memory
+! 0 indirect objects
+! No pages of output.
+! Transcript written on pdflatex.log.
+! fmtutil [INFO]: log file copied to: c:/users/mindy/.texlive2023/texmf-var/web2c/pdftex/pdflatex.log
+! fmtutil [INFO]: c:/users/mindy/.texlive2023/texmf-var/web2c/pdftex/pdflatex.fmt installed.
+! fmtutil [INFO]: disabled formats: 3
+! fmtutil [INFO]: successfully rebuilt formats: 1
+! fmtutil [INFO]: not selected formats: 51
+! fmtutil [INFO]: total formats: 55
+! fmtutil [INFO]: 
+! *************************************************************
+! *                                                           *
+! * WARNING: you are switching to fmtutil's per-user formats. *
+! *         Please read the following warnings!               *
+! *                                                           *
+! *************************************************************
+
+! You have run fmtutil-user (as opposed to fmtutil-sys) for the first time;
+! this has created format files which are local to your personal account.
+
+! From now on, any changes in system formats will *not* be automatically
+! reflected in your files; furthermore, running fmtutil-sys will no longer
+! have any effect for you.
+
+! As a consequence, you yourself have to rerun fmtutil-user after any
+! change in the system directories. For example, when one of the LaTeX or
+! other format source files changes, which happens frequently.
+! See https://tug.org/texlive/scripts-sys-user.html for details.
+
+! If you want to undo this, remove the files mentioned above.
+
+! Run fmtutil --help for full documentation of fmtutil.
+! fmtutil [INFO]: exiting with status 0
+! Running the command C:\texlive\2023\bin\windows\fmtutil-user.exe
+
+! kpathsea: Running mktexfmt pdflatex.fmt
+
+! The command name is C:\texlive\2023\bin\windows\mktexfmt

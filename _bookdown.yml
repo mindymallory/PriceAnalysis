@@ -1,7 +1,0 @@
-book_filename: "price-analysis"
-chapter_name: "Chapter "
-repo: https://github.com/mindymallory/PriceAnalysis
-output_dir: docs
-rmd_files: 
-clean: [packages.bib, bookdown.bbl]
-new_session: yes

@@ -1,0 +1,66 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "Price Analysis: A Fundamental Approach to the Study of Commodity Prices"
+  author: "Mindy Mallory"
+  search: true
+  repo-url: https://github.com/mindymallory/PriceAnalysis
+  repo-actions: [edit]
+  downloads: [pdf, epub]
+  sharing: [twitter, facebook]
+  date: '2023-12-21'
+  cover-image: cover.jpg
+  image: cover.jpg
+  favicon: cover.jpg
+  open-graph: true
+  google-analytics: 'G-8C738FZXS8'
+  site-url: http://mindymallory.com/PriceAnalysis/
+  
+  chapters:
+    - index.qmd
+    - 01-PrimerforGrain.qmd
+    - 02-IntroductiontoCommodity.qmd
+    - 03-HowtoFind.qmd
+    - 04-FuturesContractsandHedging.qmd
+    - 05-Options1.qmd
+    - 06-Options2.qmd
+    - 07-Options4.qmd
+    - 08-Options3.qmd
+    - 09-PricesSpaceTime.qmd
+    - 10-FundamentalAnalysisand.qmd
+    - 11-PriceReactionto.qmd
+    - 12-ForecastingProduction.qmd
+    - 13-ForecastingUseof.qmd
+    - 14-ForecastingUseSoy.qmd
+    - 15-EndingStocksand.qmd
+    - 16-TheSoybeanCrush.qmd
+    - 17-EthanolMarketsand.qmd
+    - 18-BeefCattleMarkets.qmd
+    - 19-HogMarkets.qmd
+    - 20-CrudeOiland.qmd
+    - 21-ForecastingProductionAdvanced.qmd
+    - 22-IntroductiontoCommodityTS.qmd
+    - 23-IntroductiontoSingle.qmd
+    - 24-A-South-American-Production.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  pdf:
+    documentclass: scrreprt
+    cover-image: cover.jpg
+  epub:
+    cover-image: cover.jpg
+    
+  html:
+    theme: 
+      - cosmo
+      - r4ds.scss
+    
+
+
+editor: visual
+
