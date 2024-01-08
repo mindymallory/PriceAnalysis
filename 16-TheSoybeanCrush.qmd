@@ -1,6 +1,6 @@
 # The Soybean Crush
 
-<span style="color:red">Interested in more? Please let me know by</span> [taking the survey](https://forms.gle/Q3VByCQZHjfQSy9D7)! 
+[Interested in more? Please let me know by]{style="color:red"} [taking the survey](https://forms.gle/Q3VByCQZHjfQSy9D7)!
 
 In this Chapter we describe the physical process of converting soybeans into meal and oil, as well as the price relationship that is maintained between these highly related commodities. We saw in the chapter, 'Forecasting Use of Soybeans in the WASDE Balance Sheet,' that approximately half of the supply of soybeans in the U.S. is crushed into soybean meal and oil. Nearly all of the remainder of soybean supply is exported where most of it will be crushed abroad.
 
@@ -72,31 +72,7 @@ So, adjusting equation 2. we get the expression for the **Crush Spread**.
 
 and this represents the **Gross Processing Margin** (GPM) for the soybean crushing plant. This spread is followed by industry participants as a gauge of profitability in the industry and as a signal of whether to expect expansion or contraction in the crush business.
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE, rows.print = 100, cols.print = 6}
-
-library(ggplot2)
-library(xts)
-name <- c("Date", "Beans", "Oil", "Meal")
-
-data <- read.csv('Excel-files/soy-crush.csv', header = FALSE, col.names = name, colClasses = c("character", "numeric", "numeric", "numeric"))
-
-data <- as.xts(data[,-1], order.by = as.POSIXct(data$Date), format = "%d/%m/%Y")
-
-crush_spread <- data$Oil*11/100 + data$Meal*0.022 - data$Beans/100
-
-
-
-g <- autoplot(crush_spread) + theme_bw() +  
-      theme(axis.title.x = element_blank()) +   # Remove x-axis label
-      ylab("GPM $/bushel") + 
-      scale_fill_brewer(palette = 'Accent')  +
-      ggtitle("Figure 1: GPM of Soybean Crushing using Nearby Contracts")
-
-g
-
-```
-
-Source: [Quandl.com](www.Quandl.com)
+![](assets/SoyCrushSpread.png)
 
 ## The Board Crush
 
@@ -159,9 +135,9 @@ So the quantities match except for being under hedged by 10,000 lbs in soybean o
 
 1.  [How the Global Oilseed and Grain Trade Works](http://unitedsoybean.org/wp-content/uploads/2013/07/RevisedJan12_GlobalOilSeedGrainTrade_2011.pdf)
 
-A publication prepared for the [United Soybean Board](http://unitedsoybean.org/), a marketing association of for American soybean farmers and funded by the soybean checkoff.[^thesoybeancrush-1]
+A publication prepared for the [United Soybean Board](http://unitedsoybean.org/), a marketing association of for American soybean farmers and funded by the soybean checkoff.[^16-thesoybeancrush-1]
 
-[^thesoybeancrush-1]: Funds raised by every soybean farmer contributing 0.5% of the market price of every bushel of soybeans sold are directed by the United Soybean Board. This group engages in research and market development and expansion activities.
+[^16-thesoybeancrush-1]: Funds raised by every soybean farmer contributing 0.5% of the market price of every bushel of soybeans sold are directed by the United Soybean Board. This group engages in research and market development and expansion activities.
 
 2.  [Central IL Soybean Crush Margins Among Highest Ever](http://www.dtnprogressivefarmer.com/dtnag/common/link.do;jsessionid=CA98693F5E3C9EF37EC1F032464A6388.agfreejvm1?symbolicName=/ag/blogs/template1&blogHandle=agfundamental&blogEntryId=8a82c0bc372e8fba0137a8324dd704cf)
 
