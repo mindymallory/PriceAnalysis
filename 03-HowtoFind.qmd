@@ -1,6 +1,6 @@
 # How to Find Information
 
-<span style="color:red">Interested in more? Please let me know by</span> [taking the survey](https://forms.gle/Q3VByCQZHjfQSy9D7)! 
+[Interested in more? Please let me know by]{style="color:red"} [taking the survey](https://forms.gle/Q3VByCQZHjfQSy9D7)!
 
 This chapter serves as an introduction to real-time and historical data sources, as well as an introduction to the analysts that conduct price analysis professionally and help us make sense of commodity prices. First, we will introduce the reader to some entities that provide market commentary and price analysis. Next, we will provide a very brief introduction to futures markets as the source of real-time price information for commodities. This section also covers where and how to obtain current futures price quotes. In the section that follows we cover sources for historical data such as the United States Department of Agriculture and others. These sources will be useful in developing fundamental price models in later chapters. The goal of this chapter is to get the reader up to speed on where to get commodity price data and reading the professional analysis daily. The more you follow commodity markets, the more you learn. Absorb the insights of the professionals who live and breath commodity markets every day, and you will begin to have a feel for what price analysis is all about and how it works.
 
@@ -8,17 +8,12 @@ This chapter serves as an introduction to real-time and historical data sources,
 
 The best way to learn commodity price analysis is to listen to the professionals who provide commentary on the markets on a regular basis. Land grant universities located in major commodity producing states all have components of their outreach programs dedicated to market commentary. The University of Illinois' web extension program, FARMDOC, is particularly good. Also, public radio in major commodity producing areas has excellent coverage. Champaign-Urbana's WILL, and Iowa Public Televisions' Market to Market are very good. There are *many* other great sources providing regular commentary, but this will get the reader started.
 
-+--------------------------+----------------------------------------------------+-----------------------------------------------------------------------+
 | Outlet                   | Description                                        | Link                                                                  |
-+:=========================+:===================================================+:======================================================================+
+|:----------------|:----------------------|:-------------------------------|
 | Farmdoc Daily            | Extension web presence by the department of ACE    | [farmdocdaily.illinois.edu](http://farmdocdaily.illinois.edu)         |
-+--------------------------+----------------------------------------------------+-----------------------------------------------------------------------+
 | WILL Agriculture         | WILL and the University of Illinois Extension      | [will.illinois.edu/agriculture](http://will.illinois.edu/agriculture) |
-+--------------------------+----------------------------------------------------+-----------------------------------------------------------------------+
 | Market to Market         | Agricultural programming by Iowa Public Television | [www.iptv.org/mtom/](http://www.iptv.org/mtom/)                       |
-+--------------------------+----------------------------------------------------+-----------------------------------------------------------------------+
 | Center for Commercial Ag | Purdue University Ag Econ                          | <https://ag.purdue.edu/commercialag/home/>                            |
-+--------------------------+----------------------------------------------------+-----------------------------------------------------------------------+
 
 : Table 1. Resources for Commodity Market Commentary
 
@@ -36,33 +31,29 @@ Real-time (10-min delay) data can be obtained directly from the CME Group's webs
 
 Contracts for several different expiry dates trade at the same time. There is a useful shorthand for finding contracts for a specific commodity and expiration month that varies only slightly among data vendors; all follow a general convention for building futures ticker symbols customizing only to meet the needs of their individual systems. The table below lists selected grain and oilseed, livestock, and energy contract symbols, expiration symbols, and common ticker formats used to search for price quotes. For example, the first row of the table illustrates that the general convention for representing the CBOT corn futures contract expiring in December of 2021 is CZ21. The first letter represents the commodity symbol, C for corn; the second letter represents the expiration month, Z for December; and the final two numerals represent the year of expiry, 21for 2021.
 
-**Some Common Commodity Contract Tickers, with Barchart and TradingView Ticker Styles**
+**Some Common Commodity Contract Tickers, with Barchart Ticker Style**
 
--   Corn, March (H), May (K), July (N), September (U), December (Z), [ZCZ21](https://www.barchart.com/futures/quotes/ZCZ21/overview), [ZCZ2021](www.tradingview.com)
+-   Corn, March (H), May (K), July (N), September (U), December (Z), [ZCZ21](https://www.barchart.com/futures/quotes/ZCZ21/overview)
 
--   Soybeans, January (F), March (H), May (K), July (N), August (Q), September (U), November (X), [ZSX21](https://www.barchart.com/futures/quotes/ZSX21/overview), [ZSX2021](www.tradingview.com)
+-   Soybeans, January (F), March (H), May (K), July (N), August (Q), September (U), November (X), [ZSX21](https://www.barchart.com/futures/quotes/ZSX21/overview)
 
--   HRW Wheat, March (H), May (K), July (N), September (U), December (Z), [KEZ21](https://www.barchart.com/futures/quotes/KEZ21/overview), [KEZ2021](www.tradingview.com)
+-   HRW Wheat, March (H), May (K), July (N), September (U), December (Z), [KEZ21](https://www.barchart.com/futures/quotes/KEZ21/overview)
 
--   SRW Wheat, March (H), May (K), July (N), September (U), December (Z), [ZWZ21](https://www.barchart.com/futures/quotes/ZWZ21/overview), [ZWZ2021](https://wwwww.tradingview.com)
+-   SRW Wheat, March (H), May (K), July (N), September (U), December (Z), [ZWZ21](https://www.barchart.com/futures/quotes/ZWZ21/overview)
 
--   HRS Wheat, March (H), May (K), July (N), September (U), December (Z), [MWZ21](https://www.barchart.com/futures/quotes/MWZ21/overview), [MWZ2021](www.tradingview.com)
+-   HRS Wheat, March (H), May (K), July (N), September (U), December (Z), [MWZ21](https://www.barchart.com/futures/quotes/MWZ21/overview)
 
--   Live Cattle, Feb (G), Apr (J), Jun (M), Aug (Q), Oct (V), Dec (Z), [LEZ21](https://www.barchart.com/futures/quotes/LEZ21/overview), [LEZ2021](https:/www.tradingview.com)
+-   Live Cattle, Feb (G), Apr (J), Jun (M), Aug (Q), Oct (V), Dec (Z), [LEZ21](https://www.barchart.com/futures/quotes/LEZ21/overview)
 
--   Lean Hogs, Feb (G), Apr (J), May (K), Jun (M), Jul (N), Aug (Q), Oct (V), Dec (Z), [HEZ21](httphttps://www.barchart.com/futures/quotes/HEZ21/overview), [HEZ2021](https:/www.tradingview.com)
+-   Lean Hogs, Feb (G), Apr (J), May (K), Jun (M), Jul (N), Aug (Q), Oct (V), Dec (Z), [HEZ21](httphttps://www.barchart.com/futures/quotes/HEZ21/overview)
 
 Table 3 provides some links to spread charts for commodity spreads we will cover in this class.
 
-+---------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Spread        | Link                                                                                                                                                                                     |
-+:==============+:=========================================================================================================================================================================================+
-| Soybean Crush | [Barchart Spread Chart](https://www.barchart.com/futures/quotes/CSZ18/interactive-chart)                                                                                                 |
-+---------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Cattle Crush  | [ISU Spread Calculation](http://www2.econ.iastate.edu/estimated-returns/Finishing%20Steer%20Calves%20Chart.pdf) [ISU Livestock Returns](http://www2.econ.iastate.edu/estimated-returns/) |
-+---------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Corn Crush    | [ISU Ethanol Grind Margin](https://www.extension.iastate.edu/agdm/energy/html/d1-10.html) (Download Ethanol Profitability spreadsheet. Look at Grind Margin chart)                       |
-+---------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Spread        | Link                                                                                                                                                                                                                             |
+|:------------|:----------------------------------------------------------|
+| Soybean Crush | [Barchart Spread Chart](https://www.barchart.com/futures/quotes/ZS*1/technical-chart?plot=LINE&volume=contract&data=DO&density=M&pricesOn=1&asPctChange=0&logscale=0&sym=ZS*1-ZS*2&grid=1&height=500&studyheight=100&isSpread=1) |
+| Cattle Crush  | [ISU Spread Calculation](http://www2.econ.iastate.edu/estimated-returns/Finishing%20Steer%20Calves%20Chart.pdf) [ISU Livestock Returns](http://www2.econ.iastate.edu/estimated-returns/)                                         |
+| Corn Crush    | [ISU Ethanol Grind Margin](https://www.extension.iastate.edu/agdm/energy/html/d1-10.html) (Download Ethanol Profitability spreadsheet. Look at Grind Margin chart)                                                               |
 
 : Table 3. Commodity Spreads
 
@@ -111,7 +102,7 @@ Agricultural Marketing Service
 All of the information contained in the reports described above are useful for in depth analysis over a long time horizon. As a service the USDA maintains databases of information contained in historical reports that are easy to query for analysis. Four important agencies maintaining databases within the USDA are the [National Agricultural Statistics Service](http://www.nass.usda.gov/) (NASS), the [Foreign Agricultural Service](http://apps.fas.usda.gov/psdonline/psdHome.aspx) (FAS), the [Economics Research Service](http://www.ers.usda.gov/data-products.aspx) (ERS), and the [Agricultural Marketing Service](http://www.ams.usda.gov/market-news/livestock-poultry-grain#Grain). Each service mentioned here hosts a wide variety of data and analyses, so concise descriptions are difficult. However some of the data products commonly used for commodity price analysis are ACRES PLANTED, PRODUCTION, YIELD, and PRICE RECIEVED by NASS; the PRODUCTION SUPPLY AND DISTRIBUTION report from FAS (much of the WASDE report is archived here); COST and RETURNS from ERS; and local prices from AMS .
 
 | Report                | Link                                                                                                           |
-|:----------------------|:---------------------------------------------------------------------------------------------------------------|
+|:---------------|:-------------------------------------------------------|
 | Prospective Plantings | [Farmers' planting intentions](https://usda.library.cornell.edu/concern/publications/x633f100h?locale=en)      |
 | Acreage               | [Planted Acres](https://usda.library.cornell.edu/concern/publications/j098zb09z)                               |
 | WASDE                 | [World Supply and Demand Estimates](https://www.usda.gov/oce/commodity/wasde)                                  |

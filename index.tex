@@ -193,7 +193,7 @@ Prices}
 
 \begin{document}
 \maketitle
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[boxrule=0pt, enhanced, sharp corners, interior hidden, frame hidden, borderline west={3pt}{0pt}{shadecolor}, breakable]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[frame hidden, breakable, sharp corners, interior hidden, boxrule=0pt, borderline west={3pt}{0pt}{shadecolor}, enhanced]}{\end{tcolorbox}}\fi
 
 \renewcommand*\contentsname{Table of contents}
 {
@@ -798,9 +798,9 @@ poor is a primary concern in developing economies.
 Business}\label{forecasting-commodity-prices-in-business}}
 
 Some companies business model leaves them exposed to risk that comes
-from price volatility and spend considerable resources forecasting
-prices. These tend to be companies that deal directly in commodities and
-need to hedge risks. Some examples include:
+from price volatility and spend considerable resources analyzing prices.
+These tend to be companies that deal directly in commodities and need to
+hedge risks. Some examples include:
 
 \begin{itemize}
 \tightlist
@@ -837,8 +837,8 @@ of policy, and is a key component of the policy analysis that leads the
 a policy's promotion or demise
 
 Price Forecasting: - Goal is to reliably and accurately forecast future
-price levels of commodities - The forecasts can be used in marketing and
-speculative strategies
+price levels of commodities - The forecasts can be used in marketing,
+risk management, and speculative strategies
 
 \hypertarget{forecasting-basics}{%
 \section{Forecasting Basics}\label{forecasting-basics}}
@@ -951,6 +951,8 @@ speculative strategies
       but does not capture the true nature of the data process,
       forecasts will perform poorly.
     \end{itemize}
+  \item
+    Machine learning methods are currently an active area of research.
   \end{itemize}
 \end{enumerate}
 
@@ -1092,9 +1094,9 @@ great sources providing regular commentary, but this will get the reader
 started.
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1765}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3464}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.4706}}@{}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2361}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3194}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.4444}}@{}}
 \caption{Table 1. Resources for Commodity Market
 Commentary}\tabularnewline
 \toprule\noalign{}
@@ -1199,48 +1201,41 @@ represents the commodity symbol, C for corn; the second letter
 represents the expiration month, Z for December; and the final two
 numerals represent the year of expiry, 21for 2021.
 
-\textbf{Some Common Commodity Contract Tickers, with Barchart and
-TradingView Ticker Styles}
+\textbf{Some Common Commodity Contract Tickers, with Barchart Ticker
+Style}
 
 \begin{itemize}
 \item
   Corn, March (H), May (K), July (N), September (U), December (Z),
-  \href{https://www.barchart.com/futures/quotes/ZCZ21/overview}{ZCZ21},
-  \href{www.tradingview.com}{ZCZ2021}
+  \href{https://www.barchart.com/futures/quotes/ZCZ21/overview}{ZCZ21}
 \item
   Soybeans, January (F), March (H), May (K), July (N), August (Q),
   September (U), November (X),
-  \href{https://www.barchart.com/futures/quotes/ZSX21/overview}{ZSX21},
-  \href{www.tradingview.com}{ZSX2021}
+  \href{https://www.barchart.com/futures/quotes/ZSX21/overview}{ZSX21}
 \item
   HRW Wheat, March (H), May (K), July (N), September (U), December (Z),
-  \href{https://www.barchart.com/futures/quotes/KEZ21/overview}{KEZ21},
-  \href{www.tradingview.com}{KEZ2021}
+  \href{https://www.barchart.com/futures/quotes/KEZ21/overview}{KEZ21}
 \item
   SRW Wheat, March (H), May (K), July (N), September (U), December (Z),
-  \href{https://www.barchart.com/futures/quotes/ZWZ21/overview}{ZWZ21},
-  \href{https://wwwww.tradingview.com}{ZWZ2021}
+  \href{https://www.barchart.com/futures/quotes/ZWZ21/overview}{ZWZ21}
 \item
   HRS Wheat, March (H), May (K), July (N), September (U), December (Z),
-  \href{https://www.barchart.com/futures/quotes/MWZ21/overview}{MWZ21},
-  \href{www.tradingview.com}{MWZ2021}
+  \href{https://www.barchart.com/futures/quotes/MWZ21/overview}{MWZ21}
 \item
   Live Cattle, Feb (G), Apr (J), Jun (M), Aug (Q), Oct (V), Dec (Z),
-  \href{https://www.barchart.com/futures/quotes/LEZ21/overview}{LEZ21},
-  \href{https:/www.tradingview.com}{LEZ2021}
+  \href{https://www.barchart.com/futures/quotes/LEZ21/overview}{LEZ21}
 \item
   Lean Hogs, Feb (G), Apr (J), May (K), Jun (M), Jul (N), Aug (Q), Oct
   (V), Dec (Z),
-  \href{httphttps://www.barchart.com/futures/quotes/HEZ21/overview}{HEZ21},
-  \href{https:/www.tradingview.com}{HEZ2021}
+  \href{httphttps://www.barchart.com/futures/quotes/HEZ21/overview}{HEZ21}
 \end{itemize}
 
 Table 3 provides some links to spread charts for commodity spreads we
 will cover in this class.
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.0788}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.9212}}@{}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.1806}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.8194}}@{}}
 \caption{Table 3. Commodity Spreads}\tabularnewline
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
@@ -1261,7 +1256,7 @@ Link
 \bottomrule\noalign{}
 \endlastfoot
 Soybean Crush &
-\href{https://www.barchart.com/futures/quotes/CSZ18/interactive-chart}{Barchart
+\href{https://www.barchart.com/futures/quotes/ZS*1/technical-chart?plot=LINE\&volume=contract\&data=DO\&density=M\&pricesOn=1\&asPctChange=0\&logscale=0\&sym=ZS*1-ZS*2\&grid=1\&height=500\&studyheight=100\&isSpread=1}{Barchart
 Spread Chart} \\
 Cattle Crush &
 \href{http://www2.econ.iastate.edu/estimated-returns/Finishing\%20Steer\%20Calves\%20Chart.pdf}{ISU
@@ -1431,8 +1426,8 @@ report is archived here); COST and RETURNS from ERS; and local prices
 from AMS .
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.1704}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.8296}}@{}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.2222}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.7778}}@{}}
 \caption{Table 3. Summary of USDA Reports and Data
 Sources}\tabularnewline
 \toprule\noalign{}
@@ -4513,11 +4508,11 @@ amount of the commodity available for use during the marketing year.
 
 \begin{verbatim}
 Response [https://downloads.usda.library.cornell.edu/usda-esmis/files/3t945q76s/dv140m16d/jm215h19t/latest.xls]
-  Date: 2024-01-07 19:50
+  Date: 2024-01-16 18:29
   Status: 200
   Content-Type: application/vnd.ms-excel
   Size: 326 kB
-<ON DISK>  C:\Users\mindy\AppData\Local\Temp\Rtmp6TIlBb\file9602c6d2abe.xls
+<ON DISK>  C:\Users\mindy\AppData\Local\Temp\RtmpOC2Eph\file9fa865387e5c.xls
 \end{verbatim}
 
 \begin{table}
