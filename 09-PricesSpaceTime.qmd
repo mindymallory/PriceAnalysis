@@ -1,7 +1,6 @@
 # Prices Over Space and Time
 
-<span style="color:red">Interested in more? Please let me know by</span> [taking the survey](https://forms.gle/Q3VByCQZHjfQSy9D7)! 
-
+[Interested in more? Please let me know by]{style="color:red"} [taking the survey](https://forms.gle/Q3VByCQZHjfQSy9D7)!
 
 **Highlights**
 
@@ -19,15 +18,15 @@ In this section we cover how commodity prices behave over time and space. We hav
 
 The contract that is next to expire is called the **Nearby** contract, the contract that expires next is called the **First Deferred** contract, the contract that expires after that is the **Second Deferred** contract. The different contracts trading at any given time make up make up what is called **The Forward Curve**, etc. There is valuable information in the forward curve because it is the market's best guess of what returns to storage will be.
 
-We saw in Chapter 4 how a farmer can use the December futures contract to hedge the sale of their harvest. Similarly, the March (of the next year) contract is the next to expire after the December contract. If the market price of the March contract is high enough, some farmers (and other commercial stockholders[^pricesspacetime-1]) will decide to store until late February and hedge their cash sale with the March futures contract. This is costly so the price increase from waiting until March must be high enough to cover these costs or the farmer will just sell everything at harvest.
+We saw in Chapter 4 how a farmer can use the December futures contract to hedge the sale of their harvest. Similarly, the March (of the next year) contract is the next to expire after the December contract. If the market price of the March contract is high enough, some farmers (and other commercial stockholders[^09-pricesspacetime-1]) will decide to store until late February and hedge their cash sale with the March futures contract. This is costly so the price increase from waiting until March must be high enough to cover these costs or the farmer will just sell everything at harvest.
 
-[^pricesspacetime-1]: Stockholder here means an entity who is storing grain (or oilseed). In other-words, they are holding stocks of the grain.
+[^09-pricesspacetime-1]: Stockholder here means an entity who is storing grain (or oilseed). In other-words, they are holding stocks of the grain.
 
 ## Storage Costs to the Farmer
 
-Storage costs include the following:[^pricesspacetime-2]
+Storage costs include the following:[^09-pricesspacetime-2]
 
-[^pricesspacetime-2]: For more [see](https://www.extension.iastate.edu/agdm/crops/pdf/a2-33.pdf)
+[^09-pricesspacetime-2]: For more [see](https://www.extension.iastate.edu/agdm/crops/pdf/a2-33.pdf)
 
 1.  Opportunity cost of money. If they sell at harvest they can use the money for other things; so waiting to sell involves an opportunity cost of money.
 2.  Interest. By deferring the sale of grain, the stockholder may need a bank loan to cover expenses since their main revenue stream is deferred.
@@ -37,9 +36,9 @@ Storage costs include the following:[^pricesspacetime-2]
 6.  Quality deterioration. If the grain is not stored under proper condition, quality can deteriorate, and result in dockage (a price discount) being applied by the buyer at the time of sale.
 7.  Cost of handling. Getting the grain into and out of storage results in some costs as well.
 
-Iowa State University Extension estimated in 2015 that storing grain until March costs a farmer roughly \$0.45 per bushel, while storing until December cost roughly \$0.30 per bushel, \$.15 cents per bushel less than storing until March. Considering only this, the price of the March contract would need to be more than \$0.15 per bushel higher than the December contract to cause much grain to be stored until March.[^pricesspacetime-3]
+Iowa State University Extension estimated in 2015 that storing grain until March costs a farmer roughly \$0.45 per bushel, while storing until December cost roughly \$0.30 per bushel, \$.15 cents per bushel less than storing until March. Considering only this, the price of the March contract would need to be more than \$0.15 per bushel higher than the December contract to cause much grain to be stored until March.[^09-pricesspacetime-3]
 
-[^pricesspacetime-3]: Ed Usset with the University of Minnesota Extension has a nice series of articles in Corn and Soybean Digest about *carrying charges*, [here](http://www.cornandsoybeandigest.com/marketing/understand-carrying-charges), [here](http://www.cornandsoybeandigest.com/carrying-charges-part-1), and [here](http://www.cornandsoybeandigest.com/carrying-charges-part-2).
+[^09-pricesspacetime-3]: Ed Usset with the University of Minnesota Extension has a nice series of articles in Corn and Soybean Digest about *carrying charges*, [here](http://www.cornandsoybeandigest.com/marketing/understand-carrying-charges), [here](http://www.cornandsoybeandigest.com/carrying-charges-part-1), and [here](http://www.cornandsoybeandigest.com/carrying-charges-part-2).
 
 ## An Increasing Forward Curve
 
@@ -109,9 +108,9 @@ We discussed at the beginning of this chapter that one of the costs of storage t
 
 $$Financial \text{  } Full \text{  } Carry  = ndays(\frac{i}{360}*F + P)$$
 
-where $ndays =$ the number of days between the first delivery day in the nearby contract and the first delivery day in the deferred contract. $i =$ the three month LIBOR interest rate + 200 basis points,[^pricesspacetime-4] $F =$ futures price, and $P =$ the current premium charge on shipping certificates. For example, there are 90 days between delivery period of the December contract and the delivery period of the March contract. If the LIBOR rate is .3% and financing costs are 200 basis points above LIBOR, the corn futures price is \$3.50 per bushel, and the premium charge on shipping certificates is 0.165 cents per bushel per day, then financial full carry is:
+where $ndays =$ the number of days between the first delivery day in the nearby contract and the first delivery day in the deferred contract. $i =$ the three month LIBOR interest rate + 200 basis points,[^09-pricesspacetime-4] $F =$ futures price, and $P =$ the current premium charge on shipping certificates. For example, there are 90 days between delivery period of the December contract and the delivery period of the March contract. If the LIBOR rate is .3% and financing costs are 200 basis points above LIBOR, the corn futures price is \$3.50 per bushel, and the premium charge on shipping certificates is 0.165 cents per bushel per day, then financial full carry is:
 
-[^pricesspacetime-4]: The CME Group uses simple interest to calculate the financial full carry in other contexts, so we adopt it here for our definition of financial full carry.
+[^09-pricesspacetime-4]: The CME Group uses simple interest to calculate the financial full carry in other contexts, so we adopt it here for our definition of financial full carry.
 
 $$Financial \text{  } Full \text{  } Carry = 90*(0.023/360*350 + 0.165 = 16.86 \text{ cents per bushel}) $$
 

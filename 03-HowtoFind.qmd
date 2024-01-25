@@ -9,7 +9,7 @@ This chapter serves as an introduction to real-time and historical data sources,
 The best way to learn commodity price analysis is to listen to the professionals who provide commentary on the markets on a regular basis. Land grant universities located in major commodity producing states all have components of their outreach programs dedicated to market commentary. The University of Illinois' web extension program, FARMDOC, is particularly good. Also, public radio in major commodity producing areas has excellent coverage. Champaign-Urbana's WILL, and Iowa Public Televisions' Market to Market are very good. There are *many* other great sources providing regular commentary, but this will get the reader started.
 
 | Outlet                   | Description                                        | Link                                                                  |
-|:----------------|:----------------------|:-------------------------------|
+|:-------------------------|:---------------------------------------------------|:----------------------------------------------------------------------|
 | Farmdoc Daily            | Extension web presence by the department of ACE    | [farmdocdaily.illinois.edu](http://farmdocdaily.illinois.edu)         |
 | WILL Agriculture         | WILL and the University of Illinois Extension      | [will.illinois.edu/agriculture](http://will.illinois.edu/agriculture) |
 | Market to Market         | Agricultural programming by Iowa Public Television | [www.iptv.org/mtom/](http://www.iptv.org/mtom/)                       |
@@ -50,7 +50,7 @@ Contracts for several different expiry dates trade at the same time. There is a 
 Table 3 provides some links to spread charts for commodity spreads we will cover in this class.
 
 | Spread        | Link                                                                                                                                                                                                                             |
-|:------------|:----------------------------------------------------------|
+|:--------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Soybean Crush | [Barchart Spread Chart](https://www.barchart.com/futures/quotes/ZS*1/technical-chart?plot=LINE&volume=contract&data=DO&density=M&pricesOn=1&asPctChange=0&logscale=0&sym=ZS*1-ZS*2&grid=1&height=500&studyheight=100&isSpread=1) |
 | Cattle Crush  | [ISU Spread Calculation](http://www2.econ.iastate.edu/estimated-returns/Finishing%20Steer%20Calves%20Chart.pdf) [ISU Livestock Returns](http://www2.econ.iastate.edu/estimated-returns/)                                         |
 | Corn Crush    | [ISU Ethanol Grind Margin](https://www.extension.iastate.edu/agdm/energy/html/d1-10.html) (Download Ethanol Profitability spreadsheet. Look at Grind Margin chart)                                                               |
@@ -102,7 +102,7 @@ Agricultural Marketing Service
 All of the information contained in the reports described above are useful for in depth analysis over a long time horizon. As a service the USDA maintains databases of information contained in historical reports that are easy to query for analysis. Four important agencies maintaining databases within the USDA are the [National Agricultural Statistics Service](http://www.nass.usda.gov/) (NASS), the [Foreign Agricultural Service](http://apps.fas.usda.gov/psdonline/psdHome.aspx) (FAS), the [Economics Research Service](http://www.ers.usda.gov/data-products.aspx) (ERS), and the [Agricultural Marketing Service](http://www.ams.usda.gov/market-news/livestock-poultry-grain#Grain). Each service mentioned here hosts a wide variety of data and analyses, so concise descriptions are difficult. However some of the data products commonly used for commodity price analysis are ACRES PLANTED, PRODUCTION, YIELD, and PRICE RECIEVED by NASS; the PRODUCTION SUPPLY AND DISTRIBUTION report from FAS (much of the WASDE report is archived here); COST and RETURNS from ERS; and local prices from AMS .
 
 | Report                | Link                                                                                                           |
-|:---------------|:-------------------------------------------------------|
+|:----------------------|:---------------------------------------------------------------------------------------------------------------|
 | Prospective Plantings | [Farmers' planting intentions](https://usda.library.cornell.edu/concern/publications/x633f100h?locale=en)      |
 | Acreage               | [Planted Acres](https://usda.library.cornell.edu/concern/publications/j098zb09z)                               |
 | WASDE                 | [World Supply and Demand Estimates](https://www.usda.gov/oce/commodity/wasde)                                  |
