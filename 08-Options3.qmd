@@ -1,7 +1,6 @@
 # Marketing, Hedging, and Crop Insurance
 
-<span style="color:red">Interested in more? Please let me know by</span> [taking the survey](https://forms.gle/Q3VByCQZHjfQSy9D7)! 
-
+[Interested in more? Please let me know by]{style="color:red"} [taking the survey](https://forms.gle/Q3VByCQZHjfQSy9D7)!
 
 **Highlights**
 
@@ -41,7 +40,7 @@ Area Revenue Protection, similar to Yield Protection, calculates the revenue gua
 
 **Revenue Protection with Harvest Price Exclusion**
 
-Revenue protection with Harvest Price Exclusion is the same as Revenue Protection, except the policy does guarantee based on the Harvest Price, Revenue is calculated based on the Projected price times APH.
+Revenue protection with Harvest Price Exclusion is the same as Revenue Protection, except the policy doesn't guarantee based on the Harvest Price, Revenue is calculated based on the Projected price times APH.
 
 ## Pre-Harvest Marketing Strategies Paired with Crop Insurance Protection
 
