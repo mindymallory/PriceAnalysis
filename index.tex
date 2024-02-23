@@ -193,7 +193,7 @@ Prices}
 
 \begin{document}
 \maketitle
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[frame hidden, breakable, sharp corners, interior hidden, boxrule=0pt, borderline west={3pt}{0pt}{shadecolor}, enhanced]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[sharp corners, borderline west={3pt}{0pt}{shadecolor}, frame hidden, breakable, boxrule=0pt, interior hidden, enhanced]}{\end{tcolorbox}}\fi
 
 \renewcommand*\contentsname{Table of contents}
 {
@@ -1094,9 +1094,9 @@ great sources providing regular commentary, but this will get the reader
 started.
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2361}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3194}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.4444}}@{}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1745}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3490}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.4765}}@{}}
 \caption{Table 1. Resources for Commodity Market
 Commentary}\tabularnewline
 \toprule\noalign{}
@@ -1234,8 +1234,8 @@ Table 3 provides some links to spread charts for commodity spreads we
 will cover in this class.
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.1806}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.8194}}@{}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.0622}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.9378}}@{}}
 \caption{Table 3. Commodity Spreads}\tabularnewline
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
@@ -1426,8 +1426,8 @@ report is archived here); COST and RETURNS from ERS; and local prices
 from AMS .
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.2222}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.7778}}@{}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.1704}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.8296}}@{}}
 \caption{Table 3. Summary of USDA Reports and Data
 Sources}\tabularnewline
 \toprule\noalign{}
@@ -1638,9 +1638,9 @@ gain \(+0.25*5000 = \$1250\) and the shorts (sellers) lose
 \(-0.25*5000 = \$1250\).
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2800}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3600}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3600}}@{}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2877}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3562}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3562}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 Time
@@ -1843,18 +1843,26 @@ sometimes referred to as `selling forward' or `selling ahead'.
 sell) that you will do in the cash market at a future date}
 
 The farmer will sell corn in the cash market in November, so to hedge
-she should sell (the December) futures to hedge. Consider two cases, one
-where the Dec futures price in November turned out to be \$4.00, and one
-where the Dec futures price in November turned out to be \$3.60.
+she should sell (the December) futures to hedge. This concept is called
+being natually long. Since the farmer is essentially long the
+unharvested grain in the field (after all, `long' is a financial
+position that gains value when price goes up and loses value when price
+goes down). Therefore, to hedge, they need to take a position with the
+opposite profile, i.e., they should take a short position to hedge their
+naturally long position.
+
+Consider two cases, one where the Dec futures price in November turned
+out to be \$4.00, and one where the Dec futures price in November turned
+out to be \$3.60.
 
 \textbf{Dec Futures Price went Up to \$4.00, Basis Unchanged}
 
 \begin{longtable}[]{@{}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1721}}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2787}}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2049}}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2213}}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1230}}@{}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1944}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2222}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1944}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1944}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1944}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\centering
 Date
@@ -1892,11 +1900,11 @@ prices.
 \textbf{Dec Futures Price went Down to \$3.60, Basis Unchanged}
 
 \begin{longtable}[]{@{}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1721}}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2787}}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2049}}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2213}}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1230}}@{}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1944}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2222}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1944}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1944}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1944}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\centering
 Date
@@ -1932,11 +1940,11 @@ and the basis narrows to \$0.00.
 \textbf{Dec Futures Price Unchanged, Basis now -\$0.50}
 
 \begin{longtable}[]{@{}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1721}}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2787}}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2049}}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2213}}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1230}}@{}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1944}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2222}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1944}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1944}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1944}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\centering
 Date
@@ -1969,11 +1977,11 @@ strengthens, or narrows.
 \textbf{Dec Futures Price Unchanged, Basis now \$0.00}
 
 \begin{longtable}[]{@{}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1721}}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2787}}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2049}}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2213}}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1230}}@{}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1944}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2222}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1944}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1944}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1944}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\centering
 Date
@@ -2086,14 +2094,14 @@ cents under the nearby futures contract, meaning the spot price column
 is always 0.25 cents less than the next to expire futures contract.
 
 \begin{longtable}[]{@{}
-  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.0827}}
-  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.2105}}
-  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1805}}
-  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.2556}}
-  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.0602}}
-  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.0677}}
-  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.0677}}
-  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.0752}}@{}}
+  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1233}}
+  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1233}}
+  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1233}}
+  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1370}}
+  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1233}}
+  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1233}}
+  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1233}}
+  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1233}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\centering
 Dates
@@ -3622,8 +3630,8 @@ revenue guarantee against the county APH rather than the producer's APH.
 \textbf{Revenue Protection with Harvest Price Exclusion}
 
 Revenue protection with Harvest Price Exclusion is the same as Revenue
-Protection, except the policy does guarantee based on the Harvest Price,
-Revenue is calculated based on the Projected price times APH.
+Protection, except the policy doesn't guarantee based on the Harvest
+Price, Revenue is calculated based on the Projected price times APH.
 
 \hypertarget{pre-harvest-marketing-strategies-paired-with-crop-insurance-protection}{%
 \section{Pre-Harvest Marketing Strategies Paired with Crop Insurance
@@ -4508,11 +4516,11 @@ amount of the commodity available for use during the marketing year.
 
 \begin{verbatim}
 Response [https://downloads.usda.library.cornell.edu/usda-esmis/files/3t945q76s/dv140m16d/jm215h19t/latest.xls]
-  Date: 2024-01-16 18:29
+  Date: 2024-02-22 19:51
   Status: 200
   Content-Type: application/vnd.ms-excel
   Size: 326 kB
-<ON DISK>  C:\Users\mindy\AppData\Local\Temp\RtmpOC2Eph\file9fa865387e5c.xls
+<ON DISK>  C:\Users\mindy\AppData\Local\Temp\RtmpeMNzCz\file8cec34f551bc.xls
 \end{verbatim}
 
 \begin{table}

@@ -1,7 +1,6 @@
 # Futures and Hedging Review
 
-<span style="color:red">Interested in more? Please let me know by</span> [taking the survey](https://forms.gle/Q3VByCQZHjfQSy9D7)! 
-
+[Interested in more? Please let me know by]{style="color:red"} [taking the survey](https://forms.gle/Q3VByCQZHjfQSy9D7)!
 
 **Highlights**
 
@@ -27,7 +26,7 @@ A futures contract is a contract between two parties to buy and sell at an agree
 Consider this example. At 10am the March corn futures contract is trading at \$4.50 per bushel. Trader A decides to buy one contract and Trader B decides to sell one contract. At 1pm both traders decide to close their position and the price has moved up to \$4.75 per bushel. Since the price went up the by \$0.25 per bushel, the longs (buyers) gain $+0.25*5000 = \$1250$ and the shorts (sellers) lose $-0.25*5000 = \$1250$.
 
 | Time                | Trader A                  | Trader B                  |
-|:--------------------|:--------------------------|:--------------------------|
+|:--------------------|:-------------------------|:-------------------------|
 | 10am                | buy \$4.50                | sell \$4.50               |
 | 1pm                 | sell \$4.75               | buy \$4.75                |
 | profit per bu       | \$4.75 - \$4.50 = +\$0.25 | \$4.50 - \$4.75 = -\$0.25 |
@@ -83,12 +82,14 @@ Also on May 1st, the December futures contract price is \$3.75. If the farmer wa
 
 **To Hedge - Take the same action in the futures market (buy or sell) that you will do in the cash market at a future date**
 
-The farmer will sell corn in the cash market in November, so to hedge she should sell (the December) futures to hedge. Consider two cases, one where the Dec futures price in November turned out to be \$4.00, and one where the Dec futures price in November turned out to be \$3.60.
+The farmer will sell corn in the cash market in November, so to hedge she should sell (the December) futures to hedge. This concept is called being natually long. Since the farmer is essentially long the unharvested grain in the field (after all, 'long' is a financial position that gains value when price goes up and loses value when price goes down). Therefore, to hedge, they need to take a position with the opposite profile, i.e., they should take a short position to hedge their naturally long position.
+
+Consider two cases, one where the Dec futures price in November turned out to be \$4.00, and one where the Dec futures price in November turned out to be \$3.60.
 
 **Dec Futures Price went Up to \$4.00, Basis Unchanged**
 
 |        Date         |              Action              | Cash Price in Royal, IL |  Dec Corn Futures Price   |     Basis     |
-|:-------------------:|:--------------------------------:|:-----------------------:|:-------------------------:|:-------------:|
+|:------------:|:--------------:|:------------:|:------------:|:------------:|
 |       May 1st       |         Sell Dec Futures         |         \$3.50          |          \$3.75           | -\$0.25 (Dec) |
 |       Nov 1st       | Buy Dec Futures & Sell Cash Corn |         \$3.75          |          \$4.00           | -\$0.25 (Dec) |
 | Profit Calculation, |         Cash and Futures         |         \$3.75          | \$3.75 - \$4.00 = -\$0.25 |               |
@@ -99,7 +100,7 @@ With the basis unchanged, the farmer eliminated the uncertainty over the price a
 **Dec Futures Price went Down to \$3.60, Basis Unchanged**
 
 |        Date         |              Action              | Cash Price in Royal, IL |  Dec Corn Futures Price   |     Basis     |
-|:-------------------:|:--------------------------------:|:-----------------------:|:-------------------------:|:-------------:|
+|:------------:|:--------------:|:------------:|:------------:|:------------:|
 |       May 1st       |         Sell Dec Futures         |         \$3.50          |          \$3.75           | -\$0.25 (Dec) |
 |       Nov 1st       | Buy Dec Futures & Sell Cash Corn |         \$3.35          |          \$3.60           | -\$0.25 (Dec) |
 | Profit Calculation, |         Cash and Futures         |         \$3.35          | \$3.75 - \$3.60 = +\$0.15 |               |
@@ -110,7 +111,7 @@ By selling Dec futures ahead of the cash sale, price risk was reduced. It was re
 **Dec Futures Price Unchanged, Basis now -\$0.50**
 
 |        Date         |              Action              | Cash Price in Royal, IL |  Dec Corn Futures Price   |     Basis     |
-|:-------------------:|:--------------------------------:|:-----------------------:|:-------------------------:|:-------------:|
+|:------------:|:--------------:|:------------:|:------------:|:------------:|
 |       May 1st       |         Sell Dec Futures         |         \$3.50          |          \$3.75           | -\$0.25 (Dec) |
 |       Nov 1st       | Buy Dec Futures & Sell Cash Corn |         \$3.25          |          \$3.75           | -\$0.50 (Dec) |
 | Profit Calculation, |         Cash and Futures         |         \$3.25          | \$3.75 - \$3.75 = +\$0.00 |               |
@@ -121,7 +122,7 @@ This time, the basis widening from -\$0.25 to -\$0.50 was a loss to the farmer, 
 **Dec Futures Price Unchanged, Basis now \$0.00**
 
 |        Date         |              Action              | Cash Price in Royal, IL |  Dec Corn Futures Price   |     Basis     |
-|:-------------------:|:--------------------------------:|:-----------------------:|:-------------------------:|:-------------:|
+|:------------:|:--------------:|:------------:|:------------:|:------------:|
 |       May 1st       |         Sell Dec Futures         |         \$3.50          |          \$3.75           | -\$0.25 (Dec) |
 |       Nov 1st       | Buy Dec Futures & Sell Cash Corn |         \$3.75          |          \$3.75           | \$0.00 (Dec)  |
 | Profit Calculation, |         Cash and Futures         |         \$3.75          | \$3.75 - \$3.75 = +\$0.00 |               |
@@ -151,7 +152,7 @@ There are five wheat futures contracts per year, March, May, July, September, an
 If the mill buys wheat at the first of every month, they will have to use the nearest contract month to hedge price. For example, to hedge a purchase of wheat on February 1st, the mill will have to use the March futures expiration, because there is no February contract and the March contract is the closest expiration. Then suppose on December 1st the mill wants to lock in its wheat purchase price (aside from basis risk) for the first six months of the next year. Then, for example, it will have to hedge January, February, and March wheat purchases with the March futures contract. Since they buy 50,000 bushels per month, which is equivalent to 10 contracts per month, they will need to buy 60 contracts of wheat on Dec 1 to hedge January through July purchases. Hedges should be lifted simultaneously with activity in the cash market. For example, on January 1st the mill will purchase 50,000 bushels to process for the month of January in the cash market. Then they should lift their hedge on 10 contracts, or sell 10 contracts also on January first. This means after January 1st, the mill is still holding 20 long March futures contracts (they are 'long' 20 contracts) which keeps February and March's purchases hedged. The table below details the mills activities in the spot market and futures market throughout the year. It takes real data from 2016, and assumes that the basis is fixed at -0.25 cents under the nearby futures contract, meaning the spot price column is always 0.25 cents less than the next to expire futures contract.
 
 |   Dates   |           Action           |          Long          |          Net Price Paid          |  Spot  | Mar Fut | May Fut | Jul Futs |
-|:---------:|:--------------------------:|:----------------------:|:--------------------------------:|:------:|:-------:|:-------:|:--------:|
+|:-------:|:-------:|:-------:|:--------:|:-------:|:-------:|:-------:|:-------:|
 | Dec 1, 15 | Buy 30 Mar, 20 May, 10 Jul |                        |                                  | 469.75 |   470   |  476.5  |  483.25  |
 | Jan 1, 16 | Buy 50k spot, Sell 10 Mar  | 20 Mar, 20 May, 10 Jul |  -479 + (479.25-470) = - 469.75  | 479.00 | 479.25  |   485   |  490.5   |
 |   Feb 1   | Buy 50k spot, Sell 10 Mar  | 10 Mar, 20 May, 10 Jul |  -444.75 + (445-470) = -469.75   | 444.75 |   445   | 453.25  |  460.25  |
