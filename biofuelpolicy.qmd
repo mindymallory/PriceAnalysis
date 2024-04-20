@@ -1,0 +1,65 @@
+---
+title: "Biofuels Policy"
+---
+In progress...
+
+Renewable Fuels Policy
+
+History of Renewable Fuels Standard from Energy Policy Act of 2005
+	- https://farmdocdaily.illinois.edu/2023/05/overview-of-the-us-renewable-fuel-standard.html
+	- Conventional Ethanol (Rated at a 20% emission reduction)
+	- Biodiesel is 'advanced' biofuel' 
+		○ Receives $1 per gallon under RFS and generates Renewable Identification Numbers (RINS) which can be sold in the open market to blenders of diesel who need to show compliance to required blending volumes. 
+		○ https://farmdocdaily.illinois.edu/2023/05/overview-of-the-rin-compliance-system-and-pricing-of-rins-for-the-us-renewable-fuel-standard.html
+	- Cellulosic requirement is typically waived because it has never achieved commercial viability
+
+Check out recent trends in production, etc
+https://www.eia.gov/energyexplained/biofuels/
+
+
+Low Carbon Fuel Standard, California 2011
+https://ww2.arb.ca.gov/sites/default/files/2020-09/basics-notes.pdf
+https://ww2.arb.ca.gov/resources/documents/lcfs-data-dashboard
+
+Therefore, RFS and California's LCFS have been a powerful motivator of the boom in renewable diesel. 
+
+Renewable Diesel/Biodiesel (FAME) What's the difference
+	- https://farmdocdaily.illinois.edu/2023/02/biodiesel-and-renewable-diesel-whats-the-difference.html
+	- Biodiesel is just soybean oil with glycerin taken out
+	- Renewable Diesel is "cracked" in a similar way that crude oil is 'cracked' in to gas, diesel, and other hydrocarbons
+	- Renewable Diesel production capacity has largely been from converting old crude oil refining capacity
+
+
+Sustainable Aviation Fuel from Inflation Reduction Act SAF 'Grand Challenge' 
+	- https://farmdocdaily.illinois.edu/2024/02/is-sustainable-aviation-fuel-the-future-of-ethanol.html
+	- Inflation Reduction Act, 2022 offers $1.25 / gallon tax credit
+	- This is on top of RINS that SAF would generate under the RFS
+	- Requires 50% emission reduction over Petroleum jet fuel
+	- IRA initially states fuel must be rated for emissions reductions according to the International Civil Aviation Organization (ICAO) 
+		○ ICAO rates corn starch ethanol as worse than jet fuel
+		○ Ethanol and US Farm Groups are lobbying to use the GREET model from Argonne National Laboratory 
+		○ Difference counts for how much emissions are accounted for in 'land use change' 
+		○ Decision to be made by the Treasury Department soon
+		
+Ethanol producers (and corn producers) eagerly await word from Treasury over which model will be used. 
+	- https://ethanolrfa.org/media-and-news/category/news-releases/article/2024/03/u-s-farm-and-biofuel-leaders-seek-certainty-on-sustainable-aviation-fuel
+	- If ICAO model is used, ethanol producers looking to earn the IRA tax credit would have to source corn grown 'sustainably' and be able to prove the production process. 
+	- This obviously would necessitate a separate supply chain from conventional corn (kinda like how the organic supply chain is segregated, I guess)
+	
+	
+	
+	Recent PNAS article by some prominent ag economists and others: 
+	https://www.pnas.org/doi/full/10.1073/pnas.2101084119 
+	
+	Environmental outcomes of the US Renewable Fuel Standard Tyler J. Lark , Nathan P. Hendricks  , Aaron Smith , and Holly K. Gibbs
+	
+	From <https://www.pnas.org/doi/full/10.1073/pnas.2101084119> 
+	
+	Significance
+	Biofuels are included in many proposed strategies to reduce anthropogenic greenhouse gas emissions and limit the magnitude of global warming. The US Renewable Fuel Standard is the world’s largest existing biofuel program, yet despite its prominence, there has been limited empirical assessment of the program’s environmental outcomes. Even without considering likely international land use effects, we find that the production of corn-based ethanol in the United States has failed to meet the policy’s own greenhouse gas emissions targets and negatively affected water quality, the area of land used for conservation, and other ecosystem processes. Our findings suggest that profound advances in technology and policy are still needed to achieve the intended environmental benefits of biofuel production and use.
+	Abstract
+	The Renewable Fuel Standard (RFS) specifies the use of biofuels in the United States and thereby guides nearly half of all global biofuel production, yet outcomes of this keystone climate and environmental regulation remain unclear. Here we combine econometric analyses, land use observations, and biophysical models to estimate the realized effects of the RFS in aggregate and down to the scale of individual agricultural fields across the United States. We find that the RFS increased corn prices by 30% and the prices of other crops by 20%, which, in turn, expanded US corn cultivation by 2.8 Mha (8.7%) and total cropland by 2.1 Mha (2.4%) in the years following policy enactment (2008 to 2016). These changes increased annual nationwide fertilizer use by 3 to 8%, increased water quality degradants by 3 to 5%, and caused enough domestic land use change emissions such that the carbon intensity of corn ethanol produced under the RFS is no less than gasoline and likely at least 24% higher. These tradeoffs must be weighed alongside the benefits of biofuels as decision-makers consider the future of renewable energy policies and the potential for fuels like corn ethanol to meet climate mitigation goals.
+	
+	From <https://www.pnas.org/doi/full/10.1073/pnas.2101084119> 
+	
+	

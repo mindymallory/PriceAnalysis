@@ -1,0 +1,88 @@
+---
+title: "Betting Strategies and Ergodicity"
+---
+Cite the guy Ole ...
+
+Betting Simulator
+
+```{r}
+
+# Simulate a single bet
+# Traditional frac of bankroll
+simulate_bet <- function(bankroll, multiple = 1, probability_win = .5) {
+  bankroll <- ifelse(runif(1) < probability_win, bankroll *(1+multiple), bankroll * (1-multiple))  # European roulette probability
+
+      return(bankroll)
+}
+
+# # Fresh Money for each bet
+# simulate_bet <- function(bankroll, multiple = 10, probability_win = .5) {
+#   bankroll <- ifelse(runif(1) < probability_win, bankroll + multiple, bankroll - multiple)  # European roulette probability
+# 
+#       return(bankroll)
+# }
+
+# Simulate multiple bets
+simulate_multiple_bets <- function(initial_bankroll, num_bets, multiple = 1, probability_win = 0.5) {
+  bankroll_history <- numeric(num_bets + 1)
+  bankroll_history[1] <- initial_bankroll
+  
+  for (i in 2:(num_bets + 1)) {
+    bankroll_history[i] <- simulate_bet(bankroll_history[i - 1], multiple, probability_win)
+  }
+  
+  return(bankroll_history)
+}
+```
+
+```{r}
+simulate_bet(bankroll = 1000, multiple = 10, probability_win = .5)
+```
+
+```{r, fig.width = 3, fig.height = 2}
+initial_bankroll <- 1000
+num_bets         <- 100
+probability_win  <- .7
+multiple         <- 10
+
+result_df <- data.frame(Bet = 0:num_bets, 
+                        Bankroll = simulate_multiple_bets(initial_bankroll, 
+                                                          num_bets, multiple, 
+                                                          probability_win))
+
+# Plotting the path of wealth using ggplot
+ggplot(result_df, aes(x = Bet, y = Bankroll)) +
+  geom_line() +
+  theme_minimal() +
+  labs(title = "Simulation of Betting Path", x = "Number of Bets", y = "Bankroll")
+```
+
+```{r, fig.width = 4, fig.height = 2}
+num_simulations <- 5000
+initial_bankroll <- 1000
+num_bets         <- 100
+probability_win  <- .6
+multiple         <- .2
+# Run the simulation multiple times
+final_bankrolls <- replicate(num_simulations ,
+                             last(
+                               simulate_multiple_bets(
+                                 initial_bankroll, 
+                                 num_bets, 
+                                 multiple, 
+                                 probability_win
+                                 )
+                               )
+                             )
+
+# Creating a data frame for ggplot
+final_bankrolls_df <- data.frame(Simulation = 1:num_simulations, FinalBankroll = final_bankrolls)
+mean(final_bankrolls)
+median(final_bankrolls)
+final_bankrolls_df %>% arrange(FinalBankroll) 
+# Plotting the distribution of final bankrolls using ggplot
+ggplot(final_bankrolls_df, aes(x = FinalBankroll)) +
+  geom_histogram(bins = 50, fill = "blue", color = "black") +
+  theme_minimal() +
+  labs(title = "Distribution of Final Bankroll After 100 Bets", x = "Final Bankroll", y = "Frequency")
+```
