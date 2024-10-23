@@ -77,28 +77,38 @@
 \makeatletter
 \def\fps@figure{htbp}
 \makeatother
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
 \newlength{\cslhangindent}
 \setlength{\cslhangindent}{1.5em}
 \newlength{\csllabelwidth}
 \setlength{\csllabelwidth}{3em}
-\newlength{\cslentryspacingunit} % times entry-spacing
-\setlength{\cslentryspacingunit}{\parskip}
-\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
- {% don't indent paragraphs
-  \setlength{\parindent}{0pt}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
   % turn on hanging indent if param 1 is 1
   \ifodd #1
-  \let\oldpar\par
-  \def\par{\hangindent=\cslhangindent\oldpar}
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
   \fi
   % set entry spacing
-  \setlength{\parskip}{#2\cslentryspacingunit}
- }%
- {}
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
 \usepackage{calc}
-\newcommand{\CSLBlock}[1]{#1\hfill\break}
-\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
-\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 
 \usepackage{booktabs}
@@ -116,8 +126,6 @@
 \usepackage{makecell}
 \usepackage{xcolor}
 \KOMAoption{captions}{tableheading}
-\makeatletter
-\makeatother
 \makeatletter
 \@ifpackageloaded{bookmark}{}{\usepackage{bookmark}}
 \makeatother
@@ -157,23 +165,16 @@
 \newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
 \makeatother
 \makeatletter
+\makeatother
+\makeatletter
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
-\makeatother
-\makeatletter
-\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
-\makeatother
-\makeatletter
-\@ifundefined{shadecolor}{\definecolor{shadecolor}{rgb}{.97, .97, .97}}
-\makeatother
-\makeatletter
-\makeatother
-\makeatletter
 \makeatother
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\usepackage{bookmark}
+
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same} % disable monospaced font for URLs
 \hypersetup{
@@ -193,7 +194,6 @@ Prices}
 
 \begin{document}
 \maketitle
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[sharp corners, borderline west={3pt}{0pt}{shadecolor}, frame hidden, breakable, boxrule=0pt, interior hidden, enhanced]}{\end{tcolorbox}}\fi
 
 \renewcommand*\contentsname{Table of contents}
 {
@@ -203,8 +203,7 @@ Prices}
 }
 \bookmarksetup{startatroot}
 
-\hypertarget{preface}{%
-\chapter*{Preface}\label{preface}}
+\chapter*{Preface}\label{preface}
 \addcontentsline{toc}{chapter}{Preface}
 
 \markboth{Preface}{Preface}
@@ -246,8 +245,7 @@ current form of the book.
 
 \bookmarksetup{startatroot}
 
-\hypertarget{about-the-author}{%
-\chapter*{About the Author}\label{about-the-author}}
+\chapter*{About the Author}\label{about-the-author}
 \addcontentsline{toc}{chapter}{About the Author}
 
 \markboth{About the Author}{About the Author}
@@ -261,8 +259,7 @@ issues, especially related to commodity futures and options markets.
 Topics of special interest include forecasting, liquidity costs, and
 price discovery.
 
-\hypertarget{contact}{%
-\section*{Contact}\label{contact}}
+\section*{Contact}\label{contact}
 \addcontentsline{toc}{section}{Contact}
 
 \markright{Contact}
@@ -276,8 +273,7 @@ mlmallor at purdue dot edu\\
 
 \bookmarksetup{startatroot}
 
-\hypertarget{grain-and-oilseed-markets}{%
-\chapter{Grain and Oilseed Markets}\label{grain-and-oilseed-markets}}
+\chapter{Grain and Oilseed Markets}\label{grain-and-oilseed-markets}
 
 {Interested in more? Please let me know by}
 \href{https://forms.gle/Q3VByCQZHjfQSy9D7}{taking the survey}!
@@ -320,8 +316,7 @@ production processes and timeline for major grains and oilseeds: Corn,
 Soybeans, Hard Red Winter Wheat (KC wheat), Hard Red Spring Wheat
 (Minneapolis wheat), and Soft Red Winter Wheat.
 
-\hypertarget{corn}{%
-\section{Corn}\label{corn}}
+\section{Corn}\label{corn}
 
 In the Corn Belt corn is planted from about March to May, and harvested
 from September to October. Pollination usually occurs in July. Since
@@ -337,7 +332,7 @@ too late it may suffer a yield penalty. Also, weather during harvest can
 impact prices. If harvest time is very wet, it can make it difficult to
 get the crop out and dry before it is damaged.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{assets/map_CORN_AREA PLANTED.png}
 
@@ -346,11 +341,10 @@ get the crop out and dry before it is damaged.
 \caption{Corn Acres Planted 2019, map from Aaron Smith's
 \href{https://asmith.ucdavis.edu/data/us-crops}{Ag Data}}
 
-\end{figure}
+\end{figure}%
 
-\hypertarget{recent-trends-in-acreage-yields-production-and-use}{%
 \subsection{Recent Trends in Acreage, Yields, Production, and
-Use}\label{recent-trends-in-acreage-yields-production-and-use}}
+Use}\label{recent-trends-in-acreage-yields-production-and-use}
 
 Corn planted acres in the U.S. has varied from just under to just over
 90 million acres in recent years. Farmers in the corn belt decide how
@@ -370,22 +364,20 @@ The following figures
 \href{http://www.ers.usda.gov/topics/crops/corn/background.aspx}{come
 from} the USDA's National Agricultural Statistics Service (NASS).
 
-\begin{figure}
+\begin{figure}[H]
 
-{\centering 
-
-\href{https://quickstats.nass.usda.gov/}{\includegraphics{assets/PrimerforGrain_CornAcandY.png}}
+{\centering \includegraphics{assets/PrimerforGrain_CornAcandY.png}
 
 }
 
 \caption{Data from USDA NASS}
 
-\end{figure}
+\end{figure}%
 
 Corn prices can be quite volatile, with prices and production highly
 inversely related to one another.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{assets/PrimerforGrain_CornProdand$.png}
 
@@ -393,13 +385,13 @@ inversely related to one another.
 
 \caption{Data from USDA NASS}
 
-\end{figure}
+\end{figure}%
 
 Corn is used in the U.S for a variety of purposes. Largest use
 categories are feed (for livestock), and alcohol for fuel use (ethanol
 blended with gasoline).
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{assets/PrimerforGrain_CornUse.png}
 
@@ -407,17 +399,16 @@ blended with gasoline).
 
 \caption{Data from USDA ERS}
 
-\end{figure}
+\end{figure}%
 
-\hypertarget{soybeans}{%
-\section{Soybeans}\label{soybeans}}
+\section{Soybeans}\label{soybeans}
 
 Soybeans are planted later than corn, from about April to June. Weather
 affects soybean production prospects and generates similar price
 responses as it does for corn. Soybean prices, therefore are highly
 dependent on what happens during the summer months.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{assets/map_SOYBEANS_AREA PLANTED.png}
 
@@ -426,35 +417,30 @@ dependent on what happens during the summer months.
 \caption{Soybean Acres Planted 2019, map from Aaron Smith's
 \href{https://asmith.ucdavis.edu/data/us-crops}{Ag Data}}
 
-\end{figure}
+\end{figure}%
 
-\hypertarget{recent-trends-in-acreage-yield-production-and-use}{%
 \subsection{Recent Trends in Acreage, Yield, Production, and
-Use}\label{recent-trends-in-acreage-yield-production-and-use}}
+Use}\label{recent-trends-in-acreage-yield-production-and-use}
 
 Soybeans did not begin to be commercially grown in the U.S. until the
 
-\hypertarget{recent-trends-in-acreage-yield-production-and-use-1}{%
 \section{Recent Trends in Acreage, Yield, Production, and
-Use}\label{recent-trends-in-acreage-yield-production-and-use-1}}
+Use}\label{recent-trends-in-acreage-yield-production-and-use-1}
 
 Soybeans were not commonly planted in the U.S. until the mid 20th
 century, but once it was introduced, acreage expanded rapidly. Soybeans
 have also benefited from improved yields due to biotechnology.
 
-\begin{figure}
+\begin{figure}[H]
 
-{\centering 
-
-\href{Soybean\%20Acres\%20and\%20Yield,\%20Data\%20from\%20USDA\%20NASS}{\includegraphics{assets/PrimerforGrain_SoyAcandY.png}}
+{\centering \includegraphics{assets/PrimerforGrain_SoyAcandY.png}
 
 }
 
 \caption{Soybean Acres and Yield}
 
-\end{figure}
-
-\begin{figure}
+\end{figure}%%
+\begin{figure}[H]
 
 {\centering \includegraphics{assets/PrimerforGrain_SoyProdand$.png}
 
@@ -462,7 +448,7 @@ have also benefited from improved yields due to biotechnology.
 
 \caption{Soybean Production and Prices, Data from USDA NASS}
 
-\end{figure}
+\end{figure}%
 
 Soybeans consumed in the U.S. are almost exclusively processed into
 soybean meal and soybean oil, a process referred to as `crushing'.
@@ -475,7 +461,7 @@ than half of soybeans exported are
 \href{http://farmdocdaily.illinois.edu/2015/03/footprint-of-chinese-demand-for-us-soybeans.html}{imported
 by China}.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{assets/PrimerforGrain_SoyUse.png}
 
@@ -483,10 +469,9 @@ by China}.
 
 \caption{Data from USDA ERS}
 
-\end{figure}
+\end{figure}%
 
-\hypertarget{wheat}{%
-\section{Wheat}\label{wheat}}
+\section{Wheat}\label{wheat}
 
 There are three main types of wheat grown in the U.S. Hard Red Winter
 Wheat (HRW/KC Wheat), Hard Red Spring Wheat (HRS/Minneapolis wheat), and
@@ -497,7 +482,7 @@ types of wheat is how much protein is contained in the kernels. This
 variation in protein also determines what the variety of wheat is
 ultimately used for.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{images/Wheat-Growing-Areas.png}
 
@@ -505,7 +490,7 @@ ultimately used for.
 
 \caption{Figure 8: Wheat Variety Growing Areas}
 
-\end{figure}
+\end{figure}%
 
 (Source
 \href{https://wayback.archive-it.org/5923/20120310141642/http://ers.usda.gov/Briefing/Wheat/maps.htm}{USDA-ERS})
@@ -514,8 +499,7 @@ Blue = HRW\\
 Gold = HRS\\
 Red = SRW
 
-\hypertarget{hard-red-winter-wheat}{%
-\subsection{Hard Red Winter Wheat}\label{hard-red-winter-wheat}}
+\subsection{Hard Red Winter Wheat}\label{hard-red-winter-wheat}
 
 HRW wheat is planted in the fall and lays dormant or grows very little
 during the winter. As temperatures rise in the spring, wheat plants
@@ -530,7 +514,7 @@ Kansas City Board of Trade had a HRW wheat futures contract. The KCBOT
 was recently bought by the CME Group, but HRW continues to be known as
 KC wheat.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{images/HRW-Wheat.jpg}
 
@@ -538,13 +522,12 @@ KC wheat.
 
 \caption{Figure 9: Hard Red Winter Wheat}
 
-\end{figure}
+\end{figure}%
 
 (Source
 \href{https://www.gipsa.usda.gov/fgis/commgallery/gr_hrw.aspx}{USDA-GIPSA})
 
-\hypertarget{hard-red-spring-wheat}{%
-\subsection{Hard Red Spring Wheat}\label{hard-red-spring-wheat}}
+\subsection{Hard Red Spring Wheat}\label{hard-red-spring-wheat}
 
 Hard red spring wheat is planted in the spring, around April or May and
 is harvested in the fall, around September. It has the highest protein
@@ -557,7 +540,7 @@ HRS wheat is referred to as Minneapolis Wheat because the
 \href{http://www.mgex.com/}{Minneapolis Grain Exchange} offers a futures
 contract in HRS wheat.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{images/HRS-Wheat.jpg}
 
@@ -565,13 +548,12 @@ contract in HRS wheat.
 
 \caption{Figure 10: Hard Red Spring Wheat}
 
-\end{figure}
+\end{figure}%
 
 (Source
 \href{https://www.gipsa.usda.gov/fgis/commgallery/gr_hrs.aspx}{USDA-GIPSA})
 
-\hypertarget{soft-red-winter-wheat}{%
-\subsection{Soft Red Winter Wheat}\label{soft-red-winter-wheat}}
+\subsection{Soft Red Winter Wheat}\label{soft-red-winter-wheat}
 
 Soft Red Winter Wheat is planted in the fall, and is harvested in the
 late spring, like HRW wheat. Soft red winter wheat is lower in protein
@@ -581,7 +563,7 @@ high gluten content is not required.
 SRW wheat is referred to as Chicago Wheat because the Chicago Board of
 Trade offers a futures contract for SRW wheat.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{images/SRW-Wheat.jpg}
 
@@ -589,14 +571,13 @@ Trade offers a futures contract for SRW wheat.
 
 \caption{Figure 11: Soft Red Winter Wheat}
 
-\end{figure}
+\end{figure}%
 
 (Source
 \href{https://www.gipsa.usda.gov/fgis/commgallery/gr_srw.aspx}{USDA-GIPSA})
 
-\hypertarget{protein-premiums-and-wheat-spreads}{%
 \subsection{Protein Premiums and Wheat
-Spreads}\label{protein-premiums-and-wheat-spreads}}
+Spreads}\label{protein-premiums-and-wheat-spreads}
 
 If you follow wheat markets for long, you will hear discussion of
 `protein premiums', that is because flour millers rarely use just one
@@ -617,11 +598,10 @@ Because of this dynamic, the relative prices of Minneapolis, Kansas
 City, and Chicago wheat futures are closely followed by stakeholders in
 any of the wheat markets.
 
-\hypertarget{recent-trends-in-acreage-yield-production-and-use-2}{%
 \section{Recent Trends in Acreage, Yield, Production, and
-Use}\label{recent-trends-in-acreage-yield-production-and-use-2}}
+Use}\label{recent-trends-in-acreage-yield-production-and-use-2}
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{assets/PrimerforGrain_WheatAcandY.png}
 
@@ -629,9 +609,8 @@ Use}\label{recent-trends-in-acreage-yield-production-and-use-2}}
 
 \caption{Data from USDA NASS}
 
-\end{figure}
-
-\begin{figure}
+\end{figure}%%
+\begin{figure}[H]
 
 {\centering \includegraphics{assets/PrimerforGrain_WheatProdand$.png}
 
@@ -639,13 +618,12 @@ Use}\label{recent-trends-in-acreage-yield-production-and-use-2}}
 
 \caption{Data from USDA NASS}
 
-\end{figure}
+\end{figure}%
 
 \bookmarksetup{startatroot}
 
-\hypertarget{commodity-price-analysis-and-forecasting}{%
 \chapter{Commodity Price Analysis and
-Forecasting}\label{commodity-price-analysis-and-forecasting}}
+Forecasting}\label{commodity-price-analysis-and-forecasting}
 
 {Interested in more? Please let me know by}
 \href{https://forms.gle/Q3VByCQZHjfQSy9D7}{taking the survey}!
@@ -675,9 +653,8 @@ products, metals, energy, an fibers. The fungibility of commodities
 enables the commodity to be traded in centralized spot and futures
 markets.
 
-\hypertarget{trasformation-over-space-time-and-form}{%
 \subsection{Trasformation Over Space, Time, and
-Form}\label{trasformation-over-space-time-and-form}}
+Form}\label{trasformation-over-space-time-and-form}
 
 Commodities can undergo various transformations. Standard price analysis
 usually groups these into three broad categories: Space, Time, and Form.
@@ -715,8 +692,7 @@ brewing the coffee. Starbucks, for example, does not sell a commodity.
 Their product is highly differentiated and they market the fact that
 their product is highly differentiated in the marketplace.
 
-\hypertarget{storable-and-nonstorable}{%
-\section{Storable and Nonstorable}\label{storable-and-nonstorable}}
+\section{Storable and Nonstorable}\label{storable-and-nonstorable}
 
 A key difference among commodities is their degree of storability. Some
 can be stored for long periods of time:
@@ -766,8 +742,7 @@ later. With non-storable commodities, prices can only be affected by the
 current supply of the commodity, since past supply cannot be brought
 forward.
 
-\hypertarget{commodity-prices}{%
-\section{Commodity Prices}\label{commodity-prices}}
+\section{Commodity Prices}\label{commodity-prices}
 
 Commodity prices are important both economically and politically in
 almost all countries. Commodity prices strongly influence farm income,
@@ -793,9 +768,8 @@ agricultural production for their livelihood. For these people,
 commodity prices determine the bulk of their income, and incomes of the
 poor is a primary concern in developing economies.
 
-\hypertarget{forecasting-commodity-prices-in-business}{%
 \subsection{Forecasting Commodity Prices in
-Business}\label{forecasting-commodity-prices-in-business}}
+Business}\label{forecasting-commodity-prices-in-business}
 
 Some companies business model leaves them exposed to risk that comes
 from price volatility and spend considerable resources analyzing prices.
@@ -822,9 +796,8 @@ There are consistent employment opportunities for students trained in
 price analysis and forecasting, and a growing interest in expertise in
 risk management strategies.
 
-\hypertarget{price-analysis-versus-forecasting}{%
 \subsection{Price Analysis versus
-Forecasting}\label{price-analysis-versus-forecasting}}
+Forecasting}\label{price-analysis-versus-forecasting}
 
 Price analysis and price forecasting are not exactly the same thing.
 Price analysis tends to be backward looking, while price forecasting is
@@ -840,8 +813,7 @@ Price Forecasting: - Goal is to reliably and accurately forecast future
 price levels of commodities - The forecasts can be used in marketing,
 risk management, and speculative strategies
 
-\hypertarget{forecasting-basics}{%
-\section{Forecasting Basics}\label{forecasting-basics}}
+\section{Forecasting Basics}\label{forecasting-basics}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -975,17 +947,15 @@ market participants is technical analysis, which is the use of past
 price patterns to predict future price movement. There are scores of
 books on the topic of technical analysis, if interested.
 
-\hypertarget{commodity-production-cycles}{%
 \subsection{Commodity Production
-Cycles}\label{commodity-production-cycles}}
+Cycles}\label{commodity-production-cycles}
 
 The production of agricultural commodities is bound by the biological
 traits of the life cycle. Forecasting prices requires an awareness of
 key seasons, and problems that can arise during each phase of the life
 cycle.
 
-\hypertarget{long-term-trends}{%
-\section{Long Term Trends}\label{long-term-trends}}
+\section{Long Term Trends}\label{long-term-trends}
 
 It is useful to begin our exploration of agricultural prices from a long
 term historical perspective. The figure below is monthly prices received
@@ -1000,7 +970,7 @@ inspection there seems to be three periods of stable prices, from
 seems to be the most volatile and provides less confidence that a
 similar pattern will persist going forward.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{assets/PrimerforGrain_CornPrices.png}
 
@@ -1008,14 +978,13 @@ similar pattern will persist going forward.
 
 \caption{Corn Prices Long Term}
 
-\end{figure}
+\end{figure}%
 
 There is a clear run-up in prices in the 1970's and again around
 2006-2007. What caused these seemingly permanent price hikes? Make sure
 you check out the readings to find out!
 
-\hypertarget{readings}{%
-\section{Readings}\label{readings}}
+\section{Readings}\label{readings}
 
 \begin{description}
 \item[\href{pdf-Readings/ers-amber-waves-2009-ag-com-pr-sp-1970s-1990s.pdf}{Agricultural
@@ -1038,8 +1007,7 @@ Scott Irwin and Darrel Good revisit the price `Era's' discussion again
 in April of 2016.
 \end{description}
 
-\hypertarget{exercises}{%
-\section{Exercises}\label{exercises}}
+\section{Exercises}\label{exercises}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1056,8 +1024,7 @@ in April of 2016.
 
 \bookmarksetup{startatroot}
 
-\hypertarget{how-to-find-information}{%
-\chapter{How to Find Information}\label{how-to-find-information}}
+\chapter{How to Find Information}\label{how-to-find-information}
 
 {Interested in more? Please let me know by}
 \href{https://forms.gle/Q3VByCQZHjfQSy9D7}{taking the survey}!
@@ -1079,8 +1046,7 @@ markets, the more you learn. Absorb the insights of the professionals
 who live and breath commodity markets every day, and you will begin to
 have a feel for what price analysis is all about and how it works.
 
-\hypertarget{market-commentary}{%
-\section{Market Commentary}\label{market-commentary}}
+\section{Market Commentary}\label{market-commentary}
 
 The best way to learn commodity price analysis is to listen to the
 professionals who provide commentary on the markets on a regular basis.
@@ -1131,8 +1097,7 @@ Center for Commercial Ag & Purdue University Ag Econ &
 \url{https://ag.purdue.edu/commercialag/home/} \\
 \end{longtable}
 
-\hypertarget{futures-price-quotes}{%
-\section{Futures Price Quotes}\label{futures-price-quotes}}
+\section{Futures Price Quotes}\label{futures-price-quotes}
 
 Futures contracts (contracts to buy/sell a specific quantity of, say,
 corn at a specific price on a specific date in the future) can be
@@ -1153,8 +1118,7 @@ of this book, but the interested reader is encouraged to refer to Kub
 (Kub 2012) for a practical introduction and Hull (Hull 2017) for a more
 technical approach.
 
-\hypertarget{futures-data-sources}{%
-\subsection{Futures Data Sources}\label{futures-data-sources}}
+\subsection{Futures Data Sources}\label{futures-data-sources}
 
 For agricultural commodities in the United States, the
 \href{http://www.cmegroup.com/}{CME Group} is the most important futures
@@ -1183,9 +1147,8 @@ convenient to obtain market quotes from third party vendors like
 sources offer a more flexible interface for viewing on the web, and
 provide utility to download recent price history.
 
-\hypertarget{futures-symbols-and-looking-up-data-by-contract-expiration}{%
 \subsection{Futures Symbols and Looking up Data by Contract
-Expiration}\label{futures-symbols-and-looking-up-data-by-contract-expiration}}
+Expiration}\label{futures-symbols-and-looking-up-data-by-contract-expiration}
 
 Contracts for several different expiry dates trade at the same time.
 There is a useful shorthand for finding contracts for a specific
@@ -1256,7 +1219,7 @@ Link
 \bottomrule\noalign{}
 \endlastfoot
 Soybean Crush &
-\href{https://www.barchart.com/futures/quotes/ZS*1/technical-chart?plot=LINE\&volume=contract\&data=DO\&density=M\&pricesOn=1\&asPctChange=0\&logscale=0\&sym=ZS*1-ZS*2\&grid=1\&height=500\&studyheight=100\&isSpread=1}{Barchart
+\href{https://www.barchart.com/futures/quotes/ZS*1/technical-chart?plot=LINE&volume=contract&data=DO&density=M&pricesOn=1&asPctChange=0&logscale=0&sym=ZS*1-ZS*2&grid=1&height=500&studyheight=100&isSpread=1}{Barchart
 Spread Chart} \\
 Cattle Crush &
 \href{http://www2.econ.iastate.edu/estimated-returns/Finishing\%20Steer\%20Calves\%20Chart.pdf}{ISU
@@ -1269,8 +1232,7 @@ Ethanol Grind Margin} (Download Ethanol Profitability spreadsheet. Look
 at Grind Margin chart) \\
 \end{longtable}
 
-\hypertarget{usda-reports}{%
-\section{USDA Reports}\label{usda-reports}}
+\section{USDA Reports}\label{usda-reports}
 
 The United States Department of Agriculture has a long history of
 extensively surveying market conditions, reporting to the public and
@@ -1283,9 +1245,8 @@ cause rapid, if not instantaneous price moves as the market digests the
 new information from the report. The most closely watched reports are
 summarized below.
 
-\hypertarget{usda-reports-influential-in-commodity-markets}{%
 \subsection{USDA Reports Influential in Commodity
-Markets}\label{usda-reports-influential-in-commodity-markets}}
+Markets}\label{usda-reports-influential-in-commodity-markets}
 
 \begin{description}
 \item[Prospective Plantings]
@@ -1395,15 +1356,14 @@ information about the status of the crop. Nass surveys approximately
 out one of the weekly tables
 \href{http://usda.mannlib.cornell.edu/usda/nass/CropProg//2010s/2017/CropProg-06-19-2017.txt}{June
 19, 2017} and summary charts
-\href{https://www.nass.usda.gov/Charts_and_Maps/Crop_Progress_\&_Condition/2016/US_2016.pdf}{US
+\href{https://www.nass.usda.gov/Charts_and_Maps/Crop_Progress_&_Condition/2016/US_2016.pdf}{US
 Progress and Condition}
 \item[Agricultural Marketing Service]
 The AMS provides numerous daily and weekly reports related to regional
 prices and exports.
 \end{description}
 
-\hypertarget{usda-data-sources}{%
-\subsection{USDA Data Sources}\label{usda-data-sources}}
+\subsection{USDA Data Sources}\label{usda-data-sources}
 
 All of the information contained in the reports described above are
 useful for in depth analysis over a long time horizon. As a service the
@@ -1470,8 +1430,7 @@ AMS &
 \href{http://www.ams.usda.gov/market-news/livestock-poultry-grain\#Grain}{http://www.ams.usda.gov/} \\
 \end{longtable}
 
-\hypertarget{conclusion}{%
-\section{Conclusion}\label{conclusion}}
+\section{Conclusion}\label{conclusion}
 
 This concludes chapter 3. We learned resources for accessing commodity
 market data, USDA reports, and daily market commentary. Aimed with these
@@ -1485,8 +1444,7 @@ quantities supplied and quantities demanded to be equal. This market
 equilibrium, if the fundamental model is correctly specified, should be
 a reasonable forecast of price.
 
-\hypertarget{readings-1}{%
-\section{Readings}\label{readings-1}}
+\section{Readings}\label{readings-1}
 
 \begin{description}
 \item[\href{http://farmdocdaily.illinois.edu/2015/03/usda-stocks-and-acreage-estimates-for-soybeans-and-corn.html}{USDA
@@ -1514,8 +1472,7 @@ Estimates and Prospects for Final Estimates for 2015.'' farmdoc daily
 of Illinois at Urbana-Champaign, October 15, 2015.
 \end{description}
 
-\hypertarget{exercises-1}{%
-\section{Exercises}\label{exercises-1}}
+\section{Exercises}\label{exercises-1}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1561,8 +1518,7 @@ of Illinois at Urbana-Champaign, October 15, 2015.
 
 \bookmarksetup{startatroot}
 
-\hypertarget{futures-and-hedging-review}{%
-\chapter{Futures and Hedging Review}\label{futures-and-hedging-review}}
+\chapter{Futures and Hedging Review}\label{futures-and-hedging-review}
 
 {Interested in more? Please let me know by}
 \href{https://forms.gle/Q3VByCQZHjfQSy9D7}{taking the survey}!
@@ -1604,8 +1560,7 @@ reduce or eliminate risk in your business' profits.
 Understanding who is hedging and why is very helpful to understanding
 price relationships and what drives them to move up or down.
 
-\hypertarget{futures-contract-review}{%
-\section{Futures Contract Review}\label{futures-contract-review}}
+\section{Futures Contract Review}\label{futures-contract-review}
 
 A futures contract is a contract between two parties to buy and sell at
 an agreed to price, a specific quantity and quality of something at a
@@ -1638,9 +1593,9 @@ gain \(+0.25*5000 = \$1250\) and the shorts (sellers) lose
 \(-0.25*5000 = \$1250\).
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2877}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3562}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3562}}@{}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2800}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3600}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3600}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 Time
@@ -1667,8 +1622,7 @@ will buy, getting them to a `flat' position as well. The rest of the
 chapter will cover how exactly these futures contracts can facilitate a
 hedge for different types of businesses.
 
-\hypertarget{delivery}{%
-\subsection{Delivery}\label{delivery}}
+\subsection{Delivery}\label{delivery}
 
 The CME Group grain and oilseed future are deliverable contracts,
 ensuring a link between the spot market and the futures market. Only a
@@ -1740,13 +1694,11 @@ wants to take delivery, they must pay the full amount,
 \(Futures Price X 5,000\) bushels, and must pay premium charges to the
 warehouse to hold the shipping certificate.
 
-\hypertarget{examples-who-hedges-and-how-does-a-futures-contract-facilitate-a-hedge}{%
 \section{Examples: Who Hedges and How Does a Futures Contract Facilitate
 a
-Hedge?}\label{examples-who-hedges-and-how-does-a-futures-contract-facilitate-a-hedge}}
+Hedge?}\label{examples-who-hedges-and-how-does-a-futures-contract-facilitate-a-hedge}
 
-\hypertarget{farmer}{%
-\subsection{Farmer}\label{farmer}}
+\subsection{Farmer}\label{farmer}
 
 Consider the corn farmer who plants her crop in April waits for it to
 grow and then mature through the summer and fall, then harvests it in
@@ -1757,15 +1709,7 @@ at a price they publicly offer anyone interested in selling grain.
 
 Figure 1. A Grain Elevator in Royal, IL
 
-\begin{figure}
-
-{\centering 
-
 \href{https://commons.wikimedia.org/wiki/File:Grain_elevators_in_Royal,_IL.}{\includegraphics{assets/Grain_elevator_royal_IL.jpg}}
-
-}
-
-\end{figure}
 
 Source:
 \href{https://commons.wikimedia.org/wiki/File\%3AGrain_elevators_in_Royal\%2C_IL.jpg}{Daniel
@@ -1858,11 +1802,11 @@ out to be \$3.60.
 \textbf{Dec Futures Price went Up to \$4.00, Basis Unchanged}
 
 \begin{longtable}[]{@{}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1944}}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2222}}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1944}}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1944}}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1944}}@{}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1721}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2787}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2049}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2213}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1230}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\centering
 Date
@@ -1900,11 +1844,11 @@ prices.
 \textbf{Dec Futures Price went Down to \$3.60, Basis Unchanged}
 
 \begin{longtable}[]{@{}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1944}}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2222}}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1944}}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1944}}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1944}}@{}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1721}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2787}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2049}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2213}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1230}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\centering
 Date
@@ -1940,11 +1884,11 @@ and the basis narrows to \$0.00.
 \textbf{Dec Futures Price Unchanged, Basis now -\$0.50}
 
 \begin{longtable}[]{@{}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1944}}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2222}}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1944}}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1944}}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1944}}@{}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1721}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2787}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2049}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2213}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1230}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\centering
 Date
@@ -1977,11 +1921,11 @@ strengthens, or narrows.
 \textbf{Dec Futures Price Unchanged, Basis now \$0.00}
 
 \begin{longtable}[]{@{}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1944}}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2222}}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1944}}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1944}}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1944}}@{}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1721}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2787}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2049}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2213}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1230}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\centering
 Date
@@ -2041,8 +1985,7 @@ price.
   increased profits.
 \end{enumerate}
 
-\hypertarget{flour-mill}{%
-\subsection{Flour Mill}\label{flour-mill}}
+\subsection{Flour Mill}\label{flour-mill}
 
 A flour mill buys large quantities of grain for making into flour. They
 can use futures to hedge price risk by `buying ahead' futures contracts.
@@ -2094,14 +2037,14 @@ cents under the nearby futures contract, meaning the spot price column
 is always 0.25 cents less than the next to expire futures contract.
 
 \begin{longtable}[]{@{}
-  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1233}}
-  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1233}}
-  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1233}}
-  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1370}}
-  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1233}}
-  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1233}}
-  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1233}}
-  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1233}}@{}}
+  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.0827}}
+  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.2105}}
+  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1805}}
+  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.2556}}
+  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.0602}}
+  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.0677}}
+  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.0677}}
+  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.0752}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\centering
 Dates
@@ -2145,16 +2088,14 @@ buying a certain kind of commodity, transforming it, and selling another
 commodity. Some are lucky in that they can hedge both the buy and sell
 side of the crushing business.
 
-\hypertarget{soybean-crusher}{%
-\subsection{Soybean Crusher}\label{soybean-crusher}}
+\subsection{Soybean Crusher}\label{soybean-crusher}
 
 The soybean crusher buys soybeans and sells soybean meal and oil. Their
 futures hedge would involve buying soybean futures and selling meal and
 oil futures.
 
-\hypertarget{importance-of-having-a-line-of-credit-in-futures-hedging}{%
 \subsection{Importance of Having a Line of Credit in Futures
-Hedging}\label{importance-of-having-a-line-of-credit-in-futures-hedging}}
+Hedging}\label{importance-of-having-a-line-of-credit-in-futures-hedging}
 
 Anyone who is hedging with futures -- whether they be farmers, flour
 mills, or commercial grain handlers -- must have a line of credit in
@@ -2172,16 +2113,14 @@ Without the ability to access a line of credit and maintain margin, the
 short hedge position will be forced to liquidate, and then the farmer
 will no longer be hedged.
 
-\hypertarget{how-crop-revanue-insurance-has-changed-commodity-marketing-and-hedging-needs}{%
 \subsection{How Crop Revanue Insurance Has Changed Commodity Marketing
 and Hedging
-Needs}\label{how-crop-revanue-insurance-has-changed-commodity-marketing-and-hedging-needs}}
+Needs}\label{how-crop-revanue-insurance-has-changed-commodity-marketing-and-hedging-needs}
 
 \bookmarksetup{startatroot}
 
-\hypertarget{introduction-to-option-contracts}{%
 \chapter{Introduction to Option
-Contracts}\label{introduction-to-option-contracts}}
+Contracts}\label{introduction-to-option-contracts}
 
 {Interested in more? Please let me know by}
 \href{https://forms.gle/Q3VByCQZHjfQSy9D7}{taking the survey}!
@@ -2211,8 +2150,7 @@ Contracts}\label{introduction-to-option-contracts}}
   October. Why would why would a long put option be a hedge?
 \end{itemize}
 
-\hypertarget{what-is-an-option-contract}{%
-\section{What is an Option Contract?}\label{what-is-an-option-contract}}
+\section{What is an Option Contract?}\label{what-is-an-option-contract}
 
 The previous chapter provided an introduction to futures markets and how
 they can be used to hedge a position in the cash market, or to speculate
@@ -2225,9 +2163,8 @@ another asset or financial instrument. The purchaser of an option
 contract will accept the position in the underlying only if it is
 advantageous to do so.
 
-\hypertarget{call-options-vs-put-options}{%
 \subsection{Call Options Vs Put
-Options}\label{call-options-vs-put-options}}
+Options}\label{call-options-vs-put-options}
 
 There are two basic types of options: call options and put options. Call
 options give the holder the \emph{right to buy} the underlying at a
@@ -2241,9 +2178,8 @@ the underlying asset at any time prior to or at expiration). Whereas, a
 European contract can only be exercised at the option contract's
 expiration.
 
-\hypertarget{option-contract-components}{%
 \subsection{Option Contract
-Components}\label{option-contract-components}}
+Components}\label{option-contract-components}
 
 All option contracts must specify the following details.
 
@@ -2274,9 +2210,8 @@ All option contracts must specify the following details.
   contracts.
 \end{itemize}
 
-\hypertarget{what-are-the-obligations-of-option-sellers}{%
 \section{What are the Obligations of Option
-Sellers?}\label{what-are-the-obligations-of-option-sellers}}
+Sellers?}\label{what-are-the-obligations-of-option-sellers}
 
 Every option contract has a buyer and a seller. We discussed how the
 buyer of the option has the right, but not the obligation to buy (for a
@@ -2302,9 +2237,8 @@ of the underlying stays above the strike price so they are paid the
 option premium without getting assigned to a losing position in the
 underlying.
 
-\hypertarget{profit-and-loss-diagrams-for-option-positions}{%
 \section{\texorpdfstring{\textbf{Profit and Loss Diagrams for Option
-Positions}}{Profit and Loss Diagrams for Option Positions}}\label{profit-and-loss-diagrams-for-option-positions}}
+Positions}}{Profit and Loss Diagrams for Option Positions}}\label{profit-and-loss-diagrams-for-option-positions}
 
 The preceding discussion containing a lot of descriptions can be quite
 wordy. In this case, a picture really is worth a thousand words. In the
@@ -2359,8 +2293,7 @@ unlimited upside potential, but require an upfront cost, while short
 option positions receive payment upfront in the form of the option
 premium in exchange for taking the downside risk.
 
-\hypertarget{moneyness-of-an-option}{%
-\section{Moneyness of an Option}\label{moneyness-of-an-option}}
+\section{Moneyness of an Option}\label{moneyness-of-an-option}
 
 Option contracts are often characterized by their
 \emph{\textbf{moneyness}.} Moneyness simply refers to how near the price
@@ -2380,8 +2313,7 @@ Getting a feel for these definitions will help you develop intuition for
 options prices in the next chapter. In-the-money options should be
 expensive and out-of-the-money options should be cheap.
 
-\hypertarget{option-prices-premium}{%
-\section{Option Prices (Premium)}\label{option-prices-premium}}
+\section{Option Prices (Premium)}\label{option-prices-premium}
 
 Option prices (also called option premium) are determined by buyers and
 sellers in options markets, usually in electronic limit order books
@@ -2417,8 +2349,7 @@ famous (though imperfect) option pricing model, but we can use a concept
 called intrinsic value to get a sense of some properties option prices
 should have.
 
-\hypertarget{intrinsic-value}{%
-\subsection{Intrinsic Value}\label{intrinsic-value}}
+\subsection{Intrinsic Value}\label{intrinsic-value}
 
 If we take the profit diagrams for the long call and put positions above
 and just plot what the gain or loss in the underlying market would be if
@@ -2438,8 +2369,7 @@ of the price of the underlying along the x-axis. How far above is
 determined by several factors that we will learn about in the next
 chapter.
 
-\hypertarget{margin-requirements}{%
-\section{Margin Requirements}\label{margin-requirements}}
+\section{Margin Requirements}\label{margin-requirements}
 
 Since long option positions require premium to be paid upfront, the
 option buyer literally prepays the entire risk of the position.
@@ -2451,8 +2381,7 @@ set by the exchange). The amount of margin required is set at the
 discretion of the exchange, but is greatly influenced by both recent and
 historical volatility of that particular market.
 
-\hypertarget{size-of-the-underlying}{%
-\section{Size of the Underlying}\label{size-of-the-underlying}}
+\section{Size of the Underlying}\label{size-of-the-underlying}
 
 Every option contract will specify how much of the underlying the
 contract is associated with. In the case of stock options, options most
@@ -2467,8 +2396,7 @@ one futures contract, though. So if you buy a call option on soybean
 futures at the \url{cmegroup.com} it is the right to buy just one
 futures contract.
 
-\hypertarget{reading-option-quotes}{%
-\section{Reading Option Quotes}\label{reading-option-quotes}}
+\section{Reading Option Quotes}\label{reading-option-quotes}
 
 The figure below shows quotes for several options on the January 2021
 soybeans futures contract that trades on the \url{cmegroup.com}
@@ -2491,24 +2419,22 @@ focused on Call or Put options.
 
 \includegraphics{assets/Options1-undelyingquote.PNG}
 
-\begin{figure}
+\begin{figure}[H]
 
-{\centering 
-
-\href{https://www.cmegroup.com/trading/agricultural/grain-and-oilseed/soybean_contract_specifications.html}{\includegraphics{assets/Options1-quotes.PNG}}
+{\centering \includegraphics{assets/Options1-quotes.PNG}
 
 }
 
 \caption{Quotes on January 2021 Soybean Futures Options Contracts,
 January Expiration}
 
-\end{figure}
+\end{figure}%
 
 Focus on the 1250 strike options that are highlighted in yellow. These
 options contracts are also quoted in eight of a cent increments, so the
 LAST price on the call option is 7'5, which means
 \(7 + \frac{5}{8} = 7.625\) cents. Therefore, the cost of the 1250 call
-option that expires in January is \(7.625*5000 = \$31.32\) since one
+option that expires in January is \(7.625*5000 = \$381.25\) since one
 soybean contract is for 5000 bushels. That seems pretty cheap, right.
 One thing to note is that the monthly options on soybean futures expire
 on the last Friday at least two business days before the last business
@@ -2553,8 +2479,7 @@ offering different strikes, liquidity gets spread thin. So if you are
 trading option contracts you have to make sure the contract will be
 liquid enough to get out of the position if you want to.
 
-\hypertarget{closing-an-option-position}{%
-\section{Closing an Option Position}\label{closing-an-option-position}}
+\section{Closing an Option Position}\label{closing-an-option-position}
 
 There are two ways to close or `get out of' an option position: take the
 opposite position or exercise (in the case of option longs) or get
@@ -2565,8 +2490,7 @@ sell the same option contract then you become `flat' or have no position
 anymore. If you are short or have sold the option, you can simply buy
 the same contract and become flat.
 
-\hypertarget{exercise-and-assignment}{%
-\subsection{Exercise and Assignment}\label{exercise-and-assignment}}
+\subsection{Exercise and Assignment}\label{exercise-and-assignment}
 
 The second way to exit the option position is to exercise (if you are
 long the option) or be exercised upon (if you are short the option).
@@ -2607,8 +2531,7 @@ price if you want to do the trade immediately. If the bid-ask spread is
 wide enough, it may be more beneficial just to exercise and then offset
 your position in the underlying.
 
-\hypertarget{option-expiration}{%
-\subsection{Option Expiration}\label{option-expiration}}
+\subsection{Option Expiration}\label{option-expiration}
 
 Options on futures usually expire a few weeks before the underlying
 futures contract expires. In most cases, the exchange will automatically
@@ -2616,8 +2539,7 @@ exercise in-the-money options that are held to expiration.
 
 \bookmarksetup{startatroot}
 
-\hypertarget{advanced-option-topics}{%
-\chapter{Advanced Option Topics}\label{advanced-option-topics}}
+\chapter{Advanced Option Topics}\label{advanced-option-topics}
 
 {Interested in more? Please let me know by}
 \href{https://forms.gle/Q3VByCQZHjfQSy9D7}{taking the survey}!
@@ -2654,9 +2576,8 @@ model. Lastly, we will learn the concept of delta hedging and how
 options positions can be used as a hedging tool in the underlying
 market.
 
-\hypertarget{black-scholes-option-pricing-model}{%
 \section{Black-Scholes Option Pricing
-Model}\label{black-scholes-option-pricing-model}}
+Model}\label{black-scholes-option-pricing-model}
 
 The Black-Scholes option pricing model provides the price of a European
 call and the price of a European put on a non-dividend paying stock. The
@@ -2681,8 +2602,7 @@ The most basic form of the Black-Scholes model is for options on
 non-dividend paying stock. We will present this model, then we will show
 the slight modification required for options on futures contracts.
 
-\hypertarget{assumptions}{%
-\subsection{Assumptions}\label{assumptions}}
+\subsection{Assumptions}\label{assumptions}
 
 First, we need to establish the assumptions required in order for the
 Black-Scholes model to hold true. (\textbf{blacksc2020?})
@@ -2715,8 +2635,7 @@ Black-Scholes model to hold true. (\textbf{blacksc2020?})
   There are no transactions costs
 \end{itemize}
 
-\hypertarget{notation}{%
-\subsection{Notation}\label{notation}}
+\subsection{Notation}\label{notation}
 
 \begin{itemize}
 \item
@@ -2752,9 +2671,8 @@ The price of a similar put option is:
 P = N(-d_{2}) K e^{-rt} - N(-d_{1}) S_{t}
 \]
 
-\hypertarget{option-pricing-formula-for-futures-contracts}{%
 \subsection{Option Pricing Formula for Futures
-Contracts}\label{option-pricing-formula-for-futures-contracts}}
+Contracts}\label{option-pricing-formula-for-futures-contracts}
 
 Black (1976) derives a version of the Black-Scholes model that is
 appropriate for pricing futures contracts. The key difference between
@@ -2778,8 +2696,7 @@ and
 P = N(-d_{2}) K e^{-rt} - N(-d_{1}) F_{t} e^{-rt}
 \]
 
-\hypertarget{put-call-parity}{%
-\section{Put-Call Parity}\label{put-call-parity}}
+\section{Put-Call Parity}\label{put-call-parity}
 
 Put and call options of the same strike price and same expiration have
 to follow a specific relationship. That means that if you know the price
@@ -2834,8 +2751,7 @@ premium. For example, try 50, 30, and 10. What is strange about premium
 As an aside, note that you can create a synthetic call option by buying
 a put option and buying the underlying.
 
-\hypertarget{implied-volatility}{%
-\section{Implied Volatility}\label{implied-volatility}}
+\section{Implied Volatility}\label{implied-volatility}
 
 Notice that of all the variables that go into the option pricing model,
 the only ones we don't know beforehand are the option price and
@@ -2868,9 +2784,8 @@ option pricing model affect option prices. We will see that implied
 volatility has a big impact. High implied volatility means high option
 prices all else equal.
 
-\hypertarget{option-prices-compared-to-the-profit-diagram}{%
 \section{Option Prices Compared to the Profit
-Diagram}\label{option-prices-compared-to-the-profit-diagram}}
+Diagram}\label{option-prices-compared-to-the-profit-diagram}
 
 In the Google Sheet embedded below we have plotted in gold the price of
 a call and put option with strike price of 450 cents along with the
@@ -2892,8 +2807,7 @@ Further, notice that the option differs from its intrinsic value most
 near the strike price; this is because the option price must smooth out
 the kink in the intrinsic value diagram.
 
-\hypertarget{option-greeks}{%
-\section{Option Greeks}\label{option-greeks}}
+\section{Option Greeks}\label{option-greeks}
 
 In this section we will learn the option `greeks'. This, along with the
 second derivatives, will do more than anything to give you a better
@@ -3016,9 +2930,8 @@ over many price ranges, at the end of the day, profitable option buying
 for speculation requires anticipating a significant price move to pay
 off.
 
-\hypertarget{criticisms-of-the-black-scholes-pricing-model}{%
 \section{Criticisms of the Black-Scholes Pricing
-Model}\label{criticisms-of-the-black-scholes-pricing-model}}
+Model}\label{criticisms-of-the-black-scholes-pricing-model}
 
 We should be aware that while the Black-Scholes option pricing model is
 very elegant and easy to work with, it has some limitations. Most
@@ -3098,8 +3011,7 @@ standing orders in the market. But, it also occurs during routine market
 closures. The overnight jumps can be substantial in cases where a lot of
 information is revealed overnight.
 
-\hypertarget{delta-hedging}{%
-\section{Delta Hedging}\label{delta-hedging}}
+\section{Delta Hedging}\label{delta-hedging}
 
 One proof of the Black-Scholes option pricing formula shows that if one
 can continuously hedge the sale of an option contract with the
@@ -3241,9 +3153,8 @@ position to +1*.85, but doing so does not erase the loss they
 experienced from the rise in price from 450 to 475, it just gets them
 delta-hedged against small price movements going forward.
 
-\hypertarget{why-is-delta-hedging-not-fool-proof}{%
 \subsection{Why is delta-hedging not
-fool-proof?}\label{why-is-delta-hedging-not-fool-proof}}
+fool-proof?}\label{why-is-delta-hedging-not-fool-proof}
 
 Delta hedging only works if traders can continuously re-balance their
 option and futures positions to keep delta neutral as prices change.
@@ -3318,9 +3229,8 @@ Quantity & 100 & 50 \\
 \textbf{Net Profit/Loss} & 62,500 - 89,000 = \textbf{-\$26,000} & \\
 \end{longtable}
 
-\hypertarget{famous-blow-ups-in-delta-hedging-operations}{%
 \subsection{Famous Blow-Ups in Delta-Hedging
-Operations}\label{famous-blow-ups-in-delta-hedging-operations}}
+Operations}\label{famous-blow-ups-in-delta-hedging-operations}
 
 Large unexpected price movements, have a storied history of blowing up
 hedge funds who focus on selling volatility. Several articles are linked
@@ -3360,8 +3270,7 @@ likely to blow up (total loss of trading capital).
 
 \bookmarksetup{startatroot}
 
-\hypertarget{hedging-with-options}{%
-\chapter{Hedging with Options}\label{hedging-with-options}}
+\chapter{Hedging with Options}\label{hedging-with-options}
 
 {Interested in more? Please let me know by}
 \href{https://forms.gle/Q3VByCQZHjfQSy9D7}{taking the survey}!
@@ -3393,9 +3302,8 @@ likely to blow up (total loss of trading capital).
   maintain margin?
 \end{itemize}
 
-\hypertarget{farmer-hedging-price-risk-on-production-with-a-put-option}{%
 \section{Farmer Hedging Price Risk on Production with a Put
-Option}\label{farmer-hedging-price-risk-on-production-with-a-put-option}}
+Option}\label{farmer-hedging-price-risk-on-production-with-a-put-option}
 
 We know from chapter 4 that hedging in the financial sense is an
 activity designed to generate positive cash flows when the main pain
@@ -3469,9 +3377,8 @@ more limited, but the premium paid will be higher. Similarly, if you
 choose a higher strike for the sold call you will retain more upside
 potential, but the premium you receive will be smaller.
 
-\hypertarget{farmer-hedging-by-putting-on-a-fence}{%
 \section{Farmer Hedging by Putting on a
-Fence}\label{farmer-hedging-by-putting-on-a-fence}}
+Fence}\label{farmer-hedging-by-putting-on-a-fence}
 
 \includegraphics{assets/Options4-spotfence.png}
 
@@ -3484,8 +3391,7 @@ call, 475.
 
 \includegraphics{assets/Options4-Netspotfence.png}
 
-\hypertarget{a-note-on-margin}{%
-\subsection{A Note on Margin}\label{a-note-on-margin}}
+\subsection{A Note on Margin}\label{a-note-on-margin}
 
 When putting on a fence, you have to keep in mind that your short call
 position will require margin. If the price goes up, your short call
@@ -3500,8 +3406,7 @@ require margin posted to the account. As long as you have enough money
 in your brokerage account to buy the option + fees, you can get into the
 long put position.
 
-\hypertarget{wrapping-up}{%
-\section{Wrapping Up}\label{wrapping-up}}
+\section{Wrapping Up}\label{wrapping-up}
 
 In this chapter we learned how options can be used to hedge spot
 positions in commodity markets. Downside risk can be protected with put
@@ -3510,9 +3415,8 @@ for options that have expirations longer than a week or two out.
 
 \bookmarksetup{startatroot}
 
-\hypertarget{marketing-hedging-and-crop-insurance}{%
 \chapter{Marketing, Hedging, and Crop
-Insurance}\label{marketing-hedging-and-crop-insurance}}
+Insurance}\label{marketing-hedging-and-crop-insurance}
 
 {Interested in more? Please let me know by}
 \href{https://forms.gle/Q3VByCQZHjfQSy9D7}{taking the survey}!
@@ -3540,9 +3444,8 @@ Insurance}\label{marketing-hedging-and-crop-insurance}}
 \item
 \end{itemize}
 
-\hypertarget{brief-history-of-crop-insurance-prior-federal-farm-support-programs}{%
 \section{Brief History of Crop Insurance Prior Federal Farm Support
-Programs}\label{brief-history-of-crop-insurance-prior-federal-farm-support-programs}}
+Programs}\label{brief-history-of-crop-insurance-prior-federal-farm-support-programs}
 
 Currently crop insurance dominates the landscape of federally sponsored
 farm programs for risk management (Walters and Preston 2017). However,
@@ -3602,9 +3505,8 @@ farmers voluntarily purchase enough coverage to reduce the need for
 frequent disaster payments. At the time of writing, federal subsidies
 for crop insurance average 62\% of the premium cost (Zulauf 2016).
 
-\hypertarget{overview-of-typical-crop-insurance-offerings}{%
 \section{Overview of Typical Crop Insurance
-offerings}\label{overview-of-typical-crop-insurance-offerings}}
+offerings}\label{overview-of-typical-crop-insurance-offerings}
 
 \textbf{Yield Protection and Area Yield Protection}
 
@@ -3633,9 +3535,8 @@ Revenue protection with Harvest Price Exclusion is the same as Revenue
 Protection, except the policy doesn't guarantee based on the Harvest
 Price, Revenue is calculated based on the Projected price times APH.
 
-\hypertarget{pre-harvest-marketing-strategies-paired-with-crop-insurance-protection}{%
 \section{Pre-Harvest Marketing Strategies Paired with Crop Insurance
-Protection}\label{pre-harvest-marketing-strategies-paired-with-crop-insurance-protection}}
+Protection}\label{pre-harvest-marketing-strategies-paired-with-crop-insurance-protection}
 
 Now we turn our attention to marketing strategies that can complement
 crop insurance, since roughly 90\% of U.S. cropland is insured in some
@@ -3688,8 +3589,7 @@ explore the moving parts yourself by going to the Google sheet
 
 \bookmarksetup{startatroot}
 
-\hypertarget{prices-over-space-and-time}{%
-\chapter{Prices Over Space and Time}\label{prices-over-space-and-time}}
+\chapter{Prices Over Space and Time}\label{prices-over-space-and-time}
 
 {Interested in more? Please let me know by}
 \href{https://forms.gle/Q3VByCQZHjfQSy9D7}{taking the survey}!
@@ -3748,9 +3648,7 @@ hedge their cash sale with the March futures contract. This is costly so
 the price increase from waiting until March must be high enough to cover
 these costs or the farmer will just sell everything at harvest.
 
-\hypertarget{storage-costs-to-the-farmer}{%
-\section{Storage Costs to the
-Farmer}\label{storage-costs-to-the-farmer}}
+\section{Storage Costs to the Farmer}\label{storage-costs-to-the-farmer}
 
 Storage costs include the following:\footnote{For more
   \href{https://www.extension.iastate.edu/agdm/crops/pdf/a2-33.pdf}{see}}
@@ -3802,9 +3700,7 @@ March.\footnote{Ed Usset with the University of Minnesota Extension has
   and
   \href{http://www.cornandsoybeandigest.com/carrying-charges-part-2}{here}.}
 
-\hypertarget{an-increasing-forward-curve}{%
-\section{An Increasing Forward
-Curve}\label{an-increasing-forward-curve}}
+\section{An Increasing Forward Curve}\label{an-increasing-forward-curve}
 
 Figure 1
 
@@ -3849,8 +3745,7 @@ storing through July, but no longer. Anyone planning to hold grain from
 July to September and beyond could expect to lose as much as 4 cents per
 month.
 
-\hypertarget{a-decreasing-forward-curve}{%
-\section{A Decreasing Forward Curve}\label{a-decreasing-forward-curve}}
+\section{A Decreasing Forward Curve}\label{a-decreasing-forward-curve}
 
 Next we will consider a year that was characterized by a decreasing
 forward curve. You will recall that 2012 was a significant drought year
@@ -3896,9 +3791,8 @@ in figure 5.
 
 \includegraphics{assets/PricesSpaceTime-flat-12-03-2012.png}
 
-\hypertarget{forward-curve-cases-with-hypothetical-data}{%
 \section{Forward Curve Cases with Hypothetical
-Data}\label{forward-curve-cases-with-hypothetical-data}}
+Data}\label{forward-curve-cases-with-hypothetical-data}
 
 When prices move up or down, the front end of the forward curve
 generally is more responsive than the back end of the forward curve. We
@@ -3955,8 +3849,7 @@ forward curve. Usually though, the front end of the forward curve will
 be more volatile than the back end of the forward curve as depicted in
 figures 6 and 7.
 
-\hypertarget{financial-full-carry}{%
-\section{Financial Full Carry}\label{financial-full-carry}}
+\section{Financial Full Carry}\label{financial-full-carry}
 
 We discussed at the beginning of this chapter that one of the costs of
 storage to the farmer is the opportunity cost of money resulting from
@@ -4008,8 +3901,7 @@ in an easier metric to compare across time. In our example, percent of
 full carry \(=100*30/16.86 = 177.94\%\) (remember this was an extreme
 example to illustrate the potential for arbitrage).
 
-\hypertarget{calendar-spreads}{%
-\section{Calendar Spreads}\label{calendar-spreads}}
+\section{Calendar Spreads}\label{calendar-spreads}
 
 The prior discussion has viewed the forward curve and returns to storage
 from the perspective of a farmer or other who holds physical stocks of
@@ -4029,9 +3921,8 @@ but less so.
 So, a speculator places the following trades if they are bullish
 (bearish):
 
-\hypertarget{bullish---think-prices-are-going-up}{%
 \subsection{Bullish - think prices are going
-up}\label{bullish---think-prices-are-going-up}}
+up}\label{bullish---think-prices-are-going-up}
 
 Buy Nearby: Dec 2017, Sell Deferred: March 2018
 
@@ -4041,9 +3932,8 @@ suggests supplies will become tighter should make prices go up in
 general, and should reduce the incentive to store. Thus, making this a
 profitable calendar spread trade.
 
-\hypertarget{bearish---think-prices-are-going-down}{%
 \subsection{Bearish - think prices are going
-down}\label{bearish---think-prices-are-going-down}}
+down}\label{bearish---think-prices-are-going-down}
 
 Sell Nearby: Dec 2017, Buy Deferred: March 2018
 
@@ -4056,8 +3946,7 @@ incentives to store. Thus making the bearish calendar spread profitable.
 To see today's forward curves in Corn and Soybeans visit
 \href{https://mindymallory.shinyapps.io/ForwardCurves/}{here}.
 
-\hypertarget{price-variation-over-space}{%
-\section{Price Variation Over Space}\label{price-variation-over-space}}
+\section{Price Variation Over Space}\label{price-variation-over-space}
 
 Most of our time in this course has focused on what impacts futures
 prices for commodities. However, a futures price represent the expected
@@ -4068,7 +3957,7 @@ where stocks of a commodity represented by a futures contract may be
 delivered in fulfillment of the contract. This is where the spot, or
 cash, price must come together, or converge, with the futures price.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{images/IL-River.png}
 
@@ -4077,11 +3966,11 @@ cash, price must come together, or converge, with the futures price.
 \caption{Figure 11. Delivery Locations for Corn and Soybeans are Mostly
 Along the Illinois River Between Chicago and Peoria, IL}
 
-\end{figure}
+\end{figure}%
 
 (Source \href{https://www.google.com/maps}{Google Maps})
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{images/Burns-Harbor.png}
 
@@ -4089,7 +3978,7 @@ Along the Illinois River Between Chicago and Peoria, IL}
 
 \caption{Figure 12. Delvery Location at Burns Harbor, IN}
 
-\end{figure}
+\end{figure}%
 
 (Source
 \href{https://www.google.com/maps/place/Burns+Harbor,+IN/@41.740398,-87.7248706,10.5z/data=!4m5!3m4!1s0x8811bc3712ab828d:0x98301a46014d10b5!8m2!3d41.6258708!4d-87.1333676}{Google
@@ -4114,7 +4003,7 @@ prices is relative to the futures contract price, or basis.
 
 In figure 13 the elevators around Champiagn, IL are shown.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{images/Champaign-Elevators.png}
 
@@ -4122,7 +4011,7 @@ In figure 13 the elevators around Champiagn, IL are shown.
 
 \caption{Figure 13. Elevators Around Champaign, IL}
 
-\end{figure}
+\end{figure}%
 
 Depending on how far the location is from the Illinois river, this
 difference may be large, but still the futures price is the reference
@@ -4131,8 +4020,7 @@ For example, an elevator might post bids to buy for \(-27\) cents. This
 means \(27\) cents under the futures price. A bid of \(31\) would be
 read as \(31\) cents over the futures price.
 
-\hypertarget{definition-of-basis}{%
-\section{Definition of Basis}\label{definition-of-basis}}
+\section{Definition of Basis}\label{definition-of-basis}
 
 Basis is always defined as Spot Price minus Futures price.
 
@@ -4173,8 +4061,7 @@ Iowa, there was more localized demand for corn. The ethanol plants and
 grain elevators had increased localized competition, and local basis
 bids started to rise between 2005 and 2010.
 
-\hypertarget{terminology}{%
-\section{Terminology}\label{terminology}}
+\section{Terminology}\label{terminology}
 
 Farmers and grain handlers alike watch the basis closely, so discussion
 of changes in the basis is common. When the basis is increasing, in most
@@ -4184,8 +4071,7 @@ negative', we say the basis is \textbf{weakening}.
 
 \bookmarksetup{startatroot}
 
-\hypertarget{balance-sheet-analysis}{%
-\chapter{Balance Sheet Analysis}\label{balance-sheet-analysis}}
+\chapter{Balance Sheet Analysis}\label{balance-sheet-analysis}
 
 {Interested in more? Please let me know by}
 \href{https://forms.gle/Q3VByCQZHjfQSy9D7}{taking the survey}!
@@ -4234,15 +4120,14 @@ market is overvaluing the commodity - an opportunity to sell high and
 buy low! This, of course, only works if your forecast is correct, that
 is, the market eventually agrees and moves into line with your forecast.
 
-\hypertarget{supply-and-demand}{%
-\section{Supply and Demand}\label{supply-and-demand}}
+\section{Supply and Demand}\label{supply-and-demand}
 
 Conducting fundamental analyses involves taking into account all the
 factors that determine supply, demand, and ultimately, prices. For grain
 markets there are basically two supply models to keep in mind:
 preplanting and post planting. Below we display both.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{images/Ch3.1.png}
 
@@ -4251,7 +4136,7 @@ preplanting and post planting. Below we display both.
 \caption{Figure 1. Supply and Demand Model of a Commodity Before and
 After Planting}
 
-\end{figure}
+\end{figure}%
 
 The intuition here is simply that before planting, the final supply for
 the crop can be affected by farmers changing their intentions about how
@@ -4341,8 +4226,7 @@ countries can buy dollars cheaply - giving them more purchasing power
 for goods denominated in dollars.
 \end{description}
 
-\hypertarget{balance-sheet}{%
-\section{Balance Sheet}\label{balance-sheet}}
+\section{Balance Sheet}\label{balance-sheet}
 
 Most fundamental analyses rely on maintaining balance sheets of a
 commodity for a country, region, or the world. The approach is to
@@ -4351,9 +4235,8 @@ the commodity has been used. Then through various means we will explore
 later, one arrives at a price that is expected to ration remaining
 supplies across competing uses.
 
-\hypertarget{the-marketing-year-and-balance-sheet-forecasting-schedule}{%
 \subsection{The Marketing Year and Balance Sheet Forecasting
-Schedule}\label{the-marketing-year-and-balance-sheet-forecasting-schedule}}
+Schedule}\label{the-marketing-year-and-balance-sheet-forecasting-schedule}
 
 Balance sheet analysis is often organized by marketing year. Since
 production happens once per year, the marketing year is defined to begin
@@ -4432,9 +4315,8 @@ production revisions, southern hemisphere production, stocks, and use
 reports. \\
 \end{longtable}
 
-\hypertarget{southern-hemisphere-production}{%
 \subsection{Southern Hemisphere
-Production}\label{southern-hemisphere-production}}
+Production}\label{southern-hemisphere-production}
 
 Production of corn, soybeans, and other commodities in the southern
 hemisphere (most notably in Brazil and Argentina) has grown rapidly over
@@ -4444,8 +4326,7 @@ of marketing years organized by northern hemisphere harvest, there is an
 uncertain additional supply that must be forecast and updated to keep an
 accurate global balance sheet.
 
-\hypertarget{uncertainty}{%
-\subsection{Uncertainty}\label{uncertainty}}
+\subsection{Uncertainty}\label{uncertainty}
 
 Even careful accounting of supply and demand factors that make up the
 balance sheet leaves a tremendous amount of uncertainty in the market.
@@ -4459,8 +4340,7 @@ achieve the forecast level of ethanol crush, soybean crush, or exports.
 Surprises in any of these components can lead to rapid corrections in
 the commodity markets.
 
-\hypertarget{balance-sheet-format}{%
-\subsection{Balance Sheet Format}\label{balance-sheet-format}}
+\subsection{Balance Sheet Format}\label{balance-sheet-format}
 
 Here we discuss the common format balance sheets for any commodity have
 in common. Then we talk about the components of specific balance sheets
@@ -4516,11 +4396,11 @@ amount of the commodity available for use during the marketing year.
 
 \begin{verbatim}
 Response [https://downloads.usda.library.cornell.edu/usda-esmis/files/3t945q76s/dv140m16d/jm215h19t/latest.xls]
-  Date: 2024-02-22 19:51
+  Date: 2024-10-23 19:51
   Status: 200
   Content-Type: application/vnd.ms-excel
   Size: 326 kB
-<ON DISK>  C:\Users\mindy\AppData\Local\Temp\RtmpeMNzCz\file8cec34f551bc.xls
+<ON DISK>  C:\Users\mindy\AppData\Local\Temp\RtmpwHUUdW\file694c3a7b22a2.xls
 \end{verbatim}
 
 \begin{table}
@@ -4671,8 +4551,7 @@ balance sheet. The use side, contains items specific to soybeans:
   global buyers.
 \end{itemize}
 
-\hypertarget{coming-up-with-a-price}{%
-\section{Coming up with a Price}\label{coming-up-with-a-price}}
+\section{Coming up with a Price}\label{coming-up-with-a-price}
 
 Balance sheet forecasting is definitely as much art as it is science. It
 involves keeping track of the rate of use of commodities to see how much
@@ -4685,8 +4564,7 @@ nature of this relationship in order to form a meaningful forecast of
 price from a commodity balance sheet. We will discuss this process in
 more detail in a later chapter.
 
-\hypertarget{readings-2}{%
-\section{Readings}\label{readings-2}}
+\section{Readings}\label{readings-2}
 
 \begin{description}
 \item[\href{http://farmdocdaily.illinois.edu/2015/02/balance-sheet-projections-for-2015-16-corn-marketing-year.html}{Balance
@@ -4719,8 +4597,7 @@ daily} (5):70, Department of Agricultural and Consumer Economics,
 University of Illinois at Urbana-Champaign, April 16, 2015.
 \end{description}
 
-\hypertarget{exercises-2}{%
-\section{Exercises}\label{exercises-2}}
+\section{Exercises}\label{exercises-2}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -4748,9 +4625,8 @@ University of Illinois at Urbana-Champaign, April 16, 2015.
 
 \bookmarksetup{startatroot}
 
-\hypertarget{price-reaction-to-usda-reports}{%
 \chapter{Price Reaction to USDA
-Reports}\label{price-reaction-to-usda-reports}}
+Reports}\label{price-reaction-to-usda-reports}
 
 {Interested in more? Please let me know by}
 \href{https://forms.gle/Q3VByCQZHjfQSy9D7}{taking the survey}!
@@ -4772,15 +4648,14 @@ cause large and rapid price adjustments, and demonstrates this with a
 few charts of transactions prices pre- and post-release of particularly
 interesting recent days.
 
-\hypertarget{history---the-great-data-leak-of-1905}{%
 \section{History - ``The Great Data Leak of
-1905''}\label{history---the-great-data-leak-of-1905}}
+1905''}\label{history---the-great-data-leak-of-1905}
 
 This abundance of care can be traced to a particular event in history.
 The details of which are recounted in a historical publication by the
 NASS.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{images/NASS_History.png}
 
@@ -4789,15 +4664,14 @@ NASS.
 \caption{Figure 1: Safeguarding America's Agricultural Statistics: A
 century of Successful and Secure Procedures}
 
-\end{figure}
+\end{figure}%
 
 Source:
 \href{pdf-Readings/safegaurding-americas-agricultural-statistics.pdf}{NASS:
 About Nass}
 
 \begin{quote}
-\hypertarget{excerpt-from-chapter-1}{%
-\section{Excerpt From Chapter 1}\label{excerpt-from-chapter-1}}
+\section{Excerpt From Chapter 1}\label{excerpt-from-chapter-1}
 
 The summary and release procedures for the USDA Bureau of Statistics'
 reports in the early 1900s produced separate summary tabulations for
@@ -4844,15 +4718,14 @@ crop report information. The frenzy on the trading floor captures the
 feeling of what happens during crop reports that move the market, even
 if there is no longer trading on a physical floor as shown in the movie.
 
-\hypertarget{changing-report-release-times}{%
 \section{Changing Report Release
-Times}\label{changing-report-release-times}}
+Times}\label{changing-report-release-times}
 
 Timing of report releases has important implications for the market
 reaction as well. Figure 2 below provides a brief history of report
 release times of major market sensitive reports.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{images/NASS_release_timeline.png}
 
@@ -4860,7 +4733,7 @@ release times of major market sensitive reports.
 
 \caption{Figure 2: Timeline of Report Release Times}
 
-\end{figure}
+\end{figure}%
 
 Prior to 1994 most market sensitive USDA reports were released at 3pm
 EST. This made sense from the USDA workflow perspective because it
@@ -4888,8 +4761,7 @@ and because came with the added benefit of moving the beginning of the
 lockup period from late night to early morning, the USDA began releasing
 most reports at 12pm EST on January 11, 2013.
 
-\hypertarget{price-reactions}{%
-\section{Price Reactions}\label{price-reactions}}
+\section{Price Reactions}\label{price-reactions}
 
 Market prices react strongly to USDA reports when the reports inject
 significant and unanticipated information into the market. Some reports
@@ -4963,9 +4835,8 @@ with more typical weather, this report does not affect markets much
 week-to-week.
 \end{description}
 
-\hypertarget{some-examples-of-recent-big-market-reactions}{%
 \subsection{Some Examples of Recent Big Market
-Reactions}\label{some-examples-of-recent-big-market-reactions}}
+Reactions}\label{some-examples-of-recent-big-market-reactions}
 
 Using the Best Bid Best Offer database from the CME Group's
 \href{http://www.cmegroup.com/market-data/datamine-historical-data/}{DataMine}
@@ -5024,8 +4895,7 @@ expected, but corn stocks were lower than expected. The stocks number
 dominated the price direction strongly and the market traded limit up on
 this day as well.
 
-\hypertarget{conclusions}{%
-\section{Conclusions}\label{conclusions}}
+\section{Conclusions}\label{conclusions}
 
 This chapter reviewed the history of report released by the USDA. We
 noted a data leak in 1905 led the agency to consider security from an
@@ -5038,9 +4908,8 @@ prices.
 
 \bookmarksetup{startatroot}
 
-\hypertarget{price-reaction-to-usda-reports-1}{%
 \chapter{Price Reaction to USDA
-Reports}\label{price-reaction-to-usda-reports-1}}
+Reports}\label{price-reaction-to-usda-reports-1}
 
 {Interested in more? Please let me know by}
 \href{https://forms.gle/Q3VByCQZHjfQSy9D7}{taking the survey}!
@@ -5062,15 +4931,14 @@ cause large and rapid price adjustments, and demonstrates this with a
 few charts of transactions prices pre- and post-release of particularly
 interesting recent days.
 
-\hypertarget{history---the-great-data-leak-of-1905-1}{%
 \section{History - ``The Great Data Leak of
-1905''}\label{history---the-great-data-leak-of-1905-1}}
+1905''}\label{history---the-great-data-leak-of-1905-1}
 
 This abundance of care can be traced to a particular event in history.
 The details of which are recounted in a historical publication by the
 NASS.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{images/NASS_History.png}
 
@@ -5079,15 +4947,14 @@ NASS.
 \caption{Figure 1: Safeguarding America's Agricultural Statistics: A
 century of Successful and Secure Procedures}
 
-\end{figure}
+\end{figure}%
 
 Source:
 \href{pdf-Readings/safegaurding-americas-agricultural-statistics.pdf}{NASS:
 About Nass}
 
 \begin{quote}
-\hypertarget{excerpt-from-chapter-1-1}{%
-\section{Excerpt From Chapter 1}\label{excerpt-from-chapter-1-1}}
+\section{Excerpt From Chapter 1}\label{excerpt-from-chapter-1-1}
 
 The summary and release procedures for the USDA Bureau of Statistics'
 reports in the early 1900s produced separate summary tabulations for
@@ -5134,15 +5001,14 @@ crop report information. The frenzy on the trading floor captures the
 feeling of what happens during crop reports that move the market, even
 if there is no longer trading on a physical floor as shown in the movie.
 
-\hypertarget{changing-report-release-times-1}{%
 \section{Changing Report Release
-Times}\label{changing-report-release-times-1}}
+Times}\label{changing-report-release-times-1}
 
 Timing of report releases has important implications for the market
 reaction as well. Figure 2 below provides a brief history of report
 release times of major market sensitive reports.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{images/NASS_release_timeline.png}
 
@@ -5150,7 +5016,7 @@ release times of major market sensitive reports.
 
 \caption{Figure 2: Timeline of Report Release Times}
 
-\end{figure}
+\end{figure}%
 
 Prior to 1994 most market sensitive USDA reports were released at 3pm
 EST. This made sense from the USDA workflow perspective because it
@@ -5178,8 +5044,7 @@ and because came with the added benefit of moving the beginning of the
 lockup period from late night to early morning, the USDA began releasing
 most reports at 12pm EST on January 11, 2013.
 
-\hypertarget{price-reactions-1}{%
-\section{Price Reactions}\label{price-reactions-1}}
+\section{Price Reactions}\label{price-reactions-1}
 
 Market prices react strongly to USDA reports when the reports inject
 significant and unanticipated information into the market. Some reports
@@ -5253,9 +5118,8 @@ with more typical weather, this report does not affect markets much
 week-to-week.
 \end{description}
 
-\hypertarget{some-examples-of-recent-big-market-reactions-1}{%
 \subsection{Some Examples of Recent Big Market
-Reactions}\label{some-examples-of-recent-big-market-reactions-1}}
+Reactions}\label{some-examples-of-recent-big-market-reactions-1}
 
 Using the Best Bid Best Offer database from the CME Group's
 \href{http://www.cmegroup.com/market-data/datamine-historical-data/}{DataMine}
@@ -5314,8 +5178,7 @@ expected, but corn stocks were lower than expected. The stocks number
 dominated the price direction strongly and the market traded limit up on
 this day as well.
 
-\hypertarget{conclusions-1}{%
-\section{Conclusions}\label{conclusions-1}}
+\section{Conclusions}\label{conclusions-1}
 
 This chapter reviewed the history of report released by the USDA. We
 noted a data leak in 1905 led the agency to consider security from an
@@ -5328,8 +5191,7 @@ prices.
 
 \bookmarksetup{startatroot}
 
-\hypertarget{forecasting-use-of-corn}{%
-\chapter{Forecasting Use of Corn}\label{forecasting-use-of-corn}}
+\chapter{Forecasting Use of Corn}\label{forecasting-use-of-corn}
 
 {Interested in more? Please let me know by}
 \href{https://forms.gle/Q3VByCQZHjfQSy9D7}{taking the survey}!
@@ -5348,9 +5210,8 @@ however, are probably the most useful.
 
 \includegraphics{assets/ForecastingUseof-CornUseCategories.png}
 
-\hypertarget{food-alcohol-and-industrial-use}{%
 \section{Food, Alcohol, and Industrial
-Use}\label{food-alcohol-and-industrial-use}}
+Use}\label{food-alcohol-and-industrial-use}
 
 Let us begin by looking at the Food, Alcohol and Industrial category.
 These data were queried from the
@@ -5397,8 +5258,7 @@ accounted for over 50\% since 2010. The drop in percentage of production
 in 2015 occurs because of the large crop in 2015, even though the use
 level is flat (shown in figure 2).
 
-\hypertarget{exports}{%
-\section{Exports}\label{exports}}
+\section{Exports}\label{exports}
 
 Quarterly corn exports are displayed in figure 4. Unlike Food, alcohol
 and industrial use, exports tend to have a very seasonal or cyclical
@@ -5509,8 +5369,7 @@ Clearly Japan and Mexico are the dominant Importers of U.S. corn, with
 South Korea being a distant third. The table shows that most countries
 rank has remained fairly stable across the marketing years shown.
 
-\hypertarget{feed-and-residual}{%
-\section{Feed and Residual}\label{feed-and-residual}}
+\section{Feed and Residual}\label{feed-and-residual}
 
 The final use category is the most difficult to forecast because its
 quantity is derived, not estimated. This means the USDA makes estimates
@@ -5567,9 +5426,8 @@ time-period graphed, but as a percentage of production it has fallen
 since 2005. Like the export category, this reflects a proportional shift
 in use toward ethanol production.
 
-\hypertarget{price-sensitivity-of-use-categories}{%
 \section{Price Sensitivity of Use
-Categories}\label{price-sensitivity-of-use-categories}}
+Categories}\label{price-sensitivity-of-use-categories}
 
 Examining annual figures as a percentage of production reveals some
 interesting facts about the price sensitivity of the three use
@@ -5596,8 +5454,7 @@ mind). Also, consumers of meat (exported corn is primarily used as
 animal feed in the foreign country) in the less developed world are more
 price sensitive and presumably reduce consumption when prices are high.
 
-\hypertarget{forecasting-use}{%
-\section{Forecasting Use}\label{forecasting-use}}
+\section{Forecasting Use}\label{forecasting-use}
 
 One method for forecasting the use categories during the marketing year,
 is to keep track of how much corn has been used to date in each
@@ -5610,8 +5467,7 @@ the historical graphs above is likely to repeat itself. Information
 about the pace of use in each category must be obtained from different
 sources within the USDA.
 
-\hypertarget{food-seed-and-industrial}{%
-\subsection{Food, Seed, and Industrial}\label{food-seed-and-industrial}}
+\subsection{Food, Seed, and Industrial}\label{food-seed-and-industrial}
 
 We discussed above that ethanol production is the primary user of corn
 in the Food, Seed, and Industrial Category. This becomes obvious by
@@ -5653,17 +5509,15 @@ Examining the current marketing year's production of ethanol gives some
 indication of whether ethanol production is likely to exceed the 15
 billion gallon per year mandated level.
 
-\hypertarget{exports-1}{%
-\subsection{Exports}\label{exports-1}}
+\subsection{Exports}\label{exports-1}
 
 Two USDA agencies are involved in providing estimates of export sales.
 The \href{http://www.fas.usda.gov/}{USDA Foreign Agricultural Service}
 and the \href{http://www.gipsa.usda.gov/}{USDA Grain Inspection,
 Packers, and Stockyards Administration}.
 
-\hypertarget{usda-fas-export-sales-reporting-system}{%
 \subsubsection{USDA FAS Export Sales Reporting
-System}\label{usda-fas-export-sales-reporting-system}}
+System}\label{usda-fas-export-sales-reporting-system}
 
 The \href{http://www.fas.usda.gov/}{USDA Foreign Agricultural Service}
 maintains the Export Sales Reporting System, which reports weekly export
@@ -5690,8 +5544,7 @@ The program helps facilitate price stability by guaranteeing that
 everyone has access to the same information at the same time.
 \end{quote}
 
-\hypertarget{daily-reports}{%
-\subsection{Daily Reports}\label{daily-reports}}
+\subsection{Daily Reports}\label{daily-reports}
 
 Under the export sales reporting system, U.S. exporters are required to
 report all large sales of certain designated commodities by 3 p.m.
@@ -5714,8 +5567,7 @@ to this list. Source:
 \href{http://apps.fas.usda.gov/export-sales/backgrnd.htm\#Daily\%20Reports}{USDA
 FAS}
 
-\hypertarget{gipsa}{%
-\subsubsection{GIPSA}\label{gipsa}}
+\subsubsection{GIPSA}\label{gipsa}
 
 USDA GIPSA mission is ``To facilitate the marketing of livestock,
 poultry, meat, cereals, oil-seeds, and related agricultural products,
@@ -5723,8 +5575,7 @@ and promote fair and competitive trading practices for the overall
 benefit of consumers and American agriculture.'' From the GIPSA website:
 
 \begin{quote}
-\hypertarget{history}{%
-\subsection{History}\label{history}}
+\subsection{History}\label{history}
 
 The Grain Inspection, Packers and Stockyards Administration (GIPSA) was
 established in 1994 as part of the reorganization of the U.S. Department
@@ -5764,8 +5615,7 @@ estimates. They have a memorandum of understanding with one another that
 differences will be reconciled so that the export totals reported by
 each agency will not differ substantially.
 
-\hypertarget{feed-and-residual-1}{%
-\subsection{Feed and Residual}\label{feed-and-residual-1}}
+\subsection{Feed and Residual}\label{feed-and-residual-1}
 
 While the Residual component tends to dominate the variation in the Feed
 and Residual category, the USDA does publish statistics related to
@@ -5785,8 +5635,7 @@ Slaughter} report contains the number of head and live weight of
 chickens, turkeys, ducks and other poultry slaughtered under Federal
 inspection.
 
-\hypertarget{readings-3}{%
-\section{Readings}\label{readings-3}}
+\section{Readings}\label{readings-3}
 
 \href{http://farmdocdaily.illinois.edu/2015/01/reviewing-pace-of-corn-and-soybean-exports.html}{Reviewing
 the Pace of Corn and Soybean Exports}
@@ -5797,9 +5646,7 @@ University of Illinois at Urbana-Champaign, January 26, 2015.
 
 \bookmarksetup{startatroot}
 
-\hypertarget{forecasting-use-of-soybeans}{%
-\chapter{Forecasting Use of
-Soybeans}\label{forecasting-use-of-soybeans}}
+\chapter{Forecasting Use of Soybeans}\label{forecasting-use-of-soybeans}
 
 {Interested in more? Please let me know by}
 \href{https://forms.gle/Q3VByCQZHjfQSy9D7}{taking the survey}!
@@ -5829,7 +5676,7 @@ Figure 1 displays annual soybean production in millions of bushels from
 roughly doubled since the early 1980s from about 2,300 million bushels
 to about 4,000 million bushels in 2014.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{Excel-files/ForecastingUseSoy-OilCropsYearbook_files/image013.png}
 
@@ -5837,7 +5684,7 @@ to about 4,000 million bushels in 2014.
 
 \caption{Figure 1: Annual Soybean Supply, 1980-2014}
 
-\end{figure}
+\end{figure}%
 
 Source:
 \href{http://www.ers.usda.gov/data-products/oil-crops-yearbook.aspx}{USDA
@@ -5847,14 +5694,13 @@ Since soybeans are not consumed whole as food by humans or feed for
 animals in the U.S., nearly all the soybean supply is crushed
 domestically or exported.
 
-\hypertarget{soybean-crush}{%
-\section{Soybean Crush}\label{soybean-crush}}
+\section{Soybean Crush}\label{soybean-crush}
 
 Figure 2 displays the annual crush of soybeans from 1980-2014. A
 pronounced upward trend, similar to the trend in soybean supply is
 observed.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{Excel-files/ForecastingUseSoy-OilCropsYearbook_files/image005.png}
 
@@ -5862,7 +5708,7 @@ observed.
 
 \caption{Figure 2: Annual Soybean Crush, 1980-2014}
 
-\end{figure}
+\end{figure}%
 
 Source:
 \href{http://www.ers.usda.gov/data-products/oil-crops-yearbook.aspx}{USDA
@@ -5877,7 +5723,7 @@ increasing, figure 3 shows that the crush is increasing roughly
 proportionally. There does not seem to be a shift into or out of the
 crush category.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{Excel-files/ForecastingUseSoy-OilCropsYearbook_files/image007.png}
 
@@ -5886,20 +5732,19 @@ crush category.
 \caption{Figure 3: Annual Soybean Crush as a Percent of Supply,
 1980-2014}
 
-\end{figure}
+\end{figure}%
 
 Source:
 \href{http://www.ers.usda.gov/data-products/oil-crops-yearbook.aspx}{USDA
 ERS Oil Crops Yearbook}
 
-\hypertarget{exports-2}{%
-\section{Exports}\label{exports-2}}
+\section{Exports}\label{exports-2}
 
 Figure 4 displays annual soybean exports. Similar to the crush category,
 exports are observed to steadily increase over the period from
 1980-2014.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{Excel-files/ForecastingUseSoy-OilCropsYearbook_files/image001.png}
 
@@ -5907,7 +5752,7 @@ exports are observed to steadily increase over the period from
 
 \caption{Figure 4: Annual Soybean Exports, 1980-2014}
 
-\end{figure}
+\end{figure}%
 
 Source:
 \href{http://www.ers.usda.gov/data-products/oil-crops-yearbook.aspx}{USDA
@@ -5917,7 +5762,7 @@ Figure 5 shows soybean exports as a percent of total supply from
 1980-2014. Similar to the crush category, the percentage of supply has
 remained constant.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{Excel-files/ForecastingUseSoy-OilCropsYearbook_files/image009.png}
 
@@ -5926,7 +5771,7 @@ remained constant.
 \caption{Figure 2: Annual Soybean Exports as a Percent of Supply,
 1980-2014}
 
-\end{figure}
+\end{figure}%
 
 \begin{description}
 \item[Source:
@@ -5994,10 +5839,9 @@ times more than 2nd ranked Mexico. Examining the short history in table
 nearly all of the uptrend in figure 4. In the 2016/2017 marketing year
 China was the destination of over 60\% of U.S. soybean exports.
 
-\hypertarget{feed-seed-and-residual}{%
-\section{Feed, Seed, and Residual}\label{feed-seed-and-residual}}
+\section{Feed, Seed, and Residual}\label{feed-seed-and-residual}
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{Excel-files/ForecastingUseSoy-OilCropsYearbook_files/image003.png}
 
@@ -6005,13 +5849,13 @@ China was the destination of over 60\% of U.S. soybean exports.
 
 \caption{Figure 6: Annual Soybean Feed, Seed, and Residual, 1980-2014}
 
-\end{figure}
+\end{figure}%
 
 Source:
 \href{http://www.ers.usda.gov/data-products/oil-crops-yearbook.aspx}{USDA
 ERS Oil Crops Yearbook}
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{Excel-files/ForecastingUseSoy-OilCropsYearbook_files/image012.png}
 
@@ -6020,15 +5864,14 @@ ERS Oil Crops Yearbook}
 \caption{Figure 7: Annual Soybean Feed, Seed, and Residual as a Percent
 of Supply, 1980-2014}
 
-\end{figure}
+\end{figure}%
 
 Source:
 \href{http://www.ers.usda.gov/data-products/oil-crops-yearbook.aspx}{USDA
 ERS Oil Crops Yearbook}
 
-\hypertarget{price-sensitivity-of-use-categories-1}{%
 \section{Price Sensitivity of Use
-Categories}\label{price-sensitivity-of-use-categories-1}}
+Categories}\label{price-sensitivity-of-use-categories-1}
 
 Soybeans are a bit different from corn because there are only two use
 categories that are important, crush and exports. The soybean use
@@ -6043,9 +5886,8 @@ compared with the price of South American soybeans and the raw demand
 from our trading partners. China has become the major player in this
 space, as is evident in table 1.
 
-\hypertarget{forecasting-use-of-soybeans-1}{%
 \section{Forecasting Use of
-Soybeans}\label{forecasting-use-of-soybeans-1}}
+Soybeans}\label{forecasting-use-of-soybeans-1}
 
 As we mentioned in chapter 7, keeping track of how much soybeans have
 been used to date in each category is a useful exercise to determine a
@@ -6065,8 +5907,7 @@ and Pigs}, and the
 Slaughter}, specifically because livestock numbers contribute to demand
 for soybean meal, which in turn contributes to crush demand.
 
-\hypertarget{exercises-3}{%
-\section{Exercises}\label{exercises-3}}
+\section{Exercises}\label{exercises-3}
 
 \textbf{Skills Learned}
 
@@ -6153,8 +5994,7 @@ a. 2014/2015, 2015/2016, 2016/2017, and 2017/2018 (so far)
 
 \bookmarksetup{startatroot}
 
-\hypertarget{ending-stocks-and-price}{%
-\chapter{Ending Stocks and Price}\label{ending-stocks-and-price}}
+\chapter{Ending Stocks and Price}\label{ending-stocks-and-price}
 
 {Interested in more? Please let me know by}
 \href{https://forms.gle/Q3VByCQZHjfQSy9D7}{taking the survey}!
@@ -6280,8 +6120,7 @@ we have not made much headway in that regard. In this chapter, we cover
 some approaches for taking a forecast of ending stocks and translating
 that into a forecast of price.
 
-\hypertarget{forecasting-price}{%
-\section{Forecasting Price}\label{forecasting-price}}
+\section{Forecasting Price}\label{forecasting-price}
 
 Arriving at an estimate of ending stocks gives one a sense of the degree
 of scarcity (or lack-thereof) in the market. It is still difficult to
@@ -6295,7 +6134,7 @@ Figure 1 below is reproduced from the farmDoc Daily (fdd) article by
 Good and Irwin, ``The Relationship between Stocks-to-Use and Corn Prices
 Revisited''
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{images/fdd04092015_fig1.jpg}
 
@@ -6304,7 +6143,7 @@ Revisited''
 \caption{Classic `Identification Problem' of Regressing Prices on
 Quantities}
 
-\end{figure}
+\end{figure}%
 
 Source:
 \href{http://farmdocdaily.illinois.edu/2015/04/relationship-stock-to-use-and-corn-prices.html}{FarmDoc
@@ -6322,8 +6161,7 @@ shift the supply curve. Further, if one had some confidence that the
 demand curve was more or less constant through time, a time-series of
 prices and quantities would approximately trace out the demand curve.
 
-\hypertarget{examining-the-data}{%
-\section{Examining the Data}\label{examining-the-data}}
+\section{Examining the Data}\label{examining-the-data}
 
 This section continues to draw heavily on the Good and Irwin fdd article
 referenced above. First let us take a look at the average price received
@@ -6334,7 +6172,7 @@ ERS Feed Grains Database} database, although you have to download the
 \emph{stocks} and \emph{use} separately and create your own
 stocks-use-variable.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{assets/EndingStocksand-StocksUsePrices.png}
 
@@ -6342,7 +6180,7 @@ stocks-use-variable.
 
 \caption{Figure 2: Corn Average Price Received and Stocks-to-Use}
 
-\end{figure}
+\end{figure}%
 
 Perhaps the first thing that one notices in this figure is the
 pronounced stocks-to-use spikes that occurred in the 1982/1983 and
@@ -6366,7 +6204,7 @@ show a negative relationship between stocks-to-use and prices, as one
 would expect. Figure 3 graphs these two series as a scatter-plot with
 stocks-to-use on the x-axis.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{assets/EndingStocksand-StocksUsePrices2.png}
 
@@ -6374,13 +6212,13 @@ stocks-to-use on the x-axis.
 
 \caption{Figure 3: Corn Prices vs.~Stocks-to-Use}
 
-\end{figure}
+\end{figure}%
 
 A clear negative relationship emerges, but the relationship when stocks
 are less than 20\% of use is less clear. To help clarify, figure 4
 highlights years before and after 2006.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{assets/EndingStocksand-StocksUsePrices3.png}
 
@@ -6388,7 +6226,7 @@ highlights years before and after 2006.
 
 \caption{Figure 4: Corn Prices vs Stocks-to-Use Pre- and Post-2006}
 
-\end{figure}
+\end{figure}%
 
 Highlighting the data and pre- or post-2006\footnote{The year 2006 here
   is assumed to be a transtion year and dropped from the figure. In
@@ -6410,8 +6248,7 @@ the post-2006 period explains 80\% of the variaiton in the price data,
 which suggests it is a reasonable starting point for forecasting price
 using ending stocks and the balance sheet approach.
 
-\hypertarget{references}{%
-\section{References}\label{references}}
+\section{References}\label{references}
 
 Good, D., and S. Irwin.
 ``\href{http://farmdocdaily.illinois.edu/2015/04/relationship-stock-to-use-and-corn-prices.html}{The
@@ -6419,8 +6256,7 @@ Relationship between Stocks-to-Use and Corn Prices Revisited}.'' farmdoc
 daily (5):65, Department of Agricultural and Consumer Economics,
 University of Illinois at Urbana-Champaign, April 9, 2015.
 
-\hypertarget{exercises-4}{%
-\section{Exercises}\label{exercises-4}}
+\section{Exercises}\label{exercises-4}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -6474,8 +6310,7 @@ University of Illinois at Urbana-Champaign, April 9, 2015.
 
 \bookmarksetup{startatroot}
 
-\hypertarget{the-soybean-crush}{%
-\chapter{The Soybean Crush}\label{the-soybean-crush}}
+\chapter{The Soybean Crush}\label{the-soybean-crush}
 
 {Interested in more? Please let me know by}
 \href{https://forms.gle/Q3VByCQZHjfQSy9D7}{taking the survey}!
@@ -6492,8 +6327,7 @@ exported where most of it will be crushed abroad.
 \href{http://unitedsoybean.org/}{United Soybean Board},
 \href{https://www.flickr.com/photos/unitedsoybean/10059732523/in/photolist-gjWL1c-iSHsD6-gjRZN5-gjSiez-gjRDSm-3GTus-gjT5Pf-gjT5FQ-gjT5Zf-iRrGux-5mxrJp-iRuCDS-fEhEb4-iSHt56-gjSLAj-gjTptX-gjSLDL-gjSNeR-gjSLEC-gjT72q-6m2BCX-gjSUHT-gjTpzi-6m6Jay-qBtpPq-5wBq3U-gjWLbe-aMpXNc-qRDdLA-gjWY8m-rujuvk-iRqECD-rNDaeg-GL7Qd-6m2Yyc-6JGi4H-ar3khU-cNjfUf-6m2A3g-aE4dw4-c3VUt9-c3VVq5-4JzMWS-6KY45z-6m2Xsv-6m6Eny-6m2XZg-6m2WVa-6m2ZFF-6m7ad1}{Flicker}
 
-\hypertarget{oilseed-processing}{%
-\section{Oilseed Processing}\label{oilseed-processing}}
+\section{Oilseed Processing}\label{oilseed-processing}
 
 Now the most prevalent method for crushing soybeans is a method that
 uses a solvent to extract the oil from the soybean. Basically, soybeans
@@ -6503,7 +6337,7 @@ refined to remove the solvent and other compounds like glycerin, leaving
 only pure soybean oil. The soybean flakes, minus the oil are then ground
 in to meal that can be used as a high protein livestock feed.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{images/soyflakes.jpg}
 
@@ -6511,12 +6345,12 @@ in to meal that can be used as a high protein livestock feed.
 
 \caption{Soy Flakes}
 
-\end{figure}
+\end{figure}%
 
 Source: \href{http://unitedsoybean.org/}{United Soybean Board},
 \href{https://www.flickr.com/photos/unitedsoybean/10059015936/}{Flicker}
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{images/soymeal.jpg}
 
@@ -6524,12 +6358,12 @@ Source: \href{http://unitedsoybean.org/}{United Soybean Board},
 
 \caption{Soymeal}
 
-\end{figure}
+\end{figure}%
 
 Source: \href{http://unitedsoybean.org/}{United Soybean Board},
 \href{https://www.flickr.com/photos/unitedsoybean/10059074033/}{Flicker}
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{images/crush_products.jpg}
 
@@ -6537,7 +6371,7 @@ Source: \href{http://unitedsoybean.org/}{United Soybean Board},
 
 \caption{Intermediate Soy Oil Products}
 
-\end{figure}
+\end{figure}%
 
 Source: \href{http://unitedsoybean.org/}{United Soybean Board},
 \href{https://www.flickr.com/photos/unitedsoybean/10058954054/}{Flicker}
@@ -6552,8 +6386,7 @@ Crushing soybeans yields about 11lbs of oil and 44lbs meal per bushel of
 soybeans, these yields can vary slightly, but most use these values in
 the price analysis that will follow.
 
-\hypertarget{soybean-oil-uses}{%
-\section{Soybean Oil Uses}\label{soybean-oil-uses}}
+\section{Soybean Oil Uses}\label{soybean-oil-uses}
 
 Soybean oil is used primarily as a food-grade product. It is not usually
 found in grocery stores as 100\% soybean oil, but it will be present in
@@ -6581,7 +6414,7 @@ LDL cholesteral and heart disease} (Remig et al. 2010). The FDA
 announced a ban on most added trans fats in processed foods; the ban is
 set to take effect by 2018.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{images/hydrogenated_oil.jpg}
 
@@ -6589,7 +6422,7 @@ set to take effect by 2018.
 
 \caption{Partially Hydrogenated Soybean Oil}
 
-\end{figure}
+\end{figure}%
 
 Source: \href{http://unitedsoybean.org/}{United Soybean Board},
 \href{https://www.flickr.com/photos/unitedsoybean/16910795086/}{Flicker}
@@ -6597,8 +6430,7 @@ Source: \href{http://unitedsoybean.org/}{United Soybean Board},
 Soybean oil is also used in the production of biodiesel. This amounts to
 a small percentage of the total soybean oil produced, however.
 
-\hypertarget{soybean-meal-uses}{%
-\section{Soybean Meal Uses}\label{soybean-meal-uses}}
+\section{Soybean Meal Uses}\label{soybean-meal-uses}
 
 Soybean meal is used exclusively for livestock feed as a high protein
 component. Beef cattle, dairy cattle, hogs, and poultry use soybean meal
@@ -6606,7 +6438,7 @@ in feed rations. Soybean meal provides a good source of protein, and
 combined with cereal grains like corn allow a complete balance of
 essential amino acids that hogs and poultry must have.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{images/pigs.jpg}
 
@@ -6614,13 +6446,13 @@ essential amino acids that hogs and poultry must have.
 
 \caption{Hogs}
 
-\end{figure}
+\end{figure}%
 
 ``Little pigs'' by Dusan Bicanski -
 http://www.public-domain-image.com/public-domain-images-pictures-free-stock-photos/fauna-animals-public-domain-images-pictures/pigs-public-domain-images-pictures/little-pigs.jpg.
 Licensed under Public Domain via Wikimedia Commons.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{images/poultry.jpg}
 
@@ -6628,14 +6460,13 @@ Licensed under Public Domain via Wikimedia Commons.
 
 \caption{Chickens}
 
-\end{figure}
+\end{figure}%
 
 ``Poultry Classes Blog photo - Flickr - USDAgov'' by U.S. Department of
 Agriculture - Poultry Classes Blog photo. Licensed under CC BY 2.0 via
 Wikimedia Commons.
 
-\hypertarget{price-relationships}{%
-\section{Price Relationships}\label{price-relationships}}
+\section{Price Relationships}\label{price-relationships}
 
 Since the input (soybeans) and outputs (oil and meal) are all
 commodities, and the production technology is fairly widely understood
@@ -6696,8 +6527,7 @@ to expect expansion or contraction in the crush business.
 
 \includegraphics{assets/SoyCrushSpread.png}
 
-\hypertarget{the-board-crush}{%
-\section{The Board Crush}\label{the-board-crush}}
+\section{The Board Crush}\label{the-board-crush}
 
 Since soybeans, soybean oil, and soybean meal all have actively traded
 futures contracts, the oil processing GPM calculated with futures prices
@@ -6728,8 +6558,7 @@ not as accurate in getting the proportions right, but it is easier to
 remember and implement as a trade. It would be cheaper to implement with
 brokers who charge commission per contract.
 
-\hypertarget{the-1-1-1-spread}{%
-\subsection{The 1-1-1 Spread}\label{the-1-1-1-spread}}
+\subsection{The 1-1-1 Spread}\label{the-1-1-1-spread}
 
 The 1-1-1 spread and it requires placing the following trades:
 
@@ -6795,8 +6624,7 @@ So the 1-1-1 spread does not represent equivalent quantities of
 soybeans, oil, and meal. It over hedges oil by 5,000 lbs and under
 hedges meal by 20,000 lbs.
 
-\hypertarget{the-9-11-10-spread}{%
-\subsection{The 9-11-10 Spread}\label{the-9-11-10-spread}}
+\subsection{The 9-11-10 Spread}\label{the-9-11-10-spread}
 
 The commercial oil processors use a 9-11-10 spread of 9 contracts of
 soybean oil, 11 contracts of soybean meal, and 10 contracts of soybeans
@@ -6827,8 +6655,7 @@ as follows:
 So the quantities match except for being under hedged by 10,000 lbs in
 soybean oil.
 
-\hypertarget{readings-4}{%
-\section{Readings}\label{readings-4}}
+\section{Readings}\label{readings-4}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -6850,17 +6677,15 @@ and funded by the soybean checkoff.\footnote{Funds raised by every
 \setcounter{enumi}{1}
 \tightlist
 \item
-  \href{http://www.dtnprogressivefarmer.com/dtnag/common/link.do;jsessionid=CA98693F5E3C9EF37EC1F032464A6388.agfreejvm1?symbolicName=/ag/blogs/template1\&blogHandle=agfundamental\&blogEntryId=8a82c0bc372e8fba0137a8324dd704cf}{Central
+  \href{http://www.dtnprogressivefarmer.com/dtnag/common/link.do;jsessionid=CA98693F5E3C9EF37EC1F032464A6388.agfreejvm1?symbolicName=/ag/blogs/template1&blogHandle=agfundamental&blogEntryId=8a82c0bc372e8fba0137a8324dd704cf}{Central
   IL Soybean Crush Margins Among Highest Ever}
 \end{enumerate}
 
 A DTN article that has a nice graphic of historical crush margins.
 
-\hypertarget{references-1}{%
-\section{References}\label{references-1}}
+\section{References}\label{references-1}
 
-\hypertarget{exercises-5}{%
-\section{Exercises}\label{exercises-5}}
+\section{Exercises}\label{exercises-5}
 
 In this weeks exercises we will put ourselves in the role of risk
 manager for a commercial soybean crushing facility. Suppose our facility
@@ -6940,8 +6765,7 @@ Processing Profit Hedged GPM \$/bu. There should be two rows with dates
 
 \bookmarksetup{startatroot}
 
-\hypertarget{ethanol}{%
-\chapter{Ethanol}\label{ethanol}}
+\chapter{Ethanol}\label{ethanol}
 
 {Interested in more? Please let me know by}
 \href{https://forms.gle/Q3VByCQZHjfQSy9D7}{taking the survey}!
@@ -7054,8 +6878,7 @@ we will discuss some important price relationships involving ethanol,
 including the ethanol-RBOB gasoline price relationship, and the
 ethanol-corn-natural gas-DDGs price relationship.
 
-\hypertarget{ethanol-production}{%
-\section{Ethanol Production}\label{ethanol-production}}
+\section{Ethanol Production}\label{ethanol-production}
 
 Ethanol production\footnote{The information about ethanol production
   predominately comes from the
@@ -7070,7 +6893,7 @@ link for the map below and zoom in to look more closely at Kansas you
 will see a few ethanol plants located in the vicinity of the cattle
 feedlots we explored in an earlier chapter.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{images/eth_locations.png}
 
@@ -7078,7 +6901,7 @@ feedlots we explored in an earlier chapter.
 
 \caption{Figure 1: Ethanol Plant Locations in the U.S.}
 
-\end{figure}
+\end{figure}%
 
 Source:
 \href{http://www.ethanolrfa.org/resources/biorefinery-locations/}{Renewable
@@ -7087,9 +6910,8 @@ Fuels Association}
 Corn-based ethanol can be produced via two methods. Dry grind, and wet
 grind.
 
-\hypertarget{dry-grind-ethanol-production}{%
 \subsection{Dry Grind Ethanol
-Production}\label{dry-grind-ethanol-production}}
+Production}\label{dry-grind-ethanol-production}
 
 In dry grind ethanol production, the entire kernel of corn is ground
 into a meal and mixed with water to create a slurry. Then enzymes are
@@ -7107,7 +6929,7 @@ grind ethanol plants. So dry-grind ethanol production involves two
 revenue streams, ethanol and Dd Gs. More on the economics of Dd Gs in
 the section that follows.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{images/640px-Ethanol_plant.jpg}
 
@@ -7115,7 +6937,7 @@ the section that follows.
 
 \caption{Figure 2: An Ethanol Plant}
 
-\end{figure}
+\end{figure}%
 
 ``Ethanol plant''. Licensed under Public Domain via Wikimedia Commons.
 
@@ -7124,9 +6946,8 @@ Follow the link to a Google Maps satellite view of
 Energy LLC, Ames, IA}. Note the location. The ethanol plant is located
 directly next to Key Cooperative, and both have access to a rail-head.
 
-\hypertarget{wet-grind-ethanol-production}{%
 \subsection{Wet Grind Ethanol
-Production}\label{wet-grind-ethanol-production}}
+Production}\label{wet-grind-ethanol-production}
 
 Unlike dry grind ethanol production, in the wet grind process whole corn
 kernels are steeped in a combination of sulfuric acid and water to
@@ -7141,8 +6962,7 @@ Wet grind ethanol production is more costly than dry grind, so the
 majority of corn-based ethanol production capacity is of the dry grind
 type.
 
-\hypertarget{distillers-grains}{%
-\section{Distiller's Grains}\label{distillers-grains}}
+\section{Distiller's Grains}\label{distillers-grains}
 
 DDGs are a by product of the dry grind ethanol production process that
 is valuable as a livestock feed. DDGs have about 26\% protein, 8\% fat,
@@ -7150,11 +6970,10 @@ and significant metabolizable energy (kcals), so it can be used to
 replace both energy (typically corn) and protein (soybean meal or other)
 requirements in feed rations.
 
-\href{https://www.google.com/search?q=ddgs\&source=lnms\&tbm=isch\&sa=X\&ved=0ahUKEwj4udmomr7JAhWF2B4KHailApcQ_AUICCgC\&biw=1920\&bih=1031\#}{Images
+\href{https://www.google.com/search?q=ddgs&source=lnms&tbm=isch&sa=X&ved=0ahUKEwj4udmomr7JAhWF2B4KHailApcQ_AUICCgC&biw=1920&bih=1031\#}{Images
 of DDGs}
 
-\hypertarget{ddg-prices}{%
-\subsection{DDG Prices}\label{ddg-prices}}
+\subsection{DDG Prices}\label{ddg-prices}
 
 DDG prices tend to follow the trend of corn prices, although not
 perfectly because the two are not perfect substitutes. In figure 3, DDG
@@ -7163,7 +6982,7 @@ by farmers for corn (cents per bushel) and the average wholesale bulk
 price for Central IL (\$/ton). We put corn prices in cents per bushel so
 the units are comparable on one axis.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{assets/CornDDGPrices.png}
 
@@ -7171,12 +6990,12 @@ the units are comparable on one axis.
 
 \caption{Figure 3: DDG and Corn Prices, Monthly Aug 2005 - 2021}
 
-\end{figure}
+\end{figure}%
 
 It is also informative to look at the price ratio of DDG and corn
 prices. This is displayed in figure 4.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{assets/DDGCORNRatio.png}
 
@@ -7185,14 +7004,13 @@ prices. This is displayed in figure 4.
 \caption{Figure 4: Ratio of DDG and Corn Prices, MonthlyAug 2005 - Oct
 2015}
 
-\end{figure}
+\end{figure}%
 
 The price ratio is fairly variable, but appears to follow a stationary
 and possibly mean reverting pattern. DDG prices seem to range from 30\%
 to 50\% of corn prices.
 
-\hypertarget{ethanol-prices}{%
-\section{Ethanol Prices}\label{ethanol-prices}}
+\section{Ethanol Prices}\label{ethanol-prices}
 
 Since ethanol is used as a liquid motor fuel, it makes sense that demand
 follows the same general trend that other energy products like crude oil
@@ -7210,15 +7028,14 @@ blenders do not have to add other costly oxygenates derived from fossil
 fuels, such as MTBE (which is outlawed in California and New York among
 others) or \href{https://en.wikipedia.org/wiki/Oxygenate}{others}.
 
-\hypertarget{ethanol-and-gas-prices}{%
-\section{Ethanol and Gas Prices}\label{ethanol-and-gas-prices}}
+\section{Ethanol and Gas Prices}\label{ethanol-and-gas-prices}
 
 That said, it is difficult to anticipate whether Ethanol prices will
 exhibit a relationship consistent with a substitute or consistent with a
 complement good. In figure 5, ethanol and RBOB gasoline prices are
 graphed together for comparison.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{assets/EthRBOB.png}
 
@@ -7227,7 +7044,7 @@ graphed together for comparison.
 \caption{Figure 5: Iowa Ethanol Spot and Los Angelous Spot RBOB Gasoline
 Prices}
 
-\end{figure}
+\end{figure}%
 
 It appears that ethanol and Los Angelos spot RBOB have a positive
 relationship consistent with substitute goods, but ethanol prices are
@@ -7237,8 +7054,7 @@ ethanol has about 75\% of the energy content of a gallon of gasoline. So
 gasoline with ethanol blended into it will yield fewer miles per gallon.
 This is particularly true for E85.
 
-\hypertarget{ethanol-crush-spread}{%
-\section{Ethanol Crush Spread}\label{ethanol-crush-spread}}
+\section{Ethanol Crush Spread}\label{ethanol-crush-spread}
 
 The price relationship between ethanol, its coproduct DDGs and its
 inputs, corn and natural gas, is also closely followed by the industry.
@@ -7304,8 +7120,7 @@ Dividing \(17/2000 = 0.0085\) yields
 \includegraphics{assets/ECrushSpread.png} Note: Prices come from ISU
 Ethanol Profitability Model
 
-\hypertarget{hedging-the-crush-spread}{%
-\section{Hedging the Crush Spread}\label{hedging-the-crush-spread}}
+\section{Hedging the Crush Spread}\label{hedging-the-crush-spread}
 
 Like soybean crushers, ethanol producers can use futures contracts to
 hedge their profitability. Ethanol producers buy corn and sell ethanol
@@ -7334,8 +7149,7 @@ the purchase of corn. With no viable futures contract for DDGs, the
 producer cannot directly solve this problem. Instead they can use a
 \textbf{cross hedge}.
 
-\hypertarget{cross-hedging}{%
-\section{Cross Hedging}\label{cross-hedging}}
+\section{Cross Hedging}\label{cross-hedging}
 
 When there is no futures contract for exact product or commodity that
 one needs to hedge, another futures contract whose price is highly
@@ -7344,10 +7158,9 @@ case, we already observed above that the prices of DDGs and corn futures
 are highly correlated, so it may be beneficial to use corn futures to
 hedge the sale of DDGs.
 
-\hypertarget{minimize-the-variance-of-cash-flow-with-optimal-hedge-ratio-for-ddgs-and-corn-futures}{%
 \subsection{Minimize the Variance of Cash Flow with Optimal Hedge Ratio
 for DDGs and Corn
-Futures}\label{minimize-the-variance-of-cash-flow-with-optimal-hedge-ratio-for-ddgs-and-corn-futures}}
+Futures}\label{minimize-the-variance-of-cash-flow-with-optimal-hedge-ratio-for-ddgs-and-corn-futures}
 
 To develop the concept of a \emph{cash flow variance minimizing} optimal
 hedge ratio, lets step back to the simpler example of a farmer hedging a
@@ -7397,8 +7210,7 @@ This means we can use historical prices to estimate the relationship
 between spot and futures prices, which yields the optimal hedge ratio
 for hedging the spot price with futures.
 
-\hypertarget{exercises-6}{%
-\section{Exercises}\label{exercises-6}}
+\section{Exercises}\label{exercises-6}
 
 The exercises for this chapter have you compute the optimal hedge ratio
 for using corn contracts to hedge DDG sales. Skills learned include:
@@ -7439,8 +7251,7 @@ ethanol plant profitability model}
   hedge determined in 1 to hedge the sale of DDGs.
 \end{enumerate}
 
-\hypertarget{readings-5}{%
-\section{Readings}\label{readings-5}}
+\section{Readings}\label{readings-5}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -7452,9 +7263,8 @@ ethanol plant profitability model}
 
 \bookmarksetup{startatroot}
 
-\hypertarget{cattle-markets-and-the-livestock-crush}{%
 \chapter{Cattle Markets and the Livestock
-Crush}\label{cattle-markets-and-the-livestock-crush}}
+Crush}\label{cattle-markets-and-the-livestock-crush}
 
 {Interested in more? Please let me know by}
 \href{https://forms.gle/Q3VByCQZHjfQSy9D7}{taking the survey}!
@@ -7477,8 +7287,7 @@ backgrounder, who is a different entity than the finisher. There are
 cases of more vertically integrated operations, but this is relatively
 rare.
 
-\hypertarget{the-cow-calf-operation}{%
-\section{The Cow-Calf Operation}\label{the-cow-calf-operation}}
+\section{The Cow-Calf Operation}\label{the-cow-calf-operation}
 
 In a typical cow-calf operation, the producer maintains a herd of
 breeding cows that each have one calf per year for sale at market. The
@@ -7488,9 +7297,8 @@ the winter months when grass is usually dormant. Alternatively the
 producer could purchase hay on the open market, but it is often more
 cost effective to `put up' one's own hay.
 
-\hypertarget{calandar-of-production-for-the-cow-calf-producer}{%
 \subsection{Calandar of Production for the Cow-calf
-Producer}\label{calandar-of-production-for-the-cow-calf-producer}}
+Producer}\label{calandar-of-production-for-the-cow-calf-producer}
 
 This outline borrows heavily from the
 \href{http://beef.unl.edu/beefprodcal.shtml}{Beef Production Calendar}
@@ -7502,8 +7310,7 @@ system. In this system, calves are born in the months of February,
 March, and April, and can be weaned and marketed in the fall of the same
 calendar year.
 
-\hypertarget{february-march-april}{%
-\subsubsection{February, March, April}\label{february-march-april}}
+\subsubsection{February, March, April}\label{february-march-april}
 
 Calves are born during the months of February, March, and April. Males
 are called bull calves and females are called heifers. Newborn calves
@@ -7513,8 +7320,7 @@ chooses heifer calves to replace culled breeding heifers. During these
 months the cows and newborn calves are on winter pasture, and usually
 being fed supplemental forage of hay.
 
-\hypertarget{may}{%
-\subsubsection{May}\label{may}}
+\subsubsection{May}\label{may}
 
 The cows and calves usually go to summer pasture during the month of May
 or early June. The exact date depends on when the grass in the summer
@@ -7522,8 +7328,7 @@ pasture has grown to a sufficient amount to sustain the herd. Bull
 calves are castrated before going to summer pasture. Once castrated,
 male calves are called steers.
 
-\hypertarget{june-july-august}{%
-\subsubsection{June, July, August}\label{june-july-august}}
+\subsubsection{June, July, August}\label{june-july-august}
 
 Bulls are placed with the cow herd to breed. The market for bulls is a
 totally different pricing model. Since one bull breeds the whole herd of
@@ -7536,7 +7341,7 @@ semen.\footnote{For example, \href{http://www.juddranch.com/}{Judd
 
 Some producers, particularly ones who run a combination
 cow-calf/commercial grain operation will place
-\href{https://www.google.com/search?q=creep+feeder\&espv=2\&biw=1920\&bih=1075\&source=lnms\&tbm=isch\&sa=X\&ved=0CAcQ_AUoAmoVChMI18ne2paTyQIVSJUeCh3eMw5X}{creep
+\href{https://www.google.com/search?q=creep+feeder&espv=2&biw=1920&bih=1075&source=lnms&tbm=isch&sa=X&ved=0CAcQ_AUoAmoVChMI18ne2paTyQIVSJUeCh3eMw5X}{creep
 feeders} out with the herd on summer grass. Creep feeders allow smaller
 calves access to grain to feed at-will, but mature cows are too big to
 eat the grain.
@@ -7547,16 +7352,14 @@ the cow-calf producer is busy baling hay to feed the herd during the
 winter months. Fields of grass are let grow to maximum volume/nutrition,
 then is cut, dried, and baled for storage until winter.
 
-\hypertarget{september}{%
-\subsubsection{September}\label{september}}
+\subsubsection{September}\label{september}
 
 Cattle should be bred, so some producers will `preg check' their cows to
 determine if any are open (not pregnant). Bulls are pulled from the
 pastures. Open cows may be culled immediately or kept to attempt to
 breed in the next cycle.
 
-\hypertarget{october}{%
-\subsubsection{October}\label{october}}
+\subsubsection{October}\label{october}
 
 In October, the herd will have exhausted the summer forage, so they are
 brought to winter pastures. Calves are weaned at this time and usually
@@ -7574,14 +7377,12 @@ Weaning Video}
 \href{https://www.youtube.com/watch?v=JyvTl9PVdMQ\#action=share}{OSU
 Forage Prospects Video}
 
-\hypertarget{november-december-january}{%
 \subsubsection{November, December,
-January}\label{november-december-january}}
+January}\label{november-december-january}
 
 Continue rotating winter pasture and feeding hay for forage.
 
-\hypertarget{the-backgrounderstocker}{%
-\section{The Backgrounder/Stocker}\label{the-backgrounderstocker}}
+\section{The Backgrounder/Stocker}\label{the-backgrounderstocker}
 
 A backgrounder is in the business of buying light calves (weighing
 approximately 500 lbs) and feeding them grain-based rations until they
@@ -7593,14 +7394,12 @@ from a cow-calf producer.
 A backgrounder who purchases calves at auction or from a cow-calf
 producer must consider weight and gender of the calf.
 
-\hypertarget{bull-or-heifer-calf}{%
-\subsection{Bull or Heifer Calf?}\label{bull-or-heifer-calf}}
+\subsection{Bull or Heifer Calf?}\label{bull-or-heifer-calf}
 
 Bull calves put on weight faster than heifer calves, so bull calves
 bring more money than heifer calves.
 
-\hypertarget{weight-of-calves}{%
-\subsection{Weight of Calves}\label{weight-of-calves}}
+\subsection{Weight of Calves}\label{weight-of-calves}
 
 Smaller (younger) calves gain weight faster than heavier (older) calves
 so smaller calves
@@ -7609,8 +7408,7 @@ Examine this USDA Market News report from the
 \href{http://www.ams.usda.gov/mnreports/dc_ls143.txt}{Farmers \&
 Ranchers Livestock Commission Co.} in Salina, KS.
 
-\hypertarget{the-large-feedlot}{%
-\section{The Large Feedlot}\label{the-large-feedlot}}
+\section{The Large Feedlot}\label{the-large-feedlot}
 
 Feedlots\footnote{Most of the information in this section is taken from
   the
@@ -7637,16 +7435,14 @@ management system. All large feedlots have large digester ponds, where
 waste is dumped so that microorganisms in the ponds can break down the
 toxins before they leach into the local water supply.
 
-\hypertarget{beef-packing-plants}{%
-\section{Beef Packing Plants}\label{beef-packing-plants}}
+\section{Beef Packing Plants}\label{beef-packing-plants}
 
 The large feedlots sell fattened calves to beef packing plants. Many
 packing plants are located close to large feedlot operations.
 
 \href{http://maps.google.com}{See some feedlots via satellite}
 
-\hypertarget{cattle-auctions}{%
-\section{Cattle Auctions}\label{cattle-auctions}}
+\section{Cattle Auctions}\label{cattle-auctions}
 
 Most calves are sold from the cow-calf operation to a backgrounder or
 feedlot at auction. In beef cattle intensive areas, there will be a
@@ -7680,8 +7476,7 @@ America's Heartland}
 \href{https://www.youtube.com/watch?v=Ig514nyWQho}{Cattle Auctioneer -
 2012 Drought}
 
-\hypertarget{the-cattle-crush-8-4-2}{%
-\section{The Cattle Crush 8-4-2}\label{the-cattle-crush-8-4-2}}
+\section{The Cattle Crush 8-4-2}\label{the-cattle-crush-8-4-2}
 
 The large feedlot operations are run by commercial firms with the
 resources and expertise to engage in sophisticated hedging strategies.
@@ -7704,9 +7499,8 @@ Spread. Details of a deliverable unit can be found in the
 \href{http://www.cmegroup.com/rulebook/CME/II/100/101/101.pdf}{CME
 Rulebook}
 
-\hypertarget{details-of-the-spreadcattlespread}{%
 \subsection{Details of the
-Spread{[}\^{}cattlespread{]}}\label{details-of-the-spreadcattlespread}}
+Spread{[}\^{}cattlespread{]}}\label{details-of-the-spreadcattlespread}
 
 One feeder cattle contract covers about 66 animals (50,000 lbs divided
 by 750 lbs per animal), and one live cattle futures covers about 32
@@ -7732,8 +7526,7 @@ January feeder cattle contracts, and buy 2 March corn contracts. In
 general, the timing of the contracts should match the timing of
 transactions in the cash market as closely as possible.
 
-\hypertarget{external-readings}{%
-\section{External Readings}\label{external-readings}}
+\section{External Readings}\label{external-readings}
 
 \href{http://www2.econ.iastate.edu/faculty/lawrence/Acrobat/Backgrounding\%20Cattle.pdf}{How
 Profitable is Backgrounding Cattle?}
@@ -7742,8 +7535,7 @@ John Lawrence at Iowa State examines the historical profitability of
 backgrounding cattle. He considers backgrounding steers versus heifers
 and lighter calves (450 lbs) versus heavier calves (550 lbs).
 
-\hypertarget{exercise}{%
-\section{Exercise}\label{exercise}}
+\section{Exercise}\label{exercise}
 
 Into an Excel spreadsheet, download futures prices for January 2017
 Feeder Cattle futures prices
@@ -7788,8 +7580,7 @@ Quandl.com.
 
 \bookmarksetup{startatroot}
 
-\hypertarget{hog-markets}{%
-\chapter{Hog Markets}\label{hog-markets}}
+\chapter{Hog Markets}\label{hog-markets}
 
 {Interested in more? Please let me know by}
 \href{https://forms.gle/Q3VByCQZHjfQSy9D7}{taking the survey}!
@@ -7814,8 +7605,7 @@ linked Youtube playlist, watch the `Wean-to-finish' video, the
 \href{https://www.youtube.com/playlist?list=PL6B939D758396045B}{Smithfield
 Videos of Production Stages}
 
-\hypertarget{definitions}{%
-\section{Definitions}\label{definitions}}
+\section{Definitions}\label{definitions}
 
 First, we begin by introucing specialized nomenclature used in the
 industry.
@@ -7868,8 +7658,7 @@ Feeder-to-finish & Produciton phase from feeder weight pigs to market
 weight pigs \\
 \end{longtable}
 
-\hypertarget{gestation-and-farrowing}{%
-\section{Gestation and Farrowing}\label{gestation-and-farrowing}}
+\section{Gestation and Farrowing}\label{gestation-and-farrowing}
 
 The gestation period for a sow is 114 days or 16 weeks. Sows are usually
 kept in a specialized barn for farrowing where special care can be given
@@ -7903,8 +7692,7 @@ mothers for 2-3 weeks before they are weaned. Sows generally have
 approximately 2 litters per year and breeding sows are replaced on
 average after 3-4 litters.
 
-\hypertarget{feeding}{%
-\section{Feeding}\label{feeding}}
+\section{Feeding}\label{feeding}
 
 Commercial hog operations keep feeder pigs in barns or `hog houses' that
 hold hundreds of animals divided into smaller pens. Hogs are fed a
@@ -7917,8 +7705,7 @@ calories and protien, but not usually at higher than 30\% of the ration.
 Utilizing higher proportions of distillers grains causes the carcass fat
 to be too soft.
 
-\hypertarget{waste-management}{%
-\section{Waste Management}\label{waste-management}}
+\section{Waste Management}\label{waste-management}
 
 Since a large number of hogs are housed together in close confinement,
 special systems to manage the waste are employed. Usually, the floors of
@@ -7926,9 +7713,7 @@ the hog houses are slatted so the manure falls through the floor to a
 temporary chamber below. The waste is continually pumped to waste
 management lagoons located near (or under) the hog house(s).
 
-\hypertarget{geography-of-hog-production}{%
-\section{Geography of Hog
-Production}\label{geography-of-hog-production}}
+\section{Geography of Hog Production}\label{geography-of-hog-production}
 
 Hogs historically have been produced in locations close to corn and
 soybean production. Corn belt states historically have been the dominant
@@ -7937,7 +7722,7 @@ States has increased rapidly. Figure 1 show the top 8 producing states
 as of 2013, with figures for 2008-2013 displayed. North Carolina is the
 only top hog producing state not in the corn belt.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{images/hogstates.png}
 
@@ -7945,14 +7730,14 @@ only top hog producing state not in the corn belt.
 
 \caption{Figure 1: Top 8 Hog Producing States in 2013}
 
-\end{figure}
+\end{figure}%
 
 Source: \href{pdf-Readings/pork_and_swine_summary.pdf}{Pork and Swine
 Industry and Trade Summary}, USITC
 
 Figure 2 show hog and pig sales as a percent of agricultural sales.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{images/hogprodvaluecounty.png}
 
@@ -7960,7 +7745,7 @@ Figure 2 show hog and pig sales as a percent of agricultural sales.
 
 \caption{Figure 2: Hog and Pig Sales as a percent of Agricultural Sales}
 
-\end{figure}
+\end{figure}%
 
 Source: \href{pdf-Readings/12CensusHighlightsHogs.pdf}{USDA NASS 2012
 Census Highlights}
@@ -7969,8 +7754,7 @@ Census Highlights}
 some Hog Production Operations} in Hardin County, Iowa's largest hog
 producing county.
 
-\hypertarget{industry-structure}{%
-\section{Industry Structure}\label{industry-structure}}
+\section{Industry Structure}\label{industry-structure}
 
 The hog industry has experienced considerable consolidation in recent
 history with the number of farms declining, and number of hogs per
@@ -7981,7 +7765,7 @@ operators and large vertically integrated firms or owned directly by
 pork packers themselves (\href{pdf-readings/gipsa10.pdf}{21.6 percent}
 were raised in packer-owned operations in 2010 (\textbf{gipsa10?}).
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{images/numberproducersshare.png}
 
@@ -7990,9 +7774,8 @@ were raised in packer-owned operations in 2010 (\textbf{gipsa10?}).
 \caption{Figure 3: Number of U.S. Producers and Share of Inventory,
 2008-2012}
 
-\end{figure}
-
-\begin{figure}
+\end{figure}%%
+\begin{figure}[H]
 
 {\centering \includegraphics{images/numberoperations.png}
 
@@ -8001,7 +7784,7 @@ were raised in packer-owned operations in 2010 (\textbf{gipsa10?}).
 \caption{Figure 4: Number of Operations and Percent of Inventory,
 2008-2012}
 
-\end{figure}
+\end{figure}%
 
 Source: Pork and Swine Industry and Trade Summary, USITC
 
@@ -8012,8 +7795,7 @@ typically responsible for financing the facilities and the owner, who is
 often a large multinational firm will provide the animals, feed,
 vetrenary and other expenses.
 
-\hypertarget{price-determination}{%
-\section{Price Determination}\label{price-determination}}
+\section{Price Determination}\label{price-determination}
 
 Although the number of cash sales has declined, forward contract prices
 and marketing agreements between contract growers and operators are
@@ -8027,15 +7809,13 @@ from Livestock Marketing Information Center}
 \href{http://www.lmic.info/quick_market_reports/hogs}{USDA Ag News
 Service Prices, via LMIC}
 
-\hypertarget{lean-hogs-futures}{%
-\section{Lean Hogs Futures}\label{lean-hogs-futures}}
+\section{Lean Hogs Futures}\label{lean-hogs-futures}
 
 \href{http://www.cmegroup.com/trading/agricultural/livestock/lean-hogs.html}{Lean
 Hogs Futures Contracts on the CME}
 
-\hypertarget{why-only-one-contract-instead-of-two-like-feeder-and-live-cattle}{%
 \subsection{Why only one Contract Instead of Two like Feeder and Live
-Cattle?}\label{why-only-one-contract-instead-of-two-like-feeder-and-live-cattle}}
+Cattle?}\label{why-only-one-contract-instead-of-two-like-feeder-and-live-cattle}
 
 Industry consolidation has left few firms needing to hedge risk. Futures
 contracts are usually successful when there are a large number of firms
@@ -8049,14 +7829,13 @@ feeder cattle and sell fattened cattle. Hog producer can hedge market
 hogs with the lean hogs contract and input costs with corn and soybean
 meal futures contracts. No second livestock contract is needed.
 
-\hypertarget{demise-of-the-frozen-pork-belly-futures-contracts}{%
 \subsection{Demise of the Frozen Pork Belly Futures
-Contracts}\label{demise-of-the-frozen-pork-belly-futures-contracts}}
+Contracts}\label{demise-of-the-frozen-pork-belly-futures-contracts}
 
 Until recently (2011), there existed a futures contract in frozen pork
 bellies.
 
-\href{https://www.google.com/search?q=pork+belly\&biw=1920\&bih=1075\&noj=1\&source=lnms\&tbm=isch\&sa=X\&ved=0CAgQ_AUoAmoVChMIhbO55IqdyQIVDNUeCh0_owNp}{Pork
+\href{https://www.google.com/search?q=pork+belly&biw=1920&bih=1075&noj=1&source=lnms&tbm=isch&sa=X&ved=0CAgQ_AUoAmoVChMIhbO55IqdyQIVDNUeCh0_owNp}{Pork
 belly images}
 
 Concentration in the hog industry reduced the need for the pork belly
@@ -8064,8 +7843,7 @@ contract in part. Also, an increased trend toward year-round consumption
 of bacon and production of pork reduced the need to store frozen pork
 bellies.
 
-\hypertarget{exercises-7}{%
-\section{Exercises}\label{exercises-7}}
+\section{Exercises}\label{exercises-7}
 
 In the exercises for this chapter we will use some of the time-series
 econometric techniques discussed in Appendix 18 and 19. Appendix 18
@@ -8168,9 +7946,8 @@ could not make any money trading with this forecasting model.
 
 \bookmarksetup{startatroot}
 
-\hypertarget{crude-oil-and-the-crack-spread}{%
 \chapter{Crude Oil and the Crack
-Spread}\label{crude-oil-and-the-crack-spread}}
+Spread}\label{crude-oil-and-the-crack-spread}
 
 {Interested in more? Please let me know by}
 \href{https://forms.gle/Q3VByCQZHjfQSy9D7}{taking the survey}!
@@ -8190,9 +7967,8 @@ energy stored in the hydrocarbon molecules.
 \href{https://www.youtube.com/watch?v=62LvVYYqUFA}{Introduction to Crude
 Oil by The Atlantic}
 
-\hypertarget{light-versus-heavysweet-versus-sour}{%
 \section{Light versus Heavy/Sweet versus
-Sour}\label{light-versus-heavysweet-versus-sour}}
+Sour}\label{light-versus-heavysweet-versus-sour}
 
 Not all crude oil is created equal. The components that make up the
 material can vary greatly affecting what kinds of products crude oil can
@@ -8221,9 +7997,8 @@ Sulfur is also highly corrosive, increasing the cost of maintaining
 refineries, and exposure to hydrogen sulfide is dangerous, so it must be
 removed from sour crude oil before transporting.
 
-\hypertarget{light-sweet-wti-and-brent-crude-oil}{%
 \subsection{Light, Sweet: WTI and Brent Crude
-Oil}\label{light-sweet-wti-and-brent-crude-oil}}
+Oil}\label{light-sweet-wti-and-brent-crude-oil}
 
 Because of its desirable qualities, light sweet crude oil is the most
 valuable classifications of crude oil in the world. When you hear people
@@ -8261,7 +8036,7 @@ from five states:
   Oklahoma (4\%)
 \end{itemize}
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{images/top_5_petroleum_states-large.jpg}
 
@@ -8269,7 +8044,7 @@ from five states:
 
 \caption{Top Five Oil Producing States}
 
-\end{figure}
+\end{figure}%
 
 Source:
 \href{http://www.eia.gov/Energyexplained/index.cfm?page=oil_home}{US
@@ -8283,7 +8058,7 @@ crude, it often trades at a discount to WTI crude, but the spread can be
 affected by local supply and demand factors.
 \end{description}
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{images/Brent_crude_oil_map (1).png}
 
@@ -8291,7 +8066,7 @@ affected by local supply and demand factors.
 
 \caption{Brent Crude Oil Map}
 
-\end{figure}
+\end{figure}%
 
 Source: \href{http://www.eia.gov/countries/cab.cfm?fips=UK}{US Energy
 Information Administration} Public domain, via Wikimedia Commons
@@ -8299,7 +8074,7 @@ Information Administration} Public domain, via Wikimedia Commons
 Globally, the top five oil producing countries are: Russia, the United
 States, Saudi Arabia, China, and Canada.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{images/top_petroleum_producing_countries-large.jpg}
 
@@ -8307,14 +8082,13 @@ States, Saudi Arabia, China, and Canada.
 
 \caption{Top Five Oil Producing Countries}
 
-\end{figure}
+\end{figure}%
 
 Source:
 \href{http://www.eia.gov/Energyexplained/index.cfm?page=oil_home}{US
 Energy Information Administration}
 
-\hypertarget{refining-crude-oil}{%
-\section{Refining Crude Oil}\label{refining-crude-oil}}
+\section{Refining Crude Oil}\label{refining-crude-oil}
 
 The exact proportions of refined products that can be produced from a
 barrel of oil can be varied by changing to refining process if one
@@ -8328,7 +8102,7 @@ sweet/sour) impact the proportion of products possible. The figure below
 shows the rough yield of various refined products from a 42 gallon
 barrel of oil.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{images/products_from_barrel_crude_oil-large.jpg}
 
@@ -8336,22 +8110,20 @@ barrel of oil.
 
 \caption{Products Made from a Barrel of Crude Oil}
 
-\end{figure}
+\end{figure}%
 
 Source:
 \href{http://www.eia.gov/Energyexplained/index.cfm?page=oil_home}{US
 Energy Information Administration}
 
-\hypertarget{gasoline}{%
-\subsection{Gasoline}\label{gasoline}}
+\subsection{Gasoline}\label{gasoline}
 
 Gasoline is the refined product that most people are familiar with
 because it is the dominant liquid fuel for the automobiles driven by the
 average American consumer.
 
-\hypertarget{distillates-diesel-heating-oil-jet-fuel-kerosene}{%
 \subsection{Distillates: Diesel, Heating Oil, Jet Fuel,
-Kerosene}\label{distillates-diesel-heating-oil-jet-fuel-kerosene}}
+Kerosene}\label{distillates-diesel-heating-oil-jet-fuel-kerosene}
 
 Distillates are lesser known among the general public. However,
 \href{http://www.eia.gov/Energyexplained/index.cfm?page=diesel_home}{Diesel},
@@ -8363,13 +8135,12 @@ Heating oil is used to heat homes in the Northeast U.S., whereas in
 other parts of the country natural gas, propane, and electricity are
 more prominent fuels for home heating.
 
-\hypertarget{price-trends}{%
-\section{Price Trends}\label{price-trends}}
+\section{Price Trends}\label{price-trends}
 
 The following figure shows WTI and Brent monthly spot prices from May
 1987 to September 2016.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{Excel-files/CrudeOiland-crudeoil_files/image003.png}
 
@@ -8377,7 +8148,7 @@ The following figure shows WTI and Brent monthly spot prices from May
 
 \caption{WTI and Brent Prices May 1987 to Oct.~2015}
 
-\end{figure}
+\end{figure}%
 
 Prices experienced a dramatic uptrend then downtrend in 2008-2009 that
 was experienced across many commodities. Most recently, crude oil prices
@@ -8385,7 +8156,7 @@ have been in a severe downturn. The recent downtrend has been
 characterized by a historically unprecedented divergence between WTI and
 Brent crude oil prices.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{Excel-files/CrudeOiland-crudeoil_files/image008.png}
 
@@ -8393,7 +8164,7 @@ Brent crude oil prices.
 
 \caption{Brent - WTI Price Spread}
 
-\end{figure}
+\end{figure}%
 
 Recall that WTI is a North American benchmark for light sweet crude oil,
 while Brent is a European benchmark for light sweet crude oil. In the
@@ -8401,8 +8172,7 @@ next section we will discuss how rapidly increasing production in the
 U.S. Bakkan formation of North Dakota has contributed to weak price
 levels and historically weak WTI price compared to the Brent price.
 
-\hypertarget{fundamental-factors}{%
-\section{Fundamental Factors}\label{fundamental-factors}}
+\section{Fundamental Factors}\label{fundamental-factors}
 
 A number of supply and demand statistics are maintained by the Energy
 Information Administration. Information on prices, crude reserves and
@@ -8410,9 +8180,8 @@ production, refining and processing, imports, and movements, and stocks
 can be found at the \href{http://www.eia.gov/petroleum/data.cfm}{EIA
 website}.
 
-\hypertarget{production-of-crude-gasoline-and-distillates}{%
 \subsection{Production of Crude, Gasoline, and
-Distillates}\label{production-of-crude-gasoline-and-distillates}}
+Distillates}\label{production-of-crude-gasoline-and-distillates}
 
 The figure below shows U.S. field production of Crude oil in thousand
 barrels per day. Production was in a downward trend since the mid
@@ -8421,7 +8190,7 @@ due to extensive drilling in the Bakkan formation after hydrolic
 fracturing techniques were developed to enable cost effective
 extraction.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{Excel-files/CrudeOiland-crudeoil_files/image004.png}
 
@@ -8430,13 +8199,13 @@ extraction.
 \caption{U.S. Field Production of Crude Oil, Thousands of barrels per
 month}
 
-\end{figure}
+\end{figure}%
 
 The figures below show the number of wells in 2008 and 2013 and
 demonstrates the rapid development of the crude oil extraction industry
 in the region.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{images/640px-Bakken_Wells_2008.png}
 
@@ -8444,14 +8213,14 @@ in the region.
 
 \caption{Bakkan Formation Wells 2008}
 
-\end{figure}
+\end{figure}%
 
 Source:
 \href{https://commons.wikimedia.org/wiki/File:Bakken_Wells_2008.png\#/media/File:Bakken_Wells_2008.png}{``Bakken
 Wells 2008'' by US Geological Survey} - Licensed under Public Domain via
 Commons
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{images/Bakken_Wells_2013.png}
 
@@ -8459,16 +8228,15 @@ Commons
 
 \caption{Bakkan Formation Wells 2013}
 
-\end{figure}
+\end{figure}%
 
 Source:
 \href{https://commons.wikimedia.org/wiki/File:Bakken_Wells_2013.png\#/media/File:Bakken_Wells_2013.png}{``Bakken
 Wells 2013'' by US Geological Survey}, 2013 - Licensed under Public
 Domain via Commons
 
-\hypertarget{inventories-of-crude-gasoline-and-distillates}{%
 \subsection{Inventories of Crude, Gasoline, and
-Distillates}\label{inventories-of-crude-gasoline-and-distillates}}
+Distillates}\label{inventories-of-crude-gasoline-and-distillates}
 
 The figure below shows weekly U.S. ending stocks of Crude oil in
 thousands of barrels. You can see a dramatic spike in stocks starting at
@@ -8476,7 +8244,7 @@ the beginning of 2015. This supply glut culminated in the weak prices
 over the summer. An export ban on U.S. crude oil makes the effect even
 stronger.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{Excel-files/CrudeOiland-crudeoil_files/image007.png}
 
@@ -8484,17 +8252,15 @@ stronger.
 
 \caption{U.S. Ending Stocks of Crude Oil (Thousand Barrels)}
 
-\end{figure}
+\end{figure}%
 
-\hypertarget{geopolitical-events}{%
-\subsection{Geopolitical Events}\label{geopolitical-events}}
+\subsection{Geopolitical Events}\label{geopolitical-events}
 
 Occasionally political unrest will occur in prominent crude oil
 producing regions causing a temporary supply disruption or fear of
 supply disruption that can cause short term spikes in crude oil prices.
 
-\hypertarget{the-crack-spread}{%
-\section{The Crack Spread}\label{the-crack-spread}}
+\section{The Crack Spread}\label{the-crack-spread}
 
 The \textbf{Crack Spread} is a spread trade in crude oil, gasoline, and
 ultra low sulfur diesel futures contracts that roughly mimics the
@@ -8520,8 +8286,7 @@ translate the price quotes, which are in \$/gallon, to \$/barrel. The 2,
 1, and 3 reflect the fact that if you refine 3 barrels of crude oil you
 will get back roughly 2 barrels of gasoline and 1 barrel of ULSD.
 
-\hypertarget{exercises-8}{%
-\section{Exercises}\label{exercises-8}}
+\section{Exercises}\label{exercises-8}
 
 The exercises for this chapter have us forecast the crude oil crack
 spread using time series econometric techniques on NYMEX futures prices
@@ -8588,9 +8353,8 @@ that).
 
 \bookmarksetup{startatroot}
 
-\hypertarget{forecasting-production---advanced}{%
 \chapter{Forecasting Production -
-Advanced}\label{forecasting-production---advanced}}
+Advanced}\label{forecasting-production---advanced}
 
 \textbf{Highlights}
 
@@ -8626,7 +8390,7 @@ that we can update every week during the growing season.
 
 Here is what the crop progress and condition report looks like.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{images/cropprogress.png}
 
@@ -8634,7 +8398,7 @@ Here is what the crop progress and condition report looks like.
 
 \caption{Figure 1. Crop Progress and Condition Report. 7/16/2018}
 
-\end{figure}
+\end{figure}%
 
 To create this report the USDA surveys farmers and other agribusiness
 professionals all over the major growing areas of the covered crops.
@@ -8644,7 +8408,7 @@ Poor, Poor, Fair, Good, and Excellent.
 As one would hope, the percent of the crop rated good or excellent is
 positively correlated with yield outcomes.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{Excel-files/yied-forecast-advanced_files/image001.png}
 
@@ -8653,7 +8417,7 @@ positively correlated with yield outcomes.
 \caption{Figure 2. Percent Deviations from Trend Yield against Percent
 of Crop Rated Good or Excellent}
 
-\end{figure}
+\end{figure}%
 
 Moreover, it may be informative to use the other categories from the
 condition reports to predict yields.
@@ -8661,8 +8425,7 @@ condition reports to predict yields.
 Work through the steps in the exercises to see how well we can predict
 yields with the crop progress report survey.
 
-\hypertarget{exercises-9}{%
-\section{Exercises}\label{exercises-9}}
+\section{Exercises}\label{exercises-9}
 
 The exercises for this chapter walk us through using the weekly crop
 progress and condition reports to create a forecast for yields that can
@@ -8749,9 +8512,8 @@ Note: \(\hat{Yield}=(1+\%Deviation\_From\_Trend/100)*Trend\_Yield\)
 
 \bookmarksetup{startatroot}
 
-\hypertarget{appendix-forecasting-with-ts-models}{%
 \chapter{Appendix: Forecasting with TS
-Models}\label{appendix-forecasting-with-ts-models}}
+Models}\label{appendix-forecasting-with-ts-models}
 
 {Interested in more? Please let me know by}
 \href{https://forms.gle/Q3VByCQZHjfQSy9D7}{taking the survey}!
@@ -8772,8 +8534,7 @@ time-series-specific concepts are introduced: constructing a series of
 horizon, trends in data series, inflation and deflating data,
 seasonality, stationarity, and random walks.
 
-\hypertarget{nearby-futures-prices}{%
-\section{`Nearby' Futures Prices}\label{nearby-futures-prices}}
+\section{`Nearby' Futures Prices}\label{nearby-futures-prices}
 
 There is considerable interest in the analysis of local or `spot'
 prices, but the vast majority of forecasting exercises in commodity
@@ -8796,9 +8557,8 @@ hedgers, speculators, and liquidity providers.\footnote{Liquidity
 we will focus on forecasting futures prices, although the techniques
 covered could be applied to spot prices as well.
 
-\hypertarget{trading-volume-as-contract-maturity-approaches}{%
 \subsection{Trading Volume as Contract Maturity
-Approaches}\label{trading-volume-as-contract-maturity-approaches}}
+Approaches}\label{trading-volume-as-contract-maturity-approaches}
 
 Futures contracts do not experience uniform trading volume over the
 lifetime of the contract. For example, corn futures are listed as
@@ -8808,7 +8568,7 @@ year or less time to contract maturity. Figure 1 shows the December 2014
 corn futures contract prices and volume from 10/3/2011 to the last day
 the contract traded, 12/12/2014.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{Excel-files/IntroductiontoCommodityTS-Nearby_construct_files/image005.png}
 
@@ -8816,7 +8576,7 @@ the contract traded, 12/12/2014.
 
 \caption{Figure 1: December 2014 Corn Futures Prices}
 
-\end{figure}
+\end{figure}%
 
 Figure 1 shows that trading activity begins to ramp up in the months
 leading up to this contract's expiration. Until the contract is being
@@ -8863,9 +8623,8 @@ Rolling futures contracts in this way produces a series that always
 represents actively traded contracts, so the information content should
 be high.
 
-\hypertarget{when-to-roll-to-the-next-to-expire}{%
 \subsection{When to Roll to the
-Next-to-Expire?}\label{when-to-roll-to-the-next-to-expire}}
+Next-to-Expire?}\label{when-to-roll-to-the-next-to-expire}
 
 One technical detail is when exactly should you roll to the next to
 expire contract? Notice in table 1, the series does not roll to the next
@@ -8893,7 +8652,7 @@ series at the end of the previous month. Figure 2 below shows the series
 of nearby futures prices, rolled at the end of the month prior to the
 expiration month.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{Excel-files/IntroductiontoCommodityTS-Nearby_construct_files/image001.png}
 
@@ -8901,13 +8660,12 @@ expiration month.
 
 \caption{Figure 2: Nearby Corn Futures Prices}
 
-\end{figure}
+\end{figure}%
 
 Notice in particular that the scale for volume is the same in figures 1
 and 2, and in figure 2 volume is strong throughout the series.
 
-\hypertarget{time-series-forecasting}{%
-\section{Time-Series Forecasting}\label{time-series-forecasting}}
+\section{Time-Series Forecasting}\label{time-series-forecasting}
 
 Given a time-series of prices that one would like to forecast, the
 analyst seeks to find a function, \(f(.)\), that can take information
@@ -8945,20 +8703,18 @@ on your data so that the stationarity assumption holds for the
 transformed data. This concept may seem abstract now, but the coming
 chapters and exercises will reinforce this point over and over again.
 
-\hypertarget{properties-of-time-series-data}{%
 \section{Properties of Time-Series
-Data}\label{properties-of-time-series-data}}
+Data}\label{properties-of-time-series-data}
 
 Some properties of commodity prices occur frequently: trends,
 seasonality, and stationarity.
 
-\hypertarget{trends}{%
-\subsection{Trends}\label{trends}}
+\subsection{Trends}\label{trends}
 
 A lot of time series data will exhibit clear trends. The Food, Alcohol,
 and Industrial Use category from the corn balance sheet comes to mind.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{Excel-files/IntroductiontoCommodityTS-FeedGrains_Corn_files/image010.png}
 
@@ -8966,7 +8722,7 @@ and Industrial Use category from the corn balance sheet comes to mind.
 
 \caption{Figure 3: Food, Alcohol, and Industrial Use}
 
-\end{figure}
+\end{figure}%
 
 This series is clearly not stationary, a clear upward trend guarantees
 that the conditional mean of a subsample from early in the time-series
@@ -8975,8 +8731,7 @@ series. The trend can be easily removed, or `detrended' and therefore
 forecast fairly easily well with a simple linear trend, log trend, or
 exponential trend model.
 
-\hypertarget{inflation}{%
-\subsection{Inflation}\label{inflation}}
+\subsection{Inflation}\label{inflation}
 
 In any long series of prices, inflation can be a concern. Inflation is
 the phenomenon that explains why \$20 today will not buy as much as \$20
@@ -8985,7 +8740,7 @@ with by `deflating' the price series by an inflation index. Figure 4
 from the Dallas Federal Reserve Bank shows three price indices growing
 over time.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{images/dallasfednominal_c1.png}
 
@@ -8993,7 +8748,7 @@ over time.
 
 \caption{Figure 4: Inflation}
 
-\end{figure}
+\end{figure}%
 
 Source:
 \href{http://www.dallasfed.org/research/basics/nominal.cfm}{Dallas
@@ -9014,15 +8769,14 @@ downloaded from the Bureau of Labor Statistics.
   \(Real Value = \frac{Nominal Value}{Price Index}\)
 \end{enumerate}
 
-\hypertarget{seasonality}{%
-\subsection{Seasonality}\label{seasonality}}
+\subsection{Seasonality}\label{seasonality}
 
 Some variables have a natural pattern through time. Often data
 pertaining to production or consumption will exhibit predictable
 seasonal patterns. We saw this with quarterly exports of corn for
 example.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{Excel-files/IntroductiontoCommodityTS-FeedGrains_Corn_files/image026.png}
 
@@ -9030,7 +8784,7 @@ example.
 
 \caption{Figure 5: Quarterly Exports of Corn as a Percent of Production}
 
-\end{figure}
+\end{figure}%
 
 The seasonal pattern ensures that the conditional mean and variance of
 this variable is not constant through time. Seasonality is fairly easy
@@ -9038,8 +8792,7 @@ to address in a regression model, and we will see some popular methods
 for removing the predictable seasonal component so that the resultant
 series is stationary.
 
-\hypertarget{stationarity}{%
-\section{Stationarity}\label{stationarity}}
+\section{Stationarity}\label{stationarity}
 
 Price series often seem to follow a random walk. That is, the price at
 \(t+1\) appears to be a random deviation from the price at time \(t\).
@@ -9058,7 +8811,7 @@ Normal distribution and simulated a series of prices with the equation
 above and assuming a \(p_0\) of \$20.00. The random draws and the
 simulated price path are shown in figure 6 and 7.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{Excel-files/IntroductiontoCommodityTS-random_walk_files/image003.png}
 
@@ -9066,9 +8819,8 @@ simulated price path are shown in figure 6 and 7.
 
 \caption{Figure 6: Draws from a Standard Normal Distribution (n=1,000)}
 
-\end{figure}
-
-\begin{figure}
+\end{figure}%%
+\begin{figure}[H]
 
 {\centering \includegraphics{Excel-files/IntroductiontoCommodityTS-random_walk_files/image001.png}
 
@@ -9076,7 +8828,7 @@ simulated price path are shown in figure 6 and 7.
 
 \caption{Figure 7: Simulated Random Walk of Prices (\(p_0 = \$20.00\))}
 
-\end{figure}
+\end{figure}%
 
 If this is a reasonable model for how prices evolve, it will be a
 problem to estimate a regression model where we regress current prices
@@ -9107,9 +8859,8 @@ walk model from producing negative prices. Since negative prices are,
 generally, impossible, the standard random walk model does not work very
 well for prices. A simple modification will solve this problem, however.
 
-\hypertarget{the-log-normal-price-model.}{%
 \subsection{The Log-normal Price
-Model.}\label{the-log-normal-price-model.}}
+Model.}\label{the-log-normal-price-model.}
 
 If we modify the random walk model as follows, we guarantee a model that
 will produce non-negative prices.
@@ -9142,7 +8893,7 @@ The figure 8 and 9 show 1,000 random draws from a normal distribution
 \(\epsilon_t ~ N(0, .02)\), and the simulated price distribution that
 results from the log-normal price model and those random draws.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{Excel-files/IntroductiontoCommodityTS-random_walk_files/image007.png}
 
@@ -9150,9 +8901,8 @@ results from the log-normal price model and those random draws.
 
 \caption{Figure 8: Random Draws from a Normal(0, 0.02), (n = 1,000)}
 
-\end{figure}
-
-\begin{figure}
+\end{figure}%%
+\begin{figure}[H]
 
 {\centering \includegraphics{Excel-files/IntroductiontoCommodityTS-random_walk_files/image005.png}
 
@@ -9160,7 +8910,7 @@ results from the log-normal price model and those random draws.
 
 \caption{Figure 9: Simulated Log-Norma Prices, \(P_0 = \$20.00\)}
 
-\end{figure}
+\end{figure}%
 
 As was the case with the random walk model, the first difference of the
 log of prices is stationary. This means that if we specify a regression
@@ -9193,7 +8943,7 @@ In figure 10 the log-differences of the nearby corn futures price series
 task to anticipate what the next day's return will be in the context of
 trying to decide whether to buy or sell, for example.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{Excel-files/IntroductiontoCommodityTS-Nearby_construct_files/image002.png}
 
@@ -9202,11 +8952,10 @@ trying to decide whether to buy or sell, for example.
 \caption{Figure 10: Percent Change in Nearby Corn Futures Prices
 9/2/2014-8/31/2015}
 
-\end{figure}
+\end{figure}%
 
-\hypertarget{time-series-econometrics-technical-details}{%
 \section{Time Series Econometrics Technical
-Details}\label{time-series-econometrics-technical-details}}
+Details}\label{time-series-econometrics-technical-details}
 
 It turns out that if data are non-stationary and you try to run a
 typical OLS regression with the data in levels, the regression will be
@@ -9236,7 +8985,7 @@ on which you can safely run typical regressions.
 In sum, the beginning of any time series data analysis consists of the
 following workflow.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{images/ts-workflow.png}
 
@@ -9244,11 +8993,9 @@ following workflow.
 
 \caption{Figure 11: Single Price Series Time Series Workflow}
 
-\end{figure}
+\end{figure}%
 
-\hypertarget{efficient-market-hypothesis}{%
-\section{Efficient Market
-Hypothesis}\label{efficient-market-hypothesis}}
+\section{Efficient Market Hypothesis}\label{efficient-market-hypothesis}
 
 The Efficient Market Hypothesis (EMH) states that all the information
 available regarding an asset is incorporated into its price
@@ -9279,8 +9026,7 @@ away any of these kind of discrepancies, even if markets are temporarily
 inefficient, traders will correct the inefficiency by pushing the price
 up or down.
 
-\hypertarget{exercises-10}{%
-\section{Exercises}\label{exercises-10}}
+\section{Exercises}\label{exercises-10}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -9297,9 +9043,8 @@ Dallas. \url{http://www.dallasfed.org/research/basics/nominal.cfm}
 
 \bookmarksetup{startatroot}
 
-\hypertarget{appendix-single-market-models-arima}{%
 \chapter{Appendix: Single Market Models:
-ARIMA}\label{appendix-single-market-models-arima}}
+ARIMA}\label{appendix-single-market-models-arima}
 
 {Interested in more? Please let me know by}
 \href{https://forms.gle/Q3VByCQZHjfQSy9D7}{taking the survey}!
@@ -9314,8 +9059,7 @@ when there is reason to believe two or markets are related.
 The ARIMA class of models can be broken down into subcategories that are
 useful for building intuition.
 
-\hypertarget{integrated-or-not}{%
-\section{Integrated or Not?}\label{integrated-or-not}}
+\section{Integrated or Not?}\label{integrated-or-not}
 
 We spent considerable effort in Chapters 10 and 11 on the importance of
 stationarity in estimating time-series forecasting models. If a series
@@ -9337,9 +9081,8 @@ with price levels (no differencing) if the data are stationary and in
 differences if the data are non-stationary. We will always use first
 differenced data for the examples in this class.
 
-\hypertarget{arp-models}{%
 \section{\texorpdfstring{\(AR(p)\),
-Models}{AR(p), Models}}\label{arp-models}}
+Models}{AR(p), Models}}\label{arp-models}
 
 In Chapter 10 we introduced the Efficient Market Hypothesis (EMH) that
 states all information about an asset should be reflected in its current
@@ -9358,7 +9101,7 @@ forecasting model can help to improve forecasts.
 In figure 1 percent returns of the March 2016 corn futures contract are
 plotted.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{images/12_corn_h2016.png}
 
@@ -9366,7 +9109,7 @@ plotted.
 
 \caption{Figure 1: Corn March 2016 Contract 1-Day Price Returns}
 
-\end{figure}
+\end{figure}%
 
 To investigate if a price series exhibits auto-correlation, we need to
 generate time lags in the price series. Figure 2 shows a screenshot in
@@ -9374,7 +9117,7 @@ Excel of how to generate time lags of returns. Basically, you just point
 the cell to the value in the previous period. Note that the value in
 \texttt{D7} simply takes the value in \texttt{C6}.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{images/12.lags.png}
 
@@ -9382,14 +9125,14 @@ the cell to the value in the previous period. Note that the value in
 
 \caption{Figure 2: Generating Time Lags in Excel}
 
-\end{figure}
+\end{figure}%
 
 Now, to get a rough idea if there is auto-correlation in corn returns,
 we calculate the correlation of columns \texttt{C}, \texttt{D}, and
 \texttt{E}. This function can be performed in the `Data Analysis' choice
 of the `Data' menu tab in Excel. The output is displayed in Figure 3.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{images/12_corn_autocorrel.png}
 
@@ -9397,16 +9140,15 @@ of the `Data' menu tab in Excel. The output is displayed in Figure 3.
 
 \caption{Figure 3: \(AR(P)\) Correlations}
 
-\end{figure}
+\end{figure}%
 
 Given the low values of correlations between the contemporaneous price
 and the one-lag and two-lagged prices, I am not hopeful for the
 prospects of a good forecast from the \(AR(p)\) model, but we will go
 ahead and estimate it nonetheless for illustrative purposes.
 
-\hypertarget{the-arp-model}{%
 \subsection{\texorpdfstring{The \(AR(p)\)
-Model}{The AR(p) Model}}\label{the-arp-model}}
+Model}{The AR(p) Model}}\label{the-arp-model}
 
 The \(AR(p)\) model is formally defined by equation 1.
 
@@ -9423,7 +9165,7 @@ model. In figure 4, we show regression output in Excel from estimating
 an \(AR(2)\) price model on corn price returns in the March 2016
 contract from 1/2/2015 - 10/20/2015.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{images/12_corn_ar2_output.png}
 
@@ -9432,7 +9174,7 @@ contract from 1/2/2015 - 10/20/2015.
 \caption{Figure 4: Regression output for \(AR(2)\) model of Corn Price
 Returns in the March 2016 Contract, 1/2/2015 - 10/20/2015}
 
-\end{figure}
+\end{figure}%
 
 All of the p-values for our regressors are large, certainly much bigger
 than 0.05. We fail to reject the null hypothesis that one and two lags
@@ -9440,9 +9182,8 @@ of corn price returns are unrelated to the next price return
 realization. Therefore, the \(AR(2)\) model does not seem to provide
 much forecasting power.
 
-\hypertarget{maq-models}{%
 \section{\texorpdfstring{\(MA(q)\),
-Models}{MA(q), Models}}\label{maq-models}}
+Models}{MA(q), Models}}\label{maq-models}
 
 The Moving Average Model incorporates lagged random shocks into the
 forecast model. Commonly denoted by \(MA(q)\), the \(q\) stands for the
@@ -9469,10 +9210,9 @@ least squares becasue we need to know the values of the \(\theta_i\) in
 order to calculate the residuals, \(\epsilon_i\). Instead, we will take
 an iteritive approach to estimating this model.
 
-\hypertarget{guesing-the-theta_i-and-minimising-the-sum-of-squared-residuals}{%
 \subsection{\texorpdfstring{Guesing the \(\theta_i\) and Minimising the
 Sum of Squared
-Residuals}{Guesing the \textbackslash theta\_i and Minimising the Sum of Squared Residuals}}\label{guesing-the-theta_i-and-minimising-the-sum-of-squared-residuals}}
+Residuals}{Guesing the \textbackslash theta\_i and Minimising the Sum of Squared Residuals}}\label{guesing-the-theta_i-and-minimising-the-sum-of-squared-residuals}
 
 We discussed in Chapter 11, that linear regression finds estimated
 coeficients by minimizing the \emph{Sum of Squared Residuals}. One
@@ -9502,7 +9242,7 @@ from our guess.
 Then we can use the `Solver' function in Excel's Analysis toolpack to
 minimize the sum of squared residuals by choosing the \(\theta_i\).
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{images/12_solvermaq.png}
 
@@ -9511,7 +9251,7 @@ minimize the sum of squared residuals by choosing the \(\theta_i\).
 \caption{Figure 5: Screenshot of the Solver Function to Minimize Sum of
 Squared Residuals}
 
-\end{figure}
+\end{figure}%
 
 Doing just those steps will give you accurate estimates of the
 \(\theta_i\) coefficents, but no information of the standard errors of
@@ -9523,7 +9263,7 @@ calculated residuals to perform hypothesis testing. Your regression
 coefficients should match the \(\theta_i\) you calculated with the Excel
 `Solver'.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{images/12_ma2.png}
 
@@ -9532,7 +9272,7 @@ coefficients should match the \(\theta_i\) you calculated with the Excel
 \caption{Figure 6: Shows the Regression Output of Estimating the
 \(MA(q)\) Model in Excel}
 
-\end{figure}
+\end{figure}%
 
 We see that the regression coefficients match very well for
 \(\theta_0\), \(\theta_1\), and \(\theta_3\), while \(\theta_2\) seems
@@ -9545,9 +9285,8 @@ data, as shown by the \(R^2\), and none of the coefficients are close to
 statistical significance since the p-values are all well above 0.05.
 
 \begin{quote}
-\hypertarget{fitting-an-maq-model-in-excel}{%
 \subsection{\texorpdfstring{Fitting an \(MA(q)\) model in
-Excel}{Fitting an MA(q) model in Excel}}\label{fitting-an-maq-model-in-excel}}
+Excel}{Fitting an MA(q) model in Excel}}\label{fitting-an-maq-model-in-excel}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -9572,8 +9311,7 @@ learn a common statistical package; however, hopefully this process
 helps to build some intuition about how these models are estimated by
 the more powerful statistical software packages.
 
-\hypertarget{lag-length}{%
-\section{Lag Length}\label{lag-length}}
+\section{Lag Length}\label{lag-length}
 
 You may be wondering at this point if it would be useful to try
 including more lags in the regression equation; perhaps we will find
@@ -9607,17 +9345,15 @@ statistically significant coefficients on the lags, and the nearest lags
 will be most likely to be significant, so a small number of lags will
 usually be sufficient.
 
-\hypertarget{dealing-with-seasonality}{%
-\section{Dealing with Seasonality}\label{dealing-with-seasonality}}
+\section{Dealing with Seasonality}\label{dealing-with-seasonality}
 
-\hypertarget{caculating-forecast-values}{%
-\section{Caculating Forecast Values}\label{caculating-forecast-values}}
+\section{Caculating Forecast Values}\label{caculating-forecast-values}
 
 Figure 5 shows a screenshot of Excel where the model output from figure
 4 is used to produce the \(AR(2)\) model forecasts shown in column
 \texttt{F}.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{images/12_forecast_screenshot.png}
 
@@ -9625,7 +9361,7 @@ Figure 5 shows a screenshot of Excel where the model output from figure
 
 \caption{Figure 5: Calculating Forecast Values}
 
-\end{figure}
+\end{figure}%
 
 Forecasts are found by using the estimated model and recent realizations
 of returns to produce a one-step-ahead forecast as follows
@@ -9672,7 +9408,7 @@ will run out of realizations and begin plugging in forecasts for the
 lagged values. Figure 6 Plots the 1-4-step ahead forecasts shown in
 column \texttt{F} of figure 5, along with the return realizations.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{images/12_forecast_plot.png}
 
@@ -9681,7 +9417,7 @@ column \texttt{F} of figure 5, along with the return realizations.
 \caption{Figure 6: 1-4-Step Ahead Forecasts Generated from an
 \(AR(2) Model\)}
 
-\end{figure}
+\end{figure}%
 
 The \(AR(2)\) model more or less forecasts a percent return of zero.
 This result should be fairly intiutive because we did not find stron
@@ -9692,8 +9428,7 @@ statistically siginificant autocorrelation coefficients.
 
 \bookmarksetup{startatroot}
 
-\hypertarget{south-american-production}{%
-\chapter{South American Production}\label{south-american-production}}
+\chapter{South American Production}\label{south-american-production}
 
 {Interested in more? Please let me know by}
 \href{https://forms.gle/Q3VByCQZHjfQSy9D7}{taking the survey}!
@@ -9713,8 +9448,7 @@ over time is notable particularly for the U.S., China, and Brazil,
 generating a dramatic upward trend in the production from this top
 group.
 
-\hypertarget{production-of-corn}{%
-\section{Production of Corn}\label{production-of-corn}}
+\section{Production of Corn}\label{production-of-corn}
 
 Data for figures 1-4 come from the
 \href{https://apps.fas.usda.gov/psdonline/app/index.html\#/app/downloads}{USDA
@@ -9750,8 +9484,7 @@ Next, in table 1, we present the top producers of corn in 2022.
 
 Table 1: Top 10 World Producers of Corn, 2022 (1000 MT)
 
-\hypertarget{production-of-soybeans}{%
-\section{Production of Soybeans}\label{production-of-soybeans}}
+\section{Production of Soybeans}\label{production-of-soybeans}
 
 Now we turn our attention to the soybean market. In figure 3 we present
 production since 1990 from the top five countries. Here, the importance
@@ -9787,9 +9520,8 @@ see that Paraguay and Bolivia are present in the top ten as well.
 
 Table 2: Top 10 World Producers of Soybeans, 2022
 
-\hypertarget{south-american-production-seasons-and-trade-flows}{%
 \section{South American Production Seasons and Trade
-Flows}\label{south-american-production-seasons-and-trade-flows}}
+Flows}\label{south-american-production-seasons-and-trade-flows}
 
 Since South America experiences summer when we in the North America
 experience winter and vice versa, North American and South American
@@ -9805,8 +9537,7 @@ growing seasons (March through June). The seasonality is a boon for
 importers because they have the opportunity to buy for seasonally low
 harvest-time prices twice per year rather than just once per year.
 
-\hypertarget{brazil}{%
-\subsection{Brazil}\label{brazil}}
+\subsection{Brazil}\label{brazil}
 
 Brazil, being quite close to the equator, enjoys the ability to double
 crop most every year. Typically, farmers plant soybeans as the first
@@ -9820,7 +9551,7 @@ Northeast regions of the country. This is planted in the Brazilian
 winter, which is a similar timetable to the U.S. corn crop. The third
 corn crop is planted in around May and is harvested around October.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{assets/Brazilcalendar.png}
 
@@ -9828,13 +9559,13 @@ corn crop is planted in around May and is harvested around October.
 
 \caption{Source: USDA FAS}
 
-\end{figure}
+\end{figure}%
 
 Figure 6 show production intensity of soybeans by state, and also
 provides a calendar of when planting and harvest activity of first crop
 soybeans are taking place.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{assets/Brazil_Soybean.png}
 
@@ -9842,11 +9573,11 @@ soybeans are taking place.
 
 \caption{Figure 6: Regional Brazilian Soybean Production Seasons}
 
-\end{figure}
+\end{figure}%
 
 Figure 7 shows the same for second crop corn.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{assets/Brazil_SecondSeason_Corn.png}
 
@@ -9854,7 +9585,7 @@ Figure 7 shows the same for second crop corn.
 
 \caption{Figure 7: Regional Brazilian 2nd Crop Corn Production Seasons}
 
-\end{figure}
+\end{figure}%
 
 While figure 8 shows the regional production intensity of first crop
 corn. Notice the highest production of first crop corn is located in
@@ -9862,7 +9593,7 @@ regions that have no second crop in figure 7. This shows that in the
 east, where managing a second crop is more difficult, farmers are more
 apt to plant a single crop of corn.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{assets/Brazil_FirstSeason_Corn.png}
 
@@ -9870,11 +9601,10 @@ apt to plant a single crop of corn.
 
 \caption{Figure 8: Regional Brazilian 1st Crop Corn Production Seasons}
 
-\end{figure}
+\end{figure}%
 
-\hypertarget{where-to-find-information-on-brazilian-crops}{%
 \subsection{Where to find information on Brazilian
-Crops}\label{where-to-find-information-on-brazilian-crops}}
+Crops}\label{where-to-find-information-on-brazilian-crops}
 
 For information about Brazilian production the
 \href{http://www.conab.gov.br/index.php}{National Supply Company
@@ -9887,14 +9617,13 @@ prominence in soybean and corn markets, analysts cover the CONAB report
 similar to how the WASDE report is covered, since supply and demand in
 Brazil affects world markets.
 
-\hypertarget{argentina}{%
-\subsection{Argentina}\label{argentina}}
+\subsection{Argentina}\label{argentina}
 
 Argentina is more similar to the U.S. in latitude, so they are only able
 to plant a single crop. Planting of corn begins in September and harvest
 runs from March until May.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{assets/Argentina_Departments_Corn.png}
 
@@ -9902,12 +9631,12 @@ runs from March until May.
 
 \caption{Figure 9: Regional Argentinian Corn Production Seasons}
 
-\end{figure}
+\end{figure}%
 
 Planting of soybeans begins in November and harvest runs from April to
 May.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{assets/Argentina_Departments_Soybean.png}
 
@@ -9915,11 +9644,10 @@ May.
 
 \caption{Figure 10: Regional Argentinian Soybean Production Seasons}
 
-\end{figure}
+\end{figure}%
 
-\hypertarget{where-to-find-information-on-argentinian-crops}{%
 \subsection{Where to find information on Argentinian
-Crops}\label{where-to-find-information-on-argentinian-crops}}
+Crops}\label{where-to-find-information-on-argentinian-crops}
 
 The \href{https://www.bolsadecereales.com/}{Bolsa de Cereales} is the
 grain exchange in Argentina. They undertake the responsibility of
@@ -9934,40 +9662,39 @@ understood by English-only speakers.
 
 \bookmarksetup{startatroot}
 
-\hypertarget{references-2}{%
-\chapter*{References}\label{references-2}}
+\chapter*{References}\label{references-2}
 \addcontentsline{toc}{chapter}{References}
 
 \markboth{References}{References}
 
-\hypertarget{refs}{}
+\phantomsection\label{refs}
 \begin{CSLReferences}{1}{0}
-\leavevmode\vadjust pre{\hypertarget{ref-allen_safeguarding_2007}{}}%
+\bibitem[\citeproctext]{ref-allen_safeguarding_2007}
 Allen, Richard. 2007. \emph{Safeguarding America's Agricultural
 Statistics}. U.S. Department of Agriculture, National Agricultural
 Statistics Service.
 
-\leavevmode\vadjust pre{\hypertarget{ref-babcock_crop_2006}{}}%
+\bibitem[\citeproctext]{ref-babcock_crop_2006}
 Babcock, Bruce, and Chad Hart. 2006. {``Crop Insurance: A Good Deal for
 Taxpayers?''} \emph{Iowa Ag Review} 12 (3).
 
-\leavevmode\vadjust pre{\hypertarget{ref-black_pricing_1976}{}}%
+\bibitem[\citeproctext]{ref-black_pricing_1976}
 Black, Fischer. 1976. {``The Pricing of Commodity Contracts.''}
 \emph{Journal of Financial Economics} 3 (1): 167--79.
 \url{https://doi.org/10.1016/0304-405X(76)90024-6}.
 
-\leavevmode\vadjust pre{\hypertarget{ref-black_pricing_1973}{}}%
+\bibitem[\citeproctext]{ref-black_pricing_1973}
 Black, Fischer, and Myron Scholes. 1973. {``The Pricing of Options and
 Corporate Liabilities.''} \emph{Journal of Political Economy} 81 (3):
 637--54.
 \url{http://www.jstor.org.ezproxy.lib.purdue.edu/stable/1831029}.
 
-\leavevmode\vadjust pre{\hypertarget{ref-cochran_price_1951}{}}%
+\bibitem[\citeproctext]{ref-cochran_price_1951}
 Cochran, Clay L. 1951. {``Price Supports and the Distribution of
 Agricultural Income.''} \emph{Southern Economic Journal} 17 (3):
 330--38. \url{https://doi.org/10.2307/1053897}.
 
-\leavevmode\vadjust pre{\hypertarget{ref-farrin_how_2016}{}}%
+\bibitem[\citeproctext]{ref-farrin_how_2016}
 Farrin, Katie, Mario Miranda, and Erik O'Donoghue. 2016. {``How Do Time
 and Money Affect Agricultural Insurance Uptake? A New Approach to Farm
 Risk Management Analysis.''} \{USDA\} \{ERS\} Report {ERR}-212.
@@ -9975,68 +9702,68 @@ Washington, D.C.: United States Department of Agriculture, Economic
 Research Service.
 \url{https://www.ers.usda.gov/publications/pub-details/?pubid=74681}.
 
-\leavevmode\vadjust pre{\hypertarget{ref-glauber_growth_2013}{}}%
+\bibitem[\citeproctext]{ref-glauber_growth_2013}
 Glauber, Joseph W. 2013. {``The Growth of the Federal Crop Insurance
 Program, 1990--2011.''} \emph{American Journal of Agricultural
 Economics} 95 (2): 482--88. \url{https://doi.org/10.1093/ajae/aas091}.
 
-\leavevmode\vadjust pre{\hypertarget{ref-glauber_united_2016}{}}%
+\bibitem[\citeproctext]{ref-glauber_united_2016}
 Glauber, Joseph, and Anne Effland. 2016. {``United States Agricultural
 Policy: Its Evolution and Impact.''} {IFPRI} Discussion Paper 1543.
 International Food Policy Research Center.
 
-\leavevmode\vadjust pre{\hypertarget{ref-noauthor_history_1984}{}}%
+\bibitem[\citeproctext]{ref-noauthor_history_1984}
 {``History of Agricultural Price Support and Adjustment Programs.''}
 1984. Information Bulletin No. 485. {USDA} Economic Research Service.
 
-\leavevmode\vadjust pre{\hypertarget{ref-hull_fundamentals_2017}{}}%
+\bibitem[\citeproctext]{ref-hull_fundamentals_2017}
 Hull, John. 2017. \emph{Fundamentals of Futures and Options Markets}.
 Ninth edition. Boston: Pearson.
 
-\leavevmode\vadjust pre{\hypertarget{ref-kub_mastering_2012}{}}%
+\bibitem[\citeproctext]{ref-kub_mastering_2012}
 Kub, Elaine. 2012. \emph{Mastering the Grain Markets: How Profits Are
 Really Made}. {CreateSpace} Independent Publishing Platform.
 
-\leavevmode\vadjust pre{\hypertarget{ref-lichtenberg_welfare_1986}{}}%
+\bibitem[\citeproctext]{ref-lichtenberg_welfare_1986}
 Lichtenberg, Erik, and David Zilberman. 1986. {``The Welfare Economics
 of Price Supports in u.s. Agriculture.''} \emph{The American Economic
 Review} 76 (5): 1135--41. \url{http://www.jstor.org/stable/1816475}.
 
-\leavevmode\vadjust pre{\hypertarget{ref-marcus_valuation_1986}{}}%
+\bibitem[\citeproctext]{ref-marcus_valuation_1986}
 Marcus, Alan J., and David M. Modest. 1986. {``The Valuation of a Random
 Number of Put Options: An Application to Agricultural Price Supports.''}
 \emph{Journal of Financial and Quantitative Analysis} 21 (1): 73--86.
 \url{https://doi.org/10.2307/2330992}.
 
-\leavevmode\vadjust pre{\hypertarget{ref-mcglone_future_2013}{}}%
+\bibitem[\citeproctext]{ref-mcglone_future_2013}
 McGlone, John. 2013. {``The Future of Pork Production in the World:
 Towards Sustainable, Welfare-Positive Systems.''} \emph{Animals} 3 (2):
 401--15. \url{https://doi.org/10.3390/ani3020401}.
 
-\leavevmode\vadjust pre{\hypertarget{ref-merton_theory_1973}{}}%
+\bibitem[\citeproctext]{ref-merton_theory_1973}
 Merton, Robert C. 1973. {``Theory of Rational Option Pricing.''}
 \emph{The Bell Journal of Economics and Management Science} 4 (1):
 141--83. \url{https://doi.org/10.2307/3003143}.
 
-\leavevmode\vadjust pre{\hypertarget{ref-remig_trans_2010}{}}%
+\bibitem[\citeproctext]{ref-remig_trans_2010}
 Remig, Valentina, Barry Franklin, Simeon Margolis, Georgia Kostas,
 Theresa Nece, and James C. Street. 2010. {``Trans Fats in America: A
 Review of Their Use, Consumption, Health Implications, and
 Regulation.''} \emph{Journal of the American Dietetic Association} 110
 (4): 585--92. \url{https://doi.org/10.1016/j.jada.2009.12.024}.
 
-\leavevmode\vadjust pre{\hypertarget{ref-walters_net_2017}{}}%
+\bibitem[\citeproctext]{ref-walters_net_2017}
 Walters, Cory, and Richard Preston. 2017. {``Net Income Risk, Crop
 Insurance and Hedging.''} \emph{Agricultural Finance Review} 78 (1):
 135--51.
 
-\leavevmode\vadjust pre{\hypertarget{ref-westcott_price_1999}{}}%
+\bibitem[\citeproctext]{ref-westcott_price_1999}
 Westcott, Paul C, and Linwood A Hoffman. 1999. {``Price Determination
 for Corn and Wheat: The Role of Market Factors and Government
 Programs.''} United States Department of Agriculture, Economic Research
 Service.
 
-\leavevmode\vadjust pre{\hypertarget{ref-zulauf_crop_2016}{}}%
+\bibitem[\citeproctext]{ref-zulauf_crop_2016}
 Zulauf, Carl. 2016. {``Crop Insurance Premium Subsidy Rates: A Proposed
 Objective Metric Based on Systemic Risk.''} \emph{Farmdoc Daily} 6 (86).
 

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.555">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -48,7 +48,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -57,6 +63,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -75,10 +82,37 @@ gtag('config', 'G-8C738FZXS8', { 'anonymize_ip': true});
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 <meta property="og:title" content="Price Analysis: A Fundamental Approach to the Study of Commodity Prices - 4&nbsp; Futures and Hedging Review">
 <meta property="og:description" content="">
-<meta property="og:image" content="http://mindymallory.com/PriceAnalysis/assets/Grain_elevator_royal_IL.jpg">
-<meta property="og:site-name" content="Price Analysis: A Fundamental Approach to the Study of Commodity Prices">
+<meta property="og:image" content="http://mindymallory.com/PriceAnalysis/cover.jpg">
+<meta property="og:site_name" content="Price Analysis: A Fundamental Approach to the Study of Commodity Prices">
 </head>
 
 <body class="nav-sidebar floating">
@@ -87,12 +121,12 @@ gtag('config', 'G-8C738FZXS8', { 'anonymize_ip': true});
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04-FuturesContractsandHedging.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Futures and Hedging Review</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04-FuturesContractsandHedging.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Futures and Hedging Review</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -102,12 +136,12 @@ gtag('config', 'G-8C738FZXS8', { 'anonymize_ip': true});
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Price Analysis: A Fundamental Approach to the Study of Commodity Prices</a> 
         <div class="sidebar-tools-main tools-wide">
-    <a href="https://github.com/mindymallory/PriceAnalysis" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/mindymallory/PriceAnalysis" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
       <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
@@ -311,7 +345,7 @@ gtag('config', 'G-8C738FZXS8', { 'anonymize_ip': true});
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -331,7 +365,7 @@ gtag('config', 'G-8C738FZXS8', { 'anonymize_ip': true});
   <li><a href="#how-crop-revanue-insurance-has-changed-commodity-marketing-and-hedging-needs" id="toc-how-crop-revanue-insurance-has-changed-commodity-marketing-and-hedging-needs" class="nav-link" data-scroll-target="#how-crop-revanue-insurance-has-changed-commodity-marketing-and-hedging-needs"><span class="header-section-number">4.2.5</span> How Crop Revanue Insurance Has Changed Commodity Marketing and Hedging Needs</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/mindymallory/PriceAnalysis/edit/main/04-FuturesContractsandHedging.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/mindymallory/PriceAnalysis/edit/main/04-FuturesContractsandHedging.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -351,7 +385,9 @@ gtag('config', 'G-8C738FZXS8', { 'anonymize_ip': true});
   </div>
   
 
+
 </header>
+
 
 <p><span style="color:red">Interested in more? Please let me know by</span> <a href="https://forms.gle/Q3VByCQZHjfQSy9D7">taking the survey</a>!</p>
 <p><strong>Highlights</strong></p>
@@ -372,11 +408,11 @@ gtag('config', 'G-8C738FZXS8', { 'anonymize_ip': true});
 <h2 data-number="4.1" class="anchored" data-anchor-id="futures-contract-review"><span class="header-section-number">4.1</span> Futures Contract Review</h2>
 <p>A futures contract is a contract between two parties to buy and sell at an agreed to price, a specific quantity and quality of something at a specific location. In the case of CBOT corn futures, it is 5,000 bushels of U.S. number 2 yellow corn, at specific elevators along the Illinois River, Lake Michigan, or associated canals. These contracts are traded on a centralized exchange, similar to the ‘stock market’, and the two counter-parties do not know each other. The difference between a futures contract, and say buying a stock, is that when the trade takes place, no ownership transfer occurs. It is simply a promise to buy or sell at a specific date in the future. That is why there are many different futures contract ‘months’ like ‘December 2017’ corn futures, and ‘March 2018’ corn futures. Traders on futures exchanges need to post ‘margin’ which is just an amount of money that acts as a performance bond so that everyone has confidence that both parties can make good on the contract if it is held until the futures contract expires. As the price moves up, the seller’s position is losing (because selling ‘low’ is ‘bad’ business), and some money is taken from their margin account and put into the buyer’s margin account (because buying ‘low’ is ‘good’ business). This daily transfer of money from the losers to the winners is called ‘marking to market’, and it makes sure everyone has the financial capital required to make good on the terms of the contract.</p>
 <p>Consider this example. At 10am the March corn futures contract is trading at $4.50 per bushel. Trader A decides to buy one contract and Trader B decides to sell one contract. At 1pm both traders decide to close their position and the price has moved up to $4.75 per bushel. Since the price went up the by $0.25 per bushel, the longs (buyers) gain <span class="math inline">\(+0.25*5000 = \$1250\)</span> and the shorts (sellers) lose <span class="math inline">\(-0.25*5000 = \$1250\)</span>.</p>
-<table class="table">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 28%">
-<col style="width: 35%">
-<col style="width: 35%">
+<col style="width: 36%">
+<col style="width: 36%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -430,11 +466,7 @@ gtag('config', 'G-8C738FZXS8', { 'anonymize_ip': true});
 <h3 data-number="4.2.1" class="anchored" data-anchor-id="farmer"><span class="header-section-number">4.2.1</span> Farmer</h3>
 <p>Consider the corn farmer who plants her crop in April waits for it to grow and then mature through the summer and fall, then harvests it in November. If the farmer sells right after harvest in the cash market, she will very likely take her grain to a local grain elevator (similar to the one pictured below), where the elevator will purchase all she has at a price they publicly offer anyone interested in selling grain.</p>
 <p>Figure 1. A Grain Elevator in Royal, IL</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://commons.wikimedia.org/wiki/File:Grain_elevators_in_Royal,_IL."><img src="assets/Grain_elevator_royal_IL.jpg" class="img-fluid figure-img"></a></p>
-</figure>
-</div>
+<p><a href="https://commons.wikimedia.org/wiki/File:Grain_elevators_in_Royal,_IL."><img src="assets/Grain_elevator_royal_IL.jpg" class="img-fluid"></a></p>
 <p>Source: <a href="https://commons.wikimedia.org/wiki/File%3AGrain_elevators_in_Royal%2C_IL.jpg">Daniel Schwen, CC-License</a></p>
 <p>The farmer’s entire income for the year will come from the sale of this grain, and a lot can happen to the price of corn between April and November, leaving the farmer exposed to tremendous income risk. Many farmers desire the ability to reduce this income risk by entering into a contractual relationship that reduces the uncertainty in the income they receive. Currently there are several ways they can achieve this.</p>
 <ol type="1">
@@ -449,13 +481,13 @@ gtag('config', 'G-8C738FZXS8', { 'anonymize_ip': true});
 <p>The farmer will sell corn in the cash market in November, so to hedge she should sell (the December) futures to hedge. This concept is called being natually long. Since the farmer is essentially long the unharvested grain in the field (after all, ‘long’ is a financial position that gains value when price goes up and loses value when price goes down). Therefore, to hedge, they need to take a position with the opposite profile, i.e., they should take a short position to hedge their naturally long position.</p>
 <p>Consider two cases, one where the Dec futures price in November turned out to be $4.00, and one where the Dec futures price in November turned out to be $3.60.</p>
 <p><strong>Dec Futures Price went Up to $4.00, Basis Unchanged</strong></p>
-<table class="table">
+<table class="caption-top table">
 <colgroup>
-<col style="width: 19%">
+<col style="width: 17%">
+<col style="width: 27%">
+<col style="width: 20%">
 <col style="width: 22%">
-<col style="width: 19%">
-<col style="width: 19%">
-<col style="width: 19%">
+<col style="width: 12%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -499,13 +531,13 @@ gtag('config', 'G-8C738FZXS8', { 'anonymize_ip': true});
 </table>
 <p>With the basis unchanged, the farmer eliminated the uncertainty over the price at which she will sell her crop. By ‘selling ahead’ in the futures market, the price was locked in, except for the basis. Note that in this case, the farmer would have liked to be able to sell for $3.75 instead of $3.50 net, but by locking in the price with futures she gave up the potential for upside. In the next example, though, we show the advantage. In the next example, prices go down between May and November, and the futures hedge protects the farmer from these deteriorating prices.</p>
 <p><strong>Dec Futures Price went Down to $3.60, Basis Unchanged</strong></p>
-<table class="table">
+<table class="caption-top table">
 <colgroup>
-<col style="width: 19%">
+<col style="width: 17%">
+<col style="width: 27%">
+<col style="width: 20%">
 <col style="width: 22%">
-<col style="width: 19%">
-<col style="width: 19%">
-<col style="width: 19%">
+<col style="width: 12%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -549,13 +581,13 @@ gtag('config', 'G-8C738FZXS8', { 'anonymize_ip': true});
 </table>
 <p>By selling Dec futures ahead of the cash sale, price risk was reduced. It was reduced, but not eliminated because by hedging with futures there is still basis risk. The next examples show what happens when the basis is uncertain. Consider now that the futures price was unchanged in November, that is in November the Dec futures is still trading at $3.80. Now however, consider two cases. The basis widens to -$0.50, and the basis narrows to $0.00.</p>
 <p><strong>Dec Futures Price Unchanged, Basis now -$0.50</strong></p>
-<table class="table">
+<table class="caption-top table">
 <colgroup>
-<col style="width: 19%">
+<col style="width: 17%">
+<col style="width: 27%">
+<col style="width: 20%">
 <col style="width: 22%">
-<col style="width: 19%">
-<col style="width: 19%">
-<col style="width: 19%">
+<col style="width: 12%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -599,13 +631,13 @@ gtag('config', 'G-8C738FZXS8', { 'anonymize_ip': true});
 </table>
 <p>This time, the basis widening from -$0.25 to -$0.50 was a loss to the farmer, even though general price levels were unchanged (Dec price unchanged). The next example shows the farmer’s revenue if the basis strengthens, or narrows.</p>
 <p><strong>Dec Futures Price Unchanged, Basis now $0.00</strong></p>
-<table class="table">
+<table class="caption-top table">
 <colgroup>
-<col style="width: 19%">
+<col style="width: 17%">
+<col style="width: 27%">
+<col style="width: 20%">
 <col style="width: 22%">
-<col style="width: 19%">
-<col style="width: 19%">
-<col style="width: 19%">
+<col style="width: 12%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -662,7 +694,7 @@ gtag('config', 'G-8C738FZXS8', { 'anonymize_ip': true});
 <h3 data-number="4.2.2" class="anchored" data-anchor-id="flour-mill"><span class="header-section-number">4.2.2</span> Flour Mill</h3>
 <p>A flour mill buys large quantities of grain for making into flour. They can use futures to hedge price risk by ‘buying ahead’ futures contracts. Remember that a futures hedge always involves making a trade in the futures contract that is the same as what you will do in the cash market. In this case, the flour mill buys grain, so their futures hedge should buy futures. Since the flour mill likely wants to process grain year round, they need to hedge price risk at multiple points in time to correspond to when they routinely purchase grain. For example, high commercial wheat flour mills can process upwards of 50,000 bushels of wheat per month. With wheat futures contracts specified for 5,000 bushels they need 10 wheat futures contracts to hedge their wheat buying for one month.</p>
 <p>There are five wheat futures contracts per year, March, May, July, September, and December</p>
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: left;">Wheat Futures Contracts</th>
@@ -685,16 +717,16 @@ gtag('config', 'G-8C738FZXS8', { 'anonymize_ip': true});
 </tbody>
 </table>
 <p>If the mill buys wheat at the first of every month, they will have to use the nearest contract month to hedge price. For example, to hedge a purchase of wheat on February 1st, the mill will have to use the March futures expiration, because there is no February contract and the March contract is the closest expiration. Then suppose on December 1st the mill wants to lock in its wheat purchase price (aside from basis risk) for the first six months of the next year. Then, for example, it will have to hedge January, February, and March wheat purchases with the March futures contract. Since they buy 50,000 bushels per month, which is equivalent to 10 contracts per month, they will need to buy 60 contracts of wheat on Dec 1 to hedge January through July purchases. Hedges should be lifted simultaneously with activity in the cash market. For example, on January 1st the mill will purchase 50,000 bushels to process for the month of January in the cash market. Then they should lift their hedge on 10 contracts, or sell 10 contracts also on January first. This means after January 1st, the mill is still holding 20 long March futures contracts (they are ‘long’ 20 contracts) which keeps February and March’s purchases hedged. The table below details the mills activities in the spot market and futures market throughout the year. It takes real data from 2016, and assumes that the basis is fixed at -0.25 cents under the nearby futures contract, meaning the spot price column is always 0.25 cents less than the next to expire futures contract.</p>
-<table class="table">
+<table class="caption-top table">
 <colgroup>
-<col style="width: 12%">
-<col style="width: 12%">
-<col style="width: 12%">
-<col style="width: 13%">
-<col style="width: 12%">
-<col style="width: 12%">
-<col style="width: 12%">
-<col style="width: 12%">
+<col style="width: 8%">
+<col style="width: 21%">
+<col style="width: 18%">
+<col style="width: 25%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 7%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -878,10 +910,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("http:\/\/mindymallory\.com\/PriceAnalysis\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -891,8 +940,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -904,7 +962,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -948,6 +1129,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -973,6 +1155,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1034,12 +1242,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./03-HowtoFind.html" class="pagination-link">
+      <a href="./03-HowtoFind.html" class="pagination-link" aria-label="How to Find Information">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">How to Find Information</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./05-Options1.html" class="pagination-link">
+      <a href="./05-Options1.html" class="pagination-link" aria-label="Introduction to Option Contracts">
         <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Introduction to Option Contracts</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
@@ -1048,4 +1256,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-</body></html>
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/mindymallory/PriceAnalysis/edit/main/04-FuturesContractsandHedging.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer></body></html>
