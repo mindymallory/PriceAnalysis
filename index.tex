@@ -43,14 +43,28 @@
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \setcounter{secnumdepth}{5}
 % Make \paragraph and \subparagraph free-standing
+\makeatletter
 \ifx\paragraph\undefined\else
   \let\oldparagraph\paragraph
-  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
 \fi
 \ifx\subparagraph\undefined\else
   \let\oldsubparagraph\subparagraph
-  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
 \fi
+\makeatother
 
 
 \providecommand{\tightlist}{%
@@ -66,15 +80,17 @@
 \makesavenoteenv{longtable}
 \usepackage{graphicx}
 \makeatletter
-\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
-\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
-\makeatother
-% Scale images if necessary, so that they will not overflow the page
-% margins by default, and it is still possible to overwrite the defaults
-% using explicit options in \includegraphics[width, height, ...]{}
-\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
 % Set default figure placement to htbp
-\makeatletter
 \def\fps@figure{htbp}
 \makeatother
 % definitions for citeproc citations
@@ -170,9 +186,7 @@
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
 \makeatother
-\ifLuaTeX
-  \usepackage{selnolig}  % disable illegal ligatures
-\fi
+
 \usepackage{bookmark}
 
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
@@ -186,6 +200,7 @@
   citecolor={Blue},
   urlcolor={Blue},
   pdfcreator={LaTeX via pandoc}}
+
 
 \title{Price Analysis: A Fundamental Approach to the Study of Commodity
 Prices}
@@ -201,6 +216,7 @@ Prices}
 \setcounter{tocdepth}{2}
 \tableofcontents
 }
+
 \bookmarksetup{startatroot}
 
 \chapter*{Preface}\label{preface}
@@ -334,7 +350,7 @@ get the crop out and dry before it is damaged.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{assets/map_CORN_AREA PLANTED.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{assets/map_CORN_AREA PLANTED.png}}
 
 }
 
@@ -366,7 +382,7 @@ from} the USDA's National Agricultural Statistics Service (NASS).
 
 \begin{figure}[H]
 
-{\centering \includegraphics{assets/PrimerforGrain_CornAcandY.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{assets/PrimerforGrain_CornAcandY.png}}
 
 }
 
@@ -379,7 +395,7 @@ inversely related to one another.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{assets/PrimerforGrain_CornProdand$.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{assets/PrimerforGrain_CornProdand$.png}}
 
 }
 
@@ -393,7 +409,7 @@ blended with gasoline).
 
 \begin{figure}[H]
 
-{\centering \includegraphics{assets/PrimerforGrain_CornUse.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{assets/PrimerforGrain_CornUse.png}}
 
 }
 
@@ -410,7 +426,7 @@ dependent on what happens during the summer months.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{assets/map_SOYBEANS_AREA PLANTED.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{assets/map_SOYBEANS_AREA PLANTED.png}}
 
 }
 
@@ -433,7 +449,7 @@ have also benefited from improved yields due to biotechnology.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{assets/PrimerforGrain_SoyAcandY.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{assets/PrimerforGrain_SoyAcandY.png}}
 
 }
 
@@ -442,7 +458,7 @@ have also benefited from improved yields due to biotechnology.
 \end{figure}%%
 \begin{figure}[H]
 
-{\centering \includegraphics{assets/PrimerforGrain_SoyProdand$.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{assets/PrimerforGrain_SoyProdand$.png}}
 
 }
 
@@ -463,7 +479,7 @@ by China}.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{assets/PrimerforGrain_SoyUse.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{assets/PrimerforGrain_SoyUse.png}}
 
 }
 
@@ -484,7 +500,7 @@ ultimately used for.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{images/Wheat-Growing-Areas.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/Wheat-Growing-Areas.png}}
 
 }
 
@@ -516,7 +532,7 @@ KC wheat.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{images/HRW-Wheat.jpg}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/HRW-Wheat.jpg}}
 
 }
 
@@ -542,7 +558,7 @@ contract in HRS wheat.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{images/HRS-Wheat.jpg}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/HRS-Wheat.jpg}}
 
 }
 
@@ -565,7 +581,7 @@ Trade offers a futures contract for SRW wheat.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{images/SRW-Wheat.jpg}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/SRW-Wheat.jpg}}
 
 }
 
@@ -603,7 +619,7 @@ Use}\label{recent-trends-in-acreage-yield-production-and-use-2}
 
 \begin{figure}[H]
 
-{\centering \includegraphics{assets/PrimerforGrain_WheatAcandY.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{assets/PrimerforGrain_WheatAcandY.png}}
 
 }
 
@@ -612,7 +628,7 @@ Use}\label{recent-trends-in-acreage-yield-production-and-use-2}
 \end{figure}%%
 \begin{figure}[H]
 
-{\centering \includegraphics{assets/PrimerforGrain_WheatProdand$.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{assets/PrimerforGrain_WheatProdand$.png}}
 
 }
 
@@ -972,7 +988,7 @@ similar pattern will persist going forward.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{assets/PrimerforGrain_CornPrices.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{assets/PrimerforGrain_CornPrices.png}}
 
 }
 
@@ -1060,9 +1076,9 @@ great sources providing regular commentary, but this will get the reader
 started.
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1745}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3490}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.4765}}@{}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.1745}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3490}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.4765}}@{}}
 \caption{Table 1. Resources for Commodity Market
 Commentary}\tabularnewline
 \toprule\noalign{}
@@ -1197,8 +1213,8 @@ Table 3 provides some links to spread charts for commodity spreads we
 will cover in this class.
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.0622}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.9378}}@{}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.0622}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.9378}}@{}}
 \caption{Table 3. Commodity Spreads}\tabularnewline
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
@@ -1386,8 +1402,8 @@ report is archived here); COST and RETURNS from ERS; and local prices
 from AMS .
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.1704}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.8296}}@{}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.1704}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.8296}}@{}}
 \caption{Table 3. Summary of USDA Reports and Data
 Sources}\tabularnewline
 \toprule\noalign{}
@@ -1593,9 +1609,9 @@ gain \(+0.25*5000 = \$1250\) and the shorts (sellers) lose
 \(-0.25*5000 = \$1250\).
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2800}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3600}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3600}}@{}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.2800}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3600}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3600}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 Time
@@ -1709,7 +1725,7 @@ at a price they publicly offer anyone interested in selling grain.
 
 Figure 1. A Grain Elevator in Royal, IL
 
-\href{https://commons.wikimedia.org/wiki/File:Grain_elevators_in_Royal,_IL.}{\includegraphics{assets/Grain_elevator_royal_IL.jpg}}
+\href{https://commons.wikimedia.org/wiki/File:Grain_elevators_in_Royal,_IL.}{\pandocbounded{\includegraphics[keepaspectratio]{assets/Grain_elevator_royal_IL.jpg}}}
 
 Source:
 \href{https://commons.wikimedia.org/wiki/File\%3AGrain_elevators_in_Royal\%2C_IL.jpg}{Daniel
@@ -1802,11 +1818,11 @@ out to be \$3.60.
 \textbf{Dec Futures Price went Up to \$4.00, Basis Unchanged}
 
 \begin{longtable}[]{@{}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1721}}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2787}}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2049}}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2213}}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1230}}@{}}
+  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1721}}
+  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2787}}
+  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2049}}
+  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2213}}
+  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1230}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\centering
 Date
@@ -1844,11 +1860,11 @@ prices.
 \textbf{Dec Futures Price went Down to \$3.60, Basis Unchanged}
 
 \begin{longtable}[]{@{}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1721}}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2787}}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2049}}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2213}}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1230}}@{}}
+  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1721}}
+  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2787}}
+  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2049}}
+  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2213}}
+  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1230}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\centering
 Date
@@ -1884,11 +1900,11 @@ and the basis narrows to \$0.00.
 \textbf{Dec Futures Price Unchanged, Basis now -\$0.50}
 
 \begin{longtable}[]{@{}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1721}}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2787}}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2049}}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2213}}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1230}}@{}}
+  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1721}}
+  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2787}}
+  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2049}}
+  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2213}}
+  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1230}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\centering
 Date
@@ -1921,11 +1937,11 @@ strengthens, or narrows.
 \textbf{Dec Futures Price Unchanged, Basis now \$0.00}
 
 \begin{longtable}[]{@{}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1721}}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2787}}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2049}}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2213}}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1230}}@{}}
+  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1721}}
+  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2787}}
+  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2049}}
+  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2213}}
+  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1230}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\centering
 Date
@@ -2037,14 +2053,14 @@ cents under the nearby futures contract, meaning the spot price column
 is always 0.25 cents less than the next to expire futures contract.
 
 \begin{longtable}[]{@{}
-  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.0827}}
-  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.2105}}
-  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1805}}
-  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.2556}}
-  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.0602}}
-  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.0677}}
-  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.0677}}
-  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.0752}}@{}}
+  >{\centering\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.0827}}
+  >{\centering\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.2105}}
+  >{\centering\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1805}}
+  >{\centering\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.2556}}
+  >{\centering\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.0602}}
+  >{\centering\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.0677}}
+  >{\centering\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.0677}}
+  >{\centering\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.0752}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\centering
 Dates
@@ -2258,7 +2274,7 @@ The specifics:
   Premium = 10 cents
 \end{itemize}
 
-\includegraphics{assets/Options1-optionplot.png}
+\pandocbounded{\includegraphics[keepaspectratio]{assets/Options1-optionplot.png}}
 
 Option profit diagrams are often referred to as hockey stick diagrams
 for obvious reasons. Take a look at the long call figure. A long call
@@ -2358,7 +2374,7 @@ except not shifted down by the amount of the option premium. This plots
 the intrinsic value of the options, or how much the position would be in
 profit if it were exercised immediately.
 
-\includegraphics{assets/Options1-optionintrinsic.png}
+\pandocbounded{\includegraphics[keepaspectratio]{assets/Options1-optionintrinsic.png}}
 
 The options should be worth at least as much as its intrinsic value.
 Otherwise and arbitrage opportunity would exist. You could buy the
@@ -2417,11 +2433,11 @@ columns, organized by ascending strike prices, which are usually
 displayed in the middle of the table for easy reference whether you are
 focused on Call or Put options.
 
-\includegraphics{assets/Options1-undelyingquote.PNG}
+\pandocbounded{\includegraphics[keepaspectratio]{assets/Options1-undelyingquote.PNG}}
 
 \begin{figure}[H]
 
-{\centering \includegraphics{assets/Options1-quotes.PNG}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{assets/Options1-quotes.PNG}}
 
 }
 
@@ -2450,7 +2466,7 @@ in the next chapter.
 
 Next, take a look at the LAST prices for the calls compared to the puts
 as you move down the table from 1200 strikes to the 1290 strike. In the
-case of the call options, the prices are increasing as you move down the
+case of the call options, the prices are decreasing as you move down the
 table with the largest price option being the 1200 strike. Compare that
 to the put prices. The put prices are increasing as you look down the
 table from the 1200 strike to the 1290 strike. Take a second and think
@@ -2468,7 +2484,7 @@ price, or reflects a wide bid-ask spread in markets with inadequate
 liquidity. This is often the case for deep in-the-money and deep
 out-of-the-money options markets.
 
-\includegraphics{assets/Options1-optionmoneynessplot.png}
+\pandocbounded{\includegraphics[keepaspectratio]{assets/Options1-optionmoneynessplot.png}}
 
 Notice the volume columns for both the calls and puts compared to the
 volume on the underlying. Some contracts that are near-the-money, which
@@ -2999,7 +3015,7 @@ calculate volatility. You can clearly observe the positive correlation
 and volatility clustering in this market. Once there is an event that
 spikes volatility, it takes a while for volatility to `calm down'.
 
-\includegraphics{assets/Options2-volcluster.png}
+\pandocbounded{\includegraphics[keepaspectratio]{assets/Options2-volcluster.png}}
 
 This explains the limitation of the Black-Scholes model along the
 volatility dimension. Another practical matter is that the model
@@ -3046,7 +3062,7 @@ changing price of the futures contract, however.
   delta neutral?
 \end{enumerate}
 
-\includegraphics{assets/Options2-deltahedge.png}
+\pandocbounded{\includegraphics[keepaspectratio]{assets/Options2-deltahedge.png}}
 
 \textbf{Answer}: Consider the figure above. The gold `hockey stick' line
 represents the payoff of the call option to someone long the option. The
@@ -3077,9 +3093,9 @@ it will likely be outweighed by the premium decay if the price does not
 continue to rise too fast.
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2472}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3483}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3933}}@{}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.2472}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3483}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3933}}@{}}
 \caption{Change in value of delta-hedged position after small price
 move}\tabularnewline
 \toprule\noalign{}
@@ -3180,9 +3196,9 @@ futures position, due to the significant change in slope (or delta) of
 the option price.
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2391}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3696}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3804}}@{}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.2391}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3696}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3804}}@{}}
 \caption{Change in value of delta-hedged position after big price
 move}\tabularnewline
 \toprule\noalign{}
@@ -3324,12 +3340,12 @@ To visualize how it works first recall what a farmer's per bushel
 revenue looks like as a function of the price of corn. Its simply a 45
 degree line radiating from the origin.
 
-\includegraphics{assets/Options4-spot.png}
+\pandocbounded{\includegraphics[keepaspectratio]{assets/Options4-spot.png}}
 
 Next, add the payoff at expiration of a long 450 strike put option whose
 premium is 17 cents per bushel.
 
-\includegraphics{assets/Options4-spotput.png}
+\pandocbounded{\includegraphics[keepaspectratio]{assets/Options4-spotput.png}}
 
 If we add these two positions together, we get the net position shown by
 the black line. The three most important things to note about this net
@@ -3339,13 +3355,13 @@ the amount of the put option premium. That is, everywhere the black line
 is upward sloped, it is lower than the spot revenue by the amount of the
 put premium.
 
-\includegraphics{assets/Options4-spotputcomb.png}
+\pandocbounded{\includegraphics[keepaspectratio]{assets/Options4-spotputcomb.png}}
 
 The figure below is the same as the previous figure, but zoomed in. Note
 how the net position now looks a lot like holding a long call option
 position. Long Spot + Short Put = Long Call.
 
-\includegraphics{assets/Options4-spotputcombzoom.png}
+\pandocbounded{\includegraphics[keepaspectratio]{assets/Options4-spotputcombzoom.png}}
 
 The strike of the long put should be chosen by considering the trade off
 between greater downside protection and premium cost. The figure below
@@ -3358,7 +3374,7 @@ in premium paid, so the black dashed line is closer to the gold spot
 line. However, there is more downside risk associated with the 425
 strike put.
 
-\includegraphics{assets/Options4-spotputcombzoomchoice.png}
+\pandocbounded{\includegraphics[keepaspectratio]{assets/Options4-spotputcombzoomchoice.png}}
 
 A way to mitigate the cost of buying a put option to protect downside
 risk is to sell a call option whose strike is above the current market
@@ -3380,7 +3396,7 @@ potential, but the premium you receive will be smaller.
 \section{Farmer Hedging by Putting on a
 Fence}\label{farmer-hedging-by-putting-on-a-fence}
 
-\includegraphics{assets/Options4-spotfence.png}
+\pandocbounded{\includegraphics[keepaspectratio]{assets/Options4-spotfence.png}}
 
 The essence of this strategy is that you are giving up some upside
 potential to finance your expense in limiting downside risk. The figure
@@ -3389,7 +3405,7 @@ fence. The first kink in the black line is at the strike of the long
 put, 425. The second kink in the black line is the strike of the short
 call, 475.
 
-\includegraphics{assets/Options4-Netspotfence.png}
+\pandocbounded{\includegraphics[keepaspectratio]{assets/Options4-Netspotfence.png}}
 
 \subsection{A Note on Margin}\label{a-note-on-margin}
 
@@ -3574,7 +3590,7 @@ Then, suppose as of July the December corn futures price is \$5.35, a
 substantial rise above the Base Price. Should a producer lock in this
 high price?
 
-\includegraphics{assets/cropins_ex.png}
+\pandocbounded{\includegraphics[keepaspectratio]{assets/cropins_ex.png}}
 
 To simplify our thought experiment, suppose that from July to October
 the price might do one of three things, rise to \$5.60, stay flat at
@@ -3704,7 +3720,7 @@ March.\footnote{Ed Usset with the University of Minnesota Extension has
 
 Figure 1
 
-\includegraphics{assets/PricesSpaceTime-increasing-9-26-2016.png}
+\pandocbounded{\includegraphics[keepaspectratio]{assets/PricesSpaceTime-increasing-9-26-2016.png}}
 
 The reason that the forward curve represents return to storage is that
 it shows how much extra money can be made by storing to a later date,
@@ -3734,7 +3750,7 @@ storage would be positive.
 
 As another example, the forward curve is shown for 2015 in figure 2.
 
-\includegraphics{assets/PricesSpaceTime-increasing-9-25-2015.png}
+\pandocbounded{\includegraphics[keepaspectratio]{assets/PricesSpaceTime-increasing-9-25-2015.png}}
 
 This example illustrates a phenomenon that often occurs. Here we saw
 that the forward curve is upward sloped until September. Then it
@@ -3760,7 +3776,7 @@ We will look at the forward curve and return to storage in steps for
 2012. On 4-13-2-12 the forward curve are as shown in figure 3. This is
 in the spring, before the drought has happened.
 
-\includegraphics{assets/PricesSpaceTime-decreasing-4-13-2012.png}
+\pandocbounded{\includegraphics[keepaspectratio]{assets/PricesSpaceTime-decreasing-4-13-2012.png}}
 
 In this case, supplies were already tight going into 2012. The forward
 curve is downward sloped, sometimes called \emph{inverted} or
@@ -3782,14 +3798,14 @@ was offering about 5 cents per month to store from December 2012 to
 March 2013, by 8-01-2012, the market was offering -1 cent for storage
 during the same time period.
 
-\includegraphics{assets/PricesSpaceTime-flat-8-01-2012.png}
+\pandocbounded{\includegraphics[keepaspectratio]{assets/PricesSpaceTime-flat-8-01-2012.png}}
 
 Now, just to illustrate how the forward curve changed between August and
 December 2012, the time in which harvest occurred and we learned exactly
 how bad yields turned out to be, we show the forward curve on 12-03-2012
 in figure 5.
 
-\includegraphics{assets/PricesSpaceTime-flat-12-03-2012.png}
+\pandocbounded{\includegraphics[keepaspectratio]{assets/PricesSpaceTime-flat-12-03-2012.png}}
 
 \section{Forward Curve Cases with Hypothetical
 Data}\label{forward-curve-cases-with-hypothetical-data}
@@ -3804,7 +3820,7 @@ usually happens to the forward curve when prices increase or decrease.
 
 \textbf{Prices Increasing}
 
-\includegraphics{assets/PricesSpaceTime-pricesincreasing-hyp.png}
+\pandocbounded{\includegraphics[keepaspectratio]{assets/PricesSpaceTime-pricesincreasing-hyp.png}}
 
 Figure 6. Forward Curve with Prices Increasing, Contango to
 backwardation
@@ -3818,7 +3834,7 @@ deferred.
 
 \textbf{Prices Decreasing}
 
-\includegraphics{assets/PricesSpaceTime-pricesdecreasing-hyp.png}
+\pandocbounded{\includegraphics[keepaspectratio]{assets/PricesSpaceTime-pricesdecreasing-hyp.png}}
 
 Figure 7. Forward Curve with Prices Decreasing
 
@@ -3959,7 +3975,7 @@ cash, price must come together, or converge, with the futures price.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{images/IL-River.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/IL-River.png}}
 
 }
 
@@ -3972,7 +3988,7 @@ Along the Illinois River Between Chicago and Peoria, IL}
 
 \begin{figure}[H]
 
-{\centering \includegraphics{images/Burns-Harbor.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/Burns-Harbor.png}}
 
 }
 
@@ -4005,7 +4021,7 @@ In figure 13 the elevators around Champiagn, IL are shown.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{images/Champaign-Elevators.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/Champaign-Elevators.png}}
 
 }
 
@@ -4129,7 +4145,7 @@ preplanting and post planting. Below we display both.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{images/Ch3.1.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/Ch3.1.png}}
 
 }
 
@@ -4244,26 +4260,16 @@ in the first month the commodity is harvested and ends with the
 following year's harvest. The table below makes note the month on which
 marketing years begin for several crops.
 
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.3077}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.6923}}@{}}
+\begin{longtable}[]{@{}ll@{}}
 \caption{Table 1. Beginning of Marketing Year by Crop. (Source
 \href{http://www.nass.usda.gov/Publications/National_Crop_Progress/}{NASS
 Timetables})}\tabularnewline
 \toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedright
-Crop
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Beginning of Marketing Year - First Month of Harvest
-\end{minipage} \\
+Crop & Beginning of Marketing Year - First Month of Harvest \\
 \midrule\noalign{}
 \endfirsthead
 \toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedright
-Crop
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Beginning of Marketing Year - First Month of Harvest
-\end{minipage} \\
+Crop & Beginning of Marketing Year - First Month of Harvest \\
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
@@ -4281,8 +4287,8 @@ year. Note that is for the marketing year that begins with harvest in
 September of 2016.
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.1096}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.8904}}@{}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}@{}}
 \caption{Table 2: Forecasting Calendar for 2017/2018 Marketing
 Year}\tabularnewline
 \toprule\noalign{}
@@ -4395,60 +4401,42 @@ amount of the commodity available for use during the marketing year.
 : Table 4. Recent USDA WASDE Balance Sheet for Corn
 
 \begin{verbatim}
-Response [https://downloads.usda.library.cornell.edu/usda-esmis/files/3t945q76s/dv140m16d/jm215h19t/latest.xls]
-  Date: 2024-10-23 19:51
+Response [https://esmis.nal.usda.gov/sites/default/release-files/3t945q76s/dv140m16d/jm215h19t/latest.xls]
+  Date: 2025-10-27 19:15
   Status: 200
   Content-Type: application/vnd.ms-excel
   Size: 326 kB
-<ON DISK>  C:\Users\mindy\AppData\Local\Temp\RtmpwHUUdW\file694c3a7b22a2.xls
+<ON DISK>  C:\Users\mindy\AppData\Local\Temp\RtmpkZAUEp\file231cd5022cd.xls
 \end{verbatim}
 
-\begin{table}
-\centering
-\begin{tabular}{l|r|r|r|r}
-\hline
+\begin{longtable*}[t]{lrrrr}
+\toprule
 CORN & 2018/19 & 2019/20 Est. & 2020/21 Proj. Prev & 2020/21 Proj.\\
-\hline
+\midrule
  &  &  &  & \\
-\hline
 \em{Million Acres} & \em{} & \em{} & \em{} & \em{}\\
-\hline
 Area Planted & 88.90 & 89.70 & 90.8 & 90.8\\
-\hline
 Area Harvested & 81.30 & 81.30 & 82.5 & 82.5\\
-\hline
 \em{Bushels} & \em{} & \em{} & \em{} & \em{}\\
-\hline
+\addlinespace
 Yield per Harvested Acre & 176.40 & 167.50 & 172.0 & 172.0\\
-\hline
 \em{Million Bushels} & \em{} & \em{} & \em{} & \em{}\\
-\hline
 Beginning Stocks & 2140.00 & 2221.00 & 1919.0 & 1919.0\\
-\hline
 Production & 14340.00 & 13620.00 & 14182.0 & 14182.0\\
-\hline
 Imports & 28.00 & 42.00 & 25.0 & 25.0\\
-\hline
+\addlinespace
 \textbf{Supply, Total} & \textbf{16509.00} & \textbf{15883.00} & \textbf{16127.0} & \textbf{16127.0}\\
-\hline
 Feed and Residual & 5429.00 & 5903.00 & 5650.0 & 5650.0\\
-\hline
 Food, Seed \& Industrial 2/ & 6793.00 & 6282.00 & 6375.0 & 6375.0\\
-\hline
 Ethanol \& by-products 3/ & 5378.00 & 4852.00 & 4950.0 & 4950.0\\
-\hline
 \textbf{Domestic, Total} & \textbf{12222.00} & \textbf{12185.00} & \textbf{12025.0} & \textbf{12025.0}\\
-\hline
+\addlinespace
 Exports & 2066.00 & 1778.00 & 2550.0 & 2600.0\\
-\hline
 \textbf{Use, Total} & \textbf{14288.00} & \textbf{13963.00} & \textbf{14575.0} & \textbf{14625.0}\\
-\hline
 Ending Stocks & 2221.00 & 1919.00 & 1552.0 & 1502.0\\
-\hline
 \textbf{Avg. Farm Price (\$/bu)  4/} & \textbf{3.61} & \textbf{3.56} & \textbf{4.2} & \textbf{4.3}\\
-\hline
-\end{tabular}
-\end{table}
+\bottomrule
+\end{longtable*}
 
 (source: February 2021 USDA WASDE Report)
 
@@ -4480,56 +4468,37 @@ as follows:
 
 : Table 5. Recent USDA WASDE Balance Sheet for Soybeans
 
-\begin{table}
-\centering
-\begin{tabular}{l|r|r|r|r}
-\hline
+\begin{longtable*}[t]{lrrrr}
+\toprule
 SOYBEANS & 2018/19 & 2019/20 Est. & 2020/21 Proj. Prev & 2020/21 Proj.\\
-\hline
+\midrule
 \textbf{} & \textbf{} & \textbf{} & \textbf{ \vphantom{2}} & \textbf{}\\
-\hline
 Million Acres &  &  &  \vphantom{1} & \\
-\hline
  &  &  &  & \\
-\hline
 Area Planted & 89.20 & 76.10 & 83.10 & 83.10\\
-\hline
 Area Harvested & 87.60 & 74.90 & 82.30 & 82.30\\
-\hline
+\addlinespace
 \em{Bushels} & \em{} & \em{} & \em{} & \em{}\\
-\hline
 Yield per Harvested Acre & 50.60 & 47.40 & 50.20 & 50.20\\
-\hline
 \em{Million Bushels} & \em{} & \em{} & \em{} & \em{}\\
-\hline
  &  &  &  & \\
-\hline
 Beginning Stocks & 438.00 & 909.00 & 525.00 & 525.00\\
-\hline
+\addlinespace
 Production & 4428.00 & 3552.00 & 4135.00 & 4135.00\\
-\hline
 Imports & 14.00 & 15.00 & 35.00 & 35.00\\
-\hline
 \textbf{Supply, Total} & \textbf{4880.00} & \textbf{4476.00} & \textbf{4695.00} & \textbf{4695.00}\\
-\hline
 Crushings & 2092.00 & 2165.00 & 2200.00 & 2200.00\\
-\hline
 Exports & 1752.00 & 1682.00 & 2230.00 & 2250.00\\
-\hline
+\addlinespace
 Seed & 88.00 & 96.00 & 103.00 & 103.00\\
-\hline
 Residual & 39.00 & 9.00 & 22.00 & 22.00\\
-\hline
 \textbf{Use, Total} & \textbf{3971.00} & \textbf{3952.00} & \textbf{4555.00} & \textbf{4575.00}\\
-\hline
 Ending Stocks & 909.00 & 525.00 & 140.00 & 120.00\\
-\hline
 Avg. Farm Price (\$/bu)  2/ & 8.48 & 8.57 & 11.15 & 11.15\\
-\hline
+\addlinespace
 Total &  &  &  & \\
-\hline
-\end{tabular}
-\end{table}
+\bottomrule
+\end{longtable*}
 
 (source: February 2021 USDA WASDE Report)
 
@@ -4657,7 +4626,7 @@ NASS.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{images/NASS_History.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/NASS_History.png}}
 
 }
 
@@ -4727,7 +4696,7 @@ release times of major market sensitive reports.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{images/NASS_release_timeline.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/NASS_release_timeline.png}}
 
 }
 
@@ -4769,9 +4738,9 @@ are more likely than others to produce fireworks in terms of market
 price.
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1509}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.0943}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.7484}}@{}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.1509}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.0943}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.7484}}@{}}
 \caption{Table 1: Reports most likely to cause significant movements in
 market price}\tabularnewline
 \toprule\noalign{}
@@ -4858,7 +4827,7 @@ specified for a quantity of 5,000 bushels.
 Figure 2: Price of July 2010 corn on June 30, 2010 before and after the
 release of Planted Acres Report
 
-\includegraphics{11-PriceReactionto_files/figure-pdf/unnamed-chunk-1-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{11-PriceReactionto_files/figure-pdf/unnamed-chunk-1-1.pdf}}
 
 In the top panel of Figure 2 you can see that the time stamps indicate
 those are transactions occurring in the overnight electronic market.
@@ -4880,7 +4849,7 @@ in Figure 3.
 Figure 3: Price of December 2010 corn on October 8th, 2010 before and
 after the release of the WASDE Report
 
-\includegraphics{11-PriceReactionto_files/figure-pdf/unnamed-chunk-2-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{11-PriceReactionto_files/figure-pdf/unnamed-chunk-2-1.pdf}}
 
 The flat line during the daytime trading session is apparent, resulting
 from prices being locked at the limit during the entire trading day.
@@ -4888,7 +4857,7 @@ from prices being locked at the limit during the entire trading day.
 Figure 5: Price of May 2011 corn on March 31st, 2011 before and after
 the release of the Planted Acres Report
 
-\includegraphics{11-PriceReactionto_files/figure-pdf/unnamed-chunk-3-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{11-PriceReactionto_files/figure-pdf/unnamed-chunk-3-1.pdf}}
 
 This report indicated that corn acreage was to be higher than previously
 expected, but corn stocks were lower than expected. The stocks number
@@ -4940,7 +4909,7 @@ NASS.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{images/NASS_History.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/NASS_History.png}}
 
 }
 
@@ -5010,7 +4979,7 @@ release times of major market sensitive reports.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{images/NASS_release_timeline.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/NASS_release_timeline.png}}
 
 }
 
@@ -5052,9 +5021,9 @@ are more likely than others to produce fireworks in terms of market
 price.
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1509}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.0943}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.7484}}@{}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.1509}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.0943}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.7484}}@{}}
 \caption{Table 1: Reports most likely to cause significant movements in
 market price}\tabularnewline
 \toprule\noalign{}
@@ -5141,7 +5110,7 @@ specified for a quantity of 5,000 bushels.
 Figure 2: Price of July 2010 corn on June 30, 2010 before and after the
 release of Planted Acres Report
 
-\includegraphics{12-ForecastingProduction_files/figure-pdf/unnamed-chunk-1-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{12-ForecastingProduction_files/figure-pdf/unnamed-chunk-1-1.pdf}}
 
 In the top panel of Figure 2 you can see that the time stamps indicate
 those are transactions occurring in the overnight electronic market.
@@ -5163,7 +5132,7 @@ in Figure 3.
 Figure 3: Price of December 2010 corn on October 8th, 2010 before and
 after the release of the WASDE Report
 
-\includegraphics{12-ForecastingProduction_files/figure-pdf/unnamed-chunk-2-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{12-ForecastingProduction_files/figure-pdf/unnamed-chunk-2-1.pdf}}
 
 The flat line during the daytime trading session is apparent, resulting
 from prices being locked at the limit during the entire trading day.
@@ -5171,7 +5140,7 @@ from prices being locked at the limit during the entire trading day.
 Figure 5: Price of May 2011 corn on March 31st, 2011 before and after
 the release of the Planted Acres Report
 
-\includegraphics{12-ForecastingProduction_files/figure-pdf/unnamed-chunk-3-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{12-ForecastingProduction_files/figure-pdf/unnamed-chunk-3-1.pdf}}
 
 This report indicated that corn acreage was to be higher than previously
 expected, but corn stocks were lower than expected. The stocks number
@@ -5208,7 +5177,7 @@ Looking at quarterly gives you a sense of how use is distributed across
 the marketing year in different categories. The annual histories,
 however, are probably the most useful.
 
-\includegraphics{assets/ForecastingUseof-CornUseCategories.png}
+\pandocbounded{\includegraphics[keepaspectratio]{assets/ForecastingUseof-CornUseCategories.png}}
 
 \section{Food, Alcohol, and Industrial
 Use}\label{food-alcohol-and-industrial-use}
@@ -5225,7 +5194,7 @@ balance sheet. The Feed Grains database actually breaks out the seed use
 as its own column, but corn used for seed is a very small proportion of
 production and it is largely predictable from year to year.
 
-\includegraphics{assets/ForecastingUseof-CornUseCategoriesFoodAlcoholInd.png}
+\pandocbounded{\includegraphics[keepaspectratio]{assets/ForecastingUseof-CornUseCategoriesFoodAlcoholInd.png}}
 Source:
 \href{http://www.ers.usda.gov/data-products/feed-grains-database/feed-grains-yearbook-tables.aspx\#26780}{Feed
 Grains database} maintained by the USDA ERS.
@@ -5236,7 +5205,7 @@ ethanol starting around 2005/2006 and plateauing around 2010 when U.S.
 ethanol consumption roughly hit the `blend-wall' where ethanol makes up
 10\% of the retail gasoline supply.
 
-\includegraphics{assets/ForecastingUseof-CornUseCategoriesFoodAlcoholIndMY.png}
+\pandocbounded{\includegraphics[keepaspectratio]{assets/ForecastingUseof-CornUseCategoriesFoodAlcoholIndMY.png}}
 Source:
 \href{http://www.ers.usda.gov/data-products/feed-grains-database/feed-grains-yearbook-tables.aspx\#26780}{Feed
 Grains database} maintained by the USDA ERS.
@@ -5245,7 +5214,7 @@ Figure 2 shows the same data, but the quarterly figures are aggregated
 to the marketing year total. In both figures 1 and 2 the rationing
 effects of high prices that occurred as a result of the drought in 2012.
 
-\includegraphics{assets/ForecastingUseof-CornUseCategoriesFoodAlcoholIndPropofUse.png}
+\pandocbounded{\includegraphics[keepaspectratio]{assets/ForecastingUseof-CornUseCategoriesFoodAlcoholIndPropofUse.png}}
 Source:
 \href{http://www.ers.usda.gov/data-products/feed-grains-database/feed-grains-yearbook-tables.aspx\#26780}{Feed
 Grains database} maintained by the USDA ERS.
@@ -5267,7 +5236,7 @@ December to February, right after we harvest the new crop. This is when
 stocks are most plentiful and prices are at season lows in years
 exhibiting an upward sloped forward curve.
 
-\includegraphics{assets/ForecastingUseof-CornUseCategoriesExports.png}
+\pandocbounded{\includegraphics[keepaspectratio]{assets/ForecastingUseof-CornUseCategoriesExports.png}}
 
 Source:
 \href{http://www.ers.usda.gov/data-products/feed-grains-database/feed-grains-yearbook-tables.aspx\#26780}{Feed
@@ -5276,7 +5245,7 @@ Grains database} maintained by the USDA ERS.
 Displaying the same data in Figure 5, but aggregating to an annual
 frequency, we see the marketing seasonality smoothed away.
 
-\includegraphics{assets/ForecastingUseof-ExportsMY.png}
+\pandocbounded{\includegraphics[keepaspectratio]{assets/ForecastingUseof-ExportsMY.png}}
 
 Source:
 \href{http://www.ers.usda.gov/data-products/feed-grains-database/feed-grains-yearbook-tables.aspx\#26780}{Feed
@@ -5290,7 +5259,7 @@ export year.
 In figure 6 we display annual corn exports as a percentage of corn
 production.
 
-\includegraphics{assets/ForecastingUseof-CornUseCategoriesExportsPropofUse.png}
+\pandocbounded{\includegraphics[keepaspectratio]{assets/ForecastingUseof-CornUseCategoriesExportsPropofUse.png}}
 Source:
 \href{http://www.ers.usda.gov/data-products/feed-grains-database/feed-grains-yearbook-tables.aspx\#26780}{Feed
 Grains database} maintained by the USDA ERS.
@@ -5313,15 +5282,15 @@ Marketing Years, Ranked in Descending Order for Marketing Year 2015/2016
 (1,000 Metric Tons)
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.0800}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.1800}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.0500}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.1800}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.0500}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.1800}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.0500}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.1800}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.0500}}@{}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.0800}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1800}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.0500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1800}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.0500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1800}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.0500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1800}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.0500}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 COUNTRY
@@ -5392,7 +5361,7 @@ effective in practice.
 
 Figure 7 below displays the Feed and Residual category since 1990.
 
-\includegraphics{assets/ForecastingUseof-CornUseCategoriesFeedResid.png}
+\pandocbounded{\includegraphics[keepaspectratio]{assets/ForecastingUseof-CornUseCategoriesFeedResid.png}}
 
 Source:
 \href{http://www.ers.usda.gov/data-products/feed-grains-database/feed-grains-yearbook-tables.aspx\#26780}{Feed
@@ -5409,13 +5378,13 @@ begin to be `fattened' for slaughter.
 Figure 8: shows the Feed and Residual category annually and figure 9
 shows the category annually as a percent of production.
 
-\includegraphics{assets/ForecastingUseof-FeedandResidualMY.png}
+\pandocbounded{\includegraphics[keepaspectratio]{assets/ForecastingUseof-FeedandResidualMY.png}}
 
 Source:
 \href{http://www.ers.usda.gov/data-products/feed-grains-database/feed-grains-yearbook-tables.aspx\#26780}{Feed
 Grains database} maintained by the USDA ERS.
 
-\includegraphics{assets/ForecastingUseof-CornUseCategoriesFeedandResidPropofUse.png}
+\pandocbounded{\includegraphics[keepaspectratio]{assets/ForecastingUseof-CornUseCategoriesFeedandResidPropofUse.png}}
 
 Source:
 \href{http://www.ers.usda.gov/data-products/feed-grains-database/feed-grains-yearbook-tables.aspx\#26780}{Feed
@@ -5474,7 +5443,7 @@ in the Food, Seed, and Industrial Category. This becomes obvious by
 comparing figure 10 below, which displays ethanol production and
 consumption over time, with figure 1 above.
 
-\includegraphics{assets/ForecastingUseof-Ethanol.png}
+\pandocbounded{\includegraphics[keepaspectratio]{assets/ForecastingUseof-Ethanol.png}}
 
 Source:
 \href{http://www.eia.gov/totalenergy/data/monthly/\#renewable}{EIA}
@@ -5678,7 +5647,7 @@ to about 4,000 million bushels in 2014.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{Excel-files/ForecastingUseSoy-OilCropsYearbook_files/image013.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{Excel-files/ForecastingUseSoy-OilCropsYearbook_files/image013.png}}
 
 }
 
@@ -5702,7 +5671,7 @@ observed.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{Excel-files/ForecastingUseSoy-OilCropsYearbook_files/image005.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{Excel-files/ForecastingUseSoy-OilCropsYearbook_files/image005.png}}
 
 }
 
@@ -5725,7 +5694,7 @@ crush category.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{Excel-files/ForecastingUseSoy-OilCropsYearbook_files/image007.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{Excel-files/ForecastingUseSoy-OilCropsYearbook_files/image007.png}}
 
 }
 
@@ -5746,7 +5715,7 @@ exports are observed to steadily increase over the period from
 
 \begin{figure}[H]
 
-{\centering \includegraphics{Excel-files/ForecastingUseSoy-OilCropsYearbook_files/image001.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{Excel-files/ForecastingUseSoy-OilCropsYearbook_files/image001.png}}
 
 }
 
@@ -5764,7 +5733,7 @@ remained constant.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{Excel-files/ForecastingUseSoy-OilCropsYearbook_files/image009.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{Excel-files/ForecastingUseSoy-OilCropsYearbook_files/image009.png}}
 
 }
 
@@ -5783,15 +5752,15 @@ Marketing Years, Ranked in Descending Order for Marketing Year 2016/2017
 \end{description}
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.0891}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.1782}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.0495}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.1782}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.0495}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.1782}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.0495}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.1782}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.0495}}@{}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.0891}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1782}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.0495}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1782}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.0495}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1782}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.0495}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1782}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.0495}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 COUNTRY
@@ -5843,7 +5812,7 @@ China was the destination of over 60\% of U.S. soybean exports.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{Excel-files/ForecastingUseSoy-OilCropsYearbook_files/image003.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{Excel-files/ForecastingUseSoy-OilCropsYearbook_files/image003.png}}
 
 }
 
@@ -5857,7 +5826,7 @@ ERS Oil Crops Yearbook}
 
 \begin{figure}[H]
 
-{\centering \includegraphics{Excel-files/ForecastingUseSoy-OilCropsYearbook_files/image012.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{Excel-files/ForecastingUseSoy-OilCropsYearbook_files/image012.png}}
 
 }
 
@@ -6018,11 +5987,11 @@ Table 1. September 2016 USDA WASDE Balance Sheet for Corn
 \end{description}
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1627}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1506}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1807}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2470}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2590}}@{}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1627}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1506}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1807}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2470}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2590}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 Corn
@@ -6069,11 +6038,11 @@ Table 2. September 2016 USDA WASDE Balance Sheet for Soybeans
 \end{description}
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1627}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1506}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1807}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2470}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2590}}@{}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1627}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1506}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1807}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2470}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2590}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 Soybeans
@@ -6136,7 +6105,7 @@ Revisited''
 
 \begin{figure}[H]
 
-{\centering \includegraphics{images/fdd04092015_fig1.jpg}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/fdd04092015_fig1.jpg}}
 
 }
 
@@ -6174,7 +6143,7 @@ stocks-use-variable.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{assets/EndingStocksand-StocksUsePrices.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{assets/EndingStocksand-StocksUsePrices.png}}
 
 }
 
@@ -6206,7 +6175,7 @@ stocks-to-use on the x-axis.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{assets/EndingStocksand-StocksUsePrices2.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{assets/EndingStocksand-StocksUsePrices2.png}}
 
 }
 
@@ -6220,7 +6189,7 @@ highlights years before and after 2006.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{assets/EndingStocksand-StocksUsePrices3.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{assets/EndingStocksand-StocksUsePrices3.png}}
 
 }
 
@@ -6323,8 +6292,8 @@ approximately half of the supply of soybeans in the U.S. is crushed into
 soybean meal and oil. Nearly all of the remainder of soybean supply is
 exported where most of it will be crushed abroad.
 
-\includegraphics{images/soyoilmeal_checkoff.jpg} Source:
-\href{http://unitedsoybean.org/}{United Soybean Board},
+\pandocbounded{\includegraphics[keepaspectratio]{images/soyoilmeal_checkoff.jpg}}
+Source: \href{http://unitedsoybean.org/}{United Soybean Board},
 \href{https://www.flickr.com/photos/unitedsoybean/10059732523/in/photolist-gjWL1c-iSHsD6-gjRZN5-gjSiez-gjRDSm-3GTus-gjT5Pf-gjT5FQ-gjT5Zf-iRrGux-5mxrJp-iRuCDS-fEhEb4-iSHt56-gjSLAj-gjTptX-gjSLDL-gjSNeR-gjSLEC-gjT72q-6m2BCX-gjSUHT-gjTpzi-6m6Jay-qBtpPq-5wBq3U-gjWLbe-aMpXNc-qRDdLA-gjWY8m-rujuvk-iRqECD-rNDaeg-GL7Qd-6m2Yyc-6JGi4H-ar3khU-cNjfUf-6m2A3g-aE4dw4-c3VUt9-c3VVq5-4JzMWS-6KY45z-6m2Xsv-6m6Eny-6m2XZg-6m2WVa-6m2ZFF-6m7ad1}{Flicker}
 
 \section{Oilseed Processing}\label{oilseed-processing}
@@ -6339,7 +6308,7 @@ in to meal that can be used as a high protein livestock feed.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{images/soyflakes.jpg}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/soyflakes.jpg}}
 
 }
 
@@ -6352,7 +6321,7 @@ Source: \href{http://unitedsoybean.org/}{United Soybean Board},
 
 \begin{figure}[H]
 
-{\centering \includegraphics{images/soymeal.jpg}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/soymeal.jpg}}
 
 }
 
@@ -6365,7 +6334,7 @@ Source: \href{http://unitedsoybean.org/}{United Soybean Board},
 
 \begin{figure}[H]
 
-{\centering \includegraphics{images/crush_products.jpg}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/crush_products.jpg}}
 
 }
 
@@ -6416,7 +6385,7 @@ set to take effect by 2018.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{images/hydrogenated_oil.jpg}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/hydrogenated_oil.jpg}}
 
 }
 
@@ -6440,7 +6409,7 @@ essential amino acids that hogs and poultry must have.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{images/pigs.jpg}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/pigs.jpg}}
 
 }
 
@@ -6454,7 +6423,7 @@ Licensed under Public Domain via Wikimedia Commons.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{images/poultry.jpg}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/poultry.jpg}}
 
 }
 
@@ -6525,7 +6494,7 @@ soybean crushing plant. This spread is followed by industry participants
 as a gauge of profitability in the industry and as a signal of whether
 to expect expansion or contraction in the crush business.
 
-\includegraphics{assets/SoyCrushSpread.png}
+\pandocbounded{\includegraphics[keepaspectratio]{assets/SoyCrushSpread.png}}
 
 \section{The Board Crush}\label{the-board-crush}
 
@@ -6789,12 +6758,12 @@ rules} regarding RFS for volume requirements of biofuels for 2014, 2015,
 2016, and 2017 on May 31, 2016.
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.3670}}
-  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.0642}}
-  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.0642}}
-  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.0642}}
-  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.0550}}
-  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.3853}}@{}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.3670}}
+  >{\centering\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.0642}}
+  >{\centering\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.0642}}
+  >{\centering\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.0642}}
+  >{\centering\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.0550}}
+  >{\centering\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.3853}}@{}}
 \caption{Table 1: Renewable Fuel Mandated Volumes for 2014, 2015, 2016,
 and 2017}\tabularnewline
 \toprule\noalign{}
@@ -6895,7 +6864,7 @@ feedlots we explored in an earlier chapter.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{images/eth_locations.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/eth_locations.png}}
 
 }
 
@@ -6931,7 +6900,7 @@ the section that follows.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{images/640px-Ethanol_plant.jpg}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/640px-Ethanol_plant.jpg}}
 
 }
 
@@ -6984,7 +6953,7 @@ the units are comparable on one axis.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{assets/CornDDGPrices.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{assets/CornDDGPrices.png}}
 
 }
 
@@ -6997,7 +6966,7 @@ prices. This is displayed in figure 4.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{assets/DDGCORNRatio.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{assets/DDGCORNRatio.png}}
 
 }
 
@@ -7037,7 +7006,7 @@ graphed together for comparison.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{assets/EthRBOB.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{assets/EthRBOB.png}}
 
 }
 
@@ -7117,8 +7086,8 @@ Dividing \(17/2000 = 0.0085\) yields
   \(P_{eth}*2.8 + P_{DDG}*0.0085 - P_{corn}\)
 \end{enumerate}
 
-\includegraphics{assets/ECrushSpread.png} Note: Prices come from ISU
-Ethanol Profitability Model
+\pandocbounded{\includegraphics[keepaspectratio]{assets/ECrushSpread.png}}
+Note: Prices come from ISU Ethanol Profitability Model
 
 \section{Hedging the Crush Spread}\label{hedging-the-crush-spread}
 
@@ -7611,8 +7580,8 @@ First, we begin by introucing specialized nomenclature used in the
 industry.
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.2240}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.7760}}@{}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.2240}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.7760}}@{}}
 \caption{Table 1: Defintions Related to Hog Production}\tabularnewline
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
@@ -7724,7 +7693,7 @@ only top hog producing state not in the corn belt.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{images/hogstates.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/hogstates.png}}
 
 }
 
@@ -7739,7 +7708,7 @@ Figure 2 show hog and pig sales as a percent of agricultural sales.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{images/hogprodvaluecounty.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/hogprodvaluecounty.png}}
 
 }
 
@@ -7767,7 +7736,7 @@ were raised in packer-owned operations in 2010 (\textbf{gipsa10?}).
 
 \begin{figure}[H]
 
-{\centering \includegraphics{images/numberproducersshare.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/numberproducersshare.png}}
 
 }
 
@@ -7777,7 +7746,7 @@ were raised in packer-owned operations in 2010 (\textbf{gipsa10?}).
 \end{figure}%%
 \begin{figure}[H]
 
-{\centering \includegraphics{images/numberoperations.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/numberoperations.png}}
 
 }
 
@@ -8038,7 +8007,7 @@ from five states:
 
 \begin{figure}[H]
 
-{\centering \includegraphics{images/top_5_petroleum_states-large.jpg}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/top_5_petroleum_states-large.jpg}}
 
 }
 
@@ -8060,7 +8029,7 @@ affected by local supply and demand factors.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{images/Brent_crude_oil_map (1).png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/Brent_crude_oil_map (1).png}}
 
 }
 
@@ -8076,7 +8045,7 @@ States, Saudi Arabia, China, and Canada.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{images/top_petroleum_producing_countries-large.jpg}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/top_petroleum_producing_countries-large.jpg}}
 
 }
 
@@ -8104,7 +8073,7 @@ barrel of oil.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{images/products_from_barrel_crude_oil-large.jpg}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/products_from_barrel_crude_oil-large.jpg}}
 
 }
 
@@ -8142,7 +8111,7 @@ The following figure shows WTI and Brent monthly spot prices from May
 
 \begin{figure}[H]
 
-{\centering \includegraphics{Excel-files/CrudeOiland-crudeoil_files/image003.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{Excel-files/CrudeOiland-crudeoil_files/image003.png}}
 
 }
 
@@ -8158,7 +8127,7 @@ Brent crude oil prices.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{Excel-files/CrudeOiland-crudeoil_files/image008.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{Excel-files/CrudeOiland-crudeoil_files/image008.png}}
 
 }
 
@@ -8192,7 +8161,7 @@ extraction.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{Excel-files/CrudeOiland-crudeoil_files/image004.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{Excel-files/CrudeOiland-crudeoil_files/image004.png}}
 
 }
 
@@ -8207,7 +8176,7 @@ in the region.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{images/640px-Bakken_Wells_2008.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/640px-Bakken_Wells_2008.png}}
 
 }
 
@@ -8222,7 +8191,7 @@ Commons
 
 \begin{figure}[H]
 
-{\centering \includegraphics{images/Bakken_Wells_2013.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/Bakken_Wells_2013.png}}
 
 }
 
@@ -8246,7 +8215,7 @@ stronger.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{Excel-files/CrudeOiland-crudeoil_files/image007.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{Excel-files/CrudeOiland-crudeoil_files/image007.png}}
 
 }
 
@@ -8269,7 +8238,7 @@ to hedge or speculate on these margins. The spread trade consists of a
 3-2-1 ratio. Three contracts of crude oil, two contracts of RBOB
 gasoline, and one contract of Ultra low sulfur diesel.
 
-\includegraphics{20-CrudeOiland_files/figure-pdf/unnamed-chunk-1-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{20-CrudeOiland_files/figure-pdf/unnamed-chunk-1-1.pdf}}
 
 In the figure above we plot the historical 3:2:1 crack spread using the
 nearby WTI, RBOB, and Ultra low sulfer deisel futures contracts from the
@@ -8392,7 +8361,7 @@ Here is what the crop progress and condition report looks like.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{images/cropprogress.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/cropprogress.png}}
 
 }
 
@@ -8410,7 +8379,7 @@ positively correlated with yield outcomes.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{Excel-files/yied-forecast-advanced_files/image001.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{Excel-files/yied-forecast-advanced_files/image001.png}}
 
 }
 
@@ -8570,7 +8539,7 @@ the contract traded, 12/12/2014.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{Excel-files/IntroductiontoCommodityTS-Nearby_construct_files/image005.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{Excel-files/IntroductiontoCommodityTS-Nearby_construct_files/image005.png}}
 
 }
 
@@ -8654,7 +8623,7 @@ expiration month.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{Excel-files/IntroductiontoCommodityTS-Nearby_construct_files/image001.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{Excel-files/IntroductiontoCommodityTS-Nearby_construct_files/image001.png}}
 
 }
 
@@ -8716,7 +8685,7 @@ and Industrial Use category from the corn balance sheet comes to mind.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{Excel-files/IntroductiontoCommodityTS-FeedGrains_Corn_files/image010.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{Excel-files/IntroductiontoCommodityTS-FeedGrains_Corn_files/image010.png}}
 
 }
 
@@ -8742,7 +8711,7 @@ over time.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{images/dallasfednominal_c1.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/dallasfednominal_c1.png}}
 
 }
 
@@ -8778,7 +8747,7 @@ example.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{Excel-files/IntroductiontoCommodityTS-FeedGrains_Corn_files/image026.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{Excel-files/IntroductiontoCommodityTS-FeedGrains_Corn_files/image026.png}}
 
 }
 
@@ -8813,7 +8782,7 @@ simulated price path are shown in figure 6 and 7.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{Excel-files/IntroductiontoCommodityTS-random_walk_files/image003.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{Excel-files/IntroductiontoCommodityTS-random_walk_files/image003.png}}
 
 }
 
@@ -8822,7 +8791,7 @@ simulated price path are shown in figure 6 and 7.
 \end{figure}%%
 \begin{figure}[H]
 
-{\centering \includegraphics{Excel-files/IntroductiontoCommodityTS-random_walk_files/image001.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{Excel-files/IntroductiontoCommodityTS-random_walk_files/image001.png}}
 
 }
 
@@ -8895,7 +8864,7 @@ results from the log-normal price model and those random draws.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{Excel-files/IntroductiontoCommodityTS-random_walk_files/image007.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{Excel-files/IntroductiontoCommodityTS-random_walk_files/image007.png}}
 
 }
 
@@ -8904,7 +8873,7 @@ results from the log-normal price model and those random draws.
 \end{figure}%%
 \begin{figure}[H]
 
-{\centering \includegraphics{Excel-files/IntroductiontoCommodityTS-random_walk_files/image005.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{Excel-files/IntroductiontoCommodityTS-random_walk_files/image005.png}}
 
 }
 
@@ -8945,7 +8914,7 @@ trying to decide whether to buy or sell, for example.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{Excel-files/IntroductiontoCommodityTS-Nearby_construct_files/image002.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{Excel-files/IntroductiontoCommodityTS-Nearby_construct_files/image002.png}}
 
 }
 
@@ -8987,7 +8956,7 @@ following workflow.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{images/ts-workflow.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/ts-workflow.png}}
 
 }
 
@@ -9103,7 +9072,7 @@ plotted.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{images/12_corn_h2016.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/12_corn_h2016.png}}
 
 }
 
@@ -9119,7 +9088,7 @@ the cell to the value in the previous period. Note that the value in
 
 \begin{figure}[H]
 
-{\centering \includegraphics{images/12.lags.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/12.lags.png}}
 
 }
 
@@ -9134,7 +9103,7 @@ of the `Data' menu tab in Excel. The output is displayed in Figure 3.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{images/12_corn_autocorrel.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/12_corn_autocorrel.png}}
 
 }
 
@@ -9167,7 +9136,7 @@ contract from 1/2/2015 - 10/20/2015.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{images/12_corn_ar2_output.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/12_corn_ar2_output.png}}
 
 }
 
@@ -9244,7 +9213,7 @@ minimize the sum of squared residuals by choosing the \(\theta_i\).
 
 \begin{figure}[H]
 
-{\centering \includegraphics{images/12_solvermaq.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/12_solvermaq.png}}
 
 }
 
@@ -9265,7 +9234,7 @@ coefficients should match the \(\theta_i\) you calculated with the Excel
 
 \begin{figure}[H]
 
-{\centering \includegraphics{images/12_ma2.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/12_ma2.png}}
 
 }
 
@@ -9355,7 +9324,7 @@ Figure 5 shows a screenshot of Excel where the model output from figure
 
 \begin{figure}[H]
 
-{\centering \includegraphics{images/12_forecast_screenshot.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/12_forecast_screenshot.png}}
 
 }
 
@@ -9410,7 +9379,7 @@ column \texttt{F} of figure 5, along with the return realizations.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{images/12_forecast_plot.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/12_forecast_plot.png}}
 
 }
 
@@ -9455,7 +9424,7 @@ Data for figures 1-4 come from the
 FAS World Production Supply and Demand} historical data-sets for grains
 and oilseeds.
 
-\includegraphics{assets/SouthAmericanProduction_TopProdCorn.png}
+\pandocbounded{\includegraphics[keepaspectratio]{assets/SouthAmericanProduction_TopProdCorn.png}}
 
 Figure 2 plots the top five countries by exports. Here we see China and
 the EU dropping out of the top five with Russia and Ukraine taking their
@@ -9464,7 +9433,7 @@ exports from Brazil have been expanding rapidly since about 2004, and
 exports from Brazil are expected to top exports from the U.S. for the
 first time in 2022.
 
-\includegraphics{assets/SouthAmericanProduction_TopExporterCorn.png}
+\pandocbounded{\includegraphics[keepaspectratio]{assets/SouthAmericanProduction_TopExporterCorn.png}}
 
 Next, in table 1, we present the top producers of corn in 2022.
 
@@ -9492,14 +9461,14 @@ of Brazil and Argentina is much more obvious. While production in the
 U.S. has a visible upward trend, Brazil and Argentina are really
 increasing at a rapid rate.
 
-\includegraphics{assets/SouthAmericanProd_TopProdSoy.png}
+\pandocbounded{\includegraphics[keepaspectratio]{assets/SouthAmericanProd_TopProdSoy.png}}
 
 In figure 4 we plot the exports from the top five countries. From figure
 3 to 4 China and India drop out and are replaced by Canada and Paraguay.
 The growth in soybean exports from Brazil is quite remarkable in this
 chart.
 
-\includegraphics{assets/SouthAmericanProd_TopExporterSoy.png}
+\pandocbounded{\includegraphics[keepaspectratio]{assets/SouthAmericanProd_TopExporterSoy.png}}
 
 Table 2 shows the top ten producers of soybeans in the World. Here we
 see that Paraguay and Bolivia are present in the top ten as well.
@@ -9553,7 +9522,7 @@ corn crop is planted in around May and is harvested around October.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{assets/Brazilcalendar.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{assets/Brazilcalendar.png}}
 
 }
 
@@ -9567,7 +9536,7 @@ soybeans are taking place.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{assets/Brazil_Soybean.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{assets/Brazil_Soybean.png}}
 
 }
 
@@ -9579,7 +9548,7 @@ Figure 7 shows the same for second crop corn.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{assets/Brazil_SecondSeason_Corn.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{assets/Brazil_SecondSeason_Corn.png}}
 
 }
 
@@ -9595,7 +9564,7 @@ apt to plant a single crop of corn.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{assets/Brazil_FirstSeason_Corn.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{assets/Brazil_FirstSeason_Corn.png}}
 
 }
 
@@ -9625,7 +9594,7 @@ runs from March until May.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{assets/Argentina_Departments_Corn.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{assets/Argentina_Departments_Corn.png}}
 
 }
 
@@ -9638,7 +9607,7 @@ May.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{assets/Argentina_Departments_Soybean.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{assets/Argentina_Departments_Soybean.png}}
 
 }
 
@@ -9768,6 +9737,7 @@ Zulauf, Carl. 2016. {``Crop Insurance Premium Subsidy Rates: A Proposed
 Objective Metric Based on Systemic Risk.''} \emph{Farmdoc Daily} 6 (86).
 
 \end{CSLReferences}
+
 
 
 
