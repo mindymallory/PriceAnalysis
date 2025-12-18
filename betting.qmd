@@ -1,11 +1,14 @@
 ---
 title: "Betting Strategies and Ergodicity"
 ---
+
 Cite the guy Ole ...
 
 Betting Simulator
 
 ```{r}
+
+library(tidyverse)
 
 # Simulate a single bet
 # Traditional frac of bankroll

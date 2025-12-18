@@ -19,7 +19,7 @@ purduegold <- '#CEB888'
 
 ```
 
-# This file creates assets for my price analysis book. Code can be run to update figures and tables in the book. Assets are located in the `/assets` subdirectory. 
+# This file creates assets for my price analysis book. Code can be run to update figures and tables in the book. Assets are located in the `/assets` subdirectory.
 
 # Graphs for `041-Options1.Rmd`
 
@@ -206,7 +206,6 @@ prices %>% ggplot(aes(x = price, y = callpayoffs)) +
 ggsave(filename = "Options2-deltahedge.png")
 ```
 
-
 # Figures for `044-Options4.Rmd`
 
 ```{r, fig.width= 6, fig.hight = 4}
@@ -364,7 +363,6 @@ ggsave(p1, filename = "cropins_ex.png", width = 8)
 
 ```
 
-
 # Figures for "PrimerforGrain.rmd"
 
 ```{r}
@@ -444,7 +442,6 @@ corn2
 ggsave(corn2, filename = "PrimerforGrain_CornProdand$.png")
 
 ```
-
 
 ```{r}
 soy1 <- data1 %>% 
@@ -562,8 +559,6 @@ ggsave(wheat2, filename = "PrimerforGrain_WheatProdand$.png")
 
 ```
 
-
-
 ```{r}
 library(tidyverse)
 library(readxl)
@@ -573,24 +568,29 @@ library(tidyr)
 
 tmp <- tempfile(fileext = ".xls")
 
-httr::GET(url = "https://www.ers.usda.gov/webdocs/DataFiles/50048/Feed%20Grains%20Yearbook%20Tables-All%20Years.xls",
-          write_disk( tmp, overwrite = TRUE) )
+#USDA data discontinued for now. 
+# httr::GET(url = "https://www.ers.usda.gov/webdocs/DataFiles/50048/Feed%20Grains%20Yearbook%20Tables-All%20Years.xls",
+#           write_disk( tmp, overwrite = TRUE) )
 
-data_xl <- read_excel(tmp, sheet = "FGYearbookTable04-Full", 
+
+tmp = 'C:/Users/mindy/Desktop/Documents/PriceAnalysis/PriceAnalysis/assets/feed-grains-yearbook-historical.xlsx'
+
+data_xl <- read_excel(tmp, sheet = "FGYearbookTable04", 
                       skip = 4, 
                       col_names = c("MktYear", "Quarter", "BeginningStocks", "Production", "Imports", 
                                     "TotalSupply", "FoodAlcoholInd", "Seed", "FeedandResidual", 
                                     "TotalDomestic", "Exports", "TotalUse", "EndingStocks")) %>%
   fill(MktYear) %>% 
   # Make columns for more standard date handling
-  mutate(month = ifelse(Quarter =="Q1 Sep-Nov", "09-01", 
-                        ifelse(Quarter == "Q2 Dec-Feb", "12-01", 
-                               ifelse(Quarter == "Q3 Mar-May", "03-01", 
-                                      ifelse(Quarter == "Q4 Jun-Aug", "06-01",
-                                             ifelse(Quarter == "MY Sep-Aug", "09-01", NA)))))) %>%
-  mutate(year = ifelse(Quarter =="Q1 Sep-Nov" | Quarter == "Q2 Dec-Feb" | Quarter == "MY Sep-Aug", as.numeric(str_sub(MktYear, 1,4)), 
+  mutate(month = ifelse(Quarter =="Q1 September-November", "09-01", 
+                        ifelse(Quarter == "Q2 December-February", "12-01", 
+                               ifelse(Quarter == "Q3 March-May", "03-01", 
+                                      ifelse(Quarter == "Q4 June-August", "06-01",
+                                             ifelse(Quarter == "MY September-August", "09-01", NA)))))) %>%
+  mutate(year = ifelse(Quarter =="Q1 September-November" | Quarter == "Q2 December-February" | Quarter == "MY  September-August", as.numeric(str_sub(MktYear, 1,4)), 
                        as.numeric(str_sub(MktYear, 1,4)) +1 )) %>%
-  mutate(date = as.Date(paste0(as.character(year), "-", month))) # Now we have a proper date column.
+  filter(!is.na(month) & !is.na(year)) %>%
+  mutate(date = as.Date(paste0(as.character(year), "-", as.character(month)))) # Now we have a proper date column.
 
 # Make tidy getting ready for ggplot
 data_tidy <- data_xl %>% 
@@ -600,7 +600,7 @@ data_tidy <- data_xl %>%
 data_tidy
 
 # Plot the Marketing Year Data
-CornUse <- data_tidy %>% filter(Quarter == "MY Sep-Aug") %>%
+CornUse <- data_tidy %>% filter(Quarter == "MY September-August") %>%
   filter(UseCategory %in% c("FoodAlcoholInd", "Seed", "FeedandResidual", "Exports", "EndingStocks")) %>%
   ggplot(aes(x = date, y = Value, fill = UseCategory)) + 
   geom_area() + 
@@ -613,15 +613,15 @@ ggsave(CornUse, filename = "PrimerforGrain_CornUse.png")
 
 ```
 
-
 ```{r}
 tmp1 <- tempfile(fileext = ".xlsx")
 
-httr::GET(url = "https://www.ers.usda.gov/webdocs/DataFiles/52218/OilCropsAllTables.xlsx?v=486",
-          write_disk( tmp1) )
+# httr::GET(url = "https://www.ers.usda.gov/webdocs/DataFiles/52218/OilCropsAllTables.xlsx?v=486",
+#           write_disk( tmp1) )
 
-# old ""https://www.ers.usda.gov/webdocs/DataFiles/52218/OilCropsAllTables.xlsx?v=3685"
-
+# have to get manually for now
+# "https://www.ers.usda.gov/data-products/oil-crops-yearbook"
+tmp1 = 'C:/Users/mindy/Desktop/Documents/PriceAnalysis/PriceAnalysis/assets/OilCropsAllTables.xlsx'
 data_xl <- read_excel(tmp1, sheet = "tab3", 
                      skip = 6, 
                       col_names = c("MktYear", "BeginningStocks", "Production", "Imports", 
@@ -673,14 +673,7 @@ CornPrices
 ggsave(CornPrices, filename = "PrimerforGrain_CornPrices.png")
 ```
 
-
-
-
-
-
-
 # Figures for `05-PricesSpaceTime.Rmd`
-
 
 ```{r, echo = FALSE, message = FALSE, warning=FALSE}
 library(tidyr)
@@ -834,7 +827,6 @@ g
 ggsave(filename = "PricesSpaceTime-pricesdecreasing-hyp.png")
 
 ```
-
 
 #2023 updated to here
 
@@ -1102,11 +1094,6 @@ inner_join(dataGE, dataY, by = "year") %>%
 ggsave("ForecastProduction-PercDeviationVSGEXY.png")
 ```
 
-
-
-
-
-
 # Figures for `09-ForecastingUseof.Rmd` and `10-ForecastingUseofSoy.Rmd`
 
 ```{r fig.height = 5}
@@ -1114,43 +1101,40 @@ library(tidyverse)
 library(readxl)
 library(httr)
 library(tidyr)
-tmp <- tempfile(fileext = ".xls")
-httr::GET(url = "https://www.ers.usda.gov/webdocs/DataFiles/50048/Feed%20Grains%20Yearbook%20Tables-All%20Years.xls",
-          write_disk(tmp, overwrite = TRUE) )
-data_xl <- read_excel(tmp, sheet = "FGYearbookTable04-Full", 
+tmp = 'C:/Users/mindy/Desktop/Documents/PriceAnalysis/PriceAnalysis/assets/feed-grains-yearbook-historical.xlsx'
+
+data_xl <- read_excel(tmp, sheet = "FGYearbookTable04", 
                       skip = 4, 
                       col_names = c("MktYear", "Quarter", "BeginningStocks", "Production", "Imports", 
                                     "TotalSupply", "FoodAlcoholInd", "Seed", "FeedandResidual", 
                                     "TotalDomestic", "Exports", "TotalUse", "EndingStocks")) %>%
   fill(MktYear) %>% 
   # Make columns for more standard date handling
-  mutate(month = ifelse(Quarter =="Q1 Sep-Nov", "09-01", 
-                        ifelse(Quarter == "Q2 Dec-Feb", "12-01", 
-                               ifelse(Quarter == "Q3 Mar-May", "03-01", 
-                                      ifelse(Quarter == "Q4 Jun-Aug", "06-01",
-                                             ifelse(Quarter == "MY Sep-Aug", "09-01", NA)))))) %>%
-  mutate(year = ifelse(Quarter =="Q1 Sep-Nov" | Quarter == "Q2 Dec-Feb" | Quarter == "MY Sep-Aug", as.numeric(str_sub(MktYear, 1,4)), 
+  mutate(month = ifelse(Quarter =="Q1 September-November", "09-01", 
+                        ifelse(Quarter == "Q2 December-February", "12-01", 
+                               ifelse(Quarter == "Q3 March-May", "03-01", 
+                                      ifelse(Quarter == "Q4 June-August", "06-01",
+                                             ifelse(Quarter == "MY September-August", "09-01", NA)))))) %>%
+  mutate(year = ifelse(Quarter =="Q1 September-November" | Quarter == "Q2 December-February" | Quarter == "MY  September-August", as.numeric(str_sub(MktYear, 1,4)), 
                        as.numeric(str_sub(MktYear, 1,4)) +1 )) %>%
-  mutate(date = as.Date(paste0(as.character(year), "-", month))) # Now we have a proper date column.
-```
+  filter(!is.na(month) & !is.na(year)) %>%
+  mutate(date = as.Date(paste0(as.character(year), "-", as.character(month)))) # Now we have a proper date column.
 
-Making the data "Tidy"
-
-Now lets transform the data from 'wide' formet to 'long' format so we can make nice graphs with `ggplot2`.
-
-```{r , message = FALSE, warning = FALSE}
 # Make tidy getting ready for ggplot
 data_tidy <- data_xl %>% 
   select(c(-MktYear, -month, -year)) %>%
   pivot_longer(c(-date, -Quarter), names_to = "UseCategory", values_to = "Value")
-data_tidy %>% tail()
+
+data_tidy
 ```
+
+
 
 Now let's plot the corn dissapearance
 
 ```{r, fig.height= 5}
 # Plot the Marketing Year Data
-data_tidy %>% filter(Quarter != "MY Sep-Aug") %>%
+data_tidy %>% filter(Quarter != "MY September-August") %>%
   filter(UseCategory %in% c("FoodAlcoholInd", "Seed", "FeedandResidual", "Exports")) %>%
   ggplot(aes(x = date, y = Value, color = UseCategory)) + 
   geom_line() + 
@@ -1158,7 +1142,7 @@ data_tidy %>% filter(Quarter != "MY Sep-Aug") %>%
   labs(x = "", y = "Millions of bushels", title = "Corn Quarterly Use Categories Since 1975")
 ggsave(filename = "ForecastingUseof-CornUseCategories.png")
 
-data_tidy %>% filter(Quarter != "MY Sep-Aug") %>%
+data_tidy %>% filter(Quarter != "MY September-August") %>%
   filter(UseCategory %in% c("FoodAlcoholInd")) %>%
   ggplot(aes(x = date, y = Value)) + 
   geom_line(color = purduegold, size = .75) + 
@@ -1166,7 +1150,7 @@ data_tidy %>% filter(Quarter != "MY Sep-Aug") %>%
   labs(x = "", y = "Millions of bushels", title = "Corn Quarterly Food Alcohol and Industrial Use Since 1975")
 ggsave(filename = "ForecastingUseof-CornUseCategoriesFoodAlcoholInd.png")
 
-data_tidy %>% filter(Quarter == "MY Sep-Aug") %>%
+data_tidy %>% filter(Quarter == "MY September-August") %>%
   filter(UseCategory %in% c("FoodAlcoholInd", "TotalUse")) %>%
   pivot_wider(names_from = UseCategory, values_from = Value) %>%
   mutate(ProportionofUse = FoodAlcoholInd/TotalUse) %>%
@@ -1176,7 +1160,7 @@ data_tidy %>% filter(Quarter == "MY Sep-Aug") %>%
   labs(x = "", y = "Millions of bushels", title = "Corn Marketing Year Food, Alcohol, & Industrial as Proportion of Total Use")
 ggsave(filename = "ForecastingUseof-CornUseCategoriesFoodAlcoholIndPropofUse.png")
 
-data_tidy %>% filter(Quarter != "MY Sep-Aug") %>%
+data_tidy %>% filter(Quarter != "MY September-August") %>%
   filter(UseCategory %in% c("FeedandResidual")) %>%
   ggplot(aes(x = date, y = Value)) + 
   geom_line(color = purduegold, size = .75) + 
@@ -1184,7 +1168,7 @@ data_tidy %>% filter(Quarter != "MY Sep-Aug") %>%
   labs(x = "", y = "Millions of bushels", title = "Corn Quarterly Feed and Residual Use Since 1975")
 ggsave(filename = "ForecastingUseof-CornUseCategoriesFeedResid.png")
 
-data_tidy %>% filter(Quarter == "MY Sep-Aug") %>%
+data_tidy %>% filter(Quarter == "MY September-August") %>%
   filter(UseCategory %in% c("FeedandResidual", "TotalUse")) %>%
   pivot_wider(names_from = UseCategory, values_from = Value) %>%
   mutate(ProportionofUse = FeedandResidual/TotalUse) %>%
@@ -1194,7 +1178,7 @@ data_tidy %>% filter(Quarter == "MY Sep-Aug") %>%
   labs(x = "", y = "Millions of bushels", title = "Corn Marketing Year Feed and Residual as Proportion of Total Use")
 ggsave(filename = "ForecastingUseof-CornUseCategoriesFeedandResidPropofUse.png")
 
-data_tidy %>% filter(Quarter != "MY Sep-Aug") %>%
+data_tidy %>% filter(Quarter != "MY September-August") %>%
   filter(UseCategory %in% c("Exports")) %>%
   ggplot(aes(x = date, y = Value)) + 
   geom_line(color = purduegold, size = .75) + 
@@ -1202,7 +1186,7 @@ data_tidy %>% filter(Quarter != "MY Sep-Aug") %>%
   labs(x = "", y = "Millions of bushels", title = "Corn Quarterly Exports Since 1975")
 ggsave(filename = "ForecastingUseof-CornUseCategoriesExports.png")
 
-data_tidy %>% filter(Quarter == "MY Sep-Aug") %>%
+data_tidy %>% filter(Quarter == "MY September-August") %>%
   filter(UseCategory %in% c("Exports", "TotalUse")) %>%
   pivot_wider(names_from = UseCategory, values_from = Value) %>%
   mutate(ProportionofUse = Exports/TotalUse) %>%
@@ -1217,7 +1201,7 @@ ggsave(filename = "ForecastingUseof-CornUseCategoriesExportsPropofUse.png")
 
 ```{r, fig.height= 5}
 
-data_tidy %>% filter(Quarter == "MY Sep-Aug") %>%
+data_tidy %>% filter(Quarter == "MY September-August") %>%
   filter(UseCategory %in% c("FoodAlcoholInd", "Seed", "FeedandResidual", "Exports")) %>%
   ggplot(aes(x = date, y = Value, color = UseCategory)) + 
   geom_line() + 
@@ -1225,7 +1209,7 @@ data_tidy %>% filter(Quarter == "MY Sep-Aug") %>%
   labs(x = "", y = "Millions of bushels", title = "Marketing Year Corn Use Categories Since 1975")
 ggsave(filename = "ForecastingUseof-CornUseCategoriesMY.png")
 
-data_tidy %>% filter(Quarter == "MY Sep-Aug") %>%
+data_tidy %>% filter(Quarter == "MY September-August") %>%
   filter(UseCategory %in% c("FoodAlcoholInd")) %>%
   ggplot(aes(x = date, y = Value)) + 
   geom_line(color = purduegold, size = .75) + 
@@ -1233,7 +1217,7 @@ data_tidy %>% filter(Quarter == "MY Sep-Aug") %>%
   labs(x = "", y = "Millions of bushels", title = "Marketing Year Food Alcohol and Industrial Use Since 1975")
 ggsave(filename = "ForecastingUseof-CornUseCategoriesFoodAlcoholIndMY.png")
 
-data_tidy %>% filter(Quarter == "MY Sep-Aug") %>%
+data_tidy %>% filter(Quarter == "MY September-August") %>%
   filter(UseCategory %in% c("FeedandResidual")) %>%
   ggplot(aes(x = date, y = Value)) + 
   geom_line(color = purduegold, size = .75) + 
@@ -1241,7 +1225,7 @@ data_tidy %>% filter(Quarter == "MY Sep-Aug") %>%
   labs(x = "", y = "Millions of bushels", title = "Marketing Year Corn Feed and Residual Use Since 1975")
 ggsave(filename = "ForecastingUseof-FeedandResidualMY.png")
 
-data_tidy %>% filter(Quarter == "MY Sep-Aug") %>%
+data_tidy %>% filter(Quarter == "MY September-August") %>%
   filter(UseCategory %in% c("Exports")) %>%
   ggplot(aes(x = date, y = Value)) + 
   geom_line(color = purduegold, size = .75) + 
@@ -1250,11 +1234,11 @@ data_tidy %>% filter(Quarter == "MY Sep-Aug") %>%
 ggsave(filename = "ForecastingUseof-ExportsMY.png")
 ```
 
-Ethanol 
+Ethanol
 
 ```{r, fig.height= 5}
 
-ethanol <- read_excel("Table_10.3_Fuel_Ethanol_Overview1.xlsx", sheet = 2, skip = 11) 
+ethanol <- read_excel("C:/Users/mindy/Desktop/Documents/PriceAnalysis/PriceAnalysis/assets/Table_10.3_Fuel_Ethanol_Overview.xlsx", sheet = 2, skip = 11) 
 ethanol <- ethanol[, c(1, 6,12)]
 colnames(ethanol) <- c("Year", "Production", "Consumption" )
 
@@ -1269,14 +1253,6 @@ ethanol %>% pivot_longer(cols = -Year, names_to = "Series", values_to = "Million
   
 
 ```
-
-
-
-
-
-
-
-
 
 # Figures for `12-A-South-American-Production.Rmd`
 
@@ -1388,9 +1364,10 @@ oilseeds <- read.csv('psd_oilseeds.csv')
 
 
 get_top_soy <- oilseeds %>% 
-                  filter(Market_Year == year) %>%
-                  filter(Commodity_Code == 2222000) %>%
+                                    filter(Commodity_Code == 2222000) %>%
+                  
                   filter(Attribute_ID == 28) %>%
+                  filter(Market_Year == as.integer(year-2)) %>%
                   arrange(desc(Value))
 
 get_top_soy <- get_top_soy[1:5, 'Country_Name']
@@ -1424,7 +1401,7 @@ ggsave(filename = "SouthAmericanProd_TopProdSoy.png", width= 6, height = 4)
 
 
 get_top_soy <- oilseeds %>% 
-                  filter(Market_Year == year) %>%
+                  filter(Market_Year == year-2) %>%
                   filter(Commodity_Code == 2222000) %>%
                   filter(Attribute_ID == 88) %>%
                   arrange(desc(Value))
@@ -1456,7 +1433,7 @@ ggsave(filename = "SouthAmericanProd_TopExporterSoy.png", height = 4, width = 6)
 
 
 get_top_soy <- oilseeds %>% 
-                  filter(Market_Year == year) %>%
+                  filter(Market_Year == year-2) %>%
                   filter(Commodity_Code == 2222000) %>%
                   filter(Attribute_ID == 88) %>%
                   arrange(desc(Value))
@@ -1484,35 +1461,39 @@ oilseeds %>%
 tmp <- tempfile(fileext = ".xls")
 library(httr)
 
-httr::GET(url = "https://www.ers.usda.gov/webdocs/DataFiles/50048/Feed%20Grains%20Yearbook%20Tables-All%20Years.xls",
-          write_disk( tmp) )
+tmp = 'C:/Users/mindy/Desktop/Documents/PriceAnalysis/PriceAnalysis/assets/feed-grains-yearbook-historical.xlsx'
 
-data_xl <- read_excel(tmp, sheet = "FGYearbookTable04-Full", 
+data_xl <- read_excel(tmp, sheet = "FGYearbookTable04", 
                       skip = 4, 
                       col_names = c("MktYear", "Quarter", "BeginningStocks", "Production", "Imports", 
                                     "TotalSupply", "FoodAlcoholInd", "Seed", "FeedandResidual", 
                                     "TotalDomestic", "Exports", "TotalUse", "EndingStocks")) %>%
   fill(MktYear) %>% 
   # Make columns for more standard date handling
-  mutate(month = ifelse(Quarter =="Q1 Sep-Nov", "09-01", 
-                        ifelse(Quarter == "Q2 Dec-Feb", "12-01", 
-                               ifelse(Quarter == "Q3 Mar-May", "03-01", 
-                                      ifelse(Quarter == "Q4 Jun-Aug", "06-01",
-                                             ifelse(Quarter == "MY Sep-Aug", "09-01", NA)))))) %>%
-  mutate(year = ifelse(Quarter =="Q1 Sep-Nov" | Quarter == "Q2 Dec-Feb" | Quarter == "MY Sep-Aug", as.numeric(str_sub(MktYear, 1,4)), 
+  mutate(month = ifelse(Quarter =="Q1 September-November", "09-01", 
+                        ifelse(Quarter == "Q2 December-February", "12-01", 
+                               ifelse(Quarter == "Q3 March-May", "03-01", 
+                                      ifelse(Quarter == "Q4 June-August", "06-01",
+                                             ifelse(Quarter == "MY September-August", "09-01", NA)))))) %>%
+  mutate(year = ifelse(Quarter =="Q1 September-November" | Quarter == "Q2 December-February" | Quarter == "MY  September-August", as.numeric(str_sub(MktYear, 1,4)), 
                        as.numeric(str_sub(MktYear, 1,4)) +1 )) %>%
-  mutate(date = as.Date(paste0(as.character(year), "-", month))) # Now we have a proper date column.
+  filter(!is.na(month) & !is.na(year)) %>%
+  mutate(date = as.Date(paste0(as.character(year), "-", as.character(month)))) # Now we have a proper date column.
 
-data_xl
+# # Make tidy getting ready for ggplot
+# data_tidy <- data_xl %>% 
+#   select(c(-MktYear, -month, -year)) %>%
+#   pivot_longer(c(-date, -Quarter), names_to = "UseCategory", values_to = "Value")
+# 
+# data_tidy
 ```
-
 
 ```{r}
 
 
 
 data_fg <- data_xl %>% 
-  filter(Quarter == "MY Sep-Aug") %>% 
+  filter(Quarter == "MY September-August") %>% 
   select(c(date, TotalUse, EndingStocks)) %>%
   mutate(date = year(date)) %>% 
   mutate(StockstoUse = EndingStocks/TotalUse*100)
@@ -1566,7 +1547,6 @@ ggsave(ppp, filename = "EndingStocksand-StocksUsePrices.png" , width= 6, height 
 
 ```
 
-
 ```{r}
 
 data1 %>% 
@@ -1577,7 +1557,7 @@ data1 %>%
   labs(title = "Corn Stocks-to-Use and Prices Received by Farmers", 
        x = "Stocks/TotalUse*100", 
        y = "$/bu",
-       caption = "1975-2020 Marketing Years (2020 Estimated as of 2021-03-23)")
+       caption = "1975-2025 Marketing Years (2025 Estimated as of 2025-12-20)")
 
 ggsave(filename = "EndingStocksand-StocksUsePrices2.png" , width= 6, height = 4)
 
@@ -1595,7 +1575,7 @@ data1 %>% mutate(BeforeAfter = case_when(date < 2006 ~ "Before",
   labs(title = "Corn Stocks-to-Use and Prices Received by Farmers, Before and After 2006", 
        x = "Stocks/TotalUse*100", 
        y = "$/bu",
-       caption = "1975-2020 Marketing Years (2020 Estimated as of 2021-03-23)")
+       caption = "1975-2025 Marketing Years (2025 Estimated as of 2025-12-20)")
 
 ggsave(filename = "EndingStocksand-StocksUsePrices3.png" , width= 6, height = 4)
 
@@ -1604,7 +1584,7 @@ ggsave(filename = "EndingStocksand-StocksUsePrices3.png" , width= 6, height = 4)
 # Figures for `13-EthanolMarketsand.Rmd`
 
 ```{r}
-data <- read_excel('d1-10ethanolprofitability.xlsx', 
+data <- read_excel('d1-10ethanolprofitabilit.xlsx', 
            sheet = "Returns per Bu.", 
            range = "A8:J1000",
            col_types = c("date", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric")) %>% 
@@ -1629,7 +1609,6 @@ ggsave("CornDDGPrices.png", width = 6, height = 4)
 
 ```
 
-
 ```{r}
 
 data %>% 
@@ -1643,7 +1622,6 @@ data %>%
 ggsave("DDGCORNRatio.png", width = 6, height = 4)
 
 ```
-
 
 ```{r}
 
@@ -1659,9 +1637,6 @@ data %>%
 ggsave("ECrushSpread.png" , width = 6, height = 4)
 
 ```
-
-
-
 
 # Figures for `12-SoybeanCrush.Rmd`
 
@@ -1695,4 +1670,3 @@ pp <- df %>% ggplot(aes(x = Date, y = y)) +
 pp
 ggsave("SoyCrushSpread.png" , width = 6, height = 4)
 ```
-
