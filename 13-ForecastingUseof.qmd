@@ -6,8 +6,8 @@ editor_options:
 
 # Forecasting Use of Corn
 
-<span style="color:red">Interested in more? Please let me know by</span> [taking the survey](https://forms.gle/Q3VByCQZHjfQSy9D7)! 
-
+[Interested in more? Please let me know by]{style="color:red"} [taking
+the survey](https://forms.gle/Q3VByCQZHjfQSy9D7)!
 
 In the WASDE balance sheet for corn there are three use categories. Two
 account for domestic consumption - Food, Seed and Industrial, and Feed
@@ -160,7 +160,7 @@ Residual category is the most difficult to forecast. It should correlate
 roughly to livestock feeding units, but does not prove to be that
 effective in practice.
 
-$\begin{align} Feed\&Residual = (Production + \epsilon_{prod}) + (Imports + \epsilon_{import}) + (Beginning Stocks + \epsilon_{BStocks}) \\ - (Ending Stocks + \epsilon_{EStocks}) - (FoodSeed\&Industrial + \epsilon_{Food}) - (Exports + \epsilon_{Export}) \end{align}$
+$\begin{aligned} Feed\&Residual = (Production + \epsilon_{prod}) + (Imports + \epsilon_{import}) + (Beginning Stocks + \epsilon_{BStocks}) \\ - (Ending Stocks + \epsilon_{EStocks}) - (FoodSeed\&Industrial + \epsilon_{Food}) - (Exports + \epsilon_{Export}) \end{aligned}$
 
 Figure 7 below displays the Feed and Residual category since 1990.
 
@@ -323,8 +323,8 @@ soybean oil. Large sales for all reportable commodities except soybean
 oil are defined as 100,000 metric tons or more of one commodity in one
 day to a single destination or 200,000 tons or more of one commodity
 during the weekly reporting period. Large sales for soybean oil are
-20,000 tons and 40,000 tons, respectively. \> \#\#\# Weekly Reports
-Weekly reports are also required, regardless of the size of the sales
+20,000 tons and 40,000 tons, respectively. \> \### Weekly Reports Weekly
+reports are also required, regardless of the size of the sales
 transaction, for all of these commodities, as well as wheat products,
 rye, flaxseed, linseed oil, cotton (by staple length), cottonseed,
 cottonseed cake and meal, cottonseed oil, rice (by class), and cattle

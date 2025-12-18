@@ -1,7 +1,6 @@
 # Grain and Oilseed Markets
 
-<span style="color:red">Interested in more? Please let me know by</span> [taking the survey](https://forms.gle/Q3VByCQZHjfQSy9D7)! 
-
+[Interested in more? Please let me know by]{style="color:red"} [taking the survey](https://forms.gle/Q3VByCQZHjfQSy9D7)!
 
 **Highlights**
 
@@ -25,8 +24,7 @@ In the Corn Belt corn is planted from about March to May, and harvested from Sep
 
 Of lesser concern, but still followed by market participants is the weather during planting and harvest. Sometimes it is too wet, making it difficult to get acreage planted in a timely manner. If corn is planted too late it may suffer a yield penalty. Also, weather during harvest can impact prices. If harvest time is very wet, it can make it difficult to get the crop out and dry before it is damaged.
 
-
-![Corn Acres Planted 2019, map from Aaron Smith's [Ag Data](https://asmith.ucdavis.edu/data/us-crops)](assets/map_CORN_AREA PLANTED.png "Corn Production and Prices")
+![Corn Acres Planted 2019, map from Aaron Smith's [Ag Data](https://asmith.ucdavis.edu/data/us-crops)](assets/map_CORN_AREA%20PLANTED.png "Corn Production and Prices")
 
 ### Recent Trends in Acreage, Yields, Production, and Use
 
@@ -40,7 +38,7 @@ The following figures [come from](http://www.ers.usda.gov/topics/crops/corn/back
 
 Corn prices can be quite volatile, with prices and production highly inversely related to one another.
 
-![Data from USDA NASS](assets/PrimerforGrain_CornProdand$.png "Corn Production and Prices")
+![Data from USDA NASS](assets/PrimerforGrain_CornProdand.png "Corn Production and Prices")
 
 Corn is used in the U.S for a variety of purposes. Largest use categories are feed (for livestock), and alcohol for fuel use (ethanol blended with gasoline).
 
@@ -50,7 +48,7 @@ Corn is used in the U.S for a variety of purposes. Largest use categories are fe
 
 Soybeans are planted later than corn, from about April to June. Weather affects soybean production prospects and generates similar price responses as it does for corn. Soybean prices, therefore are highly dependent on what happens during the summer months.
 
-![Soybean Acres Planted 2019, map from Aaron Smith's [Ag Data](https://asmith.ucdavis.edu/data/us-crops)](assets/map_SOYBEANS_AREA PLANTED.png "Corn Production and Prices")
+![Soybean Acres Planted 2019, map from Aaron Smith's [Ag Data](https://asmith.ucdavis.edu/data/us-crops)](assets/map_SOYBEANS_AREA%20PLANTED.png "Corn Production and Prices")
 
 ### Recent Trends in Acreage, Yield, Production, and Use
 
@@ -62,7 +60,7 @@ Soybeans were not commonly planted in the U.S. until the mid 20th century, but o
 
 [![Soybean Acres and Yield](assets/PrimerforGrain_SoyAcandY.png)](Soybean%20Acres%20and%20Yield,%20Data%20from%20USDA%20NASS)
 
-![Soybean Production and Prices, Data from USDA NASS](assets/PrimerforGrain_SoyProdand$.png "Soybean Production and Prices")
+![Soybean Production and Prices, Data from USDA NASS](assets/PrimerforGrain_SoyProdand.png "Soybean Production and Prices")
 
 Soybeans consumed in the U.S. are almost exclusively processed into soybean meal and soybean oil, a process referred to as 'crushing'. Soybean meal is high in protein and used as an ingredient in livestock feed. Soybean oil is used for a variety of things, but the bulk of it is consumed as edible oil.
 
@@ -126,4 +124,4 @@ Because of this dynamic, the relative prices of Minneapolis, Kansas City, and Ch
 
 ![Data from USDA NASS](assets/PrimerforGrain_WheatAcandY.png "Data from USDA NASS")
 
-![Data from USDA NASS](assets/PrimerforGrain_WheatProdand$.png "Data from USDA NASS")
+![Data from USDA NASS](assets/PrimerforGrain_WheatProdand.png "Data from USDA NASS")

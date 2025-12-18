@@ -439,7 +439,7 @@ corn2 <- data1 %>%
   #  limits = c(0, 17)) 
 
 corn2
-ggsave(corn2, filename = "PrimerforGrain_CornProdand$.png")
+ggsave(corn2, filename = "PrimerforGrain_CornProdand.png")
 
 ```
 
@@ -495,7 +495,7 @@ soy2 <- data1 %>%
   #  limits = c(0, 17)) 
 
 soy2
-ggsave(soy2, filename = "PrimerforGrain_SoyProdand$.png")
+ggsave(soy2, filename = "PrimerforGrain_SoyProdand.png")
 
 
 ```
@@ -554,7 +554,7 @@ wheat2 <- data1 %>%
   #  limits = c(0, 17)) 
 
 wheat2
-ggsave(wheat2, filename = "PrimerforGrain_WheatProdand$.png")
+ggsave(wheat2, filename = "PrimerforGrain_WheatProdand.png")
 
 
 ```
