@@ -1234,6 +1234,119 @@ data_tidy %>% filter(Quarter == "MY September-August") %>%
 ggsave(filename = "ForecastingUseof-ExportsMY.png")
 ```
 
+
+Soy
+```{r fig.height = 5}
+library(tidyverse)
+library(readxl)
+library(httr)
+library(tidyr)
+tmp = 'C:/Users/mindy/Desktop/Documents/PriceAnalysis/PriceAnalysis/assets/OilCropsAllTables.xlsx'
+
+data_xl <- read_excel(tmp, sheet = "tab3", 
+                      skip = 7, 
+                      col_names = c("MktYear", "BeginningStocks", "Production", "Imports", 
+                                    "TotalSupply", "Crush", "Exports", "Seed", "TotalUse", "EndingStocks", "SeasonAvePrice")) %>%
+  mutate(SeasonAvePrice = as.numeric(SeasonAvePrice)) 
+  #fill(MktYear) %>% 
+  # # Make columns for more standard date handling
+  # mutate(month = ifelse(Quarter =="Q1 September-November", "09-01", 
+  #                       ifelse(Quarter == "Q2 December-February", "12-01", 
+  #                              ifelse(Quarter == "Q3 March-May", "03-01", 
+  #                                     ifelse(Quarter == "Q4 June-August", "06-01",
+  #                                            ifelse(Quarter == "MY September-August", "09-01", NA)))))) %>%
+  # mutate(year = ifelse(Quarter =="Q1 September-November" | Quarter == "Q2 December-February" | Quarter == "MY  September-August", as.numeric(str_sub(MktYear, 1,4)), 
+  #                      as.numeric(str_sub(MktYear, 1,4)) +1 )) %>%
+  # filter(!is.na(month) & !is.na(year)) %>%
+  # mutate(date = as.Date(paste0(as.character(year), "-", as.character(month)))) # Now we have a proper date column.
+
+# Make tidy getting ready for ggplot
+data_tidy <- data_xl %>% 
+  #select(c(-MktYear, -month, -year)) %>%
+  pivot_longer(c(-MktYear), names_to = "UseCategory", values_to = "Value")
+
+data_tidy
+```
+
+
+
+Now let's plot the soy dissapearance
+
+```{r, fig.height= 5}
+# Plot the Marketing Year Data
+data_tidy %>% 
+  #filter(Quarter != "MY September-August") %>%
+  mutate(MktYear = as.integer(str_sub(MktYear, 1, 4))) %>%  # "1980/81" -> 1980
+  filter(UseCategory %in% c("Crush", "Exports")) %>%
+  ggplot(aes(x = MktYear, y = Value, color = UseCategory)) + 
+  geom_line() + 
+  theme_bw() +
+  labs(x = "", y = "Millions of bushels", title = "Soybean Quarterly Use Categories Since 1975")
+ggsave(filename = "ForecastingUseof-SoyUseCategories.png")
+
+
+data_tidy %>% 
+  #filter(Quarter == "MY September-August") %>%
+  mutate(MktYear = as.integer(str_sub(MktYear, 1, 4))) %>%  # "1980/81" -> 1980
+  filter(UseCategory %in% c("Exports", "TotalUse")) %>%
+  filter(!is.na(MktYear)) %>%
+  pivot_wider(names_from = UseCategory, values_from = Value) %>%
+  mutate(ProportionofUse = Exports/TotalUse) %>%
+  ggplot(aes(x = MktYear, y = ProportionofUse)) + 
+  geom_line(color = purduegold, size = .75) + 
+  theme_bw() +
+  labs(x = "", y = "Millions of bushels", title = "Soybean Marketing Year Exports as Proportion of Total Use")
+ggsave(filename = "ForecastingUseof-SoyUseCategoriesExportsPropofUse.png")
+
+data_tidy %>% 
+  #filter(Quarter == "MY September-August") %>%
+  mutate(MktYear = as.integer(str_sub(MktYear, 1, 4))) %>%  # "1980/81" -> 1980
+  filter(UseCategory %in% c("Crush", "TotalUse")) %>%
+  filter(!is.na(MktYear)) %>%
+  pivot_wider(names_from = UseCategory, values_from = Value) %>%
+  mutate(ProportionofUse = Crush/TotalUse) %>%
+  ggplot(aes(x = MktYear, y = ProportionofUse)) + 
+  geom_line(color = purduegold, size = .75) + 
+  theme_bw() +
+  labs(x = "", y = "Millions of bushels", title = "Soybean Marketing Year Crush as Proportion of Total Use")
+ggsave(filename = "ForecastingUseof-SoyUseCategoriesCrushPropofUse.png")
+
+
+
+library(stringr)
+
+prop_long <- data_tidy %>%
+  mutate(MktYear = as.integer(str_sub(MktYear, 1, 4))) %>%
+  filter(!is.na(MktYear)) %>%
+  filter(UseCategory %in% c("Exports", "Crush", "TotalUse")) %>%
+  group_by(MktYear, UseCategory) %>%
+  summarise(Value = sum(Value, na.rm = TRUE), .groups = "drop") %>%  # avoids list-cols if duplicates exist
+  pivot_wider(names_from = UseCategory, values_from = Value) %>%
+  transmute(
+    MktYear,
+    Exports = Exports / TotalUse,
+    Crush   = Crush   / TotalUse
+  ) %>%
+  pivot_longer(cols = c(Exports, Crush),
+               names_to = "UseCategory",
+               values_to = "ProportionofUse")
+
+ggplot(prop_long, aes(x = MktYear, y = ProportionofUse, color = UseCategory)) +
+  geom_line(size = 0.75) +
+  theme_bw() +
+  labs(x = "", y = "Proportion of Total Use",
+       title = "Soybean Marketing Year Use as Proportion of Total Use") +
+  scale_color_manual(values = c(Exports = purduegold, Crush = "black"))
+
+ggsave("ForecastingUseof-SoyUseCategories_Exports_Crush_PropofUse.png",
+       width = 8, height = 5, dpi = 300)
+
+
+
+
+```
+
+
 Ethanol
 
 ```{r, fig.height= 5}
@@ -1301,6 +1414,7 @@ ggsave(filename = "SouthAmericanProduction_TopProdCorn.png", width= 6, height = 
 ```
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.width= 6, fig.hight = 4}
+
 
 get_top_corn <- grains %>% 
                   filter(Market_Year == year) %>%

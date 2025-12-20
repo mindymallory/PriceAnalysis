@@ -1,7 +1,6 @@
 # Price Reaction to USDA Reports
 
-<span style="color:red">Interested in more? Please let me know by</span> [taking the survey](https://forms.gle/Q3VByCQZHjfQSy9D7)! 
-
+[Interested in more? Please let me know by]{style="color:red"} [taking the survey](https://forms.gle/Q3VByCQZHjfQSy9D7)!
 
 Some of the USDA reports contain very sensitive market information causing market prices to adjust rapidly to new information about supply and demand. Access to the contents of a market sensitive report would result in the ability to perform 'insider trading' and obtain nearly risk-less profits. This activity is illegal, and the USDA's Interagency Commodity Estimates Committees prepares the reports under lock-down conditions where during the process of finalizing estimates of the report's content, officials are locked in a secure area and not allowed to leave until the report is made known to the public.
 
@@ -23,9 +22,9 @@ Source: [NASS: About Nass](pdf-Readings\safegaurding-americas-agricultural-stati
 >
 > The scheme came to light following the cotton acreage report issued on June 2, 1905. The three members met and adopted the state and national figures to be published. After Holmes had sent his signal, one of the other people who had worked on the report asked for reconsideration. After further review, the figures to be published were revised. At that point, the outside partner had already interpreted the original signal and proceeded to place trades. The scheme came to light when Van Riper charged in a telegram that a "fraudulent" report had been released. In explaining why he thought this was a false report, he unwittingly revealed that he had the information ahead of time. Evidently, Holmes' outside partner had an overabundance of ego, but not a good balance of common sense in going public with his story. [@allen_safeguarding_2007]
 
-This story is quite similar to the plot line of the 1980's movie, [Trading Places](http://www.imdb.com/title/tt0086465/).[^pricereactionto-1] Where the protagonists (Dan Aykroyd and Eddie Murphey) trick to antagonists, the Duke Brothers by replacing the 'Orange Juice Crop Report' that they obtained illegally with a forged one that would cause exactly the opposite price effect. They started buying before the report to profit and Dan Aykroyd and Eddie Murphey start selling based on the correct crop report information. The frenzy on the trading floor captures the feeling of what happens during crop reports that move the market, even if there is no longer trading on a physical floor as shown in the movie.
+This story is quite similar to the plot line of the 1980's movie, [Trading Places](http://www.imdb.com/title/tt0086465/).[^12-forecastingproduction-1] Where the protagonists (Dan Aykroyd and Eddie Murphey) trick to antagonists, the Duke Brothers by replacing the 'Orange Juice Crop Report' that they obtained illegally with a forged one that would cause exactly the opposite price effect. They started buying before the report to profit and Dan Aykroyd and Eddie Murphey start selling based on the correct crop report information. The frenzy on the trading floor captures the feeling of what happens during crop reports that move the market, even if there is no longer trading on a physical floor as shown in the movie.
 
-[^pricereactionto-1]: Anyone interested in a career in trading should watch this movie and then watch it again. You still hear references to the movie.
+[^12-forecastingproduction-1]: Anyone interested in a career in trading should watch this movie and then watch it again. You still hear references to the movie.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/1tmI867fAYU" frameborder="0" allowfullscreen>
 
@@ -47,21 +46,14 @@ By 2011, presumably due to the ability to trade electronically with high speed, 
 
 Market prices react strongly to USDA reports when the reports inject significant and unanticipated information into the market. Some reports are more likely than others to produce fireworks in terms of market price.
 
-+-----------------------+--------------+----------------------------------------------------------------------------------------------------------------------+
-| Report                | Dates        | Reason                                                                                                               |
-+=======================+==============+======================================================================================================================+
-| Grain Stocks          | Quarterly    | Information about scarcity or surplus of supplies                                                                    |
-+-----------------------+--------------+----------------------------------------------------------------------------------------------------------------------+
-| Prospective Plantings | End of March | Acreage and therefore production estimates                                                                           |
-+-----------------------+--------------+----------------------------------------------------------------------------------------------------------------------+
-| Planted Acres         | End of June  | Acreage and therefore production estimates                                                                           |
-+-----------------------+--------------+----------------------------------------------------------------------------------------------------------------------+
-| WASDE                 | October      | Some years the Oct report will contain significant revisions from previous estimate                                  |
-+-----------------------+--------------+----------------------------------------------------------------------------------------------------------------------+
-| WASDE                 | January      | Final production estimate for the preceding harvest. Sometimes includes and unanticipated revision                   |
-+-----------------------+--------------+----------------------------------------------------------------------------------------------------------------------+
-| Crop Progress Report  | Weekly       | Condition estimates. Only moves market prices if significant deterioration associated with a drought or flood occurs |
-+-----------------------+--------------+----------------------------------------------------------------------------------------------------------------------+
+| Report | Dates | Reason |
+|----|----|----|
+| Grain Stocks | Quarterly | Information about scarcity or surplus of supplies |
+| Prospective Plantings | End of March | Acreage and therefore production estimates |
+| Planted Acres | End of June | Acreage and therefore production estimates |
+| WASDE | October | Some years the Oct report will contain significant revisions from previous estimate |
+| WASDE | January | Final production estimate for the preceding harvest. Sometimes includes and unanticipated revision |
+| Crop Progress Report | Weekly | Condition estimates. Only moves market prices if significant deterioration associated with a drought or flood occurs |
 
 : Table 1: Reports most likely to cause significant movements in market price
 
