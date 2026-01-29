@@ -1,0 +1,1977 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketing, Hedging, and Crop Insurance</title>
+
+    <!-- Fonts: Professional academic pairing -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* ===========================================
+           CSS CUSTOM PROPERTIES (THEME)
+           Professional dark theme for educational content
+           =========================================== */
+        :root {
+            /* Colors - Midnight Executive palette */
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --bg-tertiary: #334155;
+            --text-primary: #f8fafc;
+            --text-secondary: #cbd5e1;
+            --text-muted: #94a3b8;
+            --accent: #fbbf24;
+            --accent-secondary: #3b82f6;
+            --success: #22c55e;
+            --warning: #f97316;
+            --danger: #ef4444;
+            --border: #475569;
+
+            /* Typography */
+            --font-display: 'Libre Baskerville', serif;
+            --font-body: 'Source Sans 3', sans-serif;
+
+            /* Spacing */
+            --slide-padding: clamp(2rem, 5vw, 4rem);
+
+            /* Animation */
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+            --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+            --duration-normal: 0.6s;
+            --duration-fast: 0.3s;
+        }
+
+        /* ===========================================
+           BASE STYLES
+           =========================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-snap-type: y mandatory;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* ===========================================
+           SLIDE CONTAINER
+           =========================================== */
+        .slide {
+            min-height: 100vh;
+            padding: var(--slide-padding);
+            scroll-snap-align: start;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* ===========================================
+           SLIDE VARIATIONS
+           =========================================== */
+        .title-slide {
+            text-align: center;
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+        }
+
+        .title-slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at 30% 20%, rgba(251, 191, 36, 0.1) 0%, transparent 50%),
+                        radial-gradient(ellipse at 70% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .section-slide {
+            background: var(--bg-secondary);
+        }
+
+        .section-slide.warning-theme {
+            background: linear-gradient(135deg, #1a1207 0%, #1e293b 100%);
+        }
+
+        .content-slide {
+            background: var(--bg-primary);
+        }
+
+        /* ===========================================
+           TYPOGRAPHY
+           =========================================== */
+        h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 6vw, 3.5rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        h2 {
+            font-family: var(--font-display);
+            font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+        }
+
+        h3 {
+            font-family: var(--font-body);
+            font-size: clamp(1.1rem, 2vw, 1.35rem);
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        p {
+            font-size: clamp(1rem, 1.8vw, 1.15rem);
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .lead {
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            color: var(--text-secondary);
+            margin-top: 1rem;
+        }
+
+        .chapter-number {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .citation {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        .source {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 1.5rem;
+            border-top: 1px solid var(--border);
+            padding-top: 1rem;
+        }
+
+        /* ===========================================
+           LISTS
+           =========================================== */
+        ul, ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            font-size: clamp(1rem, 1.8vw, 1.15rem);
+            margin-bottom: 0.6rem;
+            color: var(--text-secondary);
+        }
+
+        li::marker {
+            color: var(--accent);
+        }
+
+        li strong {
+            color: var(--text-primary);
+        }
+
+        /* Highlight lists */
+        .highlight-list {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .highlight-list li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .highlight-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5em;
+            width: 10px;
+            height: 10px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        /* Numbered concept list */
+        .concept-list {
+            list-style: none;
+            margin-left: 0;
+            counter-reset: concept;
+        }
+
+        .concept-list li {
+            position: relative;
+            padding-left: 3rem;
+            margin-bottom: 1.5rem;
+            counter-increment: concept;
+        }
+
+        .concept-list li::before {
+            content: counter(concept);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2rem;
+            height: 2rem;
+            background: var(--accent);
+            color: var(--bg-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        /* ===========================================
+           CARDS & BOXES
+           =========================================== */
+        .card {
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--accent);
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.25rem;
+            margin-top: 1.5rem;
+        }
+
+        .card-grid-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .definition-card {
+            background: var(--bg-tertiary);
+            border-radius: 8px;
+            padding: 1.25rem;
+            border-left: 4px solid var(--accent-secondary);
+        }
+
+        .definition-card h3 {
+            color: var(--accent-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .warning-box {
+            background: rgba(249, 115, 22, 0.15);
+            border: 1px solid var(--warning);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .warning-box h3 {
+            color: var(--warning);
+        }
+
+        .danger-box {
+            background: rgba(239, 68, 68, 0.15);
+            border: 1px solid var(--danger);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .danger-box h3 {
+            color: var(--danger);
+        }
+
+        .key-point {
+            background: rgba(251, 191, 36, 0.1);
+            border: 1px solid var(--accent);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .key-point h3 {
+            color: var(--accent);
+        }
+
+        .success-box {
+            background: rgba(34, 197, 94, 0.1);
+            border: 1px solid var(--success);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .success-box h3 {
+            color: var(--success);
+        }
+
+        .example-box {
+            background: var(--bg-tertiary);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border: 1px solid var(--border);
+        }
+
+        /* ===========================================
+           IMAGES
+           =========================================== */
+        .slide-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            margin: 1rem 0;
+        }
+
+        .image-container {
+            text-align: center;
+        }
+
+        .image-caption {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+
+        /* ===========================================
+           TWO COLUMN LAYOUT
+           =========================================== */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            align-items: start;
+        }
+
+        .two-column-60-40 {
+            grid-template-columns: 1.5fr 1fr;
+        }
+
+        .two-column-40-60 {
+            grid-template-columns: 1fr 1.5fr;
+        }
+
+        @media (max-width: 768px) {
+            .two-column,
+            .two-column-60-40,
+            .two-column-40-60 {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .card-grid-3 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===========================================
+           TIMELINE
+           =========================================== */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--accent);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 1.75rem;
+            padding-left: 1.5rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.35rem;
+            top: 0.4rem;
+            width: 12px;
+            height: 12px;
+            background: var(--accent);
+            border-radius: 50%;
+            border: 3px solid var(--bg-primary);
+        }
+
+        .timeline-date {
+            font-weight: 700;
+            color: var(--accent);
+            font-size: 1.1rem;
+        }
+
+        /* ===========================================
+           FORMULA/EQUATION BOX
+           =========================================== */
+        .formula-box {
+            background: var(--bg-tertiary);
+            border-radius: 8px;
+            padding: 1.25rem 1.5rem;
+            margin: 1.25rem 0;
+            text-align: center;
+            font-family: 'Georgia', serif;
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+        }
+
+        .formula-box .highlight {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .formula-box .blue {
+            color: var(--accent-secondary);
+            font-weight: 700;
+        }
+
+        .formula-box-large {
+            font-size: 1.4rem;
+            padding: 1.5rem 2rem;
+        }
+
+        /* ===========================================
+           COMPARISON TABLE
+           =========================================== */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 1rem;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .comparison-table th {
+            background: var(--bg-tertiary);
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .comparison-table td {
+            color: var(--text-secondary);
+        }
+
+        .comparison-table tr:hover td {
+            background: rgba(251, 191, 36, 0.05);
+        }
+
+        /* ===========================================
+           STAT BOXES
+           =========================================== */
+        .stat-box {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--bg-tertiary);
+            border-radius: 8px;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--accent);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+
+        /* ===========================================
+           INTERACTIVE LINK
+           =========================================== */
+        .interactive-link {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--bg-primary);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform var(--duration-fast) var(--ease-out-quart),
+                        box-shadow var(--duration-fast) var(--ease-out-quart);
+        }
+
+        .interactive-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(251, 191, 36, 0.3);
+        }
+
+        /* ===========================================
+           VERSUS / COMPARISON
+           =========================================== */
+        .vs-container {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .vs-divider {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            padding: 0 1rem;
+        }
+
+        /* ===========================================
+           ANIMATIONS
+           =========================================== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity var(--duration-normal) var(--ease-out-expo),
+                        transform var(--duration-normal) var(--ease-out-expo);
+        }
+
+        .slide.visible .reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+        .reveal-delay-5 { transition-delay: 0.5s; }
+        .reveal-delay-6 { transition-delay: 0.6s; }
+
+        /* ===========================================
+           PROGRESS BAR & NAV
+           =========================================== */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: var(--accent);
+            width: 0%;
+            z-index: 1000;
+            transition: width 0.3s ease;
+        }
+
+        .nav-dots {
+            position: fixed;
+            right: 1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .nav-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--border);
+            cursor: pointer;
+            transition: background var(--duration-fast) var(--ease-out-quart),
+                        transform var(--duration-fast) var(--ease-out-quart);
+            border: none;
+        }
+
+        .nav-dot:hover {
+            background: var(--text-secondary);
+            transform: scale(1.2);
+        }
+
+        .nav-dot.active {
+            background: var(--accent);
+        }
+
+        .slide-number {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            z-index: 100;
+        }
+
+        .keyboard-hint {
+            position: fixed;
+            bottom: 2rem;
+            left: 2rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            z-index: 100;
+            opacity: 0.6;
+        }
+
+        .keyboard-hint kbd {
+            background: var(--bg-tertiary);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: inherit;
+            margin: 0 0.2rem;
+        }
+
+        /* ===========================================
+           REDUCED MOTION & MOBILE
+           =========================================== */
+        @media (prefers-reduced-motion: reduce) {
+            .reveal {
+                transition: opacity 0.3s ease;
+                transform: none;
+            }
+            html {
+                scroll-behavior: auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-dots,
+            .keyboard-hint {
+                display: none;
+            }
+            .slide {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar"></div>
+    <nav class="nav-dots" aria-label="Slide navigation"></nav>
+    <div class="slide-number">1 / 36</div>
+    <div class="keyboard-hint">
+        <kbd>←</kbd> <kbd>→</kbd> or <kbd>Space</kbd> to navigate
+    </div>
+
+    <!-- ===========================================
+         SLIDE 1: TITLE
+         =========================================== -->
+    <section class="slide title-slide" data-slide="1">
+        <div class="slide-content">
+            <p class="chapter-number reveal">Chapter 8</p>
+            <h1 class="reveal reveal-delay-1">Marketing, Hedging, and Crop Insurance</h1>
+            <p class="subtitle reveal reveal-delay-2">Understanding how crop insurance complements—and complicates—your marketing decisions</p>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 2: KEY TAKEAWAYS
+         =========================================== -->
+    <section class="slide content-slide" data-slide="2">
+        <div class="slide-content">
+            <h2 class="reveal">Key Takeaways</h2>
+            <ol class="concept-list">
+                <li class="reveal reveal-delay-1">
+                    <strong>Catastrophic Protection</strong><br>
+                    Purchasing crop insurance provides protection against catastrophic loss in the event of crop failure, and/or significant price decline between planting and harvest
+                </li>
+                <li class="reveal reveal-delay-2">
+                    <strong>Variable Protection</strong><br>
+                    How much protection crop insurance alone provides varies based on pre-harvest price movements
+                </li>
+                <li class="reveal reveal-delay-3">
+                    <strong>Insurance ≠ Marketing Plan</strong><br>
+                    Crop insurance alone does not provide an optimal marketing plan for some scenarios of price movement planting-harvest
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 3: CONTEXT - WHY THIS MATTERS
+         =========================================== -->
+    <section class="slide section-slide" data-slide="3">
+        <div class="slide-content">
+            <h2 class="reveal">Why This Matters</h2>
+            <p class="lead reveal reveal-delay-1">
+                Currently crop insurance dominates the landscape of federally sponsored farm programs for risk management.
+            </p>
+            <div class="card-grid reveal reveal-delay-2">
+                <div class="stat-box">
+                    <div class="stat-number">90%</div>
+                    <div class="stat-label">of U.S. cropland is insured</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">62%</div>
+                    <div class="stat-label">federal premium subsidy</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">30+</div>
+                    <div class="stat-label">years as dominant risk tool</div>
+                </div>
+            </div>
+            <p class="reveal reveal-delay-3" style="margin-top: 1.5rem;">
+                Understanding how crop insurance interacts with marketing decisions is essential for modern commodity producers.
+            </p>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 4: HISTORY SECTION INTRO
+         =========================================== -->
+    <section class="slide content-slide" data-slide="4">
+        <div class="slide-content">
+            <h2 class="reveal">A Brief History of Federal Farm Support</h2>
+            <p class="lead reveal reveal-delay-1">
+                The history of market interventions and price supports in the United States is long and varied.
+            </p>
+            <p class="reveal reveal-delay-2">
+                Understanding the economic and political motivations for moving from price supports and ad hoc disaster payments to federally subsidized crop insurance helps explain why the current system works the way it does.
+            </p>
+            <div class="key-point reveal reveal-delay-3">
+                <h3>The Core Question</h3>
+                <p>Why did we move away from price supports and disaster payments to the current crop insurance system?</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 5: PROBLEMS WITH PRICE SUPPORTS - ECONOMIC
+         =========================================== -->
+    <section class="slide section-slide" data-slide="5">
+        <div class="slide-content">
+            <h2 class="reveal">Problem #1: Price Supports Distort Markets</h2>
+            <div class="two-column">
+                <div>
+                    <div class="danger-box reveal reveal-delay-1">
+                        <h3>Economic Inefficiency</h3>
+                        <p>Price supports create inefficiency in production decisions by:</p>
+                        <ul>
+                            <li>Artificially raising the return to production</li>
+                            <li>Incentivizing <strong>overproduction</strong></li>
+                            <li>Distorting resource allocation</li>
+                            <li>Encouraging production on marginal land</li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <div class="warning-box reveal reveal-delay-2">
+                        <h3>Market Distortion Mechanism</h3>
+                        <p>When prices are supported above market-clearing levels:</p>
+                        <ul>
+                            <li>Quantity supplied exceeds quantity demanded</li>
+                            <li>Government must purchase surplus</li>
+                            <li>Storage and disposal costs accumulate</li>
+                            <li>Deadweight loss to society</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 6: PROBLEMS WITH PRICE SUPPORTS - TRADE
+         =========================================== -->
+    <section class="slide content-slide" data-slide="6">
+        <div class="slide-content">
+            <h2 class="reveal">Problem #2: Trade Partner Conflicts</h2>
+            <p class="lead reveal reveal-delay-1">
+                Price supports generate ill will with trading partners through subsidizing too much production and lowering world prices to the detriment of farmers in other countries.
+            </p>
+            <div class="card-grid reveal reveal-delay-2">
+                <div class="card">
+                    <h3>Mechanism</h3>
+                    <ul>
+                        <li>U.S. overproduction floods world markets</li>
+                        <li>Excess supply depresses global commodity prices</li>
+                        <li>Foreign farmers face unfair competition</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Consequences</h3>
+                    <ul>
+                        <li>Trade disputes and retaliatory tariffs</li>
+                        <li>WTO complaints against U.S.</li>
+                        <li>Diplomatic friction with allies</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="reveal reveal-delay-3 citation" style="margin-top: 1rem;">
+                This was a major driver of the shift away from commodity price supports in the 1980s and 1990s.
+            </p>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 7: PROBLEMS WITH AD HOC DISASTER PAYMENTS
+         =========================================== -->
+    <section class="slide section-slide" data-slide="7">
+        <div class="slide-content">
+            <h2 class="reveal">Problem #3: Ad Hoc Disaster Payments</h2>
+            <p class="lead reveal reveal-delay-1">
+                Ad hoc disaster payments are payments made when there is a large unexpected crop failure.
+            </p>
+            <div class="two-column">
+                <div>
+                    <div class="danger-box reveal reveal-delay-2">
+                        <h3>Unpredictable Timing</h3>
+                        <p>No one knows <em>when</em> disasters will strike.</p>
+                        <ul>
+                            <li>Droughts, floods, freezes occur randomly</li>
+                            <li>Congress must act after the fact</li>
+                            <li>Political process is slow</li>
+                            <li>Farmers wait months for relief</li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <div class="danger-box reveal reveal-delay-3">
+                        <h3>Unpredictable Size</h3>
+                        <p>No one knows <em>how much</em> will be needed.</p>
+                        <ul>
+                            <li>Magnitude varies enormously</li>
+                            <li>Budget planning impossible</li>
+                            <li>Creates fiscal uncertainty</li>
+                            <li>Political battles over funding</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="key-point reveal reveal-delay-4">
+                <h3>The Political Appetite</h3>
+                <p>Both of these problems—market distortion and unpredictable costs—created an appetite among lawmakers for a farm support program whose cost was more predictable.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 8: TWO CHALLENGES INTRO
+         =========================================== -->
+    <section class="slide content-slide" data-slide="8">
+        <div class="slide-content">
+            <h2 class="reveal">The Rise of Crop Insurance</h2>
+            <p class="lead reveal reveal-delay-1">
+                Over the last 30 years crop insurance has come to be the dominant way in which federally sponsored risk management is administered to commodity producers.
+            </p>
+            <p class="reveal reveal-delay-2">
+                However, two challenges had to be overcome for crop insurance to work:
+            </p>
+            <div class="card-grid reveal reveal-delay-3">
+                <div class="definition-card">
+                    <h3>Challenge #1</h3>
+                    <p><strong>Market Failure</strong></p>
+                    <p>Crop insurance cannot be offered exclusively by the private sector</p>
+                </div>
+                <div class="definition-card">
+                    <h3>Challenge #2</h3>
+                    <p><strong>Low Participation</strong></p>
+                    <p>Early programs (1930s–1980s) didn't attract sufficient farmer usage</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 9: CHALLENGE 1 - MARKET FAILURE
+         =========================================== -->
+    <section class="slide section-slide" data-slide="9">
+        <div class="slide-content">
+            <h2 class="reveal">Challenge #1: Why Private Markets Fail</h2>
+            <p class="lead reveal reveal-delay-1">
+                Crop insurance is a product that is not possible to be offered exclusively by the private sector.
+            </p>
+            <div class="key-point reveal reveal-delay-2">
+                <h3>When Do Private Insurance Markets Work?</h3>
+                <p>Insurance markets can exist in the private sector when:</p>
+                <ul>
+                    <li>Insured losses are relatively <strong>small</strong> (compared to premiums collected)</li>
+                    <li>Losses are <strong>predictable</strong> from year to year</li>
+                </ul>
+            </div>
+            <div class="danger-box reveal reveal-delay-3">
+                <h3>Crop Insurance Is Neither</h3>
+                <p>Crop losses fail both conditions for a functioning private insurance market.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 10: CORRELATED LOSSES
+         =========================================== -->
+    <section class="slide content-slide" data-slide="10">
+        <div class="slide-content">
+            <h2 class="reveal">The Correlated Loss Problem</h2>
+            <p class="lead reveal reveal-delay-1">
+                Losses are typically <strong>highly correlated</strong>.
+            </p>
+            <div class="example-box reveal reveal-delay-2">
+                <h3>How This Works</h3>
+                <p>When there is a crop failure, most farmers in the affected region experience a loss and make a claim on the policy simultaneously.</p>
+                <ul>
+                    <li>A drought doesn't hit just one farm—it hits an entire region</li>
+                    <li>A flood affects all farms in the watershed</li>
+                    <li>A freeze damages crops across multiple counties</li>
+                </ul>
+            </div>
+            <div class="danger-box reveal reveal-delay-3">
+                <h3>The Liquidity Problem</h3>
+                <p>This makes it very hard for a private insurance company to ensure they have enough <strong>liquidity</strong> to pay for losses in the event of a widespread crop failure.</p>
+                <p style="margin-top: 1rem;"><strong>Result:</strong> Without a federal backstop to the policies, the private market could never offer crop insurance.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 11: CHALLENGE 2 - LOW PARTICIPATION
+         =========================================== -->
+    <section class="slide section-slide" data-slide="11">
+        <div class="slide-content">
+            <h2 class="reveal">Challenge #2: Low Participation</h2>
+            <p class="lead reveal reveal-delay-1">
+                The first crop insurance programs administered by the federal government from the 1930s to the 1980s did not attract sufficient usage among farmers to prevent the passage of additional ad hoc disaster payments.
+            </p>
+            <div class="warning-box reveal reveal-delay-2">
+                <h3>Why This Is a Problem</h3>
+                <p>The administration of the federal crop insurance program is costly.</p>
+                <p style="margin-top: 0.75rem;">If taxpayers have to pay to administer the crop insurance program <strong>AND</strong> pay for ad hoc disaster payments from time to time:</p>
+                <ul>
+                    <li>The program is not meeting its purpose</li>
+                    <li>Taxpayers are paying for <strong>two solutions</strong> at once</li>
+                    <li>This is wasteful and politically unsustainable</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 12: POLICY EVOLUTION - 1980
+         =========================================== -->
+    <section class="slide content-slide" data-slide="12">
+        <div class="slide-content">
+            <h2 class="reveal">Policy Evolution: The 1980s</h2>
+            <div class="timeline reveal reveal-delay-1">
+                <div class="timeline-item">
+                    <span class="timeline-date">1930s–1980</span>
+                    <p>Early federal crop insurance programs struggle with low voluntary participation. Farmers don't buy coverage, then demand disaster payments when crops fail.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">1980</span>
+                    <p><strong>Federal Crop Insurance Act of 1980</strong></p>
+                    <p style="margin-top: 0.5rem;">Congress attempts to solve the participation problem by making purchase of crop insurance coverage <strong>mandatory</strong> for farmers to receive other program payments.</p>
+                </div>
+            </div>
+            <div class="key-point reveal reveal-delay-2">
+                <h3>The Logic</h3>
+                <p>If you want government farm program benefits, you must also carry crop insurance. This was meant to increase participation and reduce the need for ad hoc disaster payments.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 13: POLICY EVOLUTION - 1994
+         =========================================== -->
+    <section class="slide section-slide" data-slide="13">
+        <div class="slide-content">
+            <h2 class="reveal">Policy Evolution: The 1990s</h2>
+            <div class="timeline reveal reveal-delay-1">
+                <div class="timeline-item">
+                    <span class="timeline-date">1994</span>
+                    <p><strong>Crop Insurance Reform Act of 1994</strong></p>
+                    <p style="margin-top: 0.5rem;">The mandatory coverage requirement was removed in favor of <strong>premium subsidies</strong>.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">Post-1994</span>
+                    <p>Congress increased the subsidy rate for crop insurance premiums to levels where farmers <strong>voluntarily</strong> purchase enough coverage to reduce the need for frequent disaster payments.</p>
+                </div>
+            </div>
+            <div class="success-box reveal reveal-delay-2">
+                <h3>The New Approach</h3>
+                <p>Rather than forcing farmers to buy insurance (which was politically unpopular), make insurance so cheap through subsidies that farmers voluntarily choose to participate.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 14: TODAY - 62% SUBSIDY
+         =========================================== -->
+    <section class="slide content-slide" data-slide="14">
+        <div class="slide-content">
+            <h2 class="reveal">The Current System</h2>
+            <div class="stat-box reveal reveal-delay-1" style="max-width: 400px; margin: 0 auto 2rem;">
+                <div class="stat-number">62%</div>
+                <div class="stat-label">Average federal subsidy of crop insurance premiums</div>
+            </div>
+            <div class="two-column reveal reveal-delay-2">
+                <div class="card">
+                    <h3>What This Means</h3>
+                    <p>When a farmer buys a crop insurance policy, the federal government pays approximately <strong>62 cents of every dollar</strong> of the premium cost.</p>
+                    <p style="margin-top: 0.75rem;">The farmer only pays the remaining 38%.</p>
+                </div>
+                <div class="card">
+                    <h3>The Result</h3>
+                    <p>With premiums this heavily subsidized, farmers voluntarily purchase sufficient coverage that frequent ad hoc disaster payments are no longer needed.</p>
+                    <p style="margin-top: 0.75rem;">The system is self-sustaining.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 15: CROP INSURANCE TYPES INTRO
+         =========================================== -->
+    <section class="slide section-slide" data-slide="15">
+        <div class="slide-content">
+            <h2 class="reveal">Overview of Crop Insurance Offerings</h2>
+            <p class="lead reveal reveal-delay-1">
+                There are several types of crop insurance available, each offering different kinds of protection.
+            </p>
+            <div class="card-grid reveal reveal-delay-2">
+                <div class="definition-card">
+                    <h3>Yield-Based</h3>
+                    <ul>
+                        <li>Yield Protection</li>
+                        <li>Area Yield Protection</li>
+                    </ul>
+                    <p style="margin-top: 0.5rem; font-size: 0.95rem;">Protects against production shortfalls</p>
+                </div>
+                <div class="definition-card">
+                    <h3>Revenue-Based</h3>
+                    <ul>
+                        <li>Revenue Protection</li>
+                        <li>Area Revenue Protection</li>
+                        <li>RP with Harvest Price Exclusion</li>
+                    </ul>
+                    <p style="margin-top: 0.5rem; font-size: 0.95rem;">Protects against revenue shortfalls</p>
+                </div>
+            </div>
+            <div class="key-point reveal reveal-delay-3">
+                <h3>Individual vs. Area</h3>
+                <p><strong>Individual policies</strong> use your farm's Actual Production History (APH).</p>
+                <p><strong>Area policies</strong> use county-level yields instead.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 16: YIELD PROTECTION - OVERVIEW
+         =========================================== -->
+    <section class="slide content-slide" data-slide="16">
+        <div class="slide-content">
+            <h2 class="reveal">Yield Protection</h2>
+            <div class="definition-card reveal reveal-delay-1" style="border-left-color: var(--accent);">
+                <h3 style="color: var(--accent);">Definition</h3>
+                <p style="font-size: 1.15rem;">Yield Protection guarantees against a loss of production less than a percent of <strong>Actual Production History (APH)</strong>.</p>
+            </div>
+            <div class="card-grid reveal reveal-delay-2">
+                <div class="card">
+                    <h3>When Are Indemnities Paid?</h3>
+                    <p>Indemnities are paid when production falls below the guaranteed level (coverage % × APH).</p>
+                </div>
+                <div class="card">
+                    <h3>How Are Indemnities Calculated?</h3>
+                    <p>Payments are based on that production year's <strong>projected price</strong>.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 17: YIELD PROTECTION - PROJECTED PRICE
+         =========================================== -->
+    <section class="slide section-slide" data-slide="17">
+        <div class="slide-content">
+            <h2 class="reveal">Yield Protection: The Projected Price</h2>
+            <div class="key-point reveal reveal-delay-1">
+                <h3>How the Projected Price is Determined</h3>
+                <p>For corn and soybeans, the projected price is the <strong>average of the new crop futures settlement prices during February</strong>.</p>
+            </div>
+            <div class="formula-box formula-box-large reveal reveal-delay-2">
+                Indemnity = (<span class="highlight">Coverage %</span> × APH − Actual Production) × <span class="blue">Projected Price</span>
+            </div>
+            <div class="example-box reveal reveal-delay-3">
+                <h3>Example</h3>
+                <p>If you have an 85% coverage level, 200 bu/acre APH, produce only 140 bu/acre, and the projected price is $5.00:</p>
+                <p style="margin-top: 0.5rem;"><strong>Guaranteed yield:</strong> 85% × 200 = 170 bu/acre</p>
+                <p><strong>Shortfall:</strong> 170 − 140 = 30 bu/acre</p>
+                <p><strong>Indemnity:</strong> 30 × $5.00 = <span style="color: var(--accent);">$150/acre</span></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 18: AREA YIELD PROTECTION
+         =========================================== -->
+    <section class="slide content-slide" data-slide="18">
+        <div class="slide-content">
+            <h2 class="reveal">Area Yield Protection</h2>
+            <div class="definition-card reveal reveal-delay-1" style="border-left-color: var(--accent);">
+                <h3 style="color: var(--accent);">How It Differs</h3>
+                <p style="font-size: 1.15rem;">Area Yield Protection is similar to Yield Protection, but the yield guarantee is based on <strong>county yields</strong>, not the individual producer's APH.</p>
+            </div>
+            <div class="two-column reveal reveal-delay-2">
+                <div class="card">
+                    <h3>Advantages</h3>
+                    <ul>
+                        <li>Lower premiums (less adverse selection risk)</li>
+                        <li>Less paperwork and verification</li>
+                        <li>No need to document individual APH</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Disadvantages</h3>
+                    <ul>
+                        <li>Your loss may not match county average</li>
+                        <li>Basis risk if your farm differs from county</li>
+                        <li>May not trigger when you need it</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 19: REVENUE PROTECTION - INTRO
+         =========================================== -->
+    <section class="slide section-slide" data-slide="19">
+        <div class="slide-content">
+            <h2 class="reveal">Revenue Protection</h2>
+            <p class="lead reveal reveal-delay-1">
+                Since farmers are concerned with <strong>revenue loss</strong>, not necessarily yield loss, this type of contract gained popularity.
+            </p>
+            <div class="key-point reveal reveal-delay-2">
+                <h3>The Key Insight</h3>
+                <p>A farmer can have adequate yield but still lose money if prices collapse. Conversely, low yields with high prices might still produce acceptable revenue.</p>
+                <p style="margin-top: 0.75rem;"><strong>Revenue = Price × Quantity</strong></p>
+                <p>Both components matter to the farmer's bottom line.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 20: REVENUE PROTECTION - THE FORMULA
+         =========================================== -->
+    <section class="slide content-slide" data-slide="20">
+        <div class="slide-content">
+            <h2 class="reveal">Revenue Protection: The Formula</h2>
+            <div class="definition-card reveal reveal-delay-1" style="border-left-color: var(--accent);">
+                <h3 style="color: var(--accent);">Revenue Guarantee</h3>
+                <p>Revenue Protection guarantees against loss of revenue below:</p>
+                <div class="formula-box formula-box-large">
+                    APH × <span class="highlight">max</span>(Projected Price, Harvest Price)
+                </div>
+            </div>
+            <div class="two-column reveal reveal-delay-2">
+                <div class="card">
+                    <h3>Projected Price</h3>
+                    <p>The new crop futures price in <strong>February</strong></p>
+                    <p style="font-size: 0.95rem; color: var(--text-muted); margin-top: 0.5rem;">Set before planting decisions are made</p>
+                </div>
+                <div class="card">
+                    <h3>Harvest Price</h3>
+                    <p>The new crop futures price at <strong>harvest</strong></p>
+                    <p style="font-size: 0.95rem; color: var(--text-muted); margin-top: 0.5rem;">Reflects actual market conditions at delivery</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 21: WHY MAX OF TWO PRICES
+         =========================================== -->
+    <section class="slide section-slide" data-slide="21">
+        <div class="slide-content">
+            <h2 class="reveal">Why max(Projected, Harvest)?</h2>
+            <p class="lead reveal reveal-delay-1">
+                The "max" function provides upside price protection while maintaining downside protection.
+            </p>
+            <div class="card-grid reveal reveal-delay-2">
+                <div class="success-box">
+                    <h3>If Prices Rise</h3>
+                    <p>Harvest Price > Projected Price</p>
+                    <p style="margin-top: 0.75rem;">Your revenue guarantee <strong>increases</strong> with the market. If you have a yield shortfall, you're compensated at the higher harvest price.</p>
+                </div>
+                <div class="card" style="border-left-color: var(--accent-secondary);">
+                    <h3>If Prices Fall</h3>
+                    <p>Projected Price > Harvest Price</p>
+                    <p style="margin-top: 0.75rem;">Your revenue guarantee stays at the <strong>original projected price</strong>. You're protected from the price decline.</p>
+                </div>
+            </div>
+            <p class="reveal reveal-delay-3 citation" style="margin-top: 1.5rem;">
+                This feature makes Revenue Protection particularly attractive in volatile markets—you benefit from price increases but are protected from price declines.
+            </p>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 22: AREA REVENUE PROTECTION
+         =========================================== -->
+    <section class="slide content-slide" data-slide="22">
+        <div class="slide-content">
+            <h2 class="reveal">Area Revenue Protection</h2>
+            <div class="definition-card reveal reveal-delay-1" style="border-left-color: var(--accent);">
+                <h3 style="color: var(--accent);">How It Differs</h3>
+                <p style="font-size: 1.15rem;">Area Revenue Protection, similar to Area Yield Protection, calculates the revenue guarantee against the <strong>county APH</strong> rather than the producer's APH.</p>
+            </div>
+            <div class="formula-box reveal reveal-delay-2">
+                Revenue Guarantee = <span class="blue">County APH</span> × <span class="highlight">max</span>(Projected Price, Harvest Price)
+            </div>
+            <p class="reveal reveal-delay-3">
+                Same trade-offs as Area Yield Protection: lower premiums but basis risk if your farm's performance differs from the county average.
+            </p>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 23: RP WITH HARVEST PRICE EXCLUSION
+         =========================================== -->
+    <section class="slide section-slide" data-slide="23">
+        <div class="slide-content">
+            <h2 class="reveal">Revenue Protection with Harvest Price Exclusion</h2>
+            <div class="definition-card reveal reveal-delay-1" style="border-left-color: var(--warning);">
+                <h3 style="color: var(--warning);">The Difference</h3>
+                <p style="font-size: 1.15rem;">Revenue Protection with Harvest Price Exclusion is the same as Revenue Protection, <strong>except</strong> the policy doesn't guarantee based on the Harvest Price.</p>
+            </div>
+            <div class="formula-box reveal reveal-delay-2">
+                Revenue Guarantee = APH × <span class="highlight">Projected Price</span>
+                <p style="font-size: 0.9rem; margin-top: 0.75rem; color: var(--text-secondary);">(NOT max of two prices)</p>
+            </div>
+            <div class="warning-box reveal reveal-delay-3">
+                <h3>What This Means</h3>
+                <p>If prices rise after February, your revenue guarantee does <strong>not</strong> increase.</p>
+                <p style="margin-top: 0.75rem;">You give up upside price protection in exchange for <strong>lower premiums</strong>.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 24: COMPARING INSURANCE TYPES
+         =========================================== -->
+    <section class="slide content-slide" data-slide="24">
+        <div class="slide-content">
+            <h2 class="reveal">Comparing Crop Insurance Types</h2>
+            <table class="comparison-table reveal reveal-delay-1">
+                <thead>
+                    <tr>
+                        <th>Policy Type</th>
+                        <th>Protects Against</th>
+                        <th>Price in Calculation</th>
+                        <th>Yield Basis</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Yield Protection</strong></td>
+                        <td>Yield loss</td>
+                        <td>Projected Price</td>
+                        <td>Individual APH</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Area Yield Protection</strong></td>
+                        <td>Yield loss</td>
+                        <td>Projected Price</td>
+                        <td>County APH</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Revenue Protection</strong></td>
+                        <td>Revenue loss</td>
+                        <td>max(Projected, Harvest)</td>
+                        <td>Individual APH</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Area Revenue Protection</strong></td>
+                        <td>Revenue loss</td>
+                        <td>max(Projected, Harvest)</td>
+                        <td>County APH</td>
+                    </tr>
+                    <tr>
+                        <td><strong>RP Harvest Price Exclusion</strong></td>
+                        <td>Revenue loss</td>
+                        <td>Projected Price only</td>
+                        <td>Individual APH</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 25: MARKETING SECTION INTRO
+         =========================================== -->
+    <section class="slide section-slide" data-slide="25">
+        <div class="slide-content">
+            <h2 class="reveal">Pre-Harvest Marketing Strategies</h2>
+            <h3 class="reveal reveal-delay-1" style="color: var(--text-secondary);">Paired with Crop Insurance Protection</h3>
+            <div class="stat-box reveal reveal-delay-2" style="max-width: 500px; margin: 2rem auto;">
+                <div class="stat-number">90%</div>
+                <div class="stat-label">of U.S. cropland is insured in some way in the Federal Crop Insurance program</div>
+            </div>
+            <p class="lead reveal reveal-delay-3" style="text-align: center;">
+                The rest of this section considers marketing strategies to lock in a forward price of <strong>insured</strong> bushels.
+            </p>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 26: WARNING - UNINSURED BUSHELS
+         =========================================== -->
+    <section class="slide content-slide warning-theme" data-slide="26">
+        <div class="slide-content">
+            <h2 class="reveal" style="color: var(--danger);">⚠️ Warning: Marketing Uninsured Bushels</h2>
+            <div class="danger-box reveal reveal-delay-1">
+                <h3>Critical Risk</h3>
+                <p style="font-size: 1.15rem;">Marketing uninsured bushels is <strong>very risky</strong> in the event of a crop failure.</p>
+            </div>
+            <div class="example-box reveal reveal-delay-2">
+                <h3>Example Scenario</h3>
+                <p>Suppose you entered into a forward contract to deliver <strong>1,000 bushels</strong> of corn at <strong>$5.00 per bushel</strong>, but you experienced yield losses so that you only made <strong>500 bushels</strong>.</p>
+            </div>
+            <div class="reveal reveal-delay-3">
+                <p style="color: var(--text-primary); font-size: 1.15rem; margin-bottom: 0.75rem;">
+                    <strong>The Problem:</strong> You cannot meet your obligation to deliver 1,000 bushels.
+                </p>
+                <p>In this case you will have to <strong>buy out the contract</strong>.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 27: THE CORRELATED RISK PROBLEM
+         =========================================== -->
+    <section class="slide section-slide" data-slide="27">
+        <div class="slide-content">
+            <h2 class="reveal">The Correlated Risk Problem</h2>
+            <p class="lead reveal reveal-delay-1">
+                You will have to buy 500 bushels in the spot market to fulfill your contract.
+            </p>
+            <div class="danger-box reveal reveal-delay-2">
+                <h3>The Bad News</h3>
+                <p style="font-size: 1.1rem;">Unfortunately for you, <strong>your crop failure is likely to be correlated with low production for many farmers</strong>.</p>
+                <p style="margin-top: 1rem; font-size: 1.15rem; color: var(--text-primary);">
+                    So prices are likely to be <strong style="color: var(--danger);">HIGH</strong> when you need to buy.
+                </p>
+            </div>
+            <div class="example-box reveal reveal-delay-3">
+                <h3>The Double Whammy</h3>
+                <ul>
+                    <li>You produced fewer bushels than expected</li>
+                    <li>The bushels you need to buy are more expensive than expected</li>
+                    <li>Your loss is <strong>magnified</strong> by the correlation</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 28: HOW RP ENABLES MARKETING
+         =========================================== -->
+    <section class="slide content-slide" data-slide="28">
+        <div class="slide-content">
+            <h2 class="reveal">How Revenue Protection Enables Marketing</h2>
+            <div class="success-box reveal reveal-delay-1">
+                <h3>The Safety Net</h3>
+                <p>If you have Revenue Protection crop insurance, you are guaranteed:</p>
+                <div class="formula-box">
+                    <span class="highlight">Coverage %</span> × APH × <span class="blue">max</span>(Base Price, Harvest Price)
+                </div>
+            </div>
+            <div class="key-point reveal reveal-delay-2">
+                <h3>Why This Matters</h3>
+                <p style="font-size: 1.1rem;">This revenue guarantee ensures you can at least <strong>buy out your forward contract</strong> in the event of a crop failure.</p>
+            </div>
+            <p class="reveal reveal-delay-3">
+                The insurance proceeds provide the cash needed to cover your obligation, even when spot prices are high due to regional production shortfalls.
+            </p>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 29: KEY INSIGHT 1 - PRICES FALL
+         =========================================== -->
+    <section class="slide section-slide" data-slide="29">
+        <div class="slide-content">
+            <h2 class="reveal">Key Insight #1: When Prices Fall</h2>
+            <p class="lead reveal reveal-delay-1">
+                From a hedging perspective, the marketing decision is <strong>trivial</strong> if prices fall after the base price is set.
+            </p>
+            <div class="key-point reveal reveal-delay-2">
+                <h3>You're Already Hedged</h3>
+                <p>You already have revenue protected at a level of:</p>
+                <div class="formula-box">
+                    Coverage Level × APH × Base Price
+                </div>
+                <p style="margin-top: 1rem;">So if price falls, <strong>you are already hedged</strong> by your Revenue Protection policy.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 30: SPECULATOR VS HEDGER
+         =========================================== -->
+    <section class="slide content-slide" data-slide="30">
+        <div class="slide-content">
+            <h2 class="reveal">Hedger vs. Speculator</h2>
+            <div class="two-column">
+                <div class="definition-card reveal reveal-delay-1">
+                    <h3>When Prices Have Fallen</h3>
+                    <p>If prices have fallen below the base price, your Revenue Protection already guarantees your revenue at the base price level.</p>
+                    <p style="margin-top: 1rem;"><strong>Taking additional positions is speculation.</strong></p>
+                </div>
+                <div class="warning-box reveal reveal-delay-2">
+                    <h3>The Critical Distinction</h3>
+                    <p>If you take a <strong>bullish</strong> or <strong>bearish</strong> position at this point, you are a <strong>speculator</strong>.</p>
+                    <p style="margin-top: 1rem;">You're not hedging your production risk—you're betting on price direction.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 31: KEY INSIGHT 2 - PRICES RISE
+         =========================================== -->
+    <section class="slide section-slide" data-slide="31">
+        <div class="slide-content">
+            <h2 class="reveal">Key Insight #2: When Prices Rise</h2>
+            <p class="lead reveal reveal-delay-1">
+                It does become an <strong>interesting marketing question</strong> in the case where the price rises after the Base Price is set at the first of March.
+            </p>
+            <div class="two-column reveal reveal-delay-2">
+                <div class="card">
+                    <h3>The Exposure</h3>
+                    <p>The producer is exposed to price uncertainty to both the <strong>upside</strong> and <strong>downside</strong>.</p>
+                </div>
+                <div class="card">
+                    <h3>The Protection</h3>
+                    <p>However, with Revenue Protection, revenue is guaranteed at the <strong>harvest price</strong> unless price falls below the Base Price.</p>
+                </div>
+            </div>
+            <div class="key-point reveal reveal-delay-3">
+                <h3>The Question</h3>
+                <p style="font-size: 1.15rem;">When prices are <em>above</em> the base price, should you lock in the gain or let it ride?</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 32: SCENARIO SETUP
+         =========================================== -->
+    <section class="slide content-slide" data-slide="32">
+        <div class="slide-content">
+            <h2 class="reveal">Marketing Scenario Setup</h2>
+            <p class="lead reveal reveal-delay-1">
+                Consider the following scenario to explore this marketing decision.
+            </p>
+            <div class="card-grid card-grid-3 reveal reveal-delay-2">
+                <div class="card">
+                    <h3>Base Price</h3>
+                    <p style="font-size: 1.5rem; color: var(--accent); font-weight: 700;">$5.00/bu</p>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">Set in February</p>
+                </div>
+                <div class="card">
+                    <h3>Break-Even Price</h3>
+                    <p style="font-size: 1.5rem; color: var(--success); font-weight: 700;">$4.90/bu</p>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">Cost of production</p>
+                </div>
+                <div class="card">
+                    <h3>July Futures</h3>
+                    <p style="font-size: 1.5rem; color: var(--accent-secondary); font-weight: 700;">$5.35/bu</p>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">Substantial rise!</p>
+                </div>
+            </div>
+            <div class="key-point reveal reveal-delay-3">
+                <h3>The Key Assumption</h3>
+                <p>The Base Price of $5.00 is <strong>above</strong> the Break-Even Price of $4.90. The producer is profitable at the base price.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 33: THE MARKETING QUESTION
+         =========================================== -->
+    <section class="slide section-slide" data-slide="33">
+        <div class="slide-content">
+            <h2 class="reveal">The Marketing Question</h2>
+            <p class="lead reveal reveal-delay-1" style="text-align: center;">
+                As of July, the December corn futures price is <strong style="color: var(--accent);">$5.35</strong>—a substantial rise above the Base Price.
+            </p>
+            <div class="key-point reveal reveal-delay-2" style="text-align: center; max-width: 600px; margin: 2rem auto;">
+                <h3 style="font-size: 1.5rem;">Should a producer lock in this high price?</h3>
+            </div>
+            <div class="image-container reveal reveal-delay-3">
+                <img src="../../assets/cropins_ex.png" alt="Crop Insurance Marketing Scenario" class="slide-image" style="max-height: 350px; width: auto;">
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 34: PRICE SCENARIOS
+         =========================================== -->
+    <section class="slide content-slide" data-slide="34">
+        <div class="slide-content">
+            <h2 class="reveal">Price Scenarios: July to October</h2>
+            <p class="lead reveal reveal-delay-1">
+                To simplify our thought experiment, suppose that from July to October the price might do one of three things:
+            </p>
+            <div class="card-grid card-grid-3 reveal reveal-delay-2">
+                <div class="success-box" style="text-align: center;">
+                    <h3>Scenario 1</h3>
+                    <p style="font-size: 2rem; font-weight: 700; color: var(--success);">$5.60</p>
+                    <p>Price rises</p>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">+$0.25 from July</p>
+                </div>
+                <div class="card" style="text-align: center; border-left-color: var(--text-muted);">
+                    <h3>Scenario 2</h3>
+                    <p style="font-size: 2rem; font-weight: 700; color: var(--text-secondary);">$5.35</p>
+                    <p>Price stays flat</p>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">No change</p>
+                </div>
+                <div class="warning-box" style="text-align: center;">
+                    <h3>Scenario 3</h3>
+                    <p style="font-size: 2rem; font-weight: 700; color: var(--warning);">$5.10</p>
+                    <p>Price falls</p>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">−$0.25 from July</p>
+                </div>
+            </div>
+            <p class="reveal reveal-delay-3 citation" style="margin-top: 1.5rem;">
+                Note: All three scenarios remain above the $5.00 Base Price, so the "max" in RP will use these harvest prices.
+            </p>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 35: MARKETING CHOICES
+         =========================================== -->
+    <section class="slide section-slide" data-slide="35">
+        <div class="slide-content">
+            <h2 class="reveal">Marketing Choices to Examine</h2>
+            <div class="two-column reveal reveal-delay-1">
+                <div class="definition-card">
+                    <h3>Choice 1: Selling Futures</h3>
+                    <p>Lock in the July price of $5.35 by selling December corn futures.</p>
+                    <ul>
+                        <li>Eliminates price risk</li>
+                        <li>Gives up further upside</li>
+                        <li>Protected from downside</li>
+                    </ul>
+                </div>
+                <div class="definition-card">
+                    <h3>Choice 2: Forward Contract</h3>
+                    <p>Contract for harvest delivery at current forward price.</p>
+                    <ul>
+                        <li>Similar to futures hedge</li>
+                        <li>Delivery obligation</li>
+                        <li>Assuming zero basis for simplicity</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card reveal reveal-delay-2" style="margin-top: 1.5rem;">
+                <h3>Choice 3: No Hedge</h3>
+                <p>Rely solely on Revenue Protection and sell at harvest price.</p>
+                <ul>
+                    <li>Maintain upside potential if prices rise further</li>
+                    <li>Accept downside risk (though RP provides floor)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 36: YIELD SCENARIOS
+         =========================================== -->
+    <section class="slide content-slide" data-slide="36">
+        <div class="slide-content">
+            <h2 class="reveal">Yield Scenarios to Consider</h2>
+            <p class="lead reveal reveal-delay-1">
+                We will examine what happens under two yield outcomes:
+            </p>
+            <div class="two-column reveal reveal-delay-2">
+                <div class="success-box" style="text-align: center;">
+                    <h3>Full Yield</h3>
+                    <p style="font-size: 2.5rem; font-weight: 700; color: var(--success);">100%</p>
+                    <p>of APH</p>
+                    <p style="margin-top: 1rem; font-size: 1.1rem;"><strong>200 bu/acre</strong></p>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">Normal production</p>
+                </div>
+                <div class="warning-box" style="text-align: center;">
+                    <h3>Yield Shortfall</h3>
+                    <p style="font-size: 2.5rem; font-weight: 700; color: var(--warning);">80%</p>
+                    <p>of APH</p>
+                    <p style="margin-top: 1rem; font-size: 1.1rem;"><strong>160 bu/acre</strong></p>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">Production shortfall</p>
+                </div>
+            </div>
+            <div class="card-grid reveal reveal-delay-3" style="margin-top: 1.5rem;">
+                <div class="card">
+                    <h3>APH Assumption</h3>
+                    <p><strong>200 bushels per acre</strong></p>
+                </div>
+                <div class="card">
+                    <h3>Coverage Level</h3>
+                    <p><strong>85%</strong> on Revenue Protection</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 37: ANALYSIS FRAMEWORK
+         =========================================== -->
+    <section class="slide section-slide" data-slide="37">
+        <div class="slide-content">
+            <h2 class="reveal">The Analysis Framework</h2>
+            <p class="lead reveal reveal-delay-1">
+                Combining our scenarios creates a matrix of outcomes to analyze:
+            </p>
+            <table class="comparison-table reveal reveal-delay-2">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Price ↑ $5.60</th>
+                        <th>Price → $5.35</th>
+                        <th>Price ↓ $5.10</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>100% APH (200 bu)</strong></td>
+                        <td>Full yield, higher price</td>
+                        <td>Full yield, same price</td>
+                        <td>Full yield, lower price</td>
+                    </tr>
+                    <tr>
+                        <td><strong>80% APH (160 bu)</strong></td>
+                        <td>Low yield, higher price</td>
+                        <td>Low yield, same price</td>
+                        <td>Low yield, lower price</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="reveal reveal-delay-3" style="margin-top: 1.5rem;">
+                For each cell: compare outcomes under (1) selling futures, (2) forward contract, (3) no hedge with RP only.
+            </p>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 38: INTERACTIVE TOOL
+         =========================================== -->
+    <section class="slide content-slide" data-slide="38">
+        <div class="slide-content" style="text-align: center;">
+            <h2 class="reveal">Explore the Moving Parts</h2>
+            <p class="lead reveal reveal-delay-1" style="max-width: 700px; margin: 0 auto 2rem;">
+                You can explore the moving parts yourself by going to the interactive Google Sheet.
+            </p>
+            <div class="reveal reveal-delay-2">
+                <a href="https://docs.google.com/spreadsheets/d/1rbne8odUljxIuIYP3IRiWyzaQDs83-mjOkuaaDWxb3w/edit?usp=sharing"
+                   target="_blank"
+                   class="interactive-link">
+                    Open Interactive Spreadsheet →
+                </a>
+            </div>
+            <div class="example-box reveal reveal-delay-3" style="margin-top: 2rem; text-align: left; max-width: 600px; margin-left: auto; margin-right: auto;">
+                <h3>What You Can Explore</h3>
+                <ul>
+                    <li>Change price scenarios</li>
+                    <li>Adjust yield outcomes</li>
+                    <li>Modify coverage levels</li>
+                    <li>Compare hedging strategies</li>
+                    <li>See insurance indemnity calculations</li>
+                    <li>Calculate net revenue under each scenario</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 39: SUMMARY - HISTORY
+         =========================================== -->
+    <section class="slide section-slide" data-slide="39">
+        <div class="slide-content">
+            <h2 class="reveal">Summary: Why Crop Insurance?</h2>
+            <div class="card-grid reveal reveal-delay-1">
+                <div class="card">
+                    <h3>Problems with Alternatives</h3>
+                    <ul>
+                        <li><strong>Price supports:</strong> Market distortion, trade conflicts</li>
+                        <li><strong>Ad hoc disaster payments:</strong> Unpredictable timing and size</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Challenges Overcome</h3>
+                    <ul>
+                        <li><strong>Private market failure:</strong> Federal backstop for correlated losses</li>
+                        <li><strong>Low participation:</strong> 62% premium subsidies</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 40: SUMMARY - INSURANCE TYPES
+         =========================================== -->
+    <section class="slide content-slide" data-slide="40">
+        <div class="slide-content">
+            <h2 class="reveal">Summary: Insurance Types</h2>
+            <div class="two-column reveal reveal-delay-1">
+                <div>
+                    <h3 style="color: var(--accent);">Yield Protection</h3>
+                    <ul>
+                        <li>Protects against yield shortfall</li>
+                        <li>Uses projected price only</li>
+                        <li>Individual or Area basis</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="color: var(--accent-secondary);">Revenue Protection</h3>
+                    <ul>
+                        <li>Protects against revenue shortfall</li>
+                        <li>Uses max(Projected, Harvest) price</li>
+                        <li>Most popular choice</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="key-point reveal reveal-delay-2" style="margin-top: 1.5rem;">
+                <h3>RP with Harvest Price Exclusion</h3>
+                <p>Uses projected price only (like Yield Protection) but protects revenue. Lower premium, less upside protection.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 41: SUMMARY - MARKETING
+         =========================================== -->
+    <section class="slide section-slide" data-slide="41">
+        <div class="slide-content">
+            <h2 class="reveal">Summary: Marketing Decisions</h2>
+            <div class="card-grid reveal reveal-delay-1">
+                <div class="danger-box">
+                    <h3>Never Market Uninsured Bushels</h3>
+                    <p>Correlated losses mean high spot prices when you need to buy out contracts.</p>
+                </div>
+                <div class="success-box">
+                    <h3>RP Enables Forward Marketing</h3>
+                    <p>Revenue guarantee ensures you can cover obligations even with crop failure.</p>
+                </div>
+            </div>
+            <div class="two-column reveal reveal-delay-2" style="margin-top: 1.5rem;">
+                <div class="card">
+                    <h3>If Prices Fall</h3>
+                    <p>You're already hedged by RP. Additional positions = speculation.</p>
+                </div>
+                <div class="card" style="border-left-color: var(--accent-secondary);">
+                    <h3>If Prices Rise</h3>
+                    <p>Interesting decision: lock in gains or let it ride with RP floor?</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 42: FINAL TAKEAWAY
+         =========================================== -->
+    <section class="slide title-slide" data-slide="42">
+        <div class="slide-content">
+            <h2 class="reveal" style="color: var(--text-primary); font-size: 2rem;">Remember</h2>
+            <h1 class="reveal reveal-delay-1" style="font-size: 2.2rem; margin-top: 1rem;">
+                Crop insurance alone does not provide an optimal marketing plan for some scenarios of price movement planting-harvest.
+            </h1>
+            <p class="subtitle reveal reveal-delay-2" style="max-width: 800px; margin: 2rem auto 0;">
+                Understanding how your insurance coverage interacts with different marketing strategies is essential for maximizing returns while managing risk.
+            </p>
+        </div>
+    </section>
+
+    <!-- ===========================================
+       JAVASCRIPT
+       =========================================== -->
+    <script>
+        class SlidePresentation {
+            constructor() {
+                this.slides = document.querySelectorAll('.slide');
+                this.progressBar = document.querySelector('.progress-bar');
+                this.navDotsContainer = document.querySelector('.nav-dots');
+                this.slideNumberEl = document.querySelector('.slide-number');
+                this.currentSlide = 0;
+                this.totalSlides = this.slides.length;
+                this.isAnimating = false;
+
+                this.init();
+            }
+
+            init() {
+                this.createNavDots();
+                this.setupIntersectionObserver();
+                this.setupKeyboardNavigation();
+                this.setupTouchNavigation();
+                this.updateUI();
+            }
+
+            createNavDots() {
+                this.slides.forEach((_, index) => {
+                    const dot = document.createElement('button');
+                    dot.className = 'nav-dot';
+                    dot.setAttribute('aria-label', `Go to slide ${index + 1}`);
+                    dot.addEventListener('click', () => this.goToSlide(index));
+                    this.navDotsContainer.appendChild(dot);
+                });
+                this.navDots = document.querySelectorAll('.nav-dot');
+            }
+
+            setupIntersectionObserver() {
+                const options = {
+                    root: null,
+                    rootMargin: '0px',
+                    threshold: 0.5
+                };
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            const slideIndex = Array.from(this.slides).indexOf(entry.target);
+                            this.currentSlide = slideIndex;
+                            this.updateUI();
+                        }
+                    });
+                }, options);
+
+                this.slides.forEach(slide => observer.observe(slide));
+            }
+
+            setupKeyboardNavigation() {
+                document.addEventListener('keydown', (e) => {
+                    if (this.isAnimating) return;
+
+                    switch(e.key) {
+                        case 'ArrowRight':
+                        case 'ArrowDown':
+                        case ' ':
+                            e.preventDefault();
+                            this.nextSlide();
+                            break;
+                        case 'ArrowLeft':
+                        case 'ArrowUp':
+                            e.preventDefault();
+                            this.prevSlide();
+                            break;
+                        case 'Home':
+                            e.preventDefault();
+                            this.goToSlide(0);
+                            break;
+                        case 'End':
+                            e.preventDefault();
+                            this.goToSlide(this.totalSlides - 1);
+                            break;
+                    }
+                });
+            }
+
+            setupTouchNavigation() {
+                let touchStartY = 0;
+                let touchEndY = 0;
+
+                document.addEventListener('touchstart', (e) => {
+                    touchStartY = e.changedTouches[0].screenY;
+                }, { passive: true });
+
+                document.addEventListener('touchend', (e) => {
+                    touchEndY = e.changedTouches[0].screenY;
+                    this.handleSwipe(touchStartY, touchEndY);
+                }, { passive: true });
+            }
+
+            handleSwipe(startY, endY) {
+                const threshold = 50;
+                const diff = startY - endY;
+
+                if (Math.abs(diff) > threshold) {
+                    if (diff > 0) {
+                        this.nextSlide();
+                    } else {
+                        this.prevSlide();
+                    }
+                }
+            }
+
+            nextSlide() {
+                if (this.currentSlide < this.totalSlides - 1) {
+                    this.goToSlide(this.currentSlide + 1);
+                }
+            }
+
+            prevSlide() {
+                if (this.currentSlide > 0) {
+                    this.goToSlide(this.currentSlide - 1);
+                }
+            }
+
+            goToSlide(index) {
+                if (index >= 0 && index < this.totalSlides && !this.isAnimating) {
+                    this.isAnimating = true;
+                    this.slides[index].scrollIntoView({ behavior: 'smooth' });
+                    setTimeout(() => {
+                        this.isAnimating = false;
+                    }, 800);
+                }
+            }
+
+            updateUI() {
+                const progress = ((this.currentSlide + 1) / this.totalSlides) * 100;
+                this.progressBar.style.width = `${progress}%`;
+
+                this.navDots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === this.currentSlide);
+                });
+
+                this.slideNumberEl.textContent = `${this.currentSlide + 1} / ${this.totalSlides}`;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            new SlidePresentation();
+        });
+    </script>
+</body>
+</html>
