@@ -1,0 +1,711 @@
+\documentclass[aspectratio=169]{beamer}
+\usetheme{Madrid}
+
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{array}
+\usepackage{multirow}
+
+% Purdue Colors
+\definecolor{PurdueGold}{HTML}{CEB888}
+\definecolor{PurdueBlack}{HTML}{000000}
+
+% Apply Purdue color theme
+\setbeamercolor{palette primary}{bg=PurdueBlack,fg=PurdueGold}
+\setbeamercolor{palette secondary}{bg=PurdueGold,fg=PurdueBlack}
+\setbeamercolor{palette tertiary}{bg=PurdueBlack,fg=PurdueGold}
+\setbeamercolor{palette quaternary}{bg=PurdueGold,fg=PurdueBlack}
+\setbeamercolor{structure}{fg=PurdueBlack}
+\setbeamercolor{section in toc}{fg=PurdueBlack}
+\setbeamercolor{title}{fg=PurdueGold,bg=PurdueBlack}
+\setbeamercolor{frametitle}{fg=PurdueGold,bg=PurdueBlack}
+\setbeamercolor{block title}{bg=PurdueBlack,fg=PurdueGold}
+\setbeamercolor{block body}{bg=PurdueGold!20,fg=PurdueBlack}
+\setbeamercolor{item}{fg=PurdueBlack}
+\setbeamercolor{subitem}{fg=PurdueBlack}
+\setbeamercolor{subsubitem}{fg=PurdueBlack}
+
+\title{Futures and Hedging Review}
+\subtitle{Chapter 4}
+\author{Mindy Mallory}
+\date{}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}{Highlights}
+\begin{itemize}
+    \item Review of futures contracts and how to calculate profit or loss on a trade
+    \item Hedging examples from the sell side (farmer's hedge) and from the buy side (flour mill's hedge)
+    \item Learn how basis risk impacts a hedge
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Check Your Understanding}
+\begin{itemize}
+    \item Can you calculate the profit or loss from a trade?
+    \item Can you fill out a hedging net revenue table given prices on key dates?
+\end{itemize}
+\end{frame}
+
+\begin{frame}{What is a Hedge?}
+Merriam-Webster defines a \textbf{hedge} as a means of protection or defense (as against a financial loss).
+
+\vspace{1em}
+
+In the present context:
+\begin{itemize}
+    \item A hedge is the use of a derivative contract to reduce or eliminate risk in your business' profits
+    \item Understanding who is hedging and why is very helpful to understanding price relationships and what drives them to move up or down
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------------------
+% FUTURES CONTRACT REVIEW
+%------------------------------------------------------------
+
+\begin{frame}{}
+\centering
+\Huge Futures Contract Review
+\end{frame}
+
+\begin{frame}{What is a Futures Contract?}
+A futures contract is a contract between two parties to buy and sell:
+\begin{itemize}
+    \item At an \textbf{agreed-to price}
+    \item A \textbf{specific quantity and quality} of something
+    \item At a \textbf{specific location}
+\end{itemize}
+
+\vspace{1em}
+
+\textbf{Example: CBOT Corn Futures}
+\begin{itemize}
+    \item 5,000 bushels of U.S. number 2 yellow corn
+    \item At specific elevators along the Illinois River, Lake Michigan, or associated canals
+\end{itemize}
+\end{frame}
+
+\begin{frame}{How Futures Differ from Stocks}
+\begin{itemize}
+    \item Futures are traded on a centralized exchange (like the ``stock market'')
+    \item Counter-parties do not know each other
+    \item \textbf{Key difference:} When a trade takes place, no ownership transfer occurs
+    \item It is simply a \textbf{promise to buy or sell} at a specific date in the future
+    \item This is why there are many different futures contract ``months'' (e.g., December 2017 corn, March 2018 corn)
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Margin and Marking to Market}
+\textbf{Margin:} An amount of money that acts as a performance bond
+\begin{itemize}
+    \item Ensures both parties can make good on the contract if held until expiration
+\end{itemize}
+
+\vspace{1em}
+
+\textbf{Marking to Market:} Daily transfer of money from losers to winners
+\begin{itemize}
+    \item As price moves up: money taken from seller's margin account, put into buyer's account
+    \item As price moves down: money taken from buyer's margin account, put into seller's account
+    \item Ensures everyone has financial capital required to honor contract terms
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Futures Trading Example}
+At 10am the March corn futures contract is trading at \$4.50/bu.
+\begin{itemize}
+    \item Trader A decides to \textbf{buy} one contract
+    \item Trader B decides to \textbf{sell} one contract
+\end{itemize}
+
+\vspace{0.5em}
+
+At 1pm both traders close their position. Price has moved up to \$4.75/bu.
+
+\vspace{0.5em}
+
+Since price went up by \$0.25/bu:
+\begin{itemize}
+    \item Longs (buyers) gain: $+\$0.25 \times 5000 = +\$1250$
+    \item Shorts (sellers) lose: $-\$0.25 \times 5000 = -\$1250$
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Futures Trading Example}
+\begin{table}
+\centering
+\small
+\begin{tabular}{lll}
+\toprule
+\textbf{Time} & \textbf{Trader A} & \textbf{Trader B} \\
+\midrule
+10am & buy \$4.50 & sell \$4.50 \\
+1pm & sell \$4.75 & buy \$4.75 \\
+\midrule
+profit per bu & \$4.75 - \$4.50 = +\$0.25 & \$4.50 - \$4.75 = -\$0.25 \\
+profit one contract & +\$1,250 & -\$1,250 \\
+\bottomrule
+\end{tabular}
+\end{table}
+\end{frame}
+
+\begin{frame}{Closing Futures Positions}
+Very few contracts are held all the way to expiration (when transfer of ownership would take place).
+
+\vspace{1em}
+
+\textbf{Traders who originally bought:}
+\begin{itemize}
+    \item Sometime before expiration will \textbf{sell}, eliminating their obligation
+    \item Getting them to a ``flat'' position
+\end{itemize}
+
+\vspace{0.5em}
+
+\textbf{Traders who originally sold:}
+\begin{itemize}
+    \item Will \textbf{buy}, getting them to a ``flat'' position
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------------------
+% DELIVERY
+%------------------------------------------------------------
+
+\begin{frame}{}
+\centering
+\Huge Delivery
+\end{frame}
+
+\begin{frame}{Deliverable Contracts}
+CME Group grain and oilseed futures are \textbf{deliverable contracts}:
+\begin{itemize}
+    \item Ensures a link between the spot market and the futures market
+    \item Only a few contracts traded are actually delivered on
+    \item Purpose of futures market is not physical exchange, but rather \textbf{streamlined risk management} in a liquid market
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Regular for Delivery}
+The exchange has designated large commercial grain handlers and warehouses as \textbf{regular for delivery}.
+
+\vspace{1em}
+
+\textbf{Delivery Territories (CME Group Rulebook):}
+\begin{itemize}
+    \item Chicago and Burns Harbor, Indiana Switching District
+    \item Lockport-Seneca Shipping District
+    \item Ottawa-Chillicothe Shipping District
+    \item Peoria-Pekin Shipping District
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Shipping Certificates}
+If someone with a short futures position wants to deliver:
+\begin{itemize}
+    \item Cannot just show up with 5,000 bushels in trucks
+    \item Must deliver a \textbf{shipping certificate} for 5,000 bushels from a regular for delivery warehouse
+    \item A certificate giving the holder the right to demand load-out of grain meeting quality standards
+\end{itemize}
+
+\vspace{1em}
+
+\textbf{Premium Charges:}
+\begin{itemize}
+    \item Fees collected by warehouse for storage space
+    \item Corn and soybeans: shall not exceed 0.165 cents/bu/day ($\approx$4.95 cents/bu/month)
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Taking Delivery}
+If the long party wants to take delivery:
+\begin{itemize}
+    \item Must pay the full amount: Futures Price $\times$ 5,000 bushels
+    \item Must pay premium charges to the warehouse to hold the shipping certificate
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------------------
+% HEDGING EXAMPLES
+%------------------------------------------------------------
+
+\begin{frame}{}
+\centering
+\Huge Who Hedges and How?
+\end{frame}
+
+%------------------------------------------------------------
+% FARMER HEDGING
+%------------------------------------------------------------
+
+\begin{frame}{}
+\centering
+\Huge Farmer's Hedge
+\end{frame}
+
+\begin{frame}{The Farmer's Situation}
+Consider a corn farmer who:
+\begin{itemize}
+    \item Plants crop in April
+    \item Waits for it to grow and mature through summer and fall
+    \item Harvests in November
+    \item Sells right after harvest at local grain elevator
+\end{itemize}
+
+\vspace{1em}
+
+\textbf{The Problem:} Entire income for the year comes from the sale of this grain, and a lot can happen to price between April and November.
+\end{frame}
+
+\begin{frame}{A Grain Elevator in Royal, IL}
+\centering
+\includegraphics[width=0.55\textwidth]{../../assets/Grain_elevator_royal_IL.jpg}
+
+\tiny{Source: Daniel Schwen, CC-License}
+\end{frame}
+
+\begin{frame}{Ways to Reduce Income Risk}
+\textbf{1. Crop Insurance}
+\begin{itemize}
+    \item Purchase a policy that pays indemnity if price goes down, yield is low, or both
+    \item Does not directly interact with futures market
+\end{itemize}
+
+\vspace{1em}
+
+\textbf{2. Forward Price Contract}
+\begin{itemize}
+    \item Local elevators offer forward contracts to buy grain
+    \item Farmer delivers grain within specific date range at agreed price
+    \item Eliminates price uncertainty for farmer
+    \item Elevator transfers price risk to speculators by selling futures
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Ways to Reduce Income Risk (cont.)}
+\textbf{3. Futures Market}
+\begin{itemize}
+    \item Farmer goes directly to futures market to sell futures contracts
+    \item Reduces but does not eliminate uncertainty (still faces basis risk)
+\end{itemize}
+
+\vspace{1em}
+
+\textbf{4. Options Market}
+\begin{itemize}
+    \item Buy a put option for a premium paid upfront
+    \item Put makes money if price goes down (like short futures)
+    \item If price goes up, only loses original premium
+    \item Maintains upside potential while protecting downside
+\end{itemize}
+\end{frame}
+
+\begin{frame}{The Basis}
+\textbf{On May 1st:}
+\begin{itemize}
+    \item Local elevator offers \$3.50 for corn
+    \item May futures trading at \$3.60
+    \item The \$0.10 difference is largely due to geographic distance
+\end{itemize}
+
+\vspace{1em}
+
+\begin{block}{Basis Definition}
+$$\text{Basis} = \text{Cash Price} - \text{Futures Price}$$
+\end{block}
+
+\vspace{0.5em}
+
+Basis reflects the price distance over space between the local cash market and the futures delivery point.
+\end{frame}
+
+\begin{frame}{The Hedging Rule}
+\begin{block}{To Hedge}
+Take the same action in the futures market (buy or sell) that you will do in the cash market at a future date.
+\end{block}
+
+\vspace{1em}
+
+\textbf{The farmer will:}
+\begin{itemize}
+    \item \textbf{Sell} corn in the cash market in November
+    \item Therefore, should \textbf{sell} (December) futures to hedge
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Naturally Long}
+The farmer is \textbf{naturally long}:
+\begin{itemize}
+    \item Essentially long the unharvested grain in the field
+    \item ``Long'' is a financial position that gains value when price goes up and loses value when price goes down
+\end{itemize}
+
+\vspace{1em}
+
+\textbf{To hedge:}
+\begin{itemize}
+    \item Take a position with the opposite profile
+    \item Take a \textbf{short position} to hedge their naturally long position
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Example Setup}
+\textbf{On May 1st:}
+\begin{itemize}
+    \item Cash price in Royal, IL: \$3.50
+    \item December futures price: \$3.75
+    \item Basis (Dec): -\$0.25
+\end{itemize}
+
+\vspace{1em}
+
+The farmer sells December futures to hedge.
+
+\vspace{1em}
+
+Consider two scenarios for November:
+\begin{enumerate}
+    \item Dec futures price went up to \$4.00
+    \item Dec futures price went down to \$3.60
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Case 1: Price Up to \$4.00, Basis Unchanged}
+\begin{table}
+\centering
+\footnotesize
+\begin{tabular}{p{2cm}p{2.5cm}p{2cm}p{2.5cm}p{1.8cm}}
+\toprule
+\textbf{Date} & \textbf{Action} & \textbf{Cash Price} & \textbf{Dec Futures} & \textbf{Basis} \\
+\midrule
+May 1st & Sell Dec Futures & \$3.50 & \$3.75 & -\$0.25 \\
+Nov 1st & Buy Dec Futures \& Sell Cash Corn & \$3.75 & \$4.00 & -\$0.25 \\
+\midrule
+\multicolumn{2}{l}{Profit Calculation:} & & & \\
+\multicolumn{2}{l}{Cash:} & \$3.75 & & \\
+\multicolumn{2}{l}{Futures:} & & \$3.75 - \$4.00 = -\$0.25 & \\
+\multicolumn{2}{l}{\textbf{Net per bushel:}} & \multicolumn{2}{l}{\$3.75 - \$0.25 = \textbf{\$3.50}} & \\
+\bottomrule
+\end{tabular}
+\end{table}
+\end{frame}
+
+\begin{frame}{Case 1: Key Takeaway}
+With basis unchanged:
+\begin{itemize}
+    \item The farmer \textbf{eliminated uncertainty} over selling price
+    \item By ``selling ahead'' in the futures market, price was locked in (except for basis)
+    \item Farmer would have liked to sell for \$3.75 instead of \$3.50 net
+    \item But by locking in, \textbf{gave up potential for upside}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Case 2: Price Down to \$3.60, Basis Unchanged}
+\begin{table}
+\centering
+\footnotesize
+\begin{tabular}{p{2cm}p{2.5cm}p{2cm}p{2.5cm}p{1.8cm}}
+\toprule
+\textbf{Date} & \textbf{Action} & \textbf{Cash Price} & \textbf{Dec Futures} & \textbf{Basis} \\
+\midrule
+May 1st & Sell Dec Futures & \$3.50 & \$3.75 & -\$0.25 \\
+Nov 1st & Buy Dec Futures \& Sell Cash Corn & \$3.35 & \$3.60 & -\$0.25 \\
+\midrule
+\multicolumn{2}{l}{Profit Calculation:} & & & \\
+\multicolumn{2}{l}{Cash:} & \$3.35 & & \\
+\multicolumn{2}{l}{Futures:} & & \$3.75 - \$3.60 = +\$0.15 & \\
+\multicolumn{2}{l}{\textbf{Net per bushel:}} & \multicolumn{2}{l}{\$3.35 + \$0.15 = \textbf{\$3.50}} & \\
+\bottomrule
+\end{tabular}
+\end{table}
+\end{frame}
+
+\begin{frame}{Case 2: Key Takeaway}
+\textbf{The hedge protected against deteriorating prices!}
+
+\vspace{1em}
+
+By selling Dec futures ahead of the cash sale:
+\begin{itemize}
+    \item Price risk was reduced
+    \item But not eliminated---still have \textbf{basis risk}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Basis Risk Examples}
+Now consider: futures price unchanged at \$3.75 in November
+
+\vspace{1em}
+
+But the basis changes:
+\begin{itemize}
+    \item Case 3: Basis widens to -\$0.50
+    \item Case 4: Basis narrows to \$0.00
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Case 3: Futures Unchanged, Basis Widens to -\$0.50}
+\begin{table}
+\centering
+\footnotesize
+\begin{tabular}{p{2cm}p{2.5cm}p{2cm}p{2.5cm}p{1.8cm}}
+\toprule
+\textbf{Date} & \textbf{Action} & \textbf{Cash Price} & \textbf{Dec Futures} & \textbf{Basis} \\
+\midrule
+May 1st & Sell Dec Futures & \$3.50 & \$3.75 & -\$0.25 \\
+Nov 1st & Buy Dec Futures \& Sell Cash Corn & \$3.25 & \$3.75 & -\$0.50 \\
+\midrule
+\multicolumn{2}{l}{Profit Calculation:} & & & \\
+\multicolumn{2}{l}{Cash:} & \$3.25 & & \\
+\multicolumn{2}{l}{Futures:} & & \$3.75 - \$3.75 = \$0.00 & \\
+\multicolumn{2}{l}{\textbf{Net per bushel:}} & \multicolumn{2}{l}{\$3.25 + \$0.00 = \textbf{\$3.25}} & \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\vspace{0.5em}
+
+\textbf{Basis widening was a loss to the farmer}, even though general price levels unchanged.
+\end{frame}
+
+\begin{frame}{Case 4: Futures Unchanged, Basis Narrows to \$0.00}
+\begin{table}
+\centering
+\footnotesize
+\begin{tabular}{p{2cm}p{2.5cm}p{2cm}p{2.5cm}p{1.8cm}}
+\toprule
+\textbf{Date} & \textbf{Action} & \textbf{Cash Price} & \textbf{Dec Futures} & \textbf{Basis} \\
+\midrule
+May 1st & Sell Dec Futures & \$3.50 & \$3.75 & -\$0.25 \\
+Nov 1st & Buy Dec Futures \& Sell Cash Corn & \$3.75 & \$3.75 & \$0.00 \\
+\midrule
+\multicolumn{2}{l}{Profit Calculation:} & & & \\
+\multicolumn{2}{l}{Cash:} & \$3.75 & & \\
+\multicolumn{2}{l}{Futures:} & & \$3.75 - \$3.75 = \$0.00 & \\
+\multicolumn{2}{l}{\textbf{Net per bushel:}} & \multicolumn{2}{l}{\$3.75 + \$0.00 = \textbf{\$3.75}} & \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\vspace{0.5em}
+
+\textbf{Narrowing of the basis was an increase in profit} to the farmer.
+\end{frame}
+
+\begin{frame}{Long the Basis}
+When a farmer hedges with futures, they are ``\textbf{long in the basis}''.
+
+\vspace{1em}
+
+A futures hedge eliminates price uncertainty from general price levels:
+\begin{itemize}
+    \item If prices go up $\rightarrow$ increase in cash price, but loss on futures position
+    \item If prices go down $\rightarrow$ receive less in cash, but gain on futures position
+\end{itemize}
+
+\vspace{1em}
+
+\textbf{However:} The futures hedge does NOT protect against changes (good or bad) in the relative price between the local cash market and the futures price.
+\end{frame}
+
+%------------------------------------------------------------
+% FLOUR MILL HEDGING
+%------------------------------------------------------------
+
+\begin{frame}{}
+\centering
+\Huge Flour Mill's Hedge
+\end{frame}
+
+\begin{frame}{The Flour Mill's Situation}
+A flour mill:
+\begin{itemize}
+    \item Buys large quantities of grain for making flour
+    \item Wants to process grain year round
+    \item Needs to hedge price risk at multiple points in time
+\end{itemize}
+
+\vspace{1em}
+
+\textbf{Example:} High commercial wheat flour mills can process upwards of \textbf{50,000 bushels} of wheat per month.
+
+\vspace{0.5em}
+
+With wheat futures at 5,000 bushels/contract, they need \textbf{10 contracts} to hedge one month's wheat buying.
+\end{frame}
+
+\begin{frame}{Hedging by Buying Ahead}
+\begin{block}{Flour Mill Hedge Rule}
+Remember: A futures hedge always involves making a trade in the futures contract that is the same as what you will do in the cash market.
+\end{block}
+
+\vspace{1em}
+
+The flour mill \textbf{buys} grain, so their futures hedge should \textbf{buy} futures (``buying ahead'').
+\end{frame}
+
+\begin{frame}{Wheat Futures Contracts}
+There are \textbf{five wheat futures contracts per year}:
+
+\vspace{1em}
+
+\begin{table}
+\centering
+\begin{tabular}{ccccc}
+\toprule
+March & May & July & September & December \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\vspace{1em}
+
+To hedge, the mill must use the \textbf{nearest contract month}.
+
+\vspace{0.5em}
+
+Example: To hedge a February 1st purchase, use March futures (no February contract exists).
+\end{frame}
+
+\begin{frame}{Hedging Strategy Example}
+\textbf{On December 1st:} Mill wants to lock in wheat purchase price for first six months of next year.
+
+\vspace{1em}
+
+\begin{itemize}
+    \item January, February, March purchases $\rightarrow$ hedge with March futures
+    \item 50,000 bu/month $\times$ 3 months = 150,000 bu = 30 contracts
+    \item April, May purchases $\rightarrow$ hedge with May futures (20 contracts)
+    \item June purchase $\rightarrow$ hedge with July futures (10 contracts)
+\end{itemize}
+
+\vspace{0.5em}
+
+\textbf{Total:} Buy 60 contracts on Dec 1st to hedge Jan--Jun purchases.
+\end{frame}
+
+\begin{frame}{Lifting the Hedge}
+Hedges should be \textbf{lifted simultaneously} with activity in the cash market.
+
+\vspace{1em}
+
+\textbf{Example:}
+\begin{itemize}
+    \item On January 1st: Mill purchases 50,000 bu in cash market
+    \item Simultaneously: Sell 10 March contracts (lift the hedge)
+    \item After January 1st: Still holding 20 long March contracts for Feb \& Mar purchases
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Flour Mill Hedge: Real Data 2016}
+\begin{table}
+\centering
+\tiny
+\begin{tabular}{p{1.2cm}p{2.8cm}p{2.5cm}p{2.8cm}p{0.8cm}p{0.8cm}p{0.9cm}}
+\toprule
+\textbf{Date} & \textbf{Action} & \textbf{Long Position} & \textbf{Net Price Paid} & \textbf{Spot} & \textbf{Mar} & \textbf{May} \\
+\midrule
+Dec 1, 15 & Buy 30 Mar, 20 May, 10 Jul & & & 469.75 & 470 & 476.5 \\
+Jan 1, 16 & Buy 50k spot, Sell 10 Mar & 20 Mar, 20 May, 10 Jul & -479 + (479.25-470) = -469.75 & 479.00 & 479.25 & 485 \\
+Feb 1 & Buy 50k spot, Sell 10 Mar & 10 Mar, 20 May, 10 Jul & -444.75 + (445-470) = -469.75 & 444.75 & 445 & 453.25 \\
+Mar 1 & Buy 50k spot, Sell 10 Mar & 20 May, 10 Jul & -471.25 + (471.5-470) = -469.75 & 471.25 & 471.5 & 473.5 \\
+Apr 1 & Buy 50k spot, Sell 10 May & 10 May, 10 Jul & -477.75 + (478-476.5) = -476.25 & 477.75 & NA & 478 \\
+May 1 & Buy 50k spot, Sell 10 May & 10 Jul & -464.75 + (465-476.5) = -476.25 & 464.75 & NA & 465 \\
+Jun 1 & Buy 50k spot, Sell 10 Jul & 0 & -431 + (431.25-483.25) = -483 & 431 & NA & NA \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\vspace{0.5em}
+\tiny{Assumes basis is fixed at -0.25 cents under the nearby futures contract.}
+\end{frame}
+
+%------------------------------------------------------------
+% SOYBEAN CRUSHER
+%------------------------------------------------------------
+
+\begin{frame}{}
+\centering
+\Huge Soybean Crusher
+\end{frame}
+
+\begin{frame}{Soybean Crusher's Hedge}
+The soybean crusher:
+\begin{itemize}
+    \item \textbf{Buys} soybeans
+    \item \textbf{Sells} soybean meal and oil
+\end{itemize}
+
+\vspace{1em}
+
+Their futures hedge would involve:
+\begin{itemize}
+    \item \textbf{Buying} soybean futures (hedge the input)
+    \item \textbf{Selling} meal and oil futures (hedge the outputs)
+\end{itemize}
+
+\vspace{1em}
+
+``Crush'' hedges are more complicated because they involve buying one commodity, transforming it, and selling another commodity.
+\end{frame}
+
+%------------------------------------------------------------
+% LINE OF CREDIT
+%------------------------------------------------------------
+
+\begin{frame}{}
+\centering
+\Huge Importance of Line of Credit
+\end{frame}
+
+\begin{frame}{Why a Line of Credit Matters}
+Anyone hedging with futures must have a \textbf{line of credit} to meet margin calls when the market moves against their hedge.
+
+\vspace{1em}
+
+\textbf{Example:} Farmer sells futures as a hedge
+\begin{itemize}
+    \item If price starts moving up $\rightarrow$ cash grain worth more, but futures hedge is losing money
+    \item As short hedge loses money $\rightarrow$ margin needs to be maintained
+    \item If prices move significantly against hedge $\rightarrow$ additional money needed for margin
+\end{itemize}
+\end{frame}
+
+\begin{frame}{The Role of the Lender}
+\begin{itemize}
+    \item Additional margin usually must come from a \textbf{lender}
+    \item Lender knows it's a safe loan because prices are going up---the cash sale will cover any futures losses
+\end{itemize}
+
+\vspace{1em}
+
+\textbf{Without a line of credit:}
+\begin{itemize}
+    \item Cannot maintain margin
+    \item Short hedge position will be \textbf{forced to liquidate}
+    \item Farmer will no longer be hedged
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------------------
+% SUMMARY
+%------------------------------------------------------------
+
+\begin{frame}{Summary}
+\begin{itemize}
+    \item \textbf{Futures contracts:} Agreements to buy/sell at an agreed price; profits/losses calculated by price movement $\times$ contract size
+    \item \textbf{Delivery:} Most contracts closed before expiration; actual delivery uses shipping certificates
+    \item \textbf{Hedging rule:} Take the same action in futures as you will in the cash market
+    \item \textbf{Farmer (seller):} Sells futures to hedge; is ``long the basis''
+    \item \textbf{Flour mill (buyer):} Buys futures to hedge
+    \item \textbf{Basis risk:} Hedging eliminates price level risk but not basis risk
+    \item \textbf{Line of credit:} Essential to maintain margin when market moves against the hedge
+\end{itemize}
+\end{frame}
+
+\end{document}

@@ -1,0 +1,588 @@
+\documentclass[aspectratio=169,10pt]{beamer}
+
+%% =============================================================================
+%% PURDUE UNIVERSITY BEAMER THEME
+%% Colors: Black and Old Gold
+%% =============================================================================
+
+%% --- Packages ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{tikz}
+
+%% --- Purdue Colors ---
+\definecolor{PurdueGold}{RGB}{207,185,145}      % #CFB991 - Old Gold (primary)
+\definecolor{PurdueGoldDark}{RGB}{177,129,11}   % #B1810B - Darker Gold (headers, accents)
+\definecolor{PurdueBlack}{RGB}{0,0,0}           % #000000
+\definecolor{PurdueGray}{RGB}{85,87,89}         % #555759 - Cool Gray
+\definecolor{PurdueGoldLight}{RGB}{232,219,192} % Lighter gold for backgrounds
+
+%% --- Theme Settings ---
+\usetheme{Madrid}
+\usecolortheme{default}
+
+% Set colors throughout
+\setbeamercolor{structure}{fg=PurdueGoldDark}
+\setbeamercolor{palette primary}{bg=PurdueBlack,fg=PurdueGold}
+\setbeamercolor{palette secondary}{bg=PurdueGoldDark,fg=white}
+\setbeamercolor{palette tertiary}{bg=PurdueGold,fg=PurdueBlack}
+\setbeamercolor{palette quaternary}{bg=PurdueBlack,fg=PurdueGold}
+
+% Title page
+\setbeamercolor{title}{fg=PurdueGold,bg=PurdueBlack}
+\setbeamercolor{subtitle}{fg=PurdueGoldLight}
+\setbeamercolor{author}{fg=white}
+\setbeamercolor{institute}{fg=PurdueGold}
+\setbeamercolor{date}{fg=PurdueGold}
+
+% Frame titles
+\setbeamercolor{frametitle}{fg=PurdueGold,bg=PurdueBlack}
+\setbeamercolor{framesubtitle}{fg=PurdueGoldDark}
+
+% Footline
+\setbeamercolor{footline}{bg=PurdueBlack,fg=PurdueGold}
+
+% Blocks
+\setbeamercolor{block title}{bg=PurdueGoldDark,fg=white}
+\setbeamercolor{block body}{bg=PurdueGoldLight,fg=PurdueBlack}
+
+\setbeamercolor{block title example}{bg=PurdueGray,fg=white}
+\setbeamercolor{block body example}{bg=gray!10,fg=PurdueBlack}
+
+\setbeamercolor{block title alerted}{bg=PurdueBlack,fg=PurdueGold}
+\setbeamercolor{block body alerted}{bg=gray!10,fg=PurdueBlack}
+
+% Items
+\setbeamercolor{item}{fg=PurdueGoldDark}
+\setbeamercolor{subitem}{fg=PurdueGray}
+\setbeamercolor{itemize item}{fg=PurdueGoldDark}
+\setbeamercolor{itemize subitem}{fg=PurdueGray}
+\setbeamercolor{enumerate item}{fg=PurdueGoldDark}
+
+% Navigation symbols off
+\setbeamertemplate{navigation symbols}{}
+
+% Itemize bullets
+\setbeamertemplate{itemize item}{\color{PurdueGoldDark}$\blacktriangleright$}
+\setbeamertemplate{itemize subitem}{\color{PurdueGray}$\triangleright$}
+
+%% --- Code Listings ---
+\lstset{
+  basicstyle=\ttfamily\small,
+  keywordstyle=\color{PurdueGoldDark}\bfseries,
+  commentstyle=\color{PurdueGray}\itshape,
+  stringstyle=\color{PurdueBlack},
+  numbers=left,
+  numberstyle=\tiny\color{PurdueGray},
+  numbersep=5pt,
+  frame=single,
+  framerule=0.5pt,
+  rulecolor=\color{PurdueGold},
+  backgroundcolor=\color{PurdueGoldLight!30},
+  breaklines=true,
+  showstringspaces=false,
+  tabsize=2
+}
+
+%% --- Theorem Environments ---
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{prop}{Proposition}
+\newtheorem{thm}{Theorem}
+\newtheorem{lem}{Lemma}
+\newtheorem{cor}{Corollary}
+\newtheorem{rem}{Remark}
+
+%% --- Custom Commands ---
+\newcommand{\highlight}[1]{\textcolor{PurdueGoldDark}{\textbf{#1}}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Var}{\text{Var}}
+\newcommand{\Cov}{\text{Cov}}
+
+%% --- Title Page Setup ---
+\title[Marketing, Hedging \& Crop Insurance]{Marketing, Hedging, and Crop Insurance}
+\subtitle{Integrating Risk Management Tools}
+\author{Mindy Mallory}
+\institute{Department of Agricultural Economics \\ Purdue University}
+\date{\today}
+
+%% --- Custom Title Page ---
+\setbeamertemplate{title page}{
+  \begin{tikzpicture}[remember picture,overlay]
+    \fill[PurdueBlack] (current page.north west) rectangle (current page.south east);
+
+    % Gold accent bar
+    \fill[PurdueGold] ([yshift=-2cm]current page.north west) rectangle ([yshift=-2.3cm]current page.north east);
+
+    % Title
+    \node[anchor=west,text=PurdueGold,font=\Huge\bfseries,text width=14cm] at ([xshift=1cm,yshift=-4cm]current page.north west) {\inserttitle};
+
+    % Subtitle
+    \node[anchor=west,text=PurdueGoldLight,font=\large] at ([xshift=1cm,yshift=-5.5cm]current page.north west) {\insertsubtitle};
+
+    % Author and Institute
+    \node[anchor=west,text=white,font=\normalsize] at ([xshift=1cm,yshift=-7cm]current page.north west) {\insertauthor};
+    \node[anchor=west,text=PurdueGold,font=\small] at ([xshift=1cm,yshift=-7.8cm]current page.north west) {\insertinstitute};
+
+    % Date
+    \node[anchor=west,text=PurdueGray,font=\small] at ([xshift=1cm,yshift=-9cm]current page.north west) {\insertdate};
+
+    % Bottom gold bar
+    \fill[PurdueGold] ([yshift=0.5cm]current page.south west) rectangle ([yshift=0.2cm]current page.south east);
+  \end{tikzpicture}
+}
+
+%% --- Section Title Frames ---
+\AtBeginSection[]{
+  \begin{frame}
+    \begin{tikzpicture}[remember picture,overlay]
+      \fill[PurdueBlack] (current page.north west) rectangle (current page.south east);
+      \node[text=PurdueGold,font=\Huge\bfseries,text width=12cm,align=center] at (current page.center) {\insertsectionhead};
+      \fill[PurdueGold] ([yshift=-1cm]current page.center) +(-3,0) rectangle +(3,-0.1);
+    \end{tikzpicture}
+  \end{frame}
+}
+
+%% =============================================================================
+%% DOCUMENT BEGINS
+%% =============================================================================
+\begin{document}
+
+% Title frame
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+% Outline
+\begin{frame}{Outline}
+  \tableofcontents
+\end{frame}
+
+%% =============================================================================
+%% HIGHLIGHTS
+%% =============================================================================
+
+\begin{frame}{Chapter Highlights}
+  \begin{block}{Key Takeaways}
+    \begin{itemize}
+      \item Purchasing crop insurance provides protection against \highlight{catastrophic loss} in the event of crop failure, and/or significant price decline between planting and harvest
+      \item How much protection crop insurance alone provides varies based on \highlight{pre-harvest price movements}
+      \item Crop insurance alone does not provide an optimal marketing plan for some scenarios of price movement planting-harvest
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+%% =============================================================================
+%% SECTION 1: HISTORY OF CROP INSURANCE
+%% =============================================================================
+
+\section{Brief History of Crop Insurance}
+
+\begin{frame}{Federal Farm Support Programs: Historical Context}
+  \begin{itemize}
+    \item Currently, crop insurance dominates the landscape of federally sponsored farm programs for risk management
+    \item History of market interventions and price supports in the United States is long and varied
+    \item Understanding the economic and political motivations for the transition is important
+  \end{itemize}
+
+  \vspace{1em}
+  \begin{block}{Transition From}
+    \begin{itemize}
+      \item Price supports
+      \item Ad hoc disaster payments
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{Transition To}
+    \begin{itemize}
+      \item Federally subsidized crop insurance
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}{Why Move Away from Price Supports?}
+  \begin{alertblock}{Problems with Price Supports}
+    \begin{itemize}
+      \item Distort markets by creating \highlight{inefficiency in production decisions}
+      \item Generate ill will with trading partners
+      \item Subsidize too much production
+      \item Lower world prices to the detriment of farmers in other countries
+    \end{itemize}
+  \end{alertblock}
+
+  \vspace{1em}
+  \begin{alertblock}{Problems with Ad Hoc Disaster Payments}
+    \begin{itemize}
+      \item Not predictable in \highlight{timing} of when needed
+      \item Not predictable in \highlight{size} of the need
+    \end{itemize}
+  \end{alertblock}
+
+  \vspace{0.5em}
+  \textit{Both created an appetite among lawmakers for a program whose cost was more predictable.}
+\end{frame}
+
+\begin{frame}{Why Crop Insurance Requires Federal Involvement}
+  \begin{block}{Challenge 1: Private Market Limitations}
+    Insurance markets can exist in the private sector when:
+    \begin{itemize}
+      \item Insured losses are relatively small (compared to premium collected)
+      \item Losses are predictable from year-to-year
+    \end{itemize}
+  \end{block}
+
+  \vspace{0.5em}
+  \begin{alertblock}{Crop Insurance is Neither!}
+    \begin{itemize}
+      \item Losses are typically \highlight{highly correlated}
+      \item When there is a crop failure, most farmers in the affected region experience a loss
+      \item Hard for private insurance companies to ensure liquidity for widespread failures
+      \item Without a federal backstop, private market cannot offer crop insurance
+    \end{itemize}
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}{Early Crop Insurance Programs: 1930s--1980s}
+  \begin{block}{Challenge 2: Insufficient Farmer Participation}
+    \begin{itemize}
+      \item Early federal crop insurance programs did not attract sufficient usage
+      \item This did not prevent passage of additional ad hoc disaster payments
+    \end{itemize}
+  \end{block}
+
+  \vspace{1em}
+  \begin{alertblock}{The Problem}
+    If taxpayers have to pay for:
+    \begin{enumerate}
+      \item Administration of the crop insurance program, \textbf{AND}
+      \item Ad hoc disaster payments from time-to-time
+    \end{enumerate}
+
+    \vspace{0.5em}
+    Then the program is:
+    \begin{itemize}
+      \item Not meeting its purpose
+      \item Wasting taxpayer money by paying for two solutions
+    \end{itemize}
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}{Key Legislative Reforms}
+  \begin{block}{Federal Crop Insurance Act of 1980}
+    Made purchase of crop insurance coverage \highlight{mandatory} for farmers to receive other program payments
+  \end{block}
+
+  \vspace{0.5em}
+  \begin{block}{Crop Insurance Reform Act of 1994}
+    \begin{itemize}
+      \item Mandatory coverage requirement was \highlight{removed}
+      \item Replaced with \highlight{premium subsidies}
+    \end{itemize}
+  \end{block}
+
+  \vspace{0.5em}
+  \begin{exampleblock}{Result}
+    Congress increased subsidy rates to levels where farmers voluntarily purchase enough coverage to reduce the need for frequent disaster payments
+  \end{exampleblock}
+
+  \vspace{0.5em}
+  \begin{block}{Current Status}
+    Federal subsidies for crop insurance average \highlight{62\%} of the premium cost
+  \end{block}
+\end{frame}
+
+%% =============================================================================
+%% SECTION 2: CROP INSURANCE OFFERINGS
+%% =============================================================================
+
+\section{Overview of Typical Crop Insurance Offerings}
+
+\begin{frame}{Yield Protection and Area Yield Protection}
+  \begin{block}{Yield Protection}
+    \begin{itemize}
+      \item Guarantees against a loss of production less than a percent of \highlight{Actual Production History (APH)}
+      \item Indemnities paid when production falls below the APH
+      \item Payments based on that production year's \highlight{projected price}
+        \begin{itemize}
+          \item For corn and soybeans: average of new crop futures settlement prices during February
+        \end{itemize}
+    \end{itemize}
+  \end{block}
+
+  \vspace{1em}
+  \begin{block}{Area Yield Protection}
+    \begin{itemize}
+      \item Similar to Yield Protection
+      \item Yield guarantee based on \highlight{county yields}, not the individual producer's APH
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}{Revenue Protection and Area Revenue Protection}
+  \begin{block}{Revenue Protection}
+    \begin{itemize}
+      \item Guarantees against loss of revenue below:
+      \[
+        \text{APH} \times \max(\text{Projected Price}, \text{Harvest Price})
+      \]
+      \item \highlight{Projected Price}: New crop futures price in February
+      \item \highlight{Harvest Price}: New crop futures price at harvest
+      \item Gained popularity because farmers are concerned with \highlight{revenue loss}, not just yield loss
+    \end{itemize}
+  \end{block}
+
+  \vspace{1em}
+  \begin{block}{Area Revenue Protection}
+    \begin{itemize}
+      \item Similar to Revenue Protection
+      \item Revenue guarantee calculated against the \highlight{county APH} rather than producer's APH
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}{Revenue Protection with Harvest Price Exclusion}
+  \begin{block}{Key Difference from Standard Revenue Protection}
+    \begin{itemize}
+      \item Same as Revenue Protection, \textbf{except}:
+      \item Policy does \highlight{NOT} guarantee based on the Harvest Price
+      \item Revenue is calculated based on:
+      \[
+        \text{Projected Price} \times \text{APH}
+      \]
+    \end{itemize}
+  \end{block}
+
+  \vspace{1em}
+  \begin{alertblock}{Implication}
+    Provides less upside protection if harvest prices rise above projected prices
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}{Summary: Crop Insurance Types}
+  \begin{center}
+    \begin{tabular}{lcc}
+      \toprule
+      \textbf{Insurance Type} & \textbf{Basis} & \textbf{Price Guarantee} \\
+      \midrule
+      Yield Protection & Individual APH & Projected Price \\
+      Area Yield Protection & County APH & Projected Price \\
+      Revenue Protection & Individual APH & Max(Projected, Harvest) \\
+      Area Revenue Protection & County APH & Max(Projected, Harvest) \\
+      RP w/ Harvest Exclusion & Individual APH & Projected Price Only \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+\end{frame}
+
+%% =============================================================================
+%% SECTION 3: MARKETING STRATEGIES WITH CROP INSURANCE
+%% =============================================================================
+
+\section{Pre-Harvest Marketing Strategies with Crop Insurance}
+
+\begin{frame}{Marketing Insured Bushels}
+  \begin{block}{Current State of U.S. Crop Insurance}
+    Roughly \highlight{90\%} of U.S. cropland is insured in the Federal Crop Insurance program
+  \end{block}
+
+  \vspace{1em}
+  \begin{alertblock}{Critical Warning: Marketing Uninsured Bushels}
+    Marketing uninsured bushels is very risky in the event of a crop failure!
+
+    \vspace{0.5em}
+    \textbf{Example:}
+    \begin{itemize}
+      \item Forward contract to deliver 1,000 bushels at \$5.00/bu
+      \item Yield losses result in only 500 bushels produced
+      \item Cannot meet delivery obligation
+      \item Must buy out the contract at potentially \highlight{high spot prices}
+    \end{itemize}
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}{Why Revenue Protection Enables Marketing}
+  \begin{block}{Revenue Protection Guarantee}
+    With Revenue Protection, you are guaranteed:
+    \[
+      \text{Coverage \%} \times \text{APH} \times \max(\text{Base Price}, \text{Harvest Price})
+    \]
+  \end{block}
+
+  \vspace{1em}
+  \begin{exampleblock}{Benefit for Marketing}
+    This revenue guarantee ensures you can at least \highlight{buy out your forward contract} in the event of a crop failure
+  \end{exampleblock}
+
+  \vspace{0.5em}
+  \textit{Revenue Protection provides a floor that supports pre-harvest marketing decisions}
+\end{frame}
+
+\begin{frame}{When Prices Fall After Base Price is Set}
+  \begin{block}{The Hedging Perspective}
+    From a hedging perspective, the marketing decision is \highlight{trivial} if prices fall after the base price is set:
+
+    \begin{itemize}
+      \item You already have revenue protected at: \\
+        Coverage Level $\times$ APH $\times$ Base Price
+      \item You are already hedged against price declines
+    \end{itemize}
+  \end{block}
+
+  \vspace{1em}
+  \begin{alertblock}{Important Note}
+    If you take a bullish or bearish position when already protected, you are a \highlight{speculator} at that point---not a hedger
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}{When Prices Rise After Base Price is Set}
+  \begin{block}{The Interesting Marketing Question}
+    When price rises after the Base Price is set (first of March):
+    \begin{itemize}
+      \item Producer is exposed to price uncertainty to both upside and downside
+      \item However, with Revenue Protection, revenue is guaranteed at the harvest price
+      \item \textit{Unless} price falls below the Base Price
+    \end{itemize}
+  \end{block}
+
+  \vspace{1em}
+  \begin{exampleblock}{Key Decision}
+    Should a producer lock in a high price that has risen above the Base Price?
+  \end{exampleblock}
+\end{frame}
+
+\begin{frame}{Marketing Scenario Setup}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \begin{block}{Assumptions}
+        \begin{itemize}
+          \item Base Price: \$5.00
+          \item BreakEven Price: \$4.90
+          \item Base Price $>$ BreakEven (favorable)
+          \item July Dec Corn Futures: \$5.35
+          \item Substantial rise above Base Price
+        \end{itemize}
+      \end{block}
+    \end{column}
+
+    \begin{column}{0.5\textwidth}
+      \begin{block}{Policy Parameters}
+        \begin{itemize}
+          \item APH: 200 bushels/acre
+          \item Coverage Level: 85\%
+          \item Revenue Protection policy
+        \end{itemize}
+      \end{block}
+    \end{column}
+  \end{columns}
+
+  \vspace{1em}
+  \begin{exampleblock}{Question}
+    Should a producer lock in the \$5.35 price in July?
+  \end{exampleblock}
+\end{frame}
+
+\begin{frame}{Price Scenarios: July to October}
+  \begin{center}
+    \includegraphics[width=0.8\textwidth]{../../assets/cropins_ex.png}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Marketing Choices to Analyze}
+  \begin{block}{Price Scenarios (July $\rightarrow$ October)}
+    \begin{enumerate}
+      \item Price rises to \highlight{\$5.60}
+      \item Price stays flat at \highlight{\$5.35}
+      \item Price falls to \highlight{\$5.10}
+    \end{enumerate}
+  \end{block}
+
+  \vspace{0.5em}
+  \begin{block}{Marketing Strategies}
+    \begin{itemize}
+      \item Selling futures
+      \item Contracting for harvest delivery (assume zero basis)
+    \end{itemize}
+  \end{block}
+
+  \vspace{0.5em}
+  \begin{block}{Yield Scenarios}
+    \begin{itemize}
+      \item 100\% of APH (200 bu/acre)
+      \item 80\% of APH (160 bu/acre)
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}{Interactive Analysis Tool}
+  \begin{block}{Explore the Marketing Scenarios}
+    You can explore the moving parts yourself using the interactive Google Sheets tool:
+
+    \vspace{1em}
+    \centering
+    \url{https://docs.google.com/spreadsheets/d/1rbne8odUljxIuIYP3IRiWyzaQDs83-mjOkuaaDWxb3w/edit?usp=sharing}
+  \end{block}
+
+  \vspace{1em}
+  \begin{exampleblock}{What You Can Analyze}
+    \begin{itemize}
+      \item Different price scenarios
+      \item Different yield outcomes
+      \item Impact of marketing decisions on final revenue
+      \item Interaction between crop insurance and marketing strategies
+    \end{itemize}
+  \end{exampleblock}
+\end{frame}
+
+%% =============================================================================
+%% SUMMARY
+%% =============================================================================
+
+\section{Summary}
+
+\begin{frame}{Key Takeaways}
+  \begin{enumerate}
+    \item \highlight{Crop insurance} is now the dominant federal farm program for risk management (62\% premium subsidy)
+
+    \vspace{0.5em}
+    \item Federal involvement is necessary because crop losses are \highlight{highly correlated}---private markets cannot provide adequate liquidity
+
+    \vspace{0.5em}
+    \item \highlight{Revenue Protection} (most popular) guarantees:
+    \[
+      \text{APH} \times \max(\text{Projected Price}, \text{Harvest Price})
+    \]
+
+    \vspace{0.5em}
+    \item Marketing \highlight{insured bushels} is safer---Revenue Protection provides a floor to buy out contracts if needed
+
+    \vspace{0.5em}
+    \item Pre-harvest marketing becomes interesting when prices \highlight{rise above} the Base Price
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}{Questions for Discussion}
+  \begin{enumerate}
+    \item Why can't private insurance companies offer crop insurance without federal support?
+
+    \vspace{1em}
+    \item What is the key difference between Yield Protection and Revenue Protection?
+
+    \vspace{1em}
+    \item When does crop insurance alone fail to provide an optimal marketing plan?
+
+    \vspace{1em}
+    \item Why is marketing uninsured bushels particularly risky?
+  \end{enumerate}
+\end{frame}
+
+%% =============================================================================
+%% END OF SLIDES
+%% =============================================================================
+
+\end{document}

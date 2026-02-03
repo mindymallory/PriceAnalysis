@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(qmd-to-beamer)",
+      "WebFetch(domain:github.com)",
+      "Skill(econ-researcher)"
+    ]
+  }
+}
