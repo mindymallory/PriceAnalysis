@@ -1,0 +1,1671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Option Topics</title>
+
+    <!-- Fonts: Professional academic pairing -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- MathJax for LaTeX equation rendering -->
+    <script>
+        MathJax = {
+            tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+            svg: { fontCache: 'global' },
+            startup: { pageReady: () => MathJax.startup.defaultPageReady() }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+    <style>
+        /* ===========================================
+           CSS CUSTOM PROPERTIES (THEME)
+           Professional dark theme for educational content
+           =========================================== */
+        :root {
+            /* Colors - Midnight Executive palette */
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --bg-tertiary: #334155;
+            --text-primary: #f8fafc;
+            --text-secondary: #cbd5e1;
+            --text-muted: #94a3b8;
+            --accent: #fbbf24;
+            --accent-secondary: #3b82f6;
+            --success: #22c55e;
+            --warning: #f97316;
+            --danger: #ef4444;
+            --border: #475569;
+
+            /* Typography */
+            --font-display: 'Libre Baskerville', serif;
+            --font-body: 'Source Sans 3', sans-serif;
+
+            /* Spacing */
+            --slide-padding: clamp(2rem, 5vw, 4rem);
+
+            /* Animation */
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+            --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+            --duration-normal: 0.6s;
+            --duration-fast: 0.3s;
+        }
+
+        /* ===========================================
+           BASE STYLES
+           =========================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-snap-type: y mandatory;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* ===========================================
+           SLIDE CONTAINER
+           =========================================== */
+        .slide {
+            min-height: 100vh;
+            padding: var(--slide-padding);
+            scroll-snap-align: start;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* ===========================================
+           SLIDE VARIATIONS
+           =========================================== */
+        .title-slide {
+            text-align: center;
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+        }
+
+        .title-slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at 30% 20%, rgba(251, 191, 36, 0.1) 0%, transparent 50%),
+                        radial-gradient(ellipse at 70% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .section-slide {
+            background: var(--bg-secondary);
+        }
+
+        .section-slide.warning-theme {
+            background: linear-gradient(135deg, #1a1207 0%, #1e293b 100%);
+        }
+
+        .content-slide {
+            background: var(--bg-primary);
+        }
+
+        /* ===========================================
+           TYPOGRAPHY
+           =========================================== */
+        h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 6vw, 3.5rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        h2 {
+            font-family: var(--font-display);
+            font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+        }
+
+        h3 {
+            font-family: var(--font-body);
+            font-size: clamp(1.1rem, 2vw, 1.35rem);
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        p {
+            font-size: clamp(1rem, 1.8vw, 1.15rem);
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .lead {
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            color: var(--text-secondary);
+            margin-top: 1rem;
+        }
+
+        .chapter-number {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .citation {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        .source {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 1.5rem;
+            border-top: 1px solid var(--border);
+            padding-top: 1rem;
+        }
+
+        /* ===========================================
+           LISTS
+           =========================================== */
+        ul, ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            font-size: clamp(1rem, 1.8vw, 1.15rem);
+            margin-bottom: 0.6rem;
+            color: var(--text-secondary);
+        }
+
+        li::marker {
+            color: var(--accent);
+        }
+
+        li strong {
+            color: var(--text-primary);
+        }
+
+        /* Highlight lists */
+        .highlight-list {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .highlight-list li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .highlight-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5em;
+            width: 10px;
+            height: 10px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        /* Numbered concept list */
+        .concept-list {
+            list-style: none;
+            margin-left: 0;
+            counter-reset: concept;
+        }
+
+        .concept-list li {
+            position: relative;
+            padding-left: 3rem;
+            margin-bottom: 1.5rem;
+            counter-increment: concept;
+        }
+
+        .concept-list li::before {
+            content: counter(concept);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2rem;
+            height: 2rem;
+            background: var(--accent);
+            color: var(--bg-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        /* ===========================================
+           CARDS & BOXES
+           =========================================== */
+        .card {
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--accent);
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.25rem;
+            margin-top: 1.5rem;
+        }
+
+        .card-grid-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .definition-card {
+            background: var(--bg-tertiary);
+            border-radius: 8px;
+            padding: 1.25rem;
+            border-left: 4px solid var(--accent-secondary);
+        }
+
+        .definition-card h3 {
+            color: var(--accent-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .warning-box {
+            background: rgba(249, 115, 22, 0.15);
+            border: 1px solid var(--warning);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .warning-box h3 {
+            color: var(--warning);
+        }
+
+        .danger-box {
+            background: rgba(239, 68, 68, 0.15);
+            border: 1px solid var(--danger);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .danger-box h3 {
+            color: var(--danger);
+        }
+
+        .key-point {
+            background: rgba(251, 191, 36, 0.1);
+            border: 1px solid var(--accent);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .key-point h3 {
+            color: var(--accent);
+        }
+
+        .success-box {
+            background: rgba(34, 197, 94, 0.1);
+            border: 1px solid var(--success);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .success-box h3 {
+            color: var(--success);
+        }
+
+        .example-box {
+            background: var(--bg-tertiary);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border: 1px solid var(--border);
+        }
+
+        /* ===========================================
+           IMAGES
+           =========================================== */
+        .slide-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            margin: 1rem 0;
+        }
+
+        .image-container {
+            text-align: center;
+        }
+
+        .image-caption {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+
+        /* ===========================================
+           TWO COLUMN LAYOUT
+           =========================================== */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            align-items: start;
+        }
+
+        .two-column-60-40 {
+            grid-template-columns: 1.5fr 1fr;
+        }
+
+        .two-column-40-60 {
+            grid-template-columns: 1fr 1.5fr;
+        }
+
+        @media (max-width: 768px) {
+            .two-column,
+            .two-column-60-40,
+            .two-column-40-60 {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .card-grid-3 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===========================================
+           FORMULA/EQUATION BOX
+           =========================================== */
+        .formula-box {
+            background: var(--bg-tertiary);
+            border-radius: 8px;
+            padding: 1.25rem 1.5rem;
+            margin: 1.25rem 0;
+            text-align: center;
+            font-family: 'Georgia', serif;
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+        }
+
+        .formula-box .highlight {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .formula-box .blue {
+            color: var(--accent-secondary);
+            font-weight: 700;
+        }
+
+        .formula-box-large {
+            font-size: 1.4rem;
+            padding: 1.5rem 2rem;
+        }
+
+        /* ===========================================
+           COMPARISON TABLE
+           =========================================== */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 1rem;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .comparison-table th {
+            background: var(--bg-tertiary);
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .comparison-table td {
+            color: var(--text-secondary);
+        }
+
+        .comparison-table tr:hover td {
+            background: rgba(251, 191, 36, 0.05);
+        }
+
+        /* P/L result rows */
+        .comparison-table .pl-row td {
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+        .comparison-table .pl-loss {
+            color: var(--danger) !important;
+        }
+        .comparison-table .pl-gain {
+            color: var(--success) !important;
+        }
+        .comparison-table .pl-net td {
+            background: rgba(251, 191, 36, 0.08);
+            font-weight: 700;
+            border-top: 2px solid var(--accent);
+        }
+
+        /* ===========================================
+           STAT BOXES
+           =========================================== */
+        .stat-box {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--bg-tertiary);
+            border-radius: 8px;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--accent);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+
+        /* ===========================================
+           VS CONTAINER
+           =========================================== */
+        .vs-container {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .vs-divider {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            padding: 0 1rem;
+        }
+
+        /* ===========================================
+           BLOCKQUOTE
+           =========================================== */
+        blockquote {
+            border-left: 4px solid var(--accent);
+            padding: 1rem 1.5rem;
+            margin: 1.25rem 0;
+            background: rgba(251, 191, 36, 0.05);
+            border-radius: 0 8px 8px 0;
+        }
+
+        blockquote p {
+            font-style: italic;
+            font-size: clamp(1.05rem, 1.8vw, 1.2rem);
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+        }
+
+        blockquote .attribution {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-style: normal;
+        }
+
+        /* ===========================================
+           NOTATION LIST
+           =========================================== */
+        .notation-list {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .notation-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(71, 85, 105, 0.4);
+            display: flex;
+            align-items: baseline;
+            gap: 1rem;
+        }
+
+        .notation-list li:last-child {
+            border-bottom: none;
+        }
+
+        .notation-symbol {
+            color: var(--accent);
+            font-weight: 700;
+            min-width: 2.5rem;
+            text-align: right;
+        }
+
+        /* ===========================================
+           ANIMATIONS
+           =========================================== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity var(--duration-normal) var(--ease-out-expo),
+                        transform var(--duration-normal) var(--ease-out-expo);
+        }
+
+        .slide.visible .reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+        .reveal-delay-5 { transition-delay: 0.5s; }
+        .reveal-delay-6 { transition-delay: 0.6s; }
+
+        /* ===========================================
+           PROGRESS BAR & NAV
+           =========================================== */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: var(--accent);
+            width: 0%;
+            z-index: 1000;
+            transition: width 0.3s ease;
+        }
+
+        .nav-dots {
+            position: fixed;
+            right: 1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .nav-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--border);
+            cursor: pointer;
+            transition: background var(--duration-fast) var(--ease-out-quart),
+                        transform var(--duration-fast) var(--ease-out-quart);
+            border: none;
+        }
+
+        .nav-dot:hover {
+            background: var(--text-secondary);
+            transform: scale(1.2);
+        }
+
+        .nav-dot.active {
+            background: var(--accent);
+        }
+
+        .slide-number {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            z-index: 100;
+        }
+
+        .keyboard-hint {
+            position: fixed;
+            bottom: 2rem;
+            left: 2rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            z-index: 100;
+            opacity: 0.6;
+        }
+
+        .keyboard-hint kbd {
+            background: var(--bg-tertiary);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: inherit;
+            margin: 0 0.2rem;
+        }
+
+        /* ===========================================
+           REDUCED MOTION & MOBILE
+           =========================================== */
+        @media (prefers-reduced-motion: reduce) {
+            .reveal {
+                transition: opacity 0.3s ease;
+                transform: none;
+            }
+            html {
+                scroll-behavior: auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-dots,
+            .keyboard-hint {
+                display: none;
+            }
+            .slide {
+                padding: 1.5rem;
+            }
+        }
+
+        /* ===========================================
+           MATHJAX OVERRIDES
+           =========================================== */
+        mjx-container {
+            color: var(--text-primary) !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar"></div>
+    <nav class="nav-dots" aria-label="Slide navigation"></nav>
+    <div class="slide-number">1 / 31</div>
+    <div class="keyboard-hint">
+        <kbd>&larr;</kbd> <kbd>&rarr;</kbd> or <kbd>Space</kbd> to navigate
+    </div>
+
+    <!-- ===========================================
+         SLIDE 1: TITLE
+         =========================================== -->
+    <section class="slide title-slide" data-slide="1">
+        <div class="slide-content">
+            <p class="chapter-number reveal">Chapter 6</p>
+            <h1 class="reveal reveal-delay-1">Advanced Option Topics</h1>
+            <p class="subtitle reveal reveal-delay-2">Black-Scholes, Put-Call Parity, Implied Volatility, the Greeks &amp; Delta Hedging</p>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 2: HIGHLIGHTS
+         =========================================== -->
+    <section class="slide content-slide" data-slide="2">
+        <div class="slide-content">
+            <h2 class="reveal">Highlights</h2>
+            <ol class="concept-list">
+                <li class="reveal reveal-delay-1">
+                    <strong>Black-Scholes &amp; Black 1976</strong><br>
+                    Option pricing models for stocks and futures contracts
+                </li>
+                <li class="reveal reveal-delay-2">
+                    <strong>Put-Call Parity</strong><br>
+                    No arbitrage conditions linking call and put prices
+                </li>
+                <li class="reveal reveal-delay-3">
+                    <strong>Implied Volatility</strong><br>
+                    Backing out the market's expectation of future price movement
+                </li>
+                <li class="reveal reveal-delay-4">
+                    <strong>Option Greeks</strong><br>
+                    How option prices respond to changes in market variables
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 3: CHECK YOUR UNDERSTANDING
+         =========================================== -->
+    <section class="slide section-slide" data-slide="3">
+        <div class="slide-content">
+            <h2 class="reveal">Check Your Understanding</h2>
+            <div class="card reveal reveal-delay-1">
+                <h3>Question 1</h3>
+                <p>How can you create a synthetic put option?</p>
+            </div>
+            <div class="card reveal reveal-delay-2">
+                <h3>Question 2</h3>
+                <p>How do time to maturity and volatility impact an option's gamma?</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 4: CHAPTER OVERVIEW
+         =========================================== -->
+    <section class="slide content-slide" data-slide="4">
+        <div class="slide-content">
+            <h2 class="reveal">Chapter Overview</h2>
+            <p class="lead reveal reveal-delay-1">In this chapter we will cover some more advanced concepts in options markets.</p>
+            <div class="card-grid">
+                <div class="card reveal reveal-delay-2">
+                    <h3>Black-Scholes Model</h3>
+                    <p>The foundational option pricing model</p>
+                </div>
+                <div class="card reveal reveal-delay-3">
+                    <h3>Put-Call Parity</h3>
+                    <p>No-arbitrage link between calls and puts</p>
+                </div>
+                <div class="card reveal reveal-delay-4">
+                    <h3>Implied Volatility</h3>
+                    <p>What the market tells us about expected moves</p>
+                </div>
+                <div class="card reveal reveal-delay-5">
+                    <h3>The Greeks</h3>
+                    <p>How market variables impact option prices</p>
+                </div>
+                <div class="card reveal reveal-delay-5">
+                    <h3>Model Criticisms</h3>
+                    <p>Limitations of Black-Scholes in real markets</p>
+                </div>
+                <div class="card reveal reveal-delay-6">
+                    <h3>Delta Hedging</h3>
+                    <p>Using options as a hedging tool in the underlying</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 5: BLACK-SCHOLES INTRO
+         =========================================== -->
+    <section class="slide content-slide" data-slide="5">
+        <div class="slide-content">
+            <h2 class="reveal">Black-Scholes Option Pricing Model</h2>
+            <p class="lead reveal reveal-delay-1">The Black-Scholes model provides the price of a European call and the price of a European put on a non-dividend paying stock.</p>
+            <p class="reveal reveal-delay-2">The options we generally focus on in this book&mdash;options on commodity futures on CME Group exchanges&mdash;are <strong>American options</strong>. Since American options have all the rights of a European option plus the right to exercise at any time, an American option cannot be less than the price of the otherwise identical European option. Nevertheless, this distinction is often small or zero, so the intuition we glean from the Black-Scholes model works for the American options we focus on.</p>
+            <div class="key-point reveal reveal-delay-3">
+                <h3>Historical Context</h3>
+                <p>We present the model without proof. The original papers by Fischer Black, Myron Scholes and Robert Merton were published in 1973. The classic text by John Hull also provides a detailed explanation.</p>
+            </div>
+            <p class="reveal reveal-delay-4">The most basic form is for options on non-dividend paying stock. We will present this model, then show the slight modification required for options on futures contracts.</p>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 6: ASSUMPTIONS
+         =========================================== -->
+    <section class="slide section-slide" data-slide="6">
+        <div class="slide-content">
+            <h2 class="reveal">Black-Scholes Assumptions</h2>
+            <div class="two-column">
+                <div>
+                    <div class="definition-card reveal reveal-delay-1">
+                        <h3>Assumptions About Assets</h3>
+                        <ul style="margin-top: 0.75rem;">
+                            <li>There exists a <strong>riskless asset</strong> that returns a constant <strong>risk free rate</strong></li>
+                            <li style="margin-top: 0.75rem;">The stock price exhibits instantaneous returns that are <strong>log normal</strong>. More formally, the stock price follows a <strong>geometric Brownian motion</strong> and volatility and drift are constant. The drift term defines how much the stock price appreciates on average.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <div class="definition-card reveal reveal-delay-2">
+                        <h3>Assumptions About the Market</h3>
+                        <ul style="margin-top: 0.75rem;">
+                            <li>There are <strong>no arbitrage</strong> opportunities</li>
+                            <li>There are no restrictions on <strong>borrowing and lending</strong> at the risk free rate</li>
+                            <li>Market participants can buy or sell <strong>unlimited quantities</strong> of the stock</li>
+                            <li>There are <strong>no transactions costs</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 7: NOTATION
+         =========================================== -->
+    <section class="slide content-slide" data-slide="7">
+        <div class="slide-content">
+            <h2 class="reveal">Notation</h2>
+            <div class="two-column">
+                <div>
+                    <ul class="notation-list reveal reveal-delay-1">
+                        <li><span class="notation-symbol">\(C\)</span> Call Option Price</li>
+                        <li><span class="notation-symbol">\(P\)</span> Put Option Price</li>
+                        <li><span class="notation-symbol">\(S\)</span> Current Stock Price</li>
+                        <li><span class="notation-symbol">\(K\)</span> Strike Price</li>
+                        <li><span class="notation-symbol">\(r\)</span> Risk free rate</li>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="notation-list reveal reveal-delay-2">
+                        <li><span class="notation-symbol">\(\sigma\)</span> Std. dev. of stock price returns</li>
+                        <li><span class="notation-symbol">\(t\)</span> Time to maturity (fraction of a year)</li>
+                        <li><span class="notation-symbol">\(N\)</span> Standard normal CDF</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="formula-box formula-box-large reveal reveal-delay-3">
+                \[ d_{1} = \frac{\ln\!\left(\frac{S_{t}}{K}\right) + \left(r + \frac{\sigma^{2}}{2}\right)t}{\sigma \sqrt{t}} \]
+            </div>
+            <div class="formula-box formula-box-large reveal reveal-delay-4">
+                \[ d_{2} = d_{1} - \sigma \sqrt{t} \]
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 8: BLACK-SCHOLES FORMULAS
+         =========================================== -->
+    <section class="slide section-slide" data-slide="8">
+        <div class="slide-content">
+            <h2 class="reveal">Black-Scholes Formulas</h2>
+            <p class="lead reveal reveal-delay-1">The formula for a call option on a non-dividend paying stock with strike price \(K\) that has time to maturity \(t\):</p>
+            <div class="formula-box formula-box-large reveal reveal-delay-2">
+                \[ C = S_{t}\,N(d_{1}) - K\,e^{-rt}\,N(d_{2}) \]
+            </div>
+            <p class="lead reveal reveal-delay-3">The price of a similar put option is:</p>
+            <div class="formula-box formula-box-large reveal reveal-delay-4">
+                \[ P = N(-d_{2})\,K\,e^{-rt} - N(-d_{1})\,S_{t} \]
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 9: BLACK 1976 FOR FUTURES
+         =========================================== -->
+    <section class="slide content-slide" data-slide="9">
+        <div class="slide-content">
+            <h2 class="reveal">Black 1976: Option Pricing for Futures</h2>
+            <div class="key-point reveal reveal-delay-1">
+                <h3>Key Difference from Black-Scholes</h3>
+                <p>Stock trading requires the full value of the stock be spent upfront, so \(S_{t}\) references expenditures at the current time and does not need to be discounted. Futures contracts differ&mdash;entering a futures contract does not require expenditure upfront (besides posting margin). Therefore, the price of the underlying should be <strong>discounted</strong>, bringing the future value of the expenditure related to the futures contract to the present.</p>
+            </div>
+            <p class="lead reveal reveal-delay-2">Call option on futures:</p>
+            <div class="formula-box formula-box-large reveal reveal-delay-2">
+                \[ C = F_{t}\,e^{-rt}\,N(d_{1}) - K\,e^{-rt}\,N(d_{2}) \]
+            </div>
+            <p class="lead reveal reveal-delay-3">Put option on futures:</p>
+            <div class="formula-box formula-box-large reveal reveal-delay-3">
+                \[ P = N(-d_{2})\,K\,e^{-rt} - N(-d_{1})\,F_{t}\,e^{-rt} \]
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 10: PUT-CALL PARITY INTRO
+         =========================================== -->
+    <section class="slide section-slide" data-slide="10">
+        <div class="slide-content">
+            <h2 class="reveal">Put-Call Parity</h2>
+            <p class="lead reveal reveal-delay-1">Put and call options of the <strong>same strike price</strong> and <strong>same expiration</strong> have to follow a specific relationship.</p>
+            <div class="key-point reveal reveal-delay-2">
+                <h3>The Core Insight</h3>
+                <p>If you know the price of a call option, the price of the put option with the same strike and expiration is <strong>determined</strong>&mdash;or there is an arbitrage opportunity.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 11: PUT-CALL PARITY EXAMPLE
+         =========================================== -->
+    <section class="slide content-slide" data-slide="11">
+        <div class="slide-content">
+            <h2 class="reveal">Put-Call Parity: Numerical Example</h2>
+            <div class="example-box reveal reveal-delay-1">
+                <h3>Setup</h3>
+                <p>Suppose the price of the underlying is <strong>470 cents</strong>, and a call option with strike price of <strong>450 cents</strong> has a premium of <strong>25 cents</strong>. Consider underlying price ranges from 400 to 500 cents.</p>
+            </div>
+            <div class="two-column" style="margin-top: 1.5rem;">
+                <div class="card reveal reveal-delay-2">
+                    <h3>Call Option Profit at Expiration</h3>
+                    <p>From 400 to 450 cents the profit would be <strong>&minus;25 cents</strong> (you paid the premium, option expires worthless). As the price of the underlying increases from 450 to 500 cents, the profit increases one for one.</p>
+                    <p style="margin-top: 0.5rem; color: var(--text-muted); font-size: 0.95rem;">Formula: <code>max(0, Price &minus; Strike) &minus; Premium</code></p>
+                </div>
+                <div class="card reveal reveal-delay-3">
+                    <h3>Short Futures Profit</h3>
+                    <p>A short position in the underlying futures contract initiated at 470 cents. Being a short position, this makes money as the price of the underlying falls.</p>
+                    <p style="margin-top: 0.5rem; color: var(--text-muted); font-size: 0.95rem;">Formula: <code>470 &minus; Price</code></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 12: SYNTHETIC PUT
+         =========================================== -->
+    <section class="slide section-slide" data-slide="12">
+        <div class="slide-content">
+            <h2 class="reveal">Building the Synthetic Put</h2>
+            <p class="lead reveal reveal-delay-1">Combine the long call and the short futures positions:</p>
+            <div class="formula-box reveal reveal-delay-2">
+                Combined Profit = Call Profit + Short Futures Profit
+            </div>
+            <div class="success-box reveal reveal-delay-3">
+                <h3>The Result: A Synthetic Put</h3>
+                <p>The combined position looks <strong>exactly</strong> like the profit at expiration of a <strong>put option with strike equal to 450 cents</strong>! This is called a <strong>synthetic put position</strong>.</p>
+                <p style="margin-top: 0.75rem;">So, the put option premium in this example must be <strong>5 cents</strong>, otherwise you could buy the synthetic and sell the real put (or vice versa) and make a <strong>riskless profit</strong>.</p>
+            </div>
+            <div class="key-point reveal reveal-delay-4">
+                <h3>Put-Call Parity</h3>
+                <p>This relationship between the call and put price is called <strong>put-call parity</strong>.</p>
+                <p style="margin-top: 0.75rem;"><strong>Aside:</strong> You can also create a <strong>synthetic call</strong> option by buying a put option and buying the underlying.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 13: IMPLIED VOLATILITY
+         =========================================== -->
+    <section class="slide content-slide" data-slide="13">
+        <div class="slide-content">
+            <h2 class="reveal">Implied Volatility</h2>
+            <p class="reveal reveal-delay-1">Of all the variables that go into the option pricing model, the only ones we don't know beforehand are the <strong>option price</strong> and <strong>\(\sigma\)</strong> (the standard deviation of returns of the underlying). If we plug in all the numbers we know and make a good estimate of \(\sigma\), the formula gives us an estimate of the option's worth.</p>
+            <div class="key-point reveal reveal-delay-2">
+                <h3>In Practice: Reverse the Formula</h3>
+                <p>We can observe markets where options are trading and know the prices at any moment. If we take these traded prices and use them in the formula, then we can <strong>solve for \(\sigma\)</strong> and get a measure of the volatility <strong>"implied"</strong> by the prices at which the option is currently trading.</p>
+            </div>
+            <p class="reveal reveal-delay-3">Implied volatility is normalized to units of <strong>% per annum</strong>. An implied volatility of 16% means option market participants think the underlying could move (in either direction) 16% per year. The implied volatility is always changing&mdash;in fact, that is one criticism of the Black-Scholes model, which requires <strong>constant volatility</strong>.</p>
+            <div class="warning-box reveal reveal-delay-4">
+                <h3>Key Takeaway</h3>
+                <p><strong>High implied volatility means high option prices</strong>, all else equal.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 14: OPTION PRICES VS INTRINSIC VALUE
+         =========================================== -->
+    <section class="slide section-slide" data-slide="14">
+        <div class="slide-content">
+            <h2 class="reveal">Option Prices vs. the Profit Diagram</h2>
+            <p class="lead reveal reveal-delay-1">Consider the price of a call and put option with strike price of 450 cents plotted along with the <strong>intrinsic value</strong> (what the option is worth at expiration given the underlying, not considering premium paid).</p>
+            <div class="two-column" style="margin-top: 1.5rem;">
+                <div class="card reveal reveal-delay-2">
+                    <h3>Option Price &ge; Intrinsic Value</h3>
+                    <p>For every value of the underlying, the call price is <strong>above</strong> the intrinsic value line. The price of an option prior to expiration must be worth at least as much as its intrinsic value, with a little extra to account for the uncertainty in price that could change the moneyness before expiration.</p>
+                </div>
+                <div class="card reveal reveal-delay-3">
+                    <h3>Greatest Difference Near the Strike</h3>
+                    <p>The option differs from its intrinsic value <strong>most near the strike price</strong>. This is because the option price must <strong>smooth out the kink</strong> in the intrinsic value diagram.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 15: DELTA
+         =========================================== -->
+    <section class="slide content-slide" data-slide="15">
+        <div class="slide-content">
+            <h2 class="reveal">Option Greeks: Delta</h2>
+            <div class="formula-box reveal reveal-delay-1">
+                \[ \Delta_{\text{call}} = \frac{\partial C}{\partial F} \qquad\qquad \Delta_{\text{put}} = \frac{\partial P}{\partial F} \]
+            </div>
+            <p class="reveal reveal-delay-2">Delta measures how much the value of an option changes as the underlying changes. Literally, this is the <strong>slope of the line</strong> representing the option price.</p>
+            <div class="card-grid" style="margin-top: 1.5rem;">
+                <div class="definition-card reveal reveal-delay-3">
+                    <h3>Underlying Moves Higher</h3>
+                    <ul style="margin-top: 0.5rem;">
+                        <li>Call more ITM &rarr; call \(\Delta\) approaches <strong>+1</strong></li>
+                        <li>Put more OTM &rarr; put \(\Delta\) approaches <strong>0</strong></li>
+                    </ul>
+                </div>
+                <div class="definition-card reveal reveal-delay-4">
+                    <h3>Underlying Moves Lower</h3>
+                    <ul style="margin-top: 0.5rem;">
+                        <li>Call \(\Delta\) approaches <strong>0</strong></li>
+                        <li>Put \(\Delta\) approaches <strong>&minus;1</strong></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="key-point reveal reveal-delay-5" style="margin-top: 1.5rem;">
+                <h3>At the Money</h3>
+                <p>Call delta = <strong>+0.5</strong>, Put delta = <strong>&minus;0.5</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 16: GAMMA
+         =========================================== -->
+    <section class="slide section-slide" data-slide="16">
+        <div class="slide-content">
+            <h2 class="reveal">Option Greeks: Gamma</h2>
+            <div class="formula-box reveal reveal-delay-1">
+                \[ \gamma_{\text{call}} = \frac{\partial^2 C}{\partial F^2} \qquad\qquad \gamma_{\text{put}} = \frac{\partial^2 P}{\partial F^2} \]
+            </div>
+            <p class="reveal reveal-delay-2">Gamma tells you the <strong>curvature</strong> of the option price with respect to the underlying&mdash;how much additional \(\Delta\) you get as the underlying price increases.</p>
+            <div class="example-box reveal reveal-delay-3">
+                <h3>Visualizing Gamma</h3>
+                <p>At an underlying price of 425 the option line is pretty flat (<strong>low delta</strong>), while at 475 the option line is steep and nearly equal to a slope of 1. The curvature required to get from a flat slope to a steep slope is the \(\gamma\) of the option.</p>
+            </div>
+            <div class="success-box reveal reveal-delay-4">
+                <h3>Gamma: The Speculator's Friend</h3>
+                <p>Large \(\gamma\) allows a trader to buy a cheap out-of-the-money option on an underlying they expect will move. If they are right, their position enjoys <strong>convex gains</strong>. The higher the \(\gamma\), the better for the directional speculator using long option positions. However, \(\gamma\) is counter-balanced by other greeks.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 17: THETA
+         =========================================== -->
+    <section class="slide content-slide" data-slide="17">
+        <div class="slide-content">
+            <h2 class="reveal">Option Greeks: Theta</h2>
+            <div class="formula-box reveal reveal-delay-1">
+                \[ \theta_{\text{call}} = \frac{\partial C}{\partial t} \qquad\qquad \theta_{\text{put}} = \frac{\partial P}{\partial t} \]
+            </div>
+            <p class="reveal reveal-delay-2">Options lose value as expiration nears due to reduced uncertainty about where the price of the underlying will be relative to the strike. This <strong>"time decay"</strong> is theta. Theta is how <strong>option sellers make money</strong> and theta is the <strong>enemy of long option holders</strong>. Theta is usually quoted in terms of how much the option will lose value per day, all else equal.</p>
+            <div class="two-column" style="margin-top: 1.25rem;">
+                <div class="stat-box reveal reveal-delay-3">
+                    <h3 style="color: var(--accent); margin-bottom: 0.75rem;">t = 0.5 (Six Months)</h3>
+                    <p style="margin-bottom: 0.25rem;">ATM Call: <strong>19.89&cent;</strong> (4.4% of underlying)</p>
+                    <p>ATM Put: <strong>28.89&cent;</strong> (6.4% of underlying)</p>
+                </div>
+                <div class="stat-box reveal reveal-delay-4">
+                    <h3 style="color: var(--accent); margin-bottom: 0.75rem;">t = 0.02 (About One Week)</h3>
+                    <p style="margin-bottom: 0.25rem;">ATM Call: <strong>4.06&cent;</strong> (0.90% of underlying)</p>
+                    <p>ATM Put: <strong>4.42&cent;</strong> (0.98% of underlying)</p>
+                </div>
+            </div>
+            <div class="warning-box reveal reveal-delay-5">
+                <h3>Theta Decay Accelerates</h3>
+                <p>A week passing from <strong>180 to 173 days</strong> causes much less value loss than a week passing from <strong>10 to 3 days</strong>. In both cases one week passed, but the option lost a lot more value both nominally and in percentage terms in the second case.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 18: VEGA
+         =========================================== -->
+    <section class="slide section-slide" data-slide="18">
+        <div class="slide-content">
+            <h2 class="reveal">Option Greeks: Vega</h2>
+            <div class="formula-box reveal reveal-delay-1">
+                \[ \text{Vega}_{\text{call}} = \frac{\partial C}{\partial \sigma} \qquad\qquad \text{Vega}_{\text{put}} = \frac{\partial P}{\partial \sigma} \]
+            </div>
+            <p class="lead reveal reveal-delay-2">Vega measures sensitivity of the option value to changes in volatility.</p>
+            <div class="key-point reveal reveal-delay-3">
+                <h3>The Direction is Clear</h3>
+                <p>An <strong>increase in volatility</strong> will cause an <strong>increase in option prices</strong>, all other things equal.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 19: OTHER GREEKS
+         =========================================== -->
+    <section class="slide content-slide" data-slide="19">
+        <div class="slide-content">
+            <h2 class="reveal">Other Greeks</h2>
+            <p class="lead reveal reveal-delay-1">There are other greeks that become important if you are involved in managing a large book of options positions:</p>
+            <div class="card-grid reveal reveal-delay-2">
+                <div class="definition-card">
+                    <h3>Rho</h3>
+                    <p>Sensitivity to interest rate changes</p>
+                </div>
+                <div class="definition-card">
+                    <h3>Vanna</h3>
+                    <p>Sensitivity of delta to volatility changes</p>
+                </div>
+                <div class="definition-card">
+                    <h3>Vomma</h3>
+                    <p>Sensitivity of vega to volatility changes</p>
+                </div>
+            </div>
+            <p class="reveal reveal-delay-3" style="margin-top: 1.5rem;">We will not cover these in detail. The <a href="https://en.wikipedia.org/wiki/Greeks_(finance)" style="color: var(--accent-secondary);">Greeks Wikipedia page</a> is a good place to start if you are interested.</p>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 20: VOLATILITY & TIME IMPACT ON GAMMA
+         =========================================== -->
+    <section class="slide section-slide" data-slide="20">
+        <div class="slide-content">
+            <h2 class="reveal">How Volatility &amp; Time-to-Maturity Impact Gamma</h2>
+            <p class="lead reveal reveal-delay-1">\(\gamma\) is the friend of the option buyer and foe of the option seller because of the convex return profile.</p>
+            <div class="key-point reveal reveal-delay-2">
+                <h3>What Makes \(\gamma\) Large?</h3>
+                <p><strong>Short time to maturity</strong> and <strong>low volatility</strong></p>
+            </div>
+            <div class="two-column" style="margin-top: 1.25rem;">
+                <div class="warning-box reveal reveal-delay-3">
+                    <h3>Short Time to Maturity</h3>
+                    <p>Produces large \(\gamma\), but \(\theta\) decay is fast, which works <strong>against</strong> the option buyer.</p>
+                </div>
+                <div class="warning-box reveal reveal-delay-4">
+                    <h3>Low Volatility</h3>
+                    <p>Produces large \(\gamma\), but option buyers benefit most from buying slightly OTM options prior to a significant move. Periods of low volatility make a significant move <strong>less likely</strong>.</p>
+                </div>
+            </div>
+            <div class="card reveal reveal-delay-5" style="margin-top: 1.25rem;">
+                <h3>The Bottom Line</h3>
+                <p>Even though the option buyer can create countless profit scenarios over many price ranges, <strong>profitable option buying for speculation requires anticipating a significant price move to pay off</strong>.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 21: CRITICISMS OF BLACK-SCHOLES
+         =========================================== -->
+    <section class="slide content-slide" data-slide="21">
+        <div class="slide-content">
+            <h2 class="reveal">Criticisms of the Black-Scholes Model</h2>
+            <p class="lead reveal reveal-delay-1">While the model is elegant and easy to work with, most limitations stem from <strong>unrealistic assumptions</strong>.</p>
+            <div class="danger-box reveal reveal-delay-2">
+                <h3>1. Heavy-Tailed Returns</h3>
+                <p>Extreme market movements (up or down) happen <strong>more often</strong> than implied by the normal distribution. Since option prices depend on the full probability distribution of potential outcomes, a model that assumes a normal distribution will <strong>chronically under-price options</strong>.</p>
+            </div>
+            <div class="danger-box reveal reveal-delay-3">
+                <h3>2. Volatility Clustering &amp; Variable Volatility</h3>
+                <p>If we have a large price movement, it will likely be followed by <strong>large price movements in the near future</strong>. We cannot predict whether it will be up or down, but we can be sure it will be volatile. Volatility is <strong>positively correlated</strong> and exhibits <strong>clustering</strong>&mdash;not the constant volatility the model assumes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 22: VOLATILITY CLUSTERING + IMAGE
+         =========================================== -->
+    <section class="slide section-slide" data-slide="22">
+        <div class="slide-content">
+            <h2 class="reveal">Volatility Clustering in Soybean Futures</h2>
+            <div class="image-container reveal reveal-delay-1">
+                <img src="../assets/Options2-volcluster.png" alt="Soybean futures weekly prices (top) and squared log differences showing volatility clustering (bottom)" class="slide-image" style="max-width: 90%;">
+                <p class="image-caption">Weekly soybean futures since 2010 (top) and squared log differences (bottom)</p>
+            </div>
+            <p class="reveal reveal-delay-2">You can clearly observe the positive correlation and volatility clustering. Once there is an event that spikes volatility, it takes a while for volatility to "calm down."</p>
+            <div class="warning-box reveal reveal-delay-3">
+                <h3>Continuous Hedging Limitation</h3>
+                <p>The model requires one to <strong>continuously maintain a perfectly hedged portfolio</strong> of an option and the underlying asset. This can be impossible when prices experience <strong>"jumps"</strong> or non-continuous movements&mdash;from unexpected information hitting the market, traders pulling their standing orders, or simply routine <strong>market closures</strong>. Overnight jumps can be substantial.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 23: DELTA HEDGING CONCEPT
+         =========================================== -->
+    <section class="slide content-slide" data-slide="23">
+        <div class="slide-content">
+            <h2 class="reveal">Delta Hedging</h2>
+            <p class="lead reveal reveal-delay-1">One proof of the Black-Scholes formula shows that if one can <strong>continuously hedge</strong> the sale of an option contract with the underlying asset so that the position is "delta neutral," then the hedged portfolio is <strong>riskless</strong> and must earn the risk-free rate.</p>
+            <p class="reveal reveal-delay-2">This implies that if you know the price of the stock and the risk free rate, then you can deduce what the price of the option should be at any time. Solving that yields the Black-Scholes equation.</p>
+            <div class="key-point reveal reveal-delay-3">
+                <h3>Delta Neutral</h3>
+                <p>Recall that \(\Delta = \frac{\partial C}{\partial F}\), or how much the price of the option changes if the price of the underlying increases by one unit. A position is <strong>"delta neutral"</strong> if options and the underlying asset are held in a proportion such that for small changes in the underlying asset's price, <strong>the value of the position is unchanged</strong>.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 24: DELTA HEDGING EXAMPLE + IMAGE
+         =========================================== -->
+    <section class="slide section-slide" data-slide="24">
+        <div class="slide-content">
+            <h2 class="reveal">Delta Hedging Example</h2>
+            <div class="two-column two-column-40-60">
+                <div>
+                    <div class="example-box reveal reveal-delay-1">
+                        <h3>Setup</h3>
+                        <p>The price of the nearby corn futures is <strong>450 cents</strong>. A trader sells <strong>100</strong> of the 450 strike call options trading for <strong>11 cents</strong>.</p>
+                        <p style="margin-top: 0.75rem;">The trader is hoping to profit from <strong>theta decay</strong>. They do <strong>not</strong> want exposure to the changing price of the futures contract.</p>
+                    </div>
+                    <div class="card reveal reveal-delay-2">
+                        <h3>Question</h3>
+                        <p>How many futures contracts should they buy/sell to make their position <strong>delta neutral</strong>?</p>
+                    </div>
+                </div>
+                <div class="image-container reveal reveal-delay-3">
+                    <img src="../assets/Options2-deltahedge.png" alt="Delta of the option changes as asset price changes, showing delta=0.5 at 450 and delta=0.85 at 475" class="slide-image">
+                    <p class="image-caption">Option price curve with delta = 0.5 at 450 and delta = 0.85 at 475</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 25: DELTA HEDGING ANSWER
+         =========================================== -->
+    <section class="slide content-slide" data-slide="25">
+        <div class="slide-content">
+            <h2 class="reveal">Delta Hedging: Answer</h2>
+            <p class="reveal reveal-delay-1">The gold "hockey stick" line represents the payoff of the call option to someone long the option. The thick black line is the Black-Scholes price at the current time. The dashed lines show the slope at 450 is <strong>0.5</strong> and at 475 is <strong>0.85</strong>&mdash;these are the deltas.</p>
+            <div class="key-point reveal reveal-delay-2">
+                <h3>The Logic</h3>
+                <p>Since \(\Delta\) of the 450 strike option is <strong>0.5</strong>, the option price increases (decreases) by 0.5 times the futures price increase (decrease). Selling 100 of the 450 strike call options is like being <strong>short 50 of the futures</strong>&mdash;with a delta of 0.5, every 1 cent change in the underlying results in a 0.5 cent change in the option.</p>
+            </div>
+            <div class="success-box reveal reveal-delay-3">
+                <h3>Solution</h3>
+                <p>The trader should <strong>BUY 50 futures contracts</strong> at the same time they sell the call options. Now, for small changes in the futures price around 450, they are <strong>fully hedged</strong>.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 26: SMALL PRICE MOVE TABLE
+         =========================================== -->
+    <section class="slide section-slide" data-slide="26">
+        <div class="slide-content">
+            <h2 class="reveal">Delta-Hedged Position: Small Price Move (450 &rarr; 452)</h2>
+            <table class="comparison-table reveal reveal-delay-1">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Short Calls</th>
+                        <th>Long Futures</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>t = 0</strong></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Price</td>
+                        <td>11.06 cents per contract</td>
+                        <td>450</td>
+                    </tr>
+                    <tr>
+                        <td>Quantity</td>
+                        <td>100 contracts</td>
+                        <td>50</td>
+                    </tr>
+                    <tr>
+                        <td>Value</td>
+                        <td>(11.06/100)&times;100&times;5000 = <strong>$55,300</strong></td>
+                        <td>(450/100)&times;50&times;5000 = <strong>$1,125,000</strong> (notional)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>t = 1</strong></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Price</td>
+                        <td>12.18 cents per contract</td>
+                        <td>452</td>
+                    </tr>
+                    <tr>
+                        <td>Quantity</td>
+                        <td>100</td>
+                        <td>50</td>
+                    </tr>
+                    <tr>
+                        <td>Value</td>
+                        <td>(12.18/100)&times;100&times;5000 = <strong>$60,900</strong></td>
+                        <td>(452/100)&times;50&times;5000 = <strong>$1,130,000</strong> (notional)</td>
+                    </tr>
+                    <tr class="pl-row">
+                        <td><strong>Profit/Loss</strong></td>
+                        <td class="pl-loss">55,300 &minus; 60,900 = &minus;$5,600</td>
+                        <td class="pl-gain">1,130,000 &minus; 1,125,000 = +$5,000</td>
+                    </tr>
+                    <tr class="pl-net">
+                        <td><strong>Net P/L</strong></td>
+                        <td colspan="2" class="pl-loss">&minus;$600</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="reveal reveal-delay-2">The trader loses $600 from this price movement. They are short the premium of $55,000 that they are hoping to pocket as time eats away at the premium. This loss will likely be outweighed by the premium decay if the price does not continue to rise too fast.</p>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 27: BIG PRICE JUMP QUESTION
+         =========================================== -->
+    <section class="slide content-slide" data-slide="27">
+        <div class="slide-content">
+            <h2 class="reveal">Delta Hedging: What If Prices Jump?</h2>
+            <div class="danger-box reveal reveal-delay-1">
+                <h3>Scenario</h3>
+                <p>Suppose now that the futures price experiences a <strong>big increase to 475</strong> from close of the day session to open of the night session. The trader could not adjust their hedge gradually&mdash;the price <strong>"jumped"</strong> to 475.</p>
+            </div>
+            <div class="card reveal reveal-delay-2">
+                <h3>Question 1</h3>
+                <p>Is the trader's position still delta neutral?</p>
+            </div>
+            <div class="card reveal reveal-delay-3">
+                <h3>Question 2</h3>
+                <p>What should they do to get their position delta neutral?</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 28: BIG PRICE JUMP ANSWER
+         =========================================== -->
+    <section class="slide section-slide" data-slide="28">
+        <div class="slide-content">
+            <h2 class="reveal">Big Price Jump: Answer</h2>
+            <p class="lead reveal reveal-delay-1">Our trader is short 100 of the 450 call options and bought 50 futures contracts at 450. Then the price <strong>jumped to 475</strong>.</p>
+            <div class="two-column" style="margin-top: 1.25rem;">
+                <div class="definition-card reveal reveal-delay-2">
+                    <h3>Option Position Delta</h3>
+                    <p>At 475, option delta = 0.85</p>
+                    <p>Short 100 options: <strong>&minus;0.85 &times; 100 = &minus;85</strong></p>
+                </div>
+                <div class="definition-card reveal reveal-delay-3">
+                    <h3>Futures Position Delta</h3>
+                    <p>Futures always have delta = 1</p>
+                    <p>Long 50 futures: <strong>+1 &times; 50 = +50</strong></p>
+                </div>
+            </div>
+            <div class="warning-box reveal reveal-delay-4">
+                <h3>No Longer Delta Neutral</h3>
+                <p>Net delta = &minus;85 + 50 = <strong>&minus;35</strong>. The trader needs to <strong>buy an additional 35 futures contracts</strong> to get delta neutral (+1 &times; 85 from futures). But doing so does <strong>not erase the loss</strong> they experienced from the rise in price from 450 to 475&mdash;it just gets them delta-hedged against small price movements going forward.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 29: BIG PRICE MOVE TABLE
+         =========================================== -->
+    <section class="slide content-slide" data-slide="29">
+        <div class="slide-content">
+            <h2 class="reveal">Delta-Hedged Position: Big Price Move (450 &rarr; 475)</h2>
+            <table class="comparison-table reveal reveal-delay-1">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Short Calls</th>
+                        <th>Long Futures</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>t = 0</strong></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Price</td>
+                        <td>11.06 cents per contract</td>
+                        <td>450</td>
+                    </tr>
+                    <tr>
+                        <td>Quantity</td>
+                        <td>100 contracts</td>
+                        <td>50</td>
+                    </tr>
+                    <tr>
+                        <td>Value</td>
+                        <td>(11.06/100)&times;100&times;5000 = <strong>$55,300</strong></td>
+                        <td>(450/100)&times;50&times;5000 = <strong>$1,125,000</strong> (notional)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>t = 1</strong></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Price</td>
+                        <td>28.86 cents per contract</td>
+                        <td>475</td>
+                    </tr>
+                    <tr>
+                        <td>Quantity</td>
+                        <td>100</td>
+                        <td>50</td>
+                    </tr>
+                    <tr>
+                        <td>Value</td>
+                        <td>(28.86/100)&times;100&times;5000 = <strong>$144,300</strong></td>
+                        <td>(475/100)&times;50&times;5000 = <strong>$1,187,500</strong> (notional)</td>
+                    </tr>
+                    <tr class="pl-row">
+                        <td><strong>Profit/Loss</strong></td>
+                        <td class="pl-loss">55,300 &minus; 144,300 = &minus;$89,000</td>
+                        <td class="pl-gain">1,187,500 &minus; 1,125,000 = +$62,500</td>
+                    </tr>
+                    <tr class="pl-net">
+                        <td><strong>Net P/L</strong></td>
+                        <td colspan="2" class="pl-loss">62,500 &minus; 89,000 = &minus;$26,000</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="reveal reveal-delay-2">The trader's position has a <strong>bigger loss on the short call position</strong> than gain in the long futures position, due to the significant change in slope (or delta) of the option price.</p>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 30: WHY DELTA-HEDGING NOT FOOL-PROOF
+         =========================================== -->
+    <section class="slide section-slide" data-slide="30">
+        <div class="slide-content">
+            <h2 class="reveal">Why Is Delta-Hedging Not Fool-Proof?</h2>
+            <p class="lead reveal reveal-delay-1">Delta hedging only works if traders can <strong>continuously re-balance</strong> their option and futures positions to keep delta neutral as prices change. There are two major problems:</p>
+            <div class="two-column" style="margin-top: 1.25rem;">
+                <div class="danger-box reveal reveal-delay-2">
+                    <h3>1. Re-Balancing Is Costly</h3>
+                    <p>Traders face trading costs from <strong>commissions, fees, and/or the bid-ask spread</strong>. Re-balancing too often would quickly eat into whatever profit they hoped to earn from theta-decay.</p>
+                </div>
+                <div class="danger-box reveal reveal-delay-3">
+                    <h3>2. Prices Move in "Jumps"</h3>
+                    <p>Whether from information hitting the market that causes resting orders to be canceled and resent at much higher (or lower) prices, or from prices changing significantly from <strong>market close to open</strong>, the result is the same. They will have to re-balance after a large discrete jump. If the price jump goes against them, they will <strong>lock in a loss</strong>.</p>
+                </div>
+            </div>
+            <div class="card reveal reveal-delay-4" style="margin-top: 1.25rem;">
+                <p>In our example, if the move from 450 to 475 happens between market close and the next open, the trader's position will have a <strong>bigger loss on the short call</strong> than gain on the long futures, due to the significant change in delta of the option price.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 31: FAMOUS BLOW-UPS
+         =========================================== -->
+    <section class="slide section-slide warning-theme" data-slide="31">
+        <div class="slide-content">
+            <h2 class="reveal">Famous Blow-Ups in Delta-Hedging Operations</h2>
+            <p class="lead reveal reveal-delay-1">Large unexpected price movements have a storied history of blowing up hedge funds who focus on selling volatility.</p>
+            <div class="card-grid reveal reveal-delay-2">
+                <div class="card">
+                    <h3>Further Reading</h3>
+                    <ol style="margin-top: 0.5rem;">
+                        <li>"Epic Failures &mdash; Lessons from Volatility Funds Blow-Ups." <em>Harel Jacobson</em></li>
+                        <li style="margin-top: 0.5rem;">"Turbulent Markets Upend Volatility Hedge Funds." <em>Laurence Fletcher &amp; Richard Henderson, FT</em></li>
+                        <li style="margin-top: 0.5rem;">"How to Lose a Billion Dollars Without Really Trying." <em>Leanna Orr, Institutional Investor</em></li>
+                    </ol>
+                </div>
+            </div>
+            <blockquote class="reveal reveal-delay-3">
+                <p>"History doesn't repeat itself, but it often rhymes."</p>
+                <span class="attribution">&mdash; Mark Twain</span>
+            </blockquote>
+            <blockquote class="reveal reveal-delay-4">
+                <p>"It's like picking up pennies in front of a steamroller."</p>
+                <span class="attribution">&mdash; Unknown</span>
+            </blockquote>
+            <div class="danger-box reveal reveal-delay-5">
+                <h3>Common Theme</h3>
+                <p>A fund engages in <strong>selling volatility</strong> (selling calls, selling puts, selling VIX futures, etc.) with <strong>high leverage</strong>. These funds make spectacular returns for as long as there is not a "volatility event." One day, the volatility event arrives and anyone with a highly leveraged short volatility position is highly likely to <strong>blow up</strong>&mdash;total loss of trading capital.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         JAVASCRIPT: SLIDE PRESENTATION CONTROLLER
+         =========================================== -->
+    <script>
+        class SlidePresentation {
+            constructor() {
+                this.slides = document.querySelectorAll('.slide');
+                this.progressBar = document.querySelector('.progress-bar');
+                this.navDotsContainer = document.querySelector('.nav-dots');
+                this.slideNumberEl = document.querySelector('.slide-number');
+                this.currentSlide = 0;
+                this.totalSlides = this.slides.length;
+                this.isAnimating = false;
+
+                this.init();
+            }
+
+            init() {
+                this.createNavDots();
+                this.setupIntersectionObserver();
+                this.setupKeyboardNavigation();
+                this.setupTouchNavigation();
+                this.updateUI();
+            }
+
+            createNavDots() {
+                this.slides.forEach((_, index) => {
+                    const dot = document.createElement('button');
+                    dot.className = 'nav-dot';
+                    dot.setAttribute('aria-label', `Go to slide ${index + 1}`);
+                    dot.addEventListener('click', () => this.goToSlide(index));
+                    this.navDotsContainer.appendChild(dot);
+                });
+                this.navDots = document.querySelectorAll('.nav-dot');
+            }
+
+            setupIntersectionObserver() {
+                const options = {
+                    root: null,
+                    rootMargin: '0px',
+                    threshold: 0.5
+                };
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            const slideIndex = Array.from(this.slides).indexOf(entry.target);
+                            this.currentSlide = slideIndex;
+                            this.updateUI();
+                        }
+                    });
+                }, options);
+
+                this.slides.forEach(slide => observer.observe(slide));
+            }
+
+            setupKeyboardNavigation() {
+                document.addEventListener('keydown', (e) => {
+                    if (this.isAnimating) return;
+
+                    switch(e.key) {
+                        case 'ArrowRight':
+                        case 'ArrowDown':
+                        case ' ':
+                            e.preventDefault();
+                            this.nextSlide();
+                            break;
+                        case 'ArrowLeft':
+                        case 'ArrowUp':
+                            e.preventDefault();
+                            this.prevSlide();
+                            break;
+                        case 'Home':
+                            e.preventDefault();
+                            this.goToSlide(0);
+                            break;
+                        case 'End':
+                            e.preventDefault();
+                            this.goToSlide(this.totalSlides - 1);
+                            break;
+                    }
+                });
+            }
+
+            setupTouchNavigation() {
+                let touchStartY = 0;
+                let touchEndY = 0;
+
+                document.addEventListener('touchstart', (e) => {
+                    touchStartY = e.changedTouches[0].screenY;
+                }, { passive: true });
+
+                document.addEventListener('touchend', (e) => {
+                    touchEndY = e.changedTouches[0].screenY;
+                    this.handleSwipe(touchStartY, touchEndY);
+                }, { passive: true });
+            }
+
+            handleSwipe(startY, endY) {
+                const threshold = 50;
+                const diff = startY - endY;
+
+                if (Math.abs(diff) > threshold) {
+                    if (diff > 0) {
+                        this.nextSlide();
+                    } else {
+                        this.prevSlide();
+                    }
+                }
+            }
+
+            nextSlide() {
+                if (this.currentSlide < this.totalSlides - 1) {
+                    this.goToSlide(this.currentSlide + 1);
+                }
+            }
+
+            prevSlide() {
+                if (this.currentSlide > 0) {
+                    this.goToSlide(this.currentSlide - 1);
+                }
+            }
+
+            goToSlide(index) {
+                if (index >= 0 && index < this.totalSlides && !this.isAnimating) {
+                    this.isAnimating = true;
+                    this.slides[index].scrollIntoView({ behavior: 'smooth' });
+                    setTimeout(() => {
+                        this.isAnimating = false;
+                    }, 800);
+                }
+            }
+
+            updateUI() {
+                const progress = ((this.currentSlide + 1) / this.totalSlides) * 100;
+                this.progressBar.style.width = `${progress}%`;
+
+                this.navDots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === this.currentSlide);
+                });
+
+                this.slideNumberEl.textContent = `${this.currentSlide + 1} / ${this.totalSlides}`;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            new SlidePresentation();
+        });
+    </script>
+</body>
+</html>
