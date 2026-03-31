@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hedging with Options</title>
+
+    <!-- Fonts: Professional academic pairing -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* ===========================================
+           CSS CUSTOM PROPERTIES (THEME)
+           Professional dark theme for educational content
+           =========================================== */
+        :root {
+            /* Colors - Midnight Executive palette */
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --bg-tertiary: #334155;
+            --text-primary: #f8fafc;
+            --text-secondary: #cbd5e1;
+            --text-muted: #94a3b8;
+            --accent: #fbbf24;
+            --accent-secondary: #3b82f6;
+            --success: #22c55e;
+            --warning: #f97316;
+            --danger: #ef4444;
+            --border: #475569;
+
+            /* Typography */
+            --font-display: 'Libre Baskerville', serif;
+            --font-body: 'Source Sans 3', sans-serif;
+
+            /* Spacing */
+            --slide-padding: clamp(2rem, 5vw, 4rem);
+
+            /* Animation */
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+            --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+            --duration-normal: 0.6s;
+            --duration-fast: 0.3s;
+        }
+
+        /* ===========================================
+           BASE STYLES
+           =========================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-snap-type: y mandatory;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* ===========================================
+           SLIDE CONTAINER
+           =========================================== */
+        .slide {
+            min-height: 100vh;
+            padding: var(--slide-padding);
+            scroll-snap-align: start;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* ===========================================
+           SLIDE VARIATIONS
+           =========================================== */
+        .title-slide {
+            text-align: center;
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+        }
+
+        .title-slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at 30% 20%, rgba(251, 191, 36, 0.1) 0%, transparent 50%),
+                        radial-gradient(ellipse at 70% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .section-slide {
+            background: var(--bg-secondary);
+        }
+
+        .content-slide {
+            background: var(--bg-primary);
+        }
+
+        /* ===========================================
+           TYPOGRAPHY
+           =========================================== */
+        h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 6vw, 3.5rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        h2 {
+            font-family: var(--font-display);
+            font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+        }
+
+        h3 {
+            font-family: var(--font-body);
+            font-size: clamp(1.1rem, 2vw, 1.35rem);
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        p {
+            font-size: clamp(1rem, 1.8vw, 1.15rem);
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .lead {
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            color: var(--text-secondary);
+            margin-top: 1rem;
+        }
+
+        .chapter-number {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        /* ===========================================
+           LISTS
+           =========================================== */
+        ul, ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            font-size: clamp(1rem, 1.8vw, 1.15rem);
+            margin-bottom: 0.6rem;
+            color: var(--text-secondary);
+        }
+
+        li::marker {
+            color: var(--accent);
+        }
+
+        li strong {
+            color: var(--text-primary);
+        }
+
+        .highlight-list {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .highlight-list li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .highlight-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5em;
+            width: 10px;
+            height: 10px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .concept-list {
+            list-style: none;
+            margin-left: 0;
+            counter-reset: concept;
+        }
+
+        .concept-list li {
+            position: relative;
+            padding-left: 3rem;
+            margin-bottom: 1.5rem;
+            counter-increment: concept;
+        }
+
+        .concept-list li::before {
+            content: counter(concept);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2rem;
+            height: 2rem;
+            background: var(--accent);
+            color: var(--bg-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        /* ===========================================
+           CARDS & BOXES
+           =========================================== */
+        .card {
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--accent);
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.25rem;
+            margin-top: 1.5rem;
+        }
+
+        .card-grid-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .definition-card {
+            background: var(--bg-tertiary);
+            border-radius: 8px;
+            padding: 1.25rem;
+            border-left: 4px solid var(--accent-secondary);
+        }
+
+        .definition-card h3 {
+            color: var(--accent-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .warning-box {
+            background: rgba(249, 115, 22, 0.15);
+            border: 1px solid var(--warning);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .warning-box h3 {
+            color: var(--warning);
+        }
+
+        .danger-box {
+            background: rgba(239, 68, 68, 0.15);
+            border: 1px solid var(--danger);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .danger-box h3 {
+            color: var(--danger);
+        }
+
+        .key-point {
+            background: rgba(251, 191, 36, 0.1);
+            border: 1px solid var(--accent);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .key-point h3 {
+            color: var(--accent);
+        }
+
+        .success-box {
+            background: rgba(34, 197, 94, 0.1);
+            border: 1px solid var(--success);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .success-box h3 {
+            color: var(--success);
+        }
+
+        .example-box {
+            background: var(--bg-tertiary);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border: 1px solid var(--border);
+        }
+
+        /* ===========================================
+           IMAGES
+           =========================================== */
+        .slide-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            margin: 1rem 0;
+        }
+
+        .slide-image-medium {
+            max-width: 75%;
+        }
+
+        .image-container {
+            text-align: center;
+        }
+
+        .image-caption {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+
+        /* ===========================================
+           TWO COLUMN LAYOUT
+           =========================================== */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            align-items: start;
+        }
+
+        .two-column-60-40 {
+            grid-template-columns: 1.5fr 1fr;
+        }
+
+        .two-column-40-60 {
+            grid-template-columns: 1fr 1.5fr;
+        }
+
+        @media (max-width: 768px) {
+            .two-column,
+            .two-column-60-40,
+            .two-column-40-60 {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .card-grid-3 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===========================================
+           FORMULA/EQUATION BOX
+           =========================================== */
+        .formula-box {
+            background: var(--bg-tertiary);
+            border-radius: 8px;
+            padding: 1.25rem 1.5rem;
+            margin: 1.25rem 0;
+            text-align: center;
+            font-family: 'Georgia', serif;
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+        }
+
+        .formula-box .highlight {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .formula-box .blue {
+            color: var(--accent-secondary);
+            font-weight: 700;
+        }
+
+        .formula-box-large {
+            font-size: 1.4rem;
+            padding: 1.5rem 2rem;
+        }
+
+        /* ===========================================
+           ANIMATIONS
+           =========================================== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity var(--duration-normal) var(--ease-out-expo),
+                        transform var(--duration-normal) var(--ease-out-expo);
+        }
+
+        .slide.visible .reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+        .reveal-delay-5 { transition-delay: 0.5s; }
+        .reveal-delay-6 { transition-delay: 0.6s; }
+
+        /* ===========================================
+           PROGRESS BAR & NAV
+           =========================================== */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: var(--accent);
+            width: 0%;
+            z-index: 1000;
+            transition: width 0.3s ease;
+        }
+
+        .nav-dots {
+            position: fixed;
+            right: 1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .nav-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--border);
+            cursor: pointer;
+            transition: background var(--duration-fast) var(--ease-out-quart),
+                        transform var(--duration-fast) var(--ease-out-quart);
+            border: none;
+        }
+
+        .nav-dot:hover {
+            background: var(--text-secondary);
+            transform: scale(1.2);
+        }
+
+        .nav-dot.active {
+            background: var(--accent);
+        }
+
+        .slide-number {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            z-index: 100;
+        }
+
+        .keyboard-hint {
+            position: fixed;
+            bottom: 2rem;
+            left: 2rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            z-index: 100;
+            opacity: 0.6;
+        }
+
+        .keyboard-hint kbd {
+            background: var(--bg-tertiary);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: inherit;
+            margin: 0 0.2rem;
+        }
+
+        /* ===========================================
+           REDUCED MOTION & MOBILE
+           =========================================== */
+        @media (prefers-reduced-motion: reduce) {
+            .reveal {
+                transition: opacity 0.3s ease;
+                transform: none;
+            }
+            html {
+                scroll-behavior: auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-dots,
+            .keyboard-hint {
+                display: none;
+            }
+            .slide {
+                padding: 1.5rem;
+            }
+            .slide-image-medium {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar"></div>
+    <nav class="nav-dots" aria-label="Slide navigation"></nav>
+    <div class="slide-number">1 / 14</div>
+    <div class="keyboard-hint">
+        <kbd>&larr;</kbd> <kbd>&rarr;</kbd> or <kbd>Space</kbd> to navigate
+    </div>
+
+    <!-- ===========================================
+         SLIDE 1: TITLE
+         =========================================== -->
+    <section class="slide title-slide" data-slide="1">
+        <div class="slide-content">
+            <p class="chapter-number reveal">Chapter 7</p>
+            <h1 class="reveal reveal-delay-1">Hedging with Options</h1>
+            <p class="subtitle reveal reveal-delay-2">Protecting Downside Risk While Retaining Upside Potential</p>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 2: HIGHLIGHTS
+         =========================================== -->
+    <section class="slide content-slide" data-slide="2">
+        <div class="slide-content">
+            <h2 class="reveal">Highlights</h2>
+            <ol class="concept-list">
+                <li class="reveal reveal-delay-1">
+                    <strong>Hedge a speculative position with options</strong><br>
+                    Options provide asymmetric payoffs for hedging
+                </li>
+                <li class="reveal reveal-delay-2">
+                    <strong>Put options hedge a farmer's production risk</strong><br>
+                    Downside protection while keeping upside potential
+                </li>
+                <li class="reveal reveal-delay-3">
+                    <strong>Hedging with options is costly</strong><br>
+                    Premium payments are a significant expense
+                </li>
+                <li class="reveal reveal-delay-4">
+                    <strong>Farmer's hedge: Putting on a fence</strong><br>
+                    Sell a call to finance the protective put
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 3: CHECK YOUR UNDERSTANDING
+         =========================================== -->
+    <section class="slide section-slide" data-slide="3">
+        <div class="slide-content">
+            <h2 class="reveal">Check Your Understanding</h2>
+            <div class="card reveal reveal-delay-1">
+                <h3>Question 1</h3>
+                <p>Why does a long put option protect from downside risk?</p>
+            </div>
+            <div class="card reveal reveal-delay-2">
+                <h3>Question 2</h3>
+                <p>What are the options trades required to lock in a price range?</p>
+            </div>
+            <div class="card reveal reveal-delay-3">
+                <h3>Question 3</h3>
+                <p>Which of the strategies described in this chapter require one to maintain margin?</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 4: HEDGING RECAP — FUTURES VS OPTIONS
+         =========================================== -->
+    <section class="slide content-slide" data-slide="4">
+        <div class="slide-content">
+            <h2 class="reveal">Farmer Hedging Price Risk on Production with a Put Option</h2>
+            <p class="lead reveal reveal-delay-1">We know from chapter 4 that hedging in the financial sense is an activity designed to generate positive cash flows when the main position is experiencing a drawdown.</p>
+            <div class="two-column" style="margin-top: 1.5rem;">
+                <div class="card reveal reveal-delay-2">
+                    <h3>The Classic Example</h3>
+                    <p>A farmer with a crop in the field or in the bin is exposed to price risk and will experience financial loss if crop prices decline. To hedge, they can sell a futures contract. Corn futures prices are highly correlated to the spot price the farmer faces in the local market, so if corn prices decline, the losses in spot sales are offset by gains from the short futures position.</p>
+                </div>
+                <div class="key-point reveal reveal-delay-3">
+                    <h3>Futures Hedging Disadvantage</h3>
+                    <p>Hedging with futures removes exposure to both <strong>downside and upside</strong> price movements. By hedging with a <strong>put option</strong>, a farmer can eliminate downside risk (save for the risk of a falling basis) while retaining benefits from price increases.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 5: SPOT REVENUE
+         =========================================== -->
+    <section class="slide section-slide" data-slide="5">
+        <div class="slide-content">
+            <h2 class="reveal">Farmer's Spot Revenue</h2>
+            <p class="lead reveal reveal-delay-1">To visualize how it works, first recall what a farmer's per bushel revenue looks like as a function of the price of corn. It is simply a 45 degree line radiating from the origin.</p>
+            <div class="image-container reveal reveal-delay-2">
+                <img src="../../assets/Options4-spot.png" alt="Spot revenue as a function of corn price — a 45 degree line from the origin" class="slide-image slide-image-medium">
+                <p class="image-caption">Per-bushel spot revenue increases one-for-one with the price of corn</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 6: ADDING THE PUT OPTION
+         =========================================== -->
+    <section class="slide content-slide" data-slide="6">
+        <div class="slide-content">
+            <h2 class="reveal">Adding a Long Put Option</h2>
+            <p class="lead reveal reveal-delay-1">Next, add the payoff at expiration of a <strong>long 450 strike put option</strong> whose premium is <strong>17 cents per bushel</strong>.</p>
+            <div class="image-container reveal reveal-delay-2">
+                <img src="../../assets/Options4-spotput.png" alt="Spot revenue with long 450 put option payoff overlaid" class="slide-image slide-image-medium">
+                <p class="image-caption">Gold: spot revenue &nbsp;|&nbsp; Blue: long 450 put payoff (premium = 17&cent;/bu)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 7: COMBINED POSITION
+         =========================================== -->
+    <section class="slide section-slide" data-slide="7">
+        <div class="slide-content">
+            <h2 class="reveal">Net Position: Spot + Long Put</h2>
+            <p class="lead reveal reveal-delay-1">Adding the spot position and the long put together gives the net position shown by the black line.</p>
+            <div class="image-container reveal reveal-delay-2">
+                <img src="../../assets/Options4-spotputcomb.png" alt="Combined net position from spot revenue plus long put option" class="slide-image slide-image-medium">
+            </div>
+            <div class="card-grid reveal reveal-delay-3">
+                <div class="definition-card">
+                    <h3>1. Downside Risk Capped</h3>
+                    <p>Downside risk is capped at the strike of the long put option</p>
+                </div>
+                <div class="definition-card">
+                    <h3>2. Upside Preserved</h3>
+                    <p>Upside potential is preserved, but lowered by the amount of the put option premium</p>
+                </div>
+                <div class="definition-card">
+                    <h3>3. Premium Cost</h3>
+                    <p>Everywhere the black line is upward sloped, it is lower than the spot revenue by the amount of the put premium</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 8: ZOOMED VIEW — SYNTHETIC CALL
+         =========================================== -->
+    <section class="slide content-slide" data-slide="8">
+        <div class="slide-content">
+            <h2 class="reveal">Zoomed In: Long Spot + Long Put = Long Call</h2>
+            <p class="lead reveal reveal-delay-1">Zooming in reveals that the net position looks a lot like holding a <strong>long call option</strong> position.</p>
+            <div class="image-container reveal reveal-delay-2">
+                <img src="../../assets/Options4-spotputcombzoom.png" alt="Zoomed view of net position showing it resembles a long call payoff" class="slide-image slide-image-medium">
+            </div>
+            <div class="formula-box formula-box-large reveal reveal-delay-3">
+                <span class="highlight">Long Spot</span> + <span class="blue">Long Put</span> = Long Call
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 9: STRIKE CHOICE TRADEOFF
+         =========================================== -->
+    <section class="slide section-slide" data-slide="9">
+        <div class="slide-content">
+            <h2 class="reveal">Choosing the Put Strike: The Tradeoff</h2>
+            <p class="lead reveal reveal-delay-1">The strike of the long put should be chosen by considering the tradeoff between greater downside protection and premium cost.</p>
+            <div class="image-container reveal reveal-delay-2">
+                <img src="../../assets/Options4-spotputcombzoomchoice.png" alt="Comparison of 450 strike put (solid) vs 425 strike put (dashed) net positions" class="slide-image slide-image-medium">
+            </div>
+            <div class="two-column" style="margin-top: 1.5rem;">
+                <div class="card reveal reveal-delay-3">
+                    <h3>450 Strike Put (Solid Line)</h3>
+                    <p>Higher premium cost, but <strong>greater downside protection</strong>. The net position is farther below the spot line, but floor kicks in sooner.</p>
+                </div>
+                <div class="card reveal reveal-delay-4">
+                    <h3>425 Strike Put (Dashed Line)</h3>
+                    <p>Lower premium cost, so the net position is <strong>closer to the spot line</strong>. However, there is <strong>more downside risk</strong> since protection starts at a lower price.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 10: THE FENCE STRATEGY — CONCEPT
+         =========================================== -->
+    <section class="slide content-slide" data-slide="10">
+        <div class="slide-content">
+            <h2 class="reveal">Farmer Hedging by Putting on a Fence</h2>
+            <p class="lead reveal reveal-delay-1">A way to mitigate the cost of buying a put option to protect downside risk is to <strong>sell a call option</strong> whose strike is above the current market price.</p>
+            <div class="example-box reveal reveal-delay-2">
+                <h3>Fence Example Setup</h3>
+                <p>Current market price: <strong>450 cents</strong></p>
+                <ul style="margin-top: 0.75rem;">
+                    <li>Buy the <strong>425 put</strong> for <strong>7.85 cents</strong> premium</li>
+                    <li>Sell the <strong>475 call</strong> for <strong>13.5 cents</strong> premium</li>
+                    <li>Net premium received: 13.5 &minus; 7.85 = <strong>5.65 cents</strong></li>
+                </ul>
+            </div>
+            <div class="image-container reveal reveal-delay-3">
+                <img src="../../assets/Options4-spotfence.png" alt="Individual payoff positions for spot, long 425 put, and short 475 call" class="slide-image slide-image-medium">
+                <p class="image-caption">Gold lines: individual instrument payoffs &nbsp;|&nbsp; Black line: net position from all three</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 11: FENCE — HOW IT WORKS
+         =========================================== -->
+    <section class="slide section-slide" data-slide="11">
+        <div class="slide-content">
+            <h2 class="reveal">The Fence: How the Net Position Works</h2>
+            <div class="card-grid reveal reveal-delay-1">
+                <div class="definition-card">
+                    <h3>Below 425</h3>
+                    <p>No downside risk &mdash; you are protected by the long put</p>
+                </div>
+                <div class="definition-card">
+                    <h3>Between 425 &ndash; 475</h3>
+                    <p>Revenue rises with spot price, shifted up by net premium (5.65&cent;)</p>
+                </div>
+                <div class="definition-card">
+                    <h3>Above 475</h3>
+                    <p>No additional gains &mdash; you sold the call, so upside is capped</p>
+                </div>
+            </div>
+            <div class="key-point reveal reveal-delay-2">
+                <h3>The Essence of the Fence</h3>
+                <p>You are giving up some upside potential to finance your expense in limiting downside risk. Whether you are net positive or negative from the call premium collected minus the put premium paid depends on your strike choices. A tighter protective put strike means more limited downside but higher premium. A higher sold call strike retains more upside but collects less premium.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 12: FENCE — ZOOMED NET POSITION
+         =========================================== -->
+    <section class="slide content-slide" data-slide="12">
+        <div class="slide-content">
+            <h2 class="reveal">Zoomed View: Net Position After the Fence</h2>
+            <p class="lead reveal reveal-delay-1">The first kink in the black line is at the strike of the long put (425). The second kink is at the strike of the short call (475).</p>
+            <div class="image-container reveal reveal-delay-2">
+                <img src="../../assets/Options4-Netspotfence.png" alt="Zoomed in net position showing the fence with kinks at 425 and 475" class="slide-image slide-image-medium">
+                <p class="image-caption">Net position: floor at 425, cap at 475, upward-sloping in between</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 13: MARGIN NOTE
+         =========================================== -->
+    <section class="slide section-slide" data-slide="13">
+        <div class="slide-content">
+            <h2 class="reveal">A Note on Margin</h2>
+            <div class="two-column">
+                <div>
+                    <div class="danger-box reveal reveal-delay-1">
+                        <h3>Short Call Requires Margin</h3>
+                        <p>When putting on a fence, your <strong>short call position will require margin</strong>. If the price goes up, your short call position will be losing money. Maintaining the position open will require posting additional margin.</p>
+                        <p style="margin-top: 0.75rem;">To employ this strategy, you have to be ready to lose the short call position, or have an agreement set up with a lender to post margin in the event the price goes up enough to wipe out your posted margin.</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="success-box reveal reveal-delay-2">
+                        <h3>Long Put: No Margin Needed</h3>
+                        <p>The long put position is <strong>fully paid up front</strong>, so that position does not require margin posted to the account. As long as you have enough money in your brokerage account to buy the option + fees, you can get into the long put position.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 14: WRAPPING UP
+         =========================================== -->
+    <section class="slide title-slide" data-slide="14">
+        <div class="slide-content">
+            <h2 class="reveal" style="color: var(--accent);">Wrapping Up</h2>
+            <p class="lead reveal reveal-delay-1" style="max-width: 800px; margin: 0 auto;">In this chapter we learned how options can be used to hedge spot positions in commodity markets.</p>
+            <div class="card-grid reveal reveal-delay-2" style="max-width: 800px; margin: 1.5rem auto 0;">
+                <div class="card" style="text-align: left;">
+                    <h3>Key Takeaway</h3>
+                    <p>Downside risk can be protected with put options, but this comes at <strong>significant cost in premium paid</strong>, especially for options that have expirations longer than a week or two out.</p>
+                </div>
+            </div>
+            <div style="margin-top: 2rem;" class="reveal reveal-delay-3">
+                <p class="chapter-number">Chapter 7 &mdash; Hedging with Options</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        class SlidePresentation {
+            constructor() {
+                this.slides = document.querySelectorAll('.slide');
+                this.progressBar = document.querySelector('.progress-bar');
+                this.navDotsContainer = document.querySelector('.nav-dots');
+                this.slideNumberEl = document.querySelector('.slide-number');
+                this.currentSlide = 0;
+                this.totalSlides = this.slides.length;
+                this.isAnimating = false;
+
+                this.init();
+            }
+
+            init() {
+                this.createNavDots();
+                this.setupIntersectionObserver();
+                this.setupKeyboardNavigation();
+                this.setupTouchNavigation();
+                this.updateUI();
+            }
+
+            createNavDots() {
+                this.slides.forEach((_, index) => {
+                    const dot = document.createElement('button');
+                    dot.className = 'nav-dot';
+                    dot.setAttribute('aria-label', `Go to slide ${index + 1}`);
+                    dot.addEventListener('click', () => this.goToSlide(index));
+                    this.navDotsContainer.appendChild(dot);
+                });
+                this.navDots = document.querySelectorAll('.nav-dot');
+            }
+
+            setupIntersectionObserver() {
+                const options = {
+                    root: null,
+                    rootMargin: '0px',
+                    threshold: 0.5
+                };
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            const slideIndex = Array.from(this.slides).indexOf(entry.target);
+                            this.currentSlide = slideIndex;
+                            this.updateUI();
+                        }
+                    });
+                }, options);
+
+                this.slides.forEach(slide => observer.observe(slide));
+            }
+
+            setupKeyboardNavigation() {
+                document.addEventListener('keydown', (e) => {
+                    if (this.isAnimating) return;
+
+                    switch(e.key) {
+                        case 'ArrowRight':
+                        case 'ArrowDown':
+                        case ' ':
+                            e.preventDefault();
+                            this.nextSlide();
+                            break;
+                        case 'ArrowLeft':
+                        case 'ArrowUp':
+                            e.preventDefault();
+                            this.prevSlide();
+                            break;
+                        case 'Home':
+                            e.preventDefault();
+                            this.goToSlide(0);
+                            break;
+                        case 'End':
+                            e.preventDefault();
+                            this.goToSlide(this.totalSlides - 1);
+                            break;
+                    }
+                });
+            }
+
+            setupTouchNavigation() {
+                let touchStartY = 0;
+                let touchEndY = 0;
+
+                document.addEventListener('touchstart', (e) => {
+                    touchStartY = e.changedTouches[0].screenY;
+                }, { passive: true });
+
+                document.addEventListener('touchend', (e) => {
+                    touchEndY = e.changedTouches[0].screenY;
+                    this.handleSwipe(touchStartY, touchEndY);
+                }, { passive: true });
+            }
+
+            handleSwipe(startY, endY) {
+                const threshold = 50;
+                const diff = startY - endY;
+
+                if (Math.abs(diff) > threshold) {
+                    if (diff > 0) {
+                        this.nextSlide();
+                    } else {
+                        this.prevSlide();
+                    }
+                }
+            }
+
+            nextSlide() {
+                if (this.currentSlide < this.totalSlides - 1) {
+                    this.goToSlide(this.currentSlide + 1);
+                }
+            }
+
+            prevSlide() {
+                if (this.currentSlide > 0) {
+                    this.goToSlide(this.currentSlide - 1);
+                }
+            }
+
+            goToSlide(index) {
+                if (index >= 0 && index < this.totalSlides && !this.isAnimating) {
+                    this.isAnimating = true;
+                    this.slides[index].scrollIntoView({ behavior: 'smooth' });
+                    setTimeout(() => {
+                        this.isAnimating = false;
+                    }, 800);
+                }
+            }
+
+            updateUI() {
+                const progress = ((this.currentSlide + 1) / this.totalSlides) * 100;
+                this.progressBar.style.width = `${progress}%`;
+
+                this.navDots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === this.currentSlide);
+                });
+
+                this.slideNumberEl.textContent = `${this.currentSlide + 1} / ${this.totalSlides}`;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            new SlidePresentation();
+        });
+    </script>
+</body>
+</html>
